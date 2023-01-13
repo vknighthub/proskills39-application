@@ -1,0 +1,62 @@
+@import "normalize.css";
+@import "main.css";
+@import "swiper-bundle.css";
+@import "nice-select2.css";
+@import "login-register.css";
+@import "mfp.css";
+
+.swiper.swiper-initialized.swiper-horizontal.swiper-pointer-events.artworks-carousel.swiper-backface-hidden {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-title-wrapper {
+  order: 0;
+  width: 100%;
+}
+
+.artworks-carousel .swiper-wrapper {
+  order: 1;
+  width: 100%;
+}
+
+.d-none {
+  display: none;
+}
+.d-block {
+  display: block;
+}
+
+.pagination-list li.page-item.active a {
+  color: var(--primary-accent-color);
+  fill: var(--primary-accent-color);
+}
+.pagination-list .page-nav-prev {
+  display: block !important;
+}
+.primary-content-area .swiper-pointer-events {
+  display: flex;
+  flex-wrap: wrap;
+}
+.primary-content-area .swiper-wrapper {
+  order: 1;
+}
+a {
+  cursor: pointer;
+}
+.collapse:not(.show) {
+  display: none;
+}
+.card-body {
+  max-height: unset !important;
+  visibility: unset !important;
+}
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+}
+.content-table td:first-child {
+  min-width: 210px;
+}
