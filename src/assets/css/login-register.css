@@ -1,0 +1,257 @@
+
+
+  /* LOGIN AND REGISTER FORMS */
+
+  :root {
+    --tk-lp-accent-color: var(--primary-accent-color);
+    --tk-lp-form-color: #6d727f;
+    --tk-lp-dark-button-color: var(--main-font-color);
+    --tk-pl-button-primary: #3452ff;
+    --tk-lp-grey-button-color: var(--light-gray);
+    --tk-lp-dark-color: #1d1d1f;
+    --tk-lp-border-grey-color: #e1e1e1;
+    --tk-lp-white-color: #ffffff;
+    --tk-lp-caret-color: #6d727f;
+    --tk-lp-input-color: #1d1d1f;
+    --tk-lp-placeholder-color: #6b7080;
+    --tk-lp-box-shadow-color: 1px 1px 3px 1px rgba(0, 0, 0, 0.1), 1px 1px 2px 1px rgba(0, 0, 0, 0.06);
+    --tk-lp-form-title-font-size: 32px;
+    --tk-lp-form-title-font-weight: 400;
+    --tk-lp-form-title-color: var(--main-font-color);
+    --tk-lp-link-color: #1d1d1f;
+    --tk-lp-icon-color: #797d8c;
+    --tk-lp-green-color: #00bf82;
+    --tk-lp-red-color: #ff001f;
+    --tk-lp-blue-color: #2a4eff;
+    --tk-lp-yellow-color: #ffb700;
+    --primary-gradient-color: #ff394f;
+    --secondary-gradient-color: #ffcf26;
+}
+
+  .tk-lp-form-item {
+    margin-bottom: 20px;
+  }
+
+  .tk-lp-label {
+    font-size: var(--body-font-size);
+    font-weight: var(--heading-font-weight);
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--main-font-color);
+  }
+
+  .tk-lp-form .tk-lp-input {
+    padding: max(0.87vw, 12px) max(1.5vw, 18px);
+    border: 1px solid var(--border-color);
+    margin-bottom: 20px;
+    background-color: var(--tk-lp-white-color);
+    width: 100%;
+    outline: none;
+    caret-color: var(--tk-lp-caret-color);
+    color: var(--tk-lp-input-color);
+    max-height: 50px;
+    font-family: inherit;
+    font-weight: var(--heading-font-weight);
+    border-radius: 30px;
+    margin: 0;
+    transition: all .3s ease;
+  }
+
+  .tk-lp-form .tk-lp-input:focus {
+    border-color: var(--primary-accent-color);
+  }
+
+.tk-lp-form a.tk-lp-button, .tk-lp-form .tk-lp-button {
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 30px;
+  position: relative;
+  transition: all .3s ease;
+  text-align: center;
+  line-height: 1;
+  font-weight: var(--heading-font-weight);
+  fill: currentColor;
+  outline: none;
+  border: none;
+  font-size: var(--body-font-size);
+  padding: max(0.87vw, 12px) max(4.3vw, 50px);
+  color: var(--tk-lp-white-color);
+}
+
+.tk-lp-form a.tk-lp-button--dark, .tk-lp-form .tk-lp-button--dark {
+  background-color: var(--tk-lp-dark-button-color);
+}
+
+.tk-lp-form .tk-lp-w-full {
+  width: 100%;
+}
+
+.tk-lp-check, .tk-lp-subscribe {
+  display: flex;
+}
+
+.tk-lp-checkbox {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  font-size: var(--body-font-size);
+  font-weight: var(--heading-font-weight);
+  margin-bottom: 0;
+  color: var(--main-font-color);
+}
+
+.tk-lp-link-lost.tk-lp-tabs-form-item {
+  font-size: var(--body-font-size);
+  font-weight: var(--heading-font-weight);
+}
+
+.tk-lp-checkbox input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.tk-lp-control-indicator {
+  position: relative;
+  height: 16px;
+  width: 16px;
+  background: var(--tk-lp-white-color);
+  border-radius: 0.4em;
+  margin-right: 0.5em;
+  display: inline-block;
+  border: 1px solid var(--tk-lp-border-grey-color);
+}
+
+.tk-lp-checkbox input:checked~.tk-lp-control-indicator {
+  background: var(--cryptoki-gradient);
+  border: none;
+}
+
+.tk-lp-check .tk-lp-check-text {
+  font-size: var(--body-font-size);
+  font-weight: var(--heading-font-weight);
+}
+
+.tk-lp-control-indicator:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.tk-lp-checkbox .tk-lp-control-indicator:after {
+  left: 5px;
+  top: 2px;
+  width: 6px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(40deg);
+}
+
+.tk-lp-checkbox input:checked~.tk-lp-control-indicator:after {
+  display: block;
+}
+
+  input.crumina-button, input[type=checkbox], input[type=radio] {
+    width: auto;
+}
+
+
+.tk-lp-form a.tk-lp-button:active, 
+.tk-lp-form a.tk-lp-button:hover, 
+.tk-lp-form a.tk-lp-button:focus, 
+.tk-lp-form .tk-lp-button:active, 
+.tk-lp-form .tk-lp-button:hover, 
+.tk-lp-form .tk-lp-button:focus {
+  outline: none;
+  background-color: var(--tk-lp-accent-color);
+  color: var(--tk-lp-white-color);
+}
+
+.tk-lp-form a.tk-lp-button--grey, .tk-lp-form .tk-lp-button--grey {
+  background-color: var(--light-gray);
+  color: var(--main-font-color);
+  transition: color 0.1s ease;
+}
+
+.tk-lp-form .tk-lp-button+.tk-lp-button {
+  margin-top: 20px;
+  white-space: nowrap;
+}
+
+.tk-lp-form a.tk-lp-button--grey:active, 
+.tk-lp-form a.tk-lp-button--grey:hover, 
+.tk-lp-form a.tk-lp-button--grey:focus, 
+.tk-lp-form .tk-lp-button--grey:active, 
+.tk-lp-form .tk-lp-button--grey:hover, 
+.tk-lp-form .tk-lp-button--grey:focus {
+  color: var(--tk-lp-white-color);
+  background: var(--cryptoki-gradient);
+}
+
+.tk-lp-form a.tk-lp-button:active, 
+.tk-lp-form a.tk-lp-button:hover, 
+.tk-lp-form a.tk-lp-button:focus, 
+.tk-lp-form .tk-lp-button:active, 
+.tk-lp-form .tk-lp-button:hover, 
+.tk-lp-form .tk-lp-button:focus {
+  outline: none;
+  background: var(--cryptoki-gradient);
+  color: var(--tk-lp-white-color);
+}
+
+.tk-lp-remember {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.register-notice {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tk-lp-form + .register-notice {
+  margin-top: 30px;
+  color: var(--main-font-color);
+}
+
+.social-login .btn.facebook{
+  background-color:#235aff;
+}
+
+.social-login .btn.twitter{
+  background-color:#00b4ff;
+}
+
+.social-login .btn svg{
+  fill: #fff;
+}
+
+.social-login-text {
+  font-size: var(--body-font-size);
+  font-weight: var(--heading-font-weight);
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.social-login-buttons {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.social-login-buttons .btn {
+  margin-right: 20px;
+}
+
+.social-login-buttons .btn:last-child {
+  margin-right: 0;
+}
+
+form + .social-login {
+  margin-top: 30px;
+}
