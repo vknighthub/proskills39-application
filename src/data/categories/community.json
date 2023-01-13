@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "slug": "events",
+        "name": "Events"
+    },
+    {
+        "id": 2,
+        "slug": "events",
+        "name": "Blog"
+    },
+    {
+        "id": 3,
+        "slug": "forums",
+        "name": "Forum"
+    },
+    {
+        "id": 4,
+        "slug": "community-standards",
+        "name": "Community Standards"
+    },
+    {
+        "id": 5,
+        "slug": "podcast",
+        "name": "Podcast"
+    },
+    {
+        "id": 6,
+        "slug": "influencers",
+        "name": "Influencers"
+    },
+    {
+        "id": 7,
+        "slug": "affiliates",
+        "name": "Affiliates"
+    },
+    {
+        "id": 8,
+        "slug": "invite-Friend",
+        "name": "Invite a Friend"
+    },
+    {
+        "id": 9,
+        "slug": "becomeaseller",
+        "name": "Become a Seller"
+    }
+]

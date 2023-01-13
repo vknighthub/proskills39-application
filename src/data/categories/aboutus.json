@@ -1,0 +1,36 @@
+[
+    {
+        "id": 1,
+        "slug": "careers",
+        "name": "Careers"
+    },
+    {
+        "id": 2,
+        "slug": "press-news",
+        "name": "Press & News"
+    },
+    {
+        "id": 3,
+        "slug": "partnerships",
+        "name": "Partnerships"
+    }, {
+        "id": 4,
+        "slug": "privacy-policy",
+        "name": "Privacy Policy"
+    },
+    {
+        "id": 5,
+        "slug": "terms-of-service",
+        "name": "Terms of Service"
+    },
+    {
+        "id": 6,
+        "slug": "intellectual-property-claims",
+        "name": "Intellectual Property Claims"
+    },
+    {
+        "id": 7,
+        "slug": "investor-relations",
+        "name": "Investor Relations"
+    }
+]

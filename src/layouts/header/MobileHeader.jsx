@@ -30,7 +30,7 @@ const MobileHeader = () => {
           {/*MOBILE LOGO*/}
           <div className="mobile-menu-logo logo">
             {" "}
-            <Link href="/" passHref >
+            <Link legacyBehavior href="/" passHref >
               <Image src="svg/cryptoki-logo.svg" alt="" width={80} height={80} />
             </Link>{" "}
           </div>
@@ -47,7 +47,7 @@ const MobileHeader = () => {
         <div className="mobile-menu-wrapper">
           <ul className="mobile-menu">
             <li className="menu-item">
-              <Link href="/" className="menu-link">
+              <Link legacyBehavior href="/" className="menu-link">
                 Home
               </Link>
             </li>

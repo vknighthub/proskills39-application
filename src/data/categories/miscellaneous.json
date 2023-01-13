@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "slug": "electronic-engineering",
+        "name": "Electronic Engineering"
+    },
+    {
+        "id": 2,
+        "slug": "qa-review",
+        "name": "QA & Review"
+    },
+    {
+        "id": 3,
+        "slug": "user-testing",
+        "name": "User Testing"
+    },
+    {
+        "id": 4,
+        "slug": "online-coding-lessons",
+        "name": "Online Coding Lessons"
+    },
+    {
+        "id": 5,
+        "slug": "other",
+        "name": "Other"
+    }
+]

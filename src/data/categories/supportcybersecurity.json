@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "slug": "support-cybersecurity",
+        "name": "Support & Cybersecurity"
+    },
+    {
+        "id": 2,
+        "slug": "devOps-cloud",
+        "name": "DevOps & Cloud"
+    },
+    {
+        "id": 3,
+        "slug": "support-it",
+        "name": "Support & IT"
+    },
+    {
+        "id": 4,
+        "slug": "cybersecurity-data-protection",
+        "name": "Cybersecurity & Data Protection"
+    },
+    {
+        "id": 5,
+        "slug": "development-for-streamers",
+        "name": "Development for Streamers"
+    },
+    {
+        "id": 6,
+        "slug": "convertfiles",
+        "name": "Convert Files"
+    }
+]

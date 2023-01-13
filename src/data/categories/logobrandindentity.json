@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "slug": "logo-design",
+        "name": "Logo Design"
+    },
+    {
+        "id": 2,
+        "slug": "brand-style-guides",
+        "name": "Brand Style Guides"
+    },
+    {
+        "id": 3,
+        "slug": "font-tyography",
+        "name": "Fonts & Tyography"
+    },
+    {
+        "id": 4,
+        "slug": "business-cards-stationery",
+        "name": "Business Cards & Stationery"
+    }
+]

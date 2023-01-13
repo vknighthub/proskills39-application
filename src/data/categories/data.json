@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "slug": "databases",
+        "name": "Databases"
+    },
+    {
+        "id": 2,
+        "slug": "data-processing",
+        "name": "Data Processing"
+    },
+    {
+        "id": 3,
+        "slug": "data-engineering",
+        "name": "Data Engineering"
+    },
+    {
+        "id": 4,
+        "slug": "data-science",
+        "name": "Data Science"
+    }
+]

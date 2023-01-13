@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "slug": "helpandsupport",
+        "name": "Help & Support"
+    },
+    {
+        "id": 2,
+        "slug": "trustsafety",
+        "name": "Trust & Safety"
+    },
+    {
+        "id": 3,
+        "slug": "selling",
+        "name": "Selling on Proskills39"
+    },
+    {
+        "id": 4,
+        "slug": "buying",
+        "name": "Buying on Proskills39"
+    }
+]

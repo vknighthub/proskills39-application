@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import { niceSelect, notificationList, svgLoadder } from './../utils/util'
+import Footer from './_footer'
 import Header from './_header'
+import NavLayout from './_nav'
 
 export default function Layout({ children }: React.PropsWithChildren<{}>) {
   useEffect(() => {
@@ -24,7 +26,9 @@ export default function Layout({ children }: React.PropsWithChildren<{}>) {
     <>
       <div className="main">
         <Header />
+        <NavLayout />
         {children}
+        <Footer />
       </div>
     </>
   )

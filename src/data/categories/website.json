@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "slug": "website-development",
+        "name": "Website Development"
+    },
+    {
+        "id": 2,
+        "slug": "wordpress",
+        "name": "WordPress"
+    },
+    {
+        "id": 3,
+        "slug": "e-commerce-development",
+        "name": "E-Commerce Development"
+    }
+]

@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "slug": "social-media-marketing",
+        "name": "Social Media Marketing"
+    },
+    {
+        "id": 2,
+        "slug": "social-media-advertising",
+        "name": "Social Media Advertising"
+    },
+    {
+        "id": 3,
+        "slug": "seo",
+        "name": "Search Engine Optimization (SEO)"
+    },
+    {
+        "id": 4,
+        "slug": "local-seo",
+        "name": "Local SEO"
+    },
+    {
+        "id": 5,
+        "slug": "marketing-strategy",
+        "name": "Marketing Strategy"
+    },
+    {
+        "id": 6,
+        "slug": "public-relations",
+        "name": "Public Relations"
+    },
+    {
+        "id": 7,
+        "slug": "guest-posting",
+        "name": "Guest Posting"
+    },
+    {
+        "id": 8,
+        "slug": "video-marketing",
+        "name": "Video Marketing"
+    },
+    {
+        "id": 9,
+        "slug": "email-marketing",
+        "name": "Email Marketing"
+    },
+    {
+        "id": 10,
+        "slug": "web-analytics",
+        "name": "Web Analytics"
+    },
+    {
+        "id": 11,
+        "slug": "text-message-marketing",
+        "name": "Text Message Marketing"
+    },
+    {
+        "id": 12,
+        "slug": "crowdfunding",
+        "name": "Crowdfunding"
+    }
+]

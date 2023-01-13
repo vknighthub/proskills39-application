@@ -5,5 +5,5 @@ export const siteSettings = {
   lightLogo: lightModeLogo,
   darkLogo: darkModeLogo,
   width: 128,
-  height: 40,
+  height: 80,
 };

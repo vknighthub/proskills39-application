@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "slug": "marketing advice",
+        "name": "Marketing Advice"
+    },
+    {
+        "id": 2,
+        "slug": "sem",
+        "name": "Search Engine Marketing (SEM)"
+    },
+    {
+        "id": 3,
+        "slug": "display-advertising",
+        "name": "Display Advertising"
+    },
+    {
+        "id": 4,
+        "slug": "e-commerce-marketing",
+        "name": "E-commerce Marketing"
+    },
+    {
+        "id": 5,
+        "slug": "influencer-marketing",
+        "name": "Influencer Marketing"
+    },
+    {
+        "id": 6,
+        "slug": "community-management",
+        "name": "Community Management"
+    },
+    {
+        "id": 7,
+        "slug": "mobile-app-marketing",
+        "name": "Mobile App Marketing"
+    },
+    {
+        "id": 8,
+        "slug": "music-promotion",
+        "name": "Music Promotion"
+    },
+    {
+        "id": 9,
+        "slug": "book-ebook-marketing",
+        "name": "Book & ebook Marketing"
+    },
+    {
+        "id": 10,
+        "slug": "podcast-marketing",
+        "name": "Podcast Marketing"
+    },
+    {
+        "id": 11,
+        "slug": "afflillate-marketing",
+        "name": "Afflillate Marketing"
+    },
+    {
+        "id": 12,
+        "slug": "other",
+        "name": "Other"
+    }
+]

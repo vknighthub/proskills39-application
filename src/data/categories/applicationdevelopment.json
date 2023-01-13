@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "slug": "mobile-app",
+        "name": "Mobile Apps"
+    },
+    {
+        "id": 2,
+        "slug": "web-programming",
+        "name": "Web Programming"
+    },
+    {
+        "id": 3,
+        "slug": "desktop-application",
+        "name": "Desktop Applications"
+    },
+    {
+        "id": 4,
+        "slug": "game-development",
+        "name": "Game Development"
+    },
+    {
+        "id": 4,
+        "slug": "chatbots",
+        "name": "Chatbots"
+    }
+]

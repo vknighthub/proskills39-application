@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "slug": "blockchain-cryptocurrency",
+        "name": "Blockchain & Cryptocurrency"
+    },
+    {
+        "id": 2,
+        "slug": "nft-development",
+        "name": "NFT Development"
+    },
+    {
+        "id": 3,
+        "slug": "nft-websites",
+        "name": "NFT Websites"
+    },
+    {
+        "id": 4,
+        "slug": "coin-tokens",
+        "name": "Coin & Tokens"
+    },
+    {
+        "id": 5,
+        "slug": "decentralized-apps",
+        "name": "Decentralized Apps"
+    },
+    {
+        "id": 6,
+        "slug": "creating-smartcontract",
+        "name": "Creating Smartcontract"
+    },
+    {
+        "id": 7,
+        "slug": "project-evaluation-blockchain",
+        "name": "Project evaluation Blockchain"
+    }
+]
