@@ -1,3 +1,5 @@
+import { NewestService } from '@/components/services/newst-service'
+import { HomePopularCategory } from '@/components/services/popular-categories'
 import HomePopularService from '@/components/services/popular-service'
 import HomeTopCreators from '@/components/services/top-creator'
 import routes from '@/config/routes'
@@ -16,6 +18,8 @@ const Home: NextPageWithLayout = () => {
       <div className="primary-content-area bottom-padding-70">
         <HomePopularService />
         <HomeTopCreators />
+        <HomePopularCategory />
+        <NewestService />
       </div>
     </>
   )

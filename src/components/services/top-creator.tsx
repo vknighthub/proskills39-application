@@ -184,7 +184,7 @@ const HomeTopCreators = () => {
                         </div>
                         <div className="projects-score">
                             <div className="number title">{creator.score}</div>
-                            <div className="label">Created</div>
+                            <div className="label">Service</div>
                         </div>
                         {creator.previews.map((previews, index) => (
                             <div className="projects-previews" key={index}>
@@ -207,8 +207,6 @@ const HomeTopCreators = () => {
                                 </div>
                             </div>
                         ))}
-
-
                     </div>
                 ))}
 

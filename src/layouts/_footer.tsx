@@ -19,9 +19,7 @@ export default function Footer() {
                             </div>
                             <div className="footer-text">
                                 <p>
-                                    We are a huge marketplace dedicated to connecting great
-                                    artists of all mediums with their fans and unique token
-                                    collectors!
+                                    ProSkills39 is a Service Marketplace that connects pro-skills freelancers and provides support services for project owners to start up and expand their businesses at a reasonable cost.
                                 </p>
                             </div>
                             <ul className="social-icons-list">
@@ -98,7 +96,7 @@ export default function Footer() {
                                     {categories.map((category, index) => (
                                         <li key={index} className="menu-item">
                                             {" "}
-                                            <Link legacyBehavior   href="/">
+                                            <Link legacyBehavior href="/">
                                                 <a className="menu-link">{category.name}</a>
                                             </Link>{" "}
                                         </li>
@@ -116,7 +114,7 @@ export default function Footer() {
                                 {community.map((community, index) => (
                                     <li key={index} className="menu-item">
                                         {" "}
-                                        <Link legacyBehavior  href={`/${community.slug}`}>
+                                        <Link legacyBehavior href={`/${community.slug}`}>
                                             <a className="menu-link">{community.name}</a>
                                         </Link>{" "}
                                     </li>
@@ -132,7 +130,7 @@ export default function Footer() {
                                 {aboutus.map((aboutus, index) => (
                                     <li key={index} className="menu-item">
                                         {" "}
-                                        <Link legacyBehavior  href={`/${aboutus.slug}`}>
+                                        <Link legacyBehavior href={`/${aboutus.slug}`}>
                                             <a className="menu-link">{aboutus.name}</a>
                                         </Link>{" "}
                                     </li>
@@ -149,7 +147,7 @@ export default function Footer() {
                                 {support.map((support, index) => (
                                     <li key={index} className="menu-item">
                                         {" "}
-                                        <Link legacyBehavior  href={`/${support.slug}`}>
+                                        <Link legacyBehavior href={`/${support.slug}`}>
                                             <a className="menu-link">{support.name}</a>
                                         </Link>{" "}
                                     </li>
