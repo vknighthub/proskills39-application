@@ -2969,14 +2969,30 @@ ol li::marker {
     position: absolute;
     top: 80%;
     left: auto;
-    right: 10%;
-    transform: translate(50%,0);
+    z-index: 100;
+    will-change: opacity, visibility;
+    transition: visibility 0s linear, opacity .3s linear;
+}
+
+.navigation-menu .megamenu-two-column {
+    visibility: hidden;
+    opacity: 0;
+    width: 470px;
+    max-width: 60vw;
+    position: absolute;
+    top: 80%;
+    left: auto;
     z-index: 100;
     will-change: opacity, visibility;
     transition: visibility 0s linear, opacity .3s linear;
 }
 
 .navigation-menu .menu-item-has-megamenu:hover .megamenu {
+    visibility: visible;
+    opacity: 1;
+}
+
+.navigation-menu .menu-item-has-megamenu:hover .megamenu-two-column {
     visibility: visible;
     opacity: 1;
 }

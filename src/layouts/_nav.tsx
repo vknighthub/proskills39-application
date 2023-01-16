@@ -10,9 +10,22 @@ import logobrandindentity from './../data/categories/logobrandindentity.json'
 import socialdm from './../data/categories/socialdm.json'
 import advicedm from './../data/categories/advicedm.json'
 import index from './../data/categories/index.json'
+import { NavTwoColumn } from './nav/NavTwoColumn';
+import { NavThreeColumn } from './nav/NavThreeColumn';
+import { NavThreeColumnHeaderRight } from './nav/NavThreeColumnHeaderRight';
+import { NavFourColumnHeaderRight } from './nav/NavFourColumnHeaderRight';
 
 const NavLayout = () => {
-    const slice_columns_menu = 3
+
+    const renderNav = (category: { id: string; menutype: string; name: { en: string; vn: string; jp: string }; slug: string; language: string; icon: string; image: string; details: string; type_id: string; created_at: string; updated_at: string; deleted_at: null; translated_languages: string; type: string; parent_id: string; url: string; menu_level: number; slice_number: number; children: { id: string; name: { en: string; vn: string; jp: string }; slug: string; language: string; icon: string; image: string; details: string; type_id: string; created_at: string; updated_at: string; deleted_at: null; translated_languages: string; type: string; parent_id: string; url: string; menu_level: number; children: ({ id: string; name: { en: string; vn: string; jp: string }; slug: string; language: string; icon: string; image: string; details: string; type_id: string; created_at: string; updated_at: string; deleted_at: null; translated_languages: string; type: string; parent_id: string; url: string; menu_level: number; children: never[]; menutype?: undefined } | { id: string; menutype: string; name: { en: string; vn: string; jp: string }; slug: string; language: string; icon: string; image: string; details: string; type_id: string; created_at: string; updated_at: string; deleted_at: null; translated_languages: string; type: string; parent_id: string; url: string; menu_level: number; children: never[] })[] }[] } | { id: string; menutype: string; name: { en: string; vn: string; jp: string }; slug: string; language: string; icon: string; image: string; details: string; type_id: string; created_at: string; updated_at: string; deleted_at: null; translated_languages: string; type: string; parent_id: string; url: string; menu_level: number; slice_number: number; children: ({ id: string; name: { en: string; vn: string; jp: string }; slug: string; language: string; icon: string; image: string; details: string; type_id: string; created_at: string; updated_at: string; deleted_at: null; translated_languages: string; type: string; parent_id: string; url: string; menu_level: number; children: never[]; menutype?: undefined; slice_number?: undefined } | { id: string; menutype: string; name: { en: string; vn: string; jp: string }; slug: string; language: string; icon: string; image: string; details: string; type_id: string; created_at: string; updated_at: string; deleted_at: null; translated_languages: string; type: string; parent_id: string; url: string; menu_level: number; slice_number: number; children: never[] })[] } | { id: string; menutype: string; name: { en: string; vn: string; jp: string }; slug: string; language: string; icon: string; image: string; details: string; type_id: string; created_at: string; updated_at: string; deleted_at: null; translated_languages: string; type: string; parent_id: string; url: string; menu_level: number; children: { id: string; name: { en: string; vn: string; jp: string }; slug: string; language: string; icon: string; image: string; details: string; type_id: string; created_at: string; updated_at: string; deleted_at: null; translated_languages: string; type: string; parent_id: string; url: string; menu_level: number; children: { id: string; name: { en: string; vn: string; jp: string }; slug: string; language: string; icon: string; image: string; details: string; type_id: string; created_at: string; updated_at: string; deleted_at: null; translated_languages: string; type: string; parent_id: string; url: string; menu_level: number; children: never[] }[] }[]; slice_number?: undefined } | { id: string; name: { en: string; vn: string; jp: string }; slug: string; language: string; icon: string; image: string; details: string; type_id: string; created_at: string; updated_at: string; deleted_at: null; translated_languages: string; type: string; parent_id: string; url: string; menu_level: number; children: { id: string; name: { en: string; vn: string; jp: string }; slug: string; language: string; icon: string; image: string; details: string; type_id: string; created_at: string; updated_at: string; deleted_at: null; translated_languages: string; type: string; parent_id: string; url: string; menu_level: number; children: { id: string; name: { en: string; vn: string; jp: string }; slug: string; language: string; icon: string; image: string; details: string; type_id: string; created_at: string; updated_at: string; deleted_at: null; translated_languages: string; type: string; parent_id: string; url: string; menu_level: number; children: never[] }[] }[]; menutype?: undefined; slice_number?: undefined }) => {
+        switch (category.menutype) {
+            case 'four-column-header-right': return <NavFourColumnHeaderRight category={category} />;
+            case 'three-column-header-right': return <NavThreeColumnHeaderRight category={category} />;
+            case 'three-column-header': return <NavThreeColumn data={category.children} slice={category.slice_number} />;
+            default: return <NavTwoColumn data={category.children} slice={category.slice_number} />;
+        }
+    }
+
     return (
         <nav className="border-bottom sticky-header">
             <div className="navigation-wrapper container flex-space-between align-items-center">
@@ -31,88 +44,9 @@ const NavLayout = () => {
                                 </span>
                             </a>
                             <div className="megamenu">
-                                <div className="megamenu-wrapper">
-                                    {category.children
-                                        .slice(0, slice_columns_menu)
-                                        .map((sublevel1, index) => (
-                                            <div className="megamenu-column" key={index}>
-                                                {sublevel1.menu_level === 2 ? (
-                                                    <>
-                                                        <div className="megamenu-title">
-                                                            {sublevel1.name.en}
-                                                        </div>
-                                                        <div className="flex-space-between">
-                                                            <ul className="submenu-column">
-                                                                {sublevel1.children.map((sublevel2, index) => (
-                                                                    <li key={index} className="menu-item">
-                                                                        {' '}
-                                                                        <Link
-                                                                            legacyBehavior
-                                                                            href={`/${sublevel2.slug}`}
-                                                                        >
-                                                                            <a className="menu-link">
-                                                                                {sublevel2.name.en}
-                                                                            </a>
-                                                                        </Link>{' '}
-                                                                    </li>
-                                                                ))}
-                                                            </ul>
-                                                        </div>
-                                                    </>
-                                                ) : (
-                                                    <li key={index} className="menu-item">
-                                                        {' '}
-                                                        <Link legacyBehavior href={`/${sublevel1.slug}`}>
-                                                            <a className="menu-link">{sublevel1.name.en}</a>
-                                                        </Link>{' '}
-                                                    </li>
-                                                )}
-                                            </div>
-                                        ))}
-                                </div>
-
-                                <div className="megamenu-wrapper">
-                                    {category.children
-                                        .slice(
-                                            slice_columns_menu,
-                                            slice_columns_menu + slice_columns_menu,
-                                        )
-                                        .map((sublevel1, index) => (
-                                            <div className="megamenu-column" key={index}>
-                                                {sublevel1.menu_level === 2 ? (
-                                                    <>
-                                                        <div className="megamenu-title">
-                                                            {sublevel1.name.en}
-                                                        </div>
-                                                        <div className="flex-space-between">
-                                                            <ul className="submenu-column">
-                                                                {sublevel1.children.map((sublevel2, index) => (
-                                                                    <li key={index} className="menu-item">
-                                                                        {' '}
-                                                                        <Link
-                                                                            legacyBehavior
-                                                                            href={`/${sublevel2.slug}`}
-                                                                        >
-                                                                            <a className="menu-link">
-                                                                                {sublevel2.name.en}
-                                                                            </a>
-                                                                        </Link>{' '}
-                                                                    </li>
-                                                                ))}
-                                                            </ul>
-                                                        </div>
-                                                    </>
-                                                ) : (
-                                                    <li key={index} className="menu-item">
-                                                        {' '}
-                                                        <Link legacyBehavior href={`/${sublevel1.slug}`}>
-                                                            <a className="menu-link">{sublevel1.name.en}</a>
-                                                        </Link>{' '}
-                                                    </li>
-                                                )}
-                                            </div>
-                                        ))}
-                                </div>
+                                {
+                                    renderNav(category)
+                                }
                             </div>
                         </li>
                     ))}

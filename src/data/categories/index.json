@@ -1,6 +1,7 @@
 [
     {
         "id": "0000000001",
+        "menutype": "three-column-header-right",
         "name": {
             "en": "Programing & Tech",
             "vn": "Lập trình & Công nghệ",
@@ -20,6 +21,7 @@
         "parent_id": "0000000000",
         "url": "",
         "menu_level": 1,
+        "slice_number": 3,
         "children": [
             {
                 "id": "0000000010",
@@ -882,6 +884,7 @@
     },
     {
         "id": "0000000002",
+        "menutype": "three-column-header-right",
         "name": {
             "en": "Graphics & Design",
             "vn": "Thiết kế đồ họa",
@@ -901,6 +904,7 @@
         "parent_id": "0000000000",
         "url": "",
         "menu_level": 1,
+        "slice_number": 4,
         "children": [
             {
                 "id": "0000000016",
@@ -995,6 +999,7 @@
                     },
                     {
                         "id": "0000000070",
+                        "menutype": "two-column",
                         "name": {
                             "en": "Business Cards & Stationery",
                             "vn": "Danh thiếp & Văn phòng phẩm",
@@ -2390,6 +2395,7 @@
     },
     {
         "id": "0000000003",
+        "menutype": "three-column-header",
         "name": {
             "en": "Digital Marketing",
             "vn": "Tiếp thị kỹ thuật số",
@@ -2409,6 +2415,7 @@
         "parent_id": "0000000000",
         "url": "",
         "menu_level": 1,
+        "slice_number": 12,
         "children": [
             {
                 "id": "0000000119",
@@ -2966,6 +2973,7 @@
     },
     {
         "id": "0000000004",
+        "menutype": "three-column",
         "name": {
             "en": "Writing & Translation",
             "vn": "Viết & Dịch thuật",
@@ -2985,6 +2993,7 @@
         "parent_id": "0000000000",
         "url": "",
         "menu_level": 1,
+        "slice_number": 12,
         "children": [
             {
                 "id": "0000000143",
@@ -3772,6 +3781,7 @@
     },
     {
         "id": "0000000005",
+        "menutype": "three-column",
         "name": {
             "en": "Video & Animation",
             "vn": "Video & Hoạt hình",
@@ -3791,6 +3801,7 @@
         "parent_id": "0000000000",
         "url": "",
         "menu_level": 1,
+        "slice_number": 12,
         "children": [
             {
                 "id": "0000000177",
@@ -3886,6 +3897,7 @@
             },
             {
                 "id": "0000000181",
+                "menutype":"two-column",
                 "name": {
                     "en": "Music Videos",
                     "vn": "Video âm nhạc",
@@ -3905,6 +3917,7 @@
                 "parent_id": "0000000005",
                 "url": "",
                 "menu_level": 3,
+                "slice_number": 12,
                 "children": []
             },
             {
@@ -4624,6 +4637,7 @@
     },
     {
         "id": "0000000006",
+        "menutype":"two-column",
         "name": {
             "en": "Music & Audio",
             "vn": "Âm nhạc & Âm thanh",
@@ -4643,6 +4657,7 @@
         "parent_id": "0000000000",
         "url": "",
         "menu_level": 1,
+        "slice_number":12,
         "children": [
             {
                 "id": "0000000213",
@@ -5200,6 +5215,7 @@
     },
     {
         "id": "0000000007",
+        "menutype": "two-column",
         "name": {
             "en": "Business",
             "vn": "Kinh doanh",
@@ -5219,6 +5235,7 @@
         "parent_id": "0000000000",
         "url": "",
         "menu_level": 1,
+        "slice_number":12,
         "children": [
             {
                 "id": "0000000237",
@@ -5753,6 +5770,7 @@
     },
     {
         "id": "0000000008",
+        "menutype": "three-column-header",
         "name": {
             "en": "Lifestyle",
             "vn": "Cách sống",
