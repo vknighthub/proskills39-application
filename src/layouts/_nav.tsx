@@ -14,6 +14,8 @@ import { NavTwoColumn } from './nav/NavTwoColumn';
 import { NavThreeColumn } from './nav/NavThreeColumn';
 import { NavThreeColumnHeaderRight } from './nav/NavThreeColumnHeaderRight';
 import { NavFourColumnHeaderRight } from './nav/NavFourColumnHeaderRight';
+import { NavThreeColumnHeaderLeft } from './nav/NavThreeColumnHeaderLeft';
+import { NavTwoColumnHeaderLeft } from './nav/NavTwoColumnHeaderLeft';
 
 const NavLayout = () => {
 
@@ -22,6 +24,9 @@ const NavLayout = () => {
             case 'four-column-header-right': return <NavFourColumnHeaderRight category={category} />;
             case 'three-column-header-right': return <NavThreeColumnHeaderRight category={category} />;
             case 'three-column-header': return <NavThreeColumn data={category.children} slice={category.slice_number} />;
+            case 'three-column-header-left': return <NavThreeColumnHeaderLeft category={category} />;
+            case 'two-column-header-left': return <NavTwoColumnHeaderLeft category={category} />;
+
             default: return <NavTwoColumn data={category.children} slice={category.slice_number} />;
         }
     }

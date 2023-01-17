@@ -884,7 +884,7 @@
     },
     {
         "id": "0000000002",
-        "menutype": "three-column-header-right",
+        "menutype": "four-column-header-right",
         "name": {
             "en": "Graphics & Design",
             "vn": "Thiết kế đồ họa",
@@ -2395,7 +2395,7 @@
     },
     {
         "id": "0000000003",
-        "menutype": "three-column-header",
+        "menutype": "two-column",
         "name": {
             "en": "Digital Marketing",
             "vn": "Tiếp thị kỹ thuật số",
@@ -2973,7 +2973,7 @@
     },
     {
         "id": "0000000004",
-        "menutype": "three-column",
+        "menutype": "three-column-header",
         "name": {
             "en": "Writing & Translation",
             "vn": "Viết & Dịch thuật",
@@ -3781,7 +3781,7 @@
     },
     {
         "id": "0000000005",
-        "menutype": "three-column",
+        "menutype": "three-column-header",
         "name": {
             "en": "Video & Animation",
             "vn": "Video & Hoạt hình",
@@ -5770,7 +5770,7 @@
     },
     {
         "id": "0000000008",
-        "menutype": "three-column-header",
+        "menutype": "three-column-header-left",
         "name": {
             "en": "Lifestyle",
             "vn": "Cách sống",
@@ -5790,6 +5790,7 @@
         "parent_id": "0000000000",
         "url": "",
         "menu_level": 1,
+        "slice_number": 3,
         "children": [
             {
                 "id": "0000000028",
@@ -6583,6 +6584,7 @@
     },
     {
         "id": "0000000009",
+        "menutype": "two-column-header-left",
         "name": {
             "en": "Trending",
             "vn": "Xu hướng",
@@ -6602,6 +6604,7 @@
         "parent_id": "0000000000",
         "url": "",
         "menu_level": 1,
+        "slice_number": 2,
         "children": [
             {
                 "id": "0000000034",

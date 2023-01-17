@@ -2986,6 +2986,31 @@ ol li::marker {
     will-change: opacity, visibility;
     transition: visibility 0s linear, opacity .3s linear;
 }
+.navigation-menu .megamenu-four-column {
+    visibility: hidden;
+    opacity: 0;
+    width: 1070px;
+    max-width: 80vw;
+    position: absolute;
+    top: 80%;
+    left: auto;
+    z-index: 100;
+    will-change: opacity, visibility;
+    transition: visibility 0s linear, opacity .3s linear;
+}
+.navigation-menu .megamenu-three-column-left {
+    visibility: hidden;
+    opacity: 0;
+    width: 770px;
+    max-width: 80vw;
+    position: absolute;
+    top: 80%;
+    right: 300px;
+    z-index: 100;
+    will-change: opacity, visibility;
+    transition: visibility 0s linear, opacity .3s linear;
+}
+
 
 .navigation-menu .menu-item-has-megamenu:hover .megamenu {
     visibility: visible;
@@ -2993,6 +3018,16 @@ ol li::marker {
 }
 
 .navigation-menu .menu-item-has-megamenu:hover .megamenu-two-column {
+    visibility: visible;
+    opacity: 1;
+}
+
+.navigation-menu .menu-item-has-megamenu:hover .megamenu-four-column {
+    visibility: visible;
+    opacity: 1;
+}
+
+.navigation-menu .menu-item-has-megamenu:hover .megamenu-three-column-left {
     visibility: visible;
     opacity: 1;
 }

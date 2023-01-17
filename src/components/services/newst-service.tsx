@@ -4,6 +4,8 @@ import React from 'react'
 import project_thumb_1 from '@/assets/images/content/previews/project-thumb-1.png'
 import project_thumb_3 from '@/assets/images/content/previews/project-thumb-3.png'
 import project_thumb_21 from '@/assets/images/content/previews/project-thumb-21.png'
+import subtle_image_1 from '@/assets/images/content/subtle-images/subtle-image-1.png'
+
 
 export const NewestService = () => {
     return (
@@ -22,7 +24,7 @@ export const NewestService = () => {
             <div className="featured-creators-box grid-2-columns">
                 <div className="featured-creators-item">
                     <Image
-                        src="/asset/images/content/subtle-images/subtle-image-1.png"
+                        src={subtle_image_1}
                         width={470}
                         height={540}
                         alt=""

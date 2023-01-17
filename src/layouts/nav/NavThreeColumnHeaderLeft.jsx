@@ -1,14 +1,12 @@
 import Link from 'next/link'
 import React from 'react'
 
-export const NavFourColumnHeaderRight = ({ category }) => {
-    console.log(category.children.length)
+export const NavThreeColumnHeaderLeft = ({ category }) => {
     const first_col = category.children.slice(0, category.slice_number);
-    const second_col = category.children.slice(category.slice_number, category.children.length - category.slice_number );
-    const third_col = category.children.slice(category.children.length - category.slice_number , category.children.length )
+    const second_col = category.children.slice(category.slice_number, category.length);
     return (
         <>
-            <div className="megamenu-four-column">
+            <div className="megamenu-three-column-left">
                 <div className="megamenu-wrapper">
                     {first_col
                         .map((sublevel1, index) => (
@@ -83,45 +81,7 @@ export const NavFourColumnHeaderRight = ({ category }) => {
                         </div>
                     ))}
                 </div>
-
-                <div className="megamenu-wrapper">
-                    {third_col.map((sublevel1, index) => (
-                        <div className="megamenu-column" key={index}>
-                            {sublevel1.menu_level === 2 ? (
-                                <>
-                                    <div className="megamenu-title">
-                                        {sublevel1.name.en}
-                                    </div>
-                                    <div className="flex-space-between">
-                                        <ul className="submenu-column">
-                                            {sublevel1.children.map((sublevel2, index) => (
-                                                <li key={index} className="menu-item">
-                                                    {' '}
-                                                    <Link
-                                                        className="menu-link"
-                                                        href={`/${sublevel2.slug}`}
-                                                    >
-                                                        {sublevel2.name.en}
-                                                    </Link>{' '}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </>
-                            ) : (
-                                <li key={index} className="menu-item">
-                                    {' '}
-                                    <Link href={`/${sublevel1.slug}`} className="menu-link">
-                                        {sublevel1.name.en}
-                                    </Link>{' '}
-                                </li>
-                            )}
-                        </div>
-                    ))}
-                </div>
-
             </div>
         </>
-
     )
 }
