@@ -48,11 +48,7 @@ const NavLayout = () => {
                                     </svg>
                                 </span>
                             </a>
-                            <div className="megamenu">
-                                {
-                                    renderNav(category)
-                                }
-                            </div>
+                            {renderNav(category)}
                         </li>
                     ))}
                 </ul>

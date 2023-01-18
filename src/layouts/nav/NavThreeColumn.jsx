@@ -8,7 +8,6 @@ export const NavThreeColumn = ({ data, slice }) => {
 
     return (
         <>
-            <li className="menu-item menu-item-has-megamenu menu-item-has-children">
                 <div className="megamenu">
                     <div className="megamenu-wrapper">
 
@@ -59,7 +58,6 @@ export const NavThreeColumn = ({ data, slice }) => {
 
                     </div>
                 </div>
-            </li>
         </>
     )
 }

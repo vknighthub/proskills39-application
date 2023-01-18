@@ -6,7 +6,7 @@ export const NavTwoColumn = ({ data, slice }) => {
     const second_col = data.slice(slice, data.length);
     return (
         <>
-            <li className="menu-item menu-item-has-megamenu menu-item-has-children">
+            <div className="megamenu">
                 <div className="megamenu-two-column">
                     <div className="megamenu-wrapper">
                         <div className="megamenu-column">
@@ -23,7 +23,7 @@ export const NavTwoColumn = ({ data, slice }) => {
                                 </ul>
                             </div>
                         </div>
-                        
+
                         <div className="megamenu-column">
                             <div className="flex-space-between">
                                 <ul className="submenu-column">
@@ -41,7 +41,7 @@ export const NavTwoColumn = ({ data, slice }) => {
 
                     </div>
                 </div>
-            </li>
+            </div>
         </>
     )
 }

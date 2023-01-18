@@ -61,7 +61,7 @@ export const NewestService = () => {
                                 </div>
                             </div>
                             <div className="follow-me gradient-border_white-bg">
-                                <button className="btn btn-normal">Follow!</button>
+                                <button className="btn btn-normal">View detail!</button>
                             </div>
                         </div>
                         <ul className="social-icons-list">

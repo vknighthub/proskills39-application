@@ -1,9 +1,17 @@
-import { CartIcon } from "@/components/icons/cart-icon";
+import { DigitalMarketingIcon } from "@/components/icons/categories/degital-marketing";
+import { GraphicsDesignIcon } from "@/components/icons/categories/graphic-design-icon";
 import { ProgramingIcon } from "@/components/icons/categories/programing-icon";
-import Image from "next/image";
 import Link from "next/link";
 
 const Categories = ({ data }) => {
+    const renderIcon = (icon) => {
+        switch (icon ) {
+            case "program-tech": return  <ProgramingIcon style={{ width: "80px", height: "80px" }} />
+            case "graphics-design" : return <GraphicsDesignIcon style={{ width: "80px", height: "80"}}/>
+            case "digital-marketing" : return <DigitalMarketingIcon style={{ width: "80px", height: "80"}}/>
+            default: return null;
+        }
+    } 
     return (
         data.map((categories, index) => (
             <div className="featured-item" key={index}>
@@ -29,7 +37,7 @@ const Categories = ({ data }) => {
                                 </Link>{" "}
                             </div>
                             <div className="item-meta">
-                                <ProgramingIcon style={{ width: "80px", height: "80px" }} />
+                                {renderIcon(categories.icon)}
                             </div>
                         </div>
                     </div>
