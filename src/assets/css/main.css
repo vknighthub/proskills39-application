@@ -10621,3 +10621,7 @@ td[data-label="Date"] {
 .tag-see-all:hover::after {
     border-left-color: crimson; 
 }
+.service-thumb img {
+    width: 100%;
+    border-radius: 25px;
+}

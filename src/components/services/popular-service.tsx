@@ -1,27 +1,36 @@
 import Image from "next/image"
 import Link from "next/link"
-import news_thumb1 from '../../assets/images/content/latest-news/news-thumb1.png'
+import repotation_management from '@/assets/images/service/Reputation-Management.jpg'
+import appreciate from '@/assets/images/service/appreciate.jpg'
+import the_most_order from '@/assets/images/service/Bigger-Orders.jpg'
+import special_offer from '@/assets/images/service/special-offer.jpg'
+import newest from '@/assets/images/service/newest.png'
 
 const list_popular = [
     {
         id: 1,
-        name: 'Reputation'
+        name: 'Reputation',
+        image: repotation_management
     },
     {
         id: 2,
-        name: 'Appreciate'
+        name: 'Appreciate',
+        image: appreciate
     },
     {
         id: 3,
-        name: 'The most orders'
+        name: 'The most orders',
+        image: the_most_order
     },
     {
         id: 4,
-        name: 'Many offers'
+        name: 'Many offers',
+        image: special_offer
     },
     {
         id: 5,
-        name: 'Newest'
+        name: 'Newest',
+        image: newest
     },
 
 ]
@@ -44,15 +53,15 @@ const HomePopularService = () => {
 
                 {list_popular.map((popular, index) => (
                     <div className="news-item" key={index}>
-                        <div className="news-thumb">
+                        <div className="service-thumb">
                             {" "}
                             <Link href="/14-blog-post-centered">
                                 <Image
-                                    src={news_thumb1}
+                                    src={popular.image}
                                     width={460}
-                                    height={260}
+                                    height={200}
+                                    sizes="min-height:300px"
                                     alt=""
-                                    loading="lazy"
                                 />
                             </Link>{" "}
                         </div>
