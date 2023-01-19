@@ -72,6 +72,7 @@ const data = [
         name: 'Writting & translation',
         image: 'img/content/items/featured-item-4.png',
         avifImage: 'avif/content/items/featured-item-4.avif',
+        icon: 'writting-translation',
         featured: true,
         newest: false,
         category: ['nsfw', '3d-artwork'],
@@ -93,6 +94,7 @@ const data = [
         name: 'Video & Annimation',
         image: 'img/content/items/featured-item-5.png',
         avifImage: 'avif/content/items/featured-item-5.avif',
+        icon: 'video-animation',
         featured: true,
         newest: true,
         category: ['looping-artwork', 'photography'],
@@ -111,9 +113,10 @@ const data = [
     },
     {
         id: 6,
-        name: 'Mucsic & Video',
+        name: 'Music & Audio',
         image: 'img/content/items/featured-item-6.png',
         avifImage: 'avif/content/items/featured-item-6.avif',
+        icon: 'music-audio',
         featured: false,
         newest: true,
         category: ['gaming', 'nsfw'],
@@ -134,6 +137,7 @@ const data = [
         name: 'Business',
         image: 'img/content/items/featured-item-8.png',
         avifImage: 'avif/content/items/featured-item-8.avif',
+        icon: 'business',
         featured: false,
         newest: true,
         category: ['pop-culture', 'memes'],
@@ -155,6 +159,7 @@ const data = [
         name: 'Lifestyle',
         image: 'img/content/items/featured-item-9.png',
         avifImage: 'avif/content/items/featured-item-9.avif',
+        icon: 'lifestyle',
         featured: false,
         newest: false,
         category: ['illustrations', 'gaming'],
@@ -181,7 +186,7 @@ export const HomePopularCategory = () => {
                 </div>
                 <div className="all-items-link">
                     {' '}
-                    <Link href="/02-explore">Explore all Artworks</Link>{' '}
+                    <Link href="/02-explore">Explore all Categories</Link>{' '}
                 </div>
             </div>
             <div className="featured-box">
