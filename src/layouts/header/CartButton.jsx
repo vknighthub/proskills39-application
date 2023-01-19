@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { Fragment, useState } from "react";
 import useClickOutside from '@/lib/hooks/useClickOutside';
+import Image from "next/image";
+import notif_thumb_1 from '@/assets/images/content/notifications/notif-thumb-1.png';
+import notif_thumb_2 from '@/assets/images/content/notifications/notif-thumb-2.png';
+import notif_thumb_3 from '@/assets/images/content/notifications/notif-thumb-3.png';
 
 const CartButton = () => {
   const [toggle, setToggle] = useState(false);
@@ -36,8 +40,8 @@ const CartButton = () => {
               <div className="thumb-box">
                 {" "}
                 <Link legacyBehavior href="/05-product-page">
-                  <img
-                    src="img/content/notifications/notif-thumb-1.png"
+                  <Image
+                    src={notif_thumb_1}
                     width={50}
                     height={50}
                     alt="UI templates"
@@ -64,8 +68,8 @@ const CartButton = () => {
               <div className="thumb-box">
                 {" "}
                 <Link legacyBehavior href="/06-product-page-v2">
-                  <img
-                    src="img/content/notifications/notif-thumb-2.png"
+                  <Image
+                    src={notif_thumb_2}
                     width={50}
                     height={50}
                     alt="Social graphics"
@@ -94,8 +98,8 @@ const CartButton = () => {
               <div className="thumb-box">
                 {" "}
                 <Link legacyBehavior href="/07-product-page-v3">
-                  <img
-                    src="img/content/notifications/notif-thumb-3.png"
+                  <Image
+                    src={notif_thumb_3}
                     width={50}
                     height={50}
                     alt="Coded templates"

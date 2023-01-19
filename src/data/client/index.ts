@@ -12,4 +12,5 @@ class Client {
         logout: () => HttpClient.post<boolean>(API_ENDPOINTS.USERS_LOGOUT, {}),
     }
 }
+// eslint-disable-next-line import/no-anonymous-default-export
 export default new Client();

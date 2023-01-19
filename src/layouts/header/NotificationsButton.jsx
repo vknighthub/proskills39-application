@@ -1,6 +1,9 @@
+import notif_thumb_1 from '@/assets/images/content/notifications/notif-thumb-1.png';
+import notif_thumb_2 from '@/assets/images/content/notifications/notif-thumb-2.png';
+import useClickOutside from '@/lib/hooks/useClickOutside';
+import Image from "next/image";
 import Link from "next/link";
 import { Fragment, useState } from "react";
-import useClickOutside from '@/lib/hooks/useClickOutside';
 
 const NotificationsButton = () => {
   const [toggle, setToggle] = useState(false);
@@ -35,8 +38,8 @@ const NotificationsButton = () => {
             {/*notification-item*/}
             <div className="notification">
               <div className="thumb-box">
-                <img
-                  src="img/content/notifications/notif-thumb-1.png"
+                <Image
+                  src={notif_thumb_1}
                   width={50}
                   height={50}
                   alt=""
@@ -68,8 +71,8 @@ const NotificationsButton = () => {
             {/*notification-item*/}
             <div className="notification">
               <div className="thumb-box">
-                <img
-                  src="img/content/notifications/notif-thumb-1.png"
+                <Image
+                  src={notif_thumb_1}
                   height={50}
                   width={50}
                   alt=""
@@ -101,8 +104,8 @@ const NotificationsButton = () => {
             {/*notification-item*/}
             <div className="notification">
               <div className="thumb-box">
-                <img
-                  src="img/content/notifications/notif-thumb-2.png"
+                <Image
+                  src={notif_thumb_2}
                   width={50}
                   height={50}
                   alt=""
@@ -132,8 +135,8 @@ const NotificationsButton = () => {
             {/*notification-item*/}
             <div className="notification">
               <div className="thumb-box">
-                <img
-                  src="img/content/notifications/notif-thumb-1.png"
+                <Image
+                  src={notif_thumb_1}
                   height={50}
                   width={50}
                   alt=""
