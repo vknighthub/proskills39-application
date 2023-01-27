@@ -884,7 +884,7 @@
     },
     {
         "id": "0000000002",
-        "menutype": "four-column-header-right",
+        "menutype": "two-column-header-right",
         "name": {
             "en": "Graphics & Design",
             "vn": "Thiết kế đồ họa",
@@ -904,7 +904,7 @@
         "parent_id": "0000000000",
         "url": "",
         "menu_level": 1,
-        "slice_number": 4,
+        "slice_number": 6,
         "children": [
             {
                 "id": "0000000016",

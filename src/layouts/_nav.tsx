@@ -1,21 +1,11 @@
-import Link from 'next/link'
-import React from 'react'
-import applicationdevelopment from './../data/categories/applicationdevelopment.json'
-import supportcybersecurity from './../data/categories/supportcybersecurity.json'
-import website from './../data/categories/website.json'
-import data from './../data/categories//data.json'
-import blockchain from './../data/categories/blockchain.json'
-import miscellaneous from './../data/categories/miscellaneous.json'
-import logobrandindentity from './../data/categories/logobrandindentity.json'
-import socialdm from './../data/categories/socialdm.json'
-import advicedm from './../data/categories/advicedm.json'
-import index from './../data/categories/index.json'
-import { NavTwoColumn } from './nav/NavTwoColumn';
-import { NavThreeColumn } from './nav/NavThreeColumn';
-import { NavThreeColumnHeaderRight } from './nav/NavThreeColumnHeaderRight';
+import index from './../data/categories/index.json';
 import { NavFourColumnHeaderRight } from './nav/NavFourColumnHeaderRight';
+import { NavThreeColumn } from './nav/NavThreeColumn';
 import { NavThreeColumnHeaderLeft } from './nav/NavThreeColumnHeaderLeft';
+import { NavThreeColumnHeaderRight } from './nav/NavThreeColumnHeaderRight';
+import { NavTwoColumn } from './nav/NavTwoColumn';
 import { NavTwoColumnHeaderLeft } from './nav/NavTwoColumnHeaderLeft';
+import { NavTwoColumnHeaderRight } from './nav/NavTwoColumnHeaderRight';
 
 const NavLayout = () => {
 
@@ -25,6 +15,7 @@ const NavLayout = () => {
             case 'three-column-header-right': return <NavThreeColumnHeaderRight category={category} />;
             case 'three-column-header': return <NavThreeColumn data={category.children} slice={category.slice_number} />;
             case 'three-column-header-left': return <NavThreeColumnHeaderLeft category={category} />;
+            case 'two-column-header-right': return <NavTwoColumnHeaderRight category={category} />;
             case 'two-column-header-left': return <NavTwoColumnHeaderLeft category={category} />;
 
             default: return <NavTwoColumn data={category.children} slice={category.slice_number} />;

@@ -1,9 +1,12 @@
 import '@/assets/css/globals.css'
 import DefaultSeo from '@/layouts/_default-seo'
+import { getDirection } from '@/lib/constants'
 import { NextPageWithLayout } from '@/types'
+import { appWithTranslation } from 'next-i18next'
 import { AppProps } from 'next/app'
 import dynamic from 'next/dynamic'
-import { useState } from 'react'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 
@@ -17,9 +20,17 @@ const PrivateRoute = dynamic(() => import('@/layouts/_private-route'), {
 })
 
 function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
+
+  const { locale } = useRouter();
+  const dir = getDirection(locale);
   const getLayout = Component.getLayout ?? ((page) => page)
   const [queryClient] = useState(() => new QueryClient())
   const authenticationRequired = Component.authorization ?? false
+
+
+  useEffect(() => {
+    document.documentElement.dir = dir;
+  }, [dir]);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -39,4 +50,4 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
     </QueryClientProvider>
   )
 }
-export default CustomApp
+export default appWithTranslation(CustomApp);
