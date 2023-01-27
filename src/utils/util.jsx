@@ -154,9 +154,9 @@ export const svgLoadder = () => {
         d="M8 16A8 8 0 018 0a8 8 0 010 16zM8 1.5a6.5 6.5 0 10.02 13.02A6.5 6.5 0 008 1.5zm-.75 6.81V4h1.5v3.69l1.78 1.78-1.06 1.06-2.22-2.22z" />
     </symbol>
     <symbol id="file-plus-icon" viewBox="0 0 24 24">
-      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" strokeWidth="1.5"
         d="M11.25 19.25h-3.5a2 2 0 0 1-2-2V6.75c0-1.1.9-2 2-2H14L18.25 9v2.25M17 14.75v4.5M19.25 17h-4.5" />
-      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" strokeWidth="1.5"
         d="M18 9.25h-4.25V5" />
     </symbol>
     <symbol id="menu-icon" viewBox="0 0 16 14">
@@ -211,7 +211,7 @@ export const svgLoadder = () => {
     <path fill-rule="evenodd" d="M8 16A8.01 8.01 0 0 1 8 0a8 8 0 0 1 0 16ZM8 1.5a6.5 6.5 0 1 0 .02 13.01A6.5 6.5 0 0 0 8 1.5ZM7.25 8.3V4h1.5v3.69l1.78 1.78-1.06 1.06-2.22-2.22Z"/>
   </symbol>
   <symbol id="circle-icon" viewBox="0 0 11 11">
-    <path fill="none" stroke="url(#cryptoki-svg-gradient)" stroke-width="2" d="M5 1a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z"/>
+    <path fill="none" stroke="url(#cryptoki-svg-gradient)" strokeWidth="2" d="M5 1a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z"/>
   </symbol>
   <symbol id="star2-icon" viewBox="0 0 512 512">
     <path d="m256 12.53 79.11 160.29L512 198.53 384 323.29l30.21 176.18L256 416.29 97.78 499.47 128 323.29 0 198.53l176.89-25.71L256 12.53z"/>

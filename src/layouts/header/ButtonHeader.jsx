@@ -1,12 +1,14 @@
-const ButtonHeader = ({ name }) => {
+import Link from "next/link";
+
+const ButtonHeader = ({ name, link }) => {
     return (
         <div className="collection-box">
-            <a
+            <Link
                 className="btn btn-normal btn-dark create-collection"
-                href="26-upload-artwork"
-            >
+                to={link}
+                href={link}>
                 {name}
-            </a>
+            </Link>
 
         </div>
     )
