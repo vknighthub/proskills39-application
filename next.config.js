@@ -20,7 +20,8 @@ module.exports = withPWA({
       'maps.googleapis.com',
       's3.amazonaws.com',
       'pixarlaravel.s3.ap-southeast-1.amazonaws.com',
-      'i.ibb.co'
+      'i.ibb.co',
+      'lh3.googleusercontent.com'
     ],
   },
   ...(process.env.APPLICATION_MODE === 'production' && {

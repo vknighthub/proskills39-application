@@ -3,8 +3,9 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import useClickOutside from "@/lib/hooks/useClickOutside";
 import avatar from '@/assets/images/avatar.png';
+import { signOut } from 'next-auth/react';
 
-const ProfileDropdown = () => {
+const ProfileDropdown = ({ user }) => {
     const [toggle, setToggle] = useState(false);
     const dayMood = useRef(true);
     let domNode = useClickOutside(() => {
@@ -32,6 +33,11 @@ const ProfileDropdown = () => {
         dayMood.current = !dayMood.current;
         moodChange(dayMood.current);
     };
+
+    const logOut = () => {
+        signOut()
+    }
+
     return (
         <div
             className={`header-user-profile cryptoki-notif-bttn ${toggle ? "active" : ""
@@ -40,7 +46,7 @@ const ProfileDropdown = () => {
         >
             {/*user-meta*/}
             <div className="user-meta" onClick={() => setToggle(!toggle)}>
-                <div className="user_name">Anh Ben</div>
+                <div className="user_name">{user.name}</div>
                 <div className="user_score">
                     <span>
                         <svg className="crumina-icon">
@@ -56,15 +62,12 @@ const ProfileDropdown = () => {
                 className={`avatar box-42 ${toggle ? "hide" : ""}`}
                 onClick={() => setToggle(!toggle)}
             >
-                <picture>
-                    <source type="/assets/images/avif" srcSet="/assets/images/avif/avatar.avif" />
-                    <Image
-                        src={avatar}
-                        alt="avatar"
-                        width={100} 
-                        height={100}
-                    />
-                </picture>
+                <Image
+                    src={user.image ? user.image : avatar}
+                    alt="avatar"
+                    width={100}
+                    height={100}
+                />
                 <span className="verified">
                     <svg className="crumina-icon">
                         <use xlinkHref="#check-icon" />
@@ -92,7 +95,7 @@ const ProfileDropdown = () => {
                         {/*user-avatar*/}
                         <div className="profile-avatar avatar box-26">
                             <Image
-                                src={avatar}
+                                src={user.image ? user.image : avatar}
                                 alt="avatar"
                                 loading="lazy"
                                 height={100}
@@ -182,7 +185,7 @@ const ProfileDropdown = () => {
                         </li>
                         <li className="logout">
                             {" "}
-                            <a href="#">
+                            <a href="#" onClick={() => logOut()}>
                                 <svg className="crumina-icon">
                                     <use xlinkHref="#logout-icon" />
                                 </svg>

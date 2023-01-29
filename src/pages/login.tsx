@@ -1,7 +1,18 @@
+"use client"
+
 import Layout from "@/layouts/_layout";
-import React from "react";
+import { useTranslation } from 'next-i18next';
+import { useSession, signIn } from 'next-auth/react';
+import { UserGoogleInformation } from '@/layouts/info/UserGoogleInformation';
 
 const Login = () => {
+    const { t } = useTranslation('common');
+    const { data: session } = useSession();
+
+    const loginAction = () => {
+        signIn('google', { callbackUrl: 'http://localhost:3000' })
+    }
+
     return (
         <Layout>
             <div className="primary-content-area container content-padding">
@@ -11,6 +22,7 @@ const Login = () => {
                             <span className="gradient-text">Account</span> Login
                         </h2>
                     </div>
+
                     <form
                         id="sign-in"
                         className="tk-lp-form user-register-kit-sign tk-lp-tabs-form-content active"
@@ -94,16 +106,19 @@ const Login = () => {
                                     <use xlinkHref="#facebook-icon" />
                                 </svg>
                             </button>
-                            <button className="btn btn-normal twitter">
+                            <button onClick={() => loginAction()} className="btn btn-normal gmail">
                                 <svg className="crumina-icon">
-                                    <use xlinkHref="#twitter-icon" />
+                                    <use xlinkHref="#gmail-icon" />
                                 </svg>
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
+
         </Layout>
     );
+
+
 };
 export default Login;

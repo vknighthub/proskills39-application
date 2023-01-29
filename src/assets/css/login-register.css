@@ -228,6 +228,10 @@
   background-color:#00b4ff;
 }
 
+.social-login .btn.gmail{
+  background-color:#c2dfec;
+}
+
 .social-login .btn svg{
   fill: #fff;
 }
