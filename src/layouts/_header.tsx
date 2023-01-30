@@ -1,16 +1,15 @@
 import Logo from '@/components/ui/logo';
+import { useSession } from 'next-auth/react';
 import { useState } from 'react';
+import ActionHeader from './header/ActionHeader';
 import ButtonHeader from './header/ButtonHeader';
 import MobileHeader from './header/MobileHeader';
 import MobileSearchTrigger from './header/MobileSearchTrigger';
 import ProfileDropdown from './header/ProfileDropdown';
 import SearchBox from './header/SearchBox';
-import ActionHeader from './header/ActionHeader';
-import { useSession, signIn } from 'next-auth/react';
 
 export default function Header() {
   const [searchToggle, setSearchToggle] = useState(false);
-  const isAuthen = false;
   const { data: session } = useSession();
 
   return (
@@ -26,7 +25,7 @@ export default function Header() {
           {session ?
             <>
               <ButtonHeader name="Order" link='/login' />
-              <ButtonHeader name="dRep" link='/dRep' />
+              <ButtonHeader name="dRep" link='/login' />
               <ProfileDropdown user={session?.user} />
             </>
             :

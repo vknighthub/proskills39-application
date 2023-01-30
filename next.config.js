@@ -21,7 +21,8 @@ module.exports = withPWA({
       's3.amazonaws.com',
       'pixarlaravel.s3.ap-southeast-1.amazonaws.com',
       'i.ibb.co',
-      'lh3.googleusercontent.com'
+      'lh3.googleusercontent.com',
+      'fiverr-res.cloudinary.com'
     ],
   },
   ...(process.env.APPLICATION_MODE === 'production' && {

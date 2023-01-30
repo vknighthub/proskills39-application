@@ -1,0 +1,140 @@
+[
+    {
+        "id": 1,
+        "name": "Minimalist Logo Design",
+        "image": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/97477f04af40de3aa1f8d6aa21f69725-1626179101614/Logo%20design_2x.png",
+        "avifImage": "avif/content/items/featured-item-1.avif",
+        "featured": true,
+        "newest": true,
+        "category": [
+            "featured",
+            "illustrations"
+        ],
+        "type": "auctions-only",
+        "price": 4.07,
+        "react": "22",
+        "creatorVerified": true,
+        "ending": true,
+        "order": "oldest",
+        "author": {
+            "name": "DexterStark",
+            "email": "",
+            "image": "images/avatar"
+        }
+    },
+    {
+        "id": 2,
+        "name": "Architecture & Interior Design",
+        "image": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/97477f04af40de3aa1f8d6aa21f69725-1626179101618/Architecture%20_%20Interior%20Design_2x.png",
+        "avifImage": "avif/content/items/featured-item-1.avif",
+        "featured": true,
+        "newest": true,
+        "category": [
+            "featured",
+            "illustrations"
+        ],
+        "type": "auctions-only",
+        "price": 4.07,
+        "react": "22",
+        "creatorVerified": true,
+        "ending": true,
+        "order": "oldest",
+        "author": {
+            "name": "DexterStark",
+            "email": "",
+            "image": "images/avatar"
+        }
+    },
+    {
+        "id": 3,
+        "name": "Website Design",
+        "image": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/55b9d6349057bb9fe177ea57e2d92f30-1670570507381/Web%20Design.png",
+        "avifImage": "avif/content/items/featured-item-1.avif",
+        "featured": true,
+        "newest": true,
+        "category": [
+            "featured",
+            "illustrations"
+        ],
+        "type": "auctions-only",
+        "price": 4.07,
+        "react": "22",
+        "creatorVerified": true,
+        "ending": true,
+        "order": "oldest",
+        "author": {
+            "name": "DexterStark",
+            "email": "",
+            "image": "images/avatar"
+        }
+    },
+    {
+        "id": 4,
+        "name": "Illustration",
+        "image": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/97477f04af40de3aa1f8d6aa21f69725-1626179101633/Illustration_2x.png",
+        "avifImage": "avif/content/items/featured-item-1.avif",
+        "featured": true,
+        "newest": true,
+        "category": [
+            "featured",
+            "illustrations"
+        ],
+        "type": "auctions-only",
+        "price": 4.07,
+        "react": "22",
+        "creatorVerified": true,
+        "ending": true,
+        "order": "oldest",
+        "author": {
+            "name": "DexterStark",
+            "email": "",
+            "image": "images/avatar"
+        }
+    },
+    {
+        "id": 5,
+        "name": "Image Editing",
+        "image": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/97477f04af40de3aa1f8d6aa21f69725-1626179101624/Photoshop%20Editing_2x.png",
+        "avifImage": "avif/content/items/featured-item-1.avif",
+        "featured": true,
+        "newest": true,
+        "category": [
+            "featured",
+            "illustrations"
+        ],
+        "type": "auctions-only",
+        "price": 4.07,
+        "react": "22",
+        "creatorVerified": true,
+        "ending": true,
+        "order": "oldest",
+        "author": {
+            "name": "DexterStark",
+            "email": "",
+            "image": "images/avatar"
+        }
+    },
+    {
+        "id": 6,
+        "name": "T-Shirts & Merchandise",
+        "image": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/97477f04af40de3aa1f8d6aa21f69725-1626179101623/T-Shirts%20_%20Merchandise_2x.png",
+        "avifImage": "avif/content/items/featured-item-1.avif",
+        "featured": true,
+        "newest": true,
+        "category": [
+            "featured",
+            "illustrations"
+        ],
+        "type": "auctions-only",
+        "price": 4.07,
+        "react": "22",
+        "creatorVerified": true,
+        "ending": true,
+        "order": "oldest",
+        "author": {
+            "name": "DexterStark",
+            "email": "",
+            "image": "images/avatar"
+        }
+    }
+]

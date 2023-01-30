@@ -1,13 +1,11 @@
 "use client"
 
 import Layout from "@/layouts/_layout";
+import { signIn } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
-import { useSession, signIn } from 'next-auth/react';
-import { UserGoogleInformation } from '@/layouts/info/UserGoogleInformation';
 
 const Login = () => {
     const { t } = useTranslation('common');
-    const { data: session } = useSession();
 
     const loginAction = () => {
         signIn('google', { callbackUrl: 'http://localhost:3000' })
