@@ -1,6 +1,8 @@
 import { featuredCarousel } from '@/components/styles/sliderProps';
 import explore from '@/data/categories/graphics-design-explore.json';
 import popular from '@/data/categories/graphics-design-popular.json';
+import faqs from '@/data/categories/graphics-design-faqs.json';
+
 import Layout from '@/layouts/_layout';
 import GrapphicsDesignExplore from '@/layouts/info/grapphicdesign/GrapphicsDesignExplore';
 import GrapphicsDesignPopular from '@/layouts/info/grapphicdesign/GrapphicsDesignPopular';
@@ -59,7 +61,7 @@ export default function GrapphicsDesign({ }: Props) {
                         <span className="gradient-text">Graphics & Design</span> FAQs
                     </h2>
                 </div>
-                <GrapphicsDesignFAQs />
+                <GrapphicsDesignFAQs faqs={faqs}/>
             </div>
 
 

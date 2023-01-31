@@ -31,7 +31,7 @@ const NavLayout = () => {
                             className="menu-item menu-item-has-megamenu menu-item-has-children"
                             key={index}
                         >
-                            <a className="menu-link" href="#">
+                            <a className="menu-link" href={category.url}>
                                 {category.name.en}
                                 <span className="indicator">
                                     <svg className="crumina-icon">
@@ -86,6 +86,7 @@ const NavLayout = () => {
                         </a>
                     </li>
                 </ul>
+                
             </div>
         </nav>
     )
