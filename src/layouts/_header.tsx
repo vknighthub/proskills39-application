@@ -25,7 +25,7 @@ export default function Header() {
           {session ?
             <>
               <ButtonHeader name="Order" link='/login' />
-              <ButtonHeader name="dRep" link='/login' />
+              <ButtonHeader name="dRep" link='/dRep' />
               <ProfileDropdown user={session?.user} />
             </>
             :

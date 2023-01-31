@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Accordion } from 'react-bootstrap'
 
 const GrapphicsDesignFAQs = ({ faqs }) => {
+
     const [activeFaq, setActiveFaq] = useState("1st");
     const onClick = (value) =>
         activeFaq === value ? setActiveFaq("") : setActiveFaq(value),
@@ -15,9 +16,9 @@ const GrapphicsDesignFAQs = ({ faqs }) => {
                 <div className="accordion-card" key={faq.id}>
                     <div className="card-header">
                         <Accordion.Toggle
-                            onClick={() => onClick(faqs.order)}
+                            onClick={() => onClick(faq.order)}
                             as={"div"}
-                            eventKey={faqs.order}
+                            eventKey={faq.order}
                             className="card-button"
                         >
                             <div className="card-title">
@@ -26,7 +27,7 @@ const GrapphicsDesignFAQs = ({ faqs }) => {
                             <div className="icon-box">
                                 <svg
                                     className={`crumina-icon plus-icon ${classNameChange(
-                                        faqs.order
+                                        faq.order
                                     )}`}
                                 >
                                     <use xlinkHref="#minus-icon" />
@@ -37,7 +38,7 @@ const GrapphicsDesignFAQs = ({ faqs }) => {
                             </div>
                         </Accordion.Toggle>
                     </div>
-                    <Accordion.Collapse eventKey={faqs.order} className="card-body">
+                    <Accordion.Collapse eventKey={faq.order} className="card-body">
                         <div className="card-info">
                             {faq.anwser}
                         </div>
