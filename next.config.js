@@ -23,7 +23,9 @@ module.exports = withPWA({
       'i.ibb.co',
       'lh3.googleusercontent.com',
       'fiverr-res.cloudinary.com',
-      'cardano.ideascale.com'
+      'cardano.ideascale.com',
+      'secure.gravatar.com',
+      'app.ideascale.com'
     ],
   },
   ...(process.env.APPLICATION_MODE === 'production' && {

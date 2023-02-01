@@ -5,5 +5,5 @@ export const ConfigValue = {
   NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY:
     process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
   NEXT_PUBLIC_WEBSITE_URL: process.env.NEXT_PUBLIC_WEBSITE_URL,
-  AUTH_TOKEN_KEY: 'proskills39-auth-token',
+  AUTH_TOKEN_KEY: 'proskills39-auth-token'
 };

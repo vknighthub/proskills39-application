@@ -87,3 +87,72 @@ export interface LoginUserInput {
     username: string;
     password: string;
 }
+
+export interface Challenge {
+    challengeId: string;
+    challengeName: string;
+    tagline: string;
+    description: string;
+    summary: string;
+    bannerImage: string;
+    logoImage: string;
+    totalProposal: number;
+    challengeUrl: string;
+    instruction: string;
+}
+
+export interface ProposerInfor {
+    id: number;
+    name: string;
+    userName: string;
+    globalModerator: boolean;
+    admin: boolean;
+    ideaCount: number;
+    voteCount: number;
+    commentCount: number;
+    avatarUrl: string;
+    profileQuestions: JSON,
+    kudoCount: number;
+}
+export interface Proposal {
+    proposalId: number;
+    challengeId: number;
+    challengeName: string;
+    proposalName: string;
+    summaryProposal: string;
+    proposalLink: string;
+    bugetProposal: number;
+    voteCount: number;
+    upVoteCount: number;
+    downVoteCount: number;
+    tags: string[];
+    proposerInfor: ProposerInfor
+}
+
+export interface ProposalQueryOptions {
+    challengeId?: number;
+}
+
+
+interface PaginatorInfo<T> {
+    current_page: number;
+    data: T[];
+    first_page_url: string;
+    from: number;
+    last_page: number;
+    last_page_url: string;
+    links: any[];
+    next_page_url: string | null;
+    path: string;
+    per_page: number;
+    prev_page_url: string | null;
+    to: number;
+    total: number;
+}
+interface ResultInfo<T> {
+    result: {
+        data: T[]
+    }
+}
+
+export interface ChallegePaginator extends ResultInfo<Challenge> { }

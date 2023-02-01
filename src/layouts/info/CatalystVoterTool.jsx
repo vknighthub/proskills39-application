@@ -1,11 +1,12 @@
 import { useState } from "react";
 import Challenges from '@/layouts/info/Challenges'
 
-const CatalystVoterTool = ({
+const CatalystVoterTool = ({data
 
 }) => {
     const [activeToggle, setActiveToggle] = useState(false);
     const [active, setActive] = useState("Fund 9");
+    const challengelist = data.challenge.result.data
 
     return (
 
@@ -64,7 +65,7 @@ const CatalystVoterTool = ({
                 </form>
             </div>
 
-            <Challenges ></Challenges>
+            <Challenges data = {challengelist} />
 
         </div>
     )
