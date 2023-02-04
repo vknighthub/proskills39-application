@@ -23,7 +23,7 @@ const Challenges = ({ data }) => {
                 }}>
 
                 <Image
-                  src={challenge.bannerImage}
+                  src={challenge.imageUrl}
                   alt=""
                   width={460}
                   height={360}

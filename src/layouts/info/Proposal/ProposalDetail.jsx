@@ -1,6 +1,9 @@
+import { format } from 'currency-formatter';
+import parse from 'html-react-parser';
 import Image from "next/image";
 import Link from "next/link";
-import parse from 'html-react-parser'
+
+
 const ProposalDetail = ({ data }) => {
 
   return (
@@ -8,7 +11,7 @@ const ProposalDetail = ({ data }) => {
       <div className="section-title-wrapper">
       </div>
       <div className="featured-box grid-3-columns">
-        {data && data.map((proposal) => (
+        {data && data.listProposal && data.listProposal.map((proposal) => (
           <div className="featured-item" key={proposal.proposalId}>
             <div className="featured-item-wrapper">
               <div className="featured-item-content">
@@ -18,14 +21,7 @@ const ProposalDetail = ({ data }) => {
                   </svg>
                   <span className="count">{proposal.voteCount}</span>
                 </div>
-                <div className="featured-item-image">
-                  {" "}
-                  <Link href="/05-product-page">
 
-                    <img src="img/content/items/featured-item-1.png" alt="" />
-
-                  </Link>{" "}
-                </div>
                 <div className="featured-item-info">
                   <div className="title">
                     {" "}
@@ -33,10 +29,11 @@ const ProposalDetail = ({ data }) => {
                       {proposal.proposalName}
                     </Link>{" "}
                   </div>
+                  <p>{parse(proposal.descriptionDetail)}</p>
                   <div className="item-meta">
                     <span className="avatar box-26" >
                       <Link href="/08-profile-page">
-                        <Image src={proposal.proposerInfor.avatarUrl} alt="" width={30} height={30} />
+                        <Image src={proposal.proposerInfor.avatar} alt="" width={30} height={30} />
                       </Link>
                       <span className="verified">
                         <svg className="crumina-icon">
@@ -47,7 +44,7 @@ const ProposalDetail = ({ data }) => {
                     {proposal.contributors.map((contributor) => (
                       <span className="avatar box-26" key={contributor.id}>
                         <Link href="/08-profile-page">
-                          <Image src={contributor.avatarUrl} alt="" width={30} height={30} />
+                            <Image src={contributor.avatar} alt="" width={30} height={30} />
                         </Link>
                         <span className="verified">
                           <svg className="crumina-icon">
@@ -58,35 +55,28 @@ const ProposalDetail = ({ data }) => {
                     ))}
                   </div>
                   <p className="text-success">{parse(proposal.summaryProposal)}</p>
+                  <span className="gradient-text">Fund:</span> <i>{data.challengeName}</i>
                 </div>
               </div>
               <div className="featured-item-post-content">
                 <div className="featured-item-pricebox">
-                  <div className="price-caption">Current BID</div>
-                  <div className="price">4.07 ETH</div>
+                  <div className="price-caption">Current Budget</div>
+                  <div className="price"> {format(proposal.bugetProposal, { code: 'USD' })}</div>
                 </div>
                 <div className="social-share-box">
-                  <div className="social-caption">Share</div>
+                  <div className="social-caption">View proposal in idealscale</div>
                   <div className="share-icons">
-                    {" "}
 
-                    <svg className="crumina-icon">
-                      <use xlinkHref="#facebook-icon" />
-                    </svg>
-                    {" "}
-
-                    <svg className="crumina-icon">
-                      <use xlinkHref="#twitter-icon" />
-                    </svg>
-                    {" "}
-
-                    <svg className="crumina-icon">
-                      <use xlinkHref="#instagram-icon" />
-                    </svg>
+                    <Link target="_blank" href={`https://cardano.ideascale.com/c/idea/${proposal.proposalId}`}>
+                      <svg className="crumina-icon" style={{ width: '18px', height: '18px' }}>
+                        <use xlinkHref="#bell-icon" />
+                      </svg>
+                    </Link>
 
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         ))}

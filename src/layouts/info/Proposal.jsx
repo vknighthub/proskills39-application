@@ -5,8 +5,8 @@ import ProposalDetail from './Proposal/ProposalDetail'
 
 
 const Proposal = ({ data }) => {
-
   const proposal = data.result.data
+  console.log(proposal)
 
   return (
     <div className="primary-content-area container content-padding">
@@ -38,7 +38,7 @@ const Proposal = ({ data }) => {
             </div>
           </div>
           <div className="product-title">
-            <h1>{proposal[0].challengeName}</h1>
+            <h1>{proposal.challengeName}</h1>
           </div>
           <div className="favourite-section">
             <div className="product-fav-counter">

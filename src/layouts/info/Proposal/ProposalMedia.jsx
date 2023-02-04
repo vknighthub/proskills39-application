@@ -8,14 +8,14 @@ const ProposalMedia = ({ data }) => {
       <a
         className="expand-icon"
         data-fslightbox="gallery"
-        href="img/content/product-img/product-2.jpg"
+        href={data.challengeImage}
       >
         <svg className="crumina-icon">
           <use xlinkHref="#maximize-icon" />
         </svg>
       </a>
       <div className="product-img">
-        <Image src={product_2} width={300} height={300} alt="" />
+        <Image src={data.challengeImage} width={400} height={400} alt="" />
       </div>
     </div>
   );

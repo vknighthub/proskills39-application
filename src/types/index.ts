@@ -88,17 +88,15 @@ export interface LoginUserInput {
     password: string;
 }
 
-export interface Challenge {
-    challengeId: string;
-    challengeName: string;
-    tagline: string;
-    description: string;
-    summary: string;
-    bannerImage: string;
-    logoImage: string;
-    totalProposal: number;
-    challengeUrl: string;
-    instruction: string;
+
+
+
+export interface Contributors {
+    id: number;
+    name: string;
+    identityHidden: boolean;
+    username: string;
+    avatar: string
 }
 
 export interface ProposerInfor {
@@ -116,17 +114,25 @@ export interface ProposerInfor {
 }
 export interface Proposal {
     proposalId: number;
-    challengeId: number;
-    challengeName: string;
     proposalName: string;
     summaryProposal: string;
+    descriptionDetail: string;
     proposalLink: string;
     bugetProposal: number;
     voteCount: number;
     upVoteCount: number;
     downVoteCount: number;
     tags: string[];
-    proposerInfor: ProposerInfor
+    proposerInfor: ProposerInfor,
+    contributors:  Contributors []
+}
+
+export interface Challenge {
+    challengeId: string;
+    challengeName: string;
+    challengeImage: string;
+    challengeImageAltText: string;
+    listProposal: Proposal []
 }
 
 export interface ProposalQueryOptions {
