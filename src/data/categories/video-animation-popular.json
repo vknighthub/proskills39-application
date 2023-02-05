@@ -1,0 +1,209 @@
+[
+    {
+        "id": 1,
+        "name": "Video Editing",
+        "image": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/89ab9ac515a075a49a33b72518218e69-1630332670390/Video%20Editing.png",
+        "avifImage": "avif/content/items/featured-item-1.avif",
+        "featured": true,
+        "newest": true,
+        "category": [
+            "featured",
+            "illustrations"
+        ],
+        "type": "auctions-only",
+        "price": 4.07,
+        "react": "22",
+        "creatorVerified": true,
+        "ending": true,
+        "order": "oldest",
+        "author": {
+            "name": "DexterStark",
+            "email": "",
+            "image": "images/avatar"
+        }
+    },
+    {
+        "id": 2,
+        "name": "Video Ads & Commercials",
+        "image": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/89ab9ac515a075a49a33b72518218e69-1630332670370/Short%20Video%20Ads.png",
+        "avifImage": "avif/content/items/featured-item-1.avif",
+        "featured": true,
+        "newest": true,
+        "category": [
+            "featured",
+            "illustrations"
+        ],
+        "type": "auctions-only",
+        "price": 4.07,
+        "react": "22",
+        "creatorVerified": true,
+        "ending": true,
+        "order": "oldest",
+        "author": {
+            "name": "DexterStark",
+            "email": "",
+            "image": "images/avatar"
+        }
+    },
+    {
+        "id": 3,
+        "name": "Animated Explainers",
+        "image": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/4e99f7989f6e3ea9fc115fc017051455-1630332866288/Whiteboard%20_%20Animated%20Explainers.png",
+        "avifImage": "avif/content/items/featured-item-1.avif",
+        "featured": true,
+        "newest": true,
+        "category": [
+            "featured",
+            "illustrations"
+        ],
+        "type": "auctions-only",
+        "price": 4.07,
+        "react": "22",
+        "creatorVerified": true,
+        "ending": true,
+        "order": "oldest",
+        "author": {
+            "name": "DexterStark",
+            "email": "",
+            "image": "images/avatar"
+        }
+    },
+    {
+        "id": 4,
+        "name": "Character Animation",
+        "image": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/89ab9ac515a075a49a33b72518218e69-1630332670382/Character%20Animation.png",
+        "avifImage": "avif/content/items/featured-item-1.avif",
+        "featured": true,
+        "newest": true,
+        "category": [
+            "featured",
+            "illustrations"
+        ],
+        "type": "auctions-only",
+        "price": 4.07,
+        "react": "22",
+        "creatorVerified": true,
+        "ending": true,
+        "order": "oldest",
+        "author": {
+            "name": "DexterStark",
+            "email": "",
+            "image": "images/avatar"
+        }
+    },
+    {
+        "id": 5,
+        "name": "Social Media Videos",
+        "image": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/9d0390ca87e4f946f4b4126d5cd15332-1653292063612/Social%20Media%20Videos%20icon%29.png",
+        "avifImage": "avif/content/items/featured-item-1.avif",
+        "featured": true,
+        "newest": true,
+        "category": [
+            "featured",
+            "illustrations"
+        ],
+        "type": "auctions-only",
+        "price": 4.07,
+        "react": "22",
+        "creatorVerified": true,
+        "ending": true,
+        "order": "oldest",
+        "author": {
+            "name": "DexterStark",
+            "email": "",
+            "image": "images/avatar"
+        }
+    },
+    {
+        "id": 6,
+        "name": "E-Commerce Product Videos",
+        "image": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/89ab9ac515a075a49a33b72518218e69-1630332670387/E-Commerce%20Product%20Videos.png",
+        "avifImage": "avif/content/items/featured-item-1.avif",
+        "featured": true,
+        "newest": true,
+        "category": [
+            "featured",
+            "illustrations"
+        ],
+        "type": "auctions-only",
+        "price": 4.07,
+        "react": "22",
+        "creatorVerified": true,
+        "ending": true,
+        "order": "oldest",
+        "author": {
+            "name": "DexterStark",
+            "email": "",
+            "image": "images/avatar"
+        }
+    },
+    {
+        "id": 7,
+        "name": "Logo Animation",
+        "image": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/89ab9ac515a075a49a33b72518218e69-1630332670372/Logo%20Animation.png",
+        "avifImage": "avif/content/items/featured-item-1.avif",
+        "featured": true,
+        "newest": true,
+        "category": [
+            "featured",
+            "illustrations"
+        ],
+        "type": "auctions-only",
+        "price": 4.07,
+        "react": "22",
+        "creatorVerified": true,
+        "ending": true,
+        "order": "oldest",
+        "author": {
+            "name": "DexterStark",
+            "email": "",
+            "image": "images/avatar"
+        }
+    },
+    {
+        "id": 8,
+        "name": "Visual Effects",
+        "image": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/89ab9ac515a075a49a33b72518218e69-1630332670372/Logo%20Animation.png",
+        "avifImage": "avif/content/items/featured-item-1.avif",
+        "featured": true,
+        "newest": true,
+        "category": [
+            "featured",
+            "illustrations"
+        ],
+        "type": "auctions-only",
+        "price": 4.07,
+        "react": "22",
+        "creatorVerified": true,
+        "ending": true,
+        "order": "oldest",
+        "author": {
+            "name": "DexterStark",
+            "email": "",
+            "image": "images/avatar"
+        }
+    },
+    {
+        "id": 8,
+        "name": "3D Product Animation",
+        "image": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/89ab9ac515a075a49a33b72518218e69-1630332670388/3D%20Product%20Animation.png",
+        "avifImage": "avif/content/items/featured-item-1.avif",
+        "featured": true,
+        "newest": true,
+        "category": [
+            "featured",
+            "illustrations"
+        ],
+        "type": "auctions-only",
+        "price": 4.07,
+        "react": "22",
+        "creatorVerified": true,
+        "ending": true,
+        "order": "oldest",
+        "author": {
+            "name": "DexterStark",
+            "email": "",
+            "image": "images/avatar"
+        }
+    }
+]
