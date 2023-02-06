@@ -18,6 +18,10 @@ const DefaultSeo = () => {
           name: 'theme-color',
           content: '#ffffff',
         },
+        {
+          name: "google-site-verification",
+          content: "rxpEgRNKWEX3LEHdmS712_PxAwygWDoCK69N0AOouNA"
+        }
       ]}
       additionalLinkTags={[
         {
@@ -30,9 +34,8 @@ const DefaultSeo = () => {
         },
       ]}
       title={settings?.seo?.metaTitle}
-      titleTemplate={`${
-        settings?.seo?.metaTitle || settings?.siteTitle || 'Proskills39'
-      } | %s`}
+      titleTemplate={`${settings?.seo?.metaTitle || settings?.siteTitle || 'Proskills39'
+        } | %s`}
       defaultTitle="ProSkills39"
       description={settings?.seo?.metaDescription || settings?.siteSubtitle}
       canonical={settings?.seo?.canonicalUrl}
