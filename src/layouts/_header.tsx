@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <header className="site-header">
-      <meta name="google-site-verification" content="rxpEgRNKWEX3LEHdmS712_PxAwygWDoCK69N0AOouNA" />
+      
       <div className="topbar padding-top-bottom border-bottom">
         <div className="topbar-wrapper container">
           <MobileHeader />
