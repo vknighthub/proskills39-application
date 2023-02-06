@@ -36,7 +36,7 @@ export default function Logo({
         )}
         {isMounted && !isDarkMode && (
           <Image
-            src={settings?.logo?.original ?? lightLogo}
+            src={settings?.logo?.original ?? lightLogo} 
             layout="fill"
             objectFit="contain"
             loading="eager"

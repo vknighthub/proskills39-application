@@ -25,7 +25,8 @@ module.exports = withPWA({
       'fiverr-res.cloudinary.com',
       'cardano.ideascale.com',
       'secure.gravatar.com',
-      'app.ideascale.com'
+      'app.ideascale.com',
+      'fileup.to'
     ],
   },
   ...(process.env.APPLICATION_MODE === 'production' && {

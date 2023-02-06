@@ -1,8 +1,9 @@
 import { NextSeo, NextSeoProps } from 'next-seo'
 interface SeoProps extends NextSeoProps {
-  url: string
+  url: string,
+  image_url: string
 }
-const Seo = ({ title, description, url, ...props }: SeoProps) => {
+const Seo = ({ title, description, url, image_url, ...props }: SeoProps) => {
   return (
     <NextSeo
       title={title}
@@ -11,6 +12,14 @@ const Seo = ({ title, description, url, ...props }: SeoProps) => {
         url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${url}`,
         title,
         description,
+        images: [
+          {
+            url: image_url,
+            width: 800,
+            height: 600,
+            alt: title,
+          },
+        ]
       }}
       {...props}
     />

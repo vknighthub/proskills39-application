@@ -14,12 +14,13 @@ export type NextPageWithLayout<P = {}> = NextPage<P> & {
 
 export interface Attachment {
     id: string;
+    imagetype?: string;
     original: string;
     thumbnail: string;
-    __typename?: string;
 }
 
 export interface SEO {
+    seo_id:number;
     metaTitle: string;
     metaDescription: string;
     ogTitle: string;
@@ -42,31 +43,34 @@ export interface ContactDetails {
     email: string;
 }
 
+export interface DeliveryTime {
+    title: string;
+    description: string;
+}
 export interface Settings {
     id: string;
     options: {
+        option_id: number;
         siteTitle: string;
+        taxClass: number;
+        dark_logo: Attachment;
+        deliveryTime: DeliveryTime;
         siteSubtitle: string;
         currency: string;
         logo: Attachment;
         seo: SEO;
         contactDetails: ContactDetails;
-    };
+        signupPoints: number;
+        minimumOrderAmount: number;
+        maximumQuestionLimit: number;
+        currencyToWalletRatio: string;
+    },
+    language: string,
+    created_at: Date,
+    updated_at: Date;
 }
 export interface SettingsQueryOptions extends QueryOptions {
     language?: string;
-}
-
-export interface Settings {
-    id: string;
-    options: {
-        siteTitle: string;
-        siteSubtitle: string;
-        currency: string;
-        logo: Attachment;
-        seo: SEO;
-        contactDetails: ContactDetails;
-    };
 }
 
 export interface User {
@@ -124,7 +128,7 @@ export interface Proposal {
     downVoteCount: number;
     tags: string[];
     proposerInfor: ProposerInfor,
-    contributors:  Contributors []
+    contributors: Contributors[]
 }
 
 export interface Challenge {
@@ -132,7 +136,7 @@ export interface Challenge {
     challengeName: string;
     challengeImage: string;
     challengeImageAltText: string;
-    listProposal: Proposal []
+    listProposal: Proposal[]
 }
 
 export interface ProposalQueryOptions {
