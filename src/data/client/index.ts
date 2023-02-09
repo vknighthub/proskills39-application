@@ -1,4 +1,4 @@
-import { ChallegePaginator, Challenge, Proposal, ProposalQueryOptions, Settings, SettingsQueryOptions, User } from "@/types";
+import { ChallegePaginator, Challenge, Proposal, ProposalDetailType, ProposalQueryOptions, Settings, SettingsQueryOptions, User } from "@/types";
 import { API_ENDPOINTS } from "./endpoints";
 import { HttpClient } from './http-client';
 
@@ -22,7 +22,8 @@ class Client {
     proposal = {
         all: (query?: ProposalQueryOptions) =>
             HttpClient.get(`${API_ENDPOINTS.DREP_PROPOSAL}/${query?.challengeId}`),
-        get: (challengeid: string | undefined) => HttpClient.get<Proposal>(`${API_ENDPOINTS.DREP_PROPOSAL}/${challengeid}`)
+        get: (challengeid: string | undefined) => HttpClient.get<Proposal>(`${API_ENDPOINTS.DREP_PROPOSAL}/${challengeid}`),
+        getbyid: (proposalid: string | undefined) => HttpClient.get<ProposalDetailType>(`${API_ENDPOINTS.DREP_PROPOSALBYID}/${proposalid}`)
     }
 }
 // eslint-disable-next-line import/no-anonymous-default-export

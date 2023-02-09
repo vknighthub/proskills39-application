@@ -1,12 +1,12 @@
 import ProposalInfo from './Proposal/Proposalnfo'
 import ProposalMedia from './Proposal/ProposalMedia'
 import ProposalMeta from './Proposal/ProposalMeta'
-import ProposalDetail from './Proposal/ProposalDetail'
+import ProposalDetail from './Proposal/ProposalList'
+import ProposalList from './Proposal/ProposalList';
 
 
 const Proposal = ({ data }) => {
   const proposal = data.result.data
-  console.log(proposal)
 
   return (
     <div className="primary-content-area container content-padding">
@@ -45,14 +45,7 @@ const Proposal = ({ data }) => {
               <svg className="crumina-icon">
                 <use xlinkHref="#heart-icon" />
               </svg>
-              <span className="count">105</span>
-            </div>
-            <div className="more-link">
-              <a href="#">
-                <svg className="crumina-icon">
-                  <use xlinkHref="#dots-icon" />
-                </svg>
-              </a>
+              <span className="count">{proposal.voteCount}</span>
             </div>
           </div>
         </div>
@@ -66,7 +59,7 @@ const Proposal = ({ data }) => {
         </div>
 
 
-        <ProposalDetail data={proposal} />
+        <ProposalList data={proposal} />
 
 
 

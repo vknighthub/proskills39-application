@@ -20,7 +20,7 @@ export interface Attachment {
 }
 
 export interface SEO {
-    seo_id:number;
+    seo_id: number;
     metaTitle: string;
     metaDescription: string;
     ogTitle: string;
@@ -136,9 +136,13 @@ export interface Challenge {
     challengeName: string;
     challengeImage: string;
     challengeImageAltText: string;
-    listProposal: Proposal[]
+    listProposal: Proposal[] | undefined;
 }
-
+export interface ProposalDetailType {
+    challenge_infor: Challenge;
+    proposal_infor: Proposal;
+    assessment_infor: JSON;
+}
 export interface ProposalQueryOptions {
     challengeId?: number;
 }

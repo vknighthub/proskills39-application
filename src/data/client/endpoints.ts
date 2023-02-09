@@ -4,5 +4,6 @@ export const API_ENDPOINTS = {
     USERS_LOGOUT: '/logout',
     DREP_FUND: '/drep/getallfund',
     DREP_CHALLENGE: '/drep/getchallengebyfundid',
-    DREP_PROPOSAL: '/drep/getallproposalbychallengeid'
+    DREP_PROPOSAL: '/drep/getallproposalbychallengeid',
+    DREP_PROPOSALBYID: '/drep/getproposalbyid'
 }
