@@ -27,11 +27,7 @@ const DefaultSeo = () => {
         {
           rel: 'apple-touch-icon',
           href: 'icons/apple-icon-180.png',
-        },
-        {
-          rel: 'manifest',
-          href: '/manifest.json',
-        },
+        }
       ]}
       title={settings?.seo?.metaTitle}
       titleTemplate={`${settings?.seo?.metaTitle || settings?.siteTitle || 'Proskills39'
