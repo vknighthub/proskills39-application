@@ -10,8 +10,8 @@ const Seo = ({ title, description, url, image_url, ...props }: SeoProps) => {
       description={description}
       openGraph={{
         url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${url}`,
-        title,
-        description,
+        title: title,
+        description: description,
         images: [
           {
             url: image_url,
