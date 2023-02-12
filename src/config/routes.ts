@@ -1,5 +1,8 @@
 const routes = {
     home: '',
-    grapphic_design: 'categories/graphics-design'
+    categories: {
+        grapphic_design: 'categories/graphics-design',
+        programing_tech: 'categories/programing-tech'
+    }
 }
 export default routes;

@@ -26,7 +26,8 @@ module.exports = withPWA({
       'cardano.ideascale.com',
       'secure.gravatar.com',
       'app.ideascale.com',
-      'fileup.to'
+      'fileup.to',
+      'api.proskills39.com'
     ],
   },
   ...(process.env.APPLICATION_MODE === 'production' && {

@@ -14,14 +14,14 @@ import routes from '@/config/routes';
 
 type Props = {}
 
-export default function GrapphicsDesign({ }: Props) {
+export default function ProgrammingTech({ }: Props) {
     return (
         <>
             <Seo
-                title="ProSkills39 - Graphics & Design"
-                description="Put simply, graphic design is the art and craft of creating visual content that communicates a concept, an idea or a brand message to the public. Logos, artworks, drawings, illustrations, cards, emails and a whole paraphernalia of designs are all around us. You can see them in print and digital media, in shops, restaurants and cafes, on billboards, books and magazines, in the apps we use, the sites we visit and the physical and digital products we buy."
-                url={routes.grapphic_design}
-                image_url='https://proskills39.com/_next/image?url=https%3A%2F%2Ffiverr-res.cloudinary.com%2Fimage%2Fupload%2Ff_auto%2Cq_auto%2Fv1%2Fattachments%2Fgeneric_asset%2Fasset%2F431c7d880582a199f5b240dde2694206-1626594004536%2FLogo%2520_%2520Brand%2520Identity_B_2x.png&w=384&q=75'
+                title="ProSkills39 - Programing & Technical"
+                description="Web programming or development use code to focus on the website functionality and ensure it works and is easy to use. It involves markup, writing, network security and coding which is client and server side. The most popular web programming languages are HTML, XML, JavaScript, PHP, ASP.Net and Python."
+                url={routes.programing_tech}
+                image_url='http://api.proskills39.com/system/categories/image/1-programming-tech-desktop.png'
             />
             <Layout>
                 <div className="container section-padding overflow-hidden">

@@ -7,6 +7,11 @@ export interface QueryOptions {
     language?: string;
 }
 
+export interface GetParams {
+    slug: string;
+    language?: string;
+}
+
 export type NextPageWithLayout<P = {}> = NextPage<P> & {
     authorization?: boolean;
     getLayout?: (page: ReactElement) => ReactNode;
@@ -170,3 +175,29 @@ interface ResultInfo<T> {
 }
 
 export interface ChallegePaginator extends ResultInfo<Challenge> { }
+
+
+export interface Category {
+    id: number;
+    name: string;
+    slug: string;
+    language: string;
+    icon: string | undefined;
+    image: string;
+    details: string | undefined;
+    type_id: string | undefined;
+    created_at: Date | undefined;
+    updated_at: Date | undefined;
+    deleted_at: Date | undefined;
+    translated_languages: string | undefined;
+    type: string | undefined;
+    parent_id: number;
+    url: string | undefined;
+    menu_level: number;
+    slice_number: number;
+    menutype: string | undefined;
+    totalservices: number;
+    children: undefined;
+}
+export interface CategoriesPaginator extends ResultInfo<Category> { }
+

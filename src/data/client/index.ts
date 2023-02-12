@@ -1,4 +1,4 @@
-import { ChallegePaginator, Challenge, Proposal, ProposalDetailType, ProposalQueryOptions, Settings, SettingsQueryOptions, User } from "@/types";
+import { CategoriesPaginator, Category, ChallegePaginator, Challenge, GetParams, Proposal, ProposalDetailType, ProposalQueryOptions, Settings, SettingsQueryOptions, User } from "@/types";
 import { API_ENDPOINTS } from "./endpoints";
 import { HttpClient } from './http-client';
 
@@ -24,6 +24,12 @@ class Client {
             HttpClient.get(`${API_ENDPOINTS.DREP_PROPOSAL}/${query?.challengeId}`),
         get: (challengeid: string | undefined) => HttpClient.get<Proposal>(`${API_ENDPOINTS.DREP_PROPOSAL}/${challengeid}`),
         getbyid: (proposalid: string | undefined) => HttpClient.get<ProposalDetailType>(`${API_ENDPOINTS.DREP_PROPOSALBYID}/${proposalid}`)
+    }
+    categories = {
+        all: (params?: SettingsQueryOptions) =>
+            HttpClient.get<CategoriesPaginator>(API_ENDPOINTS.CATEGORIES, { ...params }),
+        get: ({ slug, language }: GetParams) => HttpClient.get<Category>(`${API_ENDPOINTS.CATEGORIESPAGE}/${slug}`, { language }),
+
     }
 }
 // eslint-disable-next-line import/no-anonymous-default-export
