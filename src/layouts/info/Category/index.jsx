@@ -17,9 +17,6 @@ const Category = ({ data }) => {
             <CategoryPopular data={category} />
             <CategoryExplore data={category} />
             <CategoryFAQs data={category} />
-
-
-
         </>
     )
 }
