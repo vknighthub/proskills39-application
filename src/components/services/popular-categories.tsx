@@ -6,6 +6,7 @@ const data = [
     {
         id: 1,
         name: 'Program & Tech',
+        slug:'/categories/programing-&-tech-1',
         image: 'img/content/items/featured-item-1.png',
         avifImage: 'avif/content/items/featured-item-1.avif',
         icon: 'program-tech',
@@ -27,6 +28,7 @@ const data = [
     {
         id: 2,
         name: 'Graphics & Design',
+        slug:'/categories/graphics-&-design-2',
         image: 'img/content/items/featured-item-2.png',
         avifImage: 'avif/content/items/featured-item-2.avif',
         icon: 'graphics-design',
@@ -49,6 +51,7 @@ const data = [
     {
         id: 3,
         name: 'Digital Marketing',
+        slug:'/categories/digital-marketing-3',
         image: 'img/content/items/featured-item-3.png',
         avifImage: 'avif/content/items/featured-item-3.avif',
         icon: 'digital-marketing',
@@ -70,6 +73,7 @@ const data = [
     {
         id: 4,
         name: 'Writting & translation',
+        slug:'/categories/writing-&-translation-4',
         image: 'img/content/items/featured-item-4.png',
         avifImage: 'avif/content/items/featured-item-4.avif',
         icon: 'writting-translation',
@@ -92,6 +96,7 @@ const data = [
     {
         id: 5,
         name: 'Video & Annimation',
+        slug:'/categories/video-&-animation-5',
         image: 'img/content/items/featured-item-5.png',
         avifImage: 'avif/content/items/featured-item-5.avif',
         icon: 'video-animation',
@@ -114,6 +119,7 @@ const data = [
     {
         id: 6,
         name: 'Music & Audio',
+        slug:'/categories/music-videos-181',
         image: 'img/content/items/featured-item-6.png',
         avifImage: 'avif/content/items/featured-item-6.avif',
         icon: 'music-audio',
@@ -135,6 +141,7 @@ const data = [
     {
         id: 7,
         name: 'Business',
+        slug:'/categories/business-7',
         image: 'img/content/items/featured-item-8.png',
         avifImage: 'avif/content/items/featured-item-8.avif',
         icon: 'business',
@@ -157,6 +164,7 @@ const data = [
     {
         id: 8,
         name: 'Lifestyle',
+        slug:'/categories/lifestyle-8',
         image: 'img/content/items/featured-item-9.png',
         avifImage: 'avif/content/items/featured-item-9.avif',
         icon: 'lifestyle',

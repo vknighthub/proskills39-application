@@ -119,13 +119,11 @@ const ProfileDropdown = ({ user }) => {
                     <ul className="profile-menu">
                         <li className="profile">
                             {" "}
-                            <Link legacyBehavior href="/23-profile-info">
-                                <a>
+                            <Link href="/profile-info">
                                     <svg className="crumina-icon">
                                         <use xlinkHref="#user-icon" />
                                     </svg>
                                     Profile Info
-                                </a>
                             </Link>{" "}
                         </li>
                         <li className="account">

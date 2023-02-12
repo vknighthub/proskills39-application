@@ -16,7 +16,7 @@ export default function Logo({
   const { settings }: any = useSettings()
 
   return (
-    <AnchorLink href={routes.home} className="logo-link" {...props}>
+    <AnchorLink href={`/${routes.home}`} className="logo-link" {...props}>
       <div
         className="logo-img"
         style={{
@@ -36,7 +36,7 @@ export default function Logo({
         )}
         {isMounted && !isDarkMode && (
           <Image
-            src={settings?.logo?.original ?? lightLogo} 
+            src={settings?.logo?.original ?? lightLogo}
             layout="fill"
             objectFit="contain"
             loading="eager"

@@ -2,7 +2,7 @@ import Logo from "@/components/ui/logo";
 import Link from "next/link";
 
 import aboutus from "./../data/categories/aboutus.json";
-import categories from "./../data/categories/categories.json";
+import categories from "./../data/categories/index.json";
 import community from "./../data/categories/community.json";
 import support from "./../data/categories/support.json";
 
@@ -96,8 +96,8 @@ export default function Footer() {
                                     {categories.map((category, index) => (
                                         <li key={index} className="menu-item">
                                             {" "}
-                                            <Link legacyBehavior href="/">
-                                                <a className="menu-link">{category.name}</a>
+                                            <Link legacyBehavior href={category.url}>
+                                                <a className="menu-link">{category.name.en}</a>
                                             </Link>{" "}
                                         </li>
                                     ))}

@@ -17,42 +17,38 @@ const Categories = ({ data }) => {
             case "writting-translation": return <WrittingTranslationIcon style={{ width: "80px", height: "80" }} />
             case "video-animation": return <VideoAnimationIcon style={{ width: "80px", height: "80" }} />
             case "music-audio": return <MusicAudioIcon style={{ width: "80px", height: "80" }} />
-            case "business": return <BusinessIcon style={{ width: "80px", height: "80"}} />
-            case "lifestyle" : return <LifeStyleIcon style={{ width: "80px", height:"80"}} /> 
+            case "business": return <BusinessIcon style={{ width: "80px", height: "80" }} />
+            case "lifestyle": return <LifeStyleIcon style={{ width: "80px", height: "80" }} />
             default: return null;
         }
     }
     return (
         data.map((categories, index) => (
             <div className="featured-item" key={index}>
-                <div className="featured-item-wrapper">
-                    <div className="featured-item-content">
-                        <div className="fav-counter">
-                            <svg className="crumina-icon">
-                                <use xlinkHref="#heart-icon" />
-                            </svg>{" "}
-                            <span className="count">{categories.react}</span>
-                        </div>
-                        <div className="featured-item-image">
-                            {" "}
-                            <Link href="/05-product-page">
+                <Link href={categories.slug}>
+                    <div className="featured-item-wrapper">
+                        <div className="featured-item-content">
+                            <div className="fav-counter">
+                                <svg className="crumina-icon">
+                                    <use xlinkHref="#heart-icon" />
+                                </svg>{" "}
+                                <span className="count">{categories.react}</span>
+                            </div>
+                            <div className="featured-item-image">
 
-                            </Link>{" "}
-                        </div>
-                        <div className="featured-item-info">
-                            <div className="title">
-                                {" "}
-                                <Link href="/05-product-page">
+                            </div>
+                            <div className="featured-item-info">
+                                <div className="title">
                                     {categories.name}
-                                </Link>{" "}
-                            </div>
-                            <div className="item-meta">
-                                {renderIcon(categories.icon)}
+                                </div>
+                                <div className="item-meta">
+                                    {renderIcon(categories.icon)}
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                </div>
+                    </div>
+                </Link>
             </div>
         ))
 
