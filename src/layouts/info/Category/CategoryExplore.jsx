@@ -2,7 +2,6 @@ import Image from '@/components/ui/image';
 import Link from "next/link";
 
 const CategoryExplore = ({ data }) => {
-    console.log(data)
     return (
 
         <div className="container section-padding overflow-hidden">
