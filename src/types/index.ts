@@ -97,7 +97,14 @@ export interface LoginUserInput {
     password: string;
 }
 
-
+export interface AuthResponse {
+    errorcode: string;
+    messagedetail: string;
+    result: {
+        token: string;
+        permissions: string[];
+    }
+}
 
 
 export interface Contributors {

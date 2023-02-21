@@ -10,6 +10,8 @@ import { useEffect, useState } from 'react'
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 import { SessionProvider } from 'next-auth/react'
+import { ToastProvider } from '@/components/utils/Toast'
+import { Toaster } from 'react-hot-toast'
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
@@ -35,18 +37,23 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
-        <SessionProvider>
-          <>
-            <DefaultSeo />
-            {authenticationRequired ? (
-              <PrivateRoute>
-                {getLayout(<Component {...pageProps} />)}
-              </PrivateRoute>
-            ) : (
-              getLayout(<Component {...pageProps} />)
-            )}
-          </>
-        </SessionProvider>
+        <ToastProvider>
+          <SessionProvider>
+            <>
+              <DefaultSeo />
+              {authenticationRequired ? (
+                <PrivateRoute>
+                  {getLayout(<Component {...pageProps} />)}
+                </PrivateRoute>
+              ) : (
+                getLayout(<Component {...pageProps} />)
+              )}
+              <Toaster
+                position="top-right"
+                reverseOrder={false} />
+            </>
+          </SessionProvider>
+        </ToastProvider>
       </Hydrate>
       <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
     </QueryClientProvider>
