@@ -7,6 +7,9 @@ export interface QueryOptions {
     language?: string;
 }
 
+export interface QueryToken {
+    token: string | null | undefined;
+}
 export interface GetParams {
     slug: string;
     language?: string;
@@ -97,12 +100,70 @@ export interface LoginUserInput {
     password: string;
 }
 
+export interface UserProfileResult {
+    result: {
+        data: UserProfile
+    }
+}
+
+export interface UserProfile {
+    usrid: number,
+    username: string,
+    fullname: string,
+    firstname: string,
+    midname: string,
+    lastname: string,
+    gender: number,
+    country: string,
+    city: string,
+    province: string,
+    district: string,
+    address: string,
+    email: string,
+    birthday: Date,
+    phone: string,
+    lastlogintime: Date,
+    status: string,
+    datecreated: Date,
+    datemodified: Date,
+    islogin: boolean,
+    expiretime: Date,
+    failnumber: number,
+    avatar: string,
+    faceid: string,
+    licensetype: string,
+    licenseid: string,
+    aboutme: string,
+    descriptions: string,
+    lastdelivery: Date,
+    token: string | null | undefined,
+}
+export interface UserInfor {
+    username: string,
+    firstname: string,
+    lastname: string,
+    gender: number,
+    address: string,
+    email: string,
+    birthday: Date,
+    phone: string,
+    status: string,
+    usercreated: Date,
+    datecreated: Date,
+    expiretime: Date,
+    isshow: number,
+    failnumber: number,
+    token: string,
+    token_type: string,
+    avatar: string,
+    faceid: string
+}
 export interface AuthResponse {
     errorcode: string;
     messagedetail: string;
     result: {
-        token: string;
-        permissions: string[];
+        status: number;
+        data: UserInfor
     }
 }
 

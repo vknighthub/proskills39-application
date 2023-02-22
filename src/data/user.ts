@@ -1,20 +1,21 @@
-import type { User } from '@/types';
 import useAuth from '@/components/auth/use-auth';
+import type { QueryToken, UserProfile, UserProfileResult } from '@/types';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
 import client from './client';
 import { API_ENDPOINTS } from './client/endpoints';
 
-export function useMe() {
-  const { isAuthorized } = useAuth();
-  const { data, isLoading, error } = useQuery<User, Error>(
+export const useMe = () => {
+  const { getToken, isAuthorized } = useAuth();
+  const { data, isLoading, error } = useQuery<UserProfileResult, Error>(
     [API_ENDPOINTS.USERS_ME],
     client.users.me,
     {
       enabled: isAuthorized,
     }
   );
+
   return {
-    me: data,
+    me: data?.result,
     isLoading,
     error,
     isAuthorized,

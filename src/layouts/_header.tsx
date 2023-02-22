@@ -1,4 +1,5 @@
 import Logo from '@/components/ui/logo';
+import { useMe } from '@/data/user';
 import { useSession } from 'next-auth/react';
 import { useState } from 'react';
 import ActionHeader from './header/ActionHeader';
@@ -12,22 +13,22 @@ export default function Header() {
   const [searchToggle, setSearchToggle] = useState(false);
   const { data: session } = useSession();
 
+  const { me, isAuthorized } = useMe();
+
   return (
     <header className="site-header">
-      
+
       <div className="topbar padding-top-bottom border-bottom">
         <div className="topbar-wrapper container">
           <MobileHeader />
           <Logo />
           <SearchBox />
 
-
-
-          {session ?
+          <ButtonHeader name="dRep" link='/dRep' />
+          {(session || isAuthorized) ?
             <>
-              <ButtonHeader name="Order" link='/login' />
-              <ButtonHeader name="dRep" link='/dRep' />
-              <ProfileDropdown user={session?.user} />
+              <ButtonHeader name="Order" link='/order' />
+              {<ProfileDropdown profile={session ? session : me} />}
             </>
             :
             <>

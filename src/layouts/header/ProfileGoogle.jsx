@@ -1,12 +1,16 @@
-import avatar from '@/assets/images/avatar.png';
-import { useLogout } from "@/data/user";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import useClickOutside from "@/lib/hooks/useClickOutside";
+import avatar from '@/assets/images/avatar.png';
+import { signOut } from 'next-auth/react';
 
-const ProfileDropdown = ({ profile }) => {
+const ProfileGoogle = ({ profile }) => {
     const [toggle, setToggle] = useState(false);
-    const dayMood = useRef(true)
+    const dayMood = useRef(true);
+    let domNode = useClickOutside(() => {
+        setToggle(false);
+    });
 
     useEffect(() => {
         let mood = localStorage.getItem("mood");
@@ -30,6 +34,10 @@ const ProfileDropdown = ({ profile }) => {
         moodChange(dayMood.current);
     };
 
+    const logOut = () => {
+        
+    }
+
     const { mutate: logout } = useLogout();
 
 
@@ -41,6 +49,7 @@ const ProfileDropdown = ({ profile }) => {
                 <div
                     className={`header-user-profile cryptoki-notif-bttn ${toggle ? "active" : ""
                         }`}
+                    ref={domNode}
                 >
                     <div className="user-meta" onClick={() => setToggle(!toggle)}>
                         <div className="user_name">{userData.fullname}</div>
@@ -178,12 +187,12 @@ const ProfileDropdown = ({ profile }) => {
                                 </li>
                                 <li className="logout">
                                     {" "}
-                                    <Link href="/" onClick={() => logout()}>
+                                    <a href="#" onClick={() => logOut()}>
                                         <svg className="crumina-icon">
                                             <use xlinkHref="#logout-icon" />
                                         </svg>
                                         Log Out
-                                    </Link>
+                                    </a>
                                 </li>
                             </ul>
 
@@ -217,4 +226,4 @@ const ProfileDropdown = ({ profile }) => {
         </>
     );
 };
-export default ProfileDropdown;
+export default ProfileGoogle;

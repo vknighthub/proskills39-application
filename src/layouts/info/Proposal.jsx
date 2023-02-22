@@ -1,8 +1,7 @@
-import ProposalInfo from './Proposal/Proposalnfo'
-import ProposalMedia from './Proposal/ProposalMedia'
-import ProposalMeta from './Proposal/ProposalMeta'
-import ProposalDetail from './Proposal/ProposalList'
 import ProposalList from './Proposal/ProposalList';
+import ProposalMedia from './Proposal/ProposalMedia';
+import ProposalMeta from './Proposal/ProposalMeta';
+import ProposalInfo from './Proposal/Proposalnfo';
 
 
 const Proposal = ({ data }) => {
@@ -57,8 +56,8 @@ const Proposal = ({ data }) => {
           <ProposalMedia data={proposal} />
           <ProposalMeta data={proposal} />
         </div>
-
-
+          
+      
         <ProposalList data={proposal} />
 
 

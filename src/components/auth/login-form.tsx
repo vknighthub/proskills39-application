@@ -9,6 +9,7 @@ import toast from 'react-hot-toast';
 import { useMutation } from 'react-query';
 import Swal from 'sweetalert2';
 import * as yup from 'yup';
+import { useRouter } from 'next/router'
 
 
 const loginValidationSchema = yup.object().shape({
@@ -19,16 +20,19 @@ const loginValidationSchema = yup.object().shape({
 export default function LoginUserForm() {
   const { t } = useTranslation('common');
   const { authorize } = useAuth();
+  const router = useRouter()
 
-  const { mutate: login } = useMutation(client.users.login, {
+  const { mutate: login, isSuccess } = useMutation(client.users.login, {
     onSuccess: (data) => {
-      if (!data.result.token) {
+      if (!data.result.data.token) {
         toast.error(<b>{t('text-wrong-user-name-and-pass')}</b>, {
           className: '-mt-10 xs:mt-0',
         });
         return;
+      } else {
+
       }
-      authorize(data.result.token);
+      authorize(data.result.data.token);
     },
     onError: (errorAsUnknown) => {
       const error = errorAsUnknown as AxiosError<AuthResponse>;
@@ -39,9 +43,23 @@ export default function LoginUserForm() {
         title: 'Oops...',
         text: `${error?.response?.status === 400 ? error?.response?.data.messagedetail : 'Error'}`,
       })
-      
+
     }
   });
+
+  if (isSuccess) {
+    Swal.fire({
+      position: 'top',
+      icon: 'success',
+      color: 'green',
+      text: `Success`,
+    }).then(response => {
+      if (response.value) {
+        router.push('/')
+        router.reload()
+      }
+    })
+  }
 
   const {
     register,
@@ -52,8 +70,10 @@ export default function LoginUserForm() {
   });
 
   const onSubmit: SubmitHandler<LoginUserInput> = (data) => {
-    login(data);
+    login(data)
   };
+
+
 
   return (
 

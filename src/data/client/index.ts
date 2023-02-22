@@ -1,4 +1,4 @@
-import { AuthResponse, CategoriesPaginator, Category, ChallegePaginator, Challenge, GetParams, LoginUserInput, Proposal, ProposalDetailType, ProposalQueryOptions, Settings, SettingsQueryOptions, User } from "@/types";
+import { AuthResponse, CategoriesPaginator, Category, ChallegePaginator, Challenge, GetParams, LoginUserInput, Proposal, ProposalDetailType, ProposalQueryOptions, Settings, SettingsQueryOptions, UserProfileResult } from "@/types";
 import { API_ENDPOINTS } from "./endpoints";
 import { HttpClient } from './http-client';
 
@@ -8,7 +8,7 @@ class Client {
             HttpClient.get<Settings>(API_ENDPOINTS.SETTINGS, { ...params })
     }
     users = {
-        me: () => HttpClient.get<User>(API_ENDPOINTS.USERS_ME),
+        me: () => HttpClient.get<UserProfileResult>(API_ENDPOINTS.USERS_ME),
         logout: () => HttpClient.post<boolean>(API_ENDPOINTS.USERS_LOGOUT, {}),
         login: (input: LoginUserInput) =>
             HttpClient.post<AuthResponse>(API_ENDPOINTS.USERS_LOGIN, input),

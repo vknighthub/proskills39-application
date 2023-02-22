@@ -5,8 +5,8 @@ const ButtonHeader = ({ name, link }) => {
         <div className="collection-box">
             <Link
                 className="btn btn-normal btn-dark create-collection"
-                to={link}
-                href={link}>
+                href={{ pathname: link }}
+            >
                 {name}
             </Link>
 

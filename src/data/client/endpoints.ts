@@ -1,8 +1,8 @@
 export const API_ENDPOINTS = {
     SETTINGS: '/system/settings',
-    USERS_ME: '/me',
+    USERS_ME: '/user/getuserprofile',
     USERS_LOGIN: '/user/login',
-    USERS_LOGOUT: '/logout',
+    USERS_LOGOUT: '/user/logout',
     DREP_FUND: '/drep/getallfund',
     DREP_CHALLENGE: '/drep/getchallengebyfundid',
     DREP_PROPOSAL: '/drep/getallproposalbychallengeid',
