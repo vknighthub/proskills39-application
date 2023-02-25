@@ -5,8 +5,6 @@ import ProfileInfoSidebar from '@/layouts/info/Profile/ProfileInfoSidebar'
 import ProfileInfoForm from '@/layouts/info/Profile/ProfileInfoForm'
 import ProfileInfoAvatar from '@/layouts/info/Profile/ProfileInfoAvatar'
 
-
-
 const ProfileInformation: NextPageWithLayout = () => {
     return (
         <div className="primary-content-area container content-padding grid-left-sidebar">

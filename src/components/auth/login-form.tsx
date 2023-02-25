@@ -10,6 +10,7 @@ import { useMutation } from 'react-query';
 import Swal from 'sweetalert2';
 import * as yup from 'yup';
 import { useRouter } from 'next/router'
+import Link from 'next/link';
 
 
 const loginValidationSchema = yup.object().shape({
@@ -30,9 +31,9 @@ export default function LoginUserForm() {
         });
         return;
       } else {
-
+        authorize(data.result.data.token);
       }
-      authorize(data.result.data.token);
+      
     },
     onError: (errorAsUnknown) => {
       const error = errorAsUnknown as AxiosError<AuthResponse>;
@@ -126,13 +127,11 @@ export default function LoginUserForm() {
       >
         Log In
       </button>
-      <button
-        type="button"
+      <Link href='/register'
         className="tk-lp-button tk-lp-button--grey tk-lp-w-full tk-lp-tabs-form-item"
-        data-id="sign-up"
       >
         Create an Account
-      </button>
+      </Link>
     </form>
   );
 }

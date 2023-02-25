@@ -16,8 +16,7 @@ const ErrorPage: NextPageWithLayout = () => {
       <Seo
         title="404 Error"
         description="Fastest digital download template built with React, NextJS, TypeScript, React-Query and Tailwind CSS."
-        url="/404"
-      />
+        url="/404" image_url={''}      />
       <div className="flex h-full items-center justify-center p-4 md:p-6 xl:p-8">
         <div className="max-w-md text-center xl:max-w-lg">
           <ErrorIcon className="mx-auto h-36 w-36 text-light-900 dark:text-dark-600" />

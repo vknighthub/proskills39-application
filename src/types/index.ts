@@ -100,6 +100,16 @@ export interface LoginUserInput {
     password: string;
 }
 
+export interface RegisterUserInput {
+    username: string,
+    fullname: string,
+    gender: number,
+    address: string,
+    email: string,
+    birthday: string,
+    phone: string
+}
+
 export interface UserProfileResult {
     result: {
         data: UserProfile

@@ -4255,6 +4255,7 @@ body.dark-mode .search-form-with-text .main-search .search-button {
     border-radius: 25px;
 }
 
+
 .digital-store .cryptoki-form textarea {
     border-radius: 15px;
 }
@@ -10748,4 +10749,11 @@ td[data-label="Date"] {
 
 .object-contain {
     object-fit: contain;
+}
+
+.mr-lg-1 {
+    margin-right: 0.25rem !important;
+}
+.ml-lg-1 {
+    margin-left: 1rem !important;
 }

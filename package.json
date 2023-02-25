@@ -8,6 +8,11 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  },
   "dependencies": {
     "@hookform/resolvers": "^2.9.11",
     "@next/font": "13.1.2",
