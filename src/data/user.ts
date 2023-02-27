@@ -5,7 +5,7 @@ import client from './client';
 import { API_ENDPOINTS } from './client/endpoints';
 
 export const useMe = () => {
-  const { getToken, isAuthorized } = useAuth();
+  const { isAuthorized } = useAuth();
   const { data, isLoading, error } = useQuery<UserProfileResult, Error>(
     [API_ENDPOINTS.USERS_ME],
     client.users.me,

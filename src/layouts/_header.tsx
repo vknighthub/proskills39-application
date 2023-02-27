@@ -28,7 +28,7 @@ export default function Header() {
           {(session || isAuthorized) ?
             <>
               <ButtonHeader name="Order" link='/order' />
-              {<ProfileDropdown profile={session ? session : me} />}
+              <ProfileDropdown profile={session ? session : me} />
             </>
             :
             <>

@@ -38,7 +38,7 @@ export default function LoginUserForm() {
     onError: (errorAsUnknown) => {
       const error = errorAsUnknown as AxiosError<AuthResponse>;
       Swal.fire({
-        position: 'top',
+        position: 'center',
         icon: 'error',
         color: 'red',
         title: 'Oops...',
@@ -57,7 +57,6 @@ export default function LoginUserForm() {
     }).then(response => {
       if (response.value) {
         router.push('/')
-        router.reload()
       }
     })
   }
