@@ -27,7 +27,9 @@ class Client {
         all: (query?: ProposalQueryOptions) =>
             HttpClient.get(`${API_ENDPOINTS.DREP_PROPOSAL}/${query?.challengeId}`),
         get: (challengeid: string | undefined) => HttpClient.get<Proposal>(`${API_ENDPOINTS.DREP_PROPOSAL}/${challengeid}`),
-        getbyid: (proposalid: string | undefined) => HttpClient.get<ProposalDetailType>(`${API_ENDPOINTS.DREP_PROPOSALBYID}/${proposalid}`)
+        getbyid: (proposalid: string | undefined, language: string | undefined) => HttpClient.get<ProposalDetailType>(`${API_ENDPOINTS.DREP_PROPOSALBYID}/${proposalid}`, {
+            language
+        })
     }
     categories = {
         all: (params?: SettingsQueryOptions) =>

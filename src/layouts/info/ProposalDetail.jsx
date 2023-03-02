@@ -1,9 +1,7 @@
-import Link from "next/link";
-import ProposalDetailnfo from './ProposalDetails/ProposalDetailnfo'
-import ProposalSection from './ProposalDetails/ProposalSection'
+import ProposalDetailnfo from './ProposalDetails/ProposalDetailnfo';
+import ProposalSection from './ProposalDetails/ProposalSection';
 
 const ProposalDetail = ({ data }) => {
-
   const proposalSection = data.result.data.proposal_infor.fieldSections
   const proposal_general = data.result.data.proposal_infor
 

@@ -4,6 +4,7 @@ import { NextPageWithLayout, ProposalDetailType } from '@/types';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import ProposalDetail from '@/layouts/info/ProposalDetail'
+import invariant from 'tiny-invariant';
 
 
 
@@ -15,7 +16,13 @@ type ParsedQueryParams = {
     proposalId: string;
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async (
+    {
+        locales,
+    }
+) => {
+    invariant(locales, 'locales is not defined');
+    console.log(locales)
     return { paths: [], fallback: 'blocking' };
 };
 
@@ -24,9 +31,10 @@ export const getStaticProps: GetStaticProps<
     PageProps,
     ParsedQueryParams
 > = async ({ params, locale }) => {
+    
     const { proposalId } = params!; //* we know it's required because of getStaticPaths
     try {
-        const proposal = await client.proposal.getbyid(proposalId);
+        const proposal = await client.proposal.getbyid(proposalId, locale);
         return {
             props: {
                 proposal,

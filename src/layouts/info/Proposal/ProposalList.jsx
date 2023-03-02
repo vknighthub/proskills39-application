@@ -30,7 +30,6 @@ const ProposalList = ({ data }) => {
                     <div className="title">
                       {proposal.proposalName}
                     </div>
-                    {console.log(proposal.descriptionDetail)}
                     <p style={{ minHeight: "120px" }}>{parse(proposal.descriptionDetail)}</p>
                     <div className="item-meta">
                       <span className="avatar box-26" >
