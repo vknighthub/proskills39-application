@@ -34,7 +34,10 @@ const Challenges = ({ data }) => {
 
               <div className="news-title h5">
                 {" "}
-                <Link href="/15-blog-post-sidebar">
+                <Link href={{
+                  pathname: '/challenges/[challengeId]',
+                  query: { challengeId: challenge.challengeId },
+                }}>
                   {challenge.challengeName}
                 </Link>{" "}
               </div>
