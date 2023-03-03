@@ -50,7 +50,7 @@ const ProfileDropdown = ({ profile }) => {
                                     <use xlinkHref="#circle-icon" />
                                 </svg>
                             </span>
-                            291.36 ETH
+                            291.36 <span className="gradient-text bold">v2P</span>
                         </div>
                     </div>
 
@@ -123,7 +123,7 @@ const ProfileDropdown = ({ profile }) => {
                                 </li>
                                 <li className="account">
                                     {" "}
-                                    <Link legacyBehavior href="/29-account-settings">
+                                    <Link legacyBehavior href="/account-setting" onClick={() => setToggle(!toggle)}>
                                         <a>
                                             <svg className="crumina-icon">
                                                 <use xlinkHref="#settings-icon" />
@@ -134,7 +134,7 @@ const ProfileDropdown = ({ profile }) => {
                                 </li>
                                 <li className="notification">
                                     {" "}
-                                    <Link legacyBehavior href="/30-notification-settings">
+                                    <Link legacyBehavior href="/notification-setting" onClick={() => setToggle(!toggle)}>
                                         <a>
                                             <svg className="crumina-icon">
                                                 <use xlinkHref="#slide-filter-icon" />
@@ -145,29 +145,27 @@ const ProfileDropdown = ({ profile }) => {
                                 </li>
                                 <li className="artwork">
                                     {" "}
-                                    <Link legacyBehavior href="/26-upload-artwork">
+                                    <Link legacyBehavior href="/seller">
                                         <a>
                                             <svg className="crumina-icon">
                                                 <use xlinkHref="#picture-icon" />
                                             </svg>
-                                            Create Artwork
+                                            Become a seller
                                         </a>
                                     </Link>{" "}
                                 </li>
                                 <li className="wallet">
                                     {" "}
-                                    <Link legacyBehavior href="/18-connect-a-wallet">
-                                        <a>
-                                            <svg className="crumina-icon">
-                                                <use xlinkHref="#wallet-icon" />
-                                            </svg>
-                                            Wallet info
-                                        </a>
+                                    <Link href="/wallet" onClick={() => setToggle(!toggle)}>
+                                        <svg className="crumina-icon">
+                                            <use xlinkHref="#wallet-icon" />
+                                        </svg>
+                                        Wallet info
                                     </Link>{" "}
                                 </li>
                                 <li className="verification">
                                     {" "}
-                                    <Link legacyBehavior href="/31-get-verified">
+                                    <Link legacyBehavior href="/user-verify" onClick={() => setToggle(!toggle)}>
                                         <a>
                                             <svg className="crumina-icon">
                                                 <use xlinkHref="#circle-checked-icon" />

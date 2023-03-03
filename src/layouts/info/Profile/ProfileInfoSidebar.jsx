@@ -1,5 +1,9 @@
 import Link from "next/link";
 import React from "react";
+import avatar from '@/assets/images/avatar.png';
+import Image from "next/image";
+
+
 const ProfileInfoSidebar = () => {
   return (
     <aside>
@@ -9,9 +13,9 @@ const ProfileInfoSidebar = () => {
           <div className="user-header-user-profile">
             <div className="avatar box-64">
               {" "}
-              <Link href="/08-profile-page">
+              <Link href="/profile-info">
 
-                <img src="img/avatar.png" alt="avatar" />
+                <Image src={avatar} alt="avatar" />
                 <span className="verified">
                   <svg className="crumina-icon">
                     <use xlinkHref="#check-icon" />
@@ -22,7 +26,7 @@ const ProfileInfoSidebar = () => {
             </div>
             <div className="title">
               {" "}
-              <Link href="/08-profile-page">
+              <Link href="/profile-info">
                 Dexter Stark
               </Link>{" "}
             </div>
@@ -35,7 +39,7 @@ const ProfileInfoSidebar = () => {
           <ul className="profile-menu">
             <li className="profile">
               {" "}
-              <Link href="/23-profile-info">
+              <Link href="/profile-info">
 
                 <svg className="crumina-icon">
                   <use xlinkHref="#user-icon" />
@@ -46,7 +50,7 @@ const ProfileInfoSidebar = () => {
             </li>
             <li className="account">
               {" "}
-              <Link href="/29-account-settings">
+              <Link href="/account-settings">
 
                 <svg className="crumina-icon">
                   <use xlinkHref="#settings-icon" />
@@ -57,7 +61,7 @@ const ProfileInfoSidebar = () => {
             </li>
             <li className="notification">
               {" "}
-              <Link href="/30-notification-settings">
+              <Link href="/notification-settings">
 
                 <svg className="crumina-icon">
                   <use xlinkHref="#slide-filter-icon" />
@@ -68,18 +72,16 @@ const ProfileInfoSidebar = () => {
             </li>
             <li className="artwork">
               {" "}
-              <Link href="/26-upload-artwork">
-
+              <Link href="/seller">
                 <svg className="crumina-icon">
                   <use xlinkHref="#picture-icon" />
                 </svg>
-                Create Artwork
-
+                Become a seller
               </Link>{" "}
             </li>
             <li className="wallet">
               {" "}
-              <Link href="/18-connect-a-wallet">
+              <Link href="connect-a-wallet">
 
                 <svg className="crumina-icon">
                   <use xlinkHref="#wallet-icon" />
@@ -90,7 +92,7 @@ const ProfileInfoSidebar = () => {
             </li>
             <li className="verification">
               {" "}
-              <Link href="/31-get-verified">
+              <Link href="/user-verify">
 
                 <svg className="crumina-icon">
                   <use xlinkHref="#circle-checked-icon" />
