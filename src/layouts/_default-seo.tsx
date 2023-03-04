@@ -57,6 +57,18 @@ const DefaultSeo = () => {
         site: settings?.siteTitle,
         cardType: settings?.seo?.twitterCardType,
       }}
+      robotsProps={{
+        nosnippet: true,
+        notranslate: true,
+        noimageindex: true,
+        noarchive: true,
+        maxSnippet: -1,
+        maxImagePreview: 'none',
+        maxVideoPreview: -1,
+      }}
+      facebook={{
+        appId: '563576815726679',
+      }}
     />
   )
 }
