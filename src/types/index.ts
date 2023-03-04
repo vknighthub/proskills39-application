@@ -237,23 +237,18 @@ export interface ProposalDetailType {
 }
 
 export interface Assessment {
-    st2assessmentDetailIdst2: number,
-    st2proposalIdst2: number,
-    st2proposalTitlest2: string,
-    st2proposerst2: string,
-    st2proposerNamest2: string,
-    st2assessorst2: string,
-    st2impactTitlest2: string,
-    st2impactAssessmentst2: string,
-    st2impactRatingst2: number,
-    st2feaTitlest2: string,
-    st2feaAssessmentst2: string,
-    st2feaRatingst2: number,
-    st2auditTitlest2: string,
-    st2auditAssessmentst2: string,
-    st2audittRatingst2: number,
-    st2proposerReplyst2: null,
-    st2ratingAvgst2: number
+    assessmentId: number,
+    assessor: string,
+    impactTitle: string,
+    impactAssessment: string,
+    impactRating: number,
+    feaTitle: string,
+    feaAssessment: string,
+    feaRating: number,
+    auditTitle: string,
+    auditAssessment: string,
+    audittRating: number,
+    proposerReply: string
 }
 
 export interface AssessmentSummary {
@@ -271,8 +266,13 @@ export interface AssessmentSummary {
 }
 
 export interface AssessmentDetail {
-    detail: Assessment[],
-    summary: AssessmentSummary[]
+    summaryAssement: string,
+    summaryReply: string,
+    ratingAvg: number,
+    ratingImpAvg:number,
+    ratingFeaAvg: number,
+    ratingAuditAvg: number,
+    assessmentDetail: Assessment []
 }
 
 export interface ProposalQueryOptions {

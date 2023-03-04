@@ -103,6 +103,13 @@ const ProposalDetailnfo = ({ proposal, assessment }) => {
           </div>
         </>
       }
+
+      <div className="product-description">
+        <div className="small-title">Summary Assessment</div>
+        {assessment?.summaryAssement}
+      </div>
+
+
       {assessment?.assessmentDetail?.map((assessmentDtl) => (
         <div className="widget-2 recent-posts-widget" key={assessmentDtl.assessmentId}>
           <div className='recent-posts-widget-item-info'>
