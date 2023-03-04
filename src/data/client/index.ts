@@ -1,11 +1,11 @@
-import { AuthResponse, CategoriesPaginator, Category, ChallegePaginator, Challenge, GetParams, LoginUserInput, Proposal, ProposalQueryOptions, ProposalResult, RegisterUserInput, Settings, SettingsQueryOptions, UserProfileResult } from "@/types";
+import { AuthResponse, CategoriesPaginator, Category, ChallegePaginator, Challenge, GetParams, LoginUserInput, Proposal, ProposalQueryOptions, ProposalResult, RegisterUserInput, SettingQuery, Settings, SettingsQueryOptions, UserProfileResult } from "@/types";
 import { API_ENDPOINTS } from "./endpoints";
 import { HttpClient } from './http-client';
 
 class Client {
     settings = {
         all: (params?: SettingsQueryOptions) =>
-            HttpClient.get<Settings>(API_ENDPOINTS.SETTINGS, { ...params })
+            HttpClient.get<SettingQuery>(API_ENDPOINTS.SETTINGS, { ...params })
     }
     users = {
         me: () => HttpClient.get<UserProfileResult>(API_ENDPOINTS.USERS_ME),

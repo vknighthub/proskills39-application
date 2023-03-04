@@ -27,6 +27,12 @@ export interface Attachment {
     thumbnail: string;
 }
 
+interface ResultObject<T> {
+    result: {
+        data: T
+    }
+}
+
 export interface SEO {
     seo_id: number;
     metaTitle: string;
@@ -77,6 +83,9 @@ export interface Settings {
     created_at: Date,
     updated_at: Date;
 }
+
+export interface SettingQuery extends ResultObject<Settings> {}
+
 export interface SettingsQueryOptions extends QueryOptions {
     language?: string;
 }

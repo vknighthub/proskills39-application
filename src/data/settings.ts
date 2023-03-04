@@ -1,4 +1,4 @@
-import type { Settings } from '@/types';
+import type { SettingQuery, Settings } from '@/types';
 import { useRouter } from 'next/router';
 import { useQuery } from 'react-query';
 import client from './client';
@@ -11,14 +11,13 @@ export const useSettings = () => {
     const formattedOptions = {
         language: locale,
     };
-    const { data, isLoading, error } = useQuery<Settings, Error>(
+    const { data, isLoading, error } = useQuery<SettingQuery, Error>(
         [API_ENDPOINTS.SETTINGS, formattedOptions],
         ({ queryKey, pageParam }) =>
             client.settings.all(Object.assign({}, queryKey[1], pageParam))
     );
-
     return {
-        settings: data?.options,
+        settings: data?.result.data.options,
         isLoading,
         error,
     };

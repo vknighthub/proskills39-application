@@ -9,8 +9,10 @@ const Seo = ({ title, description, url, image_url, ...props }: SeoProps) => {
       title={title}
       description={description}
       openGraph={{
-        url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${url}`,
         title: title,
+        site_name: title,
+        type: 'website',
+        url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${url}`,
         description: description,
         images: [
           {
@@ -20,6 +22,11 @@ const Seo = ({ title, description, url, image_url, ...props }: SeoProps) => {
             alt: title,
           }
         ]
+      }}
+      twitter={{
+        handle: '@vknighthub',
+        site: '@vknighthub',
+        cardType: 'summary_large_image',
       }}
       {...props}
     />
