@@ -292,8 +292,15 @@ interface ResultInfo<T> {
     }
 }
 
+interface ResultInfoObject<T> {
+    result: {
+        data: T
+    }
+}
+
 export interface ChallegePaginator extends ResultInfo<Challenge> { }
 
+export interface ProposalResult extends ResultInfoObject<ProposalDetailType> {}
 
 export interface Category {
     id: number;

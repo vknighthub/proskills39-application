@@ -1,4 +1,4 @@
-import { AssessmentDetail, AuthResponse, CategoriesPaginator, Category, ChallegePaginator, Challenge, GetParams, LoginUserInput, Proposal, ProposalDetailType, ProposalQueryOptions, RegisterUserInput, Settings, SettingsQueryOptions, UserProfileResult } from "@/types";
+import { AssessmentDetail, AuthResponse, CategoriesPaginator, Category, ChallegePaginator, Challenge, GetParams, LoginUserInput, Proposal, ProposalDetailType, ProposalQueryOptions, ProposalResult, RegisterUserInput, Settings, SettingsQueryOptions, UserProfileResult } from "@/types";
 import { API_ENDPOINTS } from "./endpoints";
 import { HttpClient } from './http-client';
 
@@ -27,7 +27,7 @@ class Client {
         all: (query?: ProposalQueryOptions) =>
             HttpClient.get(`${API_ENDPOINTS.DREP_PROPOSAL}/${query?.challengeId}`),
         get: (challengeid: string | undefined) => HttpClient.get<Proposal>(`${API_ENDPOINTS.DREP_PROPOSAL}/${challengeid}`),
-        getbyid: (proposalid: string | undefined, language: string | undefined) => HttpClient.get<ProposalDetailType>(`${API_ENDPOINTS.DREP_PROPOSALBYID}/${proposalid}`, {
+        getbyid: (proposalid: string | undefined, language: string | undefined) => HttpClient.get<ProposalResult>(`${API_ENDPOINTS.DREP_PROPOSALBYID}/${proposalid}`, {
             language
         })
     }

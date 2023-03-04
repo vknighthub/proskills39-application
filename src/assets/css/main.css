@@ -9209,7 +9209,7 @@ table.content-table {
 
 .activity-item.bid::before {
     content: "";
-    background: url(/images/svg/annotation.svg) no-repeat center;
+    background: url(../svg/annotation.svg) no-repeat center;
     background-size: 12px;
     background-color: #6a52ff;
     width: 30px;

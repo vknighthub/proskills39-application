@@ -3,7 +3,7 @@ import client from '@/data/client';
 import ProposalDetail from '@/layouts/info/ProposalDetail';
 import Layout from '@/layouts/_layout';
 import Seo from '@/layouts/_seo';
-import { NextPageWithLayout, ProposalDetailType } from '@/types';
+import { NextPageWithLayout, ProposalDetailType, ProposalResult } from '@/types';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import invariant from 'tiny-invariant';
@@ -11,7 +11,7 @@ import invariant from 'tiny-invariant';
 
 
 type PageProps = {
-    proposal: ProposalDetailType;
+    proposal: ProposalResult;
 }
 
 type ParsedQueryParams = {
@@ -54,9 +54,15 @@ export const getStaticProps: GetStaticProps<
 const ProposalPage: NextPageWithLayout<
     InferGetStaticPropsType<typeof getStaticProps>
 > = ({ proposal }) => {
-
+    const proposalDetail = proposal.result.data.proposal_infor
     return (
         <>
+            <Seo
+                title="ProSkills39 - Voter Tool"
+                description={proposalDetail.proposalName}
+                url={routes.proposalsUrl(proposalDetail.proposalId)}
+                image_url='https://fileup.to/9uY6/logo-black.svg'
+            />
             <ProposalDetail data={proposal} />
         </>
     )
