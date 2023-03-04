@@ -22,7 +22,6 @@ export const getStaticPaths: GetStaticPaths = async (
     }
 ) => {
     invariant(locales, 'locales is not defined');
-    console.log(locales)
     return { paths: [], fallback: 'blocking' };
 };
 
@@ -55,9 +54,7 @@ const ProposalPage: NextPageWithLayout<
 > = ({ proposal }) => {
 
     return (
-        <>
-            <ProposalDetail data={proposal} />
-        </>
+        <ProposalDetail data={proposal} />
     )
 }
 
