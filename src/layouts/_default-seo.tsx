@@ -44,7 +44,7 @@ const DefaultSeo = () => {
         url: process.env.NEXT_PUBLIC_WEBSITE_URL,
         images: [
           {
-            url: 'https://api.proskills39.com/system/logo/logopro.svg',
+            url: 'https://api.proskills39.com/system/logo/logotest.png',
             width: 800,
             height: 600,
             alt: settings?.seo?.ogTitle,

@@ -61,7 +61,7 @@ const ProposalPage: NextPageWithLayout<
                 title="ProSkills39 - Voter Tool"
                 description={proposalDetail.proposalName}
                 url={routes.proposalsUrl(proposalDetail.proposalId)}
-                image_url='https://api.proskills39.com/system/logo/logopro.svg'
+                image_url='https://api.proskills39.com/system/logo/logotest.png'
             />
             <ProposalDetail data={proposal} />
         </>
