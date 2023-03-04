@@ -59,7 +59,7 @@ const ProposalDetailnfo = ({ proposal, assessment }) => {
       </div>
 
 
-      {!assessment &&
+      {assessment && Object.keys(assessment).length > 0 &&
         <>
           <div className="widget-title h3">Proposal Assessor Reviews</div>
           <div>{`Rating: (${Number((assessment.ratingAvg)?.toFixed(2))})`} <Rating rating={assessment.ratingAvg} /></div>
