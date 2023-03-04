@@ -1,6 +1,6 @@
 import client from '@/data/client';
 import Layout from '@/layouts/_layout';
-import { NextPageWithLayout, ProposalDetailType } from '@/types';
+import { AssessmentDetail, NextPageWithLayout, ProposalDetailType } from '@/types';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import ProposalDetail from '@/layouts/info/ProposalDetail'
@@ -53,7 +53,6 @@ export const getStaticProps: GetStaticProps<
 const ProposalPage: NextPageWithLayout<
     InferGetStaticPropsType<typeof getStaticProps>
 > = ({ proposal }) => {
-
 
     return (
         <ProposalDetail data={proposal} />

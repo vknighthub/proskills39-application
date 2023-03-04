@@ -1,4 +1,4 @@
-import { AuthResponse, CategoriesPaginator, Category, ChallegePaginator, Challenge, GetParams, LoginUserInput, Proposal, ProposalDetailType, ProposalQueryOptions, RegisterUserInput, Settings, SettingsQueryOptions, UserProfileResult } from "@/types";
+import { AssessmentDetail, AuthResponse, CategoriesPaginator, Category, ChallegePaginator, Challenge, GetParams, LoginUserInput, Proposal, ProposalDetailType, ProposalQueryOptions, RegisterUserInput, Settings, SettingsQueryOptions, UserProfileResult } from "@/types";
 import { API_ENDPOINTS } from "./endpoints";
 import { HttpClient } from './http-client';
 

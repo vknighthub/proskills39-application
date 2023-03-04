@@ -224,8 +224,48 @@ export interface Challenge {
 export interface ProposalDetailType {
     challenge_infor: Challenge;
     proposal_infor: Proposal;
-    assessment_infor: JSON;
+    assessment_infor: AssessmentDetail;
 }
+
+export interface Assessment {
+    st2assessmentDetailIdst2: number,
+    st2proposalIdst2: number,
+    st2proposalTitlest2: string,
+    st2proposerst2: string,
+    st2proposerNamest2: string,
+    st2assessorst2: string,
+    st2impactTitlest2: string,
+    st2impactAssessmentst2: string,
+    st2impactRatingst2: number,
+    st2feaTitlest2: string,
+    st2feaAssessmentst2: string,
+    st2feaRatingst2: number,
+    st2auditTitlest2: string,
+    st2auditAssessmentst2: string,
+    st2audittRatingst2: number,
+    st2proposerReplyst2: null,
+    st2ratingAvgst2: number
+}
+
+export interface AssessmentSummary {
+    st2proposalIdst2: number,
+    st2proposalTitlest2: string,
+    st2proposerst2: string,
+    st2proposerNamest2: string,
+    st2ratingAvgst2: number,
+    st2ratingImpAvgst2: number,
+    st2ratingFeaAvgst2: number,
+    st2ratingAuditAvgst2: number,
+    st2summaryAssessmentst2: string,
+    st2summaryReplyst2: string,
+    st2languagest2: string
+}
+
+export interface AssessmentDetail {
+    detail: Assessment[],
+    summary: AssessmentSummary[]
+}
+
 export interface ProposalQueryOptions {
     challengeId?: number;
 }

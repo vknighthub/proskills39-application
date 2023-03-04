@@ -40,8 +40,6 @@ const ProposalSection = ({ proposalSection }) => {
           <div className="bid-placer">
             <div className="avatar box-42">
               {showIcon(section.title)}
-
-
             </div>
             <div className="bid-info ">
               <div className="bid-title">

@@ -8,6 +8,7 @@ export const API_ENDPOINTS = {
     DREP_CHALLENGE: '/drep/getchallengebyfundid',
     DREP_PROPOSAL: '/drep/getallproposalbychallengeid',
     DREP_PROPOSALBYID: '/drep/getproposalbyid',
+    DREP_ASSESSMENTBYID: '/drep/admin/getassessmentdetail',
     CATEGORIES: '/system/categories',
     CATEGORIESPAGE: '/system/categoriespage',
     

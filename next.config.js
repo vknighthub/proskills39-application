@@ -27,7 +27,8 @@ module.exports = withPWA({
       'secure.gravatar.com',
       'app.ideascale.com',
       'fileup.to',
-      'api.proskills39.com'
+      'api.proskills39.com',
+      'static.ideascale.com'
     ],
   },
   ...(process.env.APPLICATION_MODE === 'production' && {
