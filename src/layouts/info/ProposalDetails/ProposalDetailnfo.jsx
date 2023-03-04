@@ -59,128 +59,133 @@ const ProposalDetailnfo = ({ proposal, assessment }) => {
       </div>
 
 
-      <div className="widget-title h3">Proposal Assessor Reviews</div>
-      <div>{`Rating: (${Number((assessment.ratingAvg).toFixed(2))})`} <Rating rating={assessment.ratingAvg}/></div>
-      <div className="activity-item bid">
-        <div className="bid-placer">
-          <div className="bid-info">
-            <div className="bid-title">
-              <span className="gradient-text">
-                Impact ({Number((assessment.ratingImpAvg).toFixed(2))}) &nbsp; &nbsp; &nbsp;
-              </span>
+      {!assessment &&
+        <>
+          <div className="widget-title h3">Proposal Assessor Reviews</div>
+          <div>{`Rating: (${Number((assessment.ratingAvg)?.toFixed(2))})`} <Rating rating={assessment.ratingAvg} /></div>
+          <div className="activity-item bid">
+            <div className="bid-placer">
+              <div className="bid-info">
+                <div className="bid-title">
+                  <span className="gradient-text">
+                    Impact ({Number((assessment.ratingImpAvg)?.toFixed(2))}) &nbsp; &nbsp; &nbsp;
+                  </span>
+                </div>
+              </div>
             </div>
+            <Rating rating={assessment.ratingImpAvg} />
           </div>
-        </div>
-        <Rating rating={assessment.ratingImpAvg}/>
-      </div>
-      <div className="activity-item bid">
-        <div className="bid-placer">
-          <div className="bid-info">
-            <div className="bid-title">
-              <span className="gradient-text">
-                Feasibility ({Number((assessment.ratingFeaAvg).toFixed(2))})&nbsp;
-              </span>
+          <div className="activity-item bid">
+            <div className="bid-placer">
+              <div className="bid-info">
+                <div className="bid-title">
+                  <span className="gradient-text">
+                    Feasibility ({Number((assessment.ratingFeaAvg)?.toFixed(2))})&nbsp;
+                  </span>
+                </div>
+              </div>
             </div>
+            <Rating rating={assessment.ratingFeaAvg} />
           </div>
-        </div>
-        <Rating rating={assessment.ratingFeaAvg}/>
-      </div>
-
-      <div className="activity-item bid">
-        <div className="bid-placer">
-          <div className="bid-info">
-            <div className="bid-title">
-              <span className="gradient-text">
-                Auditability ({Number((assessment.ratingAuditAvg).toFixed(2))})
-              </span>
-            </div>
-          </div>
-        </div>
-        <Rating rating={assessment.ratingAuditAvg}/>
-      </div>
 
 
-      {assessment.assessmentDetail.map((assessmentDtl) => (
+          <div className="activity-item bid">
+            <div className="bid-placer">
+              <div className="bid-info">
+                <div className="bid-title">
+                  <span className="gradient-text">
+                    Auditability ({Number((assessment.ratingAuditAvg)?.toFixed(2))})
+                  </span>
+                </div>
+              </div>
+            </div>
+            <Rating rating={assessment.ratingAuditAvg} />
+          </div>
+        </>
+      }
+      {assessment?.assessmentDetail?.map((assessmentDtl) => (
         <div className="widget-2 recent-posts-widget" key={assessmentDtl.assessmentId}>
-            <div className='recent-posts-widget-item-info'>
-              <span className="h6 green">Assessor ID</span>
-              <span className="ml-lg-1 gradient-text"> {assessmentDtl.assessor}</span>
-            </div>
-            <div className="widget-body mt-5" >
-              <div className="recent-posts-widget-item">
-                <div className="recent-posts-widget-item-img">
-                  <Image src={impact} alt="Impact"/> 
+          <div className='recent-posts-widget-item-info'>
+            <span className="h6 green">Assessor ID</span>
+            <span className="ml-lg-1 "> {assessmentDtl.assessor}</span>
+          </div>
+          <div className="widget-body mt-5" >
+            <div className="recent-posts-widget-item">
+              <div className="recent-posts-widget-item-img">
+                <Image src={impact} alt="Impact" />
+              </div>
+              <div className="recent-posts-widget-item-info">
+                <div className="recent-posts-widget-item-tags">
+                  <a className="tag-item gradient-text" href="#" >
+                    Impact / Alignment
+                  </a>
                 </div>
-                <div className="recent-posts-widget-item-info">
-                  <div className="recent-posts-widget-item-tags">
-                    <a className="tag-item gradient-text" href="#" >
-                      Impact / Alignment
-                    </a>
-                  </div>
-                  <div className="recent-posts-widget-item-title">
-                    {assessmentDtl.impactTitle}
-                  </div>
-                  <div className="recent-posts-widget-item-meta">
-                    {assessmentDtl.impactAssessment}
-                  </div>
-                  <div className="thumb-box">
-                    <Rating rating={assessmentDtl.impactRating}/>
-                  </div>
+                <div className="recent-posts-widget-item-title">
+                  {assessmentDtl.impactTitle}
+                </div>
+                <div className="recent-posts-widget-item-meta">
+                  {assessmentDtl.impactAssessment}
+                </div>
+                <div className="thumb-box">
+                  <Rating rating={assessmentDtl.impactRating} />
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="widget-body mt-5" >
-              <div className="recent-posts-widget-item">
-                <div className="recent-posts-widget-item-img">
-                  <Image src={feasibility} alt="Impact"/> 
+          <div className="widget-body mt-5" >
+            <div className="recent-posts-widget-item">
+              <div className="recent-posts-widget-item-img">
+                <Image src={feasibility} alt="Impact" />
+              </div>
+              <div className="recent-posts-widget-item-info">
+                <div className="recent-posts-widget-item-tags">
+                  <a className="tag-item gradient-text" href="#" >
+                    Feasibility
+                  </a>
                 </div>
-                <div className="recent-posts-widget-item-info">
-                  <div className="recent-posts-widget-item-tags">
-                    <a className="tag-item gradient-text" href="#" >
-                      Feasibility
-                    </a>
-                  </div>
-                  <div className="recent-posts-widget-item-title">
-                    {assessmentDtl.feaTitle}
-                  </div>
-                  <div className="recent-posts-widget-item-meta">
-                    {assessmentDtl.feaAssessment}
-                  </div>
-                  <div className="thumb-box">
-                    <Rating rating={assessmentDtl.feaRating}/>
-                  </div>
+                <div className="recent-posts-widget-item-title">
+                  {assessmentDtl.feaTitle}
+                </div>
+                <div className="recent-posts-widget-item-meta">
+                  {assessmentDtl.feaAssessment}
+                </div>
+                <div className="thumb-box">
+                  <Rating rating={assessmentDtl.feaRating} />
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="widget-body mt-5" >
-              <div className="recent-posts-widget-item">
-                <div className="recent-posts-widget-item-img">
-                  <Image src={audit} alt="Impact"/> 
+          <div className="widget-body mt-5" >
+            <div className="recent-posts-widget-item">
+              <div className="recent-posts-widget-item-img">
+                <Image src={audit} alt="Impact" />
+              </div>
+              <div className="recent-posts-widget-item-info">
+                <div className="recent-posts-widget-item-tags">
+                  <a className="tag-item gradient-text" href="#" >
+                    Audit
+                  </a>
                 </div>
-                <div className="recent-posts-widget-item-info">
-                  <div className="recent-posts-widget-item-tags">
-                    <a className="tag-item gradient-text" href="#" >
-                      Audit
-                    </a>
-                  </div>
-                  <div className="recent-posts-widget-item-title">
-                    {assessmentDtl.auditTitle}
-                  </div>
-                  <div className="recent-posts-widget-item-meta">
-                    {assessmentDtl.auditAssessment}
-                  </div>
-                  <div className="thumb-box">
-                    <Rating rating={assessmentDtl.audittRating}/>
-                  </div>
+                <div className="recent-posts-widget-item-title">
+                  {assessmentDtl.auditTitle}
+                </div>
+                <div className="recent-posts-widget-item-meta">
+                  {assessmentDtl.auditAssessment}
+                </div>
+                <div className="thumb-box">
+                  <Rating rating={assessmentDtl.audittRating} />
                 </div>
               </div>
             </div>
+          </div>
 
         </div>
       ))}
+
     </>
+
   );
 };
 export default ProposalDetailnfo;

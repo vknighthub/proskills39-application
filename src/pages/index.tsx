@@ -14,7 +14,7 @@ const Home: NextPageWithLayout = () => {
         title="ProSkills39 - Pro Skills For Your Success"
         description="Nền tảng kết nối nhà cung cấp dịch vụ, chuyên gia với những người có nhu cầu sử dụng dịch vụ, kỹ năng đó."
         url={routes.home}
-        image_url='https://fileup.to/9uY6/logo-black.svg'
+        image_url='https://api.proskills39.com/system/logo/logopro.svg'
       />
       <div className="primary-content-area bottom-padding-70">
         <HomePopularService />

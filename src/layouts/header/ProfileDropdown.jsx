@@ -12,7 +12,6 @@ const ProfileDropdown = ({ profile }) => {
         let mood = localStorage.getItem("mood");
         moodChange(mood);
         dayMood.current = mood ? true : false;
-        console.log(dayMood.current, mood);
     }, [profile]);
 
     const moodChange = (dark) => {

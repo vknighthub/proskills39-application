@@ -12,7 +12,6 @@ const ActionHeader = () => {
         let mood = localStorage.getItem("mood");
         moodChange(mood);
         dayMood.current = mood ? true : false;
-        console.log(dayMood.current, mood);
     }, []);
 
     const moodChange = (dark) => {

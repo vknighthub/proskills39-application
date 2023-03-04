@@ -1,16 +1,14 @@
-import Layout from '@/layouts/_layout'
-import React from 'react'
-import CatalystVoterTool from '@/layouts/info/CatalystVoterTool'
-import type {
-    GetStaticPaths,
-    GetStaticProps,
-    InferGetStaticPropsType,
-} from 'next';
-import { Challenge, NextPageWithLayout, SettingsQueryOptions } from '@/types';
-import { dehydrate, QueryClient } from 'react-query';
 import client from '@/data/client';
 import { API_ENDPOINTS } from '@/data/client/endpoints';
+import CatalystVoterTool from '@/layouts/info/CatalystVoterTool';
+import Layout from '@/layouts/_layout';
+import { Challenge, NextPageWithLayout, SettingsQueryOptions } from '@/types';
+import type {
+    GetStaticProps,
+    InferGetStaticPropsType
+} from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { dehydrate, QueryClient } from 'react-query';
 
 type PageProps = {
     challenge: Challenge;
