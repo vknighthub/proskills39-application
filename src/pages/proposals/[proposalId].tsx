@@ -1,12 +1,10 @@
 import client from '@/data/client';
+import ProposalDetail from '@/layouts/info/ProposalDetail';
 import Layout from '@/layouts/_layout';
-import { AssessmentDetail, NextPageWithLayout, ProposalDetailType } from '@/types';
+import { NextPageWithLayout, ProposalDetailType } from '@/types';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import ProposalDetail from '@/layouts/info/ProposalDetail'
 import invariant from 'tiny-invariant';
-import Seo from '@/layouts/_seo';
-import routes from '@/config/routes'
 
 
 
@@ -58,12 +56,6 @@ const ProposalPage: NextPageWithLayout<
 
     return (
         <>
-            <Seo
-                title="ProSkills39 - Voter Tool"
-                description= {proposal.proposal_infor.proposalName}
-                url={routes.proposals}
-                image_url='https://fileup.to/9uY6/logo-black.svg'
-            />
             <ProposalDetail data={proposal} />
         </>
     )
