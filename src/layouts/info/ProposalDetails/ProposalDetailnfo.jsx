@@ -60,13 +60,13 @@ const ProposalDetailnfo = ({ proposal, assessment }) => {
 
 
       <div className="widget-title h3">Proposal Assessor Reviews</div>
-      <Rating rating={assessment.ratingAvg}/>
+      <div>{`Rating: (${Number((assessment.ratingAvg).toFixed(2))})`} <Rating rating={assessment.ratingAvg}/></div>
       <div className="activity-item bid">
         <div className="bid-placer">
           <div className="bid-info">
             <div className="bid-title">
               <span className="gradient-text">
-                Impact &nbsp; &nbsp; &nbsp;
+                Impact ({Number((assessment.ratingImpAvg).toFixed(2))}) &nbsp; &nbsp; &nbsp;
               </span>
             </div>
           </div>
@@ -78,7 +78,7 @@ const ProposalDetailnfo = ({ proposal, assessment }) => {
           <div className="bid-info">
             <div className="bid-title">
               <span className="gradient-text">
-                Feasibility &nbsp;
+                Feasibility ({Number((assessment.ratingFeaAvg).toFixed(2))})&nbsp;
               </span>
             </div>
           </div>
@@ -91,7 +91,7 @@ const ProposalDetailnfo = ({ proposal, assessment }) => {
           <div className="bid-info">
             <div className="bid-title">
               <span className="gradient-text">
-                Auditability
+                Auditability ({Number((assessment.ratingAuditAvg).toFixed(2))})
               </span>
             </div>
           </div>
@@ -102,7 +102,10 @@ const ProposalDetailnfo = ({ proposal, assessment }) => {
 
       {assessment.assessmentDetail.map((assessmentDtl) => (
         <div className="widget-2 recent-posts-widget" key={assessmentDtl.assessmentId}>
-
+            <div className='recent-posts-widget-item-info'>
+              <span className="h6 green">Assessor ID</span>
+              <span className="ml-lg-1 gradient-text"> {assessmentDtl.assessor}</span>
+            </div>
             <div className="widget-body mt-5" >
               <div className="recent-posts-widget-item">
                 <div className="recent-posts-widget-item-img">
