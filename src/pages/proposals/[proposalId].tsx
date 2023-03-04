@@ -57,12 +57,6 @@ const ProposalPage: NextPageWithLayout<
 
     return (
         <>
-            <Seo
-                title="ProSkills39 - Voter Tool"
-                description="Voter Tool is a part of the AIM Community Tool series developed by the community for the community. It is designed to assist you in your analysis of Cardano Project Catalyst"
-                url={routes.proposals}
-                image_url='https://fileup.to/9uY6/logo-black.svg'
-            />
             <ProposalDetail data={proposal} />
         </>
     )

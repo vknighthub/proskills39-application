@@ -1,3 +1,5 @@
+import routes from '@/config/routes';
+import Seo from '../_seo';
 import ProposalDetailnfo from './ProposalDetails/ProposalDetailnfo';
 import ProposalSection from './ProposalDetails/ProposalSection';
 
@@ -7,6 +9,13 @@ const ProposalDetail = ({ data }) => {
   const assessment = data.result.data.assessment_infor
 
   return (
+    <>
+      <Seo
+        title="ProSkills39 - Voter Tool"
+        description={proposal_general.proposerName}
+        url={routes.proposalsUrl(proposal_general.proposalId)}
+        image_url='https://fileup.to/9uY6/logo-black.svg'
+      />
       <div className="product-page product-version-1">
         <div className="product-media">
           <div className="ml-3">
@@ -19,6 +28,7 @@ const ProposalDetail = ({ data }) => {
           </div>
         </div>
       </div>
+    </>
   );
 };
 export default ProposalDetail;
