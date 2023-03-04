@@ -35,23 +35,6 @@ const DefaultSeo = () => {
       defaultTitle="ProSkills39"
       description={settings?.seo?.metaDescription || settings?.siteSubtitle}
       canonical={settings?.seo?.canonicalUrl}
-      openGraph={{
-        title: settings?.seo?.ogTitle,
-        description: settings?.seo?.ogDescription,
-        type: 'website',
-        locale: 'en_US',
-        site_name: settings?.siteTitle,
-        url: process.env.NEXT_PUBLIC_WEBSITE_URL,
-        images: [
-          {
-            url: 'https://api.proskills39.com/system/logo/logotest.png',
-            width: 800,
-            height: 600,
-            alt: settings?.seo?.ogTitle,
-            type: 'image/svg'
-          },
-        ],
-      }}
       twitter={{
         handle: settings?.seo?.twitterHandle,
         site: settings?.siteTitle,
