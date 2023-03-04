@@ -21,12 +21,30 @@ const Seo = ({ title, description, url, image_url, ...props }: SeoProps) => {
             height: 600,
             alt: title,
           }
-        ]
+        ],
+        book: {
+          authors: [
+            'https://anhben.com',
+          ]
+        }
       }}
       twitter={{
         handle: '@vknighthub',
         site: '@vknighthub',
         cardType: 'summary_large_image',
+      }}
+      robotsProps={{
+        nosnippet: true,
+        notranslate: true,
+        noimageindex: true,
+        noarchive: true,
+        maxSnippet: -1,
+        maxImagePreview: 'none',
+        maxVideoPreview: -1,
+      }}
+      canonical={process.env.NEXT_PUBLIC_WEBSITE_URL}
+      facebook={{
+        appId: '563576815726679',
       }}
       {...props}
     />

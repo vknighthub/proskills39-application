@@ -41,12 +41,14 @@ const DefaultSeo = () => {
         type: 'website',
         locale: 'en_US',
         site_name: settings?.siteTitle,
+        url: process.env.NEXT_PUBLIC_WEBSITE_URL,
         images: [
           {
-            url: settings?.seo?.ogImage?.original ?? '',
+            url: 'https://api.proskills39.com/system/logo/logopro.svg',
             width: 800,
             height: 600,
             alt: settings?.seo?.ogTitle,
+            type: 'image/svg'
           },
         ],
       }}

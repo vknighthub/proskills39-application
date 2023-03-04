@@ -41,4 +41,6 @@ package-lock.json
 workbox-*.js
 sw.js
 
+.turbo
+
 
