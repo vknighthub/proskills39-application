@@ -4346,7 +4346,7 @@ body.dark-mode .search-form-with-text .main-search .search-button {
 select {
     appearance: none;
     display: inline-block;
-    background-image: url(/svg/arrow-down.svg);
+    background-image: url(../svg/arrow-down.svg);
     background-position: calc(100% - 20px) center;
     background-repeat: no-repeat;
     background-size: 8px 8px;
@@ -4358,7 +4358,7 @@ select {
 }
 
 select::before {
-    content: url(/svg/arrow-down.svg);
+    content: url(../svg/arrow-down.svg);
     width: 8px;
     height: 8px;
 }
