@@ -6,8 +6,12 @@ import impact from '@/assets/images/content/impact.jpg';
 import feasibility from '@/assets/images/content/feasibility.jpg';
 import audit from '@/assets/images/content/audit.jpg';
 import Rating from './../../../utils/get-star';
+import { useMe } from '@/data/user';
 
 const ProposalDetailnfo = ({ proposal, assessment }) => {
+
+  const { isAuthorized } = useMe()
+
   return (
     <>
       <Link href={proposal.proposalLink} target="_blank">
@@ -56,6 +60,12 @@ const ProposalDetailnfo = ({ proposal, assessment }) => {
           </svg>
           <span className="count">{proposal.voteCount}</span>
         </div>
+        {isAuthorized &&
+          <div className="product-fav-counter">
+            <Link href="/rating-proposal" >Rating</Link>
+          </div>
+        }
+
       </div>
 
 

@@ -67,7 +67,7 @@ const ChallengePage: NextPageWithLayout<InferGetStaticPropsType<
                 url={routes.chanllengesUrl(challengeDetail.challengeId)}
                 image_url={challengeDetail.challengeImage}
             />
-
+            
             <ChanllengePage data={challenge} />
         </>
     )
