@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import useClickOutside from "@/lib/hooks/useClickOutside";
+import Logo from "@/components/ui/logo";
 
 const MobileHeader = () => {
   const [toggle, setToggle] = useState(false);
@@ -31,7 +32,7 @@ const MobileHeader = () => {
           <div className="mobile-menu-logo logo">
             {" "}
             <Link legacyBehavior href="/" passHref >
-              <Image src="svg/cryptoki-logo.svg" alt="" width={80} height={80} />
+              <Logo />
             </Link>{" "}
           </div>
           {/*/MOBILE LOGO*/}

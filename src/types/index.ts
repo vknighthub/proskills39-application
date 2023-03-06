@@ -228,6 +228,10 @@ export interface Challenge {
     challengeName: string;
     challengeImage: string;
     challengeImageAltText: string;
+    challengeDescription: string;
+    voteCount: number;
+    commentCount: number;
+    challengeUrl: string;
     listProposal: Proposal[] | undefined;
 }
 export interface ProposalDetailType {
@@ -310,6 +314,8 @@ interface ResultInfoObject<T> {
 export interface ChallegePaginator extends ResultInfo<Challenge> { }
 
 export interface ProposalResult extends ResultInfoObject<ProposalDetailType> {}
+export interface ChallengeResult extends ResultInfoObject<Challenge> {}
+
 
 export interface Category {
     id: number;

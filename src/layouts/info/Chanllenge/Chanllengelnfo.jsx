@@ -1,6 +1,6 @@
 import parse from 'html-react-parser';
 
-const ProposalInfo = ({ data }) => {
+const Chanllengelnfo = ({ data }) => {
 
   return (
     <div className="product-info">      
@@ -12,4 +12,4 @@ const ProposalInfo = ({ data }) => {
     </div>
   );
 };
-export default ProposalInfo;
+export default Chanllengelnfo;

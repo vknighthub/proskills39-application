@@ -1,5 +1,5 @@
 
-const ProposalMeta = ({ data }) => {
+const ChanllengeMeta = ({ data }) => {
 
   return (
     <div className="product-meta-section">
@@ -10,4 +10,4 @@ const ProposalMeta = ({ data }) => {
     </div>
   );
 };
-export default ProposalMeta;
+export default ChanllengeMeta;

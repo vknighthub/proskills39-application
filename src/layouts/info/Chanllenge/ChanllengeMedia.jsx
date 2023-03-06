@@ -1,7 +1,7 @@
 import Image from "next/image";
 import product_2 from '@/assets/images/content/product-img/product-2.jpg';
 
-const ProposalMedia = ({ data }) => {
+const ChanllengeMedia = ({ data }) => {
 
   return (
     <div className="product-media">
@@ -20,4 +20,4 @@ const ProposalMedia = ({ data }) => {
     </div>
   );
 };
-export default ProposalMedia;
+export default ChanllengeMedia;

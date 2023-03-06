@@ -1,6 +1,7 @@
 
 import ProposalDetailnfo from './ProposalDetails/ProposalDetailnfo';
 import ProposalSection from './ProposalDetails/ProposalSection';
+import ProposalRelated from './ProposalDetails/ProposalRelated';
 
 const ProposalDetail = ({ data }) => {
   const proposalSection = data.result.data.proposal_infor.fieldSections
@@ -22,6 +23,11 @@ const ProposalDetail = ({ data }) => {
           </div>
         </div>
       </div>
+
+      <div className="product-page">
+          <ProposalRelated />
+      </div>
+
     </>
   );
 };

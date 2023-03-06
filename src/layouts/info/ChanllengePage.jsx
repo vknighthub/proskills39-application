@@ -1,11 +1,11 @@
+import Chanllengelnfo from './Chanllenge/Chanllengelnfo';
+import ChanllengeMedia from './Chanllenge/ChanllengeMedia';
+import ChanllengeMeta from './Chanllenge/ChanllengeMeta';
 import ProposalList from './Proposal/ProposalList';
-import ProposalMedia from './Proposal/ProposalMedia';
-import ProposalMeta from './Proposal/ProposalMeta';
-import ProposalInfo from './Proposal/Proposalnfo';
 
 
-const Proposal = ({ data }) => {
-  const proposal = data.result.data
+const ChanllengePage = ({ data }) => {
+  const chanllenge = data.result.data
 
   return (
     <div className="primary-content-area container content-padding">
@@ -37,33 +37,26 @@ const Proposal = ({ data }) => {
             </div>
           </div>
           <div className="product-title">
-            <h1>{proposal.challengeName}</h1>
+            <h1>{chanllenge.challengeName}</h1>
           </div>
           <div className="favourite-section">
             <div className="product-fav-counter">
               <svg className="crumina-icon">
                 <use xlinkHref="#heart-icon" />
               </svg>
-              <span className="count">{proposal.voteCount}</span>
+              <span className="count">{chanllenge.voteCount}</span>
             </div>
           </div>
         </div>
-
-
-
+        
         <div className="product-main-info">
-          <ProposalInfo data={proposal} />
-          <ProposalMedia data={proposal} />
-          <ProposalMeta data={proposal} />
+          <Chanllengelnfo data={chanllenge} />
+          <ChanllengeMedia data={chanllenge} />
+          <ChanllengeMeta data={chanllenge} />
         </div>
-          
-      
-        <ProposalList data={proposal} />
-
-
-
+        <ProposalList data={chanllenge} />
       </div>
     </div>
   );
 };
-export default Proposal;
+export default ChanllengePage;
