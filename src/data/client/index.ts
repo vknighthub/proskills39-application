@@ -1,4 +1,4 @@
-import { AuthResponse, CategoriesPaginator, Category, ChallegePaginator, Challenge, ChallengeResult, GetParams, LoginUserInput, Proposal, ProposalQueryOptions, ProposalResult, RegisterUserInput, Service, ServicePaginator, SettingQuery, Settings, SettingsQueryOptions, UserProfileResult } from "@/types";
+import { AuthResponse, CategoriesPaginator, Category, CategoryPaginator, ChallegePaginator, Challenge, ChallengeResult, GetParams, LoginUserInput, Proposal, ProposalQueryOptions, ProposalResult, RegisterUserInput, Service, ServicePaginator, SettingQuery, Settings, SettingsQueryOptions, UserProfileResult } from "@/types";
 import { API_ENDPOINTS } from "./endpoints";
 import { HttpClient } from './http-client';
 
@@ -34,7 +34,7 @@ class Client {
     categories = {
         all: (params?: SettingsQueryOptions) =>
             HttpClient.get<CategoriesPaginator>(API_ENDPOINTS.CATEGORIES, { ...params }),
-        get: ({ slug, language }: GetParams) => HttpClient.get<Category>(`${API_ENDPOINTS.CATEGORIESPAGE}/${slug}`, { language }),
+        get: ({ slug, language }: GetParams) => HttpClient.get<CategoryPaginator>(`${API_ENDPOINTS.CATEGORIESPAGE}/${slug}`, { language }),
 
     }
     services = {

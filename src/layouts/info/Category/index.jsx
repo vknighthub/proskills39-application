@@ -4,8 +4,7 @@ import CategoryPopular from "./CategoryPopular";
 import CategoryExplore from "./CategoryExplore";
 import CategoryFAQs from "./CategoryFAQs";
 
-const Category = ({ data }) => {
-    const category = data.result.data
+const Category = ({ category }) => {
     return (
         <>
             <Seo

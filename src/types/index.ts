@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import type { ReactElement, ReactNode } from 'react';
+import Categories from './../layouts/main/Categories';
 
 export interface QueryOptions {
     page?: number;
@@ -367,28 +368,28 @@ export interface SellerService {
 }
 
 export interface Service {
-    id: number,
-    keyid: string,
-    cate_id: number,
-    username: string,
-    title: string,
-    slug: string,
-    language: string,
-    descriptions: string,
-    status: string,
-    tags: string,
-    price: number,
-    sale_price: number,
-    min_price: number,
-    max_price: number,
-    totalview: number,
-    totalorder: number,
-    totalcomment: number,
-    create_at: Date,
-    update_at: Date,
-    delete_at: Date,
-    overviews: ServiceOverview,
-    sellerInfor: SellerService
+    id: number;
+    keyid: string;
+    cate_id: number;
+    username: string;
+    title: string;
+    slug: string;
+    language: string;
+    descriptions: string;
+    status: string;
+    tags: string;
+    price: number;
+    sale_price: number;
+    min_price: number;
+    max_price: number;
+    totalview: number;
+    totalorder: number;
+    totalcomment: number;
+    create_at: Date;
+    update_at: Date;
+    delete_at: Date;
+    overviews: ServiceOverview;
+    sellerInfor: SellerService;
 }
 
 
@@ -401,4 +402,51 @@ interface ServiceResultInfo<T> {
     }
 }
 
+interface CategoriesResultInfo<T> {
+    result: {
+        data: T
+    }
+}
+
+interface SubjectCategories {
+    id: number;
+    name: string;
+    link: string;
+    slug: string;
+}
+
+interface SubCategory {
+    id: number;
+    name: string;
+    image: string;
+    subject: SubjectCategories[];
+}
+
+interface FAQCategory {
+    id: number;
+    question: string;
+    slug: string;
+    anwser: string;
+    order: string;
+}
+interface PopolarCategory {
+    id: number;
+    name: string;
+    slug: string;
+    image: string;
+    link: string;
+}
+export interface Category {
+    name: string;
+    image: string;
+    url: string | undefined;
+    description: string;
+    listCategories: SubCategory[];
+    listFaq: FAQCategory[];
+    listPopular: PopolarCategory[];
+}
+
 export interface ServicePaginator extends ServiceResultInfo<Service> { }
+
+
+export interface CategoryPaginator extends CategoriesResultInfo<Category> { }

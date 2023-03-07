@@ -1,10 +1,12 @@
 import client from "@/data/client";
 import Layout from "@/layouts/_layout";
 import CategoryPage from "@/layouts/info/Category";
-import { Category, NextPageWithLayout } from "@/types";
+import { Category, NextPageWithLayout, CategoryPaginator } from '@/types';
 import invariant from "invariant";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Seo from "@/layouts/_seo";
+import routes from "@/config/routes";
 
 type ParsedQueryParams = {
     categoriesSlug: string;
@@ -30,7 +32,7 @@ export const getStaticPaths: GetStaticPaths<ParsedQueryParams> = async ({
 };
 
 type PageProps = {
-    category: Category;
+    category: CategoryPaginator;
 };
 
 
@@ -63,9 +65,16 @@ const CategoriesPage: NextPageWithLayout<
     InferGetStaticPropsType<typeof getStaticProps>
 >
     = ({ category }) => {
+        
+        const categoryDetail = category.result.data
+
         return (
             <>
-                <CategoryPage data={category} />
+                <Seo title="ProSkills39 - Categories"
+                    description={categoryDetail.description}
+                    url={routes.categoriesUrl(categoryDetail?.url)}
+                    image_url={categoryDetail.image} />
+                <CategoryPage category={categoryDetail} />
             </>
         )
 

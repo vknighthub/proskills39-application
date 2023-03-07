@@ -1,10 +1,12 @@
 import client from '@/data/client';
 import Layout from '@/layouts/_layout';
-import { NextPageWithLayout,ServicePaginator } from '@/types';
+import { NextPageWithLayout, ServicePaginator } from '@/types';
 import { GetStaticProps, InferGetStaticPropsType, GetStaticPaths } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import invariant from 'tiny-invariant';
 import ServicePagination from '@/layouts/info/Service/ServicePagination'
+import Seo from '@/layouts/_seo';
+import routes from '@/config/routes';
 
 
 type ParsedQueryParams = {
@@ -52,13 +54,17 @@ export const getStaticProps: GetStaticProps<
 };
 
 const ServicesPage: NextPageWithLayout<
-InferGetStaticPropsType<typeof getStaticProps>
-> = ({services}) => {
+    InferGetStaticPropsType<typeof getStaticProps>
+> = ({ services }) => {
     const servicesDetail = services.result.data
     return (
-        <div>
-            <ServicePagination service = {servicesDetail}/>
-        </div>
+        <>
+            <Seo title="ProSkills39 - Service"
+                description="Work with specialized services on your blockchain and cryptocurrency projects."
+                url={routes.service.servicelist("servicesDetail.categoriesname")}
+                image_url='https://api.proskills39.com/system/logo/logotest.png' />
+            <ServicePagination service={servicesDetail} />
+        </>
     )
 }
 ServicesPage.getLayout = function getLayout(page) {

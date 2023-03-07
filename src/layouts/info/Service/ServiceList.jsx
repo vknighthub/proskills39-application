@@ -18,7 +18,7 @@ const ServiceList = ({ service }) => {
                     </div>
                     <div className="featured-item-image ">
                         {" "}
-                        <Link href="/05-product-page">
+                        <Link href={service.slug}>
                             <Swiper {...artworksCarousel} id="homeSlider" className="swiper">
                                 <div className="swiper-wrapper">
                                     {service.overviews.files.map((file, index) => (
@@ -33,14 +33,14 @@ const ServiceList = ({ service }) => {
                     <div className="featured-item-info">
                         <div className="title">
                             {" "}
-                            <Link href="/05-product-page">
-                                
+                            <Link href={service.slug}>
+                                {service.title}
                             </Link>{" "}
                         </div>
                         <div className="item-meta">
                             <span className="avatar box-26">
                                 {" "}
-                                <Link href="/08-profile-page">
+                                <Link href={service.slug}>
                                     <Image src={service.sellerInfor.avatar ? service.sellerInfor.avatar : avatar} alt="Avatar" width={80} height={80} />
                                 </Link>{" "}
                                 <span className="verified">
@@ -56,7 +56,7 @@ const ServiceList = ({ service }) => {
                 <div className="featured-item-post-content">
                     <div className="featured-item-pricebox">
                         <div className="price-caption">Starting at</div>
-                        <div className="price">v2P {service.price}</div>
+                        <div className="price">v2p {service.price}</div>
                     </div>
                 </div>
             </div>
