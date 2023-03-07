@@ -396,6 +396,9 @@ export interface Service {
 interface ServiceResultInfo<T> {
     result: {
         data: {
+            categoriesslug: string;
+            categoriesname: string;
+            image: string;
             listservice: T[];
             listservicepopular: T[];
         }

@@ -60,9 +60,9 @@ const ServicesPage: NextPageWithLayout<
     return (
         <>
             <Seo title="ProSkills39 - Service"
-                description="Work with specialized services on your blockchain and cryptocurrency projects."
-                url={routes.service.servicelist("servicesDetail.categoriesname")}
-                image_url='https://api.proskills39.com/system/logo/logotest.png' />
+                description={servicesDetail.categoriesname}
+                url={routes.service.servicelist(servicesDetail.categoriesslug)}
+                image_url={servicesDetail.image} />
             <ServicePagination service={servicesDetail} />
         </>
     )
