@@ -1,7 +1,8 @@
+import avatar from '@/assets/images/avatar.png';
+import { artworksCarousel } from "@/components/styles/sliderProps";
 import Image from "next/image";
 import Link from "next/link";
-import serviceimage from '@/assets/images/service/appreciate.jpg';
-import avatar from '@/assets/images/avatar.png';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const ServiceList = ({ service }) => {
     return (
@@ -15,17 +16,25 @@ const ServiceList = ({ service }) => {
                         </svg>{" "}
                         <span className="count">10</span>
                     </div>
-                    <div className="featured-item-image">
+                    <div className="featured-item-image ">
                         {" "}
                         <Link href="/05-product-page">
-                            <Image src={serviceimage} alt="" width={300} height={300} />
+                            <Swiper {...artworksCarousel} id="homeSlider" className="swiper">
+                                <div className="swiper-wrapper">
+                                    {service.overviews.files.map((file, index) => (
+                                        <SwiperSlide id="slide-1" className="swiper-slide" key={index}>
+                                            <Image src={file.url} alt={file.title} width={300} height={300} />
+                                        </SwiperSlide>
+                                    ))}
+                                </div>
+                            </Swiper>
                         </Link>{" "}
                     </div>
                     <div className="featured-item-info">
                         <div className="title">
                             {" "}
                             <Link href="/05-product-page">
-                                {service.descriptions}
+                                
                             </Link>{" "}
                         </div>
                         <div className="item-meta">
