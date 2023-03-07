@@ -31,9 +31,7 @@ const MobileHeader = () => {
           {/*MOBILE LOGO*/}
           <div className="mobile-menu-logo logo">
             {" "}
-            <Link legacyBehavior href="/" passHref >
-              <Logo />
-            </Link>{" "}
+            <Logo />
           </div>
           {/*/MOBILE LOGO*/}
           {/*close button*/}

@@ -84,7 +84,7 @@ export interface Settings {
     updated_at: Date;
 }
 
-export interface SettingQuery extends ResultObject<Settings> {}
+export interface SettingQuery extends ResultObject<Settings> { }
 
 export interface SettingsQueryOptions extends QueryOptions {
     language?: string;
@@ -273,10 +273,10 @@ export interface AssessmentDetail {
     summaryAssement: string,
     summaryReply: string,
     ratingAvg: number,
-    ratingImpAvg:number,
+    ratingImpAvg: number,
     ratingFeaAvg: number,
     ratingAuditAvg: number,
-    assessmentDetail: Assessment []
+    assessmentDetail: Assessment[]
 }
 
 export interface ProposalQueryOptions {
@@ -313,8 +313,8 @@ interface ResultInfoObject<T> {
 
 export interface ChallegePaginator extends ResultInfo<Challenge> { }
 
-export interface ProposalResult extends ResultInfoObject<ProposalDetailType> {}
-export interface ChallengeResult extends ResultInfoObject<Challenge> {}
+export interface ProposalResult extends ResultInfoObject<ProposalDetailType> { }
+export interface ChallengeResult extends ResultInfoObject<Challenge> { }
 
 
 export interface Category {
@@ -341,3 +341,64 @@ export interface Category {
 }
 export interface CategoriesPaginator extends ResultInfo<Category> { }
 
+export interface OverviewFiles {
+    description: string;
+    type: string;
+    url: string;
+    title: string;
+    filename: string
+}
+export interface ServiceOverview {
+    files: OverviewFiles[]
+}
+
+export interface SellerService {
+    fullname: string;
+    joindate: Date;
+    avatar: string;
+    address: {
+        country: string;
+        city: string;
+        province: string;
+        district: string;
+    },
+    aboutme: string;
+    lastdelivery: Date;
+}
+
+export interface Service {
+    id: number,
+    keyid: string,
+    cate_id: number,
+    username: string,
+    title: string,
+    slug: string,
+    language: string,
+    descriptions: string,
+    status: string,
+    tags: string,
+    price: number,
+    sale_price: number,
+    min_price: number,
+    max_price: number,
+    totalview: number,
+    totalorder: number,
+    totalcomment: number,
+    create_at: Date,
+    update_at: Date,
+    delete_at: Date,
+    overviews: ServiceOverview,
+    sellerInfor: SellerService
+}
+
+
+interface ServiceResultInfo<T> {
+    result: {
+        data: {
+            listservice: T[];
+            listservicepopular: T[];
+        }
+    }
+}
+
+export interface ServicePaginator extends ServiceResultInfo<Service> { }

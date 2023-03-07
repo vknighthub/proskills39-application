@@ -104,8 +104,8 @@ const ProfileDropdown = ({ profile }) => {
 
                                 <div className="profile-link">
                                     {" "}
-                                    <Link legacyBehavior href="/08-profile-page">
-                                        <a className="btn btn-small gradient-background">My Profile</a>
+                                    <Link legacyBehavior href="/08-profile-page" className="btn btn-small gradient-background">
+                                        My Profile
                                     </Link>{" "}
                                 </div>
                             </div>
@@ -122,35 +122,29 @@ const ProfileDropdown = ({ profile }) => {
                                 </li>
                                 <li className="account">
                                     {" "}
-                                    <Link legacyBehavior href="/account-setting" onClick={() => setToggle(!toggle)}>
-                                        <a>
-                                            <svg className="crumina-icon">
-                                                <use xlinkHref="#settings-icon" />
-                                            </svg>
-                                            Account Settings
-                                        </a>
+                                    <Link href="/account-setting" onClick={() => setToggle(!toggle)}>
+                                        <svg className="crumina-icon">
+                                            <use xlinkHref="#settings-icon" />
+                                        </svg>
+                                        Account Settings
                                     </Link>{" "}
                                 </li>
                                 <li className="notification">
                                     {" "}
-                                    <Link legacyBehavior href="/notification-setting" onClick={() => setToggle(!toggle)}>
-                                        <a>
-                                            <svg className="crumina-icon">
-                                                <use xlinkHref="#slide-filter-icon" />
-                                            </svg>
-                                            Notification Settings
-                                        </a>
+                                    <Link href="/notification-setting" onClick={() => setToggle(!toggle)}>
+                                        <svg className="crumina-icon">
+                                            <use xlinkHref="#slide-filter-icon" />
+                                        </svg>
+                                        Notification Settings
                                     </Link>{" "}
                                 </li>
                                 <li className="artwork">
                                     {" "}
-                                    <Link legacyBehavior href="/seller">
-                                        <a>
+                                    <Link  href="/seller">
                                             <svg className="crumina-icon">
                                                 <use xlinkHref="#picture-icon" />
                                             </svg>
                                             Become a seller
-                                        </a>
                                     </Link>{" "}
                                 </li>
                                 <li className="wallet">
@@ -164,13 +158,11 @@ const ProfileDropdown = ({ profile }) => {
                                 </li>
                                 <li className="verification">
                                     {" "}
-                                    <Link legacyBehavior href="/user-verify" onClick={() => setToggle(!toggle)}>
-                                        <a>
+                                    <Link href="/user-verify" onClick={() => setToggle(!toggle)}>
                                             <svg className="crumina-icon">
                                                 <use xlinkHref="#circle-checked-icon" />
                                             </svg>
                                             Get Verified
-                                        </a>
                                     </Link>{" "}
                                 </li>
                                 <li className="logout">

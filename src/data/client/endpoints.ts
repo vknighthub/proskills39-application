@@ -11,5 +11,6 @@ export const API_ENDPOINTS = {
     DREP_ASSESSMENTBYID: '/drep/admin/getassessmentdetail',
     CATEGORIES: '/system/categories',
     CATEGORIESPAGE: '/system/categoriespage',
+    SERVICES: '/services/getservicebycatid',
     
 }
