@@ -1,4 +1,5 @@
 import Image from '@/components/ui/image';
+import routes from '@/config/routes';
 import Link from "next/link";
 
 const CategoryExplore = ({ data }) => {
@@ -32,13 +33,11 @@ const CategoryExplore = ({ data }) => {
                             </div>
                             {explore.subject.map((subject) => (
                                 <div className="news-title h5" key={subject.id}>
-                                    <Link href={subject.link}>
+                                    <Link href={`/${routes.service.servicelist(subject.slug)}`}>
                                         {subject.name}
                                     </Link>
                                 </div>
                             ))}
-
-
                         </div>
                     </div>
                 ))}

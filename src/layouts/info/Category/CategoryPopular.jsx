@@ -2,6 +2,7 @@ import { featuredCarousel } from '@/components/styles/sliderProps';
 import Image from '@/components/ui/image';
 import Link from "next/link";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import routes  from '@/config/routes';
 
 const CategoryPopular = ({ data }) => {
     return (
@@ -34,7 +35,7 @@ const CategoryPopular = ({ data }) => {
                                         <div className="creator-box">
 
                                             <div className="box-64">
-                                                <Link href={item.link}>
+                                                <Link href={`/${routes.service.servicelist(item.slug)}`}>
                                                     <Image
                                                         src={item.image}
                                                         width={100}
@@ -45,7 +46,7 @@ const CategoryPopular = ({ data }) => {
                                             </div>
 
                                             <div className="creator-meta title">
-                                                <Link href={item.link}>{item.name}</Link>
+                                                <Link href={`/${routes.service.servicelist(item.slug)}`}>{item.name}</Link>
                                             </div>
                                         </div>
 
