@@ -10757,6 +10757,13 @@ td[data-label="Date"] {
 .ml-lg-1 {
     margin-left: 1rem !important;
 }
+.mt-3 {
+    margin-top: 1rem !important;
+}
 .mt-5 {
     margin-top: 3rem !important;
+}
+
+.w-100 {
+    width: 100% !important;
 }
