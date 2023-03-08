@@ -3,8 +3,10 @@ import React, { useState } from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 import ServiceList from './ServiceList';
 import { dblock } from '@/utils/util'
+import Paggination from './../../../components/styles/Paggination';
 
 const ServicePaginator = ({ service }) => {
+    const [filterData, setFilterData] = useState(service.listservice && service.listservice);
     const [active, setActive] = useState(0);
     let sort = 8;
 
@@ -221,12 +223,20 @@ const ServicePaginator = ({ service }) => {
             </Swiper>
 
             <div className="featured-box grid-4-columns">
-                {service.listservice.map((serviceData,index) => (
+                {service.listservice.map((serviceData, index) => (
                     <div key={serviceData.id} className={`${dblock(active, index, sort)}`}>
                         <ServiceList service={serviceData} />
                     </div>
                 ))}
             </div>
+
+            <Paggination
+                active={active}
+                setActive={setActive}
+                sort={sort}
+                length={filterData && filterData.length}
+                className="flex-center"
+            />
 
         </div>
     )

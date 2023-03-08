@@ -20,6 +20,18 @@ const ServiceList = ({ service }) => {
                         {" "}
                         <Link href={service.slug}>
                             <Swiper {...artworksCarousel} id="homeSlider" className="swiper">
+                                <div className="categories-nav">
+                                    <a className="arrow arrow-left swiper-button-prev">
+                                        <svg className="crumina-icon">
+                                            <use xlinkHref="#arrow-left2-icon" />
+                                        </svg>
+                                    </a>
+                                    <a  className="arrow arrow-right swiper-button-next">
+                                        <svg className="crumina-icon">
+                                            <use xlinkHref="#arrow-right2-icon" />
+                                        </svg>
+                                    </a>
+                                </div>
                                 <div className="swiper-wrapper">
                                     {service.overviews.files.map((file, index) => (
                                         <SwiperSlide id="slide-1" className="swiper-slide" key={index}>
