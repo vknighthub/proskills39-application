@@ -6,10 +6,19 @@ const ServiceDetailTab = () => {
     const [activeTab, setActiveTab] = useState("tab1");
     const activeTabNav = (value) => (value === activeTab ? "active" : ""),
         activeContent = (value) => (value === activeTab ? "active" : "");
+
+    const handleClickScroll = () => {
+        const element = document.getElementById('compare-package');
+        if (element) {
+            // 👇 Will scroll smoothly to the top of the next section
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <>
-            <div className="tabs-block">
-                <ul className="tabs-list">
+            <div className="tabs-block ">
+                <ul className="tabs-list ">
                     <li
                         className={activeTabNav("tab1")}
                         onClick={() => setActiveTab("tab1")}
@@ -69,7 +78,7 @@ const ServiceDetailTab = () => {
                             </div>
                         </div>
                         <div className="mt-5 text-center">
-                            <Link href="#" className="green " >Compare package</Link>
+                            <Link href="#compare-package" onClick={()=> handleClickScroll()} className="green " >Compare package</Link>
                         </div>
                     </div>
                 </div>

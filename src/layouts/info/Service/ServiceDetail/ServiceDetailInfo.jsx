@@ -1,8 +1,3 @@
-import Link from "next/link";
-import React from "react";
-import avatar from '@/assets/images/avatar.png';
-import Image from "next/image";
-import Rating from './../../../../utils/get-star';
 
 const ServiceDetailInfo = () => {
     return (
@@ -10,23 +5,6 @@ const ServiceDetailInfo = () => {
             <div className="page-title-section">
                 <h1>Breathing Nature</h1>
             </div>
-            <div className="avatar-block">
-
-                <div className="avatar box-42">
-                    {" "}
-                    <Link href="/08-profile-page">
-                        <Image src={avatar} alt="avatar" width={80} height={80} />
-                    </Link>{" "}
-                    <span className="verified">
-                        <svg className="crumina-icon">
-                            <use xlinkHref="#check-icon" />
-                        </svg>
-                    </span>
-                </div>
-
-            
-            </div>
-
 
             <div className="product-meta-section">
                 <div className="product-meta-item">
@@ -51,11 +29,11 @@ const ServiceDetailInfo = () => {
                 </div>
             </div>
             <div className="product-description">
-                <div className="small-title">Description</div>
+                <div className="small-title">About This Gig</div>
                 <p>
-                    I am a self-taught digital artist who specializes in 3d art and motion
-                    graphics. Most of my works are inspired by nature and biomechanic
-                    themes.
+                    Hello there!
+
+                    I am an experienced web developer and currently working on some nft projects.In this gig I will develop nft minting website, which let users to mint nfts from your collection.
                 </p>
                 <p>
                     What does it mean? Biomechanics is the study of the structure,
