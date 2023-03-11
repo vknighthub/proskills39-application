@@ -8619,6 +8619,14 @@ blockquote p {
     margin-bottom: 15px;
 }
 
+.activity-meta .string,
+.projects-meta .string {
+    font-size: clamp(12px, calc(1rem + 1vw), 18px);
+    font-weight: var(--heading-font-weight);
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
 .activity-meta .label,
 .projects-meta .label {
     line-height: 1;

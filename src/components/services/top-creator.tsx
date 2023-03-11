@@ -8,7 +8,7 @@ import Link from "next/link";
 const topcreator = [
     {
         id: '01',
-        link: '/08-profile-page',
+        link: '/seller/01',
         creator: 'Dexter Stark',
         tagName: '@DexterStark',
         score: 135,
@@ -30,7 +30,7 @@ const topcreator = [
     },
     {
         id: '02',
-        link: '/08-profile-page',
+        link: '/seller/01',
         creator: 'Jackie Jones',
         tagName: '@JackieJ',
         score: 107,
@@ -51,7 +51,7 @@ const topcreator = [
     },
     {
         id: '03',
-        link: '/08-profile-page',
+        link: '/seller/01',
         creator: 'Noir Artworks',
         tagName: '@noirArtks',
         score: 94,
@@ -73,7 +73,7 @@ const topcreator = [
     },
     {
         id: '04',
-        link: '/08-profile-page',
+        link: '/seller/01',
         creator: 'The Green Goo',
         tagName: '@daGreenGoo',
         score: 83,
@@ -95,7 +95,7 @@ const topcreator = [
     },
     {
         id: '05',
-        link: '/08-profile-page',
+        link: '/seller/01',
         creator: 'Nicholas Stevens',
         tagName: '@nickstevens',
         score: 50,
@@ -117,7 +117,7 @@ const topcreator = [
     },
     {
         id: '06',
-        link: '/08-profile-page',
+        link: '/seller/01',
         creator: 'Bearded Wonder',
         tagName: '@beardedwndr',
         score: 26,
@@ -175,7 +175,7 @@ const HomeTopCreators = () => {
                             <div className="creator-meta">
                                 <div className="title">
                                     {" "}
-                                    <Link href="/08-profile-page">
+                                    <Link href="/seller/01">
                                         {creator.creator}
                                     </Link>{" "}
                                 </div>
