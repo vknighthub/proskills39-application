@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 
-const ServiceDetailTab = () => {
+const ServiceDetailTab = ({data}) => {
     const [activeTab, setActiveTab] = useState("tab1");
     const activeTabNav = (value) => (value === activeTab ? "active" : ""),
         activeContent = (value) => (value === activeTab ? "active" : "");
@@ -38,6 +38,7 @@ const ServiceDetailTab = () => {
                         <a>Premium</a>
                     </li>
                 </ul>
+
                 <div id="tab1" className={`tab ${activeContent("tab1")}`}>
                     <div className="tab-content">
                         <div className="placed-bid">

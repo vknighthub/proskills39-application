@@ -1,5 +1,6 @@
+import parse from 'html-react-parser';
 
-const ServiceDetailInfo = () => {
+const ServiceDetailInfo = ({data}) => {
     return (
         <>
             <div className="page-title-section">
@@ -8,85 +9,21 @@ const ServiceDetailInfo = () => {
 
             <div className="product-meta-section">
                 <div className="product-meta-item">
-                    <div className="label">Current bid</div>
-                    <div className="value">2.31 ETH</div>
-                    <div className="caption">125.230 U$D</div>
+                    <div className="label">Current price</div>
+                    <div className="value">{data.price.v2p} v2p</div>
+                    <div className="caption">{data.price.usd} U$D</div>
                 </div>
                 <div className="product-meta-item">
                     <div className="label">Edition</div>
-                    <div className="value">01/40</div>
+                    <div className="value">{data.edition.bought}/{data.edition.total}</div>
                     <div className="caption">Tokens</div>
-                </div>
-                <div className="product-meta-item">
-                    <div className="label">AUCTION ENDING IN</div>
-                    <div className="countdown">
-                        <div
-                            className="js-countdown"
-                            data-timer={104400}
-                            data-labels="Days , Hours , Mins , Secs"
-                        />
-                    </div>
                 </div>
             </div>
             <div className="product-description">
-                <div className="small-title">About This Gig</div>
-                <p>
-                    Hello there!
-
-                    I am an experienced web developer and currently working on some nft projects.In this gig I will develop nft minting website, which let users to mint nfts from your collection.
-                </p>
-                <p>
-                    What does it mean? Biomechanics is the study of the structure,
-                    function and motion of the mechanical aspects of biological systems,
-                    at any level from whole organisms to organs, cells and cell
-                    organelles, using the methods of mechanics. Biomechanics is a branch
-                    of biophysics.
-                </p>
+                <div className="small-title">About This Service</div>
+                {parse(data.description)}
             </div>
-            <div className="bidding-section">
-                <div className="place-bid">
-                    <button className="btn btn-wide btn-dark">Place a Bid!</button>
-                </div>
-                <div className="product-fav-counter">
-                    <svg className="crumina-icon">
-                        <use xlinkHref="#heart-icon" />
-                    </svg>
-                    <span className="count">105</span>
-                </div>
-                <div className="more-link">
-                    {" "}
-                    <a href="#">
-                        <svg className="crumina-icon">
-                            <use xlinkHref="#dots-icon" />
-                        </svg>
-                    </a>
-                </div>
-                <div className="social-share-box">
-                    <div className="share-icons">
-                        {" "}
-                        <a href="#">
-                            <svg className="crumina-icon">
-                                <use xlinkHref="#link-icon" />
-                            </svg>
-                        </a>{" "}
-                        <a href="#">
-                            <svg className="crumina-icon">
-                                <use xlinkHref="#facebook-icon" />
-                            </svg>
-                        </a>{" "}
-                        <a href="#">
-                            <svg className="crumina-icon">
-                                <use xlinkHref="#twitter-icon" />
-                            </svg>
-                        </a>
-                        <a href="">
-                            <svg className="crumina-icon">
-                                <use xlinkHref="#instagram-icon" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            
         </>
     );
 };

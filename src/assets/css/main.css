@@ -10767,6 +10767,13 @@ td[data-label="Date"] {
 .w-100 {
     width: 100% !important;
 }
+
+@media (max-width: 768px) {
+    #compare-package{
+        display: none;
+    }
+}
+
 .product-seller {
     margin-top: 1rem !important;
 }
@@ -10839,6 +10846,9 @@ td[data-label="Date"] {
 }
 .included{
     fill: #1dbf73
+}
+.not-included{
+    fill: #dadbdd
 }
 .fake-radio-wrapper{
     display: inline-block;
