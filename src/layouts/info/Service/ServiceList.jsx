@@ -18,7 +18,7 @@ const ServiceList = ({ service }) => {
                     </div>
                     <div className="featured-item-image ">
                         {" "}
-                        <Link href={service.slug}>
+                        <Link href={`/categories/services/servicedetail/${service.slug}`}>
                             <Swiper {...artworksCarousel} id="homeSlider" className="swiper">
                                 <div className="categories-nav">
                                     <a className="arrow arrow-left swiper-button-prev">
@@ -26,7 +26,7 @@ const ServiceList = ({ service }) => {
                                             <use xlinkHref="#arrow-left2-icon" />
                                         </svg>
                                     </a>
-                                    <a  className="arrow arrow-right swiper-button-next">
+                                    <a className="arrow arrow-right swiper-button-next">
                                         <svg className="crumina-icon">
                                             <use xlinkHref="#arrow-right2-icon" />
                                         </svg>
@@ -45,24 +45,23 @@ const ServiceList = ({ service }) => {
                     <div className="featured-item-info">
                         <div className="title">
                             {" "}
-                            <Link href={service.slug}>
+                            <Link href={`/categories/services/servicedetail/${service.slug}`}>
                                 {service.title}
                             </Link>{" "}
                         </div>
-                        <div className="item-meta">
-                            <span className="avatar box-26">
-                                {" "}
-                                <Link href={service.slug}>
+                        <Link href={`/seller/${service.username}`}>
+                            <div className="item-meta">
+                                <span className="avatar box-26">
                                     <Image src={service.sellerInfor.avatar ? service.sellerInfor.avatar : avatar} alt="Avatar" width={80} height={80} />
-                                </Link>{" "}
-                                <span className="verified">
-                                    <svg className="crumina-icon">
-                                        <use xlinkHref="#check-icon" />
-                                    </svg>{" "}
+                                    <span className="verified">
+                                        <svg className="crumina-icon">
+                                            <use xlinkHref="#check-icon" />
+                                        </svg>{" "}
+                                    </span>
                                 </span>
-                            </span>
-                            @{service.username}
-                        </div>
+                                @{service.username}
+                            </div>
+                        </Link>
                     </div>
                 </div>
                 <div className="featured-item-post-content">

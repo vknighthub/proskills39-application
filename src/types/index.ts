@@ -27,6 +27,12 @@ export interface Attachment {
     original: string;
     thumbnail: string;
 }
+export interface Image {
+    type: string;
+    filename: string;
+    title: string;
+    url: string;
+}
 
 interface ResultObject<T> {
     result: {
@@ -405,6 +411,12 @@ interface ServiceResultInfo<T> {
     }
 }
 
+interface ServiceDetailResultInfo<T> {
+    result: {
+        data: T
+    }
+}
+
 interface CategoriesResultInfo<T> {
     result: {
         data: T
@@ -449,7 +461,91 @@ export interface Category {
     listPopular: PopolarCategory[];
 }
 
+interface PriceService {
+    usd: number;
+    v2p: number;
+}
+interface EditionService {
+    total: number;
+    boutgh: number;
+}
+interface ServiceDetailInfo {
+    serviceId: number;
+    slug: string;
+    servicename: string;
+    price: PriceService;
+    edition: EditionService;
+    image: Image[];
+    description: string;
+    username: string;
+}
+interface SellerServiceDetail {
+    id: number;
+    country: string;
+    rating: number;
+    title: string;
+    usernames: string;
+    membersince: Date;
+    lastdelivery: Date;
+    introduce: string;
+    language: string;
+}
+interface Feature {
+    id: number;
+    name: string;
+    isVisibility: number;
+}
+export interface Package {
+    id: number;
+    name: string;
+    price: number;
+    promise: string;
+    numberofdaydelivery: number;
+    serviceId: number;
+    feature: Feature[];
+}
+
+interface VisibilityCompare {
+    id: string;
+    value: number;
+}
+interface ListCompare {
+    id: number;
+    name: string;
+    visibility: VisibilityCompare[]
+}
+interface Promise {
+    id: string;
+    name: string;
+}
+interface DeliveryTimePackage {
+    id: string;
+    day: number;
+    fastday: number;
+    pricefaster: number;
+}
+interface TotalPricePackage {
+    id: string;
+    price: number;
+}
+export interface ComparePackage {
+    listcompare: ListCompare[];
+    promise: Promise[];
+    deliverytime: DeliveryTimePackage[];
+    totalprice: TotalPricePackage[];
+    serviceId: number;
+}
+export interface ServiceDetail {
+    services: ServiceDetailInfo;
+    seller: SellerServiceDetail;
+    package: Package[];
+    comparepackage: ComparePackage;
+}
+
 export interface ServicePaginator extends ServiceResultInfo<Service> { }
 
 
 export interface CategoryPaginator extends CategoriesResultInfo<Category> { }
+
+
+export interface ServiceDetailPaginator extends ServiceDetailResultInfo<ServiceDetail> { }

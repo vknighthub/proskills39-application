@@ -37,9 +37,9 @@ const ServiceDetailMedia = ({ data, compare }) => {
                                 </a>
                             </div>
                             <div className="swiper-wrapper">
-                                {data.service.image.map((image)=>(
-                                <SwiperSlide id="slide-1" className="swiper-slide" key={image.id}>
-                                    <Image src={image.image} alt="product" width={300} height={300} />
+                                {data.services.image.map((image, index)=>(
+                                <SwiperSlide id="slide-1" className="swiper-slide" key={index}>
+                                    <Image src={image.url} alt="product" width={300} height={300} />
                                 </SwiperSlide>
                                 ))}
                             </div>
@@ -66,7 +66,7 @@ const ServiceDetailMedia = ({ data, compare }) => {
                             <div className="avatar-title">
                                 <span className="gradient-text">
                                     {" "}
-                                    <Link href="/08-profile-page">
+                                    <Link href={`/seller/${data.seller.username}`}>
                                         {data.seller.username}
                                     </Link>{" "}
                                 </span>
@@ -74,9 +74,6 @@ const ServiceDetailMedia = ({ data, compare }) => {
                             <div className="avatar-meta">{data.seller.title}</div>
                             <div className="avatar-meta mt-3">
                                 <Rating rating={data.seller.rating} />
-                            </div>
-                            <div className="avatar-meta mt-5">
-                                <button className="btn btn-wide btn-dark">Contact to me</button>
                             </div>
                         </div>
                     </div>

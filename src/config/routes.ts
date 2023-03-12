@@ -8,7 +8,8 @@ const routes = {
         programing_tech: 'categories/programing-tech'
     },
     service: {
-        servicelist:(slug: string) => `categories/services/${slug}`
+        servicelist:(slug: string) => `categories/services/${slug}`,
+        servicedetail: (slug: string) => `categories/services/servicedetail/${slug}`
     }
 }
 export default routes;

@@ -4,7 +4,7 @@ const ServiceDetailInfo = ({data}) => {
     return (
         <>
             <div className="page-title-section">
-                <h1>Breathing Nature</h1>
+                <h1>{data.servicename}</h1>
             </div>
 
             <div className="product-meta-section">
