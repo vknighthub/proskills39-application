@@ -5,9 +5,11 @@ import aboutus from "./../data/categories/aboutus.json";
 import categories from "./../data/categories/index.json";
 import community from "./../data/categories/community.json";
 import support from "./../data/categories/support.json";
+import { useTranslation } from "react-i18next";
 
 
 export default function Footer() {
+    const { t } = useTranslation('common');
     return (
         <footer className="footer">
             <div className="footer-wrapper container">
@@ -19,7 +21,7 @@ export default function Footer() {
                             </div>
                             <div className="footer-text">
                                 <p>
-                                    ProSkills39 is a Service Marketplace that connects pro-skills freelancers and provides support services for project owners to start up and expand their businesses at a reasonable cost.
+                                    {t('text-proskills39')}
                                 </p>
                             </div>
                             <ul className="social-icons-list">
@@ -90,7 +92,7 @@ export default function Footer() {
                     </div>
                     <div className="footer-column">
                         <div className="footer-widget">
-                            <div className="widget-title">Categories</div>
+                            <div className="widget-title">{t('text-category')}</div>
                             <div className="is-two-col-element">
                                 <ul className="footer-menu">
                                     {categories.map((category, index) => (
@@ -109,7 +111,7 @@ export default function Footer() {
                     </div>
                     <div className="footer-column">
                         <div className="footer-widget">
-                            <div className="widget-title">Community</div>
+                            <div className="widget-title">{t('text-community')}</div>
                             <ul className="footer-menu">
                                 {community.map((community, index) => (
                                     <li key={index} className="menu-item">
@@ -125,7 +127,7 @@ export default function Footer() {
 
                     <div className="footer-column">
                         <div className="footer-widget">
-                            <div className="widget-title">Support</div>
+                            <div className="widget-title">{t('text-support')}</div>
                             <ul className="footer-menu">
                                 {aboutus.map((aboutus, index) => (
                                     <li key={index} className="menu-item">
@@ -142,7 +144,7 @@ export default function Footer() {
 
                     <div className="footer-column">
                         <div className="footer-widget">
-                            <div className="widget-title">About us</div>
+                            <div className="widget-title">{t('text-about')}</div>
                             <ul className="footer-menu">
                                 {support.map((support, index) => (
                                     <li key={index} className="menu-item">
@@ -160,17 +162,17 @@ export default function Footer() {
                 </div>
                 <div className="footer-copyright flex-space-between">
                     <span className="copyright-text">
-                        vKnightHub 2023 - All Rights Reserved
+                        vKnightHub 2023 - {t('text-all-rights-reserved')}
                     </span>
                     <ul className="sub-footer-menu">
                         <li className="menu-item">
                             <a className="menu-link" href="#">
-                                Terms of Service
+                                {t('text-term-and-service')}
                             </a>
                         </li>
                         <li className="menu-item">
                             <a className="menu-link" href="#">
-                                Privacy
+                                {t('text-privacy')}
                             </a>
                         </li>
                     </ul>

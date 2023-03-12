@@ -6,6 +6,8 @@ import routes from '@/config/routes'
 import Layout from '@/layouts/_layout'
 import Seo from '@/layouts/_seo'
 import { NextPageWithLayout } from '@/types'
+import { GetStaticProps } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 const Home: NextPageWithLayout = () => {
   return (
@@ -25,6 +27,14 @@ const Home: NextPageWithLayout = () => {
     </>
   )
 }
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale!, ['common'])),
+    },
+    revalidate: 60, // In seconds
+  };
+};
 
 Home.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>

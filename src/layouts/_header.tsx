@@ -8,11 +8,12 @@ import MobileHeader from './header/MobileHeader';
 import MobileSearchTrigger from './header/MobileSearchTrigger';
 import ProfileDropdown from './header/ProfileDropdown';
 import SearchBox from './header/SearchBox';
+import { useTranslation } from 'next-i18next';
 
 export default function Header() {
   const [searchToggle, setSearchToggle] = useState(false);
   const { data: session } = useSession();
-
+  const { t } = useTranslation('common');
   const { me, isAuthorized } = useMe();
 
   return (
@@ -32,7 +33,7 @@ export default function Header() {
             </>
             :
             <>
-              <ButtonHeader name="Login" link='/login' />
+              <ButtonHeader name={t('text-login')} link='/login' />
               <ActionHeader />
             </>
           }

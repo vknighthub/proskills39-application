@@ -67,7 +67,7 @@ const seller = {
     service: [
         {
             username : 'anhben',
-            slug: "/data-test",
+            slug: "data-test",
             price: 10,
             overviews: {
                 files: [
@@ -121,7 +121,7 @@ const seller = {
         },
         {
             username : 'anhben',
-            slug: "/data-test",
+            slug: "data-test",
             price: 10,
             overviews: {
                 files: [

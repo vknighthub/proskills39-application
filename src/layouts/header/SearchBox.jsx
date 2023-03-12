@@ -1,12 +1,14 @@
-import { Fragment, useState } from "react";
-import categories from "./../../data/categories/categories.json"
+import { useTranslation } from 'next-i18next';
+import { useState } from "react";
+import categories from "./../../data/categories/categories.json";
 
 const SearchBox = () => {
   const [activeToggle, setActiveToggle] = useState(false);
   const [active, setActive] = useState("All items");
+  const { t } = useTranslation('common');
 
   return (
-    <Fragment>
+    <>
       <div className="searchbox">
         <form
           method="get"
@@ -46,7 +48,7 @@ const SearchBox = () => {
             className="search-input"
             name="head-search"
             id="head-search"
-            placeholder="Enter your search here..."
+            placeholder={t('text-search-word')}
           />
           <button className="search-button">
             <svg className="crumina-icon">
@@ -55,7 +57,7 @@ const SearchBox = () => {
           </button>
         </form>
       </div>
-    </Fragment>
+    </>
   );
 };
 export default SearchBox;

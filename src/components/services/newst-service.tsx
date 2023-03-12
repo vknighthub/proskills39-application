@@ -11,7 +11,7 @@ export const NewestService = () => {
         {
             id: 1,
             name: 'Weperfectionist',
-            link: '/08-profile-page',
+            link: 'Fonts-&-Tyographyservices-36',
             image: subtle_image_1,
             avatar: avatar_Weperfectionist,
             tag: '@weperfectionist',
@@ -20,7 +20,7 @@ export const NewestService = () => {
         {
             id: 2,
             name: 'Logoflow',
-            link: '/08-profile-page',
+            link: 'Fonts-&-Tyographyservices-36',
             image: subtle_image_2,
             avatar: avatar_Logoflow,
             tag: '@logoflow',
@@ -55,7 +55,7 @@ export const NewestService = () => {
                                 <div className="featured-creators-info">
                                     <div className="title h4">
                                         {" "}
-                                        <Link href={service.link}>
+                                        <Link href={`/categories/services/servicedetail/${service.link}`}>
                                             {service.name}
                                         </Link>{" "}
                                     </div>

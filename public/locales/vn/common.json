@@ -70,7 +70,7 @@
   "text-contact": "Contact",
   "text-settings": "Settings",
   "text-terms": "Terms",
-  "text-privacy": "Privacy",
+  "text-privacy": "Quyền riêng tư",
   "text-close-panel": "Close panel",
   "text-copy-right": "Copyright",
   "text-copy-right-by": "By",
@@ -95,7 +95,7 @@
   "text-ask-question": "Ask Question",
   "text-page": "Page",
   "text-of": "of",
-  "text-order" : "Order",
+  "text-order": "Order",
   "text-no-question-found": "No question found",
   "text-recent": "Recent",
   "text-ratings-low-to-high": "Ratings: Low to High",
@@ -109,7 +109,7 @@
   "text-placeholder-search": "Search by name...",
   "text-empty-cart-message": "Your cart is empty",
   "text-empty-cart-list": "Please add product to your cart list",
-  "text-about": "About",
+  "text-about": "Về chúng tôi",
   "text-total-sales": "Total Sales",
   "text-date": "Date",
   "text-q": "Q",
@@ -133,142 +133,108 @@
   "text-help-five-desc": "Our Customer Experience Team is available 7 days a week and we offer 2 ways to get in contact.Email and Chat . We try to reply quickly, so you need not to wait too long for a response!.",
   "text-help-six-title": "App installation failed, how to update system information?",
   "text-help-six-desc": "Please read the documentation carefully . We also have some online video tutorials regarding this issue . If the problem remains, Please Open a ticket in the support forum.",
-
   "text-license-one-title": "Personal Information",
   "text-license-one-desc": "<p>\"Pixer\" is a trademark of Pixer Private Limited (\"Company\"), a company incorporated under the Companies Act, 2013 with its registered and corporate office at Plot 64H, Sector 18, Gudgeon 122001 in the course of its business. The domain name grocers.com is owned by the Company.</p><p>If you are a California resident, the information below also applies to you. Certain terms used in this section have the meanings given to them in the California Consumer Privacy Act of 2018 (\"CCPA\").</p>",
-
   "text-license-two-title": "Snap",
   "text-license-two-desc": "<p>Customer are advised to read and understand our Privacy Policy carefully, as by accessing the website/app you agree to be bound by the terms and conditions of the Privacy Policy and consent to the collection, storage and use of information relating to you as provided herein.</p><p>If you do not agree with the terms and conditions of our Privacy Policy, including in relation to the manner of collection or use of your information, please do not use or access the website/app.</p><p>Our Privacy Policy is incorporated into the Terms and Conditions of Use of the website/app, and is subject to change from time to time without notice. It is strongly recommended that you periodically review our Privacy Policy as posted on the App/Web.</p>",
-
   "text-license-three-title": "Other Information",
   "text-license-three-desc": "<p>We may automatically track certain information about you based upon your behavior on the website. We use this information to do internal research on our users’ demographics, interests, and behavior to better understand, protect and serve our users. This information is compiled and analyzed on an aggregated basis. This information may include the URL that you just came from (whether this URL is on the website or not), which URL you next go to (whether this URL is on the website or not), your computer browser information, your IP address, and other information associated with your interaction with the website. <strong>We may also share your Mobile IP/Device IP with third party(ies) and to the best of our knowledge, be-life and representations given to us by these third party(ies) this information is not stored.</strong></p>",
-
   "text-license-four-title": "Links",
   "text-license-four-desc": "<p>We use this information to do internal research on our users’ demographics, interests, and behavior to better understand, protect and serve our users. This information is compiled and analyzed on an aggregated basis. This information may include the URL that you just came from (whether this URL is on the website or not), which URL you next go to (whether this URL is on the website or not), your computer browser information, your IP address</p> <ol><li>Identifiers (e.g. name, mailing address, email address, phone number, credit/debit card number)</li><li>Characteristics of protected classifications (e.g. gender, age)</li><li>Commercial information (e.g. products or services purchased, purchase history)</li><li>Internet or other electronic network activity (e.g. browse or search history)</li><li>Geo location data (e.g. latitude or longitude)</li><li>Audio, electronic, visual, or similar information (e.g. recording of Guest service calls)</li><li>Inferences drawn from any of the above (e.g. preferences or characteristics)</li>.</p>",
-
   "text-license-five-title": "Third Party Advertisers",
   "text-license-five-desc": "<p>To protect against the loss, misuse and alteration of the information under its control, the Company has in place appropriate physical, electronic and managerial procedures. For example, the Company servers are accessible only to authorized personnel and your information is shared with employees and authorized personnel on a need to know basis to complete the transaction and to provide the services requested by you. Although the Company endeavour to safeguard the confidentiality of your personally identifiable information, transmissions made by means of the Internet cannot be made absolutely secure. By using the website, you agree that the Company will have no liability for disclosure of your information due to errors in transmission and/or unauthorized acts of third parties.</p>",
-
   "text-license-six-title": "Security",
   "text-license-six-desc": "<p>Please note that the Company will not ask you to share any sensitive data or information via email or telephone. If you receive any such request by email or telephone, please do not respond/divulge any sensitive data or information and forward the information relating to the same to info@pixer.com for necessary action.</p><ol><li>Performing services, including maintaining or servicing accounts, providing customer service, processing or fulfilling orders and transactions, verifying customer information, processing payments, providing advertising or marketing services, providing analytics services, or providing similar services;</li><li>Auditing related to a current interaction with you and concurrent transactions, including, but not limited to, counting ad impressions to unique visitors, verifying positioning and quality of ad impressions, and auditing compliance;</li><li>Short-term, transient use, including, but not limited to, the contextual customization of ads shown as part of the same interaction;</li><li>Detecting security incidents, protecting against malicious, deceptive, fraudulent, or illegal activity, and prosecuting those responsible for that activity;</li><li>Debugging to identify and repair errors that impair existing intended functionality;</li><li>Undertaking internal research for technological development and demonstration; and</li><li>Undertaking activities to verify or maintain the quality or safety of a service or device that is owned, manufactured, manufactured for, or controlled by us, and to improve, upgrade, or enhance the service or device that is owned, manufactured, manufactured for, or controlled by us.</li></ol>",
-
   "text-license-seven-title": "Protection of social security numbers",
   "text-license-seven-desc": "<p>Customer are advised to read and understand our Privacy Policy carefully, as by accessing the website/app you agree to be bound by the terms and conditions of the Privacy Policy and consent to the collection, storage and use of information relating to you as provided herein.</p><p>If you do not agree with the terms and conditions of our Privacy Policy, including in relation to the manner of collection or use of your information, please do not use or access the website/app.</p>",
-
   "text-license-eight-title": "Choices and access",
   "text-license-eight-desc": "<p>If you do not agree with the terms and conditions of our Privacy Policy, including in relation to the manner of collection or use of your information, please do not use or access the website/app.</p> <p>Our Privacy Policy is incorporated into the Terms and Conditions of Use of the website/app, and is subject to change from time to time without notice. It is strongly recommended that you periodically review our Privacy Policy as posted on the App/Web.</p>",
-
   "text-license-nine-title": "Contact us",
   "text-license-nine-desc": "<p>We are always happy to chat. A good way to reach us here. <a href=\"/contact-us\" class=\"underline hover:text-brand-dark hover:no-underline\">Contact us</a></p>",
-
   "text-privacy-one-title": "Personal Information",
   "text-privacy-one-desc": "<p>\"Pixer\" is a trademark of Pixer Private Limited (\"Company\"), a company incorporated under the Companies Act, 2013 with its registered and corporate office at Plot 64H, Sector 18, Gudgeon 122001 in the course of its business. The domain name grocers.com is owned by the Company.</p><p>If you are a California resident, the information below also applies to you. Certain terms used in this section have the meanings given to them in the California Consumer Privacy Act of 2018 (\"CCPA\").</p>",
-
   "text-privacy-two-title": "Snap",
   "text-privacy-two-desc": "<p>Customer are advised to read and understand our Privacy Policy carefully, as by accessing the website/app you agree to be bound by the terms and conditions of the Privacy Policy and consent to the collection, storage and use of information relating to you as provided herein.</p><p>If you do not agree with the terms and conditions of our Privacy Policy, including in relation to the manner of collection or use of your information, please do not use or access the website/app.</p><p>Our Privacy Policy is incorporated into the Terms and Conditions of Use of the website/app, and is subject to change from time to time without notice. It is strongly recommended that you periodically review our Privacy Policy as posted on the App/Web.</p>",
-
   "text-privacy-three-title": "Other Information",
   "text-privacy-three-desc": "<p>We may automatically track certain information about you based upon your behavior on the website. We use this information to do internal research on our users’ demographics, interests, and behavior to better understand, protect and serve our users. This information is compiled and analyzed on an aggregated basis. This information may include the URL that you just came from (whether this URL is on the website or not), which URL you next go to (whether this URL is on the website or not), your computer browser information, your IP address, and other information associated with your interaction with the website. <strong>We may also share your Mobile IP/Device IP with third party(ies) and to the best of our knowledge, be-life and representations given to us by these third party(ies) this information is not stored.</strong></p>",
-
   "text-privacy-four-title": "Links",
   "text-privacy-four-desc": "<p>We use this information to do internal research on our users’ demographics, interests, and behavior to better understand, protect and serve our users. This information is compiled and analyzed on an aggregated basis. This information may include the URL that you just came from (whether this URL is on the website or not), which URL you next go to (whether this URL is on the website or not), your computer browser information, your IP address</p> <ol><li>Identifiers (e.g. name, mailing address, email address, phone number, credit/debit card number)</li><li>Characteristics of protected classifications (e.g. gender, age)</li><li>Commercial information (e.g. products or services purchased, purchase history)</li><li>Internet or other electronic network activity (e.g. browse or search history)</li><li>Geo location data (e.g. latitude or longitude)</li><li>Audio, electronic, visual, or similar information (e.g. recording of Guest service calls)</li><li>Inferences drawn from any of the above (e.g. preferences or characteristics)</li>.</p>",
-
   "text-privacy-five-title": "Third Party Advertisers",
   "text-privacy-five-desc": "<p>To protect against the loss, misuse and alteration of the information under its control, the Company has in place appropriate physical, electronic and managerial procedures. For example, the Company servers are accessible only to authorized personnel and your information is shared with employees and authorized personnel on a need to know basis to complete the transaction and to provide the services requested by you. Although the Company endeavour to safeguard the confidentiality of your personally identifiable information, transmissions made by means of the Internet cannot be made absolutely secure. By using the website, you agree that the Company will have no liability for disclosure of your information due to errors in transmission and/or unauthorized acts of third parties.</p>",
-
   "text-privacy-six-title": "Security",
   "text-privacy-six-desc": "<p>Please note that the Company will not ask you to share any sensitive data or information via email or telephone. If you receive any such request by email or telephone, please do not respond/divulge any sensitive data or information and forward the information relating to the same to info@pixer.com for necessary action.</p><ol><li>Performing services, including maintaining or servicing accounts, providing customer service, processing or fulfilling orders and transactions, verifying customer information, processing payments, providing advertising or marketing services, providing analytics services, or providing similar services;</li><li>Auditing related to a current interaction with you and concurrent transactions, including, but not limited to, counting ad impressions to unique visitors, verifying positioning and quality of ad impressions, and auditing compliance;</li><li>Short-term, transient use, including, but not limited to, the contextual customization of ads shown as part of the same interaction;</li><li>Detecting security incidents, protecting against malicious, deceptive, fraudulent, or illegal activity, and prosecuting those responsible for that activity;</li><li>Debugging to identify and repair errors that impair existing intended functionality;</li><li>Undertaking internal research for technological development and demonstration; and</li><li>Undertaking activities to verify or maintain the quality or safety of a service or device that is owned, manufactured, manufactured for, or controlled by us, and to improve, upgrade, or enhance the service or device that is owned, manufactured, manufactured for, or controlled by us.</li></ol>",
-
   "text-privacy-seven-title": "Protection of social security numbers",
   "text-privacy-seven-desc": "<p>Customer are advised to read and understand our Privacy Policy carefully, as by accessing the website/app you agree to be bound by the terms and conditions of the Privacy Policy and consent to the collection, storage and use of information relating to you as provided herein.</p><p>If you do not agree with the terms and conditions of our Privacy Policy, including in relation to the manner of collection or use of your information, please do not use or access the website/app.</p>",
-
   "text-privacy-eight-title": "Choices and access",
   "text-privacy-eight-desc": "<p>If you do not agree with the terms and conditions of our Privacy Policy, including in relation to the manner of collection or use of your information, please do not use or access the website/app.</p> <p>Our Privacy Policy is incorporated into the Terms and Conditions of Use of the website/app, and is subject to change from time to time without notice. It is strongly recommended that you periodically review our Privacy Policy as posted on the App/Web.</p>",
-
   "text-privacy-nine-title": "Contact us",
   "text-privacy-nine-desc": "<p>We are always happy to chat. A good way to reach us here. <a href=\"/contact-us\" class=\"underline hover:text-brand-dark hover:no-underline\">Contact us</a></p>",
-
   "text-terms-one-title": "Personal Information",
   "text-terms-one-desc": "<p>\"Pixer\" is a trademark of Pixer Private Limited (\"Company\"), a company incorporated under the Companies Act, 2013 with its registered and corporate office at Plot 64H, Sector 18, Gudgeon 122001 in the course of its business. The domain name grocers.com is owned by the Company.</p><p>If you are a California resident, the information below also applies to you. Certain terms used in this section have the meanings given to them in the California Consumer Privacy Act of 2018 (\"CCPA\").</p>",
-
   "text-terms-two-title": "Snap",
   "text-terms-two-desc": "<p>Customer are advised to read and understand our Privacy Policy carefully, as by accessing the website/app you agree to be bound by the terms and conditions of the Privacy Policy and consent to the collection, storage and use of information relating to you as provided herein.</p><p>If you do not agree with the terms and conditions of our Privacy Policy, including in relation to the manner of collection or use of your information, please do not use or access the website/app.</p><p>Our Privacy Policy is incorporated into the Terms and Conditions of Use of the website/app, and is subject to change from time to time without notice. It is strongly recommended that you periodically review our Privacy Policy as posted on the App/Web.</p>",
-
   "text-terms-three-title": "Other Information",
   "text-terms-three-desc": "<p>We may automatically track certain information about you based upon your behavior on the website. We use this information to do internal research on our users’ demographics, interests, and behavior to better understand, protect and serve our users. This information is compiled and analyzed on an aggregated basis. This information may include the URL that you just came from (whether this URL is on the website or not), which URL you next go to (whether this URL is on the website or not), your computer browser information, your IP address, and other information associated with your interaction with the website. <strong>We may also share your Mobile IP/Device IP with third party(ies) and to the best of our knowledge, be-life and representations given to us by these third party(ies) this information is not stored.</strong></p>",
-
   "text-terms-four-title": "Links",
   "text-terms-four-desc": "<p>We use this information to do internal research on our users’ demographics, interests, and behavior to better understand, protect and serve our users. This information is compiled and analyzed on an aggregated basis. This information may include the URL that you just came from (whether this URL is on the website or not), which URL you next go to (whether this URL is on the website or not), your computer browser information, your IP address</p> <ol><li>Identifiers (e.g. name, mailing address, email address, phone number, credit/debit card number)</li><li>Characteristics of protected classifications (e.g. gender, age)</li><li>Commercial information (e.g. products or services purchased, purchase history)</li><li>Internet or other electronic network activity (e.g. browse or search history)</li><li>Geo location data (e.g. latitude or longitude)</li><li>Audio, electronic, visual, or similar information (e.g. recording of Guest service calls)</li><li>Inferences drawn from any of the above (e.g. preferences or characteristics)</li>.</p>",
-
   "text-terms-five-title": "Third Party Advertisers",
   "text-terms-five-desc": "<p>To protect against the loss, misuse and alteration of the information under its control, the Company has in place appropriate physical, electronic and managerial procedures. For example, the Company servers are accessible only to authorized personnel and your information is shared with employees and authorized personnel on a need to know basis to complete the transaction and to provide the services requested by you. Although the Company endeavour to safeguard the confidentiality of your personally identifiable information, transmissions made by means of the Internet cannot be made absolutely secure. By using the website, you agree that the Company will have no liability for disclosure of your information due to errors in transmission and/or unauthorized acts of third parties.</p>",
-
   "text-terms-six-title": "Security",
   "text-terms-six-desc": "<p>Please note that the Company will not ask you to share any sensitive data or information via email or telephone. If you receive any such request by email or telephone, please do not respond/divulge any sensitive data or information and forward the information relating to the same to info@pixer.com for necessary action.</p><ol><li>Performing services, including maintaining or servicing accounts, providing customer service, processing or fulfilling orders and transactions, verifying customer information, processing payments, providing advertising or marketing services, providing analytics services, or providing similar services;</li><li>Auditing related to a current interaction with you and concurrent transactions, including, but not limited to, counting ad impressions to unique visitors, verifying positioning and quality of ad impressions, and auditing compliance;</li><li>Short-term, transient use, including, but not limited to, the contextual customization of ads shown as part of the same interaction;</li><li>Detecting security incidents, protecting against malicious, deceptive, fraudulent, or illegal activity, and prosecuting those responsible for that activity;</li><li>Debugging to identify and repair errors that impair existing intended functionality;</li><li>Undertaking internal research for technological development and demonstration; and</li><li>Undertaking activities to verify or maintain the quality or safety of a service or device that is owned, manufactured, manufactured for, or controlled by us, and to improve, upgrade, or enhance the service or device that is owned, manufactured, manufactured for, or controlled by us.</li></ol>",
-
   "text-terms-seven-title": "Protection of social security numbers",
   "text-terms-seven-desc": "<p>Customer are advised to read and understand our Privacy Policy carefully, as by accessing the website/app you agree to be bound by the terms and conditions of the Privacy Policy and consent to the collection, storage and use of information relating to you as provided herein.</p><p>If you do not agree with the terms and conditions of our Privacy Policy, including in relation to the manner of collection or use of your information, please do not use or access the website/app.</p>",
-
   "text-terms-eight-title": "Choices and access",
   "text-terms-eight-desc": "<p>If you do not agree with the terms and conditions of our Privacy Policy, including in relation to the manner of collection or use of your information, please do not use or access the website/app.</p> <p>Our Privacy Policy is incorporated into the Terms and Conditions of Use of the website/app, and is subject to change from time to time without notice. It is strongly recommended that you periodically review our Privacy Policy as posted on the App/Web.</p>",
-
   "text-terms-nine-title": "Contact us",
   "text-terms-nine-desc": "<p>We are always happy to chat. A good way to reach us here. <a href=\"/contact-us\" class=\"underline hover:text-brand-dark hover:no-underline\">Contact us</a></p>",
-
   "text-welcome-back": "Welcome Back, Get Login",
   "text-create-an-account": "Create your account. Already have account?",
-  "text-login": "Login here",
+  "text-login": "Đăng nhập",
   "text-register": "Register",
   "text-wrong-user-name-and-pass": "Wrong username or password",
   "text-join-now": "Join your account. Don’t have account?",
   "text-create-account": "Create Account",
   "text-forgot-password": "Forgot Password?",
   "text-get-login": "Get Login",
-
   "text-remember-me": "Remember me",
-
   "text-reset-password": "Reset Your Password",
   "text-reset-password-submit": "Reset Password",
   "text-or": "Or",
   "text-back-to": "Back to",
   "text-reset-password-title": "We&apos;ll send you a link to reset your password",
   "text-email-notice": "your email is not exists in our app",
-
   "text-ask-seller-question": "Ask seller a question",
   "text-ask-question-desc": "Your question should not contain contact information such as email, phone or external web links.",
-
   "text-submit": "Submit",
-
   "text-ask-question-success": "Successfully submitted the question. Please wait for the seller to respond.",
-
   "text-ask-question-error": "Maximum Question Limit Exceeded",
-
   "text-search-question": "Search Question",
-
   "text-abuse-report": "Abuse Report Submitted",
   "text-report-error-message": "You've already given report",
   "text-about-report-title": "Report this comment",
   "text-report-input-placeholder": "Write your reason",
   "text-report-button": "Make Report",
-
   "text-rating-title": "What’s your rating",
   "text-make-review": "Make a review",
   "text-input-attachment": "Attachment",
-
   "text-checkout-title": "Contact Number",
   "text-checkout-title-two": "Your Order",
   "text-tax": "Tax",
   "text-calculated-checkout": "Calculated at checkout",
   "text-check-availability": "Check Availability",
-
   "text-wallet-points-title": "Wallet Points",
   "text-wallet-currency": "Wallet Currency",
   "text-wallet-input-label": "Use wallet",
   "text-submit-confirm": "Confirm",
   "text-submit-order": "Place Order",
-
   "text-loader-title": "Loading...",
-
+  "text-search-word": "Nhập nội dung tìm kiếm ở đây",
+  "text-support": "Hỗ trợ",
+  "text-community": "Cộng đồng",
+  "text-category": "Danh mục",
+  "text-term-and-service": "Điều khoản dịch vụ",
+  "text-all-rights-reserved": "Bảo lưu mọi quyền",
+  "text-proskills39":"ProSkills39 là một Thị trường dịch vụ kết nối những người làm việc tự do có kỹ năng chuyên nghiệp và cung cấp các dịch vụ hỗ trợ cho các chủ dự án khởi nghiệp, mở rộng kinh doanh với chi phí hợp lý.",
   "PIXER_ERROR.NOT_FOUND": "Not Found",
   "PIXER_ERROR.NOT_AUTHORIZED": "Not Authorized",
   "PIXER_ERROR.INVALID_CREDENTIALS": "Invalid Credentials",
@@ -290,11 +256,9 @@
   "PIXER_MESSAGE.EMAIL_SENT_SUCCESSFUL": "Email successfully sent",
   "PIXER_ERROR.YOU_HAVE_ALREADY_GIVEN_ABUSIVE_REPORT_FOR_THIS": "You've already given report",
   "PIXER_ERROR.MAXIMUM_QUESTION_LIMIT_EXCEEDED": "Maximum Question Limit Exceeded",
-
   "text-order-received-title": "Order Received Successfully",
   "text-order-thank-you-message": "Thanks for your order, click here to check your purchase bucket",
   "text-order-button-title": "View Order",
-
   "text-update-review": "Update Review",
   "text-write-review": "Write a review",
   "text-comment-label": "Write a comment",
