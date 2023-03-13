@@ -3,9 +3,9 @@ import Link from "next/link";
 
 import aboutus from "./../data/categories/aboutus.json";
 import categories from "./../data/categories/index.json";
-import community from "./../data/categories/community.json";
 import support from "./../data/categories/support.json";
 import { useTranslation } from "react-i18next";
+import CommunityFooter from "./footer/community";
 
 
 export default function Footer() {
@@ -112,16 +112,7 @@ export default function Footer() {
                     <div className="footer-column">
                         <div className="footer-widget">
                             <div className="widget-title">{t('text-community')}</div>
-                            <ul className="footer-menu">
-                                {community.map((community, index) => (
-                                    <li key={index} className="menu-item">
-                                        {" "}
-                                        <Link  href={`/${community.slug}`} className="menu-link">
-                                            {community.name}
-                                        </Link>{" "}
-                                    </li>
-                                ))}
-                            </ul>
+                            <CommunityFooter />
                         </div>
                     </div>
 

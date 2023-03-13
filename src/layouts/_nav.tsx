@@ -1,3 +1,6 @@
+import Cookies from 'js-cookie';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 import index from './../data/categories/index.json';
 import { NavFourColumnHeaderRight } from './nav/NavFourColumnHeaderRight';
 import { NavThreeColumn } from './nav/NavThreeColumn';
@@ -6,11 +9,10 @@ import { NavThreeColumnHeaderRight } from './nav/NavThreeColumnHeaderRight';
 import { NavTwoColumn } from './nav/NavTwoColumn';
 import { NavTwoColumnHeaderLeft } from './nav/NavTwoColumnHeaderLeft';
 import { NavTwoColumnHeaderRight } from './nav/NavTwoColumnHeaderRight';
-import Cookies from 'js-cookie';
-import { useState } from 'react';
-import { useRouter } from 'next/router';
+
 
 const NavLayout = () => {
+
     const router = useRouter();
     const { asPath, locales, locale } = router;
     const currentSelectedItem = locales
