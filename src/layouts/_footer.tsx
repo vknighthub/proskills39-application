@@ -116,8 +116,8 @@ export default function Footer() {
                                 {community.map((community, index) => (
                                     <li key={index} className="menu-item">
                                         {" "}
-                                        <Link legacyBehavior href={`/${community.slug}`}>
-                                            <a className="menu-link">{community.name}</a>
+                                        <Link  href={`/${community.slug}`} className="menu-link">
+                                            {community.name}
                                         </Link>{" "}
                                     </li>
                                 ))}
