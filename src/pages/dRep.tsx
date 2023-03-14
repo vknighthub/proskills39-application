@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps<
         return {
             props: {
                 challenge,
-                ...(await serverSideTranslations(locale!, ['common'])),
+                ...(await serverSideTranslations(locale!, ['common','footer'])),
                 dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
             },
             revalidate: 60,

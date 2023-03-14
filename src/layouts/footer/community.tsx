@@ -18,7 +18,7 @@ const CommunityFooter = (props: Props) => {
         },
         {
             "id": 2,
-            "slug": "events",
+            "slug": "blog",
             "name": "text-blog"
         },
         {
@@ -28,7 +28,7 @@ const CommunityFooter = (props: Props) => {
         },
         {
             "id": 4,
-            "slug": "community-standards",
+            "slug": "community-standard",
             "name": "text-community-standards"
         },
         {
@@ -48,7 +48,7 @@ const CommunityFooter = (props: Props) => {
         },
         {
             "id": 8,
-            "slug": "invite-Friend",
+            "slug": "invite-friend",
             "name": "text-invite-friend"
         },
         {

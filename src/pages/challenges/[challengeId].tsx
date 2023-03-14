@@ -42,7 +42,7 @@ export const getStaticProps: GetStaticProps<
         return {
             props: {
                 challenge,
-                ...(await serverSideTranslations(locale!, ['common'])),
+                ...(await serverSideTranslations(locale!, ['common','footer'])),
             },
             revalidate: 60, // In seconds
         }

@@ -28,7 +28,8 @@ module.exports = withPWA({
       'app.ideascale.com',
       'fileup.to',
       'api.proskills39.com',
-      'static.ideascale.com'
+      'static.ideascale.com',
+      'encrypted-tbn0.gstatic.com'
     ],
   },
   ...(process.env.APPLICATION_MODE === 'production' && {

@@ -15,7 +15,7 @@
         "translated_languages": "",
         "type": "          ",
         "parent_id": "0000000000",
-        "url": "/categories/programing-&-tech-1",
+        "url": "/categories/programming-&-tech",
         "menu_level": 1,
         "slice_number": 3,
         "children": [
@@ -894,7 +894,7 @@
         "translated_languages": "",
         "type": "          ",
         "parent_id": "0000000000",
-        "url": "/categories/graphics-&-design-2",
+        "url": "/categories/graphics-&-design",
         "menu_level": 1,
         "slice_number": 6,
         "children": [
@@ -2401,7 +2401,7 @@
         "translated_languages": "",
         "type": "          ",
         "parent_id": "0000000000",
-        "url": "/categories/digital-marketing-3",
+        "url": "/categories/digital-marketing",
         "menu_level": 1,
         "slice_number": 12,
         "children": [
@@ -2975,7 +2975,7 @@
         "translated_languages": "",
         "type": "          ",
         "parent_id": "0000000000",
-        "url": "/categories/writing-&-translation-4",
+        "url": "/categories/writing-&-translation",
         "menu_level": 1,
         "slice_number": 12,
         "children": [
@@ -3779,7 +3779,7 @@
         "translated_languages": "",
         "type": "          ",
         "parent_id": "0000000000",
-        "url": "/categories/video-animation",
+        "url": "/categories/video-&-animation",
         "menu_level": 1,
         "slice_number": 12,
         "children": [
@@ -4631,7 +4631,7 @@
         "translated_languages": "",
         "type": "          ",
         "parent_id": "0000000000",
-        "url": "",
+        "url": "/categories/music-&-audio",
         "menu_level": 1,
         "slice_number":12,
         "children": [
@@ -5205,7 +5205,7 @@
         "translated_languages": "",
         "type": "          ",
         "parent_id": "0000000000",
-        "url": "/categories/business-7",
+        "url": "/categories/business",
         "menu_level": 1,
         "slice_number":12,
         "children": [
@@ -5756,7 +5756,7 @@
         "translated_languages": "",
         "type": "          ",
         "parent_id": "0000000000",
-        "url": "/categories/lifestyle-8",
+        "url": "/categories/lifestyle",
         "menu_level": 1,
         "slice_number": 3,
         "children": [
@@ -6566,7 +6566,7 @@
         "translated_languages": "",
         "type": "          ",
         "parent_id": "0000000000",
-        "url": "/categories/trending-9",
+        "url": "/categories/trending",
         "menu_level": 1,
         "slice_number": 2,
         "children": [

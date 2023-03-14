@@ -41,7 +41,7 @@ export const getStaticProps: GetStaticProps<
         return {
             props: {
                 services,
-                ...(await serverSideTranslations(locale!, ['common'])),
+                ...(await serverSideTranslations(locale!, ['common','footer'])),
             },
             revalidate: 60, // In seconds
         };
