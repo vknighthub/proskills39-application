@@ -2,11 +2,7 @@
     {
         "id": "0000000001",
         "menutype": "three-column-header-right",
-        "name": {
-            "en": "Programing & Tech",
-            "vn": "Lập trình & Công nghệ",
-            "jp": "プログラミングと技術"
-        },
+        "name": "text-programing-tech",
         "slug": "Programing & Tech",
         "language": "en",
         "icon": "",
@@ -885,11 +881,7 @@
     {
         "id": "0000000002",
         "menutype": "two-column-header-right",
-        "name": {
-            "en": "Graphics & Design",
-            "vn": "Thiết kế đồ họa",
-            "jp": "グラフィックとデザイン"
-        },
+        "name": "text-graphics-design",
         "slug": "Graphics & Design",
         "language": "en",
         "icon": "",
@@ -2396,11 +2388,7 @@
     {
         "id": "0000000003",
         "menutype": "two-column",
-        "name": {
-            "en": "Digital Marketing",
-            "vn": "Tiếp thị kỹ thuật số",
-            "jp": "デジタルマーケティング"
-        },
+        "name": "text-digital-marketing",
         "slug": "Digital Marketing",
         "language": "en",
         "icon": "",
@@ -2974,11 +2962,7 @@
     {
         "id": "0000000004",
         "menutype": "three-column-header",
-        "name": {
-            "en": "Writing & Translation",
-            "vn": "Viết & Dịch thuật",
-            "jp": "執筆と翻訳"
-        },
+        "name": "text-writing-translation",
         "slug": "Writing & Translation",
         "language": "en",
         "icon": "",
@@ -3782,11 +3766,7 @@
     {
         "id": "0000000005",
         "menutype": "three-column-header",
-        "name": {
-            "en": "Video & Animation",
-            "vn": "Video & Hoạt hình",
-            "jp": "ビデオとアニメーション"
-        },
+        "name": "text-video-animation",
         "slug": "Video & Animation",
         "language": "en",
         "icon": "",
@@ -4638,11 +4618,7 @@
     {
         "id": "0000000006",
         "menutype":"two-column",
-        "name": {
-            "en": "Music & Audio",
-            "vn": "Âm nhạc & Âm thanh",
-            "jp": "音楽とオーディオ"
-        },
+        "name": "text-music-audio",
         "slug": "Music & Audio",
         "language": "en",
         "icon": "",
@@ -5216,11 +5192,7 @@
     {
         "id": "0000000007",
         "menutype": "two-column",
-        "name": {
-            "en": "Business",
-            "vn": "Kinh doanh",
-            "jp": "仕事"
-        },
+        "name": "text-business",
         "slug": "Business",
         "language": "en",
         "icon": "",
@@ -5771,11 +5743,7 @@
     {
         "id": "0000000008",
         "menutype": "three-column-header-left",
-        "name": {
-            "en": "Lifestyle",
-            "vn": "Cách sống",
-            "jp": "ライフスタイル"
-        },
+        "name": "text-lifestyle",
         "slug": "Lifestyle",
         "language": "en",
         "icon": "",
@@ -6585,11 +6553,7 @@
     {
         "id": "0000000009",
         "menutype": "two-column-header-left",
-        "name": {
-            "en": "Trending",
-            "vn": "Xu hướng",
-            "jp": "トレンド"
-        },
+        "name": "text-trending",
         "slug": "Trending",
         "language": "en",
         "icon": "",

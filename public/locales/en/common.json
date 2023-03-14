@@ -267,5 +267,14 @@
   "text-report": "Report",
   "text-prev": "Prev",
   "text-next": "Next",
-  "text-events": "Events"
+  "text-events": "Events",
+  "text-programing-tech": "Programing & Tech",
+  "text-graphics-design": "Graphics & Design",
+  "text-digital-marketing": "Digital Marketing",
+  "text-writing-translation": "Writing & Translation",
+  "text-video-animation": "Video & Animation",
+  "text-music-audio": "Music & Audio",
+  "text-business": "Business",
+  "text-lifestyle": "Lifestyle",
+  "text-trending": "Trending"
 }

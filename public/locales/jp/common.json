@@ -309,5 +309,14 @@
   "text-report": "Report",
   "text-prev": "Prev",
   "text-next": "Next",
-  "text-events": "イベント"
+  "text-events": "イベント",
+  "text-programing-tech": "プログラミングと技術",
+  "text-graphics-design": "グラフィックとデザイン",
+  "text-digital-marketing": "デジタルマーケティング",
+  "text-writing-translation": "代筆と翻訳",
+  "text-video-animation": "ビデオとアニメーション",
+  "text-music-audio": "音楽&オーディオ",
+  "text-business": "ビジネス",
+  "text-lifestyle": "ライフスタイル",
+  "text-trending": "トレンド"
 }

@@ -99,7 +99,7 @@ export default function Footer() {
                                         <li key={index} className="menu-item">
                                             {" "}
                                             <Link legacyBehavior href={category.url}>
-                                                <a className="menu-link">{category.name.en}</a>
+                                                <a className="menu-link">{t(category.name)}</a>
                                             </Link>{" "}
                                         </li>
                                     ))}
