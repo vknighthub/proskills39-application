@@ -43,11 +43,7 @@
                 "children": [
                     {
                         "id": "0000000036",
-                        "name": {
-                            "en": "Website Development",
-                            "vn": "Phát triển website",
-                            "jp": "ウェブサイト開発"
-                        },
+                        "name": "text-website-development",
                         "slug": "Website Development",
                         "language": "en",
                         "icon": "",
@@ -66,11 +62,7 @@
                     },
                     {
                         "id": "0000000037",
-                        "name": {
-                            "en": "Website Maintenance",
-                            "vn": "Bảo trì trang web",
-                            "jp": "ウェブサイトのメンテナンス"
-                        },
+                        "name": "text-website-maintenance",
                         "slug": "Website Maintenance",
                         "language": "en",
                         "icon": "",
@@ -89,11 +81,7 @@
                     },
                     {
                         "id": "0000000038",
-                        "name": {
-                            "en": "WordPress",
-                            "vn": "WordPress",
-                            "jp": "ワードプレス"
-                        },
+                        "name": "text-wordpress",
                         "slug": "WordPress",
                         "language": "en",
                         "icon": "",
@@ -112,11 +100,7 @@
                     },
                     {
                         "id": "0000000039",
-                        "name": {
-                            "en": "E-Commerce Development",
-                            "vn": "Phát triển thương mại điện tử",
-                            "jp": "Eコマース開発"
-                        },
+                        "name": "text-e-commerce-development",
                         "slug": "E-Commerce Development",
                         "language": "en",
                         "icon": "",
@@ -138,11 +122,12 @@
             {
                 "id": "0000000011",
                 "name": {
-                    "en": "Data",
+                    "en": "text-data",
                     "vn": "Dữ liệu",
                     "jp": "データ"
                 },
                 "slug": "Data",
+
                 "language": "en",
                 "icon": "",
                 "image": "",
@@ -253,11 +238,7 @@
             },
             {
                 "id": "0000000012",
-                "name": {
-                    "en": "Application Development",
-                    "vn": "Phát triển ứng dụng",
-                    "jp": "アプリケーション開発"
-                },
+                "name": "text-application-development",
                 "slug": "Application Development",
                 "language": "en",
                 "icon": "",
@@ -392,11 +373,7 @@
             },
             {
                 "id": "0000000013",
-                "name": {
-                    "en": "Blockchain",
-                    "vn": "Chuỗi khối",
-                    "jp": "ブロックチェーン"
-                },
+                "name": "text-blockchain",
                 "slug": "Blockchain",
                 "language": "en",
                 "icon": "",
@@ -577,11 +554,7 @@
             },
             {
                 "id": "0000000014",
-                "name": {
-                    "en": "Support & Cybersecurity",
-                    "vn": "Hỗ trợ & An ninh mạng",
-                    "jp": "サポートとサイバーセキュリティ"
-                },
+                "name": "text-support-cybersecurity",
                 "slug": "Support & Cybersecurity",
                 "language": "en",
                 "icon": "",
@@ -739,11 +712,7 @@
             },
             {
                 "id": "0000000015",
-                "name": {
-                    "en": "Miscellaneous",
-                    "vn": "Điều khoản khác",
-                    "jp": "その他"
-                },
+                "name": "text-miscellaneous",
                 "slug": "Miscellaneous",
                 "language": "en",
                 "icon": "",
@@ -900,11 +869,7 @@
         "children": [
             {
                 "id": "0000000016",
-                "name": {
-                    "en": "Logo & Brand Indentity",
-                    "vn": "Logo & Nhận Diện Thương Hiệu",
-                    "jp": "ロゴとブランドのアイデンティティ"
-                },
+                "name": "text-logo-brand-indentity",
                 "slug": "Logo & Brand Indentity",
                 "language": "en",
                 "icon": "",
@@ -1017,11 +982,7 @@
             },
             {
                 "id": "0000000017",
-                "name": {
-                    "en": "Gaming",
-                    "vn": "Chơi game",
-                    "jp": "ゲーム"
-                },
+                "name": "text-gaming",
                 "slug": "Gaming",
                 "language": "en",
                 "icon": "",
@@ -1110,11 +1071,7 @@
             },
             {
                 "id": "0000000018",
-                "name": {
-                    "en": "Art & Illustration",
-                    "vn": "Nghệ thuật & Minh họa",
-                    "jp": "アート＆イラストレーション"
-                },
+                "name": "text-art-illustration",
                 "slug": "Art & Illustration",
                 "language": "en",
                 "icon": "",
@@ -1295,11 +1252,7 @@
             },
             {
                 "id": "0000000019",
-                "name": {
-                    "en": "Web & App Design",
-                    "vn": "Thiết kế web & ứng dụng",
-                    "jp": "ウェブとアプリのデザイン"
-                },
+                "name": "text-web-app-design",
                 "slug": "Web & App Design",
                 "language": "en",
                 "icon": "",
@@ -1434,11 +1387,7 @@
             },
             {
                 "id": "0000000020",
-                "name": {
-                    "en": "Marketing Design",
-                    "vn": "Thiết kế thi trường",
-                    "jp": "マーケティングデザイン"
-                },
+                "name": "text-marketing-design",
                 "slug": "Marketing Design",
                 "language": "en",
                 "icon": "",
@@ -1550,11 +1499,7 @@
             },
             {
                 "id": "0000000021",
-                "name": {
-                    "en": "Packaging & Covers",
-                    "vn": "Bao bì & Bìa",
-                    "jp": "パッケージとカバー"
-                },
+                "name": "packaging-covers",
                 "slug": "Packaging & Covers",
                 "language": "en",
                 "icon": "",
@@ -1689,11 +1634,7 @@
             },
             {
                 "id": "0000000022",
-                "name": {
-                    "en": "Visual Design",
-                    "vn": "Thiết kế trực quan",
-                    "jp": "ビジュアルデザイン"
-                },
+                "name": "text-visual-design",
                 "slug": "Visual Design",
                 "language": "en",
                 "icon": "",
@@ -1828,11 +1769,7 @@
             },
             {
                 "id": "0000000023",
-                "name": {
-                    "en": "Architecture & Building Design",
-                    "vn": "Thiết kế Kiến trúc & Xây dựng",
-                    "jp": "建築と建築設計"
-                },
+                "name": "text-architecture-building-design",
                 "slug": "Architecture & Building Design",
                 "language": "en",
                 "icon": "",
@@ -1944,11 +1881,7 @@
             },
             {
                 "id": "0000000024",
-                "name": {
-                    "en": "Fashion & Merchandise",
-                    "vn": "Thời trang & Hàng hóa",
-                    "jp": "ファッション＆グッズ"
-                },
+                "name": "text-fashion-merchandise",
                 "slug": "Fashion & Merchandise",
                 "language": "en",
                 "icon": "",
@@ -2037,11 +1970,7 @@
             },
             {
                 "id": "0000000025",
-                "name": {
-                    "en": "Print Design",
-                    "vn": "Thiết kế in ấn",
-                    "jp": "プリントデザイン"
-                },
+                "name": "text-print-design",
                 "slug": "Print Design",
                 "language": "en",
                 "icon": "",
@@ -2199,11 +2128,7 @@
             },
             {
                 "id": "0000000026",
-                "name": {
-                    "en": "Product & Characters Design",
-                    "vn": "Thiết Kế Sản Phẩm & Nhân Vật",
-                    "jp": "商品・キャラクターデザイン"
-                },
+                "name": "text-product-characters-design",
                 "slug": "Product & Characters Design",
                 "language": "en",
                 "icon": "",
@@ -2221,11 +2146,7 @@
                 "children": [
                     {
                         "id": "0000000113",
-                        "name": {
-                            "en": "Industrial & Product Design",
-                            "vn": "Thiết kế công nghiệp & sản phẩm",
-                            "jp": "インダストリアル＆プロダクトデザイン"
-                        },
+                        "name": "text-industrial-product-design",
                         "slug": "Industrial & Product Design",
                         "language": "en",
                         "icon": "",
@@ -2244,11 +2165,7 @@
                     },
                     {
                         "id": "0000000114",
-                        "name": {
-                            "en": "Character Modeling",
-                            "vn": "Mô hình nhân vật",
-                            "jp": "キャラクターモデリング"
-                        },
+                        "name": "text-character-modeling",
                         "slug": "Character Modeling",
                         "language": "en",
                         "icon": "",
@@ -2267,11 +2184,7 @@
                     },
                     {
                         "id": "0000000115",
-                        "name": {
-                            "en": "Trade Booth Design",
-                            "vn": "Thiết Kế Gian Hàng Thương Mại",
-                            "jp": "トレードブースのデザイン"
-                        },
+                        "name": "text-trade-booth-design",
                         "slug": "Trade Booth Design",
                         "language": "en",
                         "icon": "",
@@ -2292,12 +2205,8 @@
             },
             {
                 "id": "0000000027",
-                "name": {
-                    "en": "Miscellaneuous",
-                    "vn": "Điều khoản khác",
-                    "jp": "その他"
-                },
-                "slug": "Miscellaneuous",
+                "name": "text-miscellaneous",
+                "slug": "Miscellaneous",
                 "language": "en",
                 "icon": "",
                 "image": "",
@@ -2314,11 +2223,7 @@
                 "children": [
                     {
                         "id": "0000000116",
-                        "name": {
-                            "en": "Design advice",
-                            "vn": "Tư vấn thiết kế",
-                            "jp": "設計アドバイス"
-                        },
+                        "name": "text-design-advice",
                         "slug": "Design advice",
                         "language": "en",
                         "icon": "",
@@ -2337,11 +2242,7 @@
                     },
                     {
                         "id": "0000000117",
-                        "name": {
-                            "en": "Logo Marker Tool",
-                            "vn": "Công cụ đánh dấu logo",
-                            "jp": "ロゴ マーカー ツール"
-                        },
+                        "name": "text-logo-marker-tool",
                         "slug": "Logo Marker Tool",
                         "language": "en",
                         "icon": "",
@@ -2360,11 +2261,7 @@
                     },
                     {
                         "id": "0000000118",
-                        "name": {
-                            "en": "Other",
-                            "vn": "Khác",
-                            "jp": "他の"
-                        },
+                        "name": "text-other",
                         "slug": "Other",
                         "language": "en",
                         "icon": "",
@@ -2407,11 +2304,7 @@
         "children": [
             {
                 "id": "0000000119",
-                "name": {
-                    "en": "Social Media Marketing",
-                    "vn": "Tiếp thị truyền thông xã hội",
-                    "jp": "ソーシャルメディアマーケティング"
-                },
+                "name": "text-social-media-marketing",
                 "slug": "Social Media Marketing",
                 "language": "en",
                 "icon": "",
@@ -2430,11 +2323,7 @@
             },
             {
                 "id": "0000000120",
-                "name": {
-                    "en": "Social Media Advertising",
-                    "vn": "Quảng cáo trên mạng xã hội",
-                    "jp": "ソーシャルメディア広告"
-                },
+                "name": "text-social-media-advertising",
                 "slug": "Social Media Advertising",
                 "language": "en",
                 "icon": "",
