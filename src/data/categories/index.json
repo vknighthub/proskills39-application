@@ -117,11 +117,7 @@
             },
             {
                 "id": "0000000011",
-                "name": {
-                    "en": "text-data",
-                    "vn": "Dữ liệu",
-                    "jp": "データ"
-                },
+                "name": "text-data",
                 "slug": "Data",
                 "language": "en",
                 "icon": "",
@@ -139,11 +135,7 @@
                 "children": [
                     {
                         "id": "0000000040",
-                        "name": {
-                            "en": "Databases",
-                            "vn": "cơ sở dữ liệu",
-                            "jp": "データベース"
-                        },
+                        "name": "text-databases",
                         "slug": "Databases",
                         "language": "en",
                         "icon": "",
@@ -162,11 +154,7 @@
                     },
                     {
                         "id": "0000000041",
-                        "name": {
-                            "en": "Data Processing",
-                            "vn": "Xử lí dữ liệu",
-                            "jp": "情報処理"
-                        },
+                        "name": "text-data-processing",
                         "slug": "Data Processing",
                         "language": "en",
                         "icon": "",
@@ -185,11 +173,7 @@
                     },
                     {
                         "id": "0000000042",
-                        "name": {
-                            "en": "Data Engineering",
-                            "vn": "Kỹ thuật dữ liệu",
-                            "jp": "データエンジニアリング"
-                        },
+                        "name": "text-data-engineering",
                         "slug": "Data Engineering",
                         "language": "en",
                         "icon": "",
@@ -208,11 +192,7 @@
                     },
                     {
                         "id": "0000000043",
-                        "name": {
-                            "en": "Data Science",
-                            "vn": "Khoa học dữ liệu",
-                            "jp": "データサイエンス"
-                        },
+                        "name": "text-data-science",
                         "slug": "Data Science",
                         "language": "en",
                         "icon": "",
@@ -251,11 +231,7 @@
                 "children": [
                     {
                         "id": "0000000044",
-                        "name": {
-                            "en": "Mobile Apps",
-                            "vn": "Ứng dụng di động",
-                            "jp": "モバイルアプリ"
-                        },
+                        "name": "text-mobile-apps",
                         "slug": "Mobile Apps",
                         "language": "en",
                         "icon": "",
@@ -274,11 +250,7 @@
                     },
                     {
                         "id": "0000000045",
-                        "name": {
-                            "en": "Web Programming",
-                            "vn": "Lập trình web",
-                            "jp": "ウェブプログラミング"
-                        },
+                        "name": "text-web-programming",
                         "slug": "Web Programming",
                         "language": "en",
                         "icon": "",
@@ -297,11 +269,7 @@
                     },
                     {
                         "id": "0000000046",
-                        "name": {
-                            "en": "Desktop Applications",
-                            "vn": "Ứng dụng máy tính để bàn",
-                            "jp": "デスクトップ アプリケーション"
-                        },
+                        "name": "text-desktop-applications",
                         "slug": "Desktop Applications",
                         "language": "en",
                         "icon": "",
@@ -320,11 +288,7 @@
                     },
                     {
                         "id": "0000000047",
-                        "name": {
-                            "en": "Game Development",
-                            "vn": "Sự phát triển trò chơi",
-                            "jp": "ゲーム開発"
-                        },
+                        "name": "text-game-development",
                         "slug": "Game Development",
                         "language": "en",
                         "icon": "",
@@ -343,11 +307,7 @@
                     },
                     {
                         "id": "0000000048",
-                        "name": {
-                            "en": "Chatbots",
-                            "vn": "Chatbot",
-                            "jp": "チャットボット"
-                        },
+                        "name": "text-chatbots",
                         "slug": "Chatbots",
                         "language": "en",
                         "icon": "",
@@ -386,11 +346,7 @@
                 "children": [
                     {
                         "id": "0000000049",
-                        "name": {
-                            "en": "Blockchain & Cryptocurrency",
-                            "vn": "chuỗi khối & tiền điện tử",
-                            "jp": "ブロックチェーンと暗号通貨"
-                        },
+                        "name": "text-blockchain-cryptocurrency",
                         "slug": "Blockchain & Cryptocurrency",
                         "language": "en",
                         "icon": "",
@@ -409,11 +365,7 @@
                     },
                     {
                         "id": "0000000050",
-                        "name": {
-                            "en": "NFT Development",
-                            "vn": "Phát triển NFT",
-                            "jp": "NFT開発"
-                        },
+                        "name": "text-nft-development",
                         "slug": "NFT Development",
                         "language": "en",
                         "icon": "",
@@ -432,11 +384,7 @@
                     },
                     {
                         "id": "0000000051",
-                        "name": {
-                            "en": "NFT Websites",
-                            "vn": "Trang web NFT",
-                            "jp": "NFTウェブサイト"
-                        },
+                        "name": "text-nft-websites",
                         "slug": "NFT Websites",
                         "language": "en",
                         "icon": "",
@@ -455,11 +403,7 @@
                     },
                     {
                         "id": "0000000052",
-                        "name": {
-                            "en": "Coin & Tokens",
-                            "vn": "Coin & Token",
-                            "jp": "コインとトークン"
-                        },
+                        "name": "text-coin-tokens",
                         "slug": "Coin & Tokens",
                         "language": "en",
                         "icon": "",
@@ -478,11 +422,7 @@
                     },
                     {
                         "id": "0000000053",
-                        "name": {
-                            "en": "Decentralized Apps",
-                            "vn": "Ứng dụng phi tập trung",
-                            "jp": "分散型アプリ"
-                        },
+                        "name": "text-decentralized-apps",
                         "slug": "Decentralized Apps",
                         "language": "en",
                         "icon": "",
@@ -501,11 +441,7 @@
                     },
                     {
                         "id": "0000000054",
-                        "name": {
-                            "en": "Creating Smartcontract",
-                            "vn": "Tạo hợp đồng thông minh",
-                            "jp": "スマートコントラクトの作成"
-                        },
+                        "name": "text-creating-smartcontract",
                         "slug": "Creating Smartcontract",
                         "language": "en",
                         "icon": "",
@@ -524,11 +460,7 @@
                     },
                     {
                         "id": "0000000055",
-                        "name": {
-                            "en": "Project evaluation Blockchain",
-                            "vn": "Đánh giá dự án Blockchain",
-                            "jp": "プロジェクト評価 ブロックチェーン"
-                        },
+                        "name": "text-project-evaluation-blockchain",
                         "slug": "Project evaluation Blockchain",
                         "language": "en",
                         "icon": "",
@@ -567,11 +499,7 @@
                 "children": [
                     {
                         "id": "0000000056",
-                        "name": {
-                            "en": "Support & Cybersecurity",
-                            "vn": "Hỗ trợ & An ninh mạng",
-                            "jp": "サポートとサイバーセキュリティ"
-                        },
+                        "name": "text-support-cybersecurity",
                         "slug": "Support & Cybersecurity",
                         "language": "en",
                         "icon": "",
@@ -590,11 +518,7 @@
                     },
                     {
                         "id": "0000000057",
-                        "name": {
-                            "en": "DevOps & Cloud",
-                            "vn": "DevOps & Đám mây",
-                            "jp": "DevOps & クラウド"
-                        },
+                        "name": "text-devops-cloud",
                         "slug": "DevOps & Cloud",
                         "language": "en",
                         "icon": "",
@@ -613,11 +537,7 @@
                     },
                     {
                         "id": "0000000058",
-                        "name": {
-                            "en": "Support & IT",
-                            "vn": "Support & IT",
-                            "jp": "サポート & IT"
-                        },
+                        "name": "text-support-it",
                         "slug": "Support & IT",
                         "language": "en",
                         "icon": "",
@@ -636,11 +556,7 @@
                     },
                     {
                         "id": "0000000059",
-                        "name": {
-                            "en": "Cybersecurity & Data Protection",
-                            "vn": "An ninh mạng & Bảo vệ dữ liệu",
-                            "jp": "サイバーセキュリティとデータ保護"
-                        },
+                        "name": "text-cybersecurity-data-protection",
                         "slug": "Cybersecurity & Data Protection",
                         "language": "en",
                         "icon": "",
@@ -659,11 +575,7 @@
                     },
                     {
                         "id": "0000000060",
-                        "name": {
-                            "en": "Development for Streamers",
-                            "vn": "Phát triển cho Streamers",
-                            "jp": "ストリーマーの開発"
-                        },
+                        "name": "text-development-for-streamers",
                         "slug": "Development for Streamers",
                         "language": "en",
                         "icon": "",
@@ -682,11 +594,7 @@
                     },
                     {
                         "id": "0000000061",
-                        "name": {
-                            "en": "Convert Files",
-                            "vn": "Chuyển đổi tệp tin",
-                            "jp": "ファイルの変換"
-                        },
+                        "name": "text-convert-file",
                         "slug": "Convert Files",
                         "language": "en",
                         "icon": "",
@@ -725,11 +633,7 @@
                 "children": [
                     {
                         "id": "0000000062",
-                        "name": {
-                            "en": "Electronic Engineering",
-                            "vn": "Kỹ thuật điện tử",
-                            "jp": "電子工学"
-                        },
+                        "name": "text-electronic-engineering",
                         "slug": "Electronic Engineering",
                         "language": "en",
                         "icon": "",
@@ -748,11 +652,7 @@
                     },
                     {
                         "id": "0000000063",
-                        "name": {
-                            "en": "QA & Review",
-                            "vn": "QA & Đánh giá",
-                            "jp": "QA & レビュー"
-                        },
+                        "name": "text-qa-review",
                         "slug": "QA & Review",
                         "language": "en",
                         "icon": "",
@@ -771,11 +671,7 @@
                     },
                     {
                         "id": "0000000064",
-                        "name": {
-                            "en": "User Testing",
-                            "vn": "Kiểm tra người dùng",
-                            "jp": "ユーザーテスト"
-                        },
+                        "name": "text-user-testing",
                         "slug": "User Testing",
                         "language": "en",
                         "icon": "",
@@ -794,11 +690,7 @@
                     },
                     {
                         "id": "0000000065",
-                        "name": {
-                            "en": "Online Coding Lessons",
-                            "vn": "Bài học mã hóa trực tuyến",
-                            "jp": "オンラインコーディングレッスン"
-                        },
+                        "name": "text-online-coding-lessons",
                         "slug": "Online Coding Lessons",
                         "language": "en",
                         "icon": "",
@@ -817,11 +709,7 @@
                     },
                     {
                         "id": "0000000066",
-                        "name": {
-                            "en": "Other",
-                            "vn": "Khác",
-                            "jp": "他の"
-                        },
+                        "name": "text-other",
                         "slug": "Other",
                         "language": "en",
                         "icon": "",
@@ -979,11 +867,7 @@
                 "children": [
                     {
                         "id": "0000000071",
-                        "name": {
-                            "en": "Game Art",
-                            "vn": "Trò chơi nghệ thuật",
-                            "jp": "ゲームアート"
-                        },
+                        "name": "text-game-art",
                         "slug": "Game Art",
                         "language": "en",
                         "icon": "",
@@ -1002,11 +886,7 @@
                     },
                     {
                         "id": "0000000072",
-                        "name": {
-                            "en": "Graphics for Streamers",
-                            "vn": "Đồ họa cho các Streamers",
-                            "jp": "ストリーマーのグラフィック"
-                        },
+                        "name": "text-graphics-for-streamers",
                         "slug": "Graphics for Streamers",
                         "language": "en",
                         "icon": "",
@@ -1025,11 +905,7 @@
                     },
                     {
                         "id": "0000000073",
-                        "name": {
-                            "en": "Twitch Store",
-                            "vn": "Cửa hàng Twitch",
-                            "jp": "ツイッチストア"
-                        },
+                        "name": "text-twitch-store",
                         "slug": "Twitch Store",
                         "language": "en",
                         "icon": "",
@@ -1068,11 +944,7 @@
                 "children": [
                     {
                         "id": "0000000074",
-                        "name": {
-                            "en": "Illustration",
-                            "vn": "Hình minh họa",
-                            "jp": "図"
-                        },
+                        "name": "text-illustration",
                         "slug": "Illustration",
                         "language": "en",
                         "icon": "",
@@ -1091,11 +963,7 @@
                     },
                     {
                         "id": "0000000075",
-                        "name": {
-                            "en": "NFT Art",
-                            "vn": "nghệ thuật NFT",
-                            "jp": "NFTアート"
-                        },
+                        "name": "text-nft-art",
                         "slug": "NFT Art",
                         "language": "en",
                         "icon": "",
@@ -1114,11 +982,7 @@
                     },
                     {
                         "id": "0000000076",
-                        "name": {
-                            "en": "Pattern Design",
-                            "vn": "Thiết kế hoa văn",
-                            "jp": "パターンデザイン"
-                        },
+                        "name": "text-pattern-design",
                         "slug": "Pattern Design",
                         "language": "en",
                         "icon": "",
@@ -1137,11 +1001,7 @@
                     },
                     {
                         "id": "0000000077",
-                        "name": {
-                            "en": "Portralts & Carlcatures",
-                            "vn": "Chân dung & Ảnh chân dung",
-                            "jp": "ポートレート & カーカチュア"
-                        },
+                        "name": "text-portralts-carlcatures",
                         "slug": "Portralts & Carlcatures",
                         "language": "en",
                         "icon": "",
@@ -1160,11 +1020,7 @@
                     },
                     {
                         "id": "0000000078",
-                        "name": {
-                            "en": "Cartoons & Comics",
-                            "vn": "Phim Hoạt Hình & Truyện Tranh",
-                            "jp": "漫画とコミック"
-                        },
+                        "name": "text-cartoons-comics",
                         "slug": "Cartoons & Comics",
                         "language": "en",
                         "icon": "",
@@ -1183,11 +1039,7 @@
                     },
                     {
                         "id": "0000000079",
-                        "name": {
-                            "en": "Tattoo Design",
-                            "vn": "Thiết kế hình xăm",
-                            "jp": "タトゥーのデザイン"
-                        },
+                        "name": "text-tattoo-design",
                         "slug": "Tattoo Design",
                         "language": "en",
                         "icon": "",
@@ -1206,11 +1058,7 @@
                     },
                     {
                         "id": "0000000080",
-                        "name": {
-                            "en": "Storyboards",
-                            "vn": "bảng phân cảnh",
-                            "jp": "絵コンテ"
-                        },
+                        "name": "text-storyboards",
                         "slug": "Storyboards",
                         "language": "en",
                         "icon": "",
@@ -1249,11 +1097,7 @@
                 "children": [
                     {
                         "id": "0000000081",
-                        "name": {
-                            "en": "Website Design",
-                            "vn": "Thiết kế website",
-                            "jp": "ウェブサイトデザイン"
-                        },
+                        "name": "text-website-design",
                         "slug": "Website Design",
                         "language": "en",
                         "icon": "",
@@ -1272,11 +1116,7 @@
                     },
                     {
                         "id": "0000000082",
-                        "name": {
-                            "en": "App Design",
-                            "vn": "thiết kế ứng dụng",
-                            "jp": "アプリの設計"
-                        },
+                        "name": "text-app-design",
                         "slug": "App Design",
                         "language": "en",
                         "icon": "",
@@ -1295,11 +1135,7 @@
                     },
                     {
                         "id": "0000000083",
-                        "name": {
-                            "en": "UX Design",
-                            "vn": "Thiết kế UX",
-                            "jp": "UXデザイン"
-                        },
+                        "name": "text-ux-design",
                         "slug": "UX Design",
                         "language": "en",
                         "icon": "",
@@ -1318,11 +1154,7 @@
                     },
                     {
                         "id": "0000000084",
-                        "name": {
-                            "en": "Landing Page Design",
-                            "vn": "Thiết kế trang đích",
-                            "jp": "ランディングページのデザイン"
-                        },
+                        "name": "text-landing-page-design",
                         "slug": "Landing Page Design",
                         "language": "en",
                         "icon": "",
@@ -1341,11 +1173,7 @@
                     },
                     {
                         "id": "0000000085",
-                        "name": {
-                            "en": "Icon Design",
-                            "vn": "Thiết Kế Biểu Tượng",
-                            "jp": "アイコンデザイン"
-                        },
+                        "name": "text-icon-design",
                         "slug": "Icon Design",
                         "language": "en",
                         "icon": "",
@@ -2498,11 +2326,7 @@
             },
             {
                 "id": "0000000136",
-                "name": {
-                    "en": "Community Management",
-                    "vn": "Quản lý cộng đồng",
-                    "jp": "コミュニティ管理"
-                },
+                "name": "text-community-management",
                 "slug": "Community Management",
                 "language": "en",
                 "icon": "",
@@ -2521,11 +2345,7 @@
             },
             {
                 "id": "0000000137",
-                "name": {
-                    "en": "Mobile App Marketing",
-                    "vn": "Tiếp thị ứng dụng di động",
-                    "jp": "モバイルアプリのマーケティング"
-                },
+                "name": "text-mobile-app-marketing",
                 "slug": "Mobile App Marketing",
                 "language": "en",
                 "icon": "",
@@ -2544,11 +2364,7 @@
             },
             {
                 "id": "0000000138",
-                "name": {
-                    "en": "Music Promotion",
-                    "vn": "quảng cáo âm nhạc",
-                    "jp": "音楽プロモーション"
-                },
+                "name": "text-music-promotion",
                 "slug": "Music Promotion",
                 "language": "en",
                 "icon": "",
@@ -2567,11 +2383,7 @@
             },
             {
                 "id": "0000000139",
-                "name": {
-                    "en": "Book & ebook Marketing",
-                    "vn": "Tiếp thị sách & sách điện tử",
-                    "jp": "本と電子書籍のマーケティング"
-                },
+                "name": "text-book-ebook-marketing",
                 "slug": "Book & ebook Marketing",
                 "language": "en",
                 "icon": "",
@@ -2590,11 +2402,7 @@
             },
             {
                 "id": "0000000140",
-                "name": {
-                    "en": "Podcast Marketing",
-                    "vn": "Tiếp thị podcast",
-                    "jp": "ポッドキャスト マーケティング"
-                },
+                "name": "text-podcast-marketing",
                 "slug": "Podcast Marketing",
                 "language": "en",
                 "icon": "",
@@ -2613,11 +2421,7 @@
             },
             {
                 "id": "0000000141",
-                "name": {
-                    "en": "Afflillate Marketing",
-                    "vn": "Tiếp thị liên kết",
-                    "jp": "アフィリエイトマーケティング"
-                },
+                "name": "text-afflillate-marketing",
                 "slug": "Afflillate Marketing",
                 "language": "en",
                 "icon": "",
@@ -2636,11 +2440,7 @@
             },
             {
                 "id": "0000000142",
-                "name": {
-                    "en": "Other",
-                    "vn": "Khác",
-                    "jp": "他の"
-                },
+                "name": "text-other",
                 "slug": "Other",
                 "language": "en",
                 "icon": "",
@@ -2681,11 +2481,7 @@
         "children": [
             {
                 "id": "0000000143",
-                "name": {
-                    "en": "Acticles & Blog Posts",
-                    "vn": "Bài báo & Bài đăng trên blog",
-                    "jp": "アクティクルとブログ投稿"
-                },
+                "name": "text-acticles-blog-posts",
                 "slug": "Acticles & Blog Posts",
                 "language": "en",
                 "icon": "",
@@ -2704,11 +2500,7 @@
             },
             {
                 "id": "0000000144",
-                "name": {
-                    "en": "Translation",
-                    "vn": "Dịch",
-                    "jp": "翻訳"
-                },
+                "name": "text-translation",
                 "slug": "Translation",
                 "language": "en",
                 "icon": "",
@@ -2727,11 +2519,7 @@
             },
             {
                 "id": "0000000145",
-                "name": {
-                    "en": "Proofreading & Editing",
-                    "vn": "Hiệu đính & Chỉnh sửa",
-                    "jp": "校正と編集"
-                },
+                "name": "text-proofreading-editing",
                 "slug": "Proofreading & Editing",
                 "language": "en",
                 "icon": "",
@@ -2750,11 +2538,7 @@
             },
             {
                 "id": "0000000146",
-                "name": {
-                    "en": "Resume Writing",
-                    "vn": "Viết Sơ yếu lý lịch",
-                    "jp": "履歴書の書き方"
-                },
+                "name": "text-resume-writing",
                 "slug": "Resume Writing",
                 "language": "en",
                 "icon": "",
@@ -2773,11 +2557,7 @@
             },
             {
                 "id": "0000000147",
-                "name": {
-                    "en": "Cover Letters",
-                    "vn": "Thư xin việc",
-                    "jp": "カバーレター"
-                },
+                "name": "text-cover-letters",
                 "slug": "Cover Letters",
                 "language": "en",
                 "icon": "",
@@ -2796,11 +2576,7 @@
             },
             {
                 "id": "0000000148",
-                "name": {
-                    "en": "Linkedin Profiles",
-                    "vn": "Hồ sơ Linkedin",
-                    "jp": "リンクイン プロファイル"
-                },
+                "name": "text-linkedin-profiles",
                 "slug": "Linkedin Profiles",
                 "language": "en",
                 "icon": "",
@@ -2819,11 +2595,7 @@
             },
             {
                 "id": "0000000149",
-                "name": {
-                    "en": "Ad Copy",
-                    "vn": "Sao chép quảng cáo",
-                    "jp": "広告コピー"
-                },
+                "name": "text-ad-copy",
                 "slug": "Ad Copy",
                 "language": "en",
                 "icon": "",
