@@ -5,28 +5,13 @@ import subtle_image_1 from '@/assets/images/service/logo-design.webp'
 import subtle_image_2 from '@/assets/images/service/logo.webp'
 import avatar_Weperfectionist from '@/assets/images/avatar/weperfectlonlst.jpg';
 import avatar_Logoflow from '@/assets/images/avatar/logoflow.webp';
+import { Newestservice } from '@/types'
 
-export const NewestService = () => {
-    const list_new_services = [
-        {
-            id: 1,
-            name: 'Weperfectionist',
-            link: 'Fonts-&-Tyographyservices-36',
-            image: subtle_image_1,
-            avatar: avatar_Weperfectionist,
-            tag: '@weperfectionist',
-            content: 'We Perfectionist is a highly talented and dedicated team, focused on providing unique logo design absolutely from scratch. A Logo is the face of your brand which is as equally important as the success of your business and we make sure to dig into the pillars of your success in depth.'
-        },
-        {
-            id: 2,
-            name: 'Logoflow',
-            link: 'Fonts-&-Tyographyservices-36',
-            image: subtle_image_2,
-            avatar: avatar_Logoflow,
-            tag: '@logoflow',
-            content: 'This Gig is of one of many design kinds we offer. Flat design concepts are one of our fortes. For the logo to be timeless it doesnot need to be with complex structures or patterns. It just needs to be simple, memorable and which gives a distinctive essence to your business'
-        }
-    ]
+type PageProps = {
+    data: Newestservice[]
+}
+
+export const NewestService = ({ data }: PageProps) => {
     return (
         <div className="container section-padding">
             <div className="section-title-wrapper">
@@ -35,16 +20,16 @@ export const NewestService = () => {
                 </div>
                 <div className="all-items-link">
                     {" "}
-                    <Link href="/10-creators">
+                    <Link href="/services/services">
                         Explore all service
                     </Link>{" "}
                 </div>
             </div>
             <div className="featured-creators-box grid-2-columns">
-                {list_new_services.map((service, index) => (
+                {data.map((service, index) => (
                     <div className="featured-creators-item" key={index}>
                         <Image
-                            src={service.image}
+                            src={service.files[0].url}
                             width={470}
                             height={340}
                             alt=""
@@ -55,8 +40,8 @@ export const NewestService = () => {
                                 <div className="featured-creators-info">
                                     <div className="title h4">
                                         {" "}
-                                        <Link href={`/categories/services/servicedetail/${service.link}`}>
-                                            {service.name}
+                                        <Link href={`/categories/services/servicedetail/${service.slug}`}>
+                                            {service.title}
                                         </Link>{" "}
                                     </div>
                                     <div className="item-meta">
@@ -64,7 +49,7 @@ export const NewestService = () => {
                                             {" "}
                                             <Link href="/08-profile-page">
                                                 <Image
-                                                    src={service.avatar}
+                                                    src={service.sellerInfor.avatar}
                                                     height={100}
                                                     width={100}
                                                     alt="Weperfectionist"
@@ -76,7 +61,7 @@ export const NewestService = () => {
                                                 </svg>
                                             </span>
                                         </span>
-                                        {service.tag}
+                                        @{service.username}
                                     </div>
                                 </div>
                                 <div className="follow-me gradient-border_white-bg">
@@ -86,7 +71,7 @@ export const NewestService = () => {
 
                             <div className="about-creator">
                                 <p>
-                                    {service.content}
+                                    {service.descriptions}
                                 </p>
                             </div>
 

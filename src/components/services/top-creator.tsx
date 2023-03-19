@@ -11,19 +11,23 @@ const topcreator = [
         link: '/seller/01',
         creator: 'Dexter Stark',
         tagName: '@DexterStark',
-        score: 135,
-        previews: [
+        numberofservice: 135,
+        avatar: avatar,
+        bestservice: [
             {
-                id: 1,
-                link: '/05-product-page',
+                id: 1, 
+                image: project_thumb_1,
+                link: '/services/1',
             },
             {
                 id: 2,
-                link: '/05-product-page',
+                image: project_thumb_1,
+                link: '/services/2',
             },
             {
                 id: 3,
-                link: '/05-product-page',
+                image: project_thumb_1,
+                link: '/services/3',
             }
         ]
 
@@ -33,19 +37,23 @@ const topcreator = [
         link: '/seller/01',
         creator: 'Jackie Jones',
         tagName: '@JackieJ',
-        score: 107,
-        previews: [
+        numberofservice: 107,
+        avatar: avatar,
+        bestservice: [
             {
                 id: 1,
-                link: '/05-product-page',
+                image: project_thumb_1,
+                link: '/services/4',
             },
             {
                 id: 2,
-                link: '/05-product-page',
+                image: project_thumb_1,
+                link: '/services/5',
             },
             {
                 id: 3,
-                link: '/05-product-page',
+                image: project_thumb_1,
+                link: '/services/6',
             }
         ]
     },
@@ -54,19 +62,23 @@ const topcreator = [
         link: '/seller/01',
         creator: 'Noir Artworks',
         tagName: '@noirArtks',
-        score: 94,
-        previews: [
+        numberofservice: 94,
+        avatar: avatar,
+        bestservice: [
             {
                 id: 1,
-                link: '/05-product-page',
+                image: project_thumb_1,
+                link: '/services/7',
             },
             {
                 id: 2,
-                link: '/05-product-page',
+                image: project_thumb_1,
+                link: '/services/8',
             },
             {
                 id: 3,
-                link: '/05-product-page',
+                image: project_thumb_1,
+                link: '/services/9',
             }
         ]
 
@@ -76,19 +88,23 @@ const topcreator = [
         link: '/seller/01',
         creator: 'The Green Goo',
         tagName: '@daGreenGoo',
-        score: 83,
-        previews: [
+        numberofservice: 83,
+        avatar: avatar,
+        bestservice: [
             {
                 id: 1,
-                link: '/05-product-page',
+                image: project_thumb_1,
+                link: '/services/10',
             },
             {
                 id: 2,
-                link: '/05-product-page',
+                image: project_thumb_1,
+                link: '/services/11',
             },
             {
                 id: 3,
-                link: '/05-product-page',
+                image: project_thumb_1,
+                link: '/services/12',
             }
         ]
 
@@ -98,19 +114,23 @@ const topcreator = [
         link: '/seller/01',
         creator: 'Nicholas Stevens',
         tagName: '@nickstevens',
-        score: 50,
-        previews: [
+        numberofservice: 50,
+        avatar: avatar,
+        bestservice: [
             {
                 id: 1,
-                link: '/05-product-page',
+                image: project_thumb_1,
+                link: '/services/61',
             },
             {
                 id: 2,
-                link: '/05-product-page',
+                image: project_thumb_1,
+                link: '/services/62',
             },
             {
                 id: 3,
-                link: '/05-product-page',
+                image: project_thumb_1,
+                link: '/services/63',
             }
         ]
 
@@ -120,19 +140,23 @@ const topcreator = [
         link: '/seller/01',
         creator: 'Bearded Wonder',
         tagName: '@beardedwndr',
-        score: 26,
-        previews: [
+        numberofservice: 26,
+        avatar: avatar,
+        bestservice: [
             {
                 id: 1,
-                link: '/05-product-page',
+                image: project_thumb_1,
+                link: '/services/68',
             },
             {
                 id: 2,
-                link: '/05-product-page',
+                image: project_thumb_1,
+                link: '/services/69',
             },
             {
                 id: 3,
-                link: '/05-product-page',
+                image: project_thumb_1,
+                link: '/services/63',
             }
         ]
 
@@ -155,16 +179,13 @@ const HomeTopCreators = () => {
                         <div className="creator-box">
                             <div className="avatar box-64">
                                 <Link href={creator.link}>
-                                    <picture>
-                                        <source type="/assets/images/avif" srcSet="/assets/images/avif/avatar.avif" />
-                                        <Image
-                                            src={avatar}
-                                            alt="avatar"
-                                            loading="lazy"
-                                            width={100}
-                                            height={100}
-                                        />
-                                    </picture>
+                                    <Image
+                                        src={creator.avatar}
+                                        alt="avatar"
+                                        loading="lazy"
+                                        width={100}
+                                        height={100}
+                                    />
                                     <span className="verified">
                                         <svg className="crumina-icon">
                                             <use xlinkHref="#check-icon" />
@@ -182,27 +203,21 @@ const HomeTopCreators = () => {
                                 <div className="creator-meta">{creator.tagName}</div>
                             </div>
                         </div>
-                        <div className="projects-score">
-                            <div className="number title">{creator.score}</div>
+                        <div className="projects-numberofservice">
+                            <div className="number title">{creator.numberofservice}</div>
                             <div className="label">Service</div>
                         </div>
-                        {creator.previews.map((previews, index) => (
-                            <div className="projects-previews" key={index}>
+                        {creator.bestservice.map((bestservice, index) => (
+                            <div className="projects-bestservice" key={index}>
                                 <div className="preview-box box-68">
-                                    <Link href={previews.link}>
-                                        <picture>
-                                            <source
-                                                type="/assets/images/avif"
-                                                srcSet="avif/content/previews/project-thumb-1.avif"
-                                            />
-                                            <Image
-                                                src={project_thumb_1}
-                                                height={68}
-                                                width={68}
-                                                alt=""
-                                                loading="lazy"
-                                            />
-                                        </picture>
+                                    <Link href={bestservice.link}>
+                                        <Image
+                                            src={project_thumb_1}
+                                            height={68}
+                                            width={68}
+                                            alt=""
+                                            loading="lazy"
+                                        />
                                     </Link>
                                 </div>
                             </div>

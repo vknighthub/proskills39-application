@@ -44,8 +44,8 @@ export const NavFourColumnHeaderRight = ({ category }) => {
                                     ) : (
                                         <li key={index} className="menu-item">
                                             {' '}
-                                            <Link legacyBehavior href={`/${sublevel1.slug}`}>
-                                                <a className="menu-link">{t(sublevel1.name)}</a>
+                                            <Link href={`/categories/${sublevel1.slug}`} className="menu-link">
+                                                {t(sublevel1.name)}
                                             </Link>{' '}
                                         </li>
                                     )}

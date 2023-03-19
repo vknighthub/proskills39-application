@@ -25,7 +25,7 @@ const Categories = ({ data }) => {
     return (
         data.map((categories, index) => (
             <div className="featured-item" key={index}>
-                <Link href={categories.slug}>
+                <Link href={`/categories/${categories.slug}`}>
                     <div className="featured-item-wrapper">
                         <div className="featured-item-content">
                             <div className="fav-counter">

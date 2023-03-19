@@ -30,7 +30,7 @@ const NavLayout = () => {
 
             default: return <NavTwoColumn data={categories.children} slice={categories.slice_number} />;
         }
-    }
+    }   
     function handleItemClick(values: any) {
 
         Cookies.set('NEXT_LOCALE', values, { expires: 365 });
@@ -49,7 +49,7 @@ const NavLayout = () => {
                             className="menu-item menu-item-has-megamenu menu-item-has-children"
                             key={index}
                         >
-                            <a className="menu-link" href={category.url}>
+                            <a className="menu-link" href={`/categories/${category.slug}`}>
                                 {t(category.name)}
                                 <span className="indicator">
                                     <svg className="crumina-icon">

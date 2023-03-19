@@ -1,5 +1,6 @@
 export const API_ENDPOINTS = {
     SETTINGS: '/system/settings',
+    HOMEPAGE: '/system/gethomepage',
     USERS_ME: '/user/getuserprofile',
     USERS_LOGIN: '/user/login',
     USERS_REGISTER: '/user/register',

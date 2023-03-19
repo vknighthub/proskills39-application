@@ -15,6 +15,9 @@ export interface GetParams {
     slug: string;
     language?: string;
 }
+export interface DefaultParams {
+    language?: string;
+}
 
 export type NextPageWithLayout<P = {}> = NextPage<P> & {
     authorization?: boolean;
@@ -91,8 +94,81 @@ export interface Settings {
     updated_at: Date;
 }
 
+export interface Popuparcategory {
+    id: number
+    name: string
+    slug: string
+    icon: string
+    featured: boolean
+    react: number
+}
+
+export interface Mostpopularservice {
+    id: number
+    name: string
+    image: string
+    link: string
+    slug: string
+}
+
+export interface Newestservice {
+    id: number
+    keyid: number
+    cate_id: number
+    username: string
+    title: string
+    slug: string
+    language: string
+    descriptions: string
+    status: string
+    tags: string
+    price: number
+    sale_price: any
+    min_price: number
+    max_price: number
+    totalview: any
+    totalorder: any
+    totalcomment: any
+    create_at: string
+    update_at: string
+    delete_at: any
+    files: File[]
+    sellerInfor: SellerInfor
+}
+
+export interface File {
+    type: string
+    url: string
+    title: string
+    filename: string
+}
+
+export interface SellerInfor {
+    fullname: string
+    joindate: string
+    avatar: string
+    address: Address
+    aboutme: any
+    lastdelivery: any
+}
+
+export interface Address {
+    country: string
+    city: string
+    province: string
+    district: string
+}
+
+export interface HomePage {
+    popuparcategories: Popuparcategory[]
+    mostpopularseller: any[]
+    mostpopularservice: Mostpopularservice[]
+    newestservice: Newestservice[]
+}
+
 export interface SettingQuery extends ResultObject<Settings> { }
 
+export interface HomePageResult extends ResultObject<HomePage> { }
 export interface SettingsQueryOptions extends QueryOptions {
     language?: string;
 }

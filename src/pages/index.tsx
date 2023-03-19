@@ -3,13 +3,18 @@ import { HomePopularCategory } from '@/components/services/popular-categories'
 import HomePopularService from '@/components/services/popular-service'
 import HomeTopCreators from '@/components/services/top-creator'
 import routes from '@/config/routes'
+import client from '@/data/client'
 import Layout from '@/layouts/_layout'
 import Seo from '@/layouts/_seo'
 import { NextPageWithLayout } from '@/types'
-import { GetStaticProps } from 'next'
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-const Home: NextPageWithLayout = () => {
+const Home: NextPageWithLayout<
+  InferGetStaticPropsType<typeof getStaticProps>
+> = ({ homeinfo }) => {
+  const homepageinfo = homeinfo.result.data
+
   return (
     <>
       <Seo
@@ -21,19 +26,33 @@ const Home: NextPageWithLayout = () => {
       <div className="primary-content-area bottom-padding-70">
         <HomePopularService />
         <HomeTopCreators />
-        <HomePopularCategory />
-        <NewestService />
+        <HomePopularCategory data={homepageinfo.popuparcategories} />
+        <NewestService data = {homepageinfo.newestservice} />
       </div>
     </>
   )
 }
+
+
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale!, ['common','footer'])),
-    },
-    revalidate: 60, // In seconds
-  };
+  try {
+    const formattedparams = {
+      language: locale,
+    };
+    const homeinfo = await client.settings.homepage(formattedparams);
+    return {
+      props: {
+        homeinfo,
+        ...(await serverSideTranslations(locale!, ['common', 'footer'])),
+      },
+      revalidate: 60, // In seconds
+    };
+  } catch (error) {
+    //* if we get here, the product doesn't exist or something else went wrong
+    return {
+      notFound: true,
+    };
+  }
 };
 
 Home.getLayout = function getLayout(page) {
