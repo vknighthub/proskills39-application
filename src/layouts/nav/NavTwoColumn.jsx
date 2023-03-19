@@ -1,7 +1,10 @@
 import Link from 'next/link'
 import React from 'react'
+import { useTranslation } from 'react-i18next';
 
 export const NavTwoColumn = ({ data, slice }) => {
+    const { t } = useTranslation('common');
+
     const first_col = data.slice(0, slice);
     const second_col = data.slice(slice, data.length);
     return (
@@ -16,7 +19,7 @@ export const NavTwoColumn = ({ data, slice }) => {
                                         <li key={index} className="menu-item">
                                             {" "}
                                             <Link href={`/${sd.slug}`} className="menu-link">
-                                                {sd.name.en}
+                                                {t(sd.name)}
                                             </Link>{" "}
                                         </li>
                                     ))}
@@ -31,7 +34,7 @@ export const NavTwoColumn = ({ data, slice }) => {
                                         <li key={index} className="menu-item">
                                             {" "}
                                             <Link href={`/${sd.slug}`} className="menu-link">
-                                                {sd.name.en}
+                                                {t(sd.name)}
                                             </Link>{" "}
                                         </li>
                                     ))}

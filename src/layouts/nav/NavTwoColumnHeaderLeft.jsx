@@ -1,7 +1,10 @@
 import Link from 'next/link'
 import React from 'react'
+import { useTranslation } from 'react-i18next';
 
 export const NavTwoColumnHeaderLeft = ({ category }) => {
+    const { t } = useTranslation('common');
+
     const first_col = category.children.slice(0, category.slice_number);
     return (
         <>
@@ -14,7 +17,7 @@ export const NavTwoColumnHeaderLeft = ({ category }) => {
                                     {sublevel1.menu_level === 2 ? (
                                         <>
                                             <div className="megamenu-title">
-                                                {sublevel1.name.en}
+                                                {t(sublevel1.name)}
                                             </div>
                                             <div className="flex-space-between">
                                                 <ul className="submenu-column">
@@ -26,7 +29,7 @@ export const NavTwoColumnHeaderLeft = ({ category }) => {
                                                                 href={`/${sublevel2.slug}`}
                                                             >
                                                                 <a className="menu-link">
-                                                                    {sublevel2.name.en}
+                                                                    {t(sublevel2.name)}
                                                                 </a>
                                                             </Link>{' '}
                                                         </li>
@@ -38,7 +41,7 @@ export const NavTwoColumnHeaderLeft = ({ category }) => {
                                         <li key={index} className="menu-item">
                                             {' '}
                                             <Link legacyBehavior href={`/${sublevel1.slug}`}>
-                                                <a className="menu-link">{sublevel1.name.en}</a>
+                                                <a className="menu-link">{t(sublevel1.name)}</a>
                                             </Link>{' '}
                                         </li>
                                     )}
