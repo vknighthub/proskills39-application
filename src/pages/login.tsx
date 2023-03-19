@@ -2,14 +2,25 @@
 
 import LoginUserForm from "@/components/auth/login-form";
 import Layout from "@/layouts/_layout";
+import { GetStaticProps } from "next";
 import { signIn } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale!, ['common', 'footer'])),
+        },
+        revalidate: 60, // In seconds
+    };
+};
 
 const Login = () => {
     const { t } = useTranslation('common');
 
     const loginAction = () => {
-        signIn('google', { callbackUrl: 'http://localhost:3000' })
+        signIn('google', { callbackUrl: process.env.NEXT_PUBLIC_WEBSITE_URL })
     }
 
     return (
@@ -18,7 +29,7 @@ const Login = () => {
                 <div className="extra-small-section">
                     <div className="page-title text-center">
                         <h2>
-                            <span className="gradient-text">Account</span> Login
+                            <span className="gradient-text">{t("text-account")}</span> {t("text-login")}
                         </h2>
                     </div>
 
@@ -27,7 +38,7 @@ const Login = () => {
 
                     <div className="social-login">
                         <div className="social-login-text">
-                            Or login with your social account!
+                            {t('text-other-login')}
                         </div>
                         <div className="social-login-buttons">
                             <button className="btn btn-normal facebook">

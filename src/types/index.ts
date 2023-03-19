@@ -202,43 +202,68 @@ export interface RegisterUserInput {
     phone: string
 }
 
+export interface UpdateProfileInput {
+    username: string;
+    fullname: string;
+    email: string;
+    phone: string;
+}
+export interface UserUpdateResult {
+    
+}
+
 export interface UserProfileResult {
     result: {
         data: UserProfile
     }
 }
+export interface Social {
+    socialId: number
+    username: string
+    type: string
+    name: string
+    url: string
+}
 
+export interface Wallet {
+    walletaddress: string
+    username: string
+    walletname: any
+    wallettype: any
+    status: string
+}
 export interface UserProfile {
-    usrid: number,
-    username: string,
-    fullname: string,
-    firstname: string,
-    midname: string,
-    lastname: string,
-    gender: number,
-    country: string,
-    city: string,
-    province: string,
-    district: string,
-    address: string,
-    email: string,
-    birthday: Date,
-    phone: string,
-    lastlogintime: Date,
-    status: string,
-    datecreated: Date,
-    datemodified: Date,
-    islogin: boolean,
-    expiretime: Date,
-    failnumber: number,
-    avatar: string,
-    faceid: string,
-    licensetype: string,
-    licenseid: string,
-    aboutme: string,
-    descriptions: string,
-    lastdelivery: Date,
-    token: string | null | undefined,
+    usrid: number
+    username: string
+    fullname: string
+    gender: number
+    country: string
+    city: string
+    province: string
+    district: string
+    address: string
+    email: string
+    birthday: string
+    phone: string
+    lastlogintime: string
+    status: string
+    datecreated: string
+    datemodified: any
+    islogin: boolean
+    expiretime: any
+    failnumber: any
+    avatar: string
+    faceid: any
+    licensetype: any
+    licenseid: any
+    aboutme: any
+    descriptions: any
+    lastdelivery: any
+    token: string
+    token_type: string
+    first_login: boolean
+    socials?: Social[]
+    wallet?: Wallet[]
 }
 export interface UserInfor {
     username: string,

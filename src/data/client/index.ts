@@ -1,4 +1,4 @@
-import { AuthResponse, CategoriesPaginator, Category, CategoryPaginator, ChallegePaginator, Challenge, ChallengeResult, GetParams, HomePageResult, LoginUserInput, Proposal, ProposalQueryOptions, ProposalResult, RegisterUserInput, Service, ServiceDetailPaginator, ServicePaginator, SettingQuery, Settings, SettingsQueryOptions, UserProfileResult } from "@/types";
+import { AuthResponse, CategoriesPaginator, Category, CategoryPaginator, ChallegePaginator, Challenge, ChallengeResult, GetParams, HomePageResult, LoginUserInput, Proposal, ProposalQueryOptions, ProposalResult, RegisterUserInput, Service, ServiceDetailPaginator, ServicePaginator, SettingQuery, Settings, SettingsQueryOptions, UpdateProfileInput, UserProfileResult, UserUpdateResult } from "@/types";
 import { API_ENDPOINTS } from "./endpoints";
 import { HttpClient } from './http-client';
 
@@ -6,7 +6,7 @@ class Client {
     settings = {
         all: (params?: SettingsQueryOptions) =>
             HttpClient.get<SettingQuery>(API_ENDPOINTS.SETTINGS, { ...params }),
-        homepage: (params?: SettingsQueryOptions) => HttpClient.get<HomePageResult>(API_ENDPOINTS.HOMEPAGE, {...params}),
+        homepage: (params?: SettingsQueryOptions) => HttpClient.get<HomePageResult>(API_ENDPOINTS.HOMEPAGE, { ...params }),
     }
     users = {
         me: () => HttpClient.get<UserProfileResult>(API_ENDPOINTS.USERS_ME),
@@ -15,6 +15,8 @@ class Client {
             HttpClient.post<AuthResponse>(API_ENDPOINTS.USERS_LOGIN, input),
         register: (input: RegisterUserInput) =>
             HttpClient.post<AuthResponse>(API_ENDPOINTS.USERS_REGISTER, input),
+        updateprofile: (user: UpdateProfileInput) =>
+            HttpClient.put<UserUpdateResult>(`${API_ENDPOINTS.UPDATE_USER}`, user),
     }
     fund = {
         all: () =>
@@ -40,7 +42,7 @@ class Client {
     }
     services = {
         get: ({ slug, language }: GetParams) => HttpClient.get<ServicePaginator>(`${API_ENDPOINTS.SERVICES}/${slug}`, { language }),
-        detail : ({ slug, language }: GetParams) => HttpClient.get<ServiceDetailPaginator>(`${API_ENDPOINTS.SERVICES_DETAIL}/${slug}`, { language })
+        detail: ({ slug, language }: GetParams) => HttpClient.get<ServiceDetailPaginator>(`${API_ENDPOINTS.SERVICES_DETAIL}/${slug}`, { language })
     }
 }
 // eslint-disable-next-line import/no-anonymous-default-export

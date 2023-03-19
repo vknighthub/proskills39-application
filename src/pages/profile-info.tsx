@@ -1,11 +1,34 @@
+import { useMe } from '@/data/user'
 import Layout from '@/layouts/_layout'
-import { NextPageWithLayout } from '@/types'
-import React from 'react'
-import ProfileInfoSidebar from '@/layouts/info/Profile/ProfileInfoSidebar'
 import ProfileInfoForm from '@/layouts/info/Profile/ProfileInfoForm'
-import ProfileInfoAvatar from '@/layouts/info/Profile/ProfileInfoAvatar'
+import ProfileInfoSidebar from '@/layouts/info/Profile/ProfileInfoSidebar'
+import { NextPageWithLayout } from '@/types'
+import { GetStaticProps } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'react-i18next'
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+    try {
+        return {
+            props: {
+                ...(await serverSideTranslations(locale!, ['common', 'footer'])),
+            },
+            revalidate: 60, // In seconds
+        };
+    } catch (error) {
+        //* if we get here, the product doesn't exist or something else went wrong
+        return {
+            notFound: true,
+        };
+    }
+};
+
 
 const ProfileInformation: NextPageWithLayout = () => {
+    const { me } = useMe();
+    const { t } = useTranslation('common');
+    const profile = me?.data
+
     return (
         <div className="primary-content-area container content-padding grid-left-sidebar">
             {/* / Profile Info Sidebar */}
@@ -17,16 +40,7 @@ const ProfileInformation: NextPageWithLayout = () => {
                         <span className="gradient-text">Profile</span> Info
                     </h2>
                 </div>
-                <div className="user-db-content-area">
-                    {/* / Profile Info Form */}
-                    <ProfileInfoForm />
-                    {/* / Profile Info Form */}
-
-                    {/* / Profile Info Avatar */}
-                    <ProfileInfoAvatar />
-                    {/* / Profile Info Avatar */}
-                </div>
-                <button className="btn btn-wide btn-dark">Save Changes</button>
+                <ProfileInfoForm profileinfo={profile} />
             </div>
         </div>
     )

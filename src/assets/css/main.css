@@ -4186,6 +4186,7 @@ body.dark-mode .search-form-with-text .main-search .search-button {
 .cryptoki-form input[type="url"],
 .cryptoki-form input[type="submit"],
 .cryptoki-form input[type="reset"],
+.cryptoki-form input[type="tel"],
 .cryptoki-form select,
 .cryptoki-form .select-nice {
     padding: max(0.87vw, 12px) max(1.5vw, 18px);

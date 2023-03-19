@@ -33,7 +33,7 @@ export default function LoginUserForm() {
       } else {
         authorize(data.result.data.token);
       }
-      
+
     },
     onError: (errorAsUnknown) => {
       const error = errorAsUnknown as AxiosError<AuthResponse>;
@@ -98,7 +98,7 @@ export default function LoginUserForm() {
       <div className="tk-lp-alert-cont" />
       <div className="tk-lp-form-item">
         <label htmlFor="sign_in_username" className="tk-lp-label">
-          Username or Email Address
+          {t("text-username-or-email-address")}
         </label>
         <input
           className="tk-lp-input"
@@ -109,7 +109,7 @@ export default function LoginUserForm() {
       </div>
       <div className="tk-lp-form-item">
         <label htmlFor="sign_in_password" className="tk-lp-label">
-          Password
+        {t("text-password")}
         </label>
         <input
           className="tk-lp-input"
@@ -124,12 +124,12 @@ export default function LoginUserForm() {
         type="submit"
         className="submit-bttn tk-lp-button tk-lp-button--dark tk-lp-w-full"
       >
-        Log In
+        {t("text-login")}
       </button>
       <Link href='/register'
         className="tk-lp-button tk-lp-button--grey tk-lp-w-full tk-lp-tabs-form-item"
       >
-        Create an Account
+        {t("text-create-account")}
       </Link>
     </form>
   );
