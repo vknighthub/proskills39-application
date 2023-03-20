@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 export const NavTwoColumn = ({ data, slice }) => {
     const { t } = useTranslation('common');

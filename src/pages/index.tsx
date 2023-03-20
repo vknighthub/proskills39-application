@@ -14,7 +14,6 @@ const Home: NextPageWithLayout<
   InferGetStaticPropsType<typeof getStaticProps>
 > = ({ homeinfo }) => {
   const homepageinfo = homeinfo.result.data
-
   return (
     <>
       <Seo
@@ -48,6 +47,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
       revalidate: 60, // In seconds
     };
   } catch (error) {
+    console.log(error)
     //* if we get here, the product doesn't exist or something else went wrong
     return {
       notFound: true,

@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import { useMutation } from 'react-query';
 import Swal from 'sweetalert2';
 import * as yup from 'yup';

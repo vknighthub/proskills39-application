@@ -9,7 +9,7 @@ import { NavThreeColumnHeaderRight } from './nav/NavThreeColumnHeaderRight';
 import { NavTwoColumn } from './nav/NavTwoColumn';
 import { NavTwoColumnHeaderLeft } from './nav/NavTwoColumnHeaderLeft';
 import { NavTwoColumnHeaderRight } from './nav/NavTwoColumnHeaderRight';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 
 const NavLayout = () => {

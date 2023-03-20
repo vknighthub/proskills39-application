@@ -4,7 +4,7 @@ import Link from "next/link";
 import aboutus from "./../data/categories/aboutus.json";
 import categories from "./../data/categories/index.json";
 import support from "./../data/categories/support.json";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'next-i18next'
 import CommunityFooter from "./footer/community";
 
 

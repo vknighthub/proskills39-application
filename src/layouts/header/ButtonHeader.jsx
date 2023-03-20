@@ -5,11 +5,10 @@ const ButtonHeader = ({ name, link }) => {
         <div className="collection-box">
             <Link
                 className="btn btn-normal btn-dark create-collection"
-                href={{ pathname: link }}
+                href={`/${link}`}
             >
                 {name}
             </Link>
-
         </div>
     )
 }

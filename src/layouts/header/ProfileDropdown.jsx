@@ -12,7 +12,7 @@ const ProfileDropdown = ({ profile }) => {
         let mood = localStorage.getItem("mood");
         moodChange(mood);
         dayMood.current = mood ? true : false;
-    }, [profile]);
+    }, []);
 
     const moodChange = (dark) => {
         if (dark) {
@@ -104,7 +104,7 @@ const ProfileDropdown = ({ profile }) => {
 
                                 <div className="profile-link">
                                     {" "}
-                                    <Link legacyBehavior href="/08-profile-page" className="btn btn-small gradient-background">
+                                    <Link href="/08-profile-page" className="btn btn-small gradient-background">
                                         My Profile
                                     </Link>{" "}
                                 </div>

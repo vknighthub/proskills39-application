@@ -1,11 +1,6 @@
+import { Newestservice } from '@/types'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
-import subtle_image_1 from '@/assets/images/service/logo-design.webp'
-import subtle_image_2 from '@/assets/images/service/logo.webp'
-import avatar_Weperfectionist from '@/assets/images/avatar/weperfectlonlst.jpg';
-import avatar_Logoflow from '@/assets/images/avatar/logoflow.webp';
-import { Newestservice } from '@/types'
 
 type PageProps = {
     data: Newestservice[]

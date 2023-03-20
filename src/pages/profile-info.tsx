@@ -1,11 +1,11 @@
 import { useMe } from '@/data/user'
-import Layout from '@/layouts/_layout'
 import ProfileInfoForm from '@/layouts/info/Profile/ProfileInfoForm'
 import ProfileInfoSidebar from '@/layouts/info/Profile/ProfileInfoSidebar'
+import Layout from '@/layouts/_layout'
 import { NextPageWithLayout } from '@/types'
 import { GetStaticProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
     try {

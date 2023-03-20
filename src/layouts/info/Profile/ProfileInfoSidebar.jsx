@@ -81,7 +81,7 @@ const ProfileInfoSidebar = () => {
             </li>
             <li className="wallet">
               {" "}
-              <Link href="connect-a-wallet">
+              <Link href="/wallet-info">
 
                 <svg className="crumina-icon">
                   <use xlinkHref="#wallet-icon" />
