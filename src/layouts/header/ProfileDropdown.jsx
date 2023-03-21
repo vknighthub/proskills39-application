@@ -1,10 +1,15 @@
 import avatar from '@/assets/images/avatar.png';
 import { useLogout } from "@/data/user";
+import { useTranslation } from 'next-i18next';
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import ActionHeader from './ActionHeader';
+import ButtonHeader from './ButtonHeader';
 
-const ProfileDropdown = ({ profile }) => {
+const ProfileDropdown = ({ profile, isAuthorized }) => {
+    const { t } = useTranslation('common')
+
     const [toggle, setToggle] = useState(false);
     const dayMood = useRef(true)
 
@@ -36,7 +41,8 @@ const ProfileDropdown = ({ profile }) => {
 
     return (
         <>
-            {userData &&
+            {isAuthorized &&
+                userData &&
                 <div
                     className={`header-user-profile cryptoki-notif-bttn ${toggle ? "active" : ""
                         }`}
@@ -140,11 +146,11 @@ const ProfileDropdown = ({ profile }) => {
                                 </li>
                                 <li className="artwork">
                                     {" "}
-                                    <Link  href="/seller">
-                                            <svg className="crumina-icon">
-                                                <use xlinkHref="#picture-icon" />
-                                            </svg>
-                                            Become a seller
+                                    <Link href="/seller">
+                                        <svg className="crumina-icon">
+                                            <use xlinkHref="#picture-icon" />
+                                        </svg>
+                                        Become a seller
                                     </Link>{" "}
                                 </li>
                                 <li className="wallet">
@@ -159,10 +165,10 @@ const ProfileDropdown = ({ profile }) => {
                                 <li className="verification">
                                     {" "}
                                     <Link href="/user-verify" onClick={() => setToggle(!toggle)}>
-                                            <svg className="crumina-icon">
-                                                <use xlinkHref="#circle-checked-icon" />
-                                            </svg>
-                                            Get Verified
+                                        <svg className="crumina-icon">
+                                            <use xlinkHref="#circle-checked-icon" />
+                                        </svg>
+                                        Get Verified
                                     </Link>{" "}
                                 </li>
                                 <li className="logout">
@@ -177,6 +183,7 @@ const ProfileDropdown = ({ profile }) => {
                             </ul>
 
                         </div>
+
                         <div className="profile-dropdown-footer">
 
                             <div className="mode-toggle">
@@ -203,6 +210,9 @@ const ProfileDropdown = ({ profile }) => {
                     </div>
                 </div>
             }
+            {!isAuthorized && <><ButtonHeader name={t('text-login')} link="/login" /> <ActionHeader /></>}
+
+
         </>
     );
 };
