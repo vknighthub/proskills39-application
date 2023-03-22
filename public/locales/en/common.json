@@ -574,5 +574,10 @@
   "text-writing-advice": "Writing Advice",
   "text-email": "Email",
   "text-usernames": "Username",
-  "text-phone": "Phone"
+  "text-phone": "Phone",
+  "text-order-checkout": "Order Checkout",
+  "text-address": "Address",
+  "text-country": "Country",
+  "text-city": "City",
+  "text-additional-information": "Additional Information"
 }

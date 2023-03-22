@@ -575,5 +575,10 @@
   "text-full-name": "フルネーム",
   "text-email": "Eメール",
   "text-usernames": "ユーザー名",
-  "text-phone": "電話"
+  "text-phone": "電話",
+  "text-order-checkout": "注文チェックアウト",
+  "text-address": "住所",
+  "text-country": "国",
+  "text-city":"街",
+  "text-additional-information": "追加情報"
 }

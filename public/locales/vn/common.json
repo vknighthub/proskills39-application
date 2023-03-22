@@ -575,5 +575,10 @@
   "text-full-name": "Tên đầy đủ",
   "text-email": "Thư điện tử",
   "text-usernames": "Tên người dùng",
-  "text-phone": "Số điện thoại"
+  "text-phone": "Số điện thoại",
+  "text-order-checkout": "Thanh toán đặt hàng",
+  "text-address": "Địa chỉ",
+  "text-country": "Quốc gia",
+  "text-city":"Thành phố",
+  "text-additional-information": "Thông tin ghi nhận thêm"
 }
