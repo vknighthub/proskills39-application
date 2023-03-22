@@ -210,7 +210,7 @@ const ProfileDropdown = ({ profile, isAuthorized }) => {
                     </div>
                 </div>
             }
-            {!isAuthorized && <><ButtonHeader name={t('text-login')} link="/login" /> <ActionHeader /></>}
+            {!isAuthorized && <><ButtonHeader name={t('text-login')} link="login" /> <ActionHeader /></>}
 
 
         </>
