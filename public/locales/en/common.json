@@ -579,5 +579,7 @@
   "text-address": "Address",
   "text-country": "Country",
   "text-city": "City",
-  "text-additional-information": "Additional Information"
+  "text-additional-information": "Additional Information",
+  "text-payment": "Payment",
+  "text-amount": "Amount"
 }

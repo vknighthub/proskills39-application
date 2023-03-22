@@ -580,5 +580,7 @@
   "text-address": "Địa chỉ",
   "text-country": "Quốc gia",
   "text-city":"Thành phố",
-  "text-additional-information": "Thông tin ghi nhận thêm"
+  "text-additional-information": "Thông tin ghi nhận thêm",
+  "text-payment": "Thanh toán",
+  "text-amount": "Số tiền"
 }

@@ -580,5 +580,7 @@
   "text-address": "住所",
   "text-country": "国",
   "text-city":"街",
-  "text-additional-information": "追加情報"
+  "text-additional-information": "追加情報",
+  "text-payment": "支払い",
+  "text-amount": "額"
 }

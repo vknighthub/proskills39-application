@@ -4,11 +4,21 @@ import { NextPageWithLayout } from '@/types'
 import Image from 'next/image'
 import nami from '@/assets/images/content/wallet/nami.svg'
 import eternl from '@/assets/images/content/wallet/eternl.png'
-import momo from '@/assets/images/content/wallet/momo.svg'
 import Link from 'next/link'
+import { GetStaticProps } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 
 type Props = {}
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale!, ['common', 'footer'])),
+        },
+        revalidate: 60, // In seconds
+    };
+};
 
 const listWallet = [
     {
