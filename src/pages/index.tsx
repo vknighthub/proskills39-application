@@ -13,7 +13,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 const Home: NextPageWithLayout<
   InferGetStaticPropsType<typeof getStaticProps>
 > = ({ homeinfo }) => {
-  const homepageinfo = homeinfo.result.data
+
+  const homepageinfo = homeinfo?.result.data
   return (
     <>
       <Seo

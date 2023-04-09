@@ -1,5 +1,6 @@
 import Logo from '@/components/ui/logo'
 import { useMe } from '@/data/user'
+import SwitchLanguage from '@/layouts/header/SwitchLanguage'
 import { useSession } from 'next-auth/react'
 import { useTranslation } from 'next-i18next'
 import { useState } from 'react'
@@ -10,9 +11,9 @@ import ProfileDropdown from './header/ProfileDropdown'
 import SearchBox from './header/SearchBox'
 
 const Header = () => {
+  const { t } = useTranslation('common')
   const [searchToggle, setSearchToggle] = useState(false)
   const { data: session } = useSession()
-  const { t } = useTranslation('common')
   const { me, isAuthorized } = useMe()
   return (
     <header className="site-header">
@@ -21,6 +22,7 @@ const Header = () => {
           <MobileHeader />
           <Logo />
           <SearchBox />
+          <SwitchLanguage />
           <ButtonHeader name={t('dRep')} link="dRep" />
           <ProfileDropdown
             profile={session ? session : me}

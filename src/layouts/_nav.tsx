@@ -1,6 +1,4 @@
-import Cookies from 'js-cookie';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useTranslation } from 'next-i18next';
 import index from './../data/categories/index.json';
 import { NavFourColumnHeaderRight } from './nav/NavFourColumnHeaderRight';
 import { NavThreeColumn } from './nav/NavThreeColumn';
@@ -9,15 +7,10 @@ import { NavThreeColumnHeaderRight } from './nav/NavThreeColumnHeaderRight';
 import { NavTwoColumn } from './nav/NavTwoColumn';
 import { NavTwoColumnHeaderLeft } from './nav/NavTwoColumnHeaderLeft';
 import { NavTwoColumnHeaderRight } from './nav/NavTwoColumnHeaderRight';
-import { useTranslation } from 'next-i18next';
 
 
 const NavLayout = () => {
     const { t } = useTranslation('common');
-    const router = useRouter();
-    const { asPath, locales, locale } = router;
-    const currentSelectedItem = locales
-    const [, setSelectedItem] = useState(currentSelectedItem);
 
     const renderNav = (categories: { id?: number; name?: string; slug?: string; language?: string; icon?: string; image?: string; details?: string; type_id?: string; created_at?: string; updated_at?: string; deleted_at?: null; translated_languages?: string; type?: string; parent_id?: number; url?: string; menu_level?: number; slice_number: any; menutype: any; totalservices?: number; isshowmenu?: number; featured?: boolean; children: any; }) => {
         switch (categories.menutype) {
@@ -30,15 +23,8 @@ const NavLayout = () => {
 
             default: return <NavTwoColumn data={categories.children} slice={categories.slice_number} />;
         }
-    }   
-    function handleItemClick(values: any) {
-
-        Cookies.set('NEXT_LOCALE', values, { expires: 365 });
-        setSelectedItem(values);
-        router.push(asPath, undefined, {
-            locale: values,
-        });
     }
+
 
     return (
         <nav className="border-bottom sticky-header">
@@ -61,35 +47,6 @@ const NavLayout = () => {
                         </li>
                     ))}
                 </ul>
-
-                <ul className="social-icons-list">
-                    <li className="social-icon">
-                        {' '}
-                        <a onClick={() => handleItemClick('en')}>
-                            <svg style={{ width: '23px', height: '23px' }}>
-                                <use xlinkHref="#united-kingdom-flag" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li className="social-icon">
-                        {' '}
-                        <a onClick={() => handleItemClick('vn')} >
-                            <svg style={{ width: '23px', height: '23px' }}>
-                                <use xlinkHref="#vietnam-flag" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li className="social-icon">
-                        {' '}
-                        <a onClick={() => handleItemClick('jp')}>
-                            <svg style={{ width: '23px', height: '23px' }}>
-                                <use xlinkHref="#japan-flag" />
-                            </svg>
-                        </a>
-                    </li>
-
-                </ul>
-
             </div>
         </nav>
     )
