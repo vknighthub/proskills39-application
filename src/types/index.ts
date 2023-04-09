@@ -209,7 +209,7 @@ export interface UpdateProfileInput {
     phone: string;
 }
 export interface UserUpdateResult {
-    
+
 }
 
 export interface UserProfileResult {
@@ -285,12 +285,17 @@ export interface UserInfor {
     avatar: string,
     faceid: string
 }
+export interface Auth {
+    token: string
+    permission: string[]
+    first_login: boolean
+}
 export interface AuthResponse {
     errorcode: string;
     messagedetail: string;
     result: {
         status: number;
-        data: UserInfor
+        data: Auth
     }
 }
 

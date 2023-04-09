@@ -1,19 +1,23 @@
-import { useTranslation } from 'next-i18next';
 import Image from "next/image";
-import ActionHeader from './ActionHeader';
-import ButtonHeader from './ButtonHeader';
 import DropdownSetting from './ProfileDropdown/DropdownSetting';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import LoginAction from './ProfileDropdown/LoginAction';
 
 const ProfileDropdown = ({ profile, isAuthorized }) => {
-    const { t } = useTranslation('common')
     const [toggle, setToggle] = useState(false);
+    const [render, setRender] = useState(true);
 
     const userData = profile ? profile.data : undefined
 
+
+    useEffect(() => {
+        setRender(true)
+    }, [render])
+
+
     return (
         <>
-            {isAuthorized && userData &&
+            {isAuthorized && userData && render &&
                 <div
                     className={`header-user-profile cryptoki-notif-bttn ${toggle ? "active" : ""
                         }`}
@@ -56,11 +60,14 @@ const ProfileDropdown = ({ profile, isAuthorized }) => {
                         </svg>
                     </div>
 
-                    <DropdownSetting userdata={userData} />
+                    <DropdownSetting userdata={userData} toggle={toggle} setToggle={setToggle} />
 
                 </div>
             }
-            {!isAuthorized && <><ButtonHeader name={t('text-login')} link="login" /> <ActionHeader /></>}
+            
+            <>
+                <LoginAction isAuthorized={isAuthorized} userdata={userData} />
+            </>
 
 
         </>

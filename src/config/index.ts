@@ -7,3 +7,6 @@ export const ConfigValue = {
   NEXT_PUBLIC_WEBSITE_URL: process.env.NEXT_PUBLIC_WEBSITE_URL,
   AUTH_TOKEN_KEY: 'proskills39-auth-token'
 };
+export const Config = {
+  defaultLanguage: process.env.NEXT_PUBLIC_DEFAULT_LANGUAGE ?? 'en',
+}

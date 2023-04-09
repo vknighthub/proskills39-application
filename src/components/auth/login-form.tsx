@@ -31,7 +31,7 @@ export default function LoginUserForm() {
         });
         return;
       } else {
-        authorize(data.result.data.token);
+        authorize(data.result.data.token,data.result.data.permission);
       }
 
     },
