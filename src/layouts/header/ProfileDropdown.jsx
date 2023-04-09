@@ -1,48 +1,19 @@
-import avatar from '@/assets/images/avatar.png';
-import { useLogout } from "@/data/user";
 import { useTranslation } from 'next-i18next';
 import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
 import ActionHeader from './ActionHeader';
 import ButtonHeader from './ButtonHeader';
+import DropdownSetting from './ProfileDropdown/DropdownSetting';
+import { useState } from 'react';
 
 const ProfileDropdown = ({ profile, isAuthorized }) => {
     const { t } = useTranslation('common')
-
     const [toggle, setToggle] = useState(false);
-    const dayMood = useRef(true)
-
-    useEffect(() => {
-        let mood = localStorage.getItem("mood");
-        moodChange(mood);
-        dayMood.current = mood ? true : false;
-    }, []);
-
-    const moodChange = (dark) => {
-        if (dark) {
-            document.querySelector("body").classList.add("dark-mode");
-            localStorage.setItem("mood", "dark-mood");
-        } else {
-            document.querySelector("body").classList.remove("dark-mode");
-            localStorage.removeItem("mood");
-        }
-    };
-
-    const onClick = () => {
-        dayMood.current = !dayMood.current;
-        moodChange(dayMood.current);
-    };
-
-    const { mutate: logout } = useLogout();
-
 
     const userData = profile ? profile.data : undefined
 
     return (
         <>
-            {isAuthorized &&
-                userData &&
+            {isAuthorized && userData &&
                 <div
                     className={`header-user-profile cryptoki-notif-bttn ${toggle ? "active" : ""
                         }`}
@@ -85,129 +56,8 @@ const ProfileDropdown = ({ profile, isAuthorized }) => {
                         </svg>
                     </div>
 
-                    <div
-                        id="profile-dropdown"
-                        className={`cryptoki-notif-target ${toggle ? "active open" : ""}`}
-                    >
-                        <div className="profile-dropdown-header profile-cover-image" />
-                        <div className="profile-dropdown-body">
-                            <div className="profile-heading">
+                    <DropdownSetting userdata={userData} />
 
-                                <div className="profile-avatar avatar box-26">
-                                    <Image
-                                        src={userData.avatar ? userData.avatar : avatar}
-                                        alt="avatar"
-                                        loading="lazy"
-                                        height={100}
-                                        width={100}
-                                    />
-                                    <span className="verified">
-                                        <svg className="crumina-icon">
-                                            <use xlinkHref="#check-icon" />
-                                        </svg>
-                                    </span>
-                                </div>
-
-                                <div className="profile-link">
-                                    {" "}
-                                    <Link href="/08-profile-page" className="btn btn-small gradient-background">
-                                        My Profile
-                                    </Link>{" "}
-                                </div>
-                            </div>
-
-                            <ul className="profile-menu">
-                                <li className="profile">
-                                    {" "}
-                                    <Link href="/profile-info">
-                                        <svg className="crumina-icon">
-                                            <use xlinkHref="#user-icon" />
-                                        </svg>
-                                        Profile Info
-                                    </Link>{" "}
-                                </li>
-                                <li className="account">
-                                    {" "}
-                                    <Link href="/account-setting" onClick={() => setToggle(!toggle)}>
-                                        <svg className="crumina-icon">
-                                            <use xlinkHref="#settings-icon" />
-                                        </svg>
-                                        Account Settings
-                                    </Link>{" "}
-                                </li>
-                                <li className="notification">
-                                    {" "}
-                                    <Link href="/notification-setting" onClick={() => setToggle(!toggle)}>
-                                        <svg className="crumina-icon">
-                                            <use xlinkHref="#slide-filter-icon" />
-                                        </svg>
-                                        Notification Settings
-                                    </Link>{" "}
-                                </li>
-                                <li className="artwork">
-                                    {" "}
-                                    <Link href="/seller">
-                                        <svg className="crumina-icon">
-                                            <use xlinkHref="#picture-icon" />
-                                        </svg>
-                                        Become a seller
-                                    </Link>{" "}
-                                </li>
-                                <li className="wallet">
-                                    {" "}
-                                    <Link href="/wallet" onClick={() => setToggle(!toggle)}>
-                                        <svg className="crumina-icon">
-                                            <use xlinkHref="#wallet-icon" />
-                                        </svg>
-                                        Wallet info
-                                    </Link>{" "}
-                                </li>
-                                <li className="verification">
-                                    {" "}
-                                    <Link href="/user-verify" onClick={() => setToggle(!toggle)}>
-                                        <svg className="crumina-icon">
-                                            <use xlinkHref="#circle-checked-icon" />
-                                        </svg>
-                                        Get Verified
-                                    </Link>{" "}
-                                </li>
-                                <li className="logout">
-                                    {" "}
-                                    <Link href="/" onClick={() => logout()}>
-                                        <svg className="crumina-icon">
-                                            <use xlinkHref="#logout-icon" />
-                                        </svg>
-                                        Log Out
-                                    </Link>
-                                </li>
-                            </ul>
-
-                        </div>
-
-                        <div className="profile-dropdown-footer">
-
-                            <div className="mode-toggle">
-                                <div className="mode-title">
-                                    <span>
-                                        <svg className="crumina-icon">
-                                            <use xlinkHref="#moon-icon" />
-                                        </svg>
-                                    </span>
-                                    Night-mode
-                                </div>
-                                <label className="toggle-control">
-                                    <input
-                                        type="checkbox"
-                                        ref={dayMood}
-                                        defaultChecked={dayMood.current}
-                                        onClick={(e) => onClick(e)}
-                                    />
-                                    <span className="control" />
-                                </label>
-                            </div>
-
-                        </div>
-                    </div>
                 </div>
             }
             {!isAuthorized && <><ButtonHeader name={t('text-login')} link="login" /> <ActionHeader /></>}

@@ -1,6 +1,7 @@
 import axios, { AxiosRequestHeaders } from 'axios';
-import { getAuthToken, removeAuthToken } from './token.utils';
+import { AUTH_TOKEN_KEY, getAuthToken, removeAuthToken } from './token.utils';
 import Router from 'next/router';
+import Cookies from 'js-cookie';
 
 const Axios = axios.create({
     baseURL: process.env.NEXT_PUBLIC_REST_API_ENDPOINT,
@@ -12,11 +13,16 @@ const Axios = axios.create({
 
 Axios.interceptors.request.use(
     (config) => {
-        const token = getAuthToken();
-        config.headers = {
-            ...config.headers,
-            Authorization: `Bearer ${token ? token : ''}`,
-        } as AxiosRequestHeaders;
+        const cookies = Cookies.get(AUTH_TOKEN_KEY);
+        let token = '';
+        if (cookies) {
+            token = cookies
+            config.headers = {
+                ...config.headers,
+                Authorization: `Bearer ${token}`,
+            } as unknown as AxiosRequestHeaders;
+
+        }
         return config;
     },
     (error) => {
@@ -24,18 +30,14 @@ Axios.interceptors.request.use(
     }
 );
 
+
 Axios.interceptors.response.use(
     (response) => response,
     (error) => {
-        console.log(`error` + error.message);
         if (
             (error.response && error.response.status === 401) ||
-            (error.response && error.response.status === 403) ||
-            (error.response &&
-                error.response.data.message === 'PIXER_ERROR.NOT_AUTHORIZED')
+            (error.response && error.response.status === 403)
         ) {
-            removeAuthToken();
-            Router.reload();
         }
         return Promise.reject(error);
     }

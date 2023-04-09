@@ -15,7 +15,7 @@ const BecomeACreatorForm = () => {
         </div>
         <div className="form-field">
           <label htmlFor="url">Your business name</label>
-          <input type="url" name="url" id="url" />
+          <input type="text" name="url" id="url" />
         </div>
         <div className="form-field file-upload">
           <div className="label">Business Logo</div>

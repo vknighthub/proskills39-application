@@ -38,7 +38,7 @@ export default function LoginUserForm() {
     onError: (errorAsUnknown) => {
       const error = errorAsUnknown as AxiosError<AuthResponse>;
       Swal.fire({
-        position: 'center',
+        position: 'top',
         icon: 'error',
         color: 'red',
         title: 'Oops...',
