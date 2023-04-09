@@ -1,45 +1,39 @@
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Layout from '@/layouts/_layout';
+import type { NextPageWithLayout } from '@/types';
 import type { GetStaticProps } from 'next';
 import { useTranslation } from 'next-i18next';
-import type { NextPageWithLayout } from '@/types';
-import Layout from '@/layouts/_layout';
-import { ErrorIcon } from '@/components/icons/error-icon';
-import { HomeIcon } from '@/components/icons/home-icon';
-import AnchorLink from '@/components/ui/links/anchor-link';
-import routes from '@/config/routes';
-import Seo from '@/layouts/_seo';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Link from 'next/link';
 
 const ErrorPage: NextPageWithLayout = () => {
   const { t } = useTranslation('common');
   return (
     <>
-      <Seo
-        title="404 Error"
-        description="Fastest digital download template built with React, NextJS, TypeScript, React-Query and Tailwind CSS."
-        url="/404" image_url={''}      />
-      <div className="flex h-full items-center justify-center p-4 md:p-6 xl:p-8">
-        <div className="max-w-md text-center xl:max-w-lg">
-          <ErrorIcon className="mx-auto h-36 w-36 text-light-900 dark:text-dark-600" />
-
-          <h2 className="pt-5 text-base font-semibold text-dark dark:text-light md:pt-7">
-            {t('404-heading')}
-          </h2>
-          <p className="pt-2.5">{t('404-sub-heading')}</p>
-          <AnchorLink
-            href={routes?.home}
-            className="group mx-auto mt-7 inline-flex items-center gap-2 rounded border border-light-400 px-6 py-3.5 font-semibold text-dark transition-all hover:bg-light-400 hover:text-brand-dark dark:border-dark-400 dark:text-light dark:hover:bg-dark-400 dark:focus:bg-dark-400 md:mt-9"
-          >
-            <HomeIcon className="h-[18px] w-[18px] text-dark/40 group-hover:text-brand dark:text-light/60" />{' '}
-            {t('404-back-home')}
-          </AnchorLink>
+      <div className='authincation h-100 p-meddle'>
+      <div className='container h-100'>
+        <div className='row justify-content-center h-100 align-items-center'>
+          <div className='col-md-8'>
+            <div className='form-input-content text-center error-page'>
+              <h1 className='error-text font-weight-bold'>404</h1>
+              <h4>
+                <i className='fa fa-exclamation-triangle text-warning' /> The
+                page you were looking for is not found!
+              </h4>
+              <p>
+                You may have mistyped the address or the page may have moved.
+              </p>
+              <div>
+                <Link className='btn btn-primary' href='/'>
+                  Back to Home
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
     </>
   );
-};
-
-ErrorPage.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
 };
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {

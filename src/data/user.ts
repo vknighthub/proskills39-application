@@ -1,5 +1,5 @@
 import useAuth from '@/components/auth/use-auth';
-import type { QueryToken, UserProfile, UserProfileResult } from '@/types';
+import type { UserProfileResult } from '@/types';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
 import client from './client';
 import { API_ENDPOINTS } from './client/endpoints';
