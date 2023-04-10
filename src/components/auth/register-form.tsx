@@ -2,18 +2,19 @@ import client from '@/data/client';
 import { AuthResponse, NextPageWithLayout, RegisterUserInput } from '@/types';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { AxiosError } from 'axios';
-import type { GetStaticProps } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
-import { useTranslation } from 'next-i18next';
 import { useMutation } from 'react-query';
 import Swal from 'sweetalert2';
 import * as yup from 'yup';
 
 
+type PageProps = {
+    username: string | undefined
+}
 
 
 const registerValidationSchema = yup.object().shape({
@@ -26,12 +27,10 @@ const registerValidationSchema = yup.object().shape({
     phone: yup.string().required()
 });
 
-const RegisterUserForm: NextPageWithLayout = () => {
+const RegisterUserForm = ({ username }: PageProps) => {
 
     const { t } = useTranslation('common');
     const router = useRouter()
-
-
 
 
     const { mutate: registerform, isSuccess } = useMutation(client.users.register, {
@@ -183,6 +182,21 @@ const RegisterUserForm: NextPageWithLayout = () => {
 
             </div>
 
+            <div className="tk-lp-form-item">
+                <label htmlFor="sign_up_referrer" className="tk-lp-label">
+                    Referrer
+                </label>
+                <input
+                    className="tk-lp-input"
+                    id="sign_up_referrer"
+                    type="text"
+                    readOnly={username ? true : false}
+                    defaultValue={username}
+                    {...register('referrer')}
+                />
+            </div>
+            <div />
+
 
             <div className="tk-lp-form-item">
                 <div className="tk-lp-check">
@@ -213,13 +227,5 @@ const RegisterUserForm: NextPageWithLayout = () => {
     )
 }
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-    return {
-        props: {
-            ...(await serverSideTranslations(locale!, ['common','footer'])),
-        },
-        revalidate: 60, // In seconds
-    };
-};
 
 export default RegisterUserForm

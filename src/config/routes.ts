@@ -1,6 +1,7 @@
 const routes = {
     home: '',
-    login: '/login',
+    login: 'login',
+    register: 'register',
     proposalsUrl: (slug: number) => `proposals/${slug}`,
     chanllengesUrl: (slug: string) => `challenges/${slug}`,
     categoriesUrl: (slug?: string) => `categories/${slug}`,

@@ -193,13 +193,14 @@ export interface LoginUserInput {
 }
 
 export interface RegisterUserInput {
-    username: string,
-    fullname: string,
-    gender: number,
-    address: string,
-    email: string,
-    birthday: string,
+    username: string
+    fullname: string
+    gender: number
+    address: string
+    email: string
+    birthday: string
     phone: string
+    referrer?: string
 }
 
 export interface UpdateProfileInput {
