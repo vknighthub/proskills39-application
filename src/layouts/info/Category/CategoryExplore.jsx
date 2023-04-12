@@ -32,7 +32,7 @@ const CategoryExplore = ({ data }) => {
                                 </div>
                             </div>
                             {explore.subject.map((subject) => (
-                                <div className="news-title h5" key={subject.id}>
+                                <div className="news-title h6" key={subject.id}>
                                     <Link href={`/${routes.service.servicelist(subject.slug)}`}>
                                         {subject.name}
                                     </Link>

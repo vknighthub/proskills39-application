@@ -43,12 +43,14 @@ export const NewestService = ({ data }: PageProps) => {
                                         <span className="avatar box-26">
                                             {" "}
                                             <Link href="/08-profile-page">
-                                                <Image
-                                                    src={service.sellerInfor.avatar}
-                                                    height={100}
-                                                    width={100}
-                                                    alt="Weperfectionist"
-                                                />
+                                                {service.sellerInfor.avatar &&
+                                                    <Image
+                                                        src={service.sellerInfor.avatar}
+                                                        height={100}
+                                                        width={100}
+                                                        alt="Weperfectionist"
+                                                    />
+                                                }
                                             </Link>{" "}
                                             <span className="verified">
                                                 <svg className="crumina-icon">

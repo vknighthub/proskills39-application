@@ -24,9 +24,10 @@ const Home: NextPageWithLayout<
         image_url='https://api.proskills39.com/system/logo/logotest.png'
       />
       <div className="primary-content-area bottom-padding-70">
+        <HomePopularCategory data={homepageinfo.popuparcategories} />
         <HomePopularService />
         <HomeTopCreators />
-        <HomePopularCategory data={homepageinfo.popuparcategories} />
+
         <NewestService data = {homepageinfo.newestservice} />
       </div>
     </>
