@@ -24,7 +24,7 @@ export const NewestService = ({ data }: PageProps) => {
                 {data.map((service, index) => (
                     <div className="featured-creators-item" key={index}>
                         <Image
-                            src={service.files[0].url}
+                            src={service.files[0]?.url}
                             width={470}
                             height={340}
                             alt=""

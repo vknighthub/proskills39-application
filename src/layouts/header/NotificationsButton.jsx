@@ -4,58 +4,35 @@ import useClickOutside from '@/lib/hooks/useClickOutside';
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { firebaseCloudMessaging } from './../../../firebase'
+import { firebaseCloudMessaging } from '../../../firebase'
+import Swal from 'sweetalert2';
 const NotificationsButton = () => {
   const [toggle, setToggle] = useState(false);
   let domNode = useClickOutside(() => {
     setToggle(false);
   });
 
+  const [mounted, setMounted] = useState(false);
+
+  if (mounted) {
+    firebaseCloudMessaging.onMessage().then((message) => {
+      console.log(message);
+      Swal.fire('Message', message, 'success')
+    })
+  }
 
   useEffect(() => {
-    setToken();
-
-    // Event listener that listens for the push notification event in the background
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.addEventListener("message", (event) => {
-        console.log("event for the service worker", event);
-      });
-    }
-
-    // Calls the getMessage() function if the token is there
-    async function setToken() {
-      try {
-        const token = await firebaseCloudMessaging.init();
-        if (token) {
-          console.log("token", token);
-          getMessage();
-        }
-      } catch (error) {
-        console.log(error);
+    firebaseCloudMessaging.init();
+    const setToken = async () => {
+      const token = await firebaseCloudMessaging.tokenInlocalforage();
+      if (token) {
+        setMounted(true);
+        // not working
       }
-    }
+    };
+    const result = setToken();
+    console.log("result", result);
   });
-
-  // Handles the click function on the toast showing push notification
-  const handleClickPushNotification = (url) => {
-    router.push(url);
-  };
-
-  // Get the push notification message and triggers a toast to show it
-  function getMessage() {
-    const messaging = firebase.messaging();
-    messaging.onMessage((message) => {
-      toast(
-        <div onClick={() => handleClickPushNotification(message?.data?.url)}>
-          <h5>{message?.notification?.title}</h5>
-          <h6>{message?.notification?.body}</h6>
-        </div>,
-        {
-          closeOnClick: false,
-        }
-      );
-    });
-  }
 
   return (
     <>
