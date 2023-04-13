@@ -9,6 +9,7 @@ import MobileHeader from './header/MobileHeader'
 import MobileSearchTrigger from './header/MobileSearchTrigger'
 import ProfileDropdown from './header/ProfileDropdown'
 import SearchBox from './header/SearchBox'
+import NotificationsButton from './header/NotificationsButton'
 
 const Header = () => {
   const { t } = useTranslation('common')
@@ -23,6 +24,9 @@ const Header = () => {
           <Logo />
           <SearchBox />
           <SwitchLanguage />
+          <div className="user-activity-buttons">
+            <NotificationsButton />
+          </div>
           <ButtonHeader name={t('dRep')} link="dRep" />
           <ProfileDropdown
             profile={session ? session : me}

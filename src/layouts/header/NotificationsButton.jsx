@@ -3,15 +3,62 @@ import notif_thumb_2 from '@/assets/images/content/notifications/notif-thumb-2.p
 import useClickOutside from '@/lib/hooks/useClickOutside';
 import Image from "next/image";
 import Link from "next/link";
-import { Fragment, useState } from "react";
-
+import { useEffect, useState } from "react";
+import { firebaseCloudMessaging } from './../../../firebase'
 const NotificationsButton = () => {
   const [toggle, setToggle] = useState(false);
   let domNode = useClickOutside(() => {
     setToggle(false);
   });
+
+
+  useEffect(() => {
+    setToken();
+
+    // Event listener that listens for the push notification event in the background
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.addEventListener("message", (event) => {
+        console.log("event for the service worker", event);
+      });
+    }
+
+    // Calls the getMessage() function if the token is there
+    async function setToken() {
+      try {
+        const token = await firebaseCloudMessaging.init();
+        if (token) {
+          console.log("token", token);
+          getMessage();
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  });
+
+  // Handles the click function on the toast showing push notification
+  const handleClickPushNotification = (url) => {
+    router.push(url);
+  };
+
+  // Get the push notification message and triggers a toast to show it
+  function getMessage() {
+    const messaging = firebase.messaging();
+    messaging.onMessage((message) => {
+      toast(
+        <div onClick={() => handleClickPushNotification(message?.data?.url)}>
+          <h5>{message?.notification?.title}</h5>
+          <h6>{message?.notification?.body}</h6>
+        </div>,
+        {
+          closeOnClick: false,
+        }
+      );
+    });
+  }
+
   return (
-    <Fragment>
+    <>
       <div className="notifications-button-cont" ref={domNode}>
         <button
           className={`cart-button cryptoki-notif-bttn ${toggle ? "active" : ""
@@ -173,7 +220,7 @@ const NotificationsButton = () => {
           </Link>{" "}
         </div>
       </div>
-    </Fragment>
+    </>
   );
 };
 export default NotificationsButton;
