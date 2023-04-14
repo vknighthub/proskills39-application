@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getToken, isSupported, getMessaging } from "firebase/messaging";
-import { initializeApp, getApps } from "firebase/app";
+import { initializeApp, getApps, getApp } from "firebase/app";
 
 // import { messaging } from '../../firebase'
 import { Button, Toast } from 'react-bootstrap';
@@ -20,12 +20,12 @@ const initApp = () => {
     storageBucket: "proskills39-ccc37.appspot.com",
     messagingSenderId: "424188212449",
     appId: "1:424188212449:web:1e8a6443e6fd27301c73a0"
-};
+  };
 
-  const app = !getApps().length ? initializeApp(firebaseConfig,'proskills39') : getApps();
+  const app = !getApps().length ? initializeApp(firebaseConfig, 'proskills39') : getApp('proskills39');
   const messaging = getMessaging(app);
   return messaging
-} 
+}
 
 const NotificationsButton = () => {
   const [toggle, setToggle] = useState(false);
@@ -33,11 +33,11 @@ const NotificationsButton = () => {
     setToggle(false);
   });
 
+
   const tokenInlocalforage = async () => {
     const token = await localforage.getItem("fcm_token");
     return token;
   }
-
 
 
   async function requestPermission() {
@@ -55,6 +55,7 @@ const NotificationsButton = () => {
           vapidKey:
             "BG1nDn48k8dDeQgIzcBAt53mB9NCWHoe_qgC2lXFunypcpu5c26u_I3PEHw22z65AGYRctlWD6YdBvshr5jaiTA",
         });
+        console.log(token)
         if (token) localforage.setItem("fcm_token", token);
         // Send this token  to server ( db)
       } else if (permission === "denied") {
@@ -66,6 +67,7 @@ const NotificationsButton = () => {
   }
 
   useEffect(() => {
+    
     if (isSupported) {
       requestPermission()
     }
