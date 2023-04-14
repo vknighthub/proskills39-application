@@ -1,28 +1,27 @@
-importScripts("https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js");
-importScripts("https://www.gstatic.com/firebasejs/8.3.2/firebase-messaging.js");
+importScripts('https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/8.10.0/firebase-messaging.js')
 
-firebase.initializeApp({
-    apiKey: "AIzaSyDE02J6KFJ4cd5Z6h6msAmhU_Pdx2p1yaE",
-    authDomain: "proskill39-b6065.firebaseapp.com",
-    projectId: "proskill39-b6065",
-    storageBucket: "proskill39-b6065.appspot.com",
-    messagingSenderId: "1066238862519",
-    appId: "1:1066238862519:web:cf4102ba06a06e4365d932",
-    measurementId: "G-4E8NE8S6ZY",
-});
+const firebaseConfig = {
+    apiKey: "AIzaSyCBbx1m0WSRdXaftcFgI4DoJVHcWuDQsBA",
+    authDomain: "proskills39-ccc37.firebaseapp.com",
+    projectId: "proskills39-ccc37",
+    storageBucket: "proskills39-ccc37.appspot.com",
+    messagingSenderId: "424188212449",
+    appId: "1:424188212449:web:1e8a6443e6fd27301c73a0"
+};
 
+firebase.initializeApp(firebaseConfig);
 const messaging = firebase.messaging();
 
-messaging.setBackgroundMessageHandler((payload) => {
+messaging.onBackgroundMessage((payload) => {
     console.log(
         "[firebase-messaging-sw.js] Received background message ",
         payload
     );
-    const notificationTitle = "Background Message Title";
+    const notificationTitle = payload.notification.title;
     const notificationOptions = {
-        body: "Background Message body.",
-        icon: "/firebase-logo.png",
+        body: payload.notification.body,
+        icon: payload.notification.image,
     };
-
     self.registration.showNotification(notificationTitle, notificationOptions);
 });

@@ -1,12 +1,11 @@
+import project_thumb_37 from '@/assets/images/content/previews/project-thumb-37.png'
 import Layout from '@/layouts/_layout'
 import { NextPageWithLayout } from '@/types'
 import { GetStaticProps } from 'next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import React from 'react'
 import { useTranslation } from 'next-i18next'
-import project_thumb_37 from '@/assets/images/content/previews/project-thumb-37.png'
-import Link from 'next/link'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Image from 'next/image'
+import Link from 'next/link'
 
 type Props = {}
 export const getStaticProps: GetStaticProps = async ({ locale }) => {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ButtonHeader from '../ButtonHeader'
 import ActionHeader from '../ActionHeader'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 
 type Props = {
     isAuthorized: boolean,
