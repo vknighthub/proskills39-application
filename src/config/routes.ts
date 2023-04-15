@@ -12,6 +12,7 @@ const routes = {
     service: {
         servicelist:(slug: string) => `categories/services/${slug}`,
         servicedetail: (slug: string) => `categories/services/servicedetail/${slug}`
-    }
+    },
+    policy_privacy: 'privacy-policy'
 }
 export default routes;
