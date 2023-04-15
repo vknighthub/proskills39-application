@@ -2,7 +2,28 @@ import notif_thumb_1 from '@/assets/images/content/notifications/notif-thumb-1.p
 import useClickOutside from '@/lib/hooks/useClickOutside';
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from 'react';
+import { useEffect, useState } from "react";
+import { getToken, isSupported, getMessaging, onMessage } from "firebase/messaging";
+import { initializeApp, getApps, getApp } from "firebase/app";
+
+import localforage from 'localforage';
+
+
+const initApp = () => {
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDM52HO4s6Is-71jRZsDMPEESXyC-62Ts0",
+    authDomain: "proskills39-383804.firebaseapp.com",
+    projectId: "proskills39-383804",
+    storageBucket: "proskills39-383804.appspot.com",
+    messagingSenderId: "1025952494208",
+    appId: "1:1025952494208:web:81201520acc535d9ffac65"
+  };
+
+  const app = !getApps().length ? initializeApp(firebaseConfig, 'proskills39') : getApp('proskills39');
+  const messaging = getMessaging(app);
+  return messaging
+}
 
 const NotificationsButton = () => {
   const [toggle, setToggle] = useState(false);
@@ -20,7 +41,7 @@ const NotificationsButton = () => {
         title: 'Notification Title',
         project: 'Create a website',
         timestamp: '10 min ago',
-        isread: false,
+        isread: true,
       },
       {
         id: 2,
@@ -52,11 +73,84 @@ const NotificationsButton = () => {
     ]
   }
 
+  const [notification, setNotification] = useState(null);
+
+  const tokenInlocalforage = async () => {
+    const token = await localforage.getItem("fcm_token");
+    return token;
+  }
+
+  async function requestPermission() {
+    try {
+
+      if ((await tokenInlocalforage()) !== null) {
+        return false;
+      }
+
+      const permission = await Notification.requestPermission();
+      if (permission === "granted") {
+        // Generate Token
+        const messaging = initApp()
+        const token = await getToken(messaging, {
+          vapidKey:
+            "BOX9gnP6tzI1nfqcVrZ90GeJiQmyGH3L3ia-R_3pIkN1ypTQSsLq0l4WFZUXRFXeh3VUdRQaXSSNHWtaLKHseGA",
+        });
+        if (token) localforage.setItem("fcm_token", token);
+        // Send this token  to server ( db)
+      } else if (permission === "denied") {
+        alert("You denied for the notification");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
   const [unreadCount, setUnreadCount] = useState(listnotification.totalread); // Số lượng thông báo chưa đọc
 
-  const processRead = () => {
-    setUnreadCount(listnotification.totalread - 1);
+  const getMessaging = () => {
+    const messageing = initApp()
+    onMessage(messageing, (payload) => {
+      console.log(payload)
+      const messageid = payload.messageId
+      const notificationTitle = payload.notification.title;
+      const notificationOptions = {
+        body: payload.notification.body,
+        icon: payload.notification.image,
+      };
+      const notificationData = payload.data
+      setNotification({
+        title: notificationTitle,
+        body: notificationOptions,
+        data: notificationData,
+        messageid: messageid
+      })
+      setUnreadCount(unreadCount + 1)
+    }
+    )
   }
+
+
+  useEffect(() => {
+    if (isSupported) {
+      requestPermission()
+      getMessaging()
+    }
+  }, []);
+
+
+  if (notification) {
+    const data = {
+      id: notification.messageid,
+      image: notification.data?.image,
+      sender: notification.data?.username,
+      title: notification.title,
+      project: notification.data?.project,
+      timestamp: notification.data?.timestamp,
+      isread: false,
+    }
+    listnotification.data.push(data)
+  }
+
+  
 
   return (
     <>
@@ -104,14 +198,14 @@ const NotificationsButton = () => {
                 <div className="notification-info">
                   <div className="message">
                     {" "}
-                    <Link href={`/user/${notification.sender}`} className="bold">
+                    <Link href="/08-profile-page" className="bold">
                       @ {notification.sender}
                     </Link>{" "}
                     has request a project{" "}
-                    <Link href={`/project/${notification.project}`} className="bold">
+                    <Link href="/05-product-page" className="bold">
                       {notification.project}
                     </Link>{" "}
-                    <Link href="#" onClick={() => processRead()} >If you are interested, you can check out the information</Link>
+                    <span>If you are interested, you can check out the information</span>
                   </div>
                   <div className="publish-date">{notification.timestamp}</div>
                 </div>

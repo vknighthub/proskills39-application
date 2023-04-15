@@ -1983,7 +1983,12 @@ ol li::marker {
 .comment-type {
     background-color: #ff394f;
 }
-
+.notification-type {
+    background-color: honeydew;
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    padding: 0.5rem
+}
 .notification .notification-info {
     text-align: left;
 }
