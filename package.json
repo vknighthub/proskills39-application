@@ -4,8 +4,8 @@
   "private": true,
   "license": "BSD-3-Clause",
   "scripts": {
-    "dev": "PORT=3308 next dev",
-    "build": "next build",
+    "dev": "next dev",
+    "build": "set \"GENERATE_SOURCEMAP=false\" && next build",
     "start": "next start",
     "lint": "next lint",
     "sitemap": "next-sitemap --next-sitemap.config.js",
