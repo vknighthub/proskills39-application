@@ -10,9 +10,10 @@ const routes = {
         programing_tech: 'categories/programing-tech'
     },
     service: {
-        servicelist:(slug: string) => `categories/services/${slug}`,
+        servicelist: (slug: string) => `categories/services/${slug}`,
         servicedetail: (slug: string) => `categories/services/servicedetail/${slug}`
     },
-    policy_privacy: 'privacy-policy'
+    policy_privacy: 'privacy-policy',
+    terms_of_service: 'terms-of-service'
 }
 export default routes;
