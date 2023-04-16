@@ -581,5 +581,7 @@
   "text-city": "City",
   "text-additional-information": "Additional Information",
   "text-payment": "Payment",
-  "text-amount": "Amount"
+  "text-amount": "Amount",
+  "text-deal": "Deal",
+  "text-decline": "Decline"
 }

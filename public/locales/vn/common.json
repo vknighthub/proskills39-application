@@ -194,7 +194,7 @@
   "text-register": "Register",
   "text-wrong-user-name-and-pass": "Wrong username or password",
   "text-username-or-email-address": "Tên người dùng hoặc địa chỉ email",
-  "text-password":"Mật khẩu",
+  "text-password": "Mật khẩu",
   "text-join-now": "Join your account. Don’t have account?",
   "text-create-account": "Tạo một tài khoản",
   "text-other-login": "Hoặc đăng nhập bằng tài khoản xã hội của bạn",
@@ -579,8 +579,10 @@
   "text-order-checkout": "Thanh toán đặt hàng",
   "text-address": "Địa chỉ",
   "text-country": "Quốc gia",
-  "text-city":"Thành phố",
+  "text-city": "Thành phố",
   "text-additional-information": "Thông tin ghi nhận thêm",
   "text-payment": "Thanh toán",
-  "text-amount": "Số tiền"
+  "text-amount": "Số tiền",
+  "text-deal": "Chốt",
+  "text-decline": "Từ chối"
 }

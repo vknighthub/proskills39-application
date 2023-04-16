@@ -582,5 +582,7 @@
   "text-city":"街",
   "text-additional-information": "追加情報",
   "text-payment": "支払い",
-  "text-amount": "額"
+  "text-amount": "額",
+  "text-deal": "対処",
+  "text-decline": "却下"
 }

@@ -1186,6 +1186,21 @@ button {
     background: var(--secondary-accent-color);
 }
 
+.btn-green {
+    background-color: var(--ds-green);
+    color: var(--contrast-text-color);
+}
+
+.btn-red {
+    background-color: var(--ds-red);
+    color: var(--contrast-text-color);
+}
+
+.btn-blue {
+    background-color: var(--cryptoki-blue);
+    color: var(--contrast-text-color);
+}
+
 .digital-store .btn-dark:hover {
     color: var(--main-font-color);
     font-weight: var(--heading-font-weight);
@@ -1983,12 +1998,14 @@ ol li::marker {
 .comment-type {
     background-color: #ff394f;
 }
+
 .notification-type {
     background-color: honeydew;
     border: 1px solid var(--border-color);
     border-radius: 25px;
     padding: 0.5rem
 }
+
 .notification .notification-info {
     text-align: left;
 }
@@ -10967,4 +10984,14 @@ td[data-label="Date"] {
     position: fixed;
     overflow-y: scroll;
     overflow-x: hidden;
+}
+
+.notifications-list-detail {
+    width: 100vw;
+}
+
+@media (min-width: 1200px) {
+    .notifications-list-detail {
+        max-width: 1140px;
+    }
 }

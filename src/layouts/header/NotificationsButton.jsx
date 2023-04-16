@@ -1,131 +1,113 @@
-import notif_thumb_1 from '@/assets/images/content/notifications/notif-thumb-1.png';
+import client from '@/data/client';
 import useClickOutside from '@/lib/hooks/useClickOutside';
+import { useQuery } from "react-query";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
-const NotificationsButton = () => {
+const NotificationsButton = ({ isAuthorized }) => {
   const [toggle, setToggle] = useState(false);
   let domNode = useClickOutside(() => {
     setToggle(false);
   });
+  const [render, setRender] = useState(false);
 
-  const listnotification = {
-    totalread: 5,
-    data: [
+  const { locale } = useRouter()
+  const router = useRouter()
+  const { data, refetch } = useQuery({
+    queryKey: ['notification'],
+    queryFn: () => client.notification.get(
       {
-        id: 1,
-        image: notif_thumb_1,
-        sender: 'hoangnv',
-        title: 'Notification Title',
-        project: 'Create a website',
-        timestamp: '10 min ago',
-        isread: false,
-      },
-      {
-        id: 2,
-        image: notif_thumb_1,
-        sender: 'hoangnv',
-        title: 'Notification Title',
-        project: 'Create a website',
-        timestamp: '37 min ago',
-        isread: true,
-      },
-      {
-        id: 3,
-        image: notif_thumb_1,
-        sender: 'hoangnv',
-        title: 'Notification Title',
-        project: 'Create a website',
-        timestamp: '2 days ago',
-        isread: true,
-      },
-      {
-        id: 4,
-        image: notif_thumb_1,
-        sender: 'hoangnv',
-        title: 'Notification Title',
-        project: 'Create a website',
-        timestamp: '30 days ago',
-        isread: true,
+        language: locale
       }
-    ]
+    )
+  })
+
+  const listnotification = isAuthorized && data?.result.data
+
+  const processRead = (slug) => {
+    router.push(`/services/offer/${slug}`)
   }
 
-  const [unreadCount, setUnreadCount] = useState(listnotification.totalread); // Số lượng thông báo chưa đọc
+  useEffect(() => {
+    refetch()
+    setRender(true)
+  }, [locale, toggle, isAuthorized, render])
 
-  const processRead = () => {
-    setUnreadCount(listnotification.totalread - 1);
-  }
 
   return (
     <>
-
-      <div className="notifications-button-cont" ref={domNode}>
-        <button
-          className={`cart-button cryptoki-notif-bttn ${toggle ? "active" : ""
-            }`}
-          data-target="notifications-dropdown"
-          onClick={() => setToggle(!toggle)}
-        >
-          {/*notifications icon*/}
-          <span className="counter">{unreadCount}</span>
-          <svg className="crumina-icon">
-            <use xlinkHref="#bell-icon" />
-          </svg>
-          {/*/notifications icon*/}
-        </button>
-        {/*notification dropdown*/}
-        <div
-          id="notifications-dropdown"
-          className={`cryptoki-notif-target ${toggle ? "active" : ""}`}
-        >
-          <div className="title">
-            Notifications <span className="colored">{unreadCount}</span>
-          </div>
-          <div className="notifications-wrapper cryptoki-scrollbar">
-            {/*notification-item*/}
-            {listnotification.data.slice(0).reverse().map((notification) => (
-              <div className={`notification ${notification.isread ? '' : 'notification-type'}`} key={notification.id}>
-                <div className="thumb-box">
-                  <Image
-                    src={notification.image}
-                    width={50}
-                    height={50}
-                    alt=""
-                    loading="lazy"
-                  />
-                  <span className="bid-type">
-                    <svg className="crumina-icon">
-                      <use xlinkHref="#annotation-icon" />
-                    </svg>
-                  </span>
-                </div>
-                <div className="notification-info">
-                  <div className="message">
-                    {" "}
-                    <Link href={`/user/${notification.sender}`} className="bold">
-                      @ {notification.sender}
-                    </Link>{" "}
-                    has request a project{" "}
-                    <Link href={`/project/${notification.project}`} className="bold">
-                      {notification.project}
-                    </Link>{" "}
-                    <Link href="#" onClick={() => processRead()} >If you are interested, you can check out the information</Link>
+      {isAuthorized && render &&
+        <div className="notifications-button-cont" ref={domNode}>
+          <button
+            className={`cart-button cryptoki-notif-bttn ${toggle ? "active" : ""
+              }`}
+            data-target="notifications-dropdown"
+            onClick={() => setToggle(!toggle)}
+          >
+            {/*notifications icon*/}
+            <span className="counter">{listnotification?.total}</span>
+            <svg className="crumina-icon">
+              <use xlinkHref="#bell-icon" />
+            </svg>
+            {/*/notifications icon*/}
+          </button>
+          {/*notification dropdown*/}
+          <div
+            id="notifications-dropdown"
+            className={`cryptoki-notif-target ${toggle ? "active" : ""}`}
+          >
+            <div className="title">
+              Notifications <span className="colored">{listnotification?.total}</span>
+            </div>
+            <div className="notifications-wrapper cryptoki-scrollbar">
+              {/*notification-item*/}
+              {listnotification?.data.slice(0).reverse().map((notification) => (
+                <div className={`notification ${notification.isread ? '' : 'notification-type'}`} key={notification.id}>
+                  <div className="thumb-box">
+                    <Link href={`/user/${notification.sender}`}>
+                      <Image
+                        src={notification.image}
+                        width={50}
+                        height={50}
+                        alt=""
+                        loading="lazy"
+                      />
+                    </Link>
+                    <span className="bid-type">
+                      <svg className="crumina-icon">
+                        <use xlinkHref="#annotation-icon" />
+                      </svg>
+                    </span>
                   </div>
-                  <div className="publish-date">{notification.timestamp}</div>
+                  <div className="notification-info">
+                    <div className="message">
+                      {" "}
+                      <Link href={`/user/${notification.sender}`} className="bold">
+                        @ {notification.sender}
+                      </Link>{" "}
+                      has request a project{" "}
+                      <Link href="#" onClick={() => processRead(notification.slug)}>
+                        <span className="bold" >{notification.project}</span>{" "}
+                        <span>If you are interested, you can check out the information</span>
+                      </Link>
+                    </div>
+                    <div className="publish-date">{notification.timestamp}</div>
+                  </div>
                 </div>
-              </div>
-            ))}
-            {/*/notification-item*/}
+              ))}
+              {/*/notification-item*/}
 
-          </div>{" "}
-          <Link href="/25-notifications" className="btn-small-fullwidth btn-dark btn-square">
-            View all Notifications
-          </Link>{" "}
+            </div>{" "}
+            <Link href="/notification" className="btn-small-fullwidth btn-dark btn-square">
+              View all Notifications
+            </Link>{" "}
+          </div>
         </div>
-      </div>
+      }
     </>
+
   );
 };
 export default NotificationsButton;

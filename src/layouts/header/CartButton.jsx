@@ -12,7 +12,7 @@ const CartButton = () => {
     setToggle(false);
   });
   return (
-    <Fragment>
+    <>
       <div className="cart-button-cont" ref={domNode}>
         <button
           className={`cart-button cryptoki-notif-bttn ${
@@ -141,7 +141,7 @@ const CartButton = () => {
           </div>
         </div>
       </div>
-    </Fragment>
+    </>
   );
 };
 export default CartButton;

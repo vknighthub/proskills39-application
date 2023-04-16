@@ -1,4 +1,4 @@
-import { AuthResponse, CategoriesPaginator, Category, CategoryPaginator, ChallegePaginator, Challenge, ChallengeResult, GetParams, HomePageResult, LoginUserInput, Proposal, ProposalQueryOptions, ProposalResult, RegisterUserInput, Service, ServiceDetailPaginator, ServicePaginator, SettingQuery, Settings, SettingsQueryOptions, UpdateProfileInput, UserProfileResult, UserUpdateResult } from "@/types";
+import { AuthResponse, CategoriesPaginator, Category, CategoryPaginator, ChallegePaginator, Challenge, ChallengeResult, DealInput, GetParams, HomePageResult, LoginUserInput, NotificationResponse, Proposal, ProposalQueryOptions, ProposalResult, RegisterUserInput, Service, ServiceDealResponse, ServiceDetailPaginator, ServicePaginator, SettingQuery, Settings, SettingsQueryOptions, UpdateProfileInput, UserProfileResult, UserUpdateResult } from "@/types";
 import { API_ENDPOINTS } from "./endpoints";
 import { HttpClient } from './http-client';
 
@@ -42,7 +42,11 @@ class Client {
     }
     services = {
         get: ({ slug, language }: GetParams) => HttpClient.get<ServicePaginator>(`${API_ENDPOINTS.SERVICES}/${slug}`, { language }),
-        detail: ({ slug, language }: GetParams) => HttpClient.get<ServiceDetailPaginator>(`${API_ENDPOINTS.SERVICES_DETAIL}/${slug}`, { language })
+        detail: ({ slug, language }: GetParams) => HttpClient.get<ServiceDetailPaginator>(`${API_ENDPOINTS.SERVICES_DETAIL}/${slug}`, { language }),
+        deal: (slug: DealInput) => HttpClient.get<ServiceDealResponse>(API_ENDPOINTS.SERVICEDEAL, { ...slug })
+    }
+    notification = {
+        get: (params?: SettingsQueryOptions) => HttpClient.get<NotificationResponse>(API_ENDPOINTS.NOTIFICATION, { ...params })
     }
 }
 // eslint-disable-next-line import/no-anonymous-default-export

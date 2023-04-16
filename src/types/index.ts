@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import type { ReactElement, ReactNode } from 'react';
-import Categories from './../layouts/main/Categories';
 
 export interface QueryOptions {
     page?: number;
@@ -656,3 +655,83 @@ export interface CategoryPaginator extends CategoriesResultInfo<Category> { }
 
 
 export interface ServiceDetailPaginator extends ServiceDetailResultInfo<ServiceDetail> { }
+
+interface ResponseObject<T> {
+    errorcode: number
+    messagedetail: string
+    result: {
+        status: number
+        data: T
+    }
+}
+
+interface ResponseArray<T> {
+    errorcode: number
+    messagedetail: string
+    result: {
+        status: number
+        data: T[]
+    }
+}
+
+export interface NotificationDetail {
+    id: number
+    sender: string
+    receiver: string
+    title: string
+    project: string
+    slug: string
+    datetime: string
+    timestamp: Date
+    isread: boolean
+    language: string
+    image: string
+}
+
+export interface Notification {
+    total: number
+    data: NotificationDetail[]
+
+}
+
+export interface NotificationResponse extends ResponseObject<Notification> { }
+
+export interface DealInput {
+    slug: string
+}
+export interface Listfile {
+    id: number
+    title: string
+    name: string
+    type: string
+    link: string
+}
+export interface ServiceDeal {
+    id: number
+    cate_id: number
+    username: string
+    fullname: string
+    avatar: string
+    banner: string
+    title: string
+    slug: string
+    language: string
+    descriptions: string
+    status: string
+    tags: string
+    price: number
+    sale_price: number
+    min_price: number
+    max_price: number
+    numberofdaydelivery: number
+    totalview: number
+    totalorder: number
+    totalcomment: number
+    create_at: string
+    update_at: string
+    approveddate: string
+    userapproved: string
+    userdeleted: string
+    listfile: Listfile[]
+}
+export interface ServiceDealResponse extends ResponseObject<ServiceDeal> { }

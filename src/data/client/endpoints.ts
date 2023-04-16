@@ -14,7 +14,9 @@ export const API_ENDPOINTS = {
     CATEGORIESPAGE: '/system/categoriespage',
     SERVICES: '/services/getservicebycatslug',
     SERVICES_DETAIL: '/services/getservicebyslug',
-    UPDATE_USER: '/user/updateuserprofile'
+    UPDATE_USER: '/user/updateuserprofile',
+    NOTIFICATION: '/user/getnotification',
+    SERVICEDEAL: '/services/getservicedetailbyslug'
 
     
 }

@@ -24,9 +24,9 @@ const Header = () => {
           <Logo />
           <SearchBox />
           <SwitchLanguage />
-          <div className="user-activity-buttons">
-            <NotificationsButton />
-          </div>
+            <div className="user-activity-buttons">
+              <NotificationsButton isAuthorized={isAuthorized}/>
+            </div>
           <ButtonHeader name={t('dRep')} link="dRep" />
           <ProfileDropdown
             profile={session ? session : me}
@@ -38,7 +38,7 @@ const Header = () => {
         active={searchToggle}
         close={() => setSearchToggle(false)}
       />
-    </header>
+    </header >
   )
 }
 export default Header
