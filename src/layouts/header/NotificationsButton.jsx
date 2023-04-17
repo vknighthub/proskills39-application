@@ -15,16 +15,18 @@ const NotificationsButton = ({ isAuthorized }) => {
 
   const { locale } = useRouter()
   const router = useRouter()
+
   const { data, refetch } = useQuery({
     queryKey: ['notification'],
     queryFn: () => client.notification.get(
       {
         language: locale
       }
-    )
+    ),
+    enabled: isAuthorized
   })
 
-  const listnotification = isAuthorized && data?.result.data
+  const listnotification = data?.result.data
 
   const processRead = (slug) => {
     router.push(`/services/offer/${slug}`)
@@ -32,9 +34,11 @@ const NotificationsButton = ({ isAuthorized }) => {
 
   useEffect(() => {
     refetch()
-    setRender(true)
-  }, [locale, toggle, isAuthorized, render])
+  }, [locale])
 
+  useEffect(() => {
+    setRender(true)
+  }, [render])
 
   return (
     <>

@@ -157,14 +157,14 @@ export default function Footer() {
                     </span>
                     <ul className="sub-footer-menu">
                         <li className="menu-item">
-                            <a className="menu-link" href="#">
+                            <Link className="menu-link" href="/terms-of-service">
                                 {t('text-term-and-service')}
-                            </a>
+                            </Link>
                         </li>
                         <li className="menu-item">
-                            <a className="menu-link" href="#">
+                            <Link className="menu-link" href="/privacy-policy">
                                 {t('text-privacy')}
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>

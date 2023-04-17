@@ -14,7 +14,7 @@ export const HomePopularCategory = ({ data }: PageProps) => {
                 </div>
             </div>
             <div className="featured-box">
-                <div className="featured-box-wrapper grid-4-columns">
+                <div className="featured-box-wrapper grid-5-columns">
                     <Categories data={data} />
                 </div>
             </div>

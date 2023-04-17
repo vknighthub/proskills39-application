@@ -105,9 +105,9 @@ const OfferService: NextPageWithLayout<
                         </div>
                         <div className="bidding-section">
                             <div className="place-bid">
-                                <button className="btn btn-wide btn-green">
+                                <Link className="btn btn-wide btn-green" href={`/services/applicationletter`}>
                                     {t('text-deal')}
-                                </button>
+                                </Link>
                             </div>
                             <div className="place-bid">
                                 <button className="btn btn-wide btn-blue">
