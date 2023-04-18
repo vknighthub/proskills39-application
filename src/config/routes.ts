@@ -14,6 +14,7 @@ const routes = {
         servicedetail: (slug: string) => `categories/services/servicedetail/${slug}`
     },
     policy_privacy: 'privacy-policy',
-    terms_of_service: 'terms-of-service'
+    terms_of_service: 'terms-of-service',
+    how_to_start_sellings_page: 'support/how-to-start-selling'
 }
 export default routes;
