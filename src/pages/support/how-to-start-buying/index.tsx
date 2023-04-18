@@ -6,7 +6,15 @@ import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Image from 'next/image';
 import image from '@/assets/images/content/support/buying.jpg'
-import image_buying from '@/assets/images/content/items/featured-item-1.png'
+import freelancer from '@/assets/images/content/support/frame6879.webp'
+import seller_badges from '@/assets/images/content/support/frame1553.webp'
+import custom_order from '@/assets/images/content/support/group1552.webp'
+import subscribe from '@/assets/images/content/support/frame6880.webp'
+import business from '@/assets/images/content/support/frame1123.webp'
+import proskillsapp from '@/assets/images/content/support/frame1556.webp'
+import group1555 from '@/assets/images/content/support/group1555.webp'
+import frame6876 from '@/assets/images/content/support/frame6876.webp'
+import frame6877 from '@/assets/images/content/support/frame6877.webp'
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
     return {
@@ -95,7 +103,7 @@ const StartBuying: NextPageWithLayout = () => {
                     </ul>
                 </div>
 
-                <div className="related-section container">
+                <div className="related-section container mt-5">
                     <h3>Tips to thrive on Proskills39:</h3>
 
                     <div className="featured-box grid-6-columns">
@@ -103,7 +111,7 @@ const StartBuying: NextPageWithLayout = () => {
                             <div className="featured-item-wrapper">
                                 <div className="featured-item-content">
                                     <div className="featured-item-image">
-                                        <Image src={image_buying} alt="" />
+                                        <Image src={freelancer} alt="" />
                                     </div>
                                     <div className="featured-item-info">
                                         <div className="featured-countdown">
@@ -134,7 +142,7 @@ const StartBuying: NextPageWithLayout = () => {
                             <div className="featured-item-wrapper">
                                 <div className="featured-item-content">
                                     <div className="featured-item-image">
-                                        <Image src={image_buying} alt="" />
+                                        <Image src={seller_badges} alt="" />
                                     </div>
                                     <div className="featured-item-info">
                                         <div className="featured-countdown">
@@ -162,7 +170,7 @@ const StartBuying: NextPageWithLayout = () => {
                             <div className="featured-item-wrapper">
                                 <div className="featured-item-content">
                                     <div className="featured-item-image">
-                                        <Image src={image_buying} alt="" />
+                                        <Image src={custom_order} alt="" />
                                     </div>
                                     <div className="featured-item-info">
                                         <div className="featured-countdown">
@@ -190,7 +198,7 @@ const StartBuying: NextPageWithLayout = () => {
                             <div className="featured-item-wrapper">
                                 <div className="featured-item-content">
                                     <div className="featured-item-image">
-                                        <Image src={image_buying} alt="" />
+                                        <Image src={subscribe} alt="" />
                                     </div>
                                     <div className="featured-item-info">
                                         <div className="featured-countdown">
@@ -218,7 +226,7 @@ const StartBuying: NextPageWithLayout = () => {
                             <div className="featured-item-wrapper">
                                 <div className="featured-item-content">
                                     <div className="featured-item-image">
-                                        <Image src={image_buying} alt="" />
+                                        <Image src={business} alt="" />
                                     </div>
                                     <div className="featured-item-info">
                                         <div className="featured-countdown">
@@ -247,7 +255,7 @@ const StartBuying: NextPageWithLayout = () => {
                             <div className="featured-item-wrapper">
                                 <div className="featured-item-content">
                                     <div className="featured-item-image">
-                                        <Image src={image_buying} alt="" />
+                                        <Image src={proskillsapp} alt="" />
                                     </div>
                                     <div className="featured-item-info">
                                         <div className="featured-countdown">
@@ -274,6 +282,71 @@ const StartBuying: NextPageWithLayout = () => {
                         </div>
                     </div>
                 </div>
+
+                <div className="related-section container mt-5">
+                    <h3>Expert service, hassle-free</h3>
+                    <div className="featured-box grid-3-columns">
+                        <div className="featured-item v2">
+                            <div className="featured-item-wrapper">
+                                <div className="featured-item-content">
+                                    <div className="featured-item-image text-center">
+                                        <Image src={group1555} alt="" />
+                                    </div>
+                                    <div className="featured-item-info">
+                                        <div className="title">
+                                            Payments are protected by your delivery approval
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="featured-item v2">
+                            <div className="featured-item-wrapper">
+                                <div className="featured-item-content">
+                                    <div className="featured-item-image text-center">
+                                        <Image src={frame6876} alt="" />
+                                    </div>
+                                    <div className="featured-item-info">
+                                        <div className="title">24/7 Customer support is always here to help</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="featured-item v2">
+                            <div className="featured-item-wrapper">
+                                <div className="featured-item-content">
+                                    <div className="featured-item-image text-center">
+                                        <Image src={frame6877} alt="" />
+                                    </div>
+                                    <div className="featured-item-info">
+                                        <div className="title">
+                                            Time frames & project prices are pre-set with Proskills39
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="related-section container mt-5">
+                    <h3>FAQ:</h3>
+                    <span><strong> How can I trust sellers? Are there disclosures?</strong> Just like you, every freelancer has to accept the Proskills39 Terms of Service when joining our platform. If you have any additional documents you would like a freelancer to sign (for example, an NDA), you can share them with the freelancer via message (as an attachment) before you place your order with them. Freelancers must decide whether or not they agree with your terms and sign your documents before proceeding. Please also keep in mind that any additional agreement should not contradict Proskills39’s Terms of Service.</span>
+                    <br />
+                    <span><strong> Are there any safety measures I need to take with sellers (before and after placing my order)?</strong> In general, our Terms of Service cover most things (including confidentiality), and Proskills39 holds payments until your order is completed. However, as we will not be able to assist in any issue that arises outside of the Proskills39 platform, we ask that you do not share your personal contact information and avoid communicating through external platforms.</span>
+                    <br />
+                    <span><strong> What should I do if I have issues with a seller mid-order?</strong> If you are unhappy with an ongoing order, there are several options available to you. First, we always recommend trying to resolve the issue directly with the seller. Most often, we find that a little extra communication can go a long way. Every order page also has a resolution center where you can propose a cancelation. If you ever feel like you need a little backup, our Customer Support team is available 24/7. Simply contact them with the details of your order and they will be happy to help.</span>
+                    <br />
+                    <span><strong> What if I am not satisfied with the seller?</strong> Should you have any issues with a seller resulting from an order, please keep in mind that there is a grace period of 13 days after an order has been marked complete. During this time, we can cancel the order for you. Once this period ends, the seller is able to withdraw payment for the order, and cancelation will be subject to the seller’s cooperation. For additional help, you can reach out to our Support Specialists by opening a ticket here. </span>
+                    <br />
+                    <span><strong> What do levels indicate?</strong> Levels are used as a quality indicator. They represent the total number of orders plus the quality a freelancer has delivered.</span>
+                    <p>Level 1: Completed at least 10 orders on time with a minimum 4.7 rating</p>
+                    <p>Level 2: Completed at least 50 orders on time with a minimum 4.7 rating</p>
+                    <p>Top-Rated Seller: Completed at least 100 orders on time with a minimum 4.7 rating and met Proskills39 internal quality factors</p>
+                </div>
+
             </div>
         </>
     )
