@@ -17,7 +17,8 @@ const routes = {
     terms_of_service: 'terms-of-service',
     how_to_start_sellings_page: 'support/how-to-start-selling',
     how_to_start_buying_page: 'support/how-to-start-buying',
-    referral_program: 'referral_program'
+    referral_program: 'referral_program',
+    blog: 'blog',
 
 }
 export default routes;

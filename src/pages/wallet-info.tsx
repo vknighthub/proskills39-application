@@ -2,6 +2,8 @@ import React from 'react'
 import { NextPageWithLayout } from '@/types';
 import Layout from '@/layouts/_layout';
 import ProfileInfoSidebar from '@/layouts/info/Profile/ProfileInfoSidebar';
+import { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 type Props = {}
 
@@ -18,9 +20,9 @@ const WalletInfo: NextPageWithLayout = (props: Props) => {
                 <form className="cryptoki-form" id="account-settings-form">
                     <div className="form-section">
                         <div className="user-db-title">My wallet address</div>
-                        
+
                         <div className="form-group">
-                            
+
                             <div className="form-field">
                                 <label htmlFor="name">Nami</label>
                                 <div className="social-network-input-cont">
@@ -39,7 +41,7 @@ const WalletInfo: NextPageWithLayout = (props: Props) => {
                             </div>
                         </div>
                     </div>
-                    
+
                     <button className="btn btn-wide btn-dark" type="submit">
                         Save Changes
                     </button>
@@ -51,4 +53,14 @@ const WalletInfo: NextPageWithLayout = (props: Props) => {
 WalletInfo.getLayout = function getLayout(page) {
     return <Layout>{page}</Layout>
 }
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale!, ['common', 'footer'])),
+        },
+        revalidate: 60, // In seconds
+    };
+};
+
 export default WalletInfo

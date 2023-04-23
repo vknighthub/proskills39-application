@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import { StaticImageData } from 'next/image';
 import type { ReactElement, ReactNode } from 'react';
 
 export interface QueryOptions {
@@ -740,7 +741,38 @@ export interface InvitateFriendInput {
     receivername: string;
 }
 
-export interface InviteFriendResponse  extends ResponseObject<{}> { }
+export interface InviteFriendResponse extends ResponseObject<{}> { }
+
+export interface Blog {
+    id: number
+    image: string
+    catalog: string
+    title: string
+    content: string
+}
+
+export interface News {
+    id: number
+    image: string
+    catalog: string
+    title: string
+    content: string
+}
+export interface Business {
+    id: number
+    image: string
+    catalog: string
+    title: string
+    content: string
+}
+
+export interface Freelancers {
+    id: number
+    image: string
+    catalog: string
+    title: string
+    content: string
+}
 
 
 export interface ServiceDealResponse extends ResponseObject<ServiceDeal> { }
