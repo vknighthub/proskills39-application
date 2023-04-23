@@ -23,6 +23,8 @@ export default function LoginUserForm() {
   const { authorize } = useAuth();
   const router = useRouter()
 
+  const callbackUrl = (router.query?.callbackUrl as string) ?? "/";
+
   const { mutate: login, isSuccess } = useMutation(client.users.login, {
     onSuccess: (data) => {
       if (!data.result.data.token) {
@@ -31,7 +33,7 @@ export default function LoginUserForm() {
         });
         return;
       } else {
-        authorize(data.result.data.token,data.result.data.permission);
+        authorize(data.result.data.token, data.result.data.permission);
       }
 
     },
@@ -56,7 +58,7 @@ export default function LoginUserForm() {
       text: `Success`,
     }).then(response => {
       if (response.value) {
-        router.push('/')
+        router.push(callbackUrl)
       }
     })
   }
@@ -109,7 +111,7 @@ export default function LoginUserForm() {
       </div>
       <div className="tk-lp-form-item">
         <label htmlFor="sign_in_password" className="tk-lp-label">
-        {t("text-password")}
+          {t("text-password")}
         </label>
         <input
           className="tk-lp-input"

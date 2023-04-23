@@ -48,7 +48,7 @@ const CommunityFooter = (props: Props) => {
         },
         {
             "id": 8,
-            "slug": "invite-friend",
+            "slug": "referral_program",
             "name": "text-invite-friend"
         },
         {

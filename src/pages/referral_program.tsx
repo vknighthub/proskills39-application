@@ -1,15 +1,20 @@
-import Layout from '@/layouts/_layout'
-import { NextPageWithLayout } from '@/types'
+import image from '@/assets/images/content/creators/become-creator.png';
+import useAuth from '@/components/auth/use-auth';
+import client from '@/data/client';
+import { useMe } from '@/data/user';
+import Layout from '@/layouts/_layout';
+import { InvitateFriendInput, NextPageWithLayout } from '@/types';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import React from 'react'
-import image from '@/assets/images/content/creators/become-creator.png'
 import Image from 'next/image';
-import useAuth from '@/components/auth/use-auth';
 import Link from 'next/link';
-import Swal from 'sweetalert2';
 import { useRouter } from 'next/router';
-
+import { useEffect, useState } from 'react';
+import { useForm, SubmitHandler } from 'react-hook-form';
+import { useMutation } from 'react-query';
+import Swal from 'sweetalert2';
+import * as yup from 'yup';
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
     return {
@@ -22,23 +27,78 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
 const RefferalProgram: NextPageWithLayout = () => {
     const { isAuthorized } = useAuth()
+    const { me } = useMe()
+
     const router = useRouter();
     const processInviteFriend = () => {
-        if (isAuthorized) {
-
-        } else {
+        if (!isAuthorized) {
             Swal.fire({
                 position: 'top',
                 title: 'Invite Friend',
                 text: 'If you want to invite friend please login first!',
-                icon: 'question'
-            }).then((response) => {
-                if (response) {
-                    router.push('/login')
+                icon: 'question',
+                showCancelButton: true,
+            }).then(function (result) {
+                if (result.value) {
+                    router.push(`/login?callbackUrl=referral_program`)
                 }
             })
         }
     }
+
+    const userData = me?.data
+
+    const [render, setRender] = useState(false)
+    useEffect(() => {
+        setRender(true)
+    }, [false])
+
+
+    const invitefriendValidationSchema = yup.object().shape({
+        receivermail: yup.string().required(),
+        receivername: yup.string().required(),
+    });
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors }
+    } = useForm<InvitateFriendInput>({
+        resolver: yupResolver(invitefriendValidationSchema)
+    });
+
+    const { mutate: InviteFriend } = useMutation(client.users.invitefriend, {
+        onSuccess: (data) => {
+            if (data.errorcode === 0) {
+                Swal.fire({
+                    position: 'top',
+                    icon: 'success',
+                    color: 'green',
+                    title: 'Invite Friend',
+                    text: 'You have just successfully introduced. If the referrer successfully registers you will get 10% referral commission'
+                }).then((result) => {
+                    if (result) {
+                        router.push('/')
+                    }
+                })
+            }
+
+        },
+        onError: (errorAsUnknown) => {
+            Swal.fire({
+                position: 'top',
+                icon: 'error',
+                color: 'red',
+                title: 'Oops...',
+                text: `${'Error:' + errorAsUnknown}`,
+            })
+
+        }
+    });
+
+    const onSubmit: SubmitHandler<InvitateFriendInput> = (data) => {
+        InviteFriend(data)
+    };
 
     return (
         <div>
@@ -54,15 +114,51 @@ const RefferalProgram: NextPageWithLayout = () => {
                         Introduce your friends to the easiest way to get things done
                     </div>
                     <div className="bc-button">
-                        <Link className="btn btn-wide btn-dark" href="#application-form" onClick={() => processInviteFriend()}>
-                            Invite Friend
-                        </Link>
+                        {!isAuthorized && render &&
+                            <Link className="btn btn-wide btn-dark" href="#" onClick={() => processInviteFriend()}>
+                                Invite Friend
+                            </Link>
+                        }
+                        {
+                            isAuthorized && render &&
+                            <>
+                                <form className="cryptoki-form"
+                                    onSubmit={handleSubmit(onSubmit)}
+                                >
+                                    <div className="form-field">
+                                        <input type="text" id="name" placeholder='Fullname' {...register('receivername')} />
+                                    </div>
+                                    <div className="form-field">
+                                        <input type="text" id="email" placeholder='Email' {...register('receivermail')} />
+                                    </div>
+                                    <button type="submit" className="btn btn-normal btn-fullwidth btn-dark">
+                                        Send
+                                    </button>
+                                </form>
+                            </>
+                        }
                     </div>
                 </div>
-                <div className="bc-image">
-                    <Image src={image} alt="" />
-                </div>
+
+                {!userData ?
+                    <div className="bc-image">
+                        <Image src={image} alt="" />
+                    </div>
+                    :
+                    <div
+                        className="avatar box-450"
+                    >
+                        <Image
+                            src={userData?.avatar ? userData.avatar : image}
+                            alt="avatar"
+                            width={100}
+                            height={100}
+                        />
+                    </div>
+                }
+
             </div>
+
             <div className="container-1300 section-padding-medium">
                 <div className="info-box">
                     <div className="info-item">
@@ -85,7 +181,7 @@ const RefferalProgram: NextPageWithLayout = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 RefferalProgram.getLayout = function getLayout(page) {

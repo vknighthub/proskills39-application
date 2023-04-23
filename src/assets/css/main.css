@@ -1629,6 +1629,36 @@ body.body-overlay::before {
     padding: 6px;
 }
 
+.box-450 {
+    width: 450px;
+    height: 450px;
+    min-width: 450px;
+}
+
+.box-450 img {
+    width: 412px;
+    height: 412px;
+    border: 6px solid var(--body-background);
+}
+
+.avatar.box-450 {
+    border: 14px solid var(--body-background);
+    margin-right: 0;
+}
+
+.avatar.box-450 .verified {
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+}
+
+.avatar.box-450 svg {
+    width: 40px;
+    height: 40px;
+    border: 6px solid var(--body-background);
+    padding: 6px;
+}
+
 /* ================================
        8.4. Lists
        ================================ */

@@ -16,7 +16,8 @@ export const API_ENDPOINTS = {
     SERVICES_DETAIL: '/services/getservicebyslug',
     UPDATE_USER: '/user/updateuserprofile',
     NOTIFICATION: '/user/getnotification',
-    SERVICEDEAL: '/services/getservicedetailbyslug'
+    SERVICEDEAL: '/services/getservicedetailbyslug',
+    INVITE_FRIEND: '/user/postinvitefriend'
 
     
 }

@@ -734,4 +734,13 @@ export interface ServiceDeal {
     userdeleted: string
     listfile: Listfile[]
 }
+
+export interface InvitateFriendInput {
+    receivermail: string;
+    receivername: string;
+}
+
+export interface InviteFriendResponse  extends ResponseObject<{}> { }
+
+
 export interface ServiceDealResponse extends ResponseObject<ServiceDeal> { }
