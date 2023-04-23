@@ -16,7 +16,8 @@ const routes = {
     policy_privacy: 'privacy-policy',
     terms_of_service: 'terms-of-service',
     how_to_start_sellings_page: 'support/how-to-start-selling',
-    how_to_start_buying_page: 'support/how-to-start-buying'
+    how_to_start_buying_page: 'support/how-to-start-buying',
+    referral_program: 'referral_program'
 
 }
 export default routes;
