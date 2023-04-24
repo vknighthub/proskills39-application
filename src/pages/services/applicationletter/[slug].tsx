@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import invariant from 'tiny-invariant';
 import image from '@/assets/images/content/previews/project-thumb-37.png'
+import { Editor } from '@tinymce/tinymce-react';
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
     return {
@@ -25,26 +26,7 @@ const ApplicationLetter: NextPageWithLayout = () => {
                 </h2>
             </div>
             <div className="checkout-area">
-                <form className="cryptoki-form grid-2-columns" id="checkout-form">
-                    <div className="form-column">
-                        <div className="form-group">
-                            <div className="form-field">
-                                <label htmlFor="name">Price Deal?</label>
-                                <input type="text" id="price" />
-                            </div>
-                            <div className="form-field">
-                                <label htmlFor="email">Delivery time</label>
-                                <input type="email" id="email" />
-                            </div>
-                        </div>
-
-                        <div className="form-field">
-                            <label htmlFor="state">Application letter</label>
-                            <textarea cols={30} rows={10} defaultValue={""} />
-                        </div>
-                    </div>
-
-
+                <form className="cryptoki-form grid-columns" id="checkout-form">
                     <div className="form-column">
                         <div className="summary-section">
                             <div className="small-title">Summary</div>
@@ -74,17 +56,53 @@ const ApplicationLetter: NextPageWithLayout = () => {
                                 </div>
 
                             </div>
-
-                            <div className="complete-order-button">
-                                <input
-                                    className="btn gradient-background"
-                                    type="submit"
-                                    defaultValue="Complete Order!"
-                                />
-                            </div>
                         </div>
                     </div>
+                    <div className="form-column">
+                        <div className="form-group">
+                            <div className="form-field">
+                                <label htmlFor="name">Price Deal?</label>
+                                <input type="text" id="price" />
+                            </div>
+                            <div className="form-field">
+                                <label htmlFor="email">Delivery time</label>
+                                <input type="email" id="email" />
+                            </div>
+                        </div>
 
+
+                    </div>
+
+                    <div className="form-column">
+                        <div className="form-field">
+                            <label htmlFor="state">Application letter</label>
+                        </div>
+                        <Editor
+                            apiKey="r6pbr9fmuyz5cmhqxhczpuiaq76xsuuq66an060n2frgjtnt"
+                            init={{
+                                height: 600,
+                                menubar: true,
+                                plugins: [
+                                    'a11ychecker', 'advlist', 'advcode', 'advtable', 'autolink', 'checklist', 'export',
+                                    'lists', 'link', 'image', 'charmap', 'preview', 'anchor', 'searchreplace', 'visualblocks',
+                                    'powerpaste', 'fullscreen', 'formatpainter', 'insertdatetime', 'media', 'table', 'help', 'wordcount',
+                                ],
+                                toolbar:
+                                    "undo redo | formatselect | code |link | image | bold italic backcolor | alignleft aligncenter alignright alignjustify |  \n" +
+                                    "bullist numlist outdent indent | removeformat | help | link image media table mergetags",
+                                content_style: 'body { color: #7e7e7e }'
+                            }}
+
+                        />
+                    </div>
+                    <div className="complete-order-button text-center">
+                        <button
+                            className="btn btn-wide gradient-background mt-5 w-200"
+                            type="submit"
+                        >
+                            Apply
+                        </button>
+                    </div>
                 </form>
             </div>
 

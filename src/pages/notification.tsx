@@ -50,7 +50,7 @@ const Notification: NextPageWithLayout = () => {
                                 <span className="gradient-text">Notifications</span>
                             </h2>
                         </div>
-                            <NotificationsLists notification={listnotification?.data} />
+                        {listnotification && <NotificationsLists notification={listnotification?.data} />}
                     </div>
                 </div>
             }

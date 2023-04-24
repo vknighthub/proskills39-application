@@ -39,7 +39,6 @@ const OfferService: NextPageWithLayout<
         refetch()
     }, [service])
 
-    console.log(service_deal)
 
     return (
         <div className="primary-content-area container content-padding">
@@ -53,10 +52,9 @@ const OfferService: NextPageWithLayout<
             <div className="swiper-wrapper">
                 <div className="artwork-item">
                     <div className="artwork-media">
-                        {" "}
                         <Link href="/07-product-page-v3">
                             <Image src={service_deal?.listfile[0]?.link ? service_deal.listfile[0].link : image_deal} alt="" width={710} height={535} />
-                        </Link>{" "}
+                        </Link>
                     </div>
                     <div className="artwork-details">
                         <h3 className="artwork-title">{service_deal?.title}</h3>
@@ -105,7 +103,7 @@ const OfferService: NextPageWithLayout<
                         </div>
                         <div className="bidding-section">
                             <div className="place-bid">
-                                <Link className="btn btn-wide btn-green" href={`/services/applicationletter`}>
+                                <Link className="btn btn-wide btn-green" href={`/services/applicationletter/${service_deal?.slug}`}>
                                     {t('text-deal')}
                                 </Link>
                             </div>

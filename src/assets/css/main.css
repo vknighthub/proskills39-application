@@ -686,11 +686,13 @@ ol {
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     grid-gap: 20px;
 }
+
 .grid-5-columns {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(244px, 1fr));
     grid-gap: 20px;
 }
+
 .grid-6-columns {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(218px, 1fr));
@@ -10835,6 +10837,13 @@ td[data-label="Date"] {
     width: 100% !important;
 }
 
+.w-450 {
+    width: 450px !important;
+}
+.w-200 {
+    width: 200px !important;
+}
+
 @media (max-width: 768px) {
     #compare-package {
         display: none;
@@ -11048,9 +11057,11 @@ td[data-label="Date"] {
 .fs-5 {
     font-size: 1.25rem !important;
 }
+
 .fs-6 {
     font-size: 1.0rem !important;
 }
+
 .mt-0 {
     margin-top: 0 !important;
 }

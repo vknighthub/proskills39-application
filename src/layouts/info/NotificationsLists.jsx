@@ -8,7 +8,7 @@ const NotificationsLists = ({ notification }) => {
     <>
       <div className="notifications-list notifications-list-detail" >
         <div className="notifications-list-wrapper">
-          {notification.data.slice(0).reverse().map((notification) => (
+          {notification.slice(0).reverse().map((notification) => (
             <div className="notification" key={notification.id}>
               <div className={`notification-body ${notification.isread ? '' : 'notification-type'}`} key={notification.id}>
                 <div className="thumb-box">
