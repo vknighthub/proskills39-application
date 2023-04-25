@@ -1,4 +1,4 @@
-import { AuthResponse, CategoriesPaginator, Category, CategoryPaginator, ChallegePaginator, Challenge, ChallengeResult, DealInput, GetParams, HomePageResult, InvitateFriendInput, InviteFriendResponse, LoginUserInput, NotificationResponse, Proposal, ProposalQueryOptions, ProposalResult, RegisterUserInput, Service, ServiceDealResponse, ServiceDetailPaginator, ServicePaginator, SettingQuery, Settings, SettingsQueryOptions, UpdateProfileInput, UserProfileResult, UserUpdateResult } from "@/types";
+import { ApplyLetterInput, ApplyLetterResponse, AuthResponse, CategoriesPaginator, Category, CategoryPaginator, ChallegePaginator, Challenge, ChallengeResult, DealInput, GetParams, HomePageResult, InvitateFriendInput, InviteFriendResponse, LoginUserInput, NotificationResponse, Proposal, ProposalQueryOptions, ProposalResult, RegisterUserInput, Service, ServiceDealResponse, ServiceDetailPaginator, ServicePaginator, SettingQuery, Settings, SettingsQueryOptions, UpdateProfileInput, UserProfileResult, UserUpdateResult } from "@/types";
 import { API_ENDPOINTS } from "./endpoints";
 import { HttpClient } from './http-client';
 
@@ -44,7 +44,8 @@ class Client {
     services = {
         get: ({ slug, language }: GetParams) => HttpClient.get<ServicePaginator>(`${API_ENDPOINTS.SERVICES}/${slug}`, { language }),
         detail: ({ slug, language }: GetParams) => HttpClient.get<ServiceDetailPaginator>(`${API_ENDPOINTS.SERVICES_DETAIL}/${slug}`, { language }),
-        deal: (slug: DealInput) => HttpClient.get<ServiceDealResponse>(API_ENDPOINTS.SERVICEDEAL, { ...slug })
+        deal: (slug: DealInput) => HttpClient.get<ServiceDealResponse>(API_ENDPOINTS.SERVICEDEAL, { ...slug }),
+        applyletter: (input: ApplyLetterInput) => HttpClient.post<ApplyLetterResponse>(API_ENDPOINTS.APPLY_LETTER, input)
     }
     notification = {
         get: (params?: SettingsQueryOptions) => HttpClient.get<NotificationResponse>(API_ENDPOINTS.NOTIFICATION, { ...params })

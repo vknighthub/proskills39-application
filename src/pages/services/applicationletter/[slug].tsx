@@ -1,23 +1,123 @@
 import Layout from '@/layouts/_layout';
-import { NextPageWithLayout } from '@/types';
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { ApplyLetterInput, DealProjectInput, NextPageWithLayout, ServiceDealResponse } from '@/types';
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Image from 'next/image';
-import Link from 'next/link';
 import invariant from 'tiny-invariant';
-import image from '@/assets/images/content/previews/project-thumb-37.png'
 import { Editor } from '@tinymce/tinymce-react';
+import { useMutation, useQuery } from 'react-query';
+import client from '@/data/client';
+import { useEffect, useState } from 'react';
+import image_deal from '@/assets/images/service/deal.png'
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+import { SubmitHandler } from 'react-hook-form/dist/types';
+import Swal from 'sweetalert2';
+import { useRouter } from 'next/router';
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
+export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
+    const { slug } = params!
     return {
         props: {
+            service: slug,
             ...(await serverSideTranslations(locale!, ['common', 'footer'])),
         },
         revalidate: 60, // In seconds
     };
 };
 
-const ApplicationLetter: NextPageWithLayout = () => {
+const ApplicationLetter: NextPageWithLayout<
+    InferGetStaticPropsType<typeof getStaticProps>
+> = ({ service }) => {
+
+    const router = useRouter()
+    const Service = (serviceid: string) => {
+
+        const { data, error, refetch } = useQuery<ServiceDealResponse, Error>(
+            ['service-deal'],
+            () => client.services.deal({ slug: serviceid }),
+        )
+        return {
+            service_deal: data?.result.data,
+            error,
+            refetch
+        }
+    }
+
+    const [value, setValue] = useState('<p>The quick brown fox jumps over the lazy dog</p>');
+
+
+    const { service_deal, refetch } = Service(service)
+
+    useEffect(() => {
+        refetch()
+    }, [service])
+
+
+    const dealprojectValidationSchema = yup.object().shape({
+        price: yup.string().required(),
+        numberofdaydelivery: yup.string().required(),
+    });
+
+
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors }
+    } = useForm<ApplyLetterInput>({
+        resolver: yupResolver(dealprojectValidationSchema)
+    });
+
+
+    const { mutate: SubmitLetter } = useMutation(client.services.applyletter, {
+        onSuccess: (data) => {
+            if (data.errorcode === 0) {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    color: 'green',
+                    title: 'Apply Letter',
+                    text: 'Thank your apply letter. Please going to admin web page to management project',
+                }).then((response) => {
+                    if (response) {
+                        router.push('/')
+                    }
+                })
+            }
+
+        },
+        onError: (errorAsUnknown) => {
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                color: 'red',
+                title: 'Oops...',
+                text: `${'Error: ' + errorAsUnknown}`,
+            })
+
+        }
+    });
+
+    const onSubmit: SubmitHandler<ApplyLetterInput> = (data) => {
+
+        const dataSubmit = {
+            serviceid: service_deal?.id,
+            descriptions: value,
+            price: data.price,
+            numberofdaydelivery: data.numberofdaydelivery
+        }
+
+        SubmitLetter(dataSubmit)
+    };
+
+    const [render, setRender] = useState(false)
+
+    useEffect(() => {
+        setRender(true)
+    }, [render])
+
     return (
         <div className="primary-content-area container content-padding shopping-cart-page">
             <div className="page-title-section">
@@ -26,7 +126,9 @@ const ApplicationLetter: NextPageWithLayout = () => {
                 </h2>
             </div>
             <div className="checkout-area">
-                <form className="cryptoki-form grid-columns" id="checkout-form">
+                <form className="cryptoki-form grid-columns" id="checkout-form"
+                    onSubmit={handleSubmit(onSubmit)}
+                >
                     <div className="form-column">
                         <div className="summary-section">
                             <div className="small-title">Summary</div>
@@ -34,39 +136,31 @@ const ApplicationLetter: NextPageWithLayout = () => {
                                 <div className="product-in-cart">
                                     <div className="product-info">
                                         <div className="product-thumb">
-                                            {" "}
-                                            <Link href="/07-product-page">
-                                                <Image
-                                                    src={image}
-                                                    alt=""
-                                                />
-                                            </Link>{" "}
+                                            <Image src={service_deal?.listfile[0]?.link ? service_deal.listfile[0].link : image_deal} alt="" width={82} height={50} />
                                         </div>
                                         <div className="product-details">
                                             <div className="product-name">
-                                                {" "}
-                                                <Link href="/07-product-page">
-                                                    Cryptoki NFT and DIgital Market PSD Template
-                                                </Link>{" "}
+                                                {service_deal?.descriptions}
                                             </div>
                                             <div className="license-type">Regular License</div>
                                         </div>
                                     </div>
-                                    <div className="product-price">v2p 12.00</div>
+                                    <div className="product-price">v2p {service_deal?.price}</div>
                                 </div>
 
                             </div>
                         </div>
                     </div>
                     <div className="form-column">
+
                         <div className="form-group">
                             <div className="form-field">
                                 <label htmlFor="name">Price Deal?</label>
-                                <input type="text" id="price" />
+                                <input type="text" id="price" defaultValue={service_deal?.price} {...register('price')} />
                             </div>
                             <div className="form-field">
-                                <label htmlFor="email">Delivery time</label>
-                                <input type="email" id="email" />
+                                <label htmlFor="numberofdaydelivery">Delivery time</label>
+                                <input type="text" id="numberofdaydelivery" {...register('numberofdaydelivery')} />
                             </div>
                         </div>
 
@@ -77,23 +171,28 @@ const ApplicationLetter: NextPageWithLayout = () => {
                         <div className="form-field">
                             <label htmlFor="state">Application letter</label>
                         </div>
-                        <Editor
-                            apiKey="r6pbr9fmuyz5cmhqxhczpuiaq76xsuuq66an060n2frgjtnt"
-                            init={{
-                                height: 600,
-                                menubar: true,
-                                plugins: [
-                                    'a11ychecker', 'advlist', 'advcode', 'advtable', 'autolink', 'checklist', 'export',
-                                    'lists', 'link', 'image', 'charmap', 'preview', 'anchor', 'searchreplace', 'visualblocks',
-                                    'powerpaste', 'fullscreen', 'formatpainter', 'insertdatetime', 'media', 'table', 'help', 'wordcount',
-                                ],
-                                toolbar:
-                                    "undo redo | formatselect | code |link | image | bold italic backcolor | alignleft aligncenter alignright alignjustify |  \n" +
-                                    "bullist numlist outdent indent | removeformat | help | link image media table mergetags",
-                                content_style: 'body { color: #7e7e7e }'
-                            }}
+                        {render &&
+                            <Editor
 
-                        />
+                                apiKey="r6pbr9fmuyz5cmhqxhczpuiaq76xsuuq66an060n2frgjtnt"
+                                init={{
+                                    height: 600,
+                                    menubar: true,
+                                    plugins: [
+                                        'a11ychecker', 'advlist', 'advcode', 'advtable', 'autolink', 'checklist', 'export',
+                                        'lists', 'link', 'image', 'charmap', 'preview', 'anchor', 'searchreplace', 'visualblocks',
+                                        'powerpaste', 'fullscreen', 'formatpainter', 'insertdatetime', 'media', 'table', 'help', 'wordcount',
+                                    ],
+                                    toolbar:
+                                        "undo redo | formatselect | code |link | image | bold italic backcolor | alignleft aligncenter alignright alignjustify |  \n" +
+                                        "bullist numlist outdent indent | removeformat | help | link image media table mergetags",
+                                    content_style: 'body { color: #7e7e7e }'
+                                }}
+                                onEditorChange={(newValue) => {
+                                    setValue(newValue);
+                                }}
+                            />
+                        }
                     </div>
                     <div className="complete-order-button text-center">
                         <button

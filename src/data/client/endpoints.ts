@@ -17,7 +17,8 @@ export const API_ENDPOINTS = {
     UPDATE_USER: '/user/updateuserprofile',
     NOTIFICATION: '/user/getnotification',
     SERVICEDEAL: '/services/getservicedetailbyslug',
-    INVITE_FRIEND: '/user/postinvitefriend'
+    INVITE_FRIEND: '/user/postinvitefriend',
+    APPLY_LETTER: '/services/applyapplicationletter'
 
     
 }

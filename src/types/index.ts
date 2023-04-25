@@ -775,4 +775,17 @@ export interface Freelancers {
 }
 
 
+export interface DealProjectInput {
+    price: number
+    numberofdaydelivery: number
+}
+
+export interface ApplyLetterInput {
+    serviceid?: number
+    price: number
+    numberofdaydelivery: number
+    descriptions: string
+}
+
 export interface ServiceDealResponse extends ResponseObject<ServiceDeal> { }
+export interface ApplyLetterResponse extends ResponseObject<{}> { }

@@ -108,14 +108,9 @@ const OfferService: NextPageWithLayout<
                                 </Link>
                             </div>
                             <div className="place-bid">
-                                <button className="btn btn-wide btn-blue">
-                                    {t('text-contact')}
-                                </button>
-                            </div>
-                            <div className="place-bid">
-                                <button className="btn btn-wide btn-red">
+                                <Link className="btn btn-wide btn-red" href="#">
                                     {t('text-decline')}
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
