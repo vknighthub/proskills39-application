@@ -1,12 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Challenges from '@/layouts/info/Challenges'
+import { ReactSearchAutocomplete } from "react-search-autocomplete"
 
-const CatalystVoterTool = ({data
+const CatalystVoterTool = ({ data
 
 }) => {
-    const [activeToggle, setActiveToggle] = useState(false);
-    const [active, setActive] = useState("Fund 9");
+
     const challengelist = data.challenge.result.data
+
+    const [searchTerm, setSearchTerm] = useState(challengelist);
+
+    const handleOnSearch = (string, results) => {
+        if (string === '') {
+            setSearchTerm(challengelist)
+        } else {
+            setSearchTerm(results)
+        }
+    };
+
+    const handleOnSelect = (item) => {
+        searchTerm[0] = item
+    }
 
     return (
 
@@ -19,53 +33,21 @@ const CatalystVoterTool = ({data
             </div>
 
             <div className="searchbox pb-5">
-                <form
-                    method="get"
-                    className="main-search"
-                    onSubmit={(e) => e.preventDefault()}
-                >
-                    <input
-                        className="main-search-params"
-                        type="hidden"
-                        name="params"
-                        defaultValue="all"
-                    />
-                    <button
-                        className={`search-params ${activeToggle ? "active" : ""}`}
-                        onClick={() => setActiveToggle(!activeToggle)}
-                    >
-                        <span className="search-param-title">{active}</span>{" "}
-                        <svg className="crumina-icon">
-                            <use xlinkHref="#arrow-down-icon" />
-                        </svg>
-                    </button>
-                    <ul className="search-dropdown">
-                        <li
-                            data-param="Fund 9"
-                            onClick={() => {
-                                setActiveToggle(false);
-                                setActive("Fund 9");
-                            }}
-                        >
-                            Fund 9
-                        </li>
-                    </ul>
-                    <input
-                        type="text"
-                        className="search-input"
-                        name="head-search"
-                        id="head-search"
+                <div style={{ width: '100%', height: '100%' }}>
+                    <ReactSearchAutocomplete
+                        items={challengelist}
+                        onSearch={handleOnSearch}
+                        onSelect={handleOnSelect}
+                        styling={{ zIndex: 10 }} // To display it on top of the search box below
+                        autoFocus
+                        fuseOptions={{ keys: ["challengeName"] }}
+                        resultStringKeyName="challengeName"
                         placeholder="Enter your search here..."
                     />
-                    <button className="search-button">
-                        <svg className="crumina-icon">
-                            <use xlinkHref="#search-icon" />
-                        </svg>
-                    </button>
-                </form>
+                </div>
             </div>
 
-            <Challenges data = {challengelist} />
+            <Challenges data={searchTerm} />
 
         </div>
     )
