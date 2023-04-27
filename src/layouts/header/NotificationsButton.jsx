@@ -1,10 +1,11 @@
 import client from '@/data/client';
 import useClickOutside from '@/lib/hooks/useClickOutside';
-import { useQuery } from "react-query";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { useQuery } from "react-query";
+import avatar from '@/assets/images/avatar.png'
 
 const NotificationsButton = ({ isAuthorized }) => {
   const [toggle, setToggle] = useState(false);
@@ -72,7 +73,7 @@ const NotificationsButton = ({ isAuthorized }) => {
                   <div className="thumb-box">
                     <Link href={`/user/${notification.sender}`}>
                       <Image
-                        src={notification.image}
+                        src={notification.image ? notification.image : avatar}
                         width={50}
                         height={50}
                         alt=""

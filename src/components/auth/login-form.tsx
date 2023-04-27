@@ -4,13 +4,13 @@ import type { AuthResponse, LoginUserInput } from '@/types';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { AxiosError } from 'axios';
 import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { useMutation } from 'react-query';
 import Swal from 'sweetalert2';
 import * as yup from 'yup';
-import { useRouter } from 'next/router'
-import Link from 'next/link';
 
 
 const loginValidationSchema = yup.object().shape({
@@ -85,19 +85,6 @@ export default function LoginUserForm() {
       className="tk-lp-form user-register-kit-sign tk-lp-tabs-form-content active"
       data-handler="lrk_sign_in_action"
     >
-
-      <input
-        className="lrk-sign-captcha-token simple-input"
-        type="hidden"
-        name="token"
-        defaultValue="03AGdBq27AAQVuBtGUv1Ur7tTrD27P2-RiW4gjxYtbRujJeny-2A8m-_R-CRMi3Mh_0KYlw9tXtY0c0YQA26Uy-Y0FN4vwKVVXcp7AyC-D_H-z2OwkzcQCoZ0MrBjnP8q0RWRCdtHYHlBpkmUB7k-0bocxpvVJFbBoeHtebebXD2AkkuQsz0HqXXgHtXpxevzuUmtsroAgjnzFuk97-VFXsCiUuIlA08gyNGPMi9prm96oq5z2sVXXKHzWvt68DyVAvvOSm5gb8jkpSDo8QNODZX69enqLu1ngRaaIDaSSwAKzn98ZLxr8nBEia-rYZHnMuT-1FJKF3ZEgsYal801f0A-76vot9aNIsLD48M5-LQugrADeLwI0aZboeFy5TJ6lVjmNhrxrIoqZ_I0t-juUrR0nrY_6C-PP7EFeuOJ0YewHOnfvHADGpA4"
-      />
-      <input
-        type="hidden"
-        name="redirect_to"
-        defaultValue="https://crumina.net/my-account/"
-      />
-      <div className="tk-lp-alert-cont" />
       <div className="tk-lp-form-item">
         <label htmlFor="sign_in_username" className="tk-lp-label">
           {t("text-username-or-email-address")}

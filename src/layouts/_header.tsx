@@ -7,9 +7,9 @@ import { useState } from 'react'
 import ButtonHeader from './header/ButtonHeader'
 import MobileHeader from './header/MobileHeader'
 import MobileSearchTrigger from './header/MobileSearchTrigger'
+import NotificationsButton from './header/NotificationsButton'
 import ProfileDropdown from './header/ProfileDropdown'
 import SearchBox from './header/SearchBox'
-import NotificationsButton from './header/NotificationsButton'
 
 const Header = () => {
   const { t } = useTranslation('common')
@@ -23,7 +23,7 @@ const Header = () => {
           <MobileHeader />
           <Logo />
           <SearchBox />
-          <SwitchLanguage />
+            <SwitchLanguage />
             <div className="user-activity-buttons">
               <NotificationsButton isAuthorized={isAuthorized}/>
             </div>

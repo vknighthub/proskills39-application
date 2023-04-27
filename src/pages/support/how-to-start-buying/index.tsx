@@ -1,3 +1,13 @@
+import image from '@/assets/images/content/support/buying.jpg';
+import business from '@/assets/images/content/support/frame1123.webp';
+import seller_badges from '@/assets/images/content/support/frame1553.webp';
+import proskillsapp from '@/assets/images/content/support/frame1556.webp';
+import frame6876 from '@/assets/images/content/support/frame6876.webp';
+import frame6877 from '@/assets/images/content/support/frame6877.webp';
+import freelancer from '@/assets/images/content/support/frame6879.webp';
+import subscribe from '@/assets/images/content/support/frame6880.webp';
+import custom_order from '@/assets/images/content/support/group1552.webp';
+import group1555 from '@/assets/images/content/support/group1555.webp';
 import routes from '@/config/routes';
 import Layout from '@/layouts/_layout';
 import Seo from '@/layouts/_seo';
@@ -5,16 +15,6 @@ import { NextPageWithLayout } from '@/types';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Image from 'next/image';
-import image from '@/assets/images/content/support/buying.jpg'
-import freelancer from '@/assets/images/content/support/frame6879.webp'
-import seller_badges from '@/assets/images/content/support/frame1553.webp'
-import custom_order from '@/assets/images/content/support/group1552.webp'
-import subscribe from '@/assets/images/content/support/frame6880.webp'
-import business from '@/assets/images/content/support/frame1123.webp'
-import proskillsapp from '@/assets/images/content/support/frame1556.webp'
-import group1555 from '@/assets/images/content/support/group1555.webp'
-import frame6876 from '@/assets/images/content/support/frame6876.webp'
-import frame6877 from '@/assets/images/content/support/frame6877.webp'
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
     return {

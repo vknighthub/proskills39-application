@@ -28,7 +28,6 @@ export const NewestService = ({ data }: PageProps) => {
                             width={470}
                             height={340}
                             alt=""
-                            loading="lazy"
                         />
                         <div className="featured-creators-wrapper">
                             <div className="featured-creators-info-wrapper">

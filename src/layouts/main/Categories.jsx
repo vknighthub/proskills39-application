@@ -14,16 +14,16 @@ const Categories = ({ data }) => {
     
     const renderIcon = (icon) => {
         switch (icon) {
-            case "program-tech": return <ProgramingIcon style={{ width: "80px", height: "80px" }} />
-            case "graphics-design": return <GraphicsDesignIcon style={{ width: "80px", height: "80" }} />
-            case "digital-marketing": return <DigitalMarketingIcon style={{ width: "80px", height: "80" }} />
-            case "writting-translation": return <WrittingTranslationIcon style={{ width: "80px", height: "80" }} />
-            case "video-animation": return <VideoAnimationIcon style={{ width: "80px", height: "80" }} />
-            case "music-audio": return <MusicAudioIcon style={{ width: "80px", height: "80" }} />
-            case "business": return <BusinessIcon style={{ width: "80px", height: "80" }} />
-            case "lifestyle": return <LifeStyleIcon style={{ width: "80px", height: "80" }} />
-            case "trending" : return <TrendingIcon style={{ width: "80px", height: "80"}} />
-            case "aiservices" : return <AIServiceIcon style={{ width: "80px", height: "80" }} />
+            case "program-tech": return <ProgramingIcon style={{ width: "80px", height: "80px" }} />;
+            case "graphics-design": return <GraphicsDesignIcon style={{ width: "80px", height: "80" }} />;
+            case "digital-marketing": return <DigitalMarketingIcon style={{ width: "80px", height: "80" }} />;
+            case "writting-translation": return <WrittingTranslationIcon style={{ width: "80px", height: "80" }} />;
+            case "video-animation": return <VideoAnimationIcon style={{ width: "80px", height: "80" }} />;
+            case "music-audio": return <MusicAudioIcon style={{ width: "80px", height: "80" }} />;
+            case "business": return <BusinessIcon style={{ width: "80px", height: "80" }} />;
+            case "lifestyle": return <LifeStyleIcon style={{ width: "80px", height: "80" }} />;
+            case "trending" : return <TrendingIcon style={{ width: "80px", height: "80"}} />;
+            case "aiservices" : return <AIServiceIcon style={{ width: "80px", height: "80" }} />;
             default: return null;
         }
     }
