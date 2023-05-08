@@ -583,5 +583,6 @@
   "text-payment": "Payment",
   "text-amount": "Amount",
   "text-deal": "Deal",
-  "text-decline": "Decline"
+  "text-decline": "Decline",
+  "text-otp-password": "Verify OTP Password"
 }

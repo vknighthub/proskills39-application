@@ -1,9 +1,8 @@
 "use client"
 
-import LoginUserForm from "@/components/auth/login-form";
+import ForgotPasswordForm from "@/components/auth/forgot-password-form";
 import Layout from "@/layouts/_layout";
 import { GetStaticProps } from "next";
-import { signIn } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
@@ -17,7 +16,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     };
 };
 
-const Login = () => {
+const ForgotPassword = () => {
     const { t } = useTranslation('common');
 
     return (
@@ -26,16 +25,12 @@ const Login = () => {
                 <div className="extra-small-section">
                     <div className="page-title text-center">
                         <h2>
-                            <span className="gradient-text">{t("text-account")}</span> {t("text-login")}
+                            <span className="gradient-text">{t("text-forgot-password")}</span>
                         </h2>
                     </div>
 
-                    <LoginUserForm />
+                    <ForgotPasswordForm />
 
-
-                    <div className="social-login">
-                        <Link className="menu-link" href="/forgot-password">Forgot Password?</Link>
-                    </div>
                 </div>
             </div>
 
@@ -44,4 +39,4 @@ const Login = () => {
 
 
 };
-export default Login;
+export default ForgotPassword;

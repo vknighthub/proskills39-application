@@ -789,3 +789,18 @@ export interface ApplyLetterInput {
 
 export interface ServiceDealResponse extends ResponseObject<ServiceDeal> { }
 export interface ApplyLetterResponse extends ResponseObject<{}> { }
+
+export interface ForgotPasswordInput {
+    username: string;
+    email: string;
+    code?: string;
+}
+
+
+export interface ForgotPasswordResponse {
+    errorcode: number
+    messagedetail: string;
+    result: {
+
+    }
+}
