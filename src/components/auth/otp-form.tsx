@@ -40,7 +40,7 @@ export default function OTPPasswordForm({ username, email }: ForgotPasswordInput
           text: `Your password has been reset. Please login to email to get new password`,
         }).then(response => {
           if (response.value) {
-            router.push('/page-login')
+            router.push('/login')
           }
         })
       }
