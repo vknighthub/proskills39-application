@@ -11,7 +11,7 @@ import { useQuery } from 'react-query';
 import client from '@/data/client';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-
+import parse from 'html-react-parser';
 
 const OfferService: NextPageWithLayout<
     InferGetStaticPropsType<typeof getStaticProps>
@@ -98,7 +98,7 @@ const OfferService: NextPageWithLayout<
                         </div>
                         <div className="product-description">
                             <p>
-                                {service_deal?.descriptions}
+                                {parse(service_deal?.descriptions ? service_deal?.descriptions : '-')}
                             </p>
                         </div>
                         <div className="bidding-section">

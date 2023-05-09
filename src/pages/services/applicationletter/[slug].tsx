@@ -15,6 +15,8 @@ import * as yup from 'yup';
 import { SubmitHandler } from 'react-hook-form/dist/types';
 import Swal from 'sweetalert2';
 import { useRouter } from 'next/router';
+import parse from 'html-react-parser';
+
 
 export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
     const { slug } = params!
@@ -140,7 +142,7 @@ const ApplicationLetter: NextPageWithLayout<
                                         </div>
                                         <div className="product-details">
                                             <div className="product-name">
-                                                {service_deal?.descriptions}
+                                                {parse(service_deal?.descriptions ? service_deal?.descriptions : '-')}
                                             </div>
                                             <div className="license-type">Regular License</div>
                                         </div>
@@ -173,8 +175,7 @@ const ApplicationLetter: NextPageWithLayout<
                         </div>
                         {render &&
                             <Editor
-
-                                apiKey="r6pbr9fmuyz5cmhqxhczpuiaq76xsuuq66an060n2frgjtnt"
+                                apiKey="7ppjrk52kbntgx5ka19u1jusgy1t2jbknaka09gp760mw3tr"
                                 init={{
                                     height: 600,
                                     menubar: true,

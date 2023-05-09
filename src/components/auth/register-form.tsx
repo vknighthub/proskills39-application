@@ -24,7 +24,8 @@ const registerValidationSchema = yup.object().shape({
     address: yup.string().required(),
     email: yup.string().required(),
     birthday: yup.date().required(),
-    phone: yup.string().required()
+    phone: yup.string().required(),
+    gdpr: yup.string().required()
 });
 
 const RegisterUserForm = ({ username }: PageProps) => {
@@ -70,7 +71,17 @@ const RegisterUserForm = ({ username }: PageProps) => {
     }
 
     const onSubmit: SubmitHandler<RegisterUserInput> = (data) => {
-        registerform(data)
+        const ischeck = data.gdpr
+        if (ischeck) {
+            registerform(data)
+        }else{
+            Swal.fire({
+                position: 'center',
+                icon: 'warning',
+                color: 'orange',
+                text: `Please tick agree on our Privacy Policy before start use system`,
+            })
+        }
     };
 
     const {
@@ -201,14 +212,14 @@ const RegisterUserForm = ({ username }: PageProps) => {
             <div className="tk-lp-form-item">
                 <div className="tk-lp-check">
                     <label className="tk-lp-checkbox">
-                        <input type="checkbox" name="gdpr" defaultValue={1} />
+                        <input type="checkbox" {...register('gdpr')} />
                         <span className="tk-lp-control-indicator" />
                     </label>
                     <div className="tk-lp-check-text">
                         I agree to{" "}
-                        <a href="" target="_blank" rel="noopener noreferrer">
+                        <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer">
                             Privacy Policy
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

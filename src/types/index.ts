@@ -198,9 +198,10 @@ export interface RegisterUserInput {
     gender: number
     address: string
     email: string
-    birthday: string
+    birthday: Date
     phone: string
     referrer?: string
+    gdpr?: boolean
 }
 
 export interface UpdateProfileInput {
