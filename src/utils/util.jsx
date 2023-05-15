@@ -39,6 +39,29 @@ export const svgLoadder = () => {
       <path fill-rule="evenodd"
         d="M10.86 12h-3V7.86h2.06v-2.1H7.86V4.55c0-.22.19-.4.4-.4h1.87V2.05H8.31v.01h-.07a2.47 2.47 0 00-2.47 2.48v1.24H4.12v2.09h1.65v4.12H1.12C.5 12 0 11.5 0 10.88V1.12C0 .5.5-.01 1.12-.01h9.74C11.48 0 12 .5 12 1.13v9.75c0 .62-.5 1.13-1.13 1.13z" />
     </symbol>
+    <symbol id="telegram-icon" viewBox="0 0 24 24">
+      <path fill-rule="evenodd"
+        d="m9.417 15.181-.397 5.584c.568 0 .814-.244 1.109-.537l2.663-2.545 5.518 4.041c1.012.564 1.725.267 1.998-.931l3.622-16.972.001-.001c.321-1.496-.541-2.081-1.527-1.714l-21.29 8.151c-1.453.564-1.431 1.374-.247 1.741l5.443 1.693 12.643-7.911c.595-.394 1.136-.176.691.218z"/>
+    </symbol>
+    <symbol id="costv-icon" viewBox="147 246 417 109" width="32" height="32">
+      <linearGradient id="b" gradientTransform="rotate(-57.15 190.079 324.562)" gradientUnits="userSpaceOnUse" x1="135.98" x2="244.19" y1="324.57" y2="324.57">
+        <stop offset=".01" stop-color="#035bff"/>
+        <stop offset="1" stop-color="#00c3ff"/>
+      </linearGradient>
+      <linearGradient id="a" gradientTransform="rotate(57.15 190.3 274.894)" gradientUnits="userSpaceOnUse" x1="136.19" x2="244.41" y1="274.91" y2="274.91">
+        <stop offset="0" stop-color="#00c3ff"/>
+        <stop offset=".99" stop-color="#035bff"/>
+      </linearGradient>
+      <linearGradient id="c" x1="151.38" x2="151.81" xlink:href="#a" y1="351.13" y2="249.79"/>
+      
+      <rect fill="url(#b)" height="122.9" rx="15.51" transform="rotate(57.15 190.088 324.552)" width="31.02" x="174.58" y="263.11"/>
+      <rect fill="url(#a)" height="122.91" rx="15.51" transform="rotate(-57.15 190.292 274.91)" width="31.02" x="174.79" y="213.46"/>
+      <rect fill="url(#c)" height="130.36" rx="15.51" width="31.02" x="136.09" y="234.48"/>
+      <circle cx="152.01" cy="250.94" fill="#fff" r="4.68"/>
+      <circle cx="152.01" cy="350.75" fill="#fff" r="4.68"/>
+      <circle cx="228.55" cy="300.35" fill="#fff" r="4.68"/>
+    </symbol>
+
     <symbol id="gmail-icon" viewBox="0 0 48 48" width="12px" height="12px">
       <path fill="#f55376" d="M12,22.854V10.445l12,9l12-9v12.409l-12,9L12,22.854z"/>
       <path fill="#6c19ff" d="M12,22.854l-9-6.75v21.032C3,38.721,4.284,40,5.864,40H12V22.854z"/>
@@ -301,6 +324,16 @@ export const svgLoadder = () => {
   </symbol>
   <svg id="download-icon" viewBox="0 0 16 16">
     <path fill-rule="evenodd" d="M12.25 16h-8.5A3.75 3.75 0 0 1 0 12.25v-1.5a.75.75 0 0 1 1.5 0v1.5c0 1.24 1 2.25 2.25 2.25h8.5a2.25 2.25 0 0 0 2.25-2.25v-1.5a.75.75 0 0 1 1.5 0v1.5A3.76 3.76 0 0 1 12.25 16Zm-3.7-5.24h-.01a.74.74 0 0 1-.18.14l-.06.04a.75.75 0 0 1-.6 0l-.06-.04a.74.74 0 0 1-.18-.13h-.01L4.2 7.25a.75.75 0 1 1 1.1-1.02l1.95 2.1V.75a.75.75 0 0 1 1.5 0v7.59l1.95-2.1a.75.75 0 0 1 1.1 1.02l-3.25 3.5Z"/>
+  </svg>
+  <svg id="tiktok-icon" viewBox="0 0 2859 3333" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
+    <path fill-rule="evenodd" 
+      d="M2081 0c55 473 319 755 778 785v532c-266 26-499-61-770-225v995c0 1264-1378 1659-1932 753-356-583-138-1606 1004-1647v561c-87 14-180 36-265 65-254 86-398 247-358 531 77 544 1075 705 992-358V1h551z"
+    />
+  </svg>
+  <svg id="linkedin-icon" viewBox="0 0 3333 3333" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
+    <path fill-rule="evenodd" 
+    d="M1667 0c920 0 1667 746 1667 1667 0 920-746 1667-1667 1667C747 3334 0 2588 0 1667 0 747 746 0 1667 0zm-215 1336h342v175h5c48-86 164-175 338-175 361 0 428 225 428 517v596h-357v-528c0-126-3-288-186-288-186 0-214 137-214 279v537h-357V1336zm-247-309c0 102-83 186-186 186-102 0-186-83-186-186 0-102 83-186 186-186 102 0 186 83 186 186zm-371 309h371v1113H834V1336z"
+    />
   </svg>
     
   </symbol>

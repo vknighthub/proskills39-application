@@ -28,7 +28,7 @@ export default function Footer() {
 
                                 <li className="social-icon">
                                     {" "}
-                                    <a href="#">
+                                    <a href="https://www.facebook.com/ProSkills39" target="_blank" rel="noreferrer">
                                         <svg className="crumina-icon">
                                             <use xlinkHref="#facebook-icon" />
                                         </svg>
@@ -36,7 +36,7 @@ export default function Footer() {
                                 </li>
                                 <li className="social-icon">
                                     {" "}
-                                    <a href="#">
+                                    <a href="https://twitter.com/ProSkills39" target="_blank" rel="noreferrer">
                                         <svg className="crumina-icon">
                                             <use xlinkHref="#twitter-icon" />
                                         </svg>
@@ -44,23 +44,39 @@ export default function Footer() {
                                 </li>
                                 <li className="social-icon">
                                     {" "}
-                                    <a href="#">
+                                    <a href="https://t.me/ProSkills39" target="_blank" rel="noreferrer">
                                         <svg className="crumina-icon">
-                                            <use xlinkHref="#instagram-icon" />
+                                            <use xlinkHref="#telegram-icon" />
                                         </svg>
                                     </a>
                                 </li>
                                 <li className="social-icon">
                                     {" "}
-                                    <a href="#">
+                                    <a href="https://youtu.be/1ehtOY3uMdo" target="_blank" rel="noreferrer">
                                         <svg className="crumina-icon">
-                                            <use xlinkHref="#twitch-icon" />
+                                            <use xlinkHref="#youtube-icon" />
                                         </svg>
                                     </a>
                                 </li>
                                 <li className="social-icon">
                                     {" "}
-                                    <a href="#">
+                                    <a href=" https://www.tiktok.com/@proskills39" target="_blank" rel="noreferrer">
+                                        <svg className="crumina-icon">
+                                            <use xlinkHref="#tiktok-icon" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li className="social-icon">
+                                    {" "}
+                                    <a href="https://www.linkedin.com/in/proskills-community-service-market-place-proskills-351a53275/" target="_blank" rel="noreferrer">
+                                        <svg className="crumina-icon">
+                                            <use xlinkHref="#linkedin-icon" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li className="social-icon">
+                                    {" "}
+                                    <a href="https://discord.gg/8PYst76Y" target="_blank" rel="noreferrer">
                                         <svg className="crumina-icon">
                                             <use xlinkHref="#discord-icon" />
                                         </svg>
