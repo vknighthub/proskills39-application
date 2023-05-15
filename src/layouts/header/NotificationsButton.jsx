@@ -1,11 +1,10 @@
-import client from '@/data/client';
+import avatar from '@/assets/images/avatar.png';
+import { FetchNotifications } from '@/data/notification';
 import useClickOutside from '@/lib/hooks/useClickOutside';
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { useQuery } from "react-query";
-import avatar from '@/assets/images/avatar.png'
 
 const NotificationsButton = ({ isAuthorized }) => {
   const [toggle, setToggle] = useState(false);
@@ -17,29 +16,21 @@ const NotificationsButton = ({ isAuthorized }) => {
   const { locale } = useRouter()
   const router = useRouter()
 
-  const { data, refetch } = useQuery({
-    queryKey: ['notification'],
-    queryFn: () => client.notification.get(
-      {
-        language: locale
-      }
-    ),
-    enabled: isAuthorized
-  })
+  const { data, refetch } = FetchNotifications(locale)
 
-  const listnotification = data?.result.data
+  const listnotification = data
 
   const processRead = (slug) => {
     router.push(`/services/offer/${slug}`)
   }
 
   useEffect(() => {
-    refetch()
-  }, [locale])
+    if (isAuthorized) {
+      refetch()
+      setRender(true)
+    }
+  }, [isAuthorized, refetch])
 
-  useEffect(() => {
-    setRender(true)
-  }, [render])
 
   return (
     <>
