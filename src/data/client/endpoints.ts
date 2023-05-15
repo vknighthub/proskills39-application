@@ -13,6 +13,7 @@ export const API_ENDPOINTS = {
     CATEGORIES: '/system/categories',
     CATEGORIESPAGE: '/system/categoriespage',
     SERVICES: '/services/getservicebycatslug',
+    SERVICESBYPARENT: '/services/getservicebycatparent',
     SERVICES_DETAIL: '/services/getservicebyslug',
     UPDATE_USER: '/user/updateuserprofile',
     NOTIFICATION: '/user/getnotification',

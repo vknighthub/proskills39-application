@@ -20,7 +20,7 @@
   {
     "id": 17,
     "name": "Programing & Tech",
-    "slug": "programing-tech",
+    "slug": "programing-and-tech",
     "language": "en",
     "icon": null,
     "image": [],
@@ -57,7 +57,7 @@
   {
     "id": 16,
     "name": "Graphics & Design",
-    "slug": "graphics-design",
+    "slug": "graphics-and-design",
     "language": "en",
     "icon": null,
     "image": [],
@@ -94,7 +94,7 @@
   {
     "id": 15,
     "name": "Digital Marketing",
-    "slug": "digital-marketing",
+    "slug": "digital-and-marketing",
     "language": "en",
     "icon": null,
     "image": [],
@@ -131,7 +131,7 @@
   {
     "id": 14,
     "name": "Writing translation",
-    "slug": "3d-assets",
+    "slug": "writing-and-translation",
     "language": "en",
     "icon": null,
     "image": [],
@@ -168,7 +168,7 @@
   {
     "id": 13,
     "name": "Video animation",
-    "slug": "video-animation",
+    "slug": "video-and-animation",
     "language": "en",
     "icon": null,
     "image": [],
@@ -205,7 +205,7 @@
   {
     "id": 12,
     "name": "Music & Audio",
-    "slug": "music-audio",
+    "slug": "music-and-audio",
     "language": "en",
     "icon": null,
     "image": [],

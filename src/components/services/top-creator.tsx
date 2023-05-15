@@ -163,6 +163,8 @@ const topcreator = [
     }
 ]
 
+console.log(topcreator)
+
 const HomeTopCreators = () => {
     return (
         <div className="container section-padding">

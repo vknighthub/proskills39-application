@@ -1,11 +1,27 @@
+import { FetchFetchServiceCatalogBySlug } from '@/data/categories';
 import { useTranslation } from 'next-i18next';
-import { useState } from "react";
+import { useRouter } from 'next/router';
+import { useEffect, useState } from "react";
 import categories from "./../../data/categories/categories.json";
 
 const SearchBox = () => {
   const [activeToggle, setActiveToggle] = useState(false);
-  const [active, setActive] = useState("All items");
+  const [active, setActive] = useState("Program & Tech");
+  const [value, setValue] = useState("programming-and-tech")
   const { t } = useTranslation('common');
+  const { locale } = useRouter()
+  const [filter, setFilter] = useState([])
+
+  const { data, refetch } = FetchFetchServiceCatalogBySlug({
+    slug: value,
+    language: locale
+  })
+
+  useEffect(() => {
+    refetch()
+  }, [value, locale])
+
+  console.log(data)
 
   return (
     <>
@@ -37,6 +53,7 @@ const SearchBox = () => {
                 onClick={() => {
                   setActiveToggle(false);
                   setActive(category.name);
+                  setValue(category.slug)
                 }}
               >
                 {category.name}
