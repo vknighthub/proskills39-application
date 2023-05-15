@@ -19,6 +19,7 @@ const routes = {
     how_to_start_buying_page: 'support/how-to-start-buying',
     referral_program: 'referral_program',
     blog: 'blog',
+    community: 'community-standard'
 
 }
 export default routes;
