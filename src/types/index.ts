@@ -744,14 +744,6 @@ export interface InvitateFriendInput {
 
 export interface InviteFriendResponse extends ResponseObject<{}> { }
 
-export interface Blog {
-    id: number
-    image: string
-    catalog: string
-    title: string
-    content: string
-}
-
 export interface News {
     id: number
     image: string
@@ -805,3 +797,24 @@ export interface ForgotPasswordResponse {
 
     }
 }
+export interface Catalog {
+    id: number
+    name: string
+}
+export interface BlogDetail {
+    id: number
+    slug: string
+    image: string
+    catalog: Catalog
+    title: string
+    content: string
+    publdt: string
+}
+export interface Blog {
+    blog: BlogDetail[]
+    news: any[]
+    business: any[]
+    freelancer: any[]
+}
+
+export interface BlogResponse extends ResponseObject<Blog> { }

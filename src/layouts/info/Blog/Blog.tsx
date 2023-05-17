@@ -1,12 +1,14 @@
-import { Blog } from '@/types';
+import { BlogDetail } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
+import parse from 'html-react-parser';
 
 type Props = {
-    list_blog: Blog[]
+    list_blog: BlogDetail[] | undefined
 }
 
 const Blog = ({ list_blog }: Props) => {
+    console.log(list_blog)
     return (
         <div className="primary-content-area container content-padding">
             <div className="page-title-section">
@@ -16,7 +18,7 @@ const Blog = ({ list_blog }: Props) => {
             </div>
             {/*  POSTS GRID */}
             <div className="news-feed grid-3-columns">
-                {list_blog.map((blog) => (
+                {list_blog?.map((blog) => (
                     <div className="news-item" key={blog.id}>
                         <div className="news-thumb">
                             {" "}
@@ -28,14 +30,14 @@ const Blog = ({ list_blog }: Props) => {
                             <div className="news-meta">
                                 <div className="news-tags">
                                     <span className="tag-item">
-                                        <Link href="#">{blog.catalog}</Link>
+                                        <Link href={blog.slug}>{blog.title}</Link>
                                     </span>
                                 </div>
                                 by{" "}
                                 <Link href="/anhben">
                                     AnhBen
                                 </Link>
-                                , March 26th, 2023
+                                , {blog.publdt}
                             </div>
                             <div className="news-title h5">
                                 {" "}
@@ -44,7 +46,7 @@ const Blog = ({ list_blog }: Props) => {
                                 </Link>{" "}
                             </div>
                             <div className="news-excerpt">
-                                {blog.content}
+                                {parse(blog.content)}
                             </div>
                             <div className="read-more-link">
                                 {" "}

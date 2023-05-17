@@ -26,6 +26,8 @@ import image_business_3 from '@/assets/images/content/business/solutions.png'
 import image_freelancer_1 from '@/assets/images/content/freelancer/cally.png'
 import image_freelancer_2 from '@/assets/images/content/freelancer/withoucode.jpg'
 import image_freelancer_3 from '@/assets/images/content/freelancer/bosses.png'
+import { useRouter } from 'next/router';
+import { FetchBlog } from '@/data/blog';
 
 
 type Props = {}
@@ -42,30 +44,9 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
 const BlogPage: NextPageWithLayout = (props: Props) => {
 
-    
-    const list_blog = [
-        {
-            id: 1,
-            image: image_1.src,
-            catalog: 'WEB PROGRAMMING',
-            title: 'Why Your Small Business Needs a Website',
-            content: 'Does your business need a website? Learn why yes, you do need a business website and how to build yours with Proskills39.'
-        },
-        {
-            id: 2,
-            image: image_2.src,
-            catalog: 'AI',
-            title: 'The AI Content Revolution: How Freelancers Can Best Make Use of These Programs',
-            content: 'What are the benefits of AI for freelancers? This article explores how AI is transforming content creation and AI services freelancers can use to their advantage.'
-        },
-        {
-            id: 3,
-            image: image_3.src,
-            catalog: 'SUCCESS STORIES',
-            title: 'From Freelancing to Founding',
-            content: 'How two lifelong friends and fellow freelancers built an agency off their success.'
-        }
-    ]
+    const { locale } = useRouter()
+
+    const { data } = FetchBlog(locale)
 
     const list_news = [
         {
@@ -139,13 +120,16 @@ const BlogPage: NextPageWithLayout = (props: Props) => {
         }
     ]
 
-    const data = {
-        blog: list_blog,
-        news: list_news,
-        business : list_business,
-        freelancer: list_freelancer,
-    }
 
+
+    // const data = {
+    //     blog: blog?.blog,
+    //     news: list_news,
+    //     business: list_business,
+    //     freelancer: list_freelancer,
+    // }
+
+    console.log(data)
 
     return (
         <>
@@ -156,7 +140,7 @@ const BlogPage: NextPageWithLayout = (props: Props) => {
                 image_url='https://api.proskills39.com/system/logo/logotest.png'
             />
 
-            <Blog list_blog={list_blog} />
+            <Blog list_blog={data?.blog} />
 
             <News list_news={list_news} />
 

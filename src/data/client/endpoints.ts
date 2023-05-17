@@ -20,7 +20,8 @@ export const API_ENDPOINTS = {
     SERVICEDEAL: '/services/getservicedetailbyslug',
     INVITE_FRIEND: '/user/postinvitefriend',
     APPLY_LETTER: '/services/applyapplicationletter',
-    FORGOT_PASSWORD: '/user/resetpassword'
+    FORGOT_PASSWORD: '/user/resetpassword',
+    BLOG: '/blog/getlistblog'
 
     
 }
