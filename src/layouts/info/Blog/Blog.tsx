@@ -22,8 +22,8 @@ const Blog = ({ list_blog }: Props) => {
                     <div className="news-item" key={blog.id}>
                         <div className="news-thumb">
                             {" "}
-                            <Link href="/14-blog-post-centered">
-                                <Image src={blog.image} alt="" width={458} height={306} />
+                            <Link href={blog.slug}>
+                                <Image src={blog.image} alt="" width={458} height={300} />
                             </Link>{" "}
                         </div>
                         <div className="news-content">
@@ -34,8 +34,8 @@ const Blog = ({ list_blog }: Props) => {
                                     </span>
                                 </div>
                                 by{" "}
-                                <Link href="/anhben">
-                                    AnhBen
+                                <Link href={blog.author.username}>
+                                    {blog.author.fullname}
                                 </Link>
                                 , {blog.publdt}
                             </div>

@@ -808,7 +808,12 @@ export interface BlogDetail {
     catalog: Catalog
     title: string
     content: string
-    publdt: string
+    publdt: string,
+    author: {
+        username: string
+        fullname: string
+        avatar: string
+    }
 }
 export interface Blog {
     blog: BlogDetail[]

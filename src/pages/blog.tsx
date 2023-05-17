@@ -129,8 +129,6 @@ const BlogPage: NextPageWithLayout = (props: Props) => {
     //     freelancer: list_freelancer,
     // }
 
-    console.log(data)
-
     return (
         <>
             <Seo
