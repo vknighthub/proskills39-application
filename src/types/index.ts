@@ -119,6 +119,7 @@ export interface Newestservice {
     title: string
     slug: string
     language: string
+    introduce: string
     descriptions: string
     status: string
     tags: string

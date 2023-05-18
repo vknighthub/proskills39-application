@@ -32,7 +32,6 @@ const ProfileInfoForm = ({ profileinfo }: PageProps) => {
 
   const { mutate: updateprofile, isSuccess } = useMutation(client.users.updateprofile, {
     onSuccess: (data) => {
-      console.log(data);
 
     },
     onError: (errorAsUnknown) => {

@@ -69,7 +69,6 @@ export default function OTPPasswordForm({ username, email }: ForgotPasswordInput
   });
 
   const onSubmit: SubmitHandler<ForgotPasswordInput> = (data) => {
-    console.log(data)
 
     forgotpasswordOTP(data)
   };

@@ -1,6 +1,7 @@
-import { Newestservice } from '@/types'
-import Image from 'next/image'
-import Link from 'next/link'
+import { Newestservice } from '@/types';
+import parse from 'html-react-parser';
+import Image from 'next/image';
+import Link from 'next/link';
 
 type PageProps = {
     data: Newestservice[]
@@ -67,7 +68,7 @@ export const NewestService = ({ data }: PageProps) => {
 
                             <div className="about-creator">
                                 <p>
-                                    {service.descriptions}
+                                    {service.introduce && parse(service.introduce)}
                                 </p>
                             </div>
 
