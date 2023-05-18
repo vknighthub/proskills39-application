@@ -8,7 +8,6 @@ type Props = {}
 const SearchServicePage: NextPageWithLayout = (props: Props) => {
     const router = useRouter();
     const { categories  } = router.query; // lấy giá trị của param từ URL
-    console.log(categories )
     return (
         <div>{categories }</div>
     )
