@@ -163,7 +163,6 @@ const topcreator = [
     }
 ]
 
-console.log(topcreator)
 
 const HomeTopCreators = () => {
     return (

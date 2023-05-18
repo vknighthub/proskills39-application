@@ -28,18 +28,18 @@ export default function Logo({
         {isMounted && isDarkMode && (
           <Image
             src={settings?.dark_logo?.original ?? darkLogo}
-            layout="fill"
-            objectFit="contain"
             loading="eager"
+            width={80}
+            height={80}
             alt={settings?.siteTitle ?? 'Dark Logo'}
           />
         )}
         {isMounted && !isDarkMode && (
           <Image
             src={settings?.logo?.original ?? lightLogo}
-            layout="fill"
-            objectFit="contain"
             loading="eager"
+            width={80}
+            height={80}
             alt={settings?.siteTitle ?? 'Light Logo'}
           />
         )}

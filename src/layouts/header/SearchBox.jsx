@@ -21,8 +21,6 @@ const SearchBox = () => {
     refetch()
   }, [value, locale])
 
-  console.log(data)
-
   return (
     <>
       <div className="searchbox">
