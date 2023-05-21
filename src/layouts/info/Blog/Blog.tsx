@@ -46,7 +46,7 @@ const Blog = ({ list_blog }: Props) => {
                                 </Link>{" "}
                             </div>
                             <div className="news-excerpt">
-                                {parse(blog.content)}
+                                {parse(blog.introduce)}
                             </div>
                             <div className="read-more-link">
                                 {" "}

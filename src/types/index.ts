@@ -807,6 +807,7 @@ export interface BlogDetail {
     slug: string
     image: string
     catalog: Catalog
+    introduce: string
     title: string
     content: string
     publdt: string,
