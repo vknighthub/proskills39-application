@@ -8,7 +8,7 @@ type Props = {
 }
 
 const Blog = ({ list_blog }: Props) => {
-    console.log(list_blog)
+
     return (
         <div className="primary-content-area container content-padding">
             <div className="page-title-section">
@@ -20,17 +20,22 @@ const Blog = ({ list_blog }: Props) => {
             <div className="news-feed grid-3-columns">
                 {list_blog?.map((blog) => (
                     <div className="news-item" key={blog.id}>
-                        <div className="news-thumb">
-                            {" "}
-                            <Link href={blog.slug}>
-                                <Image src={blog.image} alt="" width={458} height={300} />
-                            </Link>{" "}
+                        <div className="news-thumb" >
+                            <Link href={`/blog-detail/${blog.slug}`}>
+                                <Image
+                                    src={blog.image}
+                                    alt=""
+                                    width={458}
+                                    height={300}
+                                    style={{ maxWidth: '100%', maxHeight: '300px', minHeight: '300px' }}
+                                />
+                            </Link>
                         </div>
                         <div className="news-content">
                             <div className="news-meta">
                                 <div className="news-tags">
                                     <span className="tag-item">
-                                        <Link href={blog.slug}>{blog.title}</Link>
+                                        {blog.catalog.name}
                                     </span>
                                 </div>
                                 by{" "}
@@ -41,7 +46,7 @@ const Blog = ({ list_blog }: Props) => {
                             </div>
                             <div className="news-title h5">
                                 {" "}
-                                <Link href="/14-blog-post-centered">
+                                <Link href={`/blog-detail/${blog.slug}`}>
                                     {blog.title}
                                 </Link>{" "}
                             </div>
@@ -50,7 +55,7 @@ const Blog = ({ list_blog }: Props) => {
                             </div>
                             <div className="read-more-link">
                                 {" "}
-                                <Link href="/14-blog-post-centered">
+                                <Link href={`/blog-detail/${blog.slug}`}>
 
                                     Read More
                                     <svg className="crumina-icon">

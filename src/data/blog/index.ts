@@ -19,3 +19,26 @@ export const FetchBlog = (locale: string | undefined) => {
         error
     };
 }
+
+export const FetchBlogDetail = (slug: string, locale: string, initData: any) => {
+    const { data, isLoading, error, refetch } = useQuery({
+        queryKey: 'blog-detail',
+        queryFn: () =>
+            client.blog.getdetail(
+                {
+                    slug: slug,
+                    language: locale
+                }
+            ),
+        initialData: initData
+
+    }
+    );
+
+    return {
+        data: data?.result.data,
+        refetch,
+        isLoading,
+        error
+    };
+}

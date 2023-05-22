@@ -825,3 +825,12 @@ export interface Blog {
 }
 
 export interface BlogResponse extends ResponseObject<Blog> { }
+
+export interface BlogParams {
+    slug: string | string[] | undefined
+    language?: string
+}
+
+export interface BlogDetailResponse extends ResponseObject<BlogDetail> { }
+
+

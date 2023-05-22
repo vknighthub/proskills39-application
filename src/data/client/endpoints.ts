@@ -21,7 +21,8 @@ export const API_ENDPOINTS = {
     INVITE_FRIEND: '/user/postinvitefriend',
     APPLY_LETTER: '/services/applyapplicationletter',
     FORGOT_PASSWORD: '/user/resetpassword',
-    BLOG: '/blog/getlistblog'
+    BLOG: '/blog/getlistblog',
+    BLOGDETAIL:'/blog/getblogbyslug'
 
     
 }
