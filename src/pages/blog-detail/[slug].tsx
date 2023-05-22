@@ -23,13 +23,12 @@ const BlogDetailPage: NextPageWithLayout<
         refetch()
     }, [slug, locale, blogdetail])
 
-
     return (
         <>
             <Seo title="ProSkills39 - Blog Detail"
-                description={blogdetail.description}
+                description={blogdetail.result.data.introduce}
                 url={routes.blogDetailUrl(slug)}
-                image_url={blogdetail.image}
+                image_url={blogdetail.result.data.image}
             />
             <div className="primary-content-area container content-padding">
                 <div className="single-post medium-section">
