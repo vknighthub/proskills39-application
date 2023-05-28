@@ -134,13 +134,13 @@ const ServicesPage: NextPageWithLayout<
                                     <div className="news-content" >
                                         <div className="news-meta">
                                             by{" "}
-                                            <Link href="/08-profile-page">
+                                            <Link href={`/categories/services/servicedetail/${service.slug}`}>
                                                 {service.sellerInfor.fullname}
                                             </Link>
                                             <span>, {service.create_at.toString()}</span>
                                             <div className="news-title h6">
                                                 {" "}
-                                                <Link href="/14-blog-post-centered">
+                                                <Link href={`/categories/services/servicedetail/${service.slug}`}>
                                                     {service.overviews.introduce}
                                                 </Link>{" "}
                                             </div>
