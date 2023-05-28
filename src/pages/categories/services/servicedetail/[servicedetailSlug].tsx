@@ -61,7 +61,6 @@ const ServiceDetail: NextPageWithLayout<
     InferGetStaticPropsType<typeof getStaticProps>
 > = ({ servicedetail }) => {
     const servicedetailinfo = servicedetail.result.data
-
     return (
         <>
             <Seo title="ProSkills39 - Service"

@@ -584,5 +584,13 @@
   "text-amount": "Amount",
   "text-deal": "Deal",
   "text-decline": "Decline",
-  "text-otp-password": "Verify OTP Password"
+  "text-otp-password": "Verify OTP Password",
+  "text-profile-info": "Profile Information",
+  "text-account-setting": "Account Settings",
+  "text-notification-setting": "Notification Settings",
+  "text-wallet-info": "Wallet info",
+  "text-get-verified": "Get Verified",
+  "text-full-name": "Full Name",
+  "text-update-profile-success":"Profile Information has been updated successfully",
+  "my-profile": "My Profile"
 }

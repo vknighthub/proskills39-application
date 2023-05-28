@@ -2,9 +2,16 @@ import Link from "next/link";
 import React from "react";
 import avatar from '@/assets/images/avatar.png';
 import Image from "next/image";
+import { useTranslation } from 'next-i18next'
+import { useMe } from "@/data/user";
 
 
 const ProfileInfoSidebar = () => {
+
+  const { t } = useTranslation('common');
+  const { me } = useMe();
+  const profile = me?.data
+
   return (
     <aside>
       <div className="user-db-menu">
@@ -15,7 +22,7 @@ const ProfileInfoSidebar = () => {
               {" "}
               <Link href="/profile-info">
 
-                <Image src={avatar} alt="avatar" />
+                <Image src={profile?.avatar ? profile.avatar : avatar} alt="avatar" width={80} height={80} />
                 <span className="verified">
                   <svg className="crumina-icon">
                     <use xlinkHref="#check-icon" />
@@ -27,11 +34,11 @@ const ProfileInfoSidebar = () => {
             <div className="title">
               {" "}
               <Link href="/profile-info">
-                Dexter Stark
+                {profile?.fullname}
               </Link>{" "}
             </div>
             <div className="item-meta">
-              <span className="gradient-text">@DexterStark</span>
+              <span className="gradient-text">@{profile?.username}</span>
             </div>
           </div>
         </div>
@@ -40,45 +47,14 @@ const ProfileInfoSidebar = () => {
             <li className="profile">
               {" "}
               <Link href="/profile-info">
-
                 <svg className="crumina-icon">
                   <use xlinkHref="#user-icon" />
                 </svg>
-                Profile Info
+                {t('text-profile-info')}
 
               </Link>{" "}
             </li>
-            <li className="account">
-              {" "}
-              <Link href="/account-settings">
-
-                <svg className="crumina-icon">
-                  <use xlinkHref="#settings-icon" />
-                </svg>
-                Account Settings
-
-              </Link>{" "}
-            </li>
-            <li className="notification">
-              {" "}
-              <Link href="/notification-settings">
-
-                <svg className="crumina-icon">
-                  <use xlinkHref="#slide-filter-icon" />
-                </svg>
-                Notification Settings
-
-              </Link>{" "}
-            </li>
-            <li className="artwork">
-              {" "}
-              <Link href="/seller">
-                <svg className="crumina-icon">
-                  <use xlinkHref="#picture-icon" />
-                </svg>
-                Become a seller
-              </Link>{" "}
-            </li>
+            
             <li className="wallet">
               {" "}
               <Link href="/wallet-info">
@@ -86,19 +62,19 @@ const ProfileInfoSidebar = () => {
                 <svg className="crumina-icon">
                   <use xlinkHref="#wallet-icon" />
                 </svg>
-                Wallet info
+                {t('text-wallet-info')}
 
               </Link>{" "}
             </li>
             <li className="verification">
               {" "}
-              <Link href="/user-verify">
+              <Link href="https://admin.proskills39.com/?returnUrl=user-verify">
 
                 <svg className="crumina-icon">
                   <use xlinkHref="#circle-checked-icon" />
                 </svg>
-                Get Verified
 
+                {t('text-get-verified')}
               </Link>{" "}
             </li>
             <li className="logout">
@@ -107,7 +83,7 @@ const ProfileInfoSidebar = () => {
                 <svg className="crumina-icon">
                   <use xlinkHref="#logout-icon" />
                 </svg>
-                Log Out
+                {t('text-logout')}
               </a>
             </li>
           </ul>

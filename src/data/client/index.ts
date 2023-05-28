@@ -18,7 +18,7 @@ class Client {
         updateprofile: (user: UpdateProfileInput) =>
             HttpClient.put<UserUpdateResult>(`${API_ENDPOINTS.UPDATE_USER}`, user),
         invitefriend: (input: InvitateFriendInput) => HttpClient.post<InviteFriendResponse>(API_ENDPOINTS.INVITE_FRIEND, input),
-        forgotpassword: (input: ForgotPasswordInput) => HttpClient.post<ForgotPasswordResponse>(API_ENDPOINTS.FORGOT_PASSWORD,input)
+        forgotpassword: (input: ForgotPasswordInput) => HttpClient.post<ForgotPasswordResponse>(API_ENDPOINTS.FORGOT_PASSWORD, input)
     }
     fund = {
         all: () =>
@@ -43,7 +43,7 @@ class Client {
 
     }
     services = {
-        get: ({ slug, language }: GetParams) => HttpClient.get<ServicePaginator>(`${API_ENDPOINTS.SERVICES}/${slug}`, { language }),
+        get: ({ slug, language, page, limit }: GetParams) => HttpClient.get<ServicePaginator>(`${API_ENDPOINTS.SERVICES}`, { slug, language, page, limit }),
         detail: ({ slug, language }: GetParams) => HttpClient.get<ServiceDetailPaginator>(`${API_ENDPOINTS.SERVICES_DETAIL}/${slug}`, { language }),
         deal: (slug: DealInput) => HttpClient.get<ServiceDealResponse>(API_ENDPOINTS.SERVICEDEAL, { ...slug }),
         applyletter: (input: ApplyLetterInput) => HttpClient.post<ApplyLetterResponse>(API_ENDPOINTS.APPLY_LETTER, input),
@@ -54,8 +54,8 @@ class Client {
         get: (params?: SettingsQueryOptions) => HttpClient.get<NotificationResponse>(API_ENDPOINTS.NOTIFICATION, { ...params })
     }
     blog = {
-        get: (params?: SettingsQueryOptions) => HttpClient.get<BlogResponse>(API_ENDPOINTS.BLOG, {...params }),
-        getdetail:(param: BlogParams)=> HttpClient.get<BlogDetailResponse>(API_ENDPOINTS.BLOGDETAIL, { ...param})
+        get: (params?: SettingsQueryOptions) => HttpClient.get<BlogResponse>(API_ENDPOINTS.BLOG, { ...params }),
+        getdetail: (param: BlogParams) => HttpClient.get<BlogDetailResponse>(API_ENDPOINTS.BLOGDETAIL, { ...param })
     }
 }
 // eslint-disable-next-line import/no-anonymous-default-export

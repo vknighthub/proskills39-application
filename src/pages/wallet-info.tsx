@@ -7,7 +7,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 type Props = {}
 
-const WalletInfo: NextPageWithLayout = (props: Props) => {
+const WalletInfo: NextPageWithLayout = () => {
     return (
         <div className="primary-content-area container content-padding grid-left-sidebar">
             <ProfileInfoSidebar />
@@ -36,15 +36,12 @@ const WalletInfo: NextPageWithLayout = (props: Props) => {
                                         name="social-network-login"
                                         id="facebook-login"
                                         defaultValue="addr1q86z9mjp97dyaknwfulc6653neye45lyrxz3ptj4j0cqul2vwrat3jmcl543muh83tlwrnhh8tnk7jywasm4ttda7zyqpeff4g"
+                                        readOnly
                                     />
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <button className="btn btn-wide btn-dark" type="submit">
-                        Save Changes
-                    </button>
                 </form>
             </div>
         </div>

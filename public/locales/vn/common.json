@@ -584,5 +584,12 @@
   "text-payment": "Thanh toán",
   "text-amount": "Số tiền",
   "text-deal": "Chốt",
-  "text-decline": "Từ chối"
+  "text-decline": "Từ chối",
+  "text-profile-info": "Thông tin cá nhân",
+  "text-account-setting": "Thiết lập tài khoản",
+  "text-notification-setting": "Thiết lập thông báo",
+  "text-wallet-info": "Thông tin ví",
+  "text-get-verified": "Thông tin xác thực",
+  "text-update-profile-success": "Thông tin hồ sơ đã được cập nhật thành công",
+  "my-profile": "Thông tin cá nhân"
 }

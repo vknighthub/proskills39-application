@@ -33,12 +33,7 @@ const BlogDetailPage: NextPageWithLayout<
             <div className="primary-content-area container content-padding">
                 <div className="single-post medium-section">
                     <div className="post-heading">
-                        <div className="news-tags">
-                            <span className="tag-item" style={{ marginRight: "7px" }}>
-                                <Link href={`/categories/${data.catalog.id}`}>{data.catalog.name}</Link>
-                            </span>
-                        </div>
-
+                        
                         <h1>
                             {data.title}
                         </h1>

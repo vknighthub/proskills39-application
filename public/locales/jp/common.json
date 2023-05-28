@@ -579,10 +579,17 @@
   "text-order-checkout": "注文チェックアウト",
   "text-address": "住所",
   "text-country": "国",
-  "text-city":"街",
+  "text-city": "街",
   "text-additional-information": "追加情報",
   "text-payment": "支払い",
   "text-amount": "額",
   "text-deal": "対処",
-  "text-decline": "却下"
+  "text-decline": "却下",
+  "text-profile-info": "プロフィール情報",
+  "text-text-account-setting": "アカウント設定",
+  "text-notification-setting": "通知設定",
+  "text-wallet-info": "ウォレット情報",
+  "text-get-verified": "検証を取得",
+  "text-update-profile-success": "プロフィール情報が正常に更新されました",
+  "my-profile": "私のプロフィール"
 }

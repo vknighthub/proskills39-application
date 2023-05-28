@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ComparePackage from './ComparePackage';
-
+import parse from 'html-react-parser';
 
 const ServiceDetailMedia = ({ data, compare }) => {
     return (
@@ -37,10 +37,10 @@ const ServiceDetailMedia = ({ data, compare }) => {
                                 </a>
                             </div>
                             <div className="swiper-wrapper">
-                                {data.services.image.map((image, index)=>(
-                                <SwiperSlide id="slide-1" className="swiper-slide" key={index}>
-                                    <Image src={image.url} alt="product" width={300} height={300} />
-                                </SwiperSlide>
+                                {data.services.image.map((image, index) => (
+                                    <SwiperSlide id="slide-1" className="swiper-slide" key={index}>
+                                        <Image src={image.url} alt="product" width={300} height={300} />
+                                    </SwiperSlide>
                                 ))}
                             </div>
                         </Swiper>
@@ -54,7 +54,7 @@ const ServiceDetailMedia = ({ data, compare }) => {
                         <div className="avatar box-152">
                             {" "}
                             <Link href="/08-profile-page">
-                                <Image src={avatar} alt="avatar" width={80} height={80} />
+                                <Image src={data.seller?.avatar ? data.seller.avatar : avatar} alt="avatar" width={80} height={80} />
                             </Link>{" "}
                             <span className="verified">
                                 <svg className="crumina-icon">
@@ -69,6 +69,7 @@ const ServiceDetailMedia = ({ data, compare }) => {
                                     <Link href={`/seller/${data.seller.username}`}>
                                         {data.seller.username}
                                     </Link>{" "}
+
                                 </span>
                             </div>
                             <div className="avatar-meta">{data.seller.title}</div>
@@ -113,7 +114,7 @@ const ServiceDetailMedia = ({ data, compare }) => {
                         </div>
 
                         <div className="placed-seller-description mt-3">
-                            <span className="mt-3">{data.seller.introduce}</span>
+                            <span className="mt-3">{parse(data.seller.introduce)}</span>
                         </div>
                     </div>
                 </div>

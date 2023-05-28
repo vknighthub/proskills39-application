@@ -5,7 +5,6 @@ import Layout from '@/layouts/_layout'
 import { NextPageWithLayout } from '@/types'
 import { GetStaticProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useTranslation } from 'next-i18next'
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
     try {
@@ -26,9 +25,8 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
 const ProfileInformation: NextPageWithLayout = () => {
     const { me } = useMe();
-    const { t } = useTranslation('common');
+    
     const profile = me?.data
-
     return (
         <div className="primary-content-area container content-padding grid-left-sidebar">
             {/* / Profile Info Sidebar */}

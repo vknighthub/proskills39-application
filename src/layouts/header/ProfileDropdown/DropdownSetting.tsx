@@ -4,6 +4,7 @@ import Link from 'next/link'
 import avatar from '@/assets/images/avatar.png';
 import { useLogout } from '@/data/user';
 import Footer from './Footer'
+import { useTranslation } from 'next-i18next'
 
 type PageProps = {
     userdata: UserProfile,
@@ -12,6 +13,7 @@ type PageProps = {
 }
 
 const DropdownSetting = ({ userdata, toggle, setToggle }: PageProps) => {
+    const { t } = useTranslation('common');
 
     const { mutate: logout } = useLogout();
 
@@ -43,8 +45,8 @@ const DropdownSetting = ({ userdata, toggle, setToggle }: PageProps) => {
 
                             <div className="profile-link">
                                 {" "}
-                                <Link href="/08-profile-page" className="btn btn-small gradient-background">
-                                    My Profile
+                                <Link href="/profile-info" className="btn btn-small gradient-background">
+                                    {t('my-profile')}
                                 </Link>{" "}
                             </div>
                         </div>
@@ -56,25 +58,7 @@ const DropdownSetting = ({ userdata, toggle, setToggle }: PageProps) => {
                                     <svg className="crumina-icon">
                                         <use xlinkHref="#user-icon" />
                                     </svg>
-                                    Profile Info
-                                </Link>{" "}
-                            </li>
-                            <li className="account">
-                                {" "}
-                                <Link href="/account-setting" onClick={() => setToggle(!toggle)}>
-                                    <svg className="crumina-icon">
-                                        <use xlinkHref="#settings-icon" />
-                                    </svg>
-                                    Account Settings
-                                </Link>{" "}
-                            </li>
-                            <li className="notification">
-                                {" "}
-                                <Link href="/notification-setting" onClick={() => setToggle(!toggle)}>
-                                    <svg className="crumina-icon">
-                                        <use xlinkHref="#slide-filter-icon" />
-                                    </svg>
-                                    Notification Settings
+                                    {t('text-profile-info')}
                                 </Link>{" "}
                             </li>
                             <li className="artwork">
@@ -83,7 +67,7 @@ const DropdownSetting = ({ userdata, toggle, setToggle }: PageProps) => {
                                     <svg className="crumina-icon">
                                         <use xlinkHref="#picture-icon" />
                                     </svg>
-                                    Become a seller
+                                    {t('text-become-seller')}
                                 </Link>{" "}
                             </li>
                             <li className="wallet">
@@ -92,16 +76,16 @@ const DropdownSetting = ({ userdata, toggle, setToggle }: PageProps) => {
                                     <svg className="crumina-icon">
                                         <use xlinkHref="#wallet-icon" />
                                     </svg>
-                                    Wallet info
+                                    {t('text-wallet-info')}
                                 </Link>{" "}
                             </li>
                             <li className="verification">
                                 {" "}
-                                <Link href="/user-verify" onClick={() => setToggle(!toggle)}>
+                                <Link href="https://admin.proskills39.com/?returnUrl=user-verify" onClick={() => setToggle(!toggle)}>
                                     <svg className="crumina-icon">
                                         <use xlinkHref="#circle-checked-icon" />
                                     </svg>
-                                    Get Verified
+                                    {t('text-get-verified')}
                                 </Link>{" "}
                             </li>
                             <li className="logout">
@@ -110,7 +94,7 @@ const DropdownSetting = ({ userdata, toggle, setToggle }: PageProps) => {
                                     <svg className="crumina-icon">
                                         <use xlinkHref="#logout-icon" />
                                     </svg>
-                                    Log Out
+                                    {t('text-logout')}
                                 </Link>
                             </li>
                         </ul>

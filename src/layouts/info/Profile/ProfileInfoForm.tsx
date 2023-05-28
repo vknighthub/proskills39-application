@@ -16,7 +16,7 @@ const ProfileInfoForm = ({ profileinfo }: PageProps) => {
   const { t } = useTranslation('common');
 
   const updateProfileValidationSchema = yup.object().shape({
-    username: yup.string().required(),
+    address: yup.string().required(),
     phone: yup.string().required(),
     email: yup.string().required(),
     fullname: yup.string().required(),
@@ -30,9 +30,15 @@ const ProfileInfoForm = ({ profileinfo }: PageProps) => {
     resolver: yupResolver(updateProfileValidationSchema)
   });
 
-  const { mutate: updateprofile, isSuccess } = useMutation(client.users.updateprofile, {
-    onSuccess: (data) => {
-
+  const { mutate: updateprofile } = useMutation(client.users.updateprofile, {
+    onSuccess: () => {
+      Swal.fire({
+        position: 'top',
+        icon: 'success',
+        color: 'green',
+        title: 'Succeed!',
+        text: `${t('text-update-profile-success')}`
+      })
     },
     onError: (errorAsUnknown) => {
       const error = errorAsUnknown as AxiosError<AuthResponse>;
@@ -48,10 +54,8 @@ const ProfileInfoForm = ({ profileinfo }: PageProps) => {
   });
 
   const onSubmit: SubmitHandler<UpdateProfileInput> = (data) => {
-    
     updateprofile(data)
   };
-  console.log(errors)
 
   return (
     <div className="user-db-content-area">
@@ -70,8 +74,8 @@ const ProfileInfoForm = ({ profileinfo }: PageProps) => {
         </div>
         <div className="form-group">
           <div className="form-field">
-            <label htmlFor="username">{t('text-usernames')}</label>
-            <input type="text" id="username" defaultValue={profileinfo?.username} {...register('username')} />
+            <label htmlFor="username">{t('text-address')}</label>
+            <input type="text" id="username" defaultValue={profileinfo?.address} {...register('address')} />
           </div>
           <div className="form-field">
             <label htmlFor="phone">{t('text-phone')}</label>
