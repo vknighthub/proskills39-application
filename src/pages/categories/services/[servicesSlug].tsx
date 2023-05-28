@@ -57,7 +57,6 @@ export const getStaticProps: GetStaticProps<
             revalidate: 60, // In seconds
         };
     } catch (error) {
-        console.error(error)
         //* if we get here, the product doesn't exist or something else went wrong
         return {
             notFound: true,

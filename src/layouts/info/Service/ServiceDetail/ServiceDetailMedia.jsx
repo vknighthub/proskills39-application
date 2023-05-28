@@ -114,7 +114,7 @@ const ServiceDetailMedia = ({ data, compare }) => {
                         </div>
 
                         <div className="placed-seller-description mt-3">
-                            <span className="mt-3">{parse(data.seller.introduce)}</span>
+                            <span className="mt-3">{data.seller.introduce && parse(data.seller.introduce)}</span>
                         </div>
                     </div>
                 </div>

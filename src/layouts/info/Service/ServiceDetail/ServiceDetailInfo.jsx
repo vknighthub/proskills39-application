@@ -1,7 +1,6 @@
 import parse from 'html-react-parser';
 
 const ServiceDetailInfo = ({data}) => {
-    console.log(data)
     return (
         <>
             <div className="page-title-section">

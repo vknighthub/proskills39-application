@@ -36,6 +36,7 @@ export const getStaticProps: GetStaticProps<
     ParsedQueryParams
 > = async ({ params, locale }) => {
     const { servicedetailSlug } = params!; //* we know it's required because of getStaticPaths
+    console.log(servicedetailSlug)
     try {
         const servicedetail = await client.services.detail({
             slug: servicedetailSlug,
@@ -49,6 +50,8 @@ export const getStaticProps: GetStaticProps<
             revalidate: 60, // In seconds
         };
     } catch (error) {
+        console.log(error)
+
         //* if we get here, the product doesn't exist or something else went wrong
         return {
             notFound: true,
