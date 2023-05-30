@@ -1,4 +1,4 @@
-import { ApplyLetterInput, ApplyLetterResponse, AuthResponse, BlogDetailResponse, BlogParams, BlogResponse, CategoriesPaginator, Category, CategoryPaginator, ChallegePaginator, Challenge, ChallengeResult, DealInput, ForgotPasswordInput, ForgotPasswordResponse, GetParams, HomePageResult, InvitateFriendInput, InviteFriendResponse, LoginUserInput, NotificationResponse, Proposal, ProposalQueryOptions, ProposalResult, RegisterUserInput, Service, ServiceDealResponse, ServiceDetailPaginator, ServicePaginator, SettingQuery, Settings, SettingsQueryOptions, UpdateProfileInput, UserProfileResult, UserUpdateResult } from "@/types";
+import { ApplyLetterInput, ApplyLetterResponse, AuthResponse, BlogDetailResponse, BlogParams, BlogResponse, CategoriesPaginator, Category, CategoryPaginator, ChallegePaginator, Challenge, ChallengeResult, DealInput, ForgotPasswordInput, ForgotPasswordResponse, GetParams, HomePageResult, InvitateFriendInput, InviteFriendResponse, LoginUserInput, NotificationResponse, Proposal, ProposalQueryOptions, ProposalResult, RegisterUserInput, Service, ServiceDealResponse, ServiceDetailPaginator, ServicePaginator, SettingQuery, Settings, SettingsQueryOptions, SubmitDealInput, SubmitDealResponse, UpdateProfileInput, UserProfileResult, UserUpdateResult } from "@/types";
 import { API_ENDPOINTS } from "./endpoints";
 import { HttpClient } from './http-client';
 
@@ -48,7 +48,7 @@ class Client {
         deal: (slug: DealInput) => HttpClient.get<ServiceDealResponse>(API_ENDPOINTS.SERVICEDEAL, { ...slug }),
         applyletter: (input: ApplyLetterInput) => HttpClient.post<ApplyLetterResponse>(API_ENDPOINTS.APPLY_LETTER, input),
         getbyparent: ({ slug, language }: GetParams) => HttpClient.get<ServicePaginator>(`${API_ENDPOINTS.SERVICESBYPARENT}/${slug}`, { language }),
-
+        submitdeal: (input: SubmitDealInput) => HttpClient.post<SubmitDealResponse>(API_ENDPOINTS.SUBMITDEAL, input)
     }
     notification = {
         get: (params?: SettingsQueryOptions) => HttpClient.get<NotificationResponse>(API_ENDPOINTS.NOTIFICATION, { ...params })

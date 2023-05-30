@@ -1,3 +1,4 @@
+import { useSubmitDeal } from "@/data/service";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -14,6 +15,18 @@ const ServiceDetailTab = ({ data }) => {
             element.scrollIntoView({ behavior: 'smooth' });
         }
     };
+
+    const { mutate: SubmitDeal } = useSubmitDeal()
+
+
+    const ProcessOffer = (serviceid) => {
+        SubmitDeal(
+            {
+                serviceid: serviceid,
+            }
+        )
+    }
+
 
     return (
         <>
@@ -76,7 +89,7 @@ const ServiceDetailTab = ({ data }) => {
                             </div>
                             <div className="mt-5">
                                 <div className="place-bid">
-                                    <button className="btn btn-wide btn-dark w-100">{`Continue with (v2p ${tabservice.price})`}</button>
+                                    <button onClick={() => ProcessOffer(tabservice.id)} className="btn btn-wide btn-dark w-100">{`Continue with (v2p ${tabservice.price})`}</button>
                                 </div>
                             </div>
                             <div className="mt-5 text-center">

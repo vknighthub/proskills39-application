@@ -843,3 +843,8 @@ export interface BlogParams {
 export interface BlogDetailResponse extends ResponseObject<BlogDetail> { }
 
 
+export interface SubmitDealInput {
+    serviceid: number
+}
+
+export interface SubmitDealResponse extends ResponseObject<{}> { }
