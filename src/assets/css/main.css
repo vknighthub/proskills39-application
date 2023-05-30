@@ -10627,7 +10627,7 @@ td[data-label="Date"] {
     justify-content: center;
 }
 
-.cryptoki-modal.open {
+.cryptoki-modal.show {
     visibility: visible;
     opacity: 1;
     transition-delay: 0s;
@@ -10839,6 +10839,7 @@ td[data-label="Date"] {
 .w-450 {
     width: 450px !important;
 }
+
 .w-200 {
     width: 200px !important;
 }
@@ -11087,4 +11088,7 @@ td[data-label="Date"] {
 
 .mt-auto {
     margin-top: auto !important;
+}
+.mw-20 {
+    min-width: 20rem !important;
 }

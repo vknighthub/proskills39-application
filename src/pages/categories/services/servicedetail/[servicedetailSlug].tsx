@@ -69,7 +69,7 @@ const ServiceDetail: NextPageWithLayout<
             <Seo title="ProSkills39 - Service"
                 description={servicedetailinfo.services.servicename}
                 url={routes.service.servicedetail(servicedetailinfo.services.slug)}
-                image_url={servicedetailinfo.services.image[0].url} />
+                image_url={servicedetailinfo.services.image?.[0].url} />
 
             <div className="product-page product-version-1">
                 <ServiceDetailMedia data={servicedetailinfo} compare={servicedetailinfo.comparepackage} />

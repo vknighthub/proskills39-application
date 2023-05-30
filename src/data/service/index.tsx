@@ -11,7 +11,7 @@ export const useSubmitDeal = () => {
         onSuccess: (data) => {
             if (data.errorcode === 0) {
                 Swal.fire({
-                    position: 'center',
+                    position: 'top-end',
                     icon: 'success',
                     color: 'green',
                     title: 'Succeed!',

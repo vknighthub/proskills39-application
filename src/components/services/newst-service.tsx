@@ -32,7 +32,7 @@ export const NewestService = ({ data }: PageProps) => {
                         />
                         <div className="featured-creators-wrapper">
                             <div className="featured-creators-info-wrapper">
-                                <div className="featured-creators-info">
+                                <div className="featured-creators-info mw-20">
                                     <div className="title h4">
                                         {" "}
                                         <Link href={`/categories/services/servicedetail/${service.slug}`}>
@@ -61,8 +61,8 @@ export const NewestService = ({ data }: PageProps) => {
                                         @{service.username}
                                     </div>
                                 </div>
-                                <div className="follow-me gradient-border_white-bg">
-                                    <button className="btn btn-normal">View detail!</button>
+                                <div className="follow-me gradient-border_white-bg ml-lg-1">
+                                    <Link href={`/categories/services/servicedetail/${service.slug}`} className="btn btn-normal">View detail!</Link>
                                 </div>
                             </div>
 

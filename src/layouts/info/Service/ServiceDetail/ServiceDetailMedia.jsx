@@ -37,7 +37,7 @@ const ServiceDetailMedia = ({ data, compare }) => {
                                 </a>
                             </div>
                             <div className="swiper-wrapper">
-                                {data.services.image.map((image, index) => (
+                                {data.services.image?.map((image, index) => (
                                     <SwiperSlide id="slide-1" className="swiper-slide" key={index}>
                                         <Image src={image.url} alt="product" width={300} height={300} />
                                     </SwiperSlide>

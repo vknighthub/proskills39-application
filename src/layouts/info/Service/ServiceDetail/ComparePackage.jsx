@@ -1,7 +1,6 @@
 import React from 'react'
 
 const ComparePackage = ({data}) => {
-    console.log(data)
 
     return (
         <div className="product-info product-seller" id="compare-package">
