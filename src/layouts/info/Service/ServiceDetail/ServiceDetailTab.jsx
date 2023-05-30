@@ -1,3 +1,4 @@
+import useAuth from "@/components/auth/use-auth";
 import { useSubmitDeal } from "@/data/service";
 import Link from "next/link";
 import { useState } from "react";
@@ -27,6 +28,7 @@ const ServiceDetailTab = ({ data }) => {
         )
     }
 
+    const { isAuthorized } = useAuth()
 
     return (
         <>
@@ -89,7 +91,9 @@ const ServiceDetailTab = ({ data }) => {
                             </div>
                             <div className="mt-5">
                                 <div className="place-bid">
-                                    <button onClick={() => ProcessOffer(tabservice.id)} className="btn btn-wide btn-dark w-100">{`Continue with (v2p ${tabservice.price})`}</button>
+                                    {isAuthorized &&
+                                        <button onClick={() => ProcessOffer(tabservice.id)} className="btn btn-wide btn-dark w-100">{`Continue with (v2p ${tabservice.price})`}</button>
+                                    }
                                 </div>
                             </div>
                             <div className="mt-5 text-center">
