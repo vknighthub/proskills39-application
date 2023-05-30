@@ -32,7 +32,7 @@ export const NewestService = ({ data }: PageProps) => {
                         />
                         <div className="featured-creators-wrapper">
                             <div className="featured-creators-info-wrapper">
-                                <div className="featured-creators-info mw-20">
+                                <div className="featured-creators-info mw-15">
                                     <div className="title h4">
                                         {" "}
                                         <Link href={`/categories/services/servicedetail/${service.slug}`}>
