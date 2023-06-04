@@ -826,6 +826,32 @@ export interface BlogDetail {
         avatar: string
     }
 }
+export interface Blogbyuser {
+    status: number
+    currentpage: number
+    limit: number
+    totalpage: number
+    total: number
+    data: BlogDetail[]
+}
+export interface Blogbycatagories {
+    status: number
+    currentpage: number
+    limit: number
+    totalpage: number
+    total: number
+    data: BlogDetail[]
+}
+
+export interface Blogtopview {
+    status: number
+    currentpage: number
+    limit: number
+    totalpage: number
+    total: number
+    data: BlogDetail[]
+}
+
 export interface Blog {
     blog: BlogDetail[]
     news: any[]
@@ -840,7 +866,12 @@ export interface BlogParams {
     language?: string
 }
 
-export interface BlogDetailResponse extends ResponseObject<BlogDetail> { }
+export interface BlogDetailResponse extends ResponseObject<{
+    blogdetail: BlogDetail
+    blogbyuser: Blogbyuser
+    blogbycatagories: Blogbycatagories
+    blogtopview: Blogtopview
+}> { }
 
 
 export interface SubmitDealInput {

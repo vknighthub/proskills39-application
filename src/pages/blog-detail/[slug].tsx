@@ -3,7 +3,7 @@ import { FetchBlogDetail } from '@/data/blog';
 import client from '@/data/client';
 import Layout from '@/layouts/_layout';
 import Seo from '@/layouts/_seo';
-import { NextPageWithLayout } from '@/types';
+import { BlogDetail, NextPageWithLayout } from '@/types';
 import parse from 'html-react-parser';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -23,47 +23,267 @@ const BlogDetailPage: NextPageWithLayout<
         refetch()
     }, [slug, locale, blogdetail])
 
+    const blog = data.blogdetail
+    const blogbyuser = data?.blogbyuser
+    const blogcategory = data?.blogbycatagories
+    const blogtopview = data?.blogtopview
+
+    console.log(blogtopview)
+
     return (
         <>
             <Seo title="ProSkills39 - Blog Detail"
-                description={blogdetail.result.data.introduce}
+                description={blogdetail.result.data.blogdetail.introduce}
                 url={routes.blogDetailUrl(slug)}
-                image_url={blogdetail.result.data.image}
+                image_url={blogdetail.result.data.blogdetail.image}
             />
             <div className="primary-content-area container content-padding">
                 <div className="single-post medium-section">
                     <div className="post-heading">
-                        
+
                         <h1>
-                            {data.title}
+                            {blog.title}
                         </h1>
                         <div className="news-meta">
                             <div className="post-author">
                                 by{" "}
-                                <Link href={`/seller/${data.author.username}`}>
-                                    {data.author.fullname}
+                                <Link href={`/seller/${blog.author.username}`}>
+                                    {blog.author.fullname}
                                 </Link>
-                                , {data.publdt}
+                                , {blog.publdt}
                             </div>
 
                         </div>
                     </div>
                     <div className="post-featured-image">
                         <Image
-                            src={data.image}
-                            alt={data.title}
+                            src={blog.image}
+                            alt={blog.title}
                             width={940}
                             height={530}
                         />
                     </div>
 
                     <div className="post-content">
-                        {parse(data.content)}
+                        {parse(blog.content)}
                     </div>
                     <div className="comments-section">
                     </div>
                 </div>
             </div>
+
+            <div className="primary-content-area container content-padding">
+                <div className="page-title-section">
+                    <h2>
+                        <span className="gradient-text">Blog by {blog.author.fullname} </span>
+                    </h2>
+                </div>
+                {/*  POSTS GRID */}
+                {blogbyuser.total !== 0 ?
+                    <div className="news-feed grid-3-columns" >
+                        {blogbyuser.data.map((blog: BlogDetail) => (
+                            <div className="news-item" key={blog.id} style={{ maxWidth: '75%' }}>
+                                <div className="news-thumb" >
+                                    <Link href={`/blog-detail/${blog.slug}`}>
+                                        <Image
+                                            src={blog.image}
+                                            alt=""
+                                            width={458}
+                                            height={300}
+                                            style={{ maxWidth: '100%', maxHeight: '300px', minHeight: '300px' }}
+                                        />
+                                    </Link>
+                                </div>
+                                <div className="news-content">
+                                    <div className="news-meta">
+                                        <div className="news-tags">
+                                            <span className="tag-item">
+                                                {blog.catalog.name}
+                                            </span>
+                                        </div>
+                                        by{" "}
+                                        <Link href={blog.author.username}>
+                                            {blog.author.fullname}
+                                        </Link>
+                                        , {blog.publdt}
+                                    </div>
+                                    <div className="news-title h5">
+                                        {" "}
+                                        <Link href={`/blog-detail/${blog.slug}`}>
+                                            {blog.title}
+                                        </Link>{" "}
+                                    </div>
+                                    <div className="news-excerpt">
+                                        {parse(blog.introduce)}
+                                    </div>
+                                    <div className="read-more-link">
+                                        {" "}
+                                        <Link href={`/blog-detail/${blog.slug}`}>
+
+                                            Read More
+                                            <svg className="crumina-icon">
+                                                <use xlinkHref="#arrow-right2-icon" />
+                                            </svg>
+                                        </Link>{" "}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    :
+                    <>
+                        <div className="page-title-section">
+                            <h4>
+                                <span className="gradient-text">There are no related posts</span>
+                            </h4>
+                        </div>
+                    </>
+                }
+
+                {/*  PAGINATION */}
+            </div>
+
+            <div className="primary-content-area container content-padding">
+                <div className="page-title-section">
+                    <h2>
+                        <span className="gradient-text">Blog related to {blog.catalog.name} </span>
+                    </h2>
+                </div>
+                {/*  POSTS GRID */}
+                {blogcategory.total !== 0 ?
+                    <div className="news-feed grid-3-columns" >
+                        {blogcategory.data.map((blog: BlogDetail) => (
+                            <div className="news-item" key={blog.id} style={{ maxWidth: '75%' }}>
+                                <div className="news-thumb" >
+                                    <Link href={`/blog-detail/${blog.slug}`}>
+                                        <Image
+                                            src={blog.image}
+                                            alt=""
+                                            width={458}
+                                            height={300}
+                                            style={{ maxWidth: '100%', maxHeight: '300px', minHeight: '300px' }}
+                                        />
+                                    </Link>
+                                </div>
+                                <div className="news-content">
+                                    <div className="news-meta">
+                                        <div className="news-tags">
+                                            <span className="tag-item">
+                                                {blog.catalog.name}
+                                            </span>
+                                        </div>
+                                        by{" "}
+                                        <Link href={blog.author.username}>
+                                            {blog.author.fullname}
+                                        </Link>
+                                        , {blog.publdt}
+                                    </div>
+                                    <div className="news-title h5">
+                                        {" "}
+                                        <Link href={`/blog-detail/${blog.slug}`}>
+                                            {blog.title}
+                                        </Link>{" "}
+                                    </div>
+                                    <div className="news-excerpt">
+                                        {parse(blog.introduce)}
+                                    </div>
+                                    <div className="read-more-link">
+                                        {" "}
+                                        <Link href={`/blog-detail/${blog.slug}`}>
+
+                                            Read More
+                                            <svg className="crumina-icon">
+                                                <use xlinkHref="#arrow-right2-icon" />
+                                            </svg>
+                                        </Link>{" "}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    :
+                    <>
+                        <div className="page-title-section">
+                            <h4>
+                                <span className="gradient-text">There are no related posts</span>
+                            </h4>
+                        </div>
+                    </>
+                }
+                {/*  PAGINATION */}
+            </div>
+
+            <div className="primary-content-area container content-padding">
+                <div className="page-title-section">
+                    <h2>
+                        <span className="gradient-text">Blog Top View</span>
+                    </h2>
+                </div>
+                {/*  POSTS GRID */}
+                {blogtopview.total !== 0 ?
+                    <div className="news-feed grid-3-columns">
+                        {blogtopview.data.map((blog: BlogDetail) => (
+                            <div className="news-item" key={blog.id}>
+                                <div className="news-thumb" >
+                                    <Link href={`/blog-detail/${blog.slug}`} style={{ maxWidth: '75%' }}>
+                                        <Image
+                                            src={blog.image}
+                                            alt=""
+                                            width={458}
+                                            height={300}
+                                            style={{ maxWidth: '100%', maxHeight: '300px', minHeight: '300px' }}
+                                        />
+                                    </Link>
+                                </div>
+                                <div className="news-content">
+                                    <div className="news-meta">
+                                        <div className="news-tags">
+                                            <span className="tag-item">
+                                                {blog.catalog.name}
+                                            </span>
+                                        </div>
+                                        by{" "}
+                                        <Link href={blog.author.username}>
+                                            {blog.author.fullname}
+                                        </Link>
+                                        , {blog.publdt}
+                                    </div>
+                                    <div className="news-title h5">
+                                        {" "}
+                                        <Link href={`/blog-detail/${blog.slug}`}>
+                                            {blog.title}
+                                        </Link>{" "}
+                                    </div>
+                                    <div className="news-excerpt">
+                                        {parse(blog.introduce)}
+                                    </div>
+                                    <div className="read-more-link">
+                                        {" "}
+                                        <Link href={`/blog-detail/${blog.slug}`}>
+
+                                            Read More
+                                            <svg className="crumina-icon">
+                                                <use xlinkHref="#arrow-right2-icon" />
+                                            </svg>
+                                        </Link>{" "}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    :
+                    <>
+                        <div className="page-title-section">
+                            <h4>
+                                <span className="gradient-text">There are no related posts</span>
+                            </h4>
+                        </div>
+                    </>
+                }
+                {/*  PAGINATION */}
+            </div>
+
+
         </>
     )
 }
