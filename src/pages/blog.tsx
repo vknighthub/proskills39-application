@@ -121,14 +121,6 @@ const BlogPage: NextPageWithLayout = (props: Props) => {
     ]
 
 
-
-    // const data = {
-    //     blog: blog?.blog,
-    //     news: list_news,
-    //     business: list_business,
-    //     freelancer: list_freelancer,
-    // }
-
     return (
         <>
             <Seo

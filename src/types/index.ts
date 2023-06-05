@@ -162,9 +162,24 @@ export interface Address {
     district: string
 }
 
+export interface Bestservice {
+    id: number
+    image: string
+    link: string
+}
+
+export interface Mostpopularseller {
+    id: number
+    creator: string
+    tagName: string
+    numberofservice: number
+    avatar?: string
+    bestservice: Bestservice[]
+}
+
 export interface HomePage {
     popuparcategories: Popuparcategory[]
-    mostpopularseller: any[]
+    mostpopularseller: Mostpopularseller[]
     mostpopularservice: Mostpopularservice[]
     newestservice: Newestservice[]
 }

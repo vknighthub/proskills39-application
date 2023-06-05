@@ -15,6 +15,7 @@ const Home: NextPageWithLayout<
 > = ({ homeinfo }) => {
 
   const homepageinfo = homeinfo?.result.data
+
   return (
     <>
       <Seo
@@ -26,7 +27,7 @@ const Home: NextPageWithLayout<
       <div className="primary-content-area bottom-padding-70">
         <HomePopularCategory data={homepageinfo.popuparcategories} />
         <HomePopularService />
-        <HomeTopCreators />
+        <HomeTopCreators data ={homepageinfo.mostpopularseller}/>
 
         <NewestService data = {homepageinfo.newestservice} />
       </div>

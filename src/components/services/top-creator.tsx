@@ -1,170 +1,16 @@
 import avatar from '@/assets/images/avatar.png';
 import project_thumb_1 from '@/assets/images/content/previews/project-thumb-1.png';
+import { Mostpopularseller } from '@/types';
 
 
 import Image from "next/image";
 import Link from "next/link";
 
-const topcreator = [
-    {
-        id: '01',
-        link: '/seller/01',
-        creator: 'Dexter Stark',
-        tagName: '@DexterStark',
-        numberofservice: 135,
-        avatar: avatar,
-        bestservice: [
-            {
-                id: 1, 
-                image: project_thumb_1,
-                link: '/services/1',
-            },
-            {
-                id: 2,
-                image: project_thumb_1,
-                link: '/services/2',
-            },
-            {
-                id: 3,
-                image: project_thumb_1,
-                link: '/services/3',
-            }
-        ]
+type Props = {
+    data: Mostpopularseller[]
+}
 
-    },
-    {
-        id: '02',
-        link: '/seller/01',
-        creator: 'Jackie Jones',
-        tagName: '@JackieJ',
-        numberofservice: 107,
-        avatar: avatar,
-        bestservice: [
-            {
-                id: 1,
-                image: project_thumb_1,
-                link: '/services/4',
-            },
-            {
-                id: 2,
-                image: project_thumb_1,
-                link: '/services/5',
-            },
-            {
-                id: 3,
-                image: project_thumb_1,
-                link: '/services/6',
-            }
-        ]
-    },
-    {
-        id: '03',
-        link: '/seller/01',
-        creator: 'Noir Artworks',
-        tagName: '@noirArtks',
-        numberofservice: 94,
-        avatar: avatar,
-        bestservice: [
-            {
-                id: 1,
-                image: project_thumb_1,
-                link: '/services/7',
-            },
-            {
-                id: 2,
-                image: project_thumb_1,
-                link: '/services/8',
-            },
-            {
-                id: 3,
-                image: project_thumb_1,
-                link: '/services/9',
-            }
-        ]
-
-    },
-    {
-        id: '04',
-        link: '/seller/01',
-        creator: 'The Green Goo',
-        tagName: '@daGreenGoo',
-        numberofservice: 83,
-        avatar: avatar,
-        bestservice: [
-            {
-                id: 1,
-                image: project_thumb_1,
-                link: '/services/10',
-            },
-            {
-                id: 2,
-                image: project_thumb_1,
-                link: '/services/11',
-            },
-            {
-                id: 3,
-                image: project_thumb_1,
-                link: '/services/12',
-            }
-        ]
-
-    },
-    {
-        id: '05',
-        link: '/seller/01',
-        creator: 'Nicholas Stevens',
-        tagName: '@nickstevens',
-        numberofservice: 50,
-        avatar: avatar,
-        bestservice: [
-            {
-                id: 1,
-                image: project_thumb_1,
-                link: '/services/61',
-            },
-            {
-                id: 2,
-                image: project_thumb_1,
-                link: '/services/62',
-            },
-            {
-                id: 3,
-                image: project_thumb_1,
-                link: '/services/63',
-            }
-        ]
-
-    },
-    {
-        id: '06',
-        link: '/seller/01',
-        creator: 'Bearded Wonder',
-        tagName: '@beardedwndr',
-        numberofservice: 26,
-        avatar: avatar,
-        bestservice: [
-            {
-                id: 1,
-                image: project_thumb_1,
-                link: '/services/68',
-            },
-            {
-                id: 2,
-                image: project_thumb_1,
-                link: '/services/69',
-            },
-            {
-                id: 3,
-                image: project_thumb_1,
-                link: '/services/63',
-            }
-        ]
-
-    }
-]
-
-
-const HomeTopCreators = () => {
+const Homedatas = ({ data }: Props) => {
     return (
         <div className="container section-padding">
             <div className="section-title-wrapper">
@@ -174,14 +20,14 @@ const HomeTopCreators = () => {
             </div>
             <div className="top-creators-box grid-2-columns">
 
-                {topcreator.map((creator, index) => (
+                {data.map((creator, index) => (
                     <div className="top-creator-item" key={index}>
                         <div className="creator-number">{creator.id}</div>
-                        <div className="creator-box">
+                        <div className="creator-box" style={{ minWidth: 250 }}>
                             <div className="avatar box-64">
-                                <Link href={creator.link}>
+                                <Link href={`/user-profile/${creator.tagName}`}>
                                     <Image
-                                        src={creator.avatar}
+                                        src={creator?.avatar ? creator?.avatar : avatar}
                                         alt="avatar"
                                         loading="lazy"
                                         width={100}
@@ -204,19 +50,16 @@ const HomeTopCreators = () => {
                                 <div className="creator-meta">{creator.tagName}</div>
                             </div>
                         </div>
-                        <div className="projects-numberofservice">
-                            <div className="number title">{creator.numberofservice}</div>
-                            <div className="label">Service</div>
-                        </div>
-                        {creator.bestservice.map((bestservice, index) => (
-                            <div className="projects-bestservice" key={index}>
+                        {creator.bestservice.slice(0, 3).map((bestservice, index) => (
+                            <div className="projects-bestservice" key={index} >
                                 <div className="preview-box box-68">
-                                    <Link href={bestservice.link}>
+                                    <Link href={`/categories/services/servicedetail/${bestservice.link}`}>
                                         <Image
-                                            src={project_thumb_1}
+                                            src={bestservice.image}
                                             height={68}
                                             width={68}
-                                            alt=""
+                                            style={{ minHeight: 68 }}
+                                            alt={bestservice.id.toString()}
                                             loading="lazy"
                                         />
                                     </Link>
@@ -231,4 +74,4 @@ const HomeTopCreators = () => {
         </div>
     )
 }
-export default HomeTopCreators;
+export default Homedatas;
