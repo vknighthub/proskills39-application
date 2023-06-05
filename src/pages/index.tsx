@@ -28,7 +28,6 @@ const Home: NextPageWithLayout<
         <HomePopularCategory data={homepageinfo.popuparcategories} />
         <HomePopularService />
         <HomeTopCreators data ={homepageinfo.mostpopularseller}/>
-
         <NewestService data = {homepageinfo.newestservice} />
       </div>
     </>

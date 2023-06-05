@@ -43,7 +43,7 @@ const Homedatas = ({ data }: Props) => {
                             <div className="creator-meta">
                                 <div className="title">
                                     {" "}
-                                    <Link href="/seller/01">
+                                    <Link href={`/user-profile/${creator.tagName}`}>
                                         {creator.creator}
                                     </Link>{" "}
                                 </div>

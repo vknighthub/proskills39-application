@@ -5,8 +5,6 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const ServiceList = ({ service }) => {
-    console.log(service)
-
     return (
 
         <div className="featured-item">

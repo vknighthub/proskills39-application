@@ -1,5 +1,4 @@
 const Paggination = ({ setActive, active, length, sort, className }) => {
-  console.log((active + 1) * sort, length);
   return (
     <div
       className={`pagination-section ${className ? className : "flex-right"}`}

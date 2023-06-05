@@ -3,22 +3,20 @@ import profilecover from '@/assets/images/content/profile/profile-cover-1.png'
 import routes from '@/config/routes'
 import { FetchUserProfile } from '@/data/blog'
 import client from '@/data/client'
+import ServiceListOfSeller from '@/layouts/info/Seller/ServiceListOfSeller'
+import Servicepopular from '@/layouts/info/Seller/Servicepopular'
 import Layout from '@/layouts/_layout'
 import Seo from '@/layouts/_seo'
 import { NextPageWithLayout, UserProfilePageResponse } from '@/types'
 import { Icon } from '@iconify/react'
+import parse from 'html-react-parser'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import invariant from 'tiny-invariant'
-import parse from 'html-react-parser';
-import { dblock } from '@/utils/util'
-import ServiceList from '@/layouts/info/Service/ServiceList'
-import ServiceListOfSeller from '@/layouts/info/Seller/ServiceListOfSeller'
-import Servicepopular from '@/layouts/info/Seller/Servicepopular'
-import ServiceTopAvargage from './../../layouts/info/Seller/ServiceTopAvargage';
+import ServiceTopAvargage from './../../layouts/info/Seller/ServiceTopAvargage'
 
 type PageProps = {
     username: string;
@@ -125,7 +123,7 @@ const UserProfilePage: NextPageWithLayout<
                         </div>
 
                         <div className="author-description">
-                            {parse(data.profile.aboutme)}
+                            {data.profile.aboutme && parse(data.profile.aboutme)}
                         </div>
                     </div>
                 </div>
