@@ -21,6 +21,7 @@ const routes = {
     blog: 'blog',
     community: 'community-standard',
     blogDetailUrl: (slug?: string) => `blog-detail/${slug}`,
+    userprofile: (slug?: string) => `user-profile/${slug}`
 
 }
 export default routes;

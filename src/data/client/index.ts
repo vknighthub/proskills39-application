@@ -1,4 +1,4 @@
-import { ApplyLetterInput, ApplyLetterResponse, AuthResponse, BlogDetailResponse, BlogParams, BlogResponse, CategoriesPaginator, Category, CategoryPaginator, ChallegePaginator, Challenge, ChallengeResult, DealInput, ForgotPasswordInput, ForgotPasswordResponse, GetParams, HomePageResult, InvitateFriendInput, InviteFriendResponse, LoginUserInput, NotificationResponse, Proposal, ProposalQueryOptions, ProposalResult, RegisterUserInput, Service, ServiceDealResponse, ServiceDetailPaginator, ServicePaginator, SettingQuery, Settings, SettingsQueryOptions, SubmitDealInput, SubmitDealResponse, UpdateProfileInput, UserProfileResult, UserUpdateResult } from "@/types";
+import { ApplyLetterInput, ApplyLetterResponse, AuthResponse, BlogDetailResponse, BlogParams, BlogResponse, CategoriesPaginator, Category, CategoryPaginator, ChallegePaginator, Challenge, ChallengeResult, DealInput, ForgotPasswordInput, ForgotPasswordResponse, GetParams, HomePageResult, InvitateFriendInput, InviteFriendResponse, LoginUserInput, NotificationResponse, Proposal, ProposalQueryOptions, ProposalResult, RegisterUserInput, Service, ServiceDealResponse, ServiceDetailPaginator, ServicePaginator, SettingQuery, Settings, SettingsQueryOptions, SubmitDealInput, SubmitDealResponse, UpdateProfileInput, UserInfoInput, UserProfilePage, UserProfilePageResponse, UserProfileResult, UserUpdateResult } from "@/types";
 import { API_ENDPOINTS } from "./endpoints";
 import { HttpClient } from './http-client';
 
@@ -18,7 +18,8 @@ class Client {
         updateprofile: (user: UpdateProfileInput) =>
             HttpClient.put<UserUpdateResult>(`${API_ENDPOINTS.UPDATE_USER}`, user),
         invitefriend: (input: InvitateFriendInput) => HttpClient.post<InviteFriendResponse>(API_ENDPOINTS.INVITE_FRIEND, input),
-        forgotpassword: (input: ForgotPasswordInput) => HttpClient.post<ForgotPasswordResponse>(API_ENDPOINTS.FORGOT_PASSWORD, input)
+        forgotpassword: (input: ForgotPasswordInput) => HttpClient.post<ForgotPasswordResponse>(API_ENDPOINTS.FORGOT_PASSWORD, input),
+        userinfo: ({ username }: UserInfoInput) => HttpClient.get<UserProfilePageResponse>(API_ENDPOINTS.USER_INFO, { username })
     }
     fund = {
         all: () =>

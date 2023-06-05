@@ -42,3 +42,25 @@ export const FetchBlogDetail = (slug: string, locale: string, initData: any) => 
         error
     };
 }
+
+export const FetchUserProfile = (username: string, initData: any) => {
+    const { data, isLoading, error, refetch } = useQuery({
+        queryKey: 'user-profile-blog',
+        queryFn: () =>
+            client.users.userinfo(
+                {
+                    username: username
+                }
+            ),
+        initialData: initData
+
+    }
+    );
+
+    return {
+        data: data?.result.data,
+        refetch,
+        isLoading,
+        error
+    };
+}

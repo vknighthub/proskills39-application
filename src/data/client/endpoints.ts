@@ -23,7 +23,8 @@ export const API_ENDPOINTS = {
     FORGOT_PASSWORD: '/user/resetpassword',
     BLOG: '/blog/getlistblog',
     BLOGDETAIL:'/blog/getblogbyslug',
-    SUBMITDEAL: '/services/user/orderengagament'
+    SUBMITDEAL: '/services/user/orderengagament',
+    USER_INFO: '/user/user/getprofileseller',
 
     
 }

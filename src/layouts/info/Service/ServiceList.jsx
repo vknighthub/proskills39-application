@@ -5,37 +5,33 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const ServiceList = ({ service }) => {
+    console.log(service)
+
     return (
 
         <div className="featured-item">
             <div className="featured-item-wrapper">
-                <div className="featured-item-content">
-                    <div className="fav-counter">
-                        <svg className="crumina-icon">
-                            <use xlinkHref="#heart-icon" />
-                        </svg>{" "}
-                        <span className="count">10</span>
-                    </div>
+                <div className="featured-item-content" style={{ minHeight: 400 }}>
                     <div className="featured-item-image ">
                         {" "}
                         <Link href={`/categories/services/servicedetail/${service.slug}`}>
                             <Swiper {...artworksCarousel} id="homeSlider" className="swiper">
                                 <div className="categories-nav">
-                                    <a className="arrow arrow-left swiper-button-prev">
+                                    <button className="arrow arrow-left swiper-button-prev">
                                         <svg className="crumina-icon">
                                             <use xlinkHref="#arrow-left2-icon" />
                                         </svg>
-                                    </a>
-                                    <a className="arrow arrow-right swiper-button-next">
+                                    </button>
+                                    <button className="arrow arrow-right swiper-button-next">
                                         <svg className="crumina-icon">
                                             <use xlinkHref="#arrow-right2-icon" />
                                         </svg>
-                                    </a>
+                                    </button>
                                 </div>
                                 <div className="swiper-wrapper">
                                     {service.overviews.files.map((file, index) => (
                                         <SwiperSlide id="slide-1" className="swiper-slide" key={index}>
-                                            <Image src={file.url} alt={file.title} width={300} height={300} />
+                                            <Image src={file.url} alt={file.title} width={300} height={300} style={{ minHeight: 200 }} />
                                         </SwiperSlide>
                                     ))}
                                 </div>

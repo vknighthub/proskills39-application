@@ -270,6 +270,8 @@ export interface UserProfile {
     first_login: boolean
     socials?: Social[]
     wallet?: Wallet[]
+    isSeller?: boolean
+    isBuyer?: boolean
 }
 export interface UserInfor {
     username: string,
@@ -879,3 +881,85 @@ export interface SubmitDealInput {
 }
 
 export interface SubmitDealResponse extends ResponseObject<{}> { }
+
+
+export interface ServiceData {
+    id: number
+    cate_id: number
+    catemasterid: number
+    cateparentid: number
+    industry_id: number
+    username: string
+    title: string
+    slug: string
+    language: string
+    descriptions: string
+    status: string
+    tags: string
+    type: string
+    price: number
+    sale_price: any
+    min_price: number
+    max_price: number
+    numberofdaydelivery: number
+    totalview: any
+    totalorder: any
+    totalcomment: any
+    ostar: number
+    tstar: number
+    thstar: number
+    fostar: number
+    fistar: number
+    averagerating: number
+    create_at: string
+    update_at: string
+    delete_at: any
+    approveddate: any
+    userapproved: any
+    expired_date: string
+    introduce: string
+    overviews: ServiceOverview
+    sellerInfor: SellerInfor
+}
+
+export interface Allservice {
+    status: number
+    currentpage: number
+    limit: number
+    totalpage: number
+    total: number
+    data: ServiceData[]
+}
+
+export interface Servicepopular {
+    status: number
+    currentpage: number
+    limit: number
+    totalpage: number
+    total: number
+    data: ServiceData[]
+}
+
+export interface Servicetopaverage {
+    status: number
+    currentpage: number
+    limit: number
+    totalpage: number
+    total: number
+    data: ServiceData[]
+}
+export interface UserServices {
+    allservice: Allservice
+    servicepopular: Servicepopular
+    servicetopaverage: Servicetopaverage
+}
+export interface UserProfilePage {
+    profile: UserProfile
+    services: UserServices
+}
+
+export interface UserProfilePageResponse extends ResponseObject<UserProfilePage> { }
+
+export interface UserInfoInput {
+    username: string
+}
