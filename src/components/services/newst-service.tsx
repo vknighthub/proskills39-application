@@ -42,8 +42,8 @@ export const NewestService = ({ data }: PageProps) => {
                                     <div className="item-meta">
                                         <span className="avatar box-26">
                                             {" "}
-                                            <Link href="/08-profile-page">
-                                                {service.sellerInfor.avatar &&
+                                            <Link href={`/user-profile/${service.username}`}>
+                                                {service.sellerInfor?.avatar &&
                                                     <Image
                                                         src={service.sellerInfor.avatar}
                                                         height={100}
