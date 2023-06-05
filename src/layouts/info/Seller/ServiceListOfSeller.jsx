@@ -1,6 +1,6 @@
 import Paggination from '@/components/styles/Paggination';
 import ServiceList from '../Service/ServiceList';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { dblock } from '@/utils/util';
 
 
@@ -8,6 +8,8 @@ const ServiceListOfSeller = ({ data }) => {
     const [filterData, setFilterData] = useState(data && data);
     let sort = 8;
     const [active, setActive] = useState(0);
+
+
 
     return (
         <div className="primary-content-area container content-padding">
@@ -18,7 +20,7 @@ const ServiceListOfSeller = ({ data }) => {
             </div>
             <div className="featured-box grid-4-columns">
                 {data.map((serviceData, index) => (
-                    <div key={index} className={`${dblock(active, index, sort)}`}>
+                    <div key={index} className={`${dblock(active, index, sort)} `} >
                         <ServiceList service={serviceData} />
                     </div>
                 ))}

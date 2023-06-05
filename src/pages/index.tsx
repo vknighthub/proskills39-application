@@ -26,7 +26,7 @@ const Home: NextPageWithLayout<
       />
       <div className="primary-content-area bottom-padding-70">
         <HomePopularCategory data={homepageinfo.popuparcategories} />
-        <HomePopularService />
+        <HomePopularService data={homepageinfo.mostpopularservice} />
         <HomeTopCreators data ={homepageinfo.mostpopularseller}/>
         <NewestService data = {homepageinfo.newestservice} />
       </div>

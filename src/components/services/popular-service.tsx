@@ -5,6 +5,7 @@ import appreciate from '@/assets/images/service/appreciate.jpg'
 import the_most_order from '@/assets/images/service/Bigger-Orders.jpg'
 import special_offer from '@/assets/images/service/special-offer.jpg'
 import newest from '@/assets/images/service/newest.png'
+import { Mostpopularservice } from "@/types"
 
 const list_popular = [
     {
@@ -35,12 +36,17 @@ const list_popular = [
 
 ]
 
-const HomePopularService = () => {
+type Props = {
+    data: Mostpopularservice[]
+}
+
+const HomePopularService = ({ data }: Props) => {
+    console.log(data)
     return (
         <div className="container section-padding">
             <div className="section-title-wrapper">
                 <div className="section-title">
-                    Most popular <span className="gradient-text">Service</span>
+                    Most popular <span className="gradient-text">Sub categories</span>
                 </div>
                 <div className="all-items-link">
                     {" "}
@@ -49,19 +55,19 @@ const HomePopularService = () => {
                     </Link>{" "}
                 </div>
             </div>
-            <div className="latest-news-box grid-6-columns">
+            <div className="latest-news-box grid-5-columns">
 
-                {list_popular.map((popular, index) => (
+                {data.map((popular, index) => (
                     <div className="news-item" key={index}>
                         <div className="service-thumb">
                             {" "}
-                            <Link href="/14-blog-post-centered">
+                            <Link href={`/categories/services/${popular.slug}`}>
                                 <Image
                                     src={popular.image}
                                     width={460}
                                     height={200}
                                     sizes="min-height:300px"
-                                    alt=""
+                                    alt={popular.name}
                                 />
                             </Link>{" "}
                         </div>

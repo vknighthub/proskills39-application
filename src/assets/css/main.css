@@ -11092,7 +11092,7 @@ td[data-label="Date"] {
 .mw-15 {
     min-width: 15rem !important;
 }
-.grid-container {
+.grid-container-service {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 10px;
