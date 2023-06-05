@@ -28,7 +28,41 @@ const BlogDetailPage: NextPageWithLayout<
     const blogcategory = data?.blogbycatagories
     const blogtopview = data?.blogtopview
 
-    console.log(blogtopview)
+    useEffect(() => {
+        const gridItems = document.querySelectorAll('.grid-item-category');
+        let numColumns = Math.ceil(gridItems.length / 3);
+        if (numColumns <= 1) {
+            numColumns = 3
+        }
+        const gridContainer = document.querySelector('.grid-container-category') as HTMLElement;
+        if (gridContainer) {
+            gridContainer.style.gridTemplateColumns = `repeat(${numColumns}, 1fr)`;
+        }
+    }, []);
+
+    useEffect(() => {
+        const gridItems = document.querySelectorAll('.grid-item-user');
+        let numColumns = Math.ceil(gridItems.length / 3);
+        if (numColumns <= 2) {
+            numColumns = 3
+        }
+        const gridContainer = document.querySelector('.grid-container-user') as HTMLElement;
+        if (gridContainer) {
+            gridContainer.style.gridTemplateColumns = `repeat(${numColumns}, 1fr)`;
+        }
+    }, []);
+
+    useEffect(() => {
+        const gridItems = document.querySelectorAll('.grid-item-topview');
+        let numColumns = Math.ceil(gridItems.length / 3);
+        if (numColumns <= 2) {
+            numColumns = 3
+        }
+        const gridContainer = document.querySelector('.grid-container-topview') as HTMLElement;
+        if (gridContainer) {
+            gridContainer.style.gridTemplateColumns = `repeat(${numColumns}, 1fr)`;
+        }
+    }, []);
 
     return (
         <>
@@ -80,9 +114,9 @@ const BlogDetailPage: NextPageWithLayout<
                 </div>
                 {/*  POSTS GRID */}
                 {blogbyuser.total !== 0 ?
-                    <div className="news-feed grid-3-columns" >
+                    <div className="grid-container-user grid-3-columns" >
                         {blogbyuser.data.map((blog: BlogDetail) => (
-                            <div className="news-item" key={blog.id} style={{ maxWidth: '75%' }}>
+                            <div className="grid-item-user" key={blog.id} >
                                 <div className="news-thumb" >
                                     <Link href={`/blog-detail/${blog.slug}`}>
                                         <Image
@@ -151,9 +185,9 @@ const BlogDetailPage: NextPageWithLayout<
                 </div>
                 {/*  POSTS GRID */}
                 {blogcategory.total !== 0 ?
-                    <div className="news-feed grid-3-columns" >
+                    <div className="grid-container-category grid-3-columns" >
                         {blogcategory.data.map((blog: BlogDetail) => (
-                            <div className="news-item" key={blog.id} style={{ maxWidth: '75%' }}>
+                            <div className="grid-item-category" key={blog.id} >
                                 <div className="news-thumb" >
                                     <Link href={`/blog-detail/${blog.slug}`}>
                                         <Image
@@ -221,11 +255,11 @@ const BlogDetailPage: NextPageWithLayout<
                 </div>
                 {/*  POSTS GRID */}
                 {blogtopview.total !== 0 ?
-                    <div className="news-feed grid-3-columns">
+                    <div className="grid-container-topview grid-3-columns">
                         {blogtopview.data.map((blog: BlogDetail) => (
-                            <div className="news-item" key={blog.id}>
+                            <div className="news-item-topview" key={blog.id}>
                                 <div className="news-thumb" >
-                                    <Link href={`/blog-detail/${blog.slug}`} style={{ maxWidth: '75%' }}>
+                                    <Link href={`/blog-detail/${blog.slug}`} >
                                         <Image
                                             src={blog.image}
                                             alt=""
