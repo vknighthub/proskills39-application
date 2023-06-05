@@ -39,7 +39,7 @@ const Blog = ({ list_blog }: Props) => {
                                     </span>
                                 </div>
                                 by{" "}
-                                <Link href={blog.author.username}>
+                                <Link href={`/user-profile/${blog.author.username}`}>
                                     {blog.author.fullname}
                                 </Link>
                                 , {blog.publdt}
