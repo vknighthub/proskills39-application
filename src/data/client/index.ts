@@ -44,11 +44,11 @@ class Client {
 
     }
     services = {
-        get: ({ slug, language, page, limit }: GetParams) => HttpClient.get<ServicePaginator>(`${API_ENDPOINTS.SERVICES}`, { slug, language, page, limit }),
+        get: ({ slug, language, page, limit, seller }: GetParams) => HttpClient.get<ServicePaginator>(`${API_ENDPOINTS.SERVICES}`, { slug, language, page, limit, seller }),
         detail: ({ slug, language }: GetParams) => HttpClient.get<ServiceDetailPaginator>(`${API_ENDPOINTS.SERVICES_DETAIL}/${slug}`, { language }),
         deal: (slug: DealInput) => HttpClient.get<ServiceDealResponse>(API_ENDPOINTS.SERVICEDEAL, { ...slug }),
         applyletter: (input: ApplyLetterInput) => HttpClient.post<ApplyLetterResponse>(API_ENDPOINTS.APPLY_LETTER, input),
-        getbyparent: ({ slug, language }: GetParams) => HttpClient.get<ServicePaginator>(`${API_ENDPOINTS.SERVICESBYPARENT}/${slug}`, { language }),
+        getbyparent: ({ slug, language }: GetParams) => HttpClient.get<ServicePaginator>(`${API_ENDPOINTS.SERVICESBYPARENT}`, { slug, language }),
         submitdeal: (input: SubmitDealInput) => HttpClient.post<SubmitDealResponse>(API_ENDPOINTS.SUBMITDEAL, input)
     }
     notification = {

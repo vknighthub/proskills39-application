@@ -16,6 +16,7 @@ export interface GetParams {
     language?: string
     page?: number
     limit?: number
+    seller?: string
 }
 export interface DefaultParams {
     language?: string
@@ -542,6 +543,7 @@ interface ServiceResultInfo<T> {
             image: string
             listservice: T[]
             listservicepopular: T[]
+            listsellerpopular: SellerInfor[]
         }
     }
 }

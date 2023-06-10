@@ -3,7 +3,7 @@ import { FetchServiceByCatalogSlug } from '@/data/categories';
 import client from '@/data/client';
 import Layout from '@/layouts/_layout';
 import Seo from '@/layouts/_seo';
-import { NextPageWithLayout, Service, ServicePaginator } from '@/types';
+import { Mostpopularseller, NextPageWithLayout, SellerInfor, Service, ServicePaginator } from '@/types';
 import { getPagination, pagination } from '@/utils/util';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -12,7 +12,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import invariant from 'tiny-invariant';
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import { categoriesBar } from '@/components/styles/sliderProps';
+import NiceSelect from '@/components/styles/NiceSelect';
 
 
 type ParsedQueryParams = {
@@ -74,30 +76,42 @@ const ServicesPage: NextPageWithLayout<
     const [state, setstate] = useState<number[]>([]);
     const initServiceData = services
 
+    const [creator, setCreator] = useState('')
 
+    const [filter, setFilter] = useState({})
 
-    const { data, refetch } = FetchServiceByCatalogSlug({
+    const { data, refetch, totalpage } = FetchServiceByCatalogSlug({
         page: active,
         limit: 12,
         slug: servicesSlug,
-        language: locale
+        language: locale,
+        seller: creator
     }, initServiceData)
 
     const servicesDetail = initServiceData.result.data
     const listService = data.listservice
 
-
-    const totalPage = services.result?.totalpage
-
+    const totalPage = totalpage
 
     useEffect(() => {
         pagination(".news-item", 12, active);
         setstate(getPagination(totalPage, 12));
-    }, [active]);
+    }, [active, creator, totalPage]);
 
     useEffect(() => {
         refetch()
-    }, [active])
+    }, [active, creator, totalPage])
+
+    const filterCatagory_ = (value: string) => {
+        setCreator(value)
+    };
+
+    const onSubmit = (e: any) => {
+    };
+
+    const onChange = (name: any, value: any) => {
+        setFilter({ ...filter, [name]: value });
+    };
 
     return (
         <>
@@ -105,7 +119,6 @@ const ServicesPage: NextPageWithLayout<
                 description={servicesDetail.categoriesname}
                 url={routes.service.servicelist(servicesDetail.categoriesslug)}
                 image_url={servicesDetail.image} />
-            {/* <ServicePagination service={servicesDetail} /> */}
 
 
             <div className="primary-content-area container content-padding">
@@ -114,6 +127,76 @@ const ServicesPage: NextPageWithLayout<
                         <span className="gradient-text"> {servicesDetail.categoriesname}</span>
                     </h2>
                 </div>
+
+                <Swiper {...categoriesBar} className="categories-bar">
+                    <div className="categories-nav">
+                        <a href="#" className="arrow arrow-left swiper-button-prev">
+                            <svg className="crumina-icon">
+                                <use xlinkHref="#arrow-left2-icon" />
+                            </svg>
+                        </a>
+                        <a href="#" className="arrow arrow-right swiper-button-next">
+                            <svg className="crumina-icon">
+                                <use xlinkHref="#arrow-right2-icon" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div className="categories-wrapper swiper-wrapper">
+                        {data.listsellerpopular.map((item: Mostpopularseller, index: number) => (
+                            <SwiperSlide className="category-item swiper-slide" key={index}>
+                                <a href="#" onClick={() => filterCatagory_(item.tagName)} >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                                        viewBox="0 0 16 15"
+                                    >
+                                        <defs />
+                                        <image
+                                            width={16}
+                                            height={15}
+                                            xlinkHref={item.avatar}
+                                        />
+                                    </svg>
+                                    {item.creator}
+                                </a>
+                            </SwiperSlide>
+                        ))}
+                    </div>
+                </Swiper>
+
+
+                <div className="filterable-bar">
+                    <form id="artworks-filter-form" onSubmit={(e) => onSubmit(e)}>
+                        <div className="filter-item">
+                            <NiceSelect
+                                arr={[
+                                    { name: "Newest to Oldest", value: "newest" },
+                                    { name: "Oldest to Newest", value: "oldest" },
+                                    { name: "Most Trending", value: "trending" },
+                                ]}
+                                ChangeFilterData={(name: any, value: any) => onChange(name, value)}
+                                name={"Industry"}
+                            />
+                        </div>
+                        <div className="filter-item">
+                            <NiceSelect
+                                arr={[
+                                    { name: "Auctions Only", value: "auctions-only" },
+                                    { name: "Buy Now", value: "buy-now" },
+                                    { name: "All Artworks", value: "" },
+                                ]}
+                                ChangeFilterData={(name: any, value: any) => onChange(name, value)}
+                                name={"type"}
+                            />
+                        </div>
+
+                        <div className="filter-button">
+                            <button className="btn btn-normal btn-dark">Filter</button>
+                        </div>
+                    </form>
+                </div>
+
+
                 {(listService.length > 0) ?
                     <>
                         <div className="news-feed grid-3-columns">

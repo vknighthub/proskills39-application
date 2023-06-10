@@ -68,13 +68,12 @@ export const featuredCarousel = {
 };
 
 export const categoriesBar = {
-  slidesPerView: "auto",
+  slidesPerView: 1,
   speed: 400,
   spaceBetween: 10,
-  slideToClickedSlide: true,
+  slideToClickedSlide: false,
   createElements: true,
-  loop: true,
-  loopedSlides: 11,
+  loop: false,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",

@@ -47,7 +47,7 @@ const ApplicationLetter: NextPageWithLayout<
         }
     }
 
-    const [value, setValue] = useState('<p>The quick brown fox jumps over the lazy dog</p>');
+    const [value, setValue] = useState('');
 
 
     const { service_deal, refetch } = Service(service)
@@ -110,8 +110,8 @@ const ApplicationLetter: NextPageWithLayout<
             price: data.price,
             numberofdaydelivery: data.numberofdaydelivery
         }
-
-        SubmitLetter(dataSubmit)
+        console.log(dataSubmit)
+        // SubmitLetter(dataSubmit)
     };
 
     const [render, setRender] = useState(false)
@@ -175,14 +175,14 @@ const ApplicationLetter: NextPageWithLayout<
                         </div>
                         {render &&
                             <Editor
-                                apiKey="7ppjrk52kbntgx5ka19u1jusgy1t2jbknaka09gp760mw3tr"
+                                apiKey="zymq2zigjpp216t3ih6tzj3rbtceqfwg169r6laxs2z6enbg"
                                 init={{
                                     height: 600,
                                     menubar: true,
                                     plugins: [
                                         'a11ychecker', 'advlist', 'advcode', 'advtable', 'autolink', 'checklist', 'export',
                                         'lists', 'link', 'image', 'charmap', 'preview', 'anchor', 'searchreplace', 'visualblocks',
-                                        'powerpaste', 'fullscreen', 'formatpainter', 'insertdatetime', 'media', 'table', 'help', 'wordcount',
+                                        'powerpaste', 'fullscreen', 'formatpainter', 'insertdatetime', 'table', 'help', 'wordcount',
                                     ],
                                     toolbar:
                                         "undo redo | formatselect | code |link | image | bold italic backcolor | alignleft aligncenter alignright alignjustify |  \n" +

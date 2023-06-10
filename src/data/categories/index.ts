@@ -26,6 +26,7 @@ export const FetchServiceByCatalogSlug = (dataFillter: GetParams, initData: any)
 
     return {
         data: data?.result.data,
+        totalpage: data?.result.totalpage,
         refetch,
         isLoading,
         error
