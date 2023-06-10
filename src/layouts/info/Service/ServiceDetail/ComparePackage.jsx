@@ -32,8 +32,7 @@ const ComparePackage = ({data}) => {
                             ))}
                         </tr>
 
-
-                        {data.listcompare?.map((value) => (
+                        {data.listcompare && data.listcompare?.map((value) => (
                             <tr key={value.id}>
                                 <td className="package-row-label">
                                     <div className="tmELUJj P_h9XGC">

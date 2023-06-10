@@ -8,6 +8,7 @@ import ComparePackage from './ComparePackage';
 import parse from 'html-react-parser';
 
 const ServiceDetailMedia = ({ data, compare }) => {
+
     return (
         <>
             <div className="product">
