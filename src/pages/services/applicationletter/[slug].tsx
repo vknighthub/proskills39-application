@@ -110,8 +110,7 @@ const ApplicationLetter: NextPageWithLayout<
             price: data.price,
             numberofdaydelivery: data.numberofdaydelivery
         }
-        console.log(dataSubmit)
-        // SubmitLetter(dataSubmit)
+        SubmitLetter(dataSubmit)
     };
 
     const [render, setRender] = useState(false)
