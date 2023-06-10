@@ -1600,7 +1600,32 @@ body.body-overlay::before {
     padding: 4px;
 }
 
+/**/
+.box-53 {
+    width: 53px;
+    height: 53px;
+    min-width: 53px;
+}
 
+.box-53 img {
+    width: 49px;
+    height: 49px;
+    border: 3px solid var(--body-background);
+}
+
+.avatar.box-53 .verified {
+    position: absolute;
+    right: -4px;
+    bottom: -2px;
+}
+
+.avatar.box-53 svg {
+    width: 12px;
+    height: 12px;
+    border: 3px solid var(--body-background);
+    padding: 4px;
+}
+/**/
 .box-152 {
     width: 152px;
     height: 152px;
@@ -11096,4 +11121,7 @@ td[data-label="Date"] {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 10px;
+}
+.p-2 {
+    padding: 0.5rem !important;
 }

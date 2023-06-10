@@ -1,4 +1,5 @@
 import avatar from '@/assets/images/avatar.png'
+import certificate from '@/assets/images/content/certificate.png'
 import profilecover from '@/assets/images/content/profile/profile-cover-1.png'
 import routes from '@/config/routes'
 import { FetchUserProfile } from '@/data/blog'
@@ -17,6 +18,13 @@ import Link from 'next/link'
 import { useEffect } from 'react'
 import invariant from 'tiny-invariant'
 import ServiceTopAvargage from './../../layouts/info/Seller/ServiceTopAvargage'
+import iconcheck from '@/assets/images/content/icon-check.svg'
+import Chip from '@mui/material/Chip'
+import skillsimage from '@/assets/images/content/skills.png'
+import education from '@/assets/images/content/education.png'
+
+
+
 
 type PageProps = {
     username: string;
@@ -38,6 +46,10 @@ const UserProfilePage: NextPageWithLayout<
         refetch()
     }, [username])
 
+    const certifications = data.profile.certifications
+    const educations = data.profile.educations
+    const skills = data.profile.skills
+
     return (
         <>
             <Seo
@@ -49,7 +61,7 @@ const UserProfilePage: NextPageWithLayout<
             <div className="primary-content-area profile-page">
                 <div className="profile-header-section">
                     <div className="cover-image">
-                        <Image src={profilecover} alt={"Cover"} width={2115} height={320} />
+                        <Image src={data.profile.banner ? data.profile.banner : profilecover} alt={"Cover"} width={2115} height={320} />
                     </div>
                     <div className="about-author-section container">
                         <div className="profile-header-user-profile">
@@ -71,12 +83,12 @@ const UserProfilePage: NextPageWithLayout<
                                     <div className="label">From</div>
                                 </div>
                                 <div className="following-number">
-                                    <div className="string">{data.profile.email}</div>
-                                    <div className="label">Email</div>
+                                    <div className="string">{data.profile.datecreated}</div>
+                                    <div className="label">Date join</div>
                                 </div>
                                 <div className="likes-number">
-                                    <div className="string">{data.profile.phone}</div>
-                                    <div className="label">Phone</div>
+                                    <div className="string">{data.profile.city}</div>
+                                    <div className="label">City</div>
                                 </div>
                             </div>
                             <div className="profile-author-info">
@@ -91,9 +103,9 @@ const UserProfilePage: NextPageWithLayout<
                                 <div className="projects-number">
                                     <div className="string">
                                         {
-                                            data.profile.gender === 1 
-                                            ? <Icon color="success" fontSize="large" icon='fontisto:male' />
-                                            : <Icon color="success" fontSize="large" icon='fa:female' />
+                                            data.profile.gender === 1
+                                                ? <Icon color="success" fontSize="large" icon='fontisto:male' />
+                                                : <Icon color="success" fontSize="large" icon='fa:female' />
                                         }
 
                                     </div>
@@ -122,11 +134,91 @@ const UserProfilePage: NextPageWithLayout<
                             </div>
                         </div>
 
-                        <div className="author-description">
+                        <div className="author-description" >
                             {data.profile.aboutme && parse(data.profile.aboutme)}
                         </div>
+
+                        <div className="container">
+                            <div className="placed-bid mt-5" >
+                                <div className="bid-placer">
+                                    <div className="avatar box-53">
+                                        <Image src={skillsimage} alt="avatar" />
+                                    </div>
+                                    <div className="bid-info">
+                                        <div className="bid-title">
+                                            <span className="gradient-text">Skills</span>
+                                        </div>
+                                        <div className="bid-date">
+                                            {skills.map((sk: any) => (
+                                                <Chip label={`${sk.skillname} - ${sk.level}`} variant='outlined' color='success' sx={{ marginRight: 2 }} key={sk.id} />
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="bid-box">
+                                    <div className=" box-42">
+                                        <Image src={iconcheck} alt="avatar" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="container">
+                            <div className="placed-bid mt-5 ">
+                                <div className="bid-placer">
+                                    <div className="avatar box-53">
+                                        <Image src={certificate} alt="avatar" />
+                                    </div>
+                                    {certifications.map((certification: any) => (
+                                        <div className="bid-info" key={certification.id}>
+                                            <div className="bid-title">
+                                                <span className="gradient-text">{certification.name}</span>
+                                            </div>
+                                            <div className="bid-date">{certification.issuedplace} / {certification.year}</div>
+                                            <div className="featured-box grid-2-columns mt-3">
+                                                {certification.images.map((img: any) => (
+                                                    <Image alt={img.id} src={img.thumbnail} width={600} height={300} key={img.id} />
+                                                ))}
+                                            </div> </div>
+                                    ))}
+                                </div>
+                                <div className="bid-box">
+                                    <div className=" box-42">
+                                        <Image src={iconcheck} alt="avatar" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="container">
+                            <div className="placed-bid mt-5" >
+                                <div className="bid-placer">
+                                    <div className="avatar box-53">
+                                        <Image src={education} alt="avatar" />
+                                    </div>
+                                    {educations.map((education: any) => (
+                                        <div className="bid-info" key={education.id}>
+                                            <div className="bid-title">
+                                                <span className="gradient-text">{education.universityname} - {education.contryofuniversity}</span>
+                                            </div>
+                                            <div className="bid-date">{education.major} / {education.year}</div>
+                                            <div className="featured-box grid-2-columns mt-3">
+                                                {education.images.map((img: any) => (
+                                                    <Image alt={img.id} src={img.thumbnail} width={600} height={300} key={img.id} />
+                                                ))}
+                                            </div> </div>
+                                    ))}
+                                </div>
+                                <div className="bid-box">
+                                    <div className=" box-42">
+                                        <Image src={iconcheck} alt="avatar" />
+                                    </div>
+                                </div>
+                            </div> </div>
                     </div>
+
                 </div>
+
 
 
                 <ServiceListOfSeller data={data.services.allservice.data} />
