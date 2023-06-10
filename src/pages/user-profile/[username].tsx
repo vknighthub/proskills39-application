@@ -1,6 +1,10 @@
 import avatar from '@/assets/images/avatar.png'
 import certificate from '@/assets/images/content/certificate.png'
+import education from '@/assets/images/content/education.png'
+import iconcheck from '@/assets/images/content/icon-check.svg'
+import iconuncheck from '@/assets/images/content/uncheck.png'
 import profilecover from '@/assets/images/content/profile/profile-cover-1.png'
+import skillsimage from '@/assets/images/content/skills.png'
 import routes from '@/config/routes'
 import { FetchUserProfile } from '@/data/blog'
 import client from '@/data/client'
@@ -10,6 +14,7 @@ import Layout from '@/layouts/_layout'
 import Seo from '@/layouts/_seo'
 import { NextPageWithLayout, UserProfilePageResponse } from '@/types'
 import { Icon } from '@iconify/react'
+import Chip from '@mui/material/Chip'
 import parse from 'html-react-parser'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
@@ -18,10 +23,6 @@ import Link from 'next/link'
 import { useEffect } from 'react'
 import invariant from 'tiny-invariant'
 import ServiceTopAvargage from './../../layouts/info/Seller/ServiceTopAvargage'
-import iconcheck from '@/assets/images/content/icon-check.svg'
-import Chip from '@mui/material/Chip'
-import skillsimage from '@/assets/images/content/skills.png'
-import education from '@/assets/images/content/education.png'
 
 
 
@@ -145,19 +146,22 @@ const UserProfilePage: NextPageWithLayout<
                                         <Image src={skillsimage} alt="avatar" />
                                     </div>
                                     <div className="bid-info">
-                                        <div className="bid-title">
-                                            <span className="gradient-text">Skills</span>
-                                        </div>
                                         <div className="bid-date">
-                                            {skills.map((sk: any) => (
-                                                <Chip label={`${sk.skillname} - ${sk.level}`} variant='outlined' color='success' sx={{ marginRight: 2 }} key={sk.id} />
-                                            ))}
+                                            {skills.length > 0 ?
+                                                skills.map((sk: any) => (
+                                                    <Chip label={`${sk.skillname} - ${sk.level}`} variant='outlined' color='success' sx={{ marginRight: 2 }} key={sk.id} />
+                                                ))
+                                                :
+                                                <>
+                                                    <span className="gradient-text fs-5 ms-xl-1">This person has no skills. Be careful while using their services</span>
+                                                </>
+                                            }
                                         </div>
                                     </div>
                                 </div>
                                 <div className="bid-box">
                                     <div className=" box-42">
-                                        <Image src={iconcheck} alt="avatar" />
+                                        <Image src={skills.length > 0 ? iconcheck : iconuncheck} alt="skills" />
                                     </div>
                                 </div>
                             </div>
@@ -166,25 +170,32 @@ const UserProfilePage: NextPageWithLayout<
                         <div className="container">
                             <div className="placed-bid mt-5 ">
                                 <div className="bid-placer">
-                                    <div className="avatar box-53">
-                                        <Image src={certificate} alt="avatar" />
+                                    <div className="avatar box-53 mr-3">
+                                        <Image src={certificate} alt="certificate" />
                                     </div>
-                                    {certifications.map((certification: any) => (
-                                        <div className="bid-info" key={certification.id}>
-                                            <div className="bid-title">
-                                                <span className="gradient-text">{certification.name}</span>
+                                    {certifications.length > 0 ?
+                                        certifications.map((certification: any) => (
+                                            <div className="bid-info" key={certification.id}>
+                                                <div className="bid-title">
+                                                    <span className="gradient-text">{certification.name}</span>
+                                                </div>
+                                                <div className="bid-date">{certification.issuedplace} / {certification.year}</div>
+                                                <div className="featured-box grid-2-columns mt-3">
+                                                    {certification.images.map((img: any) => (
+                                                        <Image alt={img.id} src={img.thumbnail} width={600} height={300} key={img.id} />
+                                                    ))}
+                                                </div>
                                             </div>
-                                            <div className="bid-date">{certification.issuedplace} / {certification.year}</div>
-                                            <div className="featured-box grid-2-columns mt-3">
-                                                {certification.images.map((img: any) => (
-                                                    <Image alt={img.id} src={img.thumbnail} width={600} height={300} key={img.id} />
-                                                ))}
-                                            </div> </div>
-                                    ))}
+                                        ))
+                                        :
+                                        <>
+                                            <span className="gradient-text fs-5 ms-xl-3">This person has no certification. Be careful while using their services</span>
+                                        </>
+                                    }
                                 </div>
                                 <div className="bid-box">
                                     <div className=" box-42">
-                                        <Image src={iconcheck} alt="avatar" />
+                                        <Image src={certifications.length > 0 ? iconcheck : iconuncheck} alt="certification" />
                                     </div>
                                 </div>
                             </div>
@@ -196,22 +207,28 @@ const UserProfilePage: NextPageWithLayout<
                                     <div className="avatar box-53">
                                         <Image src={education} alt="avatar" />
                                     </div>
-                                    {educations.map((education: any) => (
-                                        <div className="bid-info" key={education.id}>
-                                            <div className="bid-title">
-                                                <span className="gradient-text">{education.universityname} - {education.contryofuniversity}</span>
-                                            </div>
-                                            <div className="bid-date">{education.major} / {education.year}</div>
-                                            <div className="featured-box grid-2-columns mt-3">
-                                                {education.images.map((img: any) => (
-                                                    <Image alt={img.id} src={img.thumbnail} width={600} height={300} key={img.id} />
-                                                ))}
-                                            </div> </div>
-                                    ))}
+                                    {educations.length > 0 ?
+                                        educations.map((education: any) => (
+                                            <div className="bid-info" key={education.id}>
+                                                <div className="bid-title">
+                                                    <span className="gradient-text">{education.universityname} - {education.contryofuniversity}</span>
+                                                </div>
+                                                <div className="bid-date">{education.major} / {education.year}</div>
+                                                <div className="featured-box grid-2-columns mt-3">
+                                                    {education.images.map((img: any) => (
+                                                        <Image alt={img.id} src={img.thumbnail} width={600} height={300} key={img.id} />
+                                                    ))}
+                                                </div> </div>
+                                        ))
+                                        :
+                                        <>
+                                            <span className="gradient-text fs-5 ms-xl-3">This person has no education. Be careful while using their services</span>
+                                        </>
+                                    }
                                 </div>
                                 <div className="bid-box">
                                     <div className=" box-42">
-                                        <Image src={iconcheck} alt="avatar" />
+                                        <Image src={educations.length > 0 ? iconcheck : iconuncheck} alt="educations" />
                                     </div>
                                 </div>
                             </div> </div>
