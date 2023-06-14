@@ -43,7 +43,7 @@ const ServiceList = ({ service }) => {
                                 {service.title}
                             </Link>{" "}
                         </div>
-                        <Link href={`/seller/${service.username}`}>
+                        <Link href={`/user-profile/${service.username}`}>
                             <div className="item-meta">
                                 <span className="avatar box-26">
                                     <Image src={service.sellerInfor.avatar ? service.sellerInfor.avatar : avatar} alt="Avatar" width={80} height={80} />

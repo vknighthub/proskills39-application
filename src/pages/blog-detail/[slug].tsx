@@ -81,7 +81,7 @@ const BlogDetailPage: NextPageWithLayout<
                         <div className="news-meta">
                             <div className="post-author">
                                 by{" "}
-                                <Link href={`/seller/${blog.author.username}`}>
+                                <Link href={`/user-profile/${blog.author.username}`}>
                                     {blog.author.fullname}
                                 </Link>
                                 , {blog.publdt}

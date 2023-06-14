@@ -67,7 +67,7 @@ const ServiceDetailMedia = ({ data, compare }) => {
                             <div className="avatar-title">
                                 <span className="gradient-text">
                                     {" "}
-                                    <Link href={`/seller/${data.seller.username}`}>
+                                    <Link href={`/user-profile/${data.seller.username}`}>
                                         {data.seller.username}
                                     </Link>{" "}
 

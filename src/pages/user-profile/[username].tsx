@@ -180,7 +180,7 @@ const UserProfilePage: NextPageWithLayout<
                                                     <span className="gradient-text">{certification.name}</span>
                                                 </div>
                                                 <div className="bid-date">{certification.issuedplace} / {certification.year}</div>
-                                                <div className="featured-box grid-2-columns mt-3">
+                                                <div className="featured-box ms-xl-3 mt-3">
                                                     {certification.images.map((img: any) => (
                                                         <Image alt={img.id} src={img.thumbnail} width={600} height={300} key={img.id} />
                                                     ))}
