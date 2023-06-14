@@ -38,7 +38,7 @@ const Catalyst = ({ data }) => {
             <div className="item-meta">
               <span className="avatar box-26">
                 {" "}
-                <Link href="/08-profile-page">
+                <Link href={`/user-profile/${data.author.username}`}>
                   <a>
                     <picture>
                       <source type="image/avif" srcSet={data.author.image} />

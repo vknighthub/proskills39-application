@@ -45,7 +45,6 @@ const ServiceDetailMedia = ({ data, compare }) => {
                                 ))}
                             </div>
                         </Swiper>
-
                     </div>
                 </div>
 

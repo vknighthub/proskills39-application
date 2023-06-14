@@ -41,7 +41,7 @@ const SellerHeader = ({data}) => {
                         </div>
                         <div className="profile-author-info">
                             <h3 className="author-name gradient-text">
-                                <Link href="/08-profile-page">
+                                <Link href={`/user-profile/${data.username}`}>
                                     {data.fullname}
                                 </Link>
                             </h3>
@@ -85,7 +85,7 @@ const SellerHeader = ({data}) => {
                 <div className="about-author-section container">
                     <div className="profile-header-user-profile">
                         <div className="avatar box-64 bordered">
-                            <Link href="/08-profile-page">
+                            <Link href={`/user-profile/${data.username}`}>
                                 <Image src={data.avatar} alt="" />
                             </Link>
                             <span className="verified">

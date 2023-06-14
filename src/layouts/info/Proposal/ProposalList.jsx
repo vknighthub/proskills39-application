@@ -83,7 +83,7 @@ const ProposalList = ({ data }) => {
                       <p style={{ minHeight: "120px" }}>{parse(proposal.descriptionDetail)}</p>
                       <div className="item-meta">
                         <span className="avatar box-26" >
-                          <Link href="/08-profile-page">
+                          <Link href={`/user-profile/${proposal.proposerInfor.username}`}>
                             <Image src={proposal.proposerInfor.avatar} alt="" width={30} height={30} />
                           </Link>
                           <span className="verified">
@@ -94,7 +94,7 @@ const ProposalList = ({ data }) => {
                         </span>
                         {proposal.contributors.map((contributor) => (
                           <span className="avatar box-26" key={contributor.id}>
-                            <Link href="/08-profile-page">
+                            <Link href="#">
                               <Image src={contributor.avatar} alt="" width={30} height={30} />
                             </Link>
                             <span className="verified">

@@ -61,7 +61,7 @@ const OfferService: NextPageWithLayout<
                         <div className="avatar-block">
                             <div className="avatar box-42">
                                 {" "}
-                                <Link href="/08-profile-page">
+                                <Link href={`/user-profile/${service_deal?.username}`}>
                                     <Image src={service_deal?.avatar ? service_deal.avatar : avatar} alt="avatar" width={80} height={80} />
                                     <span className="verified">
                                         <svg className="crumina-icon">
@@ -73,7 +73,7 @@ const OfferService: NextPageWithLayout<
                             <div className="avatar-meta">
                                 <div className="avatar-title gradient-text">
                                     {" "}
-                                    <Link href="/08-profile-page">
+                                    <Link href={`/user-profile/${service_deal?.username}`}>
                                         {service_deal?.fullname}
                                     </Link>{" "}
                                 </div>

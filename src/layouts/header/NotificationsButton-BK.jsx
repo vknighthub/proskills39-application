@@ -198,7 +198,7 @@ const NotificationsButton = () => {
                 <div className="notification-info">
                   <div className="message">
                     {" "}
-                    <Link href="/08-profile-page" className="bold">
+                    <Link href={`/user-profile/${notification.sender}`} className="bold">
                       @ {notification.sender}
                     </Link>{" "}
                     has request a project{" "}
