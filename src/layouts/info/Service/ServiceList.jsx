@@ -29,7 +29,7 @@ const ServiceList = ({ service }) => {
                                 <div className="swiper-wrapper">
                                     {service.overviews.files.map((file, index) => (
                                         <SwiperSlide id="slide-1" className="swiper-slide" key={index}>
-                                            <Image src={file.url} alt={file.title} width={300} height={300} style={{ minHeight: 200 }} />
+                                            <Image src={file.url} alt={file.title} width={300} height={300} style={{ minHeight: 350 }} />
                                         </SwiperSlide>
                                     ))}
                                 </div>
@@ -37,7 +37,7 @@ const ServiceList = ({ service }) => {
                         </Link>{" "}
                     </div>
                     <div className="featured-item-info">
-                        <div className="title">
+                        <div className="title" style={{ height: 100}}>
                             {" "}
                             <Link href={`/categories/services/servicedetail/${service.slug}`}>
                                 {service.title}
