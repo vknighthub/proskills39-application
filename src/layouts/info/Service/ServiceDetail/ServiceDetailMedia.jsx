@@ -54,7 +54,7 @@ const ServiceDetailMedia = ({ data, compare }) => {
                     <div className="avatar-block">
                         <div className="avatar box-152">
                             {" "}
-                            <Link href="/08-profile-page">
+                            <Link href={`/user-profile/${data.seller.username}`}>
                                 <Image src={data.seller?.avatar ? data.seller.avatar : avatar} alt="avatar" width={80} height={80} />
                             </Link>{" "}
                             <span className="verified">
