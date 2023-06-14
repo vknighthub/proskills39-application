@@ -64,6 +64,21 @@ const BlogDetailPage: NextPageWithLayout<
         }
     }, []);
 
+    useEffect(() => {
+        const paragraph = document.getElementById("content");
+        const paragraphs = paragraph?.querySelectorAll('p');
+        
+        if (paragraphs) {
+            paragraphs.forEach((paragraph) => {
+                console.log(paragraph.innerHTML.trim())
+                if (paragraph.innerHTML.trim() === '&nbsp;') {
+                    paragraph.innerHTML = '';
+                }
+            });
+        }
+    }, []);
+
+
     return (
         <>
             <Seo title="ProSkills39 - Blog Detail"
@@ -98,7 +113,7 @@ const BlogDetailPage: NextPageWithLayout<
                         />
                     </div>
 
-                    <div className="post-content">
+                    <div id="content" className="post-content">
                         {parse(blog.content)}
                     </div>
                     <div className="comments-section">

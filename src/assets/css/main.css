@@ -6417,9 +6417,6 @@ body.dark-mode #filter-form input[type="submit"] {
     margin: 0 auto clamp(1rem, 6vmax, 100px);
 }
 
-.single-post .post-content>* {
-    margin-bottom: clamp(2rem, 4.3vmax, 70px);
-}
 
 .single-post .post-heading {
     text-align: center;
