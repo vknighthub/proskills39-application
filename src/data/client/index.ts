@@ -44,7 +44,7 @@ class Client {
 
     }
     services = {
-        get: ({ slug, language, page, limit, seller }: GetParams) => HttpClient.get<ServicePaginator>(`${API_ENDPOINTS.SERVICES}`, { slug, language, page, limit, seller }),
+        get: ({ slug, language, page, limit, seller, industry, frbudget, tobudget, deliverytime }: GetParams) => HttpClient.get<ServicePaginator>(`${API_ENDPOINTS.SERVICES}`, { slug, language, page, limit, seller,industry, frbudget, tobudget, deliverytime }),
         detail: ({ slug, language }: GetParams) => HttpClient.get<ServiceDetailPaginator>(`${API_ENDPOINTS.SERVICES_DETAIL}/${slug}`, { language }),
         deal: (slug: DealInput) => HttpClient.get<ServiceDealResponse>(API_ENDPOINTS.SERVICEDEAL, { ...slug }),
         applyletter: (input: ApplyLetterInput) => HttpClient.post<ApplyLetterResponse>(API_ENDPOINTS.APPLY_LETTER, input),

@@ -53,12 +53,12 @@
   "text-back": "Back",
   "text-total": "Total",
   "text-product-found": "products found",
-  "text-become-seller": "Become a seller",
+  "text-become-seller": "販売者になる",
   "text-auth-profile": "Profile",
   "text-auth-purchase": "Purchases",
   "text-auth-wishlist": "My Wishlist",
   "text-auth-password": "Password",
-  "text-logout": "Logout",
+  "text-logout": "ログアウト",
   "text-no-products-found": "No products found!",
   "text-no-products-found-message": "Sorry, we don’t found any product",
   "text-home": "Home",
@@ -591,5 +591,9 @@
   "text-wallet-info": "ウォレット情報",
   "text-get-verified": "検証を取得",
   "text-update-profile-success": "プロフィール情報が正常に更新されました",
-  "my-profile": "私のプロフィール"
+  "my-profile": "私のプロフィール",
+  "text-current-price": "現在の価格",
+  "text-about-this-service": "このサービスについて" ,
+  "text-newest": "最新",
+  "text-service": "サービス"
 }

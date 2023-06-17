@@ -2,6 +2,7 @@ import useClickOutside from "@/lib/hooks/useClickOutside";
 import { useEffect, useRef, useState } from "react";
 
 const ActionHeader = () => {
+    localStorage.setItem("mood", "dark-mood");
     const [toggle, setToggle] = useState(false);
     const dayMood = useRef(true);
     let domNode = useClickOutside(() => {
@@ -36,7 +37,6 @@ const ActionHeader = () => {
             <div className="profile-dropdown-footer">
                 {/*dark-mode-toggle*/}
                 <div className="mode-toggle">
-
                     <label className="toggle-control">
                         <input
                             type="checkbox"

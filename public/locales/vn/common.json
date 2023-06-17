@@ -591,5 +591,9 @@
   "text-wallet-info": "Thông tin ví",
   "text-get-verified": "Thông tin xác thực",
   "text-update-profile-success": "Thông tin hồ sơ đã được cập nhật thành công",
-  "my-profile": "Thông tin cá nhân"
+  "my-profile": "Thông tin cá nhân",
+  "text-current-price": "Giá hiện tại",
+  "text-about-this-service": "Mô tả về dịch vụ",
+  "text-newest": "mới nhất",
+  "text-service": "Dịch vụ"
 }

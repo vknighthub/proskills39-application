@@ -17,6 +17,10 @@ export interface GetParams {
     page?: number
     limit?: number
     seller?: string
+    deliverytime?: number
+    frbudget?: number
+    tobudget?: number
+    industry?: number
 }
 export interface DefaultParams {
     language?: string
@@ -504,6 +508,10 @@ export interface SellerService {
     lastdelivery: Date
 }
 
+export interface Industry {
+    id: number
+    name: string
+}
 export interface Service {
     id: number
     keyid: string
@@ -527,6 +535,7 @@ export interface Service {
     delete_at: Date
     overviews: ServiceOverview
     sellerInfor: SellerService
+    listindustry: Industry[]
 }
 
 

@@ -2,23 +2,19 @@ import { Newestservice } from '@/types';
 import parse from 'html-react-parser';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslation } from 'next-i18next';
 
 type PageProps = {
     data: Newestservice[]
 }
 
 export const NewestService = ({ data }: PageProps) => {
+    const {t} = useTranslation('common')
     return (
         <div className="container section-padding">
             <div className="section-title-wrapper">
                 <div className="section-title">
-                    <span className="gradient-text">Newest</span> service
-                </div>
-                <div className="all-items-link">
-                    {" "}
-                    <Link href="/services/services">
-                        Explore all service
-                    </Link>{" "}
+                    <span className="gradient-text">{t('text-newest')}</span> {t('text-service')}
                 </div>
             </div>
             <div className="featured-creators-box grid-2-columns">

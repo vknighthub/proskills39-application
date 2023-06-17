@@ -18,12 +18,13 @@ export const FetchFetchServiceCatalogBySlug = (dataFillter: GetParams) => {
 }
 
 export const FetchServiceByCatalogSlug = (dataFillter: GetParams, initData: any) => {
+    console.log(dataFillter)
     const { data, isLoading, error, refetch } = useQuery(
         'service-catalog-slug',
         () => client.services.get(dataFillter),
         { initialData: initData }
     );
-
+    console.log(error)
     return {
         data: data?.result.data,
         totalpage: data?.result.totalpage,

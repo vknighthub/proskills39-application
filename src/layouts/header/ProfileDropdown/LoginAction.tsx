@@ -22,7 +22,6 @@ const LoginAction = ({ isAuthorized }: Props) => {
             {!isAuthorized && render &&
                 <>
                     <ButtonHeader name={t('text-login')} link="login" />
-                    <ActionHeader />
                 </>
             }
         </>

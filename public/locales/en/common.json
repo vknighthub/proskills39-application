@@ -591,6 +591,10 @@
   "text-wallet-info": "Wallet info",
   "text-get-verified": "Get Verified",
   "text-full-name": "Full Name",
-  "text-update-profile-success":"Profile Information has been updated successfully",
-  "my-profile": "My Profile"
+  "text-update-profile-success": "Profile Information has been updated successfully",
+  "my-profile": "My Profile",
+  "text-current-price": "Current Price",
+  "text-about-this-service": "About This Service",
+  "text-newest": "Newest",
+  "text-service": "Service"
 }

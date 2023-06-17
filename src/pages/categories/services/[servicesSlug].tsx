@@ -78,14 +78,24 @@ const ServicesPage: NextPageWithLayout<
 
     const [creator, setCreator] = useState('')
 
-    const [filter, setFilter] = useState({})
+    const [filter, setFilter] = useState({
+        industry: undefined,
+        frbudget: undefined,
+        tobudget: undefined,
+        deliverytime: undefined
+    })
 
     const { data, refetch, totalpage } = FetchServiceByCatalogSlug({
         page: active,
         limit: 12,
         slug: servicesSlug,
         language: locale,
-        seller: creator
+        seller: creator,
+        industry: filter.industry,
+        frbudget: filter.frbudget,
+        tobudget: filter.tobudget,
+        deliverytime: filter.deliverytime
+
     }, initServiceData)
 
     const servicesDetail = initServiceData.result.data
@@ -106,13 +116,35 @@ const ServicesPage: NextPageWithLayout<
         setCreator(value)
     };
 
-    const onSubmit = (e: any) => {
+    const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
+        refetch()
     };
 
     const onChange = (name: any, value: any) => {
         setFilter({ ...filter, [name]: value });
     };
 
+    const onChangeFilterIndustry = (name: any, value: any) => {
+        setFilter({ ...filter, [name]: value });
+    }
+    const onChangeFilterBugetFrom = (name: any, value: any) => {
+        setFilter({ ...filter, [name]: value });
+    }
+    const onChangeFilterBugetTo = (name: any, value: any) => {
+        setFilter({ ...filter, [name]: value });
+    }
+    const onChangeFilterDeliveryTime = (name: any, value: any) => {
+        setFilter({ ...filter, [name]: value });
+    }  
+
+    useEffect(() => {
+        refetch()
+    }, [filter])
+
+    const listindustry = data.listindustry
+
+    
     return (
         <>
             <Seo title="ProSkills39 - Service"
@@ -166,33 +198,52 @@ const ServicesPage: NextPageWithLayout<
 
 
                 <div className="filterable-bar">
-                    <form id="artworks-filter-form" onSubmit={(e) => onSubmit(e)}>
+                    <form id="artworks-filter-form" onSubmit={(e)=>onSubmit(e)}>
                         <div className="filter-item">
                             <NiceSelect
-                                arr={[
-                                    { name: "Newest to Oldest", value: "newest" },
-                                    { name: "Oldest to Newest", value: "oldest" },
-                                    { name: "Most Trending", value: "trending" },
-                                ]}
-                                ChangeFilterData={(name: any, value: any) => onChange(name, value)}
-                                name={"Industry"}
+                                arr={listindustry}
+                                ChangeFilterData={onChangeFilterIndustry}
+                                name={"industry"}
                             />
                         </div>
                         <div className="filter-item">
                             <NiceSelect
                                 arr={[
-                                    { name: "Auctions Only", value: "auctions-only" },
-                                    { name: "Buy Now", value: "buy-now" },
-                                    { name: "All Artworks", value: "" },
+                                    { name: "Buget From", value: "" },
+                                    { name: "From 10 v2p", value: "10" },
+                                    { name: "From 20 v2p", value: "20" },
+                                    { name: "From 50 v2p", value: "50" },
                                 ]}
-                                ChangeFilterData={(name: any, value: any) => onChange(name, value)}
-                                name={"type"}
+                                ChangeFilterData={onChangeFilterBugetFrom}
+                                name={"frbudget"}
+                            />
+                        </div>
+                        <div className="filter-item">
+                            <NiceSelect
+                                arr={[
+                                    { name: "Budget To", value: "" },
+                                    { name: "To 100 v2p", value: "100" },
+                                    { name: "To 200 v2p", value: "200" },
+                                    { name: "To 500 v2p", value: "500" },
+                                ]}
+                                ChangeFilterData={onChangeFilterBugetTo}
+                                name={"tobudget"}
+                            />
+                        </div>
+                        <div className="filter-item">
+                            <NiceSelect
+                                arr={[
+                                    { name: "Delivery time", value: "" },
+                                    { name: "Express 24h", value: "1" },
+                                    { name: "Up to 3 days", value: "3" },
+                                    { name: "Up to 7 days", value: "7" }
+                                ]}
+                                ChangeFilterData={onChangeFilterDeliveryTime}
+                                name={"deliverytime"}
                             />
                         </div>
 
-                        <div className="filter-button">
-                            <button className="btn btn-normal btn-dark">Filter</button>
-                        </div>
+                        
                     </form>
                 </div>
 

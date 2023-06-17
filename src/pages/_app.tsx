@@ -12,7 +12,6 @@ import { ReactQueryDevtools } from 'react-query/devtools'
 import { SessionProvider } from 'next-auth/react'
 import { ToastProvider } from '@/components/utils/Toast'
 import { Toaster } from 'react-hot-toast'
-import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
@@ -38,10 +37,7 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
-        <PayPalScriptProvider options={{
-          "client-id": `${process.env.NEXT_PUBLIC_PAYPAL_CLIENTID}`,
-          components: "buttons"
-        }}>
+        
           <ToastProvider>
             <SessionProvider>
               <>
@@ -59,7 +55,6 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
               </>
             </SessionProvider>
           </ToastProvider>
-        </PayPalScriptProvider>
       </Hydrate>
       <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
     </QueryClientProvider>

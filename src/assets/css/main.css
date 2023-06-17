@@ -219,15 +219,15 @@
        ============================ */
     --primary-accent-color: #ff6c0d;
     --secondary-accent-color: #0084ff;
-    --primary-gradient-color: #ff394f;
-    --secondary-gradient-color: #ffcf26;
-    --cryptoki-gradient: linear-gradient(to right, var(--primary-gradient-color) 20%, var(--secondary-gradient-color));
+    --primary-gradient-color: #0084ff;
+    --secondary-gradient-color: #04CDF9;
+    --cryptoki-gradient: linear-gradient(to right, var(--primary-gradient-color) 20%, var(--secondary-gradient-color) 100%);
     /* ===============================
        1.2. Body background and font colors
        =============================== */
     --body-background: #fff;
-    --border-color: #e1e1e1;
-    --main-font-color: #252831;
+    --border-color: linear-gradient(to right, var(--primary-gradient-color) 20%, var(--secondary-gradient-color));
+    --main-font-color: linear-gradient(to right, var(--primary-gradient-color) 20%, var(--secondary-gradient-color));
     --unchangable-font-color: #252831;
     --contrast-text-color: #fff;
     --inactive-text-color: #a8a9ad;
@@ -285,6 +285,11 @@
        ============================*/
     --btn-border-radius: 30px;
     --input-border-radius: 30px;
+
+    /* ===========================
+    1.8. Search
+    ================================================================*/
+    --search-background-color: rgba(0, 0, 0, 0.52);
 }
 
 /* ===========================
@@ -1115,7 +1120,6 @@ button {
 
 .btn {
     font-size: var(--body-font-size);
-    font-weight: var(--heading-font-weight);
     line-height: 1;
     border-radius: var(--btn-border-radius);
     white-space: nowrap;
@@ -1212,9 +1216,19 @@ button {
 }
 
 body.dark-mode .btn-dark {
-    background: var(--secondary-accent-color) var(--cryptoki-gradient);
-    color: var(--contrast-text-color);
+    background: 
+        linear-gradient(#121419, #121419) padding-box,
+        linear-gradient(60deg, #00f, #00e8ff) border-box;
+    color: #fff;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-radius: 20px;
+    display: inline-block;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
+
 
 body.dark-mode .btn-dark:hover {
     background-image: none;
@@ -1766,7 +1780,7 @@ ol li::marker {
         ================================ */
 
 .site-header {
-    background-color: var(--body-background);
+    background: url(../images/content/background.svg) no-repeat 0 100%;
 }
 
 @media(max-width:800px) {
@@ -1859,8 +1873,8 @@ ol li::marker {
 
 .logo .logo-img,
 .logo .logo-img svg {
-    width: 140px;
-    height: 80px;
+    width: 185px;
+    height: 104px;
     margin-right: 10px;
 }
 
@@ -2394,7 +2408,7 @@ ol li::marker {
 
 .searchbox {
     width: 100%;
-    flex: 0 3 700px;
+    flex: 0 3 531px;
 }
 
 .main-search {
@@ -2412,6 +2426,10 @@ ol li::marker {
     padding: 18px 20px;
     white-space: nowrap;
 }
+.main-search .search-button {
+    background-color: var(--search-background-color);
+    border-radius: 0 20px 20px 0;
+}
 
 .main-search .search-button svg {
     fill: var(--main-font-color);
@@ -2419,7 +2437,7 @@ ol li::marker {
 
 .main-search .search-input {
     flex: 0 1 100%;
-    background-color: var(--body-background);
+    background-color: var(--search-background-color);
     color: var(--main-font-color);
     border-radius: 0;
 }
@@ -2427,8 +2445,18 @@ ol li::marker {
 .main-search .search-params {
     border-radius: var(--input-border-radius) 0 0 var(--input-border-radius);
     border-right: 1px solid var(--border-color);
-    background-color: var(--extra-light-gray);
-    color: var(--main-font-color);
+    background-color: var(--search-background-color);
+    color: var(--cryptoki-gradient);
+}
+.main-search .search-params .search-param-title {
+    background-color: var(--main-font-color);
+    background-image: var(--cryptoki-gradient);
+    background-size: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
 }
 
 .main-search .search-params svg {
@@ -4060,7 +4088,7 @@ ol li::marker {
 }
 
 .search-form-with-text .main-search .search-button {
-    background-color: var(--main-font-color);
+    background-color: var(--search-background-color);
     border-radius: 0 10px 10px 0;
 }
 

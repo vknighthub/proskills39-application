@@ -29,8 +29,8 @@ export default function Logo({
           <Image
             src={settings?.dark_logo?.original ?? darkLogo}
             loading="eager"
-            width={80}
-            height={80}
+            width={185}
+            height={104}
             alt={settings?.siteTitle ?? 'Dark Logo'}
           />
         )}
@@ -38,8 +38,8 @@ export default function Logo({
           <Image
             src={settings?.logo?.original ?? lightLogo}
             loading="eager"
-            width={80}
-            height={80}
+            width={185}
+            height={104}
             alt={settings?.siteTitle ?? 'Light Logo'}
           />
         )}

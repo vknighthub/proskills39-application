@@ -13,18 +13,21 @@ const ServiceDetailMedia = ({ data, compare }) => {
         <>
             <div className="product">
                 <div className="product-media">
-                    <a
+                    {data.services.image.map((image,index)=>(
+                        <a key={index}
                         className="expand-icon"
                         data-fslightbox=""
-                        href="img/content/product-img/product-2.jpg"
+                        href={image.url}
                     >
                         <svg className="crumina-icon">
                             <use xlinkHref="#maximize-icon" />
                         </svg>
                     </a>
+                    ))}
+                    
                     <div className="product-img">
 
-                        <Swiper {...artworksCarousel} id="homeSlider" className="swiper">
+                        <Swiper {...artworksCarousel} id="homeSlider" className="swiper" style={{overflowY: 'scroll !important'}}>
                             <div className="categories-nav">
                                 <a className="arrow arrow-left swiper-button-prev">
                                     <svg className="crumina-icon">
@@ -39,8 +42,8 @@ const ServiceDetailMedia = ({ data, compare }) => {
                             </div>
                             <div className="swiper-wrapper">
                                 {data.services.image?.map((image, index) => (
-                                    <SwiperSlide id="slide-1" className="swiper-slide" key={index}>
-                                        <Image src={image.url} alt="product" width={300} height={300} />
+                                    <SwiperSlide id="slide-1" className="swiper-slide" key={index}  >
+                                        <Image src={image.url} alt="product" width={986} height={986} />
                                     </SwiperSlide>
                                 ))}
                             </div>

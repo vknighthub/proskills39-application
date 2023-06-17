@@ -21,12 +21,12 @@ const Header = () => {
       <div className="topbar padding-top-bottom border-bottom">
         <div className="topbar-wrapper container">
           <MobileHeader />
-          <Logo />
           <SearchBox />
-            <SwitchLanguage />
-            <div className="user-activity-buttons">
-              <NotificationsButton isAuthorized={isAuthorized}/>
-            </div>
+          <Logo />
+          <SwitchLanguage />
+          <div className="user-activity-buttons">
+            <NotificationsButton isAuthorized={isAuthorized} />
+          </div>
           <ButtonHeader name={t('dRep')} link="dRep" />
           <ProfileDropdown
             profile={session ? session : me}
