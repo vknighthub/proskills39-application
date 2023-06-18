@@ -41,7 +41,6 @@ type Props = {
 }
 
 const HomePopularService = ({ data }: Props) => {
-    console.log(data)
     return (
         <div className="container section-padding">
             <div className="section-title-wrapper">

@@ -3,7 +3,6 @@ import React, { useEffect, useRef } from 'react'
 
 const Footer = () => {
     const dayMood = useRef(true)
-
     useEffect(() => {
         let mood = localStorage.getItem("mood");
         moodChange(mood);

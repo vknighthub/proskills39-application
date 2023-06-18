@@ -23,11 +23,11 @@ const Header = () => {
           <MobileHeader />
           <SearchBox />
           <Logo />
+          <ButtonHeader name={t('dRep')} link="dRep" />
           <SwitchLanguage />
           <div className="user-activity-buttons">
             <NotificationsButton isAuthorized={isAuthorized} />
           </div>
-          <ButtonHeader name={t('dRep')} link="dRep" />
           <ProfileDropdown
             profile={session ? session : me}
             isAuthorized={isAuthorized}

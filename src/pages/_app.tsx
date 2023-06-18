@@ -31,6 +31,7 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
 
 
   useEffect(() => {
+    localStorage.setItem("mood", "dark-mood");
     document.documentElement.dir = dir;
   }, [dir]);
 

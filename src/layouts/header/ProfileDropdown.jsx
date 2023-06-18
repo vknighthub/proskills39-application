@@ -22,18 +22,6 @@ const ProfileDropdown = ({ profile, isAuthorized }) => {
                     className={`header-user-profile cryptoki-notif-bttn ${toggle ? "active" : ""
                         }`}
                 >
-                    <div className="user-meta" onClick={() => setToggle(!toggle)}>
-                        <div className="user_name">{userData.fullname}</div>
-                        <div className="user_score">
-                            <span>
-                                <svg className="crumina-icon">
-                                    <use xlinkHref="#circle-icon" />
-                                </svg>
-                            </span>
-                            291.36 <span className="gradient-text bold">v2P</span>
-                        </div>
-                    </div>
-
                     <div
                         className={`avatar box-42 ${toggle ? "hide" : ""}`}
                         onClick={() => setToggle(!toggle)}
@@ -50,6 +38,28 @@ const ProfileDropdown = ({ profile, isAuthorized }) => {
                             </svg>
                         </span>
                     </div>
+                    <div className="user-meta" onClick={() => setToggle(!toggle)}>
+                        <div className="user_name">ID: {userData.fullname}</div>
+                        <div className="user_score">
+                            <span>
+                                <svg className="crumina-icon">
+                                    <use xlinkHref="#circle-icon" />
+                                </svg>
+                            </span>
+                            291.36 <span className="gradient-text bold">v2P</span>
+                        </div>
+                        <div className="user_score" style={{marginTop: 5}}>
+                            <span>
+                                <svg className="crumina-icon">
+                                    <use xlinkHref="#wallet-icon" />
+                                </svg>
+                            </span>
+                            <span className="gradient-text bold">0x65885c0c450827ab29b60bxxxxxx74475be</span>
+                        </div>
+                    </div>
+                    
+
+                    
 
                     <div
                         className={`closing-icon ${toggle ? "show" : ""}`}

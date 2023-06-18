@@ -1228,10 +1228,45 @@ body.dark-mode .btn-dark {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+body.dark-mode .selectLanguageContainer{
+    background: 
+    linear-gradient(#121419, #121419) padding-box,
+    linear-gradient(60deg, #00f, #00e8ff) border-box;
+    color: #fff;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-radius: 20px;
+    display: inline-block;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
 
 
 body.dark-mode .btn-dark:hover {
     background-image: none;
+}
+
+body.dark-mode .background-content {
+    background: url(../images/content/body.png) no-repeat 0 100%;
+    backdrop-filter: blur(30px);
+}
+
+body.dark-mode .home-page-title {
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 228.5%;
+    background: linear-gradient(86.15deg, #0061D3 4.58%, #04CDF9 72.25%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    backdrop-filter: blur(13px);
+}
+
+body.dark-mode .home-page-sub-title {
+    letter-spacing: 0.15em;
+    backdrop-filter: blur(13px);
+    background: linear-gradient(86.15deg, #0061D3 4.58%, #04CDF9 72.25%),linear-gradient(180deg, #006CD0 0%, #07C4FF 100%);
+    backdrop-filter: blur(5px);
 }
 
 .btn-fuchsia {
@@ -2618,7 +2653,6 @@ ol li::marker {
 .header-user-profile .user-meta {
     border-left: 1px solid var(--border-color);
     padding-left: 20px;
-    text-align: right;
     white-space: nowrap;
 }
 
@@ -10880,6 +10914,9 @@ td[data-label="Date"] {
 
 .mt-5 {
     margin-top: 3rem !important;
+}
+.mt-6 {
+    margin-top: 4rem !important;
 }
 
 .ms-xl-0 {

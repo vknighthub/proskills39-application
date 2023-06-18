@@ -24,11 +24,21 @@ const Home: NextPageWithLayout<
         url={routes.home}
         image_url='https://api.proskills39.com/system/logo/logotest.png'
       />
-      <div className="primary-content-area bottom-padding-70">
+      <div className="primary-content-area bottom-padding-70 background-content">
+        <div className="single-post medium-section mt-6">
+          <div className="post-heading">
+            <h1 className="home-page-title">
+              Proskills39
+            </h1>
+            <div className="news-meta">
+              <h3 className="home-page-sub-title">A Web3 Service MarketPlace</h3>
+            </div>
+          </div>
+        </div>
         <HomePopularCategory data={homepageinfo.popuparcategories} />
         <HomePopularService data={homepageinfo.mostpopularservice} />
-        <HomeTopCreators data ={homepageinfo.mostpopularseller}/>
-        <NewestService data = {homepageinfo.newestservice} />
+        <HomeTopCreators data={homepageinfo.mostpopularseller} />
+        <NewestService data={homepageinfo.newestservice} />
       </div>
     </>
   )
