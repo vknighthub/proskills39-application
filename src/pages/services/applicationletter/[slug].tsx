@@ -59,7 +59,7 @@ const ApplicationLetter: NextPageWithLayout<
 
     const dealprojectValidationSchema = yup.object().shape({
         price: yup.string().required(),
-        numberofdaydelivery: yup.string().required(),
+        duedt: yup.date().required(),
     });
 
 
@@ -108,7 +108,7 @@ const ApplicationLetter: NextPageWithLayout<
             serviceid: service_deal?.id,
             descriptions: value,
             price: data.price,
-            numberofdaydelivery: data.numberofdaydelivery
+            duedt: data.duedt
         }
         SubmitLetter(dataSubmit)
     };
@@ -160,8 +160,8 @@ const ApplicationLetter: NextPageWithLayout<
                                 <input type="text" id="price" defaultValue={service_deal?.price} {...register('price')} />
                             </div>
                             <div className="form-field">
-                                <label htmlFor="numberofdaydelivery">Delivery time</label>
-                                <input type="text" id="numberofdaydelivery" {...register('numberofdaydelivery')} />
+                                <label htmlFor="duedt">Delivery time</label>
+                                <input type="date" id="duedt" {...register('duedt')} />
                             </div>
                         </div>
 

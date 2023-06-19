@@ -814,7 +814,7 @@ export interface DealProjectInput {
 export interface ApplyLetterInput {
     serviceid?: number
     price: number
-    numberofdaydelivery: number
+    duedt: Date
     descriptions: string
 }
 

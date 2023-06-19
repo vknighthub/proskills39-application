@@ -21,7 +21,7 @@ export default function Footer() {
                             </div>
                             <div className="footer-text">
                                 <p>
-                                    {t('text-proskills39')}
+                                    <span className="gradient-text">Proskills39 </span> {t('text-proskills39')}
                                 </p>
                             </div>
                             <ul className="social-icons-list">
@@ -96,11 +96,7 @@ export default function Footer() {
                                             id="subscribe-email"
                                             placeholder="Subscribe to our newsletter"
                                         />
-                                        <button className="subscribe-submit" type="submit">
-                                            <svg className="crumina-icon">
-                                                <use xlinkHref="#arrow-right-icon" />
-                                            </svg>
-                                        </button>
+                                        
                                     </div>
                                 </form>
                             </div>

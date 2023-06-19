@@ -285,7 +285,7 @@
        ============================*/
     --btn-border-radius: 30px;
     --input-border-radius: 30px;
-
+    --input-border-search-footer-radius: 6px;
     /* ===========================
     1.8. Search
     ================================================================*/
@@ -309,6 +309,7 @@ body.dark-mode {
     --cryptoki-gradient: linear-gradient(to right, var(--primary-gradient-color) 20%, var(--secondary-gradient-color));
     --toggle-background-color-on: var(--cryptoki-gradient);
     --cryptoki-box-shadow: 0 3px 5px -1px rgba(255, 255, 255, 0.2), 0 6px 10px 0 rgba(255, 255, 255, 0.14), 0 1px 18px 0 rgba(255, 255, 255, .12);
+    --input-border-search-footer-radius: 6px
 }
 
 /* ===========================
@@ -4339,6 +4340,7 @@ body.dark-mode .search-form-with-text .main-search .search-button {
 .cryptoki-form input[type="submit"],
 .cryptoki-form input[type="reset"],
 .cryptoki-form input[type="tel"],
+.cryptoki-form input[type="date"],
 .cryptoki-form select,
 .cryptoki-form .select-nice {
     padding: max(0.87vw, 12px) max(1.5vw, 18px);
@@ -5907,11 +5909,11 @@ body.dark-mode #filter-form input[type="submit"] {
     ================================ */
 
 .footer {
+    background: url(../images/content/footer.png) no-repeat 0 100%;
     margin-top: auto;
     font-size: 13px;
-    background-image: radial-gradient(circle 343px at 46.3% 47.5%, rgba(242, 242, 242, 1) 0%, rgba(241, 241, 241, 1) 72.9%);
     position: relative;
-    color: var(--footer-text-color);
+    color: #fff;
 }
 
 .footer a {
@@ -5936,7 +5938,6 @@ body.dark-mode #filter-form input[type="submit"] {
     width: 100%;
     height: 8px;
     z-index: 1;
-    background: var(--cryptoki-gradient);
 }
 
 .footer-content {
@@ -6036,8 +6037,9 @@ body.dark-mode #filter-form input[type="submit"] {
 
 .footer-menu .menu-link {
     display: block;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 2.3;
+    font-size:16px
 }
 
 /* ================================
@@ -6112,8 +6114,8 @@ body.dark-mode #filter-form input[type="submit"] {
     display: flex;
     width: max(250px, 20vw);
     max-width: 100%;
-    border: solid 2px transparent;
-    border-radius: var(--input-border-radius);
+    border: solid 1px transparent;
+    border-radius: var(--input-border-search-footer-radius);
     background-image: linear-gradient(var(--footer-background), var(--footer-background)), linear-gradient(to right, var(--primary-gradient-color), var(--secondary-gradient-color));
     background-origin: border-box;
     background-clip: content-box, border-box;
@@ -6124,7 +6126,7 @@ body.dark-mode #filter-form input[type="submit"] {
     flex: 0 1 100%;
     padding: 20px;
     background: transparent;
-    border-radius: var(--input-border-radius);
+    border-radius: var(--input-border-search-footer-radius);
     border: none;
     font-size: var(--body-font-size);
     font-weight: var(--body-font-weight);
