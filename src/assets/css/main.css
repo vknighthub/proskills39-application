@@ -221,7 +221,7 @@
     --secondary-accent-color: #0084ff;
     --primary-gradient-color: #0084ff;
     --secondary-gradient-color: #04CDF9;
-    --cryptoki-gradient: linear-gradient(to right, var(--primary-gradient-color) 20%, var(--secondary-gradient-color) 100%);
+    --cryptoki-gradient: linear-gradient(to right, var(--primary-gradient-color) 20%, var(--secondary-gradient-color) 72.25%);
     /* ===============================
        1.2. Body background and font colors
        =============================== */
@@ -299,12 +299,13 @@ body.dark-mode {
     --body-background: #121419;
     --main-font-color: #fff;
     --border-color: #353946;
+    --border-bottom-color: linear-gradient(86.15deg, #0061D3 4.58%, #04CDF9 72.25%),linear-gradient(0deg, #2A7DF9, #2A7DF9);
     --light-gray: #353946;
     --lighter-gray: #20232b;
     --extra-light-gray: #20232b;
-    --primary-accent-color: #00ffcc;
+    --primary-accent-color:#177afa;
     --primary-gradient-color: #177afa;
-    --secondary-gradient-color: #03f0d1;
+    --secondary-gradient-color: #04CDF9;
     --cryptoki-gradient: linear-gradient(to right, var(--primary-gradient-color) 20%, var(--secondary-gradient-color));
     --toggle-background-color-on: var(--cryptoki-gradient);
     --cryptoki-box-shadow: 0 3px 5px -1px rgba(255, 255, 255, 0.2), 0 6px 10px 0 rgba(255, 255, 255, 0.14), 0 1px 18px 0 rgba(255, 255, 255, .12);
@@ -565,7 +566,7 @@ ol {
 }
 
 .padding-top-bottom {
-    padding: 20px 0;
+    padding: 14px 0;
 }
 
 /* =========================
@@ -586,7 +587,7 @@ ol {
        ========================= */
 
 .border-bottom {
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-bottom-color);
 }
 
 .icon-border a {
@@ -1248,7 +1249,8 @@ body.dark-mode .btn-dark:hover {
 
 body.dark-mode .background-content {
     background: url(../images/content/body.png) no-repeat 0 100%;
-    backdrop-filter: blur(30px);
+    background-position: top center;
+    background-attachment: fixed;
 }
 
 body.dark-mode .home-page-title {
@@ -1260,14 +1262,18 @@ body.dark-mode .home-page-title {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     backdrop-filter: blur(13px);
+    letter-spacing: 0.07em;
 }
 
-body.dark-mode .home-page-sub-title {
-    letter-spacing: 0.15em;
-    backdrop-filter: blur(13px);
-    background: linear-gradient(86.15deg, #0061D3 4.58%, #04CDF9 72.25%),linear-gradient(180deg, #006CD0 0%, #07C4FF 100%);
-    backdrop-filter: blur(5px);
+body.dark-mode .home-page-sub-title {    
+    font-size: 60px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(-86deg, #0061D3 5%, #04CDF9 72%);
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 4px transparent;
 }
+
 
 .btn-fuchsia {
     background-color: var(--fuchsia-color);
@@ -1816,6 +1822,8 @@ ol li::marker {
 
 .site-header {
     background: url(../images/content/background.svg) no-repeat 0 100%;
+    background-position: top center;
+    background-attachment: fixed;
 }
 
 @media(max-width:800px) {
@@ -6485,9 +6493,6 @@ body.dark-mode #filter-form input[type="submit"] {
     margin-bottom: clamp(2rem, 4.5vmax, 70px);
 }
 
-.single-post .post-heading h1 {
-    margin-bottom: 40px;
-}
 
 .single-post .news-meta {
     display: flex;
@@ -6783,14 +6788,14 @@ blockquote p {
 
 .featured-item .featured-item-wrapper {
     background-color: var(--extra-light-gray);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--cryptoki-gradient);
     border-radius: 25px;
 }
 
 .featured-item .featured-item-content {
-    background-color: var(--body-background);
-    border-bottom: 1px solid var(--border-color);
-    border-radius: 25px;
+    background-color: #fff;
+    border: 1px solid var(--cryptoki-gradient);
+    border-radius: 10px;
     padding: 16px;
     position: relative;
     z-index: 1;
@@ -6856,11 +6861,11 @@ blockquote p {
 .featured-item .featured-item-info .title,
 .featured-item.v3 .featured-item-wrapper .title,
 .featured-item.v4 .featured-item-author .title {
-    font-size: 20px;
-    font-weight: var(--heading-font-weight);
-    line-height: 1.2;
+    font-size: 12px;
+    font-weight: 600;
     margin-bottom: 10px;
     letter-spacing: var(--letter-spacing);
+    color: #000;
 }
 
 .featured-item .featured-item-info .title a:hover {

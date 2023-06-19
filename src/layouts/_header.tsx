@@ -21,10 +21,11 @@ const Header = () => {
       <div className="topbar padding-top-bottom border-bottom">
         <div className="topbar-wrapper container">
           <MobileHeader />
-          <SearchBox />
           <Logo />
+          <SearchBox />
+          
           <ButtonHeader name={t('dRep')} link="dRep" />
-          <SwitchLanguage />
+          
           <div className="user-activity-buttons">
             <NotificationsButton isAuthorized={isAuthorized} />
           </div>
@@ -32,6 +33,7 @@ const Header = () => {
             profile={session ? session : me}
             isAuthorized={isAuthorized}
           />
+          <SwitchLanguage />
         </div>
       </div>
       <MobileSearchTrigger

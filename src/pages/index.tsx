@@ -9,6 +9,7 @@ import Seo from '@/layouts/_seo'
 import { NextPageWithLayout } from '@/types'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import Link from 'next/link'
 
 const Home: NextPageWithLayout<
   InferGetStaticPropsType<typeof getStaticProps>
@@ -24,15 +25,41 @@ const Home: NextPageWithLayout<
         url={routes.home}
         image_url='https://api.proskills39.com/system/logo/logotest.png'
       />
-      <div className="primary-content-area bottom-padding-70 background-content">
+      <div className="primary-content-area background-content">
         <div className="single-post medium-section mt-6">
           <div className="post-heading">
             <h1 className="home-page-title">
               Proskills39
             </h1>
             <div className="news-meta">
-              <h3 className="home-page-sub-title">A Web3 Service MarketPlace</h3>
+              <svg style={{ width: 850, height: 137, textAlign: 'center' }} xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradient" y1="0" y2="1">
+                    <stop stop-color="#0061D3" offset="0" />
+                    <stop stop-color="#04CDF9" offset="1" />
+                  </linearGradient>
+                </defs>
+                <g>
+                  <text id="text" y="100" font-size="60" font-style="normal" letterSpacing="0.15rem" font-weight="700" stroke-width="2" stroke="url(#gradient)" fill="none">A Web Service MarketPlace</text>
+                </g>
+              </svg>
             </div>
+            <p style={{
+              fontWeight: 400,
+              fontSize: 24
+            }}>
+              ProSkills39 is a Service Marketplace that connects pro-skills freelancers
+              and provides support services for project owners to start up
+              and expand their businesses at a reasonable cost.
+            </p>
+            <div className="collection-box" style={{justifyContent: 'center'}}>
+                    <Link
+                        href="#"
+                        className="btn btn-normal btn-dark create-collection"
+                    >
+                        Get Started
+                    </Link>
+                </div>
           </div>
         </div>
         <HomePopularCategory data={homepageinfo.popuparcategories} />

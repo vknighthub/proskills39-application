@@ -8,22 +8,23 @@ import { ProgramingIcon } from "@/components/icons/categories/programing-icon";
 import { TrendingIcon } from "@/components/icons/categories/trending";
 import { VideoAnimationIcon } from "@/components/icons/categories/video-animation";
 import { WrittingTranslationIcon } from "@/components/icons/categories/writting-translation";
+import { StarIcon } from "@/components/icons/star-icon";
 import Link from "next/link";
 
 const Categories = ({ data }) => {
     
     const renderIcon = (icon) => {
         switch (icon) {
-            case "program-tech": return <ProgramingIcon style={{ width: "80px", height: "80px" }} />;
-            case "graphics-design": return <GraphicsDesignIcon style={{ width: "80px", height: "80" }} />;
-            case "digital-marketing": return <DigitalMarketingIcon style={{ width: "80px", height: "80" }} />;
-            case "writting-translation": return <WrittingTranslationIcon style={{ width: "80px", height: "80" }} />;
-            case "video-animation": return <VideoAnimationIcon style={{ width: "80px", height: "80" }} />;
-            case "music-audio": return <MusicAudioIcon style={{ width: "80px", height: "80" }} />;
-            case "business": return <BusinessIcon style={{ width: "80px", height: "80" }} />;
-            case "lifestyle": return <LifeStyleIcon style={{ width: "80px", height: "80" }} />;
-            case "trending" : return <TrendingIcon style={{ width: "80px", height: "80"}} />;
-            case "aiservices" : return <AIServiceIcon style={{ width: "80px", height: "80" }} />;
+            case "program-tech": return <ProgramingIcon style={{ width: "233px", height: "144px" }} />;
+            case "graphics-design": return <GraphicsDesignIcon style={{ width: "233px", height: "144px" }} />;
+            case "digital-marketing": return <DigitalMarketingIcon style={{ width: "233px", height: "144px" }} />;
+            case "writting-translation": return <WrittingTranslationIcon style={{ width: "233px", height: "144px" }} />;
+            case "video-animation": return <VideoAnimationIcon style={{ width: "233px", height: "144px" }} />;
+            case "music-audio": return <MusicAudioIcon style={{ width: "233px", height: "144px" }} />;
+            case "business": return <BusinessIcon style={{ width: "233px", height: "144px" }} />;
+            case "lifestyle": return <LifeStyleIcon style={{ width: "233px", height: "144px" }} />;
+            case "trending" : return <TrendingIcon style={{ width: "233px", height: "144px" }} />;
+            case "aiservices" : return <AIServiceIcon style={{ width: "233px", height: "144px" }} />;
             default: return null;
         }
     }
@@ -33,21 +34,15 @@ const Categories = ({ data }) => {
                 <Link href={`/categories/${categories.slug}`}>
                     <div className="featured-item-wrapper">
                         <div className="featured-item-content">
-                            <div className="fav-counter">
-                                <svg className="crumina-icon">
-                                    <use xlinkHref="#heart-icon" />
-                                </svg>{" "}
-                                <span className="count">{categories.react}</span>
-                            </div>
                             <div className="featured-item-image">
-
+                                {renderIcon(categories.icon)}
                             </div>
                             <div className="featured-item-info">
+                                <StarIcon />
                                 <div className="title">
                                     {categories.name}
                                 </div>
                                 <div className="item-meta">
-                                    {renderIcon(categories.icon)}
                                 </div>
                             </div>
                         </div>

@@ -10,7 +10,7 @@ export const HomePopularCategory = ({ data }: PageProps) => {
         <div className="container section-padding">
             <div className="section-title-wrapper">
                 <div className="section-title">
-                    <span className="gradient-text">Categories</span>
+                    Most popular<span className="gradient-text"> Categories</span>
                 </div>
             </div>
             <div className="featured-box">
