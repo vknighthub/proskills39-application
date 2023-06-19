@@ -1,3 +1,4 @@
+import { HomeAcademy } from '@/components/services/academy'
 import { NewestService } from '@/components/services/newst-service'
 import { HomePopularCategory } from '@/components/services/popular-categories'
 import HomePopularService from '@/components/services/popular-service'
@@ -62,6 +63,7 @@ const Home: NextPageWithLayout<
                 </div>
           </div>
         </div>
+        <HomeAcademy />
         <HomePopularCategory data={homepageinfo.popuparcategories} />
         <HomePopularService data={homepageinfo.mostpopularservice} />
         <HomeTopCreators data={homepageinfo.mostpopularseller} />

@@ -4,8 +4,9 @@ import { useRouter } from 'next/router';
 import React from 'react'
 import { useState } from 'react';
 import Select from 'react-select';
+import NotificationsButton from './NotificationsButton';
 
-const SwitchLanguage = () => {
+const SwitchLanguage = ({ isAuthorized }) => {
     const router = useRouter();
     const { asPath, locales, locale } = router;
     const currentSelectedItem = locales
@@ -82,7 +83,7 @@ const SwitchLanguage = () => {
 
     const SingleValue = ({ children, ...props }) => (
         <>
-            <Icon icon="material-symbols:language" style={{marginRight: '6px'}} />
+            <Icon icon="material-symbols:language" style={{ marginRight: '6px' }} />
             {children}
         </>
     );
@@ -91,20 +92,23 @@ const SwitchLanguage = () => {
     const defaultOption = languageOptions.find(option => option.value === locale);
 
     return (
-        <Select
-            options={languageOptions}
-            isSearchable={false}
-            styles={customStyles}
-            defaultValue={defaultOption}
-            formatValueLabel={CustomValueLabel}
-            components={{
-                Option: CustomOption,
-                SingleValue: SingleValue
-            }}
-            onChange={handleChange}
-        >
+        <>
+            <NotificationsButton isAuthorized={isAuthorized} />
+            <Select
+                options={languageOptions}
+                isSearchable={false}
+                styles={customStyles}
+                defaultValue={defaultOption}
+                formatValueLabel={CustomValueLabel}
+                components={{
+                    Option: CustomOption,
+                    SingleValue: SingleValue
+                }}
+                onChange={handleChange}
+            >
 
-        </Select>
+            </Select>
+        </>
     )
 }
 

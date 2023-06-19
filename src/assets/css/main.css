@@ -1230,6 +1230,16 @@ body.dark-mode .btn-dark {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+body.dark-mode .connect-wallet{
+    color: #fff;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(60deg, #00f, #00e8ff) border-box;
+}
+
 body.dark-mode .selectLanguageContainer{
     background: 
     linear-gradient(#121419, #121419) padding-box,
@@ -1977,7 +1987,7 @@ ol li::marker {
         ================================ */
 
 .user-activity-buttons {
-    display: flex;
+    display: grid;
 }
 
 .user-activity-buttons>* {
@@ -2512,25 +2522,26 @@ ol li::marker {
 
 .main-search .search-dropdown {
     position: absolute;
-    background-color: var(--extra-light-gray);
-    border: 1px solid var(--border-color);
+    background-color: rgba(0, 0, 0, 0.52);
+    border-bottom: 2px solid #0062fe;
     top: calc(100% + 10px);
     left: -1px;
     width: 200px;
     z-index: 60;
     padding: 10px 0;
-    border-radius: var(--input-border-radius);
+    border-radius: 13px;
     text-align: left;
     display: none;
     animation: fadeInUp .25s;
+    box-sizing: border-box;
 }
 
 .main-search .search-dropdown li {
     white-space: initial;
     padding: 10px 20px;
-    font-size: var(--body-font-size);
+    font-size: 15px;
     line-height: 1.4;
-    font-weight: var(--heading-font-weight);
+    font-weight: 700px;
 }
 
 .main-search .search-dropdown li:hover {
@@ -6292,6 +6303,7 @@ body.dark-mode #filter-form input[type="submit"] {
     border: 1px solid var(--border-color);
     border-radius: 25px;
     transition: transform 0.3s ease-in-out;
+    display: flex;
 }
 
 .news-item:hover {
@@ -11221,4 +11233,21 @@ td[data-label="Date"] {
 }
 .p-2 {
     padding: 0.5rem !important;
+}
+.background-academy{
+    background: url(../images/content/academy.png) no-repeat 0 100%;
+}
+
+.news-item-academy {
+    border: 0.5px solid #fff;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    backdrop-filter: blur(8px);
+    
+}
+@media(max-width:320px) {
+    .news-item-academy .news-content {
+        padding: 20px 15px;
+    }
 }

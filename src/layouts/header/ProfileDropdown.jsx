@@ -54,7 +54,7 @@ const ProfileDropdown = ({ profile, isAuthorized }) => {
                                     <use xlinkHref="#wallet-icon" />
                                 </svg>
                             </span>
-                            <span className="gradient-text bold">0x65885c0c450827ab29b60bxxxxxx74475be</span>
+                            <span className="gradient-text bold">0x65885c0c4bxxxxxx74475be</span>
                         </div>
                     </div>
                     

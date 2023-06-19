@@ -10,6 +10,7 @@ import MobileSearchTrigger from './header/MobileSearchTrigger'
 import NotificationsButton from './header/NotificationsButton'
 import ProfileDropdown from './header/ProfileDropdown'
 import SearchBox from './header/SearchBox'
+import ConnectWallet from './header/ConnectWallet'
 
 const Header = () => {
   const { t } = useTranslation('common')
@@ -25,15 +26,16 @@ const Header = () => {
           <SearchBox />
           
           <ButtonHeader name={t('dRep')} link="dRep" />
+          <ConnectWallet />  
           
-          <div className="user-activity-buttons">
-            <NotificationsButton isAuthorized={isAuthorized} />
-          </div>
           <ProfileDropdown
             profile={session ? session : me}
             isAuthorized={isAuthorized}
           />
-          <SwitchLanguage />
+          
+          <div className="user-activity-buttons">
+            <SwitchLanguage  isAuthorized={isAuthorized}/>
+          </div>
         </div>
       </div>
       <MobileSearchTrigger
