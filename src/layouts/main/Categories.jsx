@@ -43,6 +43,7 @@ const Categories = ({ data }) => {
                                     {categories.name}
                                 </div>
                                 <div className="item-meta">
+                                    
                                 </div>
                             </div>
                         </div>

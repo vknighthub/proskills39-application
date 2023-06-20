@@ -65,7 +65,7 @@ const SearchBox = () => {
             id="head-search"
             placeholder={t('text-search-word')}
           />
-          <button className="search-button">
+          <button className="search-button" >
             <svg className="crumina-icon">
               <use xlinkHref="#search-icon" />
             </svg>

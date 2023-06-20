@@ -115,9 +115,7 @@ export default function Footer() {
                                             </Link>{" "}
                                         </li>
                                     ))}
-
                                 </ul>
-
                             </div>
                         </div>
                     </div>
@@ -157,6 +155,20 @@ export default function Footer() {
                                         </Link>{" "}
                                     </li>
                                 ))}
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="footer-column">
+                        <div className="footer-widget">
+                            <div className="widget-title">{t('text-more')}</div>
+                            <ul className="footer-menu">
+                                    <li className="menu-item">
+                                        {" "}
+                                        <Link legacyBehavior href={`/academy`}>
+                                            <a className="menu-link">Academy</a>
+                                        </Link>{" "}
+                                    </li>
 
                             </ul>
                         </div>
