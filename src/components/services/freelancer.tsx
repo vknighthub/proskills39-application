@@ -7,7 +7,7 @@ export const HomeFreelancer = () => {
         <div className="container-academy content-padding">
             <div className="section-title-wrapper">
                 <div className="section-title">
-                    Academy on<span className="gradient-text"> Proskills39</span>
+                    Freelancer<span className="gradient-text"> on Proskills39</span>
                 </div>
             </div>
             <div className="background-freelancer">

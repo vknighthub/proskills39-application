@@ -54,22 +54,29 @@ const Home: NextPageWithLayout<
               and provides support services for project owners to start up
               and expand their businesses at a reasonable cost.
             </p>
-            <div className="collection-box" style={{justifyContent: 'center'}}>
-                    <Link
-                        href="#"
-                        className="btn btn-normal btn-dark create-collection"
-                    >
-                        Get Started
-                    </Link>
-                </div>
+            <div className="collection-box" style={{ justifyContent: 'center' }}>
+              <Link
+                href="#"
+                className="btn btn-normal btn-dark create-collection"
+              >
+                Get Started
+              </Link>
+            </div>
           </div>
         </div>
+        <HomePopularCategory data={homepageinfo.popuparcategories} />
         <HomeAcademy />
         <HomeFreelancer />
-        <HomePopularCategory data={homepageinfo.popuparcategories} />
-        <HomePopularService data={homepageinfo.mostpopularservice} />
-        <HomeTopCreators data={homepageinfo.mostpopularseller} />
+
+
+        <div className="container-all-service">
+          <div className="section-title">
+            All service on Proskills39
+          </div>
+        </div>
+
         <NewestService data={homepageinfo.newestservice} />
+
       </div>
     </>
   )

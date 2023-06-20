@@ -26,7 +26,7 @@ const Header = () => {
           <SearchBox />
           
           <ButtonHeader name={t('dRep')} link="dRep" />
-          <ConnectWallet />  
+          <ConnectWallet isAuthorized={isAuthorized}/>  
           
           <ProfileDropdown
             profile={session ? session : me}
