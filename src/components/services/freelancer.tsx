@@ -1,15 +1,16 @@
-import mouse from '@/assets/images/svg/mouse.svg'
+import freelancer from '@/assets/images/svg/freelancer.svg'
+import maximize_2 from '@/assets/images/svg/maximize-2.svg'
 import Image from 'next/image'
 import Link from 'next/link'
-export const HomeAcademy = () => {
+export const HomeFreelancer = () => {
     return (
-        <div className="container-academy">
+        <div className="container-academy content-padding">
             <div className="section-title-wrapper">
                 <div className="section-title">
                     Academy on<span className="gradient-text"> Proskills39</span>
                 </div>
             </div>
-            <div className="background-academy">
+            <div className="background-freelancer">
 
                 <div className="featured-box-wrapper grid-6-columns">
                     <div className="categories-nav-academy">
@@ -34,60 +35,95 @@ export const HomeAcademy = () => {
                             </svg>
                         </button>
                     </div>
-                    <div className="news-item-academy">
+                    <div className="news-item-freelancer">
+                        <div className="news-content news-content-freelancer">
+                            <div className="news-meta">
+                                <span> VIP Cartified Expert </span>
+                            </div>
+                            <Link href="#" >
+                                    <Image src={maximize_2} alt="" />
+                                </Link>
+                        </div>
                         <div className="service-thumb">
                             <Link href={`/categories/services/`}>
                                 <Image
-                                    src={mouse}
-                                    width={177}
-                                    height={151}
+                                    src={freelancer}
+                                    width={215}
+                                    height={103}
                                     sizes="min-height:300px"
                                     alt={"mouse"}
                                 />
                             </Link>{" "}
                         </div>
-                        <div className="news-content">
-                            <div className="news-meta">
-                                <span> Mother care service after giving birth </span>
-                            </div>
-                        </div>
+
                     </div>
-                    <div className="news-item-academy">
+                    <div className="news-item-freelancer">
+                        <div className="news-content news-content-freelancer">
+                            <div className="news-meta">
+                                <span> VIP Cartified Expert </span>
+                            </div>
+                            <Link href="#" >
+                                    <Image src={maximize_2} alt="" />
+                                </Link>
+                        </div>
                         <div className="service-thumb">
                             <Link href={`/categories/services/`}>
                                 <Image
-                                    src={mouse}
-                                    width={177}
-                                    height={151}
+                                    src={freelancer}
+                                    width={215}
+                                    height={103}
                                     sizes="min-height:300px"
                                     alt={"mouse"}
                                 />
                             </Link>{" "}
                         </div>
-                        <div className="news-content">
-                            <div className="news-meta">
-                                <span> Mother care service after giving birth </span>
-                            </div>
-                        </div>
+
                     </div>
-                    <div className="news-item-academy">
+                    <div className="news-item-freelancer">
+                        <div className="news-content news-content-freelancer">
+                            <div className="news-meta">
+                                <span> VIP Cartified Expert </span>
+                            </div>
+                            <Link href="#" >
+                                    <Image src={maximize_2} alt="" />
+                                </Link>
+                        </div>
                         <div className="service-thumb">
                             <Link href={`/categories/services/`}>
                                 <Image
-                                    src={mouse}
-                                    width={177}
-                                    height={151}
+                                    src={freelancer}
+                                    width={215}
+                                    height={103}
                                     sizes="min-height:300px"
                                     alt={"mouse"}
                                 />
                             </Link>{" "}
                         </div>
-                        <div className="news-content">
-                            <div className="news-meta">
-                                <span> Mother care service after giving birth </span>
-                            </div>
-                        </div>
+
                     </div>
+                    <div className="news-item-freelancer">
+                        <div className="news-content news-content-freelancer">
+                            <div className="news-meta">
+                                <span> VIP Cartified Expert </span>
+                            </div>
+                            <Link href="#" >
+                                    <Image src={maximize_2} alt="" />
+                                </Link>
+                        </div>
+                        <div className="service-thumb">
+                            <Link href={`/categories/services/`}>
+                                <Image
+                                    src={freelancer}
+                                    width={215}
+                                    height={103}
+                                    sizes="min-height:300px"
+                                    alt={"mouse"}
+                                />
+                            </Link>{" "}
+                        </div>
+
+                    </div>
+
                     <div className="categories-nav-academy">
                         <button className="swiper-button-next-academy" >
                             <svg width="106" height="190" viewBox="0 0 106 190" fill="none" xmlns="http://www.w3.org/2000/svg">
