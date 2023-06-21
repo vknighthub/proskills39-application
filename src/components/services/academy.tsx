@@ -10,7 +10,6 @@ export const HomeAcademy = () => {
                 </div>
             </div>
             <div className="background-academy">
-
                 <div className="featured-box-wrapper grid-6-columns">
                     <div className="categories-nav-academy">
                         <button className="swiper-button-prev-academy" >

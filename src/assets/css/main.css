@@ -6866,7 +6866,7 @@ blockquote p {
     max-height: 340px;
     overflow: hidden;
     border-radius: 20px;
-    text-align:center;
+    text-align: center;
 }
 
 .featured-item-image img {
@@ -10941,6 +10941,14 @@ td[data-label="Date"] {
     margin-left: 1rem !important;
 }
 
+.ml-lg-2 {
+    margin-left: 2rem !important;
+}
+
+.ml-lg-2 {
+    margin-right: 2rem !important;
+}
+
 .mt-3 {
     margin-top: 1rem !important;
 }
@@ -11313,7 +11321,6 @@ td[data-label="Date"] {
 
 .categories-nav-academy .swiper-button-prev-academy {
     left: 0;
-    margin-left: 125px;
 }
 
 .categories-nav-academy .swiper-button-next-academy {
@@ -11349,6 +11356,8 @@ td[data-label="Date"] {
     width: 106px;
     height: 190px;
 }
+
+
 
 .news-item-freelancer .news-meta {
 
@@ -11387,12 +11396,75 @@ td[data-label="Date"] {
     line-height: 228.5%;
     backdrop-filter: blur(13px);
 }
-.newest-service{
-    background:linear-gradient(60deg, #00f, #00e8ff) border-box;
+
+.newest-service {
+    background: linear-gradient(60deg, #00f, #00e8ff) border-box;
     border-bottom: 4px solid transparent !important;
     backdrop-filter: blur(13px);
     border-radius: 10px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     box-sizing: border-box;
 
+}
+
+.w-100 {
+    width: 100px !important;
+}
+
+.col {
+    flex: 1 0 0%;
+}
+
+.col-1 {
+    flex: 0 0 auto;
+    width: 8.33333333%;
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-0.5 * var(--bs-gutter-x));
+    margin-left: calc(-0.5 * var(--bs-gutter-x));
+    flex-direction: row;
+}
+
+.categories-nav-newest-service {
+    width: 106px;
+}
+
+
+.categories-nav-newest-service .arrow {
+    display: flex;
+    align-items: center;
+    width: 10px;
+    height: 42px;
+    background: var(--body-background);
+    z-index: 10;
+    fill: var(--main-font-color);
+}
+
+.categories-nav-newest-service .arrow:hover svg {
+    fill: var(--primary-accent-color);
+}
+
+.categories-nav-newest-service .arrow-left {
+    box-shadow: var(--body-background) 5px 0px 10px 15px;
+}
+
+.categories-nav-newest-service .arrow-right {
+    box-shadow: var(--body-background) -5px 0px 10px 15px;
+}
+
+.categories-nav-newest-service svg {
+    width: 106px;
+    height: 190px;
+}
+.featured-item-info .item-money {
+    padding: auto;
+    color: #0062fe;
+}
+.featured-item-info .item-money span{
+    margin-left:5px;
 }

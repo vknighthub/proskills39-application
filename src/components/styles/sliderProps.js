@@ -151,8 +151,9 @@ export const featuredNewestService = {
     delay: 2500,
     disableOnInteraction: false,
   },
+  slideVisibleClass: "swiper-slide-visible",
   navigation: {
-    nextEl: ".featured-carousel-icon.swiper-button-next",
-    prevEl: ".featured-carousel-icon.swiper-button-prev",
+    prevEl: ".swiper-button-prev-newest-service",
+    nextEl: ".swiper-button-next-newest-service"
   },
 };
