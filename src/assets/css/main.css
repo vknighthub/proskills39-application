@@ -217,20 +217,20 @@
     /* ============================
        1.1. Primary template colors
        ============================ */
-    --primary-accent-color: #ff6c0d;
+    --primary-accent-color: #0061D3;
     --secondary-accent-color: #0084ff;
     --primary-gradient-color: #0084ff;
     --secondary-gradient-color: #04CDF9;
-    --cryptoki-gradient: linear-gradient(to right, var(--primary-gradient-color) 20%, var(--secondary-gradient-color) 72.25%);
+    --cryptoki-gradient: linear-gradient(86.62deg, #0061D3 -92.93%, #04CDF9 71.63%), linear-gradient(0deg, #2A7DF9, #2A7DF9);
     /* ===============================
        1.2. Body background and font colors
        =============================== */
     --body-background: #fff;
     --border-color: linear-gradient(to right, var(--primary-gradient-color) 20%, var(--secondary-gradient-color));
-    --main-font-color: linear-gradient(to right, var(--primary-gradient-color) 20%, var(--secondary-gradient-color));
+    --main-font-color: #fff;
     --unchangable-font-color: #252831;
     --contrast-text-color: #fff;
-    --inactive-text-color: #a8a9ad;
+    --inactive-text-color: #fff;
     /* ====================================
        1.3. Footer background nand font colors
       ===================================== */
@@ -276,7 +276,7 @@
        1.6. Form authorization colors
        ============================*/
     --toggle-background-color-on: var(--cryptoki-gradient);
-    --toggle-background-color-off: var(--main-font-color);
+    --toggle-background-color-off: #fff;
     --toggle-control-color: #fff;
     --toggle-control-border: #343c4a;
 
@@ -289,7 +289,7 @@
     /* ===========================
     1.8. Search
     ================================================================*/
-    --search-background-color: rgba(0, 0, 0, 0.52);
+    --search-background-color: rgba(0, 0, 0, 0.7);
 }
 
 /* ===========================
@@ -311,6 +311,7 @@ body.dark-mode {
     --toggle-background-color-on: var(--cryptoki-gradient);
     --cryptoki-box-shadow: 0 3px 5px -1px rgba(255, 255, 255, 0.2), 0 6px 10px 0 rgba(255, 255, 255, 0.14), 0 1px 18px 0 rgba(255, 255, 255, .12);
     --input-border-search-footer-radius: 6px --footer-text-color: #fff;
+    --search-background-color: rgba(0, 0, 0, 0.52);
 }
 
 /* ===========================
@@ -1189,8 +1190,16 @@ button {
 
 
 .btn-dark {
-    background-color: var(--btn-dark);
-    color: var(--contrast-text-color);
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) padding-box,
+        linear-gradient(60deg, #00f, #00e8ff) border-box;
+    color: #fff;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    border-radius: 27x;
+    display: inline-block;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.7);
 }
 
 .btn-dark:hover {
@@ -1265,7 +1274,24 @@ body.dark-mode .background-content {
     background-attachment: fixed;
 }
 
+.background-content {
+    background: url(../images/content/body-light.png) no-repeat 0 100%;
+    background-position: top center;
+    background-attachment: fixed;
+}
+
 body.dark-mode .home-page-title {
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 228.5%;
+    background: linear-gradient(86.15deg, #0061D3 4.58%, #04CDF9 72.25%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    backdrop-filter: blur(13px);
+    letter-spacing: 0.07em;
+}
+.home-page-title {
     font-weight: 700;
     font-size: 80px;
     line-height: 228.5%;
@@ -1282,9 +1308,9 @@ body.dark-mode .home-page-sub-title {
     font-weight: 700;
     text-transform: uppercase;
     background: -webkit-linear-gradient(-86deg, #0061D3 5%, #04CDF9 72%);
-    -webkit-background-clip: text;
     -webkit-text-stroke: 4px transparent;
 }
+
 
 
 .btn-fuchsia {
@@ -1834,6 +1860,12 @@ ol li::marker {
         ================================ */
 
 .site-header {
+    background: url(../images/content/header-light.png) no-repeat 0 100%;
+    background-position: top center;
+    background-attachment: fixed;
+}
+
+body.dark-mode .site-header {
     background: url(../images/content/background.svg) no-repeat 0 100%;
     background-position: top center;
     background-attachment: fixed;
@@ -2467,12 +2499,26 @@ ol li::marker {
     flex: 0 3 531px;
 }
 
-.main-search {
+body.dark-mode.main-search {
     position: relative;
     display: flex;
     justify-content: flex-start;
     border: 1px solid var(--border-color);
     border-radius: var(--input-border-radius);
+
+}
+
+.main-search {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    border: 1px solid var(--border-color);
+    color: #fff;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    border-radius: 27px;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
 }
 
 .main-search .search-input,
@@ -2492,11 +2538,21 @@ ol li::marker {
     fill: var(--main-font-color);
 }
 
-.main-search .search-input {
+body.dark-mode .main-search .search-input {
     flex: 0 1 100%;
     background-color: var(--search-background-color);
     color: var(--main-font-color);
     border-radius: 0;
+}
+.main-search .search-input {
+    flex: 0 1 100%;
+    background-color: var(--search-background-color);
+    color: #fff;
+    border-radius: 0;
+}
+
+.search-input::placeholder {
+    color: #fff;
 }
 
 .main-search .search-params {
@@ -2885,7 +2941,7 @@ ol li::marker {
     height: 16px;
     width: 30px;
     border-radius: 30px;
-    background-color: var(--toggle-background-color-off);
+    background-color: #0061d3;
     transition: background-color 0.15s ease-in;
 }
 
@@ -5923,8 +5979,17 @@ body.dark-mode #filter-form input[type="submit"] {
     15. FOOTER
     ================================ */
 
-.footer {
+body.dark-mode .footer {
     background: url(../images/content/footer.png) no-repeat 0 100%;
+    margin-top: auto;
+    font-size: 13px;
+    position: relative;
+    color: #fff;
+    background-position: top center;
+    border-top: 1px solid var(--border-top-color)
+}
+.footer {
+    background: url(../images/content/footer-light.png) no-repeat 0 100%;
     margin-top: auto;
     font-size: 13px;
     position: relative;
@@ -6517,7 +6582,10 @@ body.dark-mode #filter-form input[type="submit"] {
     text-align: center;
     margin-bottom: clamp(2rem, 4.5vmax, 70px);
 }
-
+.post-heading p {
+    color: #494949;
+    backdrop-filter: blur(13px);
+}
 
 .single-post .news-meta {
     display: flex;
@@ -11396,6 +11464,12 @@ td[data-label="Date"] {
     line-height: 228.5%;
     backdrop-filter: blur(13px);
 }
+body.dark-mode .section-title{
+    color: #fff;
+}
+.section-title{
+    color: #494949;
+}
 
 .newest-service {
     background: linear-gradient(60deg, #00f, #00e8ff) border-box;
@@ -11461,10 +11535,12 @@ td[data-label="Date"] {
     width: 106px;
     height: 190px;
 }
+
 .featured-item-info .item-money {
     padding: auto;
     color: #0062fe;
 }
-.featured-item-info .item-money span{
-    margin-left:5px;
+
+.featured-item-info .item-money span {
+    margin-left: 5px;
 }
