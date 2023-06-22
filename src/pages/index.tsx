@@ -13,6 +13,7 @@ import { NextPageWithLayout } from '@/types'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Link from 'next/link'
+import { OtherService } from '@/components/services/other-service'
 
 const Home: NextPageWithLayout<
   InferGetStaticPropsType<typeof getStaticProps>
@@ -76,7 +77,11 @@ const Home: NextPageWithLayout<
           </div>
         </div>
 
+        <HomePopularService data ={homepageinfo.mostpopularservice} />
+
         <NewestService data={homepageinfo.newestservice} />
+
+        <OtherService />
 
       </div>
     </>

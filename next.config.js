@@ -29,7 +29,8 @@ module.exports = withPWA({
       'fileup.to',
       'api.proskills39.com',
       'static.ideascale.com',
-      'encrypted-tbn0.gstatic.com'
+      'encrypted-tbn0.gstatic.com',
+      'generation-sessions.s3.amazonaws.com'
     ],
   },
   ...(process.env.APPLICATION_MODE === 'production' && {

@@ -1291,6 +1291,7 @@ body.dark-mode .home-page-title {
     backdrop-filter: blur(13px);
     letter-spacing: 0.07em;
 }
+
 .home-page-title {
     font-weight: 700;
     font-size: 80px;
@@ -2544,6 +2545,7 @@ body.dark-mode .main-search .search-input {
     color: var(--main-font-color);
     border-radius: 0;
 }
+
 .main-search .search-input {
     flex: 0 1 100%;
     background-color: var(--search-background-color);
@@ -5988,6 +5990,7 @@ body.dark-mode .footer {
     background-position: top center;
     border-top: 1px solid var(--border-top-color)
 }
+
 .footer {
     background: url(../images/content/footer-light.png) no-repeat 0 100%;
     margin-top: auto;
@@ -6582,6 +6585,13 @@ body.dark-mode .footer {
     text-align: center;
     margin-bottom: clamp(2rem, 4.5vmax, 70px);
 }
+
+
+body.dark-mode .post-heading p {
+    color: #fcfbfb;
+    backdrop-filter: blur(13px);
+}
+
 .post-heading p {
     color: #494949;
     backdrop-filter: blur(13px);
@@ -11464,10 +11474,12 @@ td[data-label="Date"] {
     line-height: 228.5%;
     backdrop-filter: blur(13px);
 }
-body.dark-mode .section-title{
+
+body.dark-mode .section-title {
     color: #fff;
 }
-.section-title{
+
+.section-title {
     color: #494949;
 }
 
@@ -11543,4 +11555,163 @@ body.dark-mode .section-title{
 
 .featured-item-info .item-money span {
     margin-left: 5px;
+}
+
+.box {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.box .group-wrapper {
+    border: 0px none;
+    height: 29.55px;
+    width: 101.39px;
+}
+
+.box .group {
+    height: 30px;
+    left: 0;
+    top: 0;
+    width: 101px;
+}
+
+/************************************************************************************************/
+.component-popular-service {
+    -webkit-backdrop-filter: blur(4px) brightness(100%);
+    backdrop-filter: blur(4px) brightness(100%);
+    background-color: #00000080;
+    border: 1px solid;
+    border-color: #000000;
+    border-radius: 6px;
+    height: 216px;
+    position: relative;
+    width: 246px;
+}
+
+.component-popular-service .overlap-group {
+    height: 154px;
+    left: 4px;
+    position: absolute;
+    top: 6px;
+    width: 238px;
+}
+
+.component-popular-service .chuot-punk {
+    height: 130px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 238px;
+}
+
+.component-popular-service .career-counselling {
+    color: #ffffff;
+    font-family: "Quicksand-SemiBold", Helvetica;
+    font-size: 12px;
+    font-weight: 600;
+    left: 4px;
+    letter-spacing: -0.24px;
+    line-height: 25px;
+    position: absolute;
+    top: 128px;
+    white-space: nowrap;
+    width: 115px;
+}
+
+.component-popular-service .vector {
+    height: 37px;
+    left: 189px;
+    position: absolute;
+    top: 175px;
+    width: 54px;
+}
+
+
+/****************************************************************/
+
+
+.component-other-service {
+    height: 284px;
+    width: 500px;
+}
+
+.component-other-service .overlap {
+    height: 284px;
+    position: relative;
+    width: 650px;
+}
+
+.component-other-service .vector {
+    height: 54px;
+    left: 480px;
+    position: absolute;
+    top: 1px;
+    width: 50px;
+}
+
+.component-other-service .img {
+    height: 284px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 525px;
+}
+
+.component-other-service .image-1 {
+    height: 275px;
+    left: 6px;
+    object-fit: cover;
+    position: absolute;
+    top: 10px;
+    width: 170px;
+}
+
+.component-other-service .image-2 {
+    height: 275px;
+    left: 184px;
+    object-fit: cover;
+    position: absolute;
+    top: 10px;
+    width: 170px;
+}
+
+.component-other-service .mother-care-service {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 300;
+    left: 370px;
+    letter-spacing: -0.4px;
+    line-height: 39.5px;
+    position: absolute;
+    top: 8px;
+    width: 132px;
+}
+
+.component-other-service .group {
+    height: 50px;
+    left: 380px;
+    position: absolute;
+    top: 220px;
+    width: 200px;
+}
+
+.component-other-service .overlap-group {
+    height: 50px;
+    position: relative;
+    width: 150px;
+}
+
+.component-other-service .view-detail {
+    font-size: 13px;
+    font-family: "Quicksand", Helvetica !important;
+    font-weight: 400;
+    left: 10px;
+    position: absolute;
+    text-align: center;
+    padding: 12px;
+    letter-spacing: 0;
 }

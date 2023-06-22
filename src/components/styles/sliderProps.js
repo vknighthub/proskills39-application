@@ -157,3 +157,22 @@ export const featuredNewestService = {
     nextEl: ".swiper-button-next-newest-service"
   },
 };
+
+
+export const featuredOtherService = {
+  slidesPerView: 2,
+  speed: 600,
+  spaceBetween: 10,
+  slideToClickedSlide: true,
+  createElements: true,
+  loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  slideVisibleClass: "swiper-slide-visible",
+  navigation: {
+    prevEl: ".swiper-button-prev-other-service",
+    nextEl: ".swiper-button-next-other-service"
+  },
+};

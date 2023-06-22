@@ -6,6 +6,8 @@ import the_most_order from '@/assets/images/service/Bigger-Orders.jpg'
 import special_offer from '@/assets/images/service/special-offer.jpg'
 import newest from '@/assets/images/service/newest.png'
 import { Mostpopularservice } from "@/types"
+import { Box } from '@/components/styles/Box'
+import triangle from '@/assets/svg/triangle.svg'
 
 const list_popular = [
     {
@@ -48,37 +50,20 @@ const HomePopularService = ({ data }: Props) => {
                     Most popular <span className="gradient-text">Sub categories</span>
                 </div>
                 <div className="all-items-link">
-                    {" "}
-                    <Link href="/12-blog-grid" className="tag-see-all">
-                        See all
-                    </Link>{" "}
+                    <Link href="/">
+                        <Box />
+                    </Link>
                 </div>
             </div>
             <div className="latest-news-box grid-5-columns">
 
                 {data.map((popular, index) => (
-                    <div className="news-item" key={index}>
-                        <div className="service-thumb">
-                            {" "}
-                            <Link href={`/categories/services/${popular.slug}`}>
-                                <Image
-                                    src={popular.image}
-                                    width={460}
-                                    height={200}
-                                    sizes="min-height:300px"
-                                    alt={popular.name}
-                                />
-                            </Link>{" "}
+                    <div className="component-popular-service" key={index}>
+                        <div className="overlap-group">
+                            <Image className="chuot-punk" alt="Chuot punk" src={popular.image} width={230} height={122} />
+                            <div className="career-counselling">{popular.name}</div>
                         </div>
-                        <div className="news-content">
-                            <div className="news-meta">
-                                <div className="news-tags">
-                                    <span className="tag-item">
-                                        <a>{popular.name}</a>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
+                        <Image className="vector" alt="Vector" src={triangle} />
                     </div>
                 ))}
 
