@@ -1,9 +1,6 @@
-import { useTheme } from 'next-themes';
-
 export function useIsDarkMode() {
-  const { resolvedTheme } = useTheme();
-
+  const theme = localStorage.getItem('mood')
   return {
-    isDarkMode: resolvedTheme === 'dark',
+    isDarkMode: theme === 'dark-mood',
   };
 }

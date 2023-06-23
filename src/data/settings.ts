@@ -11,7 +11,7 @@ export const useSettings = () => {
     const formattedOptions = {
         language: locale,
     };
-    const { data, isLoading, error } = useQuery<SettingQuery, Error>(
+    const { data, isLoading, error, refetch } = useQuery<SettingQuery, Error>(
         [API_ENDPOINTS.SETTINGS, formattedOptions],
         ({ queryKey, pageParam }) =>
             client.settings.all(Object.assign({}, queryKey[1], pageParam))
@@ -20,5 +20,6 @@ export const useSettings = () => {
         settings: data?.result.data.options,
         isLoading,
         error,
+        refetch
     };
 }
