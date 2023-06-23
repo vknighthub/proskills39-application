@@ -27,7 +27,7 @@ const Home: NextPageWithLayout<
         title="ProSkills39 - Pro Skills For Your Success"
         description="Nền tảng kết nối nhà cung cấp dịch vụ, chuyên gia với những người có nhu cầu sử dụng dịch vụ, kỹ năng đó."
         url={routes.home}
-        image_url='https://api.proskills39.com/system/logo/logotest.png'
+        image_url='https://api.proskills39.com/system/logo/logo.png'
       />
       <div className="primary-content-area background-content">
         <div className="single-post medium-section mt-6">
@@ -66,9 +66,10 @@ const Home: NextPageWithLayout<
             </div>
           </div>
         </div>
+
         <HomePopularCategory data={homepageinfo.popuparcategories} />
         <HomeAcademy />
-        <HomeFreelancer />
+        <HomeFreelancer data ={homepageinfo.mostpopularseller}/>
 
 
         <div className="container-all-service">

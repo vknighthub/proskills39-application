@@ -7,6 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import CutText from './../../utils/CutText';
+import { Box } from '@/components/styles/Box'
 
 type PageProps = {
     data: Newestservice[]
@@ -19,6 +20,11 @@ export const NewestService = ({ data }: PageProps) => {
             <div className="section-title-wrapper">
                 <div className="section-title">
                     Newest<span className="gradient-text"> Service</span>
+                </div>
+                <div className="all-items-link">
+                    <Link href="/">
+                        <Box />
+                    </Link>
                 </div>
             </div>
             <div className="row">

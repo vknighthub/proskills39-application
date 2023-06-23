@@ -5,6 +5,8 @@ import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import background_service from '@/assets/images/service/background-service.png'
+import Link from 'next/link';
+import { Box } from '@/components/styles/Box'
 
 export const OtherService = () => {
     const { t } = useTranslation('common')
@@ -26,7 +28,12 @@ export const OtherService = () => {
         <div className="container section-padding overflow-hidden">
             <div className="section-title-wrapper">
                 <div className="section-title">
-                    Newest<span className="gradient-text"> Service</span>
+                    Other<span className="gradient-text"> Service</span>
+                </div>
+                <div className="all-items-link">
+                    <Link href="/">
+                        <Box />
+                    </Link>
                 </div>
             </div>
             <div className="row">

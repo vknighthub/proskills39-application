@@ -9,35 +9,6 @@ import { Mostpopularservice } from "@/types"
 import { Box } from '@/components/styles/Box'
 import triangle from '@/assets/svg/triangle.svg'
 
-const list_popular = [
-    {
-        id: 1,
-        name: 'Reputation',
-        image: repotation_management
-    },
-    {
-        id: 2,
-        name: 'Appreciate',
-        image: appreciate
-    },
-    {
-        id: 3,
-        name: 'The most orders',
-        image: the_most_order
-    },
-    {
-        id: 4,
-        name: 'Many offers',
-        image: special_offer
-    },
-    {
-        id: 5,
-        name: 'Newest',
-        image: newest
-    },
-
-]
-
 type Props = {
     data: Mostpopularservice[]
 }
@@ -47,7 +18,7 @@ const HomePopularService = ({ data }: Props) => {
         <div className="container section-padding">
             <div className="section-title-wrapper">
                 <div className="section-title">
-                    Most popular <span className="gradient-text">Sub categories</span>
+                    Most popular <span className="gradient-text">Service</span>
                 </div>
                 <div className="all-items-link">
                     <Link href="/">
@@ -56,11 +27,10 @@ const HomePopularService = ({ data }: Props) => {
                 </div>
             </div>
             <div className="latest-news-box grid-5-columns">
-
                 {data.map((popular, index) => (
                     <div className="component-popular-service" key={index}>
                         <div className="overlap-group">
-                            <Image className="chuot-punk" alt="Chuot punk" src={popular.image} width={230} height={122} />
+                            <Image className="popular-service" alt="" src={popular.image} width={230} height={122} />
                             <div className="career-counselling">{popular.name}</div>
                         </div>
                         <Image className="vector" alt="Vector" src={triangle} />

@@ -176,3 +176,45 @@ export const featuredOtherService = {
     nextEl: ".swiper-button-next-other-service"
   },
 };
+
+
+export const featuredFreelancer = {
+  slidesPerView: 5,
+  speed: 600,
+  spaceBetween: 20,
+  slideToClickedSlide: true,
+  createElements: true,
+  loop: true,
+  breakpoints: {
+    
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 10,
+    },
+    560: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    800: {
+      slidesPerView: 3,
+      spaceBetween: 10,
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 10,
+    },
+    1200: {
+      slidesPerView: 5,
+      spaceBetween: 10,
+    }
+  },
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  slideVisibleClass: "swiper-slide-visible",
+  navigation: {
+    prevEl: ".swiper-button-prev-freelancer",
+    nextEl: ".swiper-button-next-freelancer"
+  },
+};

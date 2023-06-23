@@ -1,10 +1,22 @@
 import Image from "next/image";
+import triangle from '@/assets/svg/triangle-right.svg';
+import box from '@/assets/svg/box.svg';
 
 export const Box = () => {
     return (
-        <div className="box">
+        <div className="box-next-more">
             <div className="group-wrapper">
-                <Image className="group" width={101} height={30} alt="Group" src="https://generation-sessions.s3.amazonaws.com/874dafd10c6a6b8f1f65c05b6d53a067/img/group-48095683.png" />
+                <div className="group">
+                    <div className="overlap-group">
+                        <div className="text-wrapper">See more</div>
+                        <Image className="img" alt="Img" src={triangle} />
+                        <Image
+                            className="rectangle"
+                            alt="Rectangle"
+                            src={box}
+                        />
+                    </div>
+                </div>
             </div>
         </div>
     );
