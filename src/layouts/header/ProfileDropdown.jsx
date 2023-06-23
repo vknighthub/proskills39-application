@@ -3,7 +3,7 @@ import DropdownSetting from './ProfileDropdown/DropdownSetting';
 import { useEffect, useState } from 'react';
 import LoginAction from './ProfileDropdown/LoginAction';
 import avatar from '@/assets/images/avatar.png'
-const ProfileDropdown = ({ profile, isAuthorized }) => {
+const ProfileDropdown = ({ profile, isAuthorized, setIsDark }) => {
     const [toggle, setToggle] = useState(false);
     const [render, setRender] = useState(true);
 
@@ -48,7 +48,7 @@ const ProfileDropdown = ({ profile, isAuthorized }) => {
                             </span>
                             291.36 <span className="gradient-text bold">v2P</span>
                         </div>
-                        <div className="user_score" style={{marginTop: 5}}>
+                        <div className="user_score" style={{ marginTop: 5 }}>
                             <span>
                                 <svg className="crumina-icon">
                                     <use xlinkHref="#wallet-icon" />
@@ -57,9 +57,6 @@ const ProfileDropdown = ({ profile, isAuthorized }) => {
                             <span className="gradient-text bold">0x65885c0c4bxxxxxx74475be</span>
                         </div>
                     </div>
-                    
-
-                    
 
                     <div
                         className={`closing-icon ${toggle ? "show" : ""}`}
@@ -74,9 +71,9 @@ const ProfileDropdown = ({ profile, isAuthorized }) => {
 
                 </div>
             }
-            
+
             <>
-                <LoginAction isAuthorized={isAuthorized} userdata={userData} />
+                <LoginAction isAuthorized={isAuthorized} userdata={userData} setIsDark={setIsDark} />
             </>
 
 

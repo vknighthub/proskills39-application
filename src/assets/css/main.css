@@ -1962,8 +1962,8 @@ body.dark-mode .site-header {
 }
 
 .logo .logo-img,
-.logo .logo-img svg ,
-.logo .logo-img png  {
+.logo .logo-img svg,
+.logo .logo-img png {
     width: 185px;
     height: 104px;
     margin-right: 10px;
@@ -11909,29 +11909,28 @@ body.dark-mode .component-popular-service .career-counselling {
     flex-direction: row;
     justify-content: center;
     width: 100%;
-  }
-  
-  .box-next-more .group-wrapper {
+}
+
+.box-next-more .group-wrapper {
     border: 0px none;
     height: 29.55px;
-    overflow-x: hidden;
     width: 101.39px;
-  }
-  
-  .box-next-more .group {
+}
+
+.box-next-more .group {
     height: 30px;
     left: 0;
     top: 0;
     width: 103px;
-  }
-  
-  .box-next-more .overlap-group {
+}
+
+.box-next-more .overlap-group {
     border-radius: 40px;
     height: 30px;
     position: relative;
     width: 101px;
-  }
-  
+}
+
 .box-next-more .text-wrapper {
     color: #494949;
     font-size: 15px;
@@ -11944,6 +11943,7 @@ body.dark-mode .component-popular-service .career-counselling {
     white-space: nowrap;
     width: 67px;
 }
+
 body.dark-mode .box-next-more .text-wrapper {
     color: #fff;
     font-size: 15px;
@@ -11957,14 +11957,14 @@ body.dark-mode .box-next-more .text-wrapper {
     width: 67px;
 }
 
-  .box-next-more .img {
+.box-next-more .img {
     height: 6px;
     left: 84px;
     position: absolute;
     top: 13px;
     width: 4px;
-  }
-  
+}
+
 .box-next-more .rectangle {
     height: 30px;
     left: 0;
@@ -11972,4 +11972,52 @@ body.dark-mode .box-next-more .text-wrapper {
     width: 101px;
 }
 
+/*************************** */
 
+.component-acedemy {
+    box-shadow: 0px 4px 4px #00000040;
+    height: 160px;
+    width: 364px;
+}
+
+.component-acedemy .overlap-group {
+    height: 164px;
+    position: relative;
+}
+
+.component-acedemy .vector {
+    height: 30px;
+    left: 333px;
+    position: absolute;
+    top: 0;
+    width: 31px;
+}
+
+.component-acedemy .img {
+    height: 160px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 364px;
+}
+
+.component-acedemy .chuot-punk {
+    height: 159px;
+    left: 1px;
+    object-fit: cover;
+    position: absolute;
+    top: 5px;
+    width: 185px;
+}
+
+.component-acedemy .mother-care-service {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+    left: 199px;
+    letter-spacing: -0.26px;
+    line-height: 19.5px;
+    position: absolute;
+    top: 4px;
+    width: 132px;
+}

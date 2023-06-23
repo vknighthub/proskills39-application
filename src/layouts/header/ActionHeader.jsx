@@ -1,7 +1,8 @@
 import useClickOutside from "@/lib/hooks/useClickOutside";
 import { useEffect, useRef, useState } from "react";
 
-const ActionHeader = () => {
+
+const ActionHeader = ({setIsDark}) => {
     
     const [toggle, setToggle] = useState(false);
     const dayMood = useRef(true);
@@ -17,11 +18,13 @@ const ActionHeader = () => {
 
     const moodChange = (dark) => {
         if (dark) {
-            document.querySelector("body").classList.add("dark-mode");
             localStorage.setItem("mood", "dark-mood");
+            document.querySelector("body").classList.add("dark-mode");
+            setIsDark(true)
         } else {
             document.querySelector("body").classList.remove("dark-mode");
-            localStorage.removeItem("mood");
+            localStorage.setItem("mood", "light-mood");
+            setIsDark(false)
         }
     };
 

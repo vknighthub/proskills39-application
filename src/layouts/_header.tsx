@@ -17,24 +17,26 @@ const Header = () => {
   const [searchToggle, setSearchToggle] = useState(false)
   const { data: session } = useSession()
   const { me, isAuthorized } = useMe()
+  const [isDark, setIsDark] = useState(false)
   return (
     <header className="site-header">
       <div className="topbar padding-top-bottom border-bottom">
         <div className="topbar-wrapper container">
           <MobileHeader />
-          <Logo />
+          <Logo isDark={isDark} />
           <SearchBox />
-          
+
           <ButtonHeader name={t('dRep')} link="dRep" />
-          <ConnectWallet isAuthorized={isAuthorized}/>  
-          
+          <ConnectWallet isAuthorized={isAuthorized} />
+
           <ProfileDropdown
             profile={session ? session : me}
             isAuthorized={isAuthorized}
+            setIsDark={setIsDark}
           />
-          
+
           <div className="user-activity-buttons">
-            <SwitchLanguage  isAuthorized={isAuthorized}/>
+            <SwitchLanguage isAuthorized={isAuthorized} />
           </div>
         </div>
       </div>
