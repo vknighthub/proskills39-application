@@ -24,33 +24,10 @@ const DropdownSetting = ({ userdata, toggle, setToggle }: PageProps) => {
                     id="profile-dropdown"
                     className={`cryptoki-notif-target ${toggle ? "active open" : ""}`}
                 >
-                    <div className="profile-dropdown-header profile-cover-image" />
+                    <div className="profile-dropdown-header profile-cover-image">
+                        {t('my-profile')}
+                    </div>
                     <div className="profile-dropdown-body">
-                        <div className="profile-heading">
-
-                            <div className="profile-avatar avatar box-26">
-                                <Image
-                                    src={userdata?.avatar ? userdata.avatar : avatar}
-                                    alt="avatar"
-                                    loading="lazy"
-                                    height={100}
-                                    width={100}
-                                />
-                                <span className="verified">
-                                    <svg className="crumina-icon">
-                                        <use xlinkHref="#check-icon" />
-                                    </svg>
-                                </span>
-                            </div>
-
-                            <div className="profile-link">
-                                {" "}
-                                <Link href="/profile-info" className="btn btn-small gradient-background">
-                                    {t('my-profile')}
-                                </Link>{" "}
-                            </div>
-                        </div>
-
                         <ul className="profile-menu">
                             <li className="profile">
                                 {" "}
@@ -83,7 +60,7 @@ const DropdownSetting = ({ userdata, toggle, setToggle }: PageProps) => {
                                 {" "}
                                 <Link href="https://admin.proskills39.com/?returnUrl=user-verify" onClick={() => setToggle(!toggle)}>
                                     <svg className="crumina-icon">
-                                        <use xlinkHref="#circle-checked-icon" />
+                                        <use xlinkHref="#certificate-icon" />
                                     </svg>
                                     {t('text-get-verified')}
                                 </Link>{" "}
@@ -98,10 +75,11 @@ const DropdownSetting = ({ userdata, toggle, setToggle }: PageProps) => {
                                 </Link>
                             </li>
                         </ul>
+                        <Footer />
 
                     </div>
 
-                    <Footer />
+
 
                 </div>
             }

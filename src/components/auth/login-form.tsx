@@ -109,17 +109,20 @@ export default function LoginUserForm() {
         />
       </div>
 
-      <button
-        type="submit"
-        className="submit-bttn tk-lp-button tk-lp-button--dark tk-lp-w-full"
-      >
-        {t("text-login")}
-      </button>
-      <Link href='/register'
-        className="tk-lp-button tk-lp-button--grey tk-lp-w-full tk-lp-tabs-form-item"
-      >
-        {t("text-create-account")}
-      </Link>
+      <div className="centered-button">
+        <button
+          type="submit"
+          className="submit-bttn tk-lp-button tk-lp-button--dark tk-lp-w-full"
+        >
+          {t("text-login")}
+        </button>
+        <Link href='/register'
+          className="tk-lp-button tk-lp-button--grey tk-lp-w-full tk-lp-tabs-form-item"
+        >
+          {t("text-create-account")}
+        </Link>
+      </div>
+
     </form>
   );
 }
