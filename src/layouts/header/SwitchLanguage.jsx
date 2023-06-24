@@ -36,11 +36,11 @@ const SwitchLanguage = ({ isAuthorized }) => {
             display: 'flex',
             alignItems: 'center',
             background: 'linear-gradient(#121419, #121419) padding-box,linear-gradient(60deg, #00f, #00e8ff) border-box',
-            borderTop: '1px solid transparent',
-            borderBottom: '1px solid transparent',
+            border: '1px solid transparent',
             borderLeft: 0,
             borderRight: 0,
             boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+            className: 'body.dark-mode custom-control'
         }),
         option: (provided, state) => ({
             ...provided,
@@ -104,6 +104,7 @@ const SwitchLanguage = ({ isAuthorized }) => {
                     Option: CustomOption,
                     SingleValue: SingleValue
                 }}
+                classNamePrefix={'custom-select'}
                 onChange={handleChange}
             >
 

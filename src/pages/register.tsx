@@ -8,12 +8,25 @@ import React from 'react'
 
 const Register: NextPageWithLayout = () => {
     return (
-        <div className="primary-content-area container content-padding">
+        <div className="primary-content-area content-padding background-login">
             <div className="extra-small-section">
                 <div className="page-title text-center">
+                    
                     <h2>
-                        <span className="gradient-text">Register</span> Account
-                    </h2>
+                            <svg style={{ width: 850, height: 137, textAlign: 'center' }} xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="gradient" y1="0" y2="1">
+                                        <stop stop-color="#0061D3" offset="0" />
+                                        <stop stop-color="#04CDF9" offset="1" />
+                                    </linearGradient>
+                                </defs>
+                                <g>
+                                    <text id="text" y="100" font-size="60" font-style="normal" letterSpacing="0.15rem" font-weight="700" stroke-width="2" stroke="url(#gradient)" fill="none">
+                                    Register Account
+                                    </text>
+                                </g>
+                            </svg>
+                        </h2>
                 </div>
                 <RegisterUserForm username={undefined} />
                 <div className="register-notice">

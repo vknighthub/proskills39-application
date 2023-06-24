@@ -223,6 +223,7 @@ const RegisterUserForm = ({ username }: PageProps) => {
                     </div>
                 </div>
             </div>
+            <div className="centered-button">
             <button
                 type="submit"
                 className="submit-bttn tk-lp-button tk-lp-button--dark tk-lp-w-full"
@@ -234,6 +235,7 @@ const RegisterUserForm = ({ username }: PageProps) => {
             >
                 I have an account!
             </Link>
+            </div>
         </form>
     )
 }

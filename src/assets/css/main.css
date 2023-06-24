@@ -217,7 +217,7 @@
     /* ============================
        1.1. Primary template colors
        ============================ */
-    --primary-accent-color: #0061D3;
+    --primary-accent-color: #fff;
     --secondary-accent-color: #0084ff;
     --primary-gradient-color: #0084ff;
     --secondary-gradient-color: #04CDF9;
@@ -227,7 +227,7 @@
        =============================== */
     --body-background: #fff;
     --border-color: linear-gradient(to right, var(--primary-gradient-color) 20%, var(--secondary-gradient-color));
-    --main-font-color: #fff;
+    --main-font-color: #494949;
     --unchangable-font-color: #252831;
     --contrast-text-color: #fff;
     --inactive-text-color: #fff;
@@ -519,6 +519,10 @@ ol {
 }
 
 .bold {
+    font-weight: var(--heading-font-weight);
+    color: #fff;
+}
+body.dark-mode .bold {
     font-weight: var(--heading-font-weight);
 }
 
@@ -899,7 +903,7 @@ ol {
     filter: blur(5px);
 }
 
-.gradient-text {
+body.dark-mode .gradient-text {
     background-color: var(--main-font-color);
     background-image: var(--cryptoki-gradient);
     background-size: 100%;
@@ -909,6 +913,7 @@ ol {
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
 }
+
 
 .gradient-text::selection {
     color: var(--contrast-text-color);
@@ -1249,6 +1254,18 @@ body.dark-mode .connect-wallet {
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     background: linear-gradient(60deg, #00f, #00e8ff) border-box;
+}
+
+.connect-wallet {
+    color: #494949;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background:
+        linear-gradient(#fff, #FFFFFF) padding-box,
+        linear-gradient(60deg, #00f, #00e8ff) border-box;
 }
 
 body.dark-mode .selectLanguageContainer {
@@ -2740,8 +2757,11 @@ body.dark-mode .main-search .search-input {
     white-space: nowrap;
 }
 
-.header-user-profile .user_name {
+body.dark-mode .header-user-profile .user_name {
     font-weight: var(--heading-font-weight);
+}
+.header-user-profile .user_name {
+    color: #fff;
 }
 
 .header-user-profile .user_score {
@@ -2754,6 +2774,10 @@ body.dark-mode .main-search .search-input {
     width: 8px;
     height: 8px;
     margin-right: 5px;
+}
+
+.user_score .span-light {
+    color: #fff;
 }
 
 .header-user-profile .avatar {
@@ -2802,7 +2826,7 @@ body.dark-mode .main-search .search-input {
     height: 40px;
 }
 
-.profile-cover-image {
+body.dark-mode .profile-cover-image {
     background: url('../images/content/user-profile.png') 0 0 no-repeat ;
     background-size: cover;
     border-radius: 25px 25px 0 0;
@@ -2818,9 +2842,30 @@ body.dark-mode .main-search .search-input {
     white-space: nowrap;
     padding: 5px;
 }
+.profile-cover-image {
+    background: url('../images/content/user-profile-light.png') 0 0 no-repeat ;
+    background-size: cover;
+    border-radius: 25px 25px 0 0;
+    text-align: center;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    left: 0;
+    letter-spacing: 0;
+    text-align: center;
+    text-shadow: 1px 1px 3px #00000026;
+    top: 0;
+    white-space: nowrap;
+    padding: 5px;
+    background: linear-gradient(45deg, #0061D3, #04CDF9);
+}
 
-.profile-dropdown-body {
+body.dark-mode .profile-dropdown-body {
     background: url('../images/content/user-profile.png') 0 100% no-repeat;
+    border-bottom: 1px solid var(--border-color);
+}
+.profile-dropdown-body {
+    background: url('../images/content/user-profile-light.png') 0 100% no-repeat;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -2874,12 +2919,22 @@ body.dark-mode .main-search .search-input {
     align-items: center;
 }
 
+body.dark-mode .profile-menu li a {
+    padding: 8px 30px;
+    font-size: 13px;
+    font-weight: var(--heading-font-weight);
+    transition: all 0.2s ease-in;
+    color: var(--heading-color);
+    
+}
 .profile-menu li a {
     padding: 8px 30px;
     font-size: 13px;
     font-weight: var(--heading-font-weight);
     transition: all 0.2s ease-in;
+    color: #494949
 }
+
 
 .profile-menu li svg {
     fill: var(--main-font-color);
@@ -2913,11 +2968,18 @@ body.dark-mode .main-search .search-input {
     justify-content: space-between;
     align-items: center;
 }
+body.dark-mode .mode-toggle .mode-title {
+    font-size: 13px;
+    font-weight: var(--heading-font-weight);
+    color: #fff;
+}
 
 .mode-toggle .mode-title {
     font-size: 13px;
     font-weight: var(--heading-font-weight);
+    color: #494949;
 }
+
 
 .mode-toggle .mode-title svg {
     width: 12px;
@@ -12037,3 +12099,13 @@ body.dark-mode .box-next-more .text-wrapper {
     width: 132px;
 }
 
+.custom-select__control {
+    background: linear-gradient(#0061D3, #04CDF9) padding-box,linear-gradient(60deg, #fff, #fff) border-box !important;
+    color: #fff;
+    border: 1px solid transparent !important;
+}
+body.dark-mode .custom-select__control {
+    background: linear-gradient(#1F2770, #1F2770) padding-box,linear-gradient(60deg, #00f, #00e8ff) border-box !important;
+    border: 1px solid transparent !important;
+    background-color: transparent !important;
+}

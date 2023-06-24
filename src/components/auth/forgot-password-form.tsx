@@ -106,7 +106,7 @@ export default function ForgotPasswordForm() {
           {...register('email')}
         />
       </div>
-
+      <div className="centered-button">
       <button
         type="submit"
         className="submit-bttn tk-lp-button tk-lp-button--dark tk-lp-w-full"
@@ -118,6 +118,7 @@ export default function ForgotPasswordForm() {
       >
         {t("text-login")}
       </Link>
+      </div>
     </form>
   );
 }
