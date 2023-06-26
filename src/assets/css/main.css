@@ -1290,12 +1290,17 @@ body.dark-mode .background-content {
     background: url(../images/content/body.png) no-repeat 0 100%;
     background-position: top center;
     background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    
 }
 
 .background-content {
     background: url(../images/content/body-light.png) no-repeat 0 100%;
     background-position: top center;
     background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
 }
 
 body.dark-mode .home-page-title {
@@ -1880,14 +1885,18 @@ ol li::marker {
 
 .site-header {
     background: url(../images/content/header-light.png) no-repeat 0 100%;
-    background-position: top center;
+    background-position: center center;
     background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
 }
 
 body.dark-mode .site-header {
     background: url(../images/content/background.svg) no-repeat 0 100%;
     background-position: top center;
     background-attachment: fixed;
+    background-size: cover;
+
 }
 
 @media(max-width:800px) {
@@ -6066,8 +6075,11 @@ body.dark-mode .footer {
     font-size: 13px;
     position: relative;
     color: #fff;
+    border-top: 1px solid var(--border-top-color);
     background-position: top center;
-    border-top: 1px solid var(--border-top-color)
+    background-attachment: inherit;
+    background-size: cover;
+    width: 100%;
 }
 
 .footer {
@@ -6077,7 +6089,9 @@ body.dark-mode .footer {
     position: relative;
     color: #fff;
     background-position: top center;
-    border-top: 1px solid var(--border-top-color)
+    border-top: 1px solid var(--border-top-color);
+    background-size: cover;
+    width: 100%;
 }
 
 .footer a {
