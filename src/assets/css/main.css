@@ -1289,7 +1289,7 @@ body.dark-mode .btn-dark:hover {
 body.dark-mode .background-content {
     background: url(../images/content/body.png) no-repeat 0 100%;
     background-position: top center;
-    background-attachment: fixed;
+    background-attachment: inherit;
     background-size: cover;
     width: 100%;
     
@@ -1298,7 +1298,7 @@ body.dark-mode .background-content {
 .background-content {
     background: url(../images/content/body-light.png) no-repeat 0 100%;
     background-position: top center;
-    background-attachment: fixed;
+    background-attachment: inherit;
     background-size: cover;
     width: 100%;
 }
@@ -1886,7 +1886,7 @@ ol li::marker {
 .site-header {
     background: url(../images/content/header-light.png) no-repeat 0 100%;
     background-position: center center;
-    background-attachment: fixed;
+    background-attachment: inherit;
     background-size: cover;
     width: 100%;
 }
@@ -1894,7 +1894,7 @@ ol li::marker {
 body.dark-mode .site-header {
     background: url(../images/content/background.svg) no-repeat 0 100%;
     background-position: top center;
-    background-attachment: fixed;
+    background-attachment: inherit;
     background-size: cover;
 
 }
