@@ -3,7 +3,6 @@
 import LoginUserForm from "@/components/auth/login-form";
 import Layout from "@/layouts/_layout";
 import { GetStaticProps } from "next";
-import { signIn } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";

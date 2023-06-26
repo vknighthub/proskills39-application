@@ -41,7 +41,7 @@
   color: var(--main-font-color);
 }
 
-.tk-lp-form .tk-lp-input {
+body.dark-mode .tk-lp-form .tk-lp-input {
   padding: max(0.87vw, 12px) max(1.5vw, 18px);
   border: 2px solid transparent;
   background: linear-gradient(
@@ -54,6 +54,33 @@
   border-radius: 37.5px;
   margin-bottom: 20px;
   background-color: #00000080;
+  width: 100%;
+  outline: none;
+  caret-color: var(--tk-lp-caret-color);
+  color: var(--tk-lp-input-color);
+  max-height: 50px;
+  font-weight: var(--heading-font-weight);
+  margin: 0;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px) brightness(100%);
+  -webkit-backdrop-filter: blur(51px) brightness(100%);
+  box-shadow: 0 0 0 1px rgb(0, 97.26, 211.44),
+    0 0 0 1px rgb(4.14, 204.62, 248.63); /* Shadow mô phỏng border gradient */
+}
+
+.tk-lp-form .tk-lp-input  {
+  padding: max(0.87vw, 12px) max(1.5vw, 18px);
+  border: 2px solid transparent;
+  background: linear-gradient(
+      to bottom,
+      rgb(0, 97.26, 211.44),
+      rgb(4.14, 204.62, 248.63)
+    )
+    1;
+  background-clip: padding-box;
+  border-radius: 37.5px;
+  margin-bottom: 20px;
+  background-color: #000000;
   width: 100%;
   outline: none;
   caret-color: var(--tk-lp-caret-color);
@@ -190,7 +217,7 @@ input[type="radio"] {
   transition: color 0.1s ease;
 }
 
-.tk-lp-form .tk-lp-button + .tk-lp-button {
+body.dark-mode .tk-lp-form .tk-lp-button + .tk-lp-button {
   margin-top: 40px;
   text-align: center;
   white-space: nowrap;
@@ -204,7 +231,21 @@ input[type="radio"] {
   display: inline-block;
   box-sizing: border-box;
   -webkit-backdrop-filter: blur(10px) brightness(100%);
+}
 
+
+.tk-lp-form .tk-lp-button + .tk-lp-button {
+  margin-top: 40px;
+  text-align: center;
+  white-space: nowrap;
+  width: 366px;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) padding-box, linear-gradient(20deg, #5a97f1, #0c11db) border-box;
+  color: #fff;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  display: inline-block;
+  box-sizing: border-box;
+  -webkit-backdrop-filter: blur(10px) brightness(100%);
 }
 
 
@@ -287,10 +328,16 @@ input[type="radio"] {
 form + .social-login {
   margin-top: 30px;
 }
-.background-login {
+body.dark-mode .background-login {
   background: url("../images/content/background-login.png") no-repeat 0 100%;
   backdrop-filter: blur(25.5px);
 }
+
+.background-login {
+  background: url("../images/content/background-login-light.png") no-repeat 0 100%;
+  backdrop-filter: blur(25.5px);
+}
+
 .account-login-layout {
   font-weight: 700;
   text-align: center;

@@ -17,7 +17,7 @@ export default function Footer() {
                     <div className="footer-column footer-column-large">
                         <div className="footer-widget">
                             <div className="logo">
-                                <Logo />
+                                <Logo isDark={true} />
                             </div>
                             <div className="footer-text">
                                 <p>
@@ -96,7 +96,7 @@ export default function Footer() {
                                             id="subscribe-email"
                                             placeholder="Subscribe to our newsletter"
                                         />
-                                        
+
                                     </div>
                                 </form>
                             </div>
@@ -163,12 +163,12 @@ export default function Footer() {
                         <div className="footer-widget">
                             <div className="widget-title">{t('text-more')}</div>
                             <ul className="footer-menu">
-                                    <li className="menu-item">
-                                        {" "}
-                                        <Link legacyBehavior href={`/academy`}>
-                                            <a className="menu-link">Academy</a>
-                                        </Link>{" "}
-                                    </li>
+                                <li className="menu-item">
+                                    {" "}
+                                    <Link legacyBehavior href={`/academy`}>
+                                        <a className="menu-link">Academy</a>
+                                    </Link>{" "}
+                                </li>
 
                             </ul>
                         </div>
