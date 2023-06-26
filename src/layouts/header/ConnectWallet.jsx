@@ -1,4 +1,4 @@
-import { Icon } from "@iconify/react";
+import { CardanoWallet } from "@meshsdk/react";
 import Link from "next/link";
 
 const ConnectWallet = ({ isAuthorized }) => {
@@ -6,14 +6,7 @@ const ConnectWallet = ({ isAuthorized }) => {
         <>
             {isAuthorized &&
                 <div className="collection-box">
-                    <Link
-                        className="btn btn-normal connect-wallet"
-                        href="#"
-                    >
-                        CONNET WALLET
-                        <Icon icon="clarity:wallet-solid" style={{ marginLeft: 5, width: 20, height: 18 }} />
-                    </Link>
-
+                    <CardanoWallet />
                 </div>
             }
         </>

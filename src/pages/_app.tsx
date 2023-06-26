@@ -12,6 +12,7 @@ import { ReactQueryDevtools } from 'react-query/devtools'
 import { SessionProvider } from 'next-auth/react'
 import { ToastProvider } from '@/components/utils/Toast'
 import { Toaster } from 'react-hot-toast'
+import { MeshProvider } from "@meshsdk/react";
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
@@ -38,7 +39,7 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
-        
+        <MeshProvider>
           <ToastProvider>
             <SessionProvider>
               <>
@@ -56,6 +57,7 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
               </>
             </SessionProvider>
           </ToastProvider>
+        </MeshProvider>
       </Hydrate>
       <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
     </QueryClientProvider>

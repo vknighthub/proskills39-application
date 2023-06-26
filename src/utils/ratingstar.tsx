@@ -52,7 +52,7 @@ const RatingStars: React.FC<RatingStarsProps> = ({ value }) => {
         stars.push(halfStarSVG);
     }
 
-    return <div>{stars}</div>;
+    return <div key={stars.length}>{stars}</div>;
 };
 
 export default RatingStars;
