@@ -12,9 +12,6 @@ import frame from '@/assets/images/freelancer/frame.png';
 import punkfreelancer from '@/assets/images/freelancer/punk-freelancer.png';
 import maximize_2 from '@/assets/images/svg/maximize-2.svg';
 
-
-
-
 type PageProps = {
     data: Mostpopularseller[]
 }

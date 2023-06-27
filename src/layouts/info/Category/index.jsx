@@ -13,9 +13,11 @@ const Category = ({ category }) => {
                 url={`categories/${category.url}`}
                 image_url={category.image}
             />
+            <div className="background-content">
             <CategoryPopular data={category} />
             <CategoryExplore data={category} />
             <CategoryFAQs data={category} />
+            </div>
         </>
     )
 }

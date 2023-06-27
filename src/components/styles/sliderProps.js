@@ -218,3 +218,39 @@ export const featuredFreelancer = {
     nextEl: ".swiper-button-next-freelancer"
   },
 };
+
+
+export const featuredCarouselPopuplarCategories = {
+  slidesPerView: 4,
+  speed: 400,
+  spaceBetween: 20,
+  slideToClickedSlide: true,
+  createElements: true,
+  loop: true,
+  breakpoints: {
+    300: {
+      slidesPerView: 1,
+      spaceBetween: 5,
+    },
+    600: {
+      slidesPerView: 2,
+      spaceBetween: 5,
+    },
+    900: {
+      slidesPerView: 3,
+      spaceBetween: 5,
+    },
+    1200: {
+      slidesPerView: 4,
+      spaceBetween: 5,
+    },
+  },
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  navigation: {
+    nextEl: ".swiper-button-prev-most-popular",
+    prevEl: ".swiper-button-next-most-popular",
+  },
+};

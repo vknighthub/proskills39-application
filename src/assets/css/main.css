@@ -269,7 +269,7 @@
     --body-font-size: 14px;
     --article-font-size: 16px;
     --heading-font-weight: 800;
-    --body-font-weight: 500;
+    --body-font-weight: 400;
     --letter-spacing: -0.04em;
 
     /* ===========================
@@ -3991,8 +3991,11 @@ body.dark-mode .mode-toggle .mode-title {
 .accordion-card {
     padding: clamp(1rem, 2vmax, 30px);
     border: 1px solid var(--border-color);
-    border-radius: 25px;
+    border-radius: 13px;
     margin-bottom: 15px;
+    backdrop-filter: blur(4px) brightness(100%);
+    background-color: #00000080;
+    box-shadow: 0px 4px 4px #00000040
 }
 
 .card-header .card-button {
@@ -4010,6 +4013,8 @@ body.dark-mode .mode-toggle .mode-title {
 
 .accordion-card .card-info {
     margin-top: 45px;
+    font-weight: var(--body-font-weight);
+    font-size: 12px;
 }
 
 .card-header .icon-box {
@@ -12153,3 +12158,130 @@ body.dark-mode .custom-select__control {
     margin-top: 5px;
 
 }
+/****************************************************************/
+
+.component-popular-service-detail {
+    box-shadow: 0px 4px 4px #00000040;
+    height: 160px;
+    width: 300px;
+}
+
+.component-popular-service-detail .overlap-group {
+    height: 164px;
+    position: relative;
+}
+
+.component-popular-service-detail .vector {
+    height: 30px;
+    left: 270px;
+    position: absolute;
+    top: 0;
+    width: 31px;
+}
+
+.component-popular-service-detail .img {
+    height: 160px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 300px;
+}
+
+.component-popular-service-detail .image-porpular-service {
+    height: 150px;
+    left: 8px;
+    object-fit: cover;
+    position: absolute;
+    top: 5px;
+    width: 177px;
+    border-radius: 10px;
+}
+
+.component-popular-service-detail .mother-care-service {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+    left: 190px;
+    letter-spacing: -0.26px;
+    line-height: 19.5px;
+    position: absolute;
+    top: 4px;
+    width: 110px;
+}
+
+
+/****************************/
+
+.component-categories-explore {
+    background-color: #ffffff;
+    border-radius: 17px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 504px;
+    position: relative;
+    width: 352px;
+  }
+  
+  .component-categories-explore .vector {
+    height: 318px;
+    left: 4px;
+    position: absolute;
+    top: 7px;
+    width: 345px;
+  }
+  
+  .component-categories-explore .item-1 {
+    color: #494949;
+    font-size: 16px;
+    font-weight: 600;
+    left: 13px;
+    letter-spacing: -0.32px;
+    line-height: 25px;
+    position: absolute;
+    text-decoration: underline;
+    top: 340px;
+    white-space: nowrap;
+    width: 241px;
+  }
+  
+  .component-categories-explore .item-2 {
+    color: #494949;
+    font-size: 16px;
+    font-weight: 600;
+    left: 13px;
+    letter-spacing: -0.32px;
+    line-height: 25px;
+    position: absolute;
+    text-decoration: underline;
+    top: 378px;
+    white-space: nowrap;
+    width: 241px;
+  }
+  
+  .component-categories-explore .item-3 {
+    color: #494949;
+    font-size: 16px;
+    font-weight: 600;
+    left: 13px;
+    letter-spacing: -0.32px;
+    line-height: 25px;
+    position: absolute;
+    text-decoration: underline;
+    top: 416px;
+    white-space: nowrap;
+    width: 241px;
+  }
+  
+  .component-categories-explore .item-4 {
+    color: #494949;
+    font-size: 16px;
+    font-weight: 600;
+    left: 13px;
+    letter-spacing: -0.32px;
+    line-height: 25px;
+    position: absolute;
+    text-decoration: underline;
+    top: 454px;
+    white-space: nowrap;
+    width: 241px;
+  }
+  

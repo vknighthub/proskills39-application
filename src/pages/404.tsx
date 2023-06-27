@@ -21,7 +21,7 @@ const ErrorPage: NextPageWithLayout = () => {
                 <Link href="/" className="link_404">Go to Home</Link>
               </div>
             </div>
-          </div>
+          </div>   
         </div>
       </section>
     </>
