@@ -30,7 +30,7 @@ const CategoryExplore = ({ data }) => {
                     <div className="component-categories-explore" key={explore.id}>
                         <Image className="vector" alt="Vector" src={explore.image} width={337} height={310}/>
                         {explore.subject.map((subject,index) => (
-                            <Link className={`item-${index}`} href={subject.slug} rel="noopener noreferrer" target="_blank" key={subject.id}>
+                            <Link className={`item-${index+1}`} href={subject.slug} rel="noopener noreferrer" target="_blank" key={subject.id}>
                                 {subject.name}
                             </Link>
                         ))}

@@ -3988,6 +3988,16 @@ body.dark-mode .mode-toggle .mode-title {
        11.5. Accordion
        ================================ */
 
+body.dark-mode .accordion-card {
+    padding: clamp(1rem, 2vmax, 30px);
+    border: 1px solid var(--border-color);
+    border-radius: 13px;
+    margin-bottom: 15px;
+    backdrop-filter: blur(4px) brightness(100%);
+    background-color: #000000B2;
+    box-shadow: 0px 4px 4px #00000040
+}
+
 .accordion-card {
     padding: clamp(1rem, 2vmax, 30px);
     border: 1px solid var(--border-color);
@@ -3995,8 +4005,10 @@ body.dark-mode .mode-toggle .mode-title {
     margin-bottom: 15px;
     backdrop-filter: blur(4px) brightness(100%);
     background-color: #00000080;
-    box-shadow: 0px 4px 4px #00000040
+    box-shadow: 0px 4px 4px #00000040;
+    color: #fff;
 }
+
 
 .card-header .card-button {
     display: flex;
@@ -12219,6 +12231,11 @@ body.dark-mode .custom-select__control {
     height: 504px;
     position: relative;
     width: 352px;
+    background-color: #ffffff;
+    border-bottom-style: solid;
+    border-bottom-width: 4px;
+    border-color: transparent;
+    box-shadow: 0px 4px 4px #00000040;
   }
   
   .component-categories-explore .vector {
@@ -12227,9 +12244,10 @@ body.dark-mode .custom-select__control {
     position: absolute;
     top: 7px;
     width: 345px;
-  }
-  
-  .component-categories-explore .item-1 {
+    border-radius: 17px;
+}
+
+.component-categories-explore .item-1 {
     color: #494949;
     font-size: 16px;
     font-weight: 600;
@@ -12241,9 +12259,9 @@ body.dark-mode .custom-select__control {
     top: 340px;
     white-space: nowrap;
     width: 241px;
-  }
-  
-  .component-categories-explore .item-2 {
+}
+
+.component-categories-explore .item-2 {
     color: #494949;
     font-size: 16px;
     font-weight: 600;
@@ -12255,9 +12273,9 @@ body.dark-mode .custom-select__control {
     top: 378px;
     white-space: nowrap;
     width: 241px;
-  }
-  
-  .component-categories-explore .item-3 {
+}
+
+.component-categories-explore .item-3 {
     color: #494949;
     font-size: 16px;
     font-weight: 600;
@@ -12269,9 +12287,9 @@ body.dark-mode .custom-select__control {
     top: 416px;
     white-space: nowrap;
     width: 241px;
-  }
-  
-  .component-categories-explore .item-4 {
+}
+
+.component-categories-explore .item-4 {
     color: #494949;
     font-size: 16px;
     font-weight: 600;
@@ -12283,5 +12301,4 @@ body.dark-mode .custom-select__control {
     top: 454px;
     white-space: nowrap;
     width: 241px;
-  }
-  
+}
