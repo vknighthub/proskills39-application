@@ -45,14 +45,15 @@ const RatingStars: React.FC<RatingStarsProps> = ({ value }) => {
 
     const stars: React.ReactNode[] = [];
     for (let i = 0; i < starCount; i++) {
-        stars.push(fullStarSVG);
+        stars.push(<React.Fragment key={i}>{fullStarSVG}</React.Fragment>);
     }
 
     if (halfStar) {
-        stars.push(halfStarSVG);
+        stars.push(<React.Fragment key="half-star">{halfStarSVG}</React.Fragment>);
     }
+    
 
-    return <div key={stars.length}>{stars}</div>;
+    return <div>{stars}</div>;
 };
 
 export default RatingStars;

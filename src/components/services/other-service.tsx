@@ -1,4 +1,8 @@
 import otherimage from '@/assets/images/service/serviceother.png';
+import otherimage2 from '@/assets/images/service/serviceother2.png';
+import otherimage3 from '@/assets/images/service/serviceother3.png';
+import otherimage4 from '@/assets/images/service/serviceother4.png';
+
 import triangle_top_right from '@/assets/svg/triangle-top-right.svg';
 import { featuredOtherService } from '@/components/styles/sliderProps';
 import { useTranslation } from 'next-i18next';
@@ -15,13 +19,13 @@ export const OtherService = () => {
             id: 1,
             alt: 'foo',
             image1: otherimage,
-            image2: otherimage
+            image2: otherimage2
         },
         {
             id: 2,
             alt: 'foo1',
-            image1: otherimage,
-            image2: otherimage
+            image1: otherimage3,
+            image2: otherimage4
         }
     ]
     return (
@@ -70,8 +74,8 @@ export const OtherService = () => {
                                             <div className="overlap">
                                                 <Image className="vector" alt="Vector" src={triangle_top_right} />
                                                 <Image className="img" alt={value.alt} src={background_service} />
-                                                <Image className="image-1" alt={value.alt} src={value.image1} width={162} height={267} />
-                                                <Image className="image-2" alt={value.alt} src={value.image2} width={162} height={267} />
+                                                <Image className="image-1" alt={value.alt} src={value.image1} width={162.69} height={267.73} />
+                                                <Image className="image-2" alt={value.alt} src={value.image2} width={162.69} height={267.73} />
                                                 <p className="mother-care-service">Mother care service after giving birth</p>
                                                 <div className="group">
                                                     <div className="overlap-group">

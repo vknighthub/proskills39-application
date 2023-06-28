@@ -1,5 +1,6 @@
 import SwiperCore, { EffectFade, Navigation, Pagination, Autoplay } from "swiper";
 SwiperCore.use([Pagination, Navigation, EffectFade, Autoplay]);
+
 export const homeSlider = {
   slidesPerView: "auto",
   autoplay: {
@@ -253,4 +254,32 @@ export const featuredCarouselPopuplarCategories = {
     nextEl: ".swiper-button-prev-most-popular",
     prevEl: ".swiper-button-next-most-popular",
   },
+};
+
+
+export const sliderAcademy = {
+  slidesPerView: 3,
+  speed: 400,
+  spaceBetween: 20,
+  slideToClickedSlide: true,
+  createElements: true,
+  loop: true,
+  breakpoints: {
+    380: {
+      slidesPerView: 1,
+      spaceBetween: 10,
+    },
+    760: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 10,
+    },
+  },
+  navigation: {
+    nextEl: ".swiper-button-academy-next",
+    prevEl: ".swiper-button-academy-prev",
+  }
 };

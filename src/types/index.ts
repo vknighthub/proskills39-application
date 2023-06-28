@@ -1,5 +1,4 @@
 import type { NextPage } from 'next'
-import { StaticImageData } from 'next/image'
 import type { ReactElement, ReactNode } from 'react'
 
 export interface QueryOptions {
@@ -108,6 +107,7 @@ export interface Popuparcategory {
     icon: string
     featured: boolean
     react: number
+    details: string
 }
 
 export interface Mostpopularservice {
@@ -180,6 +180,7 @@ export interface Mostpopularseller {
     numberofservice: number
     avatar?: string
     bestservice: Bestservice[]
+    level: number
 }
 
 export interface HomePage {

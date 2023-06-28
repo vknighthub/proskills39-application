@@ -1,22 +1,37 @@
-import freelancerimg from '@/assets/images/svg/freelancer.svg';
+import frame from '@/assets/images/freelancer/frame.png';
+import punkfreelancer from '@/assets/images/freelancer/punk-freelancer.png';
+import maximize_2 from '@/assets/images/svg/maximize-2.svg';
+import { Box } from '@/components/styles/Box';
 import { featuredFreelancer } from '@/components/styles/sliderProps';
-import { Mostpopularseller, Newestservice } from '@/types';
-import RatingStars from '@/utils/ratingstar';
+import { Mostpopularseller } from '@/types';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import CutText from './../../utils/CutText';
-import { Box } from '@/components/styles/Box'
-import frame from '@/assets/images/freelancer/frame.png';
-import punkfreelancer from '@/assets/images/freelancer/punk-freelancer.png';
-import maximize_2 from '@/assets/images/svg/maximize-2.svg';
+import one from '@/assets/images/svg/one.svg';
+import two from '@/assets/images/svg/two.svg';
+import three from '@/assets/images/svg/three.svg';
+import four from '@/assets/images/svg/four.svg';
+import five from '@/assets/images/svg/five.svg';
+
 
 type PageProps = {
     data: Mostpopularseller[]
 }
 
 export const HomeFreelancer = ({ data }: PageProps) => {
+
+    const renderLevels = (level: number) => {
+        switch (level) {
+            case 5: return five;
+            case 4: return four;
+            case 3: return three;
+            case 2: return two;
+            case 1: return one;
+            default: return one;
+        }
+    }
+
     const { t } = useTranslation('common')
     return (
         <div className="container section-padding overflow-hidden">
@@ -68,18 +83,20 @@ export const HomeFreelancer = ({ data }: PageProps) => {
                                                             <div className="vector">
                                                                 <div className="overlap-group">
                                                                     <Image className="img" alt="Vector" src={frame} />
-                                                                    <Image 
-                                                                        className="avatar-freelancer" 
-                                                                        alt="Chuot punk" 
-                                                                        src={value.avatar ? value.avatar : punkfreelancer} 
-                                                                        width={215} 
-                                                                        height={103} 
-                                                                        style={{borderRadius:10}}
-                                                                        />
+                                                                    <Image
+                                                                        className="avatar-freelancer"
+                                                                        alt="Chuot punk"
+                                                                        src={value.avatar ? value.avatar : punkfreelancer}
+                                                                        width={215}
+                                                                        height={103}
+                                                                        style={{ borderRadius: 10 }}
+                                                                    />
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div className="text-wrapper">4</div>
+                                                        <div className="text-wrapper">
+                                                            <Image src={renderLevels(value.level)} alt={value.level.toString()} />
+                                                        </div>
                                                         <div className="div">
                                                             <div
                                                                 className="group-wrapper"
