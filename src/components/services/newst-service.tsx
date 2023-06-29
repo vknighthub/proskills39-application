@@ -62,7 +62,7 @@ export const NewestService = ({ data }: PageProps) => {
                                                 <div className="featured-item-wrapper newest-service">
                                                     <div className="featured-item-content">
                                                         <div className="featured-item-image">
-                                                            <Image src={newest} alt="" width={238.4} height={162} />
+                                                            <Image src={value.files[0].url} alt="" width={238.4} height={162} />
                                                         </div>
                                                         <div className="featured-item-info">
                                                             <RatingStars value={2.3} />
