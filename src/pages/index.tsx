@@ -69,7 +69,7 @@ const Home: NextPageWithLayout<
 
         <HomePopularCategory data={homepageinfo.popuparcategories} />
         <HomeAcademy />
-        <HomeFreelancer data ={homepageinfo.mostpopularseller}/>
+        <HomeFreelancer data ={homepageinfo.freelancerlevel}/>
 
 
         <div className="container-all-service">

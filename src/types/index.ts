@@ -108,6 +108,7 @@ export interface Popuparcategory {
     featured: boolean
     react: number
     details: string
+    image: string
 }
 
 export interface Mostpopularservice {
@@ -183,11 +184,20 @@ export interface Mostpopularseller {
     level: number
 }
 
+export interface FreelancersLevel {
+    id: number
+    title: string
+    description: string
+    image: string
+    level: number
+}
+
 export interface HomePage {
     popuparcategories: Popuparcategory[]
     mostpopularseller: Mostpopularseller[]
     mostpopularservice: Mostpopularservice[]
     newestservice: Newestservice[]
+    freelancerlevel: FreelancersLevel[]
 }
 
 export interface SettingQuery extends ResultObject<Settings> { }

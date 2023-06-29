@@ -3,7 +3,7 @@ import punkfreelancer from '@/assets/images/freelancer/punk-freelancer.png';
 import maximize_2 from '@/assets/images/svg/maximize-2.svg';
 import { Box } from '@/components/styles/Box';
 import { featuredFreelancer } from '@/components/styles/sliderProps';
-import { Mostpopularseller } from '@/types';
+import { FreelancersLevel } from '@/types';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -16,7 +16,7 @@ import five from '@/assets/images/svg/five.svg';
 
 
 type PageProps = {
-    data: Mostpopularseller[]
+    data: FreelancersLevel[]
 }
 
 export const HomeFreelancer = ({ data }: PageProps) => {
@@ -31,6 +31,8 @@ export const HomeFreelancer = ({ data }: PageProps) => {
             default: return one;
         }
     }
+
+    console.log(data)
 
     const { t } = useTranslation('common')
     return (
@@ -72,7 +74,7 @@ export const HomeFreelancer = ({ data }: PageProps) => {
                     <div className="swiper-wrapper">
                         <div className="featured-box">
                             <div className="featured-box-wrapper grid-6-columns">
-                                {data.map((value: Mostpopularseller) => (
+                                {data.map((value: FreelancersLevel) => (
                                     <SwiperSlide className="swiper-slide" key={value.id}>
                                         <div className="box-freelancer">
                                             <div className="component-wrapper">
@@ -86,16 +88,16 @@ export const HomeFreelancer = ({ data }: PageProps) => {
                                                                     <Image
                                                                         className="avatar-freelancer"
                                                                         alt="Chuot punk"
-                                                                        src={value.avatar ? value.avatar : punkfreelancer}
-                                                                        width={215}
-                                                                        height={103}
+                                                                        src={value.image ? value.image : punkfreelancer}
+                                                                        width={228}
+                                                                        height={158}
                                                                         style={{ borderRadius: 10 }}
                                                                     />
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="text-wrapper">
-                                                            <Image src={renderLevels(value.level)} alt={value.level.toString()} />
+                                                            {value.level}
                                                         </div>
                                                         <div className="div">
                                                             <div
@@ -107,7 +109,7 @@ export const HomeFreelancer = ({ data }: PageProps) => {
 
                                                             </div>
                                                             <div className="overlap-2">
-                                                                <div className="text-wrapper-2">{value.tagName}</div>
+                                                                <div className="text-wrapper-2">{value.description}</div>
                                                                 <div className="rectangle-2" />
                                                             </div>
                                                         </div>
