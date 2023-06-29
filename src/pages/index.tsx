@@ -1,19 +1,17 @@
 import { HomeAcademy } from '@/components/services/academy'
 import { HomeFreelancer } from '@/components/services/freelancer'
 import { NewestService } from '@/components/services/newst-service'
+import { OtherService } from '@/components/services/other-service'
 import { HomePopularCategory } from '@/components/services/popular-categories'
 import HomePopularService from '@/components/services/popular-service'
-import HomeTopCreators from '@/components/services/top-creator'
 import routes from '@/config/routes'
 import client from '@/data/client'
-import CategoryPopular from '@/layouts/info/Category/CategoryPopular'
 import Layout from '@/layouts/_layout'
 import Seo from '@/layouts/_seo'
 import { NextPageWithLayout } from '@/types'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Link from 'next/link'
-import { OtherService } from '@/components/services/other-service'
 
 const Home: NextPageWithLayout<
   InferGetStaticPropsType<typeof getStaticProps>
@@ -44,7 +42,14 @@ const Home: NextPageWithLayout<
                   </linearGradient>
                 </defs>
                 <g>
-                  <text id="text" y="100" font-size="60" font-style="normal" letterSpacing="0.15rem" font-weight="700" stroke-width="2" stroke="url(#gradient)" fill="none">A Web Service MarketPlace</text>
+                  <text id="text" y="100"
+                    font-size="60"
+                    font-style="normal"
+                    letterSpacing="0.15rem"
+                    font-weight="700"
+                    stroke-width="2" stroke="url(#gradient)" fill="none">
+                    A Web Service MarketPlace
+                  </text>
                 </g>
               </svg>
             </div>
@@ -69,7 +74,7 @@ const Home: NextPageWithLayout<
 
         <HomePopularCategory data={homepageinfo.popuparcategories} />
         <HomeAcademy />
-        <HomeFreelancer data ={homepageinfo.freelancerlevel}/>
+        <HomeFreelancer data={homepageinfo.freelancerlevel} />
 
 
         <div className="container-all-service">
@@ -78,7 +83,7 @@ const Home: NextPageWithLayout<
           </div>
         </div>
 
-        <HomePopularService data ={homepageinfo.mostpopularservice} />
+        <HomePopularService data={homepageinfo.mostpopularservice} />
 
         <NewestService data={homepageinfo.newestservice} />
 
