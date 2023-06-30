@@ -12391,6 +12391,7 @@ body.dark-mode .custom-select__control {
   white-space: nowrap;
   width: 169px;
   padding: 5px;
+  top: -18px;
 }
 
 .component-popular-categories .vector {
@@ -12433,7 +12434,7 @@ body.dark-mode .custom-select__control {
   letter-spacing: -0.12px;
   line-height: 8px;
   position: absolute;
-  top: 172px;
-  white-space: nowrap;
+  top: 136px;
+  /* white-space: nowrap; */
   width: 219px;
 }
