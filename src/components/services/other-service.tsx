@@ -19,13 +19,15 @@ export const OtherService = () => {
             id: 1,
             alt: 'foo',
             image1: otherimage,
-            image2: otherimage2
+            image2: otherimage2,
+            description: 'Blockchain-as-a-Service'
         },
         {
             id: 2,
             alt: 'foo1',
             image1: otherimage3,
-            image2: otherimage4
+            image2: otherimage4,
+            description: 'Business Analysis Data Analysis'
         }
     ]
     return (
@@ -76,7 +78,7 @@ export const OtherService = () => {
                                                 <Image className="img" alt={value.alt} src={background_service} />
                                                 <Image className="image-1" alt={value.alt} src={value.image1} width={162.69} height={267.73} />
                                                 <Image className="image-2" alt={value.alt} src={value.image2} width={162.69} height={267.73} />
-                                                <p className="mother-care-service">Mother care service after giving birth</p>
+                                                <p className="mother-care-service">{value.description}</p>
                                                 <div className="group">
                                                     <div className="overlap-group">
                                                         <button className="btn view-detail btn-dark"> View detail !</button>

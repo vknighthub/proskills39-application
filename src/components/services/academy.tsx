@@ -51,7 +51,7 @@ export const HomeAcademy = () => {
                                                 <Image className="vector" alt="Vector" src={vector_academy} />
                                                 <Image className="img" alt="Vector" src={background_academy} />
                                                 <Image className="academy-image" alt="image1" src={academy} />
-                                                <p className="mother-care-service">Mother care service after giving birth</p>
+                                                <p className="mother-care-service">Equipped with Blockchain knowledge, ready to catch the new trend.</p>
                                             </div>
                                         </div>
                                     </SwiperSlide>
@@ -61,7 +61,7 @@ export const HomeAcademy = () => {
                                                 <Image className="vector" alt="Vector" src={vector_academy} />
                                                 <Image className="img" alt="Vector" src={background_academy} />
                                                 <Image className="academy-image" alt="image2" src={academy1} />
-                                                <p className="mother-care-service">Mother care service after giving birth</p>
+                                                <p className="mother-care-service">Improve skills, get attractive jobs</p>
                                             </div>
                                         </div>
                                     </SwiperSlide>
@@ -71,7 +71,7 @@ export const HomeAcademy = () => {
                                                 <Image className="vector" alt="Vector" src={vector_academy} />
                                                 <Image className="img" alt="Vector" src={background_academy} />
                                                 <Image className="academy-image" alt="image3" src={academy2} />
-                                                <p className="mother-care-service">Mother care service after giving birth</p>
+                                                <p className="mother-care-service">Training knowledge and skills for Catalyst Proposer, Community Reviewer...</p>
                                             </div>
                                         </div>
                                     </SwiperSlide>
