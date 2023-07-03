@@ -22,7 +22,7 @@ export const NewestService = ({ data }: PageProps) => {
                     Newest<span className="gradient-text"> Service</span>
                 </div>
                 <div className="all-items-link">
-                    <Link href="/">
+                    <Link href="/services">
                         <Box />
                     </Link>
                 </div>

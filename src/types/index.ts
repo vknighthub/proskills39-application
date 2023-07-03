@@ -524,6 +524,8 @@ export interface Industry {
     name: string
 }
 export interface Service {
+    averagerating: number
+    introduce: string
     tstar: number
     id: number
     keyid: string
@@ -1001,3 +1003,5 @@ export interface UserProfilePageResponse extends ResponseObject<UserProfilePage>
 export interface UserInfoInput {
     username: string
 }
+
+

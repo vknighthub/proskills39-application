@@ -2128,7 +2128,7 @@ body.dark-mode .site-header {
   left: 50%;
   transform: translate(-50%, 0);
   padding: 25px 30px;
-  background-color: var(--body-background);
+  background-color: #121419c9;
   border: 1px solid var(--border-color);
   color: var(--main-font-color);
   border-radius: 25px;
@@ -2214,7 +2214,7 @@ body.dark-mode .site-header {
 }
 
 .notification-type {
-  background-color: honeydew;
+  background-color: #5b587485;
   border: 1px solid var(--border-color);
   border-radius: 25px;
   padding: 0.5rem;

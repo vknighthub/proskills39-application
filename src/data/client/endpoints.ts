@@ -22,9 +22,10 @@ export const API_ENDPOINTS = {
     APPLY_LETTER: '/services/applyapplicationletter',
     FORGOT_PASSWORD: '/user/resetpassword',
     BLOG: '/blog/getlistblog',
-    BLOGDETAIL:'/blog/getblogbyslug',
+    BLOGDETAIL: '/blog/getblogbyslug',
     SUBMITDEAL: '/services/user/orderengagament',
     USER_INFO: '/user/user/getprofileseller',
+    SERVICE_GETALL: '/services/getallservice'
 
-    
+
 }

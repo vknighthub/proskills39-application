@@ -1,21 +1,21 @@
+import image_deal from '@/assets/images/service/deal.png';
+import client from '@/data/client';
 import Layout from '@/layouts/_layout';
-import { ApplyLetterInput, DealProjectInput, NextPageWithLayout, ServiceDealResponse } from '@/types';
+import { ApplyLetterInput, NextPageWithLayout, ServiceDealResponse } from '@/types';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { Editor } from '@tinymce/tinymce-react';
+import parse from 'html-react-parser';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Image from 'next/image';
-import invariant from 'tiny-invariant';
-import { Editor } from '@tinymce/tinymce-react';
-import { useMutation, useQuery } from 'react-query';
-import client from '@/data/client';
-import { useEffect, useState } from 'react';
-import image_deal from '@/assets/images/service/deal.png'
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
-import { SubmitHandler } from 'react-hook-form/dist/types';
-import Swal from 'sweetalert2';
 import { useRouter } from 'next/router';
-import parse from 'html-react-parser';
+import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { SubmitHandler } from 'react-hook-form/dist/types';
+import { useMutation, useQuery } from 'react-query';
+import Swal from 'sweetalert2';
+import invariant from 'tiny-invariant';
+import * as yup from 'yup';
 
 
 export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
@@ -122,23 +122,23 @@ const ApplicationLetter: NextPageWithLayout<
     return (
         <div className="primary-content-area  shopping-cart-page background-content">
             <div className="container content-padding">
-            <div className="section-title">
-                                    <h2>
-                                        <svg style={{ width: 1280, height: 137, textAlign: 'center' }} xmlns="http://www.w3.org/2000/svg">
-                                            <defs>
-                                                <linearGradient id="gradient" y1="0" y2="1">
-                                                    <stop stopColor="#0061D3" offset="0" />
-                                                    <stop stopColor="#04CDF9" offset="1" />
-                                                </linearGradient>
-                                            </defs>
-                                            <g>
-                                                <text id="text" y="100" fontSize="60" fontStyle="normal" letterSpacing="0.15rem" fontWeight="700" strokeWidth="2" stroke="url(#gradient)" fill="none">
-                                                    Application Letter
-                                                </text>
-                                            </g>
-                                        </svg>
-                                    </h2>
-                                </div>
+                <div className="section-title">
+                    <h2>
+                        <svg style={{ width: 1280, height: 137, textAlign: 'center' }} xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="gradient" y1="0" y2="1">
+                                    <stop stopColor="#0061D3" offset="0" />
+                                    <stop stopColor="#04CDF9" offset="1" />
+                                </linearGradient>
+                            </defs>
+                            <g>
+                                <text id="text" y="100" fontSize="60" fontStyle="normal" letterSpacing="0.15rem" fontWeight="700" strokeWidth="2" stroke="url(#gradient)" fill="none">
+                                    Application Letter
+                                </text>
+                            </g>
+                        </svg>
+                    </h2>
+                </div>
                 <div className="checkout-area">
                     <form className="cryptoki-form grid-columns" id="checkout-form"
                         onSubmit={handleSubmit(onSubmit)}
@@ -189,12 +189,12 @@ const ApplicationLetter: NextPageWithLayout<
                                 <Editor
                                     apiKey="zymq2zigjpp216t3ih6tzj3rbtceqfwg169r6laxs2z6enbg"
                                     init={{
-                                        height: 600,
+                                        height: 800,
                                         menubar: true,
                                         plugins: [
                                             'a11ychecker', 'advlist', 'advcode', 'advtable', 'autolink', 'checklist', 'export',
                                             'lists', 'link', 'image', 'charmap', 'preview', 'anchor', 'searchreplace', 'visualblocks',
-                                            'powerpaste', 'fullscreen', 'formatpainter', 'insertdatetime', 'table', 'help', 'wordcount',
+                                            'powerpaste', 'fullscreen', 'formatpainter', 'insertdatetime', 'media', 'table', 'help', 'wordcount',
                                         ],
                                         toolbar:
                                             "undo redo | formatselect | code |link | image | bold italic backcolor | alignleft aligncenter alignright alignjustify |  \n" +

@@ -1,7 +1,7 @@
 import { SubmitDealResponse } from "@/types";
 import { AxiosError } from "axios";
 import { useRouter } from "next/router";
-import { useMutation } from "react-query";
+import { useMutation, useQuery } from "react-query";
 import Swal from "sweetalert2";
 import client from "../client";
 
@@ -36,3 +36,19 @@ export const useSubmitDeal = () => {
         }
     });
 };
+
+
+
+export const FetchAllServices = () => {
+    const { data, isLoading, error, refetch } = useQuery(
+        'service-get-all',
+        () => client.services.getall(),
+    );
+
+    return {
+        data: data?.result.data,
+        refetch,
+        isLoading,
+        error
+    };
+}

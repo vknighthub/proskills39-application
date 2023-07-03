@@ -12,6 +12,9 @@ import client from '@/data/client';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import parse from 'html-react-parser';
+import vector_deal_service from '@/assets/images/service/vector-deal-service.png';
+import rect_deal_service from '@/assets/images/service/rect-deal-service.svg';
+
 
 const OfferService: NextPageWithLayout<
     InferGetStaticPropsType<typeof getStaticProps>
@@ -73,14 +76,14 @@ const OfferService: NextPageWithLayout<
                                 <Image
                                     className="vector"
                                     alt="Vector"
-                                    src="https://generation-sessions.s3.amazonaws.com/769e6cc2afb4cf7246fa01e170a502a7/img/vector-184-1.svg"
+                                    src={vector_deal_service}
                                     width={105}
                                     height={106}
                                 />
                                 <Image
                                     className="img"
                                     alt="Vector"
-                                    src="https://generation-sessions.s3.amazonaws.com/769e6cc2afb4cf7246fa01e170a502a7/img/vector-183-1.svg"
+                                    src={rect_deal_service}
                                     width={1147}
                                     height={503}
                                 />

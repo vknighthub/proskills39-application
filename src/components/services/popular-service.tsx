@@ -21,7 +21,7 @@ const HomePopularService = ({ data }: Props) => {
                     Most popular <span className="gradient-text">Service</span>
                 </div>
                 <div className="all-items-link">
-                    <Link href="/">
+                    <Link href="/services">
                         <Box />
                     </Link>
                 </div>
