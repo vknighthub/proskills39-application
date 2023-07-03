@@ -75,8 +75,6 @@ export const HomeAcademy = () => {
                                             </div>
                                         </div>
                                     </SwiperSlide>
-
-
                                 </div>
                             </div>
                         </div>

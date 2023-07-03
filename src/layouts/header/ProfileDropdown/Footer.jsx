@@ -10,8 +10,9 @@ const Footer = () => {
         dayMood.current = mood ? true : false;
     }, []);
 
+
     const moodChange = (dark) => {
-        if (dark) {
+        if (dark === 'dark-mood') {
             document.querySelector("body").classList.add("dark-mode");
             localStorage.setItem("mood", "dark-mood");
         } else {

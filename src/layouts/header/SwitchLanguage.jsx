@@ -2,7 +2,7 @@ import { Icon } from '@iconify/react';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/router';
 import React from 'react'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Select from 'react-select';
 import NotificationsButton from './NotificationsButton';
 
@@ -91,24 +91,34 @@ const SwitchLanguage = ({ isAuthorized }) => {
 
     const defaultOption = languageOptions.find(option => option.value === locale);
 
+    const [render, setRender] = useState(false);
+    useEffect(() => {
+        setRender(true)
+    }, [render])
     return (
         <>
-            <NotificationsButton isAuthorized={isAuthorized} />
-            <Select
-                options={languageOptions}
-                isSearchable={false}
-                styles={customStyles}
-                defaultValue={defaultOption}
-                formatValueLabel={CustomValueLabel}
-                components={{
-                    Option: CustomOption,
-                    SingleValue: SingleValue
-                }}
-                classNamePrefix={'custom-select'}
-                onChange={handleChange}
-            >
+            {render &&
+                <>
+                    <NotificationsButton isAuthorized={isAuthorized} />
+                    <Select
+                        id='custom-select'
+                        options={languageOptions}
+                        isSearchable={false}
+                        styles={customStyles}
+                        defaultValue={defaultOption}
+                        formatValueLabel={CustomValueLabel}
+                        components={{
+                            Option: CustomOption,
+                            SingleValue: SingleValue
+                        }}
+                        classNamePrefix={'custom-select'}
+                        onChange={handleChange}
+                    >
 
-            </Select>
+
+                    </Select>
+                </>
+            }
         </>
     )
 }

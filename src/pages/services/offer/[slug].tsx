@@ -9,7 +9,7 @@ import image_deal from '@/assets/images/service/deal.png'
 import avatar from '@/assets/images/avatar-2.png'
 import { useQuery } from 'react-query';
 import client from '@/data/client';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import parse from 'html-react-parser';
 
@@ -32,91 +32,104 @@ const OfferService: NextPageWithLayout<
         }
     }
 
+    const [isRender, setIsRender] = useState(false);
 
     const { service_deal, refetch } = Service(service)
 
     useEffect(() => {
         refetch()
+        setIsRender(true)
     }, [service])
 
 
     return (
-        <div className="primary-content-area container content-padding">
-            <div className="section-padding overflow-hidden">
-                <div className="section-title-wrapper">
-                    <div className="section-title">
-                        <span className="gradient-text">Service</span> offer
-                    </div>
-                </div>
-            </div>
-            <div className="swiper-wrapper">
-                <div className="artwork-item">
-                    <div className="artwork-media">
-                        <Link href="/07-product-page-v3">
-                            <Image src={service_deal?.listfile[0]?.link ? service_deal.listfile[0].link : image_deal} alt="" width={710} height={535} />
-                        </Link>
-                    </div>
-                    <div className="artwork-details">
-                        <h3 className="artwork-title">{service_deal?.title}</h3>
-                        <div className="avatar-block">
-                            <div className="avatar box-42">
-                                {" "}
-                                <Link href={`/user-profile/${service_deal?.username}`}>
-                                    <Image src={service_deal?.avatar ? service_deal.avatar : avatar} alt="avatar" width={80} height={80} />
-                                    <span className="verified">
-                                        <svg className="crumina-icon">
-                                            <use xlinkHref="#check-icon" />
+        <>
+            {isRender &&
+                <div className="primary-content-area  background-content">
+                    <div className="container content-padding">
+                        <div className="section-padding overflow-hidden">
+                            <div className="section-title-wrapper">
+                                <div className="section-title">
+                                    <h2>
+                                        <svg style={{ width: 1280, height: 137, textAlign: 'center' }} xmlns="http://www.w3.org/2000/svg">
+                                            <defs>
+                                                <linearGradient id="gradient" y1="0" y2="1">
+                                                    <stop stopColor="#0061D3" offset="0" />
+                                                    <stop stopColor="#04CDF9" offset="1" />
+                                                </linearGradient>
+                                            </defs>
+                                            <g>
+                                                <text id="text" y="100" fontSize="60" fontStyle="normal" letterSpacing="0.15rem" fontWeight="700" strokeWidth="2" stroke="url(#gradient)" fill="none">
+                                                    Service Offer
+                                                </text>
+                                            </g>
                                         </svg>
-                                    </span>
-                                </Link>{" "}
-                            </div>
-                            <div className="avatar-meta">
-                                <div className="avatar-title gradient-text">
-                                    {" "}
-                                    <Link href={`/user-profile/${service_deal?.username}`}>
-                                        {service_deal?.fullname}
-                                    </Link>{" "}
-                                </div>
-                                <div className="avatar-meta">@{service_deal?.username}</div>
-                            </div>
-                        </div>
-                        <div className="product-meta-section">
-                            <div className="product-meta-item">
-                                <div className="label">Current offer</div>
-                                <div className="value">{service_deal?.price} v2p</div>
-                            </div>
-                            <div className="product-meta-item">
-                                <div className="label">Deal?</div>
-                                <div className="countdown">
-                                    <div
-                                        className="js-countdown"
-                                        data-timer={104400}
-                                        data-labels="Days , Hours , Mins , Secs"
-                                    />
+                                    </h2>
                                 </div>
                             </div>
                         </div>
-                        <div className="product-description">
-                            <p>
-                                {parse(service_deal?.descriptions ? service_deal?.descriptions : '-')}
-                            </p>
-                        </div>
-                        <div className="bidding-section">
-                            <div className="place-bid">
-                                <Link className="btn btn-wide btn-green" href={`/services/applicationletter/${service_deal?.slug}`}>
-                                    {t('text-deal')}
-                                </Link>
-                            </div>
-                            <div className="place-bid">
-                                <Link className="btn btn-wide btn-red" href="#">
-                                    {t('text-decline')}
-                                </Link>
+                        <div className={`component-deal-service`}>
+                            <div className="overlap">
+                                <Image
+                                    className="vector"
+                                    alt="Vector"
+                                    src="https://generation-sessions.s3.amazonaws.com/769e6cc2afb4cf7246fa01e170a502a7/img/vector-184-1.svg"
+                                    width={105}
+                                    height={106}
+                                />
+                                <Image
+                                    className="img"
+                                    alt="Vector"
+                                    src="https://generation-sessions.s3.amazonaws.com/769e6cc2afb4cf7246fa01e170a502a7/img/vector-183-1.svg"
+                                    width={1147}
+                                    height={503}
+                                />
+                                <Image
+                                    className="chuot-punk"
+                                    alt="Chuot punk"
+                                    src="https://generation-sessions.s3.amazonaws.com/769e6cc2afb4cf7246fa01e170a502a7/img/chuot-punk-2-4-1@2x.png"
+                                    width={58}
+                                    height={58}
+                                />
+                                <Image
+                                    className="group"
+                                    alt="Group"
+                                    src="https://generation-sessions.s3.amazonaws.com/769e6cc2afb4cf7246fa01e170a502a7/img/group-8780-1@2x.png"
+                                    width={14}
+                                    height={17}
+                                />
+                                <p className="ID-nguy-n-m-u-anh">ID: Nguyễn Mậu Anh Duy</p>
+                                <div className="CURRENT-OFFER">CURRENT OFFER</div>
+                                <div className="element">100 v2p</div>
+                                <div className="DEAL">DEAL?</div>
+                                <div className="tidev">@tidev</div>
+                                <div className="rectangle" />
+                                <div className="div" />
+                                <Image
+                                    className="chuot-punk-2"
+                                    alt="Chuot punk"
+                                    src="https://generation-sessions.s3.amazonaws.com/769e6cc2afb4cf7246fa01e170a502a7/img/chuot-punk-2-1-1.png"
+                                    width={549}
+                                    height={574}
+
+                                />
+                                <p className="vknight-test">vknight test notification post request</p>
+                                <div className="overlap-group-wrapper">
+                                    <div className="overlap-group">
+                                        <Link href={`/services/applicationletter/${service}`} className="deal">Deal</Link>
+                                    </div>
+                                </div>
+                                <div className="overlap-wrapper">
+                                    <div className="decline-wrapper">
+                                        <div className="decline">Decline</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            }
+        </>
     )
 }
 OfferService.getLayout = function getLayout(page) {

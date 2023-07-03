@@ -9,15 +9,15 @@ const ActionHeader = ({setIsDark}) => {
     let domNode = useClickOutside(() => {
         setToggle(false);
     });
-
     useEffect(() => {
         let mood = localStorage.getItem("mood");
+        
         moodChange(mood);
         dayMood.current = mood ? true : false;
     }, []);
-
+    
     const moodChange = (dark) => {
-        if (dark) {
+        if (dark === 'dark-mood') {
             localStorage.setItem("mood", "dark-mood");
             document.querySelector("body").classList.add("dark-mode");
             setIsDark(true)

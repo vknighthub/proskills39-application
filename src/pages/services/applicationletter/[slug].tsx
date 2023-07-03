@@ -120,91 +120,104 @@ const ApplicationLetter: NextPageWithLayout<
     }, [render])
 
     return (
-        <div className="primary-content-area container content-padding shopping-cart-page">
-            <div className="page-title-section">
-                <h2>
-                    Application <span className="gradient-text">letter</span>
-                </h2>
-            </div>
-            <div className="checkout-area">
-                <form className="cryptoki-form grid-columns" id="checkout-form"
-                    onSubmit={handleSubmit(onSubmit)}
-                >
-                    <div className="form-column">
-                        <div className="summary-section">
-                            <div className="small-title">Summary</div>
-                            <div className="products-in-cart">
-                                <div className="product-in-cart">
-                                    <div className="product-info">
-                                        <div className="product-thumb">
-                                            <Image src={service_deal?.listfile[0]?.link ? service_deal.listfile[0].link : image_deal} alt="" width={82} height={50} />
-                                        </div>
-                                        <div className="product-details">
-                                            <div className="product-name">
-                                                {parse(service_deal?.descriptions ? service_deal?.descriptions : '-')}
-                                            </div>
-                                            <div className="license-type">Regular License</div>
-                                        </div>
-                                    </div>
-                                    <div className="product-price">v2p {service_deal?.price}</div>
+        <div className="primary-content-area  shopping-cart-page background-content">
+            <div className="container content-padding">
+            <div className="section-title">
+                                    <h2>
+                                        <svg style={{ width: 1280, height: 137, textAlign: 'center' }} xmlns="http://www.w3.org/2000/svg">
+                                            <defs>
+                                                <linearGradient id="gradient" y1="0" y2="1">
+                                                    <stop stopColor="#0061D3" offset="0" />
+                                                    <stop stopColor="#04CDF9" offset="1" />
+                                                </linearGradient>
+                                            </defs>
+                                            <g>
+                                                <text id="text" y="100" fontSize="60" fontStyle="normal" letterSpacing="0.15rem" fontWeight="700" strokeWidth="2" stroke="url(#gradient)" fill="none">
+                                                    Application Letter
+                                                </text>
+                                            </g>
+                                        </svg>
+                                    </h2>
                                 </div>
+                <div className="checkout-area">
+                    <form className="cryptoki-form grid-columns" id="checkout-form"
+                        onSubmit={handleSubmit(onSubmit)}
+                    >
+                        <div className="form-column">
+                            <div className="summary-section">
+                                <div className="small-title">Summary</div>
+                                <div className="products-in-cart">
+                                    <div className="product-in-cart">
+                                        <div className="product-info">
+                                            <div className="product-thumb">
+                                                <Image src={service_deal?.listfile[0]?.link ? service_deal.listfile[0].link : image_deal} alt="" width={82} height={50} />
+                                            </div>
+                                            <div className="product-details">
+                                                <div className="product-name">
+                                                    {parse(service_deal?.descriptions ? service_deal?.descriptions : '-')}
+                                                </div>
+                                                <div className="license-type">Regular License</div>
+                                            </div>
+                                        </div>
+                                        <div className="product-price">v2p {service_deal?.price}</div>
+                                    </div>
 
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="form-column">
+                        <div className="form-column">
 
-                        <div className="form-group">
+                            <div className="form-group">
+                                <div className="form-field">
+                                    <label htmlFor="name">Price Deal?</label>
+                                    <input type="text" id="price" defaultValue={service_deal?.price} {...register('price')} />
+                                </div>
+                                <div className="form-field">
+                                    <label htmlFor="duedt">Delivery time</label>
+                                    <input type="date" id="duedt" {...register('duedt')} />
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div className="form-column">
                             <div className="form-field">
-                                <label htmlFor="name">Price Deal?</label>
-                                <input type="text" id="price" defaultValue={service_deal?.price} {...register('price')} />
+                                <label htmlFor="state">Application letter</label>
                             </div>
-                            <div className="form-field">
-                                <label htmlFor="duedt">Delivery time</label>
-                                <input type="date" id="duedt" {...register('duedt')} />
-                            </div>
+                            {render &&
+                                <Editor
+                                    apiKey="zymq2zigjpp216t3ih6tzj3rbtceqfwg169r6laxs2z6enbg"
+                                    init={{
+                                        height: 600,
+                                        menubar: true,
+                                        plugins: [
+                                            'a11ychecker', 'advlist', 'advcode', 'advtable', 'autolink', 'checklist', 'export',
+                                            'lists', 'link', 'image', 'charmap', 'preview', 'anchor', 'searchreplace', 'visualblocks',
+                                            'powerpaste', 'fullscreen', 'formatpainter', 'insertdatetime', 'table', 'help', 'wordcount',
+                                        ],
+                                        toolbar:
+                                            "undo redo | formatselect | code |link | image | bold italic backcolor | alignleft aligncenter alignright alignjustify |  \n" +
+                                            "bullist numlist outdent indent | removeformat | help | link image media table mergetags",
+                                        content_style: 'body { color: #7e7e7e }'
+                                    }}
+                                    onEditorChange={(newValue) => {
+                                        setValue(newValue);
+                                    }}
+                                />
+                            }
                         </div>
-
-
-                    </div>
-
-                    <div className="form-column">
-                        <div className="form-field">
-                            <label htmlFor="state">Application letter</label>
+                        <div className="complete-order-button text-center">
+                            <button
+                                className="btn btn-wide gradient-background mt-5 w-200"
+                                type="submit"
+                            >
+                                Apply
+                            </button>
                         </div>
-                        {render &&
-                            <Editor
-                                apiKey="zymq2zigjpp216t3ih6tzj3rbtceqfwg169r6laxs2z6enbg"
-                                init={{
-                                    height: 600,
-                                    menubar: true,
-                                    plugins: [
-                                        'a11ychecker', 'advlist', 'advcode', 'advtable', 'autolink', 'checklist', 'export',
-                                        'lists', 'link', 'image', 'charmap', 'preview', 'anchor', 'searchreplace', 'visualblocks',
-                                        'powerpaste', 'fullscreen', 'formatpainter', 'insertdatetime', 'table', 'help', 'wordcount',
-                                    ],
-                                    toolbar:
-                                        "undo redo | formatselect | code |link | image | bold italic backcolor | alignleft aligncenter alignright alignjustify |  \n" +
-                                        "bullist numlist outdent indent | removeformat | help | link image media table mergetags",
-                                    content_style: 'body { color: #7e7e7e }'
-                                }}
-                                onEditorChange={(newValue) => {
-                                    setValue(newValue);
-                                }}
-                            />
-                        }
-                    </div>
-                    <div className="complete-order-button text-center">
-                        <button
-                            className="btn btn-wide gradient-background mt-5 w-200"
-                            type="submit"
-                        >
-                            Apply
-                        </button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
-
         </div>
     )
 }

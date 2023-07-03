@@ -11,7 +11,7 @@ const NotificationsButton = ({ isAuthorized }) => {
   let domNode = useClickOutside(() => {
     setToggle(false);
   });
-  const [render, setRender] = useState(false);
+  
 
   const { locale } = useRouter()
   const router = useRouter()
@@ -27,14 +27,13 @@ const NotificationsButton = ({ isAuthorized }) => {
   useEffect(() => {
     if (isAuthorized) {
       refetch()
-      setRender(true)
     }
   }, [isAuthorized, refetch])
 
 
   return (
     <>
-      {isAuthorized && render &&
+      {isAuthorized &&
         <div className="notifications-button-cont" ref={domNode}>
           <button
             className={`cart-button cryptoki-notif-bttn ${toggle ? "active" : ""

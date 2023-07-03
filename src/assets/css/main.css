@@ -612,7 +612,7 @@ body.dark-mode .bold {
        ========================= */
 
 .border-bottom {
-  border-bottom: 1px solid var(--border-bottom-color);
+  border-bottom: 1px solid #0b43e3e6;
 }
 
 .icon-border a {
@@ -4632,6 +4632,8 @@ body.dark-mode .search-form-with-text .main-search .search-button {
 
 .cryptoki-form .form-group:last-of-type > .form-field input {
   margin-bottom: 0;
+  border: 1px solid #899eed;
+  background: transparent;
 }
 
 .cryptoki-form .form-group:last-of-type > .form-field label {
@@ -10306,6 +10308,9 @@ table .item-price {
 
 .product-in-cart:last-child {
   margin-bottom: 0;
+  border: 1px solid #7e86ed;
+  padding: 20px;
+  border-radius: 12px;
 }
 
 .product-in-cart .product-info {
@@ -12448,4 +12453,239 @@ body.dark-mode .custom-select__control {
 }
 .grid-item-1 {
   grid-column: span 1;
+}
+
+
+/********************************/
+
+
+.component-deal-service {
+  height: 503px;
+  width: 1147px;
+}
+
+.component-deal-service .overlap {
+  height: 536px;
+  left: 120px;
+  position: relative;
+  top: -12px;
+  width: 1180px;
+}
+
+.component-deal-service .vector {
+  height: 101px;
+  left: 1064px;
+  position: absolute;
+  top: 12px;
+  width: 99px;
+}
+
+.component-deal-service .img {
+  height: 536px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1180px;
+}
+
+.component-deal-service .chuot-punk {
+  height: 66px;
+  left: 594px;
+  object-fit: cover;
+  position: absolute;
+  top: 166px;
+  width: 66px;
+}
+
+.component-deal-service .group {
+  height: 18px;
+  left: 642px;
+  position: absolute;
+  top: 204px;
+  width: 14px;
+}
+
+.component-deal-service .ID-nguy-n-m-u-anh {
+  color: #ffffff;
+  font-family: "Quicksand", Helvetica;
+  font-size: 12px;
+  font-weight: 700;
+  left: 668px;
+  letter-spacing: 0;
+  line-height: 24.5px;
+  position: absolute;
+  top: 170px;
+  white-space: nowrap;
+}
+
+.component-deal-service .CURRENT-OFFER {
+  color: #ffffff;
+  font-family: "Quicksand", Helvetica;
+  font-size: 12px;
+  font-weight: 700;
+  left: 610px;
+  letter-spacing: 0;
+  line-height: 24.5px;
+  position: absolute;
+  top: 274px;
+  white-space: nowrap;
+}
+
+.component-deal-service .element {
+  color: #ffffff;
+  font-family: "Quicksand", Helvetica;
+  font-size: 30px;
+  font-weight: 700;
+  left: 602px;
+  letter-spacing: 0;
+  line-height: 61.2px;
+  position: absolute;
+  top: 318px;
+  white-space: nowrap;
+}
+
+.component-deal-service .DEAL {
+  color: #ffffff;
+  font-family: "Quicksand", Helvetica;
+  font-size: 12px;
+  font-weight: 700;
+  left: 790px;
+  letter-spacing: 0;
+  line-height: 24.5px;
+  position: absolute;
+  top: 274px;
+  white-space: nowrap;
+}
+
+.component-deal-service .tidev {
+  color: #ffffff;
+  font-family: "Quicksand", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  left: 668px;
+  letter-spacing: 0;
+  line-height: 24.5px;
+  position: absolute;
+  top: 192px;
+  white-space: nowrap;
+}
+
+.component-deal-service .rectangle {
+  background: linear-gradient(180deg, rgba(255, 168.3, 0, 0) 27.22%, rgba(255, 0, 214.2, 0) 98.89%);
+  border: 1px solid;
+  border-color: #000000;
+  border-image: linear-gradient(to bottom, rgb(0, 97.26, 211.44), rgb(4.14, 204.62, 248.63)) 1;
+  border-radius: 16px;
+  height: 5px;
+  left: 600px;
+  position: absolute;
+  top: 286px;
+  width: 5px;
+}
+
+.component-deal-service .div {
+  background: linear-gradient(180deg, rgba(255, 168.3, 0, 0) 27.22%, rgba(255, 0, 214.2, 0) 98.89%);
+  border: 1px solid;
+  border-color: #000000;
+  border-image: linear-gradient(to bottom, rgb(0, 97.26, 211.44), rgb(4.14, 204.62, 248.63)) 1;
+  border-radius: 16px;
+  height: 5px;
+  left: 782px;
+  position: absolute;
+  top: 286px;
+  width: 5px;
+}
+
+.component-deal-service .chuot-punk-2 {
+  height: 482px;
+  left: 24px;
+  object-fit: cover;
+  position: absolute;
+  top: 26px;
+  width: 557px;
+}
+
+.component-deal-service .vknight-test {
+  color: #ffffff;
+  font-family: "Quicksand", Helvetica;
+  font-size: 30px;
+  font-weight: 700;
+  left: 598px;
+  letter-spacing: 0;
+  line-height: 47.5px;
+  position: absolute;
+  top: 36px;
+  width: 443px;
+}
+
+.component-deal-service .overlap-group-wrapper {
+  height: 51px;
+  left: 598px;
+  position: absolute;
+  top: 426px;
+  width: 187px;
+}
+
+.component-deal-service .overlap-group {
+  background: linear-gradient(180deg, rgb(0, 97.26, 211.44) 0%, rgb(4.14, 204.62, 248.63) 100%);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: #ffffff;
+  border-radius: 25.73px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-shadow: 0px 4px 4px #00000040;
+  height: 51px;
+  position: relative;
+  width: 185px;
+}
+
+.component-deal-service .deal {
+  color: #ffffff;
+  font-family: "Quicksand", Helvetica;
+  font-size: 15px;
+  font-weight: 400;
+  left: 76px;
+  letter-spacing: 0;
+  line-height: 34.3px;
+  position: absolute;
+  text-align: center;
+  top: 8px;
+  white-space: nowrap;
+}
+
+.component-deal-service .overlap-wrapper {
+  height: 51px;
+  left: 816px;
+  position: absolute;
+  top: 426px;
+  width: 187px;
+}
+
+.component-deal-service .decline-wrapper {
+  background-color: #000000;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: #ffffff;
+  border-radius: 25.73px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-shadow: 0px 4px 4px #00000040;
+  height: 51px;
+  position: relative;
+  width: 185px;
+}
+
+.component-deal-service .decline {
+  color: #ffffff;
+  font-family: "Quicksand", Helvetica;
+  font-size: 15px;
+  font-weight: 400;
+  left: 67px;
+  letter-spacing: 0;
+  line-height: 34.3px;
+  position: absolute;
+  text-align: center;
+  top: 8px;
+  white-space: nowrap;
 }
