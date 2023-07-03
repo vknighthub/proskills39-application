@@ -76,7 +76,7 @@ const ServicePage: NextPageWithLayout = (props: Props) => {
                                                 <div className="featured-item-info">
                                                     <RatingStars value={item.averagerating} />
                                                     <div className="title">
-                                                        <CutText content={item.introduce} start={0} end={100} />
+                                                        {item.title}
                                                     </div>
                                                     <div className="item-money">
                                                         <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">

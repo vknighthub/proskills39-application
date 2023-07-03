@@ -7094,6 +7094,7 @@ blockquote p {
   margin-bottom: 10px;
   letter-spacing: var(--letter-spacing);
   color: #000;
+  height: 70px;
 }
 
 .featured-item .featured-item-info .title a:hover {
