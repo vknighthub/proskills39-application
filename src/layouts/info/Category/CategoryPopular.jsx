@@ -3,9 +3,11 @@ import most_popular_service from '@/assets/images/service/most-popular-service.p
 import vector_most_popular_service from '@/assets/images/service/vector-most-popular-service.png';
 import { featuredCarouselPopuplarCategories } from '@/components/styles/sliderProps';
 import Image from '@/components/ui/image';
+import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const CategoryPopular = ({ data }) => {
+
     return (
         <div className="container section-padding overflow-hidden ">
             <div className="section-title-wrapper">
@@ -19,7 +21,7 @@ const CategoryPopular = ({ data }) => {
                                 </linearGradient>
                             </defs>
                             <g>
-                                <text id="text" y="100" font-size="60" font-style="normal" letterSpacing="0.15rem" font-weight="700" stroke-width="2" stroke="url(#gradient)" fill="none">
+                                <text id="text" y="100" font-size="60" fontStyle="normal" letterSpacing="0.15rem" fontWeight="700" strokeWidth="2" stroke="url(#gradient)" fill="none">
                                     Most popular in {data.name}
                                 </text>
                             </g>
@@ -54,14 +56,16 @@ const CategoryPopular = ({ data }) => {
                     <div className="swiper-wrapper">
                         {data && data.listPopular && data.listPopular.map((item) => (
                             <SwiperSlide className="swiper-slide" key={item.id}>
-                                <div className="component-popular-service-detail" >
-                                    <div className="overlap-group">
-                                        <Image className="vector" alt="Vector" src={vector_most_popular_service} />
-                                        <Image className="img" alt="Vector" src={background_most_popular_service} />
-                                        <Image className="image-porpular-service" alt="Chuot punk" src={item.image} width={177} height={151} />
-                                        <p className="mother-care-service">{item.name}</p>
+                                <Link href={`/categories/services/${item.slug}`}>
+                                    <div className="component-popular-service-detail" >
+                                        <div className="overlap-group">
+                                            <Image className="vector" alt="Vector" src={vector_most_popular_service} />
+                                            <Image className="img" alt="Vector" src={background_most_popular_service} />
+                                            <Image className="image-porpular-service" alt="Chuot punk" src={item.image} width={177} height={151} />
+                                            <p className="mother-care-service">{item.name}</p>
+                                        </div>
                                     </div>
-                                </div>
+                                </Link>
                             </SwiperSlide>
 
                         ))}

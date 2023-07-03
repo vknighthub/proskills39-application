@@ -32,8 +32,6 @@ export const HomeFreelancer = ({ data }: PageProps) => {
         }
     }
 
-    console.log(data)
-
     const { t } = useTranslation('common')
     return (
         <div className="container section-padding overflow-hidden">

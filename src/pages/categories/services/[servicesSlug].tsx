@@ -146,7 +146,7 @@ const ServicesPage: NextPageWithLayout<
     }, [filter])
 
     const listindustry = data.listindustry
-    console.log(listService)
+
     return (
         <>
             <Seo title="ProSkills39 - Service"
@@ -202,42 +202,44 @@ const ServicesPage: NextPageWithLayout<
                         </div>
                     </Swiper>
 
-
-                    <div className="filterable-bar">
-                        <form id="artworks-filter-form" onSubmit={(e) => onSubmit(e)}>
-                            <div className="filter-item">
-                                <NiceSelect
-                                    arr={listindustry}
-                                    ChangeFilterData={onChangeFilterIndustry}
-                                    name={"industry"}
-                                />
-                            </div>
-                            <div className="filter-item">
-                                <NiceSelect
-                                    arr={[
-                                        { name: "Buget From", value: "" },
-                                        { name: "From 10 v2p", value: "10" },
-                                        { name: "From 20 v2p", value: "20" },
-                                        { name: "From 50 v2p", value: "50" },
-                                    ]}
-                                    ChangeFilterData={onChangeFilterBugetFrom}
-                                    name={"frbudget"}
-                                />
-                            </div>
-                            <div className="filter-item">
-                                <NiceSelect
-                                    arr={[
-                                        { name: "Budget To", value: "" },
-                                        { name: "To 100 v2p", value: "100" },
-                                        { name: "To 200 v2p", value: "200" },
-                                        { name: "To 500 v2p", value: "500" },
-                                    ]}
-                                    ChangeFilterData={onChangeFilterBugetTo}
-                                    name={"tobudget"}
-                                />
-                            </div>
-                            <div className="filter-item">
-                                <NiceSelect
+                    {(listService.length > 0) &&
+                        <div className="filterable-bar">
+                            <form id="artworks-filter-form" onSubmit={(e) => onSubmit(e)}>
+                                {listindustry &&
+                                    <div className="filter-item">
+                                        {/* <NiceSelect
+                                        arr={listindustry}
+                                        ChangeFilterData={onChangeFilterIndustry}
+                                        name={"industry"}
+                                    /> */}
+                                    </div>
+                                }
+                                <div className="filter-item">
+                                    <NiceSelect
+                                        arr={[
+                                            { name: "Buget From", value: "" },
+                                            { name: "From 10 v2p", value: "10" },
+                                            { name: "From 20 v2p", value: "20" },
+                                            { name: "From 50 v2p", value: "50" },
+                                        ]}
+                                        ChangeFilterData={onChangeFilterBugetFrom}
+                                        name={"frbudget"}
+                                    />
+                                </div>
+                                <div className="filter-item">
+                                    <NiceSelect
+                                        arr={[
+                                            { name: "Budget To", value: "" },
+                                            { name: "To 100 v2p", value: "100" },
+                                            { name: "To 200 v2p", value: "200" },
+                                            { name: "To 500 v2p", value: "500" },
+                                        ]}
+                                        ChangeFilterData={onChangeFilterBugetTo}
+                                        name={"tobudget"}
+                                    />
+                                </div>
+                                <div className="filter-item">
+                                    {/* <NiceSelect
                                     arr={[
                                         { name: "Delivery time", value: "" },
                                         { name: "Express 24h", value: "1" },
@@ -246,13 +248,13 @@ const ServicesPage: NextPageWithLayout<
                                     ]}
                                     ChangeFilterData={onChangeFilterDeliveryTime}
                                     name={"deliverytime"}
-                                />
-                            </div>
+                                /> */}
+                                </div>
 
 
-                        </form>
-                    </div>
-
+                            </form>
+                        </div>
+                    }
 
                     {(listService.length > 0) ?
                         <>
@@ -304,7 +306,7 @@ const ServicesPage: NextPageWithLayout<
                                                         </div>
                                                         <RatingStars value={service.tstar} />
                                                         <div className="title mt-3">
-                                                        {service.overviews.introduce}
+                                                            {service.overviews.introduce}
                                                         </div>
                                                         <div className="item-money">
                                                             <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -36,7 +36,7 @@ export const getStaticProps: GetStaticProps<
     ParsedQueryParams
 > = async ({ params, locale }) => {
     const { servicedetailSlug } = params!; //* we know it's required because of getStaticPaths
-    console.log(servicedetailSlug)
+
     try {
         const servicedetail = await client.services.detail({
             slug: servicedetailSlug,
