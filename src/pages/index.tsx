@@ -37,17 +37,17 @@ const Home: NextPageWithLayout<
               <svg style={{ width: 850, height: 137, textAlign: 'center' }} xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="gradient" y1="0" y2="1">
-                    <stop stop-color="#0061D3" offset="0" />
-                    <stop stop-color="#04CDF9" offset="1" />
+                    <stop stopColor="#0061D3" offset="0" />
+                    <stop stopColor="#04CDF9" offset="1" />
                   </linearGradient>
                 </defs>
                 <g>
                   <text id="text" y="100"
-                    font-size="60"
-                    font-style="normal"
+                    fontSize="60"
+                    fontStyle="normal"
                     letterSpacing="0.15rem"
-                    font-weight="700"
-                    stroke-width="2" stroke="url(#gradient)" fill="none">
+                    fontWeight="700"
+                    strokeWidth="2" stroke="url(#gradient)" fill="none">
                     A Web Service MarketPlace
                   </text>
                 </g>

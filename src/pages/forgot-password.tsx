@@ -28,8 +28,8 @@ const ForgotPassword = () => {
                             <svg style={{ width: 850, height: 137, textAlign: 'center' }} xmlns="http://www.w3.org/2000/svg">
                                 <defs>
                                     <linearGradient id="gradient" y1="0" y2="1">
-                                        <stop stop-color="#0061D3" offset="0" />
-                                        <stop stop-color="#04CDF9" offset="1" />
+                                        <stop stopColor="#0061D3" offset="0" />
+                                        <stop stopColor="#04CDF9" offset="1" />
                                     </linearGradient>
                                 </defs>
                                 <g>

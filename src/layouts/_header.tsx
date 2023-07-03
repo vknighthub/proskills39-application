@@ -5,19 +5,18 @@ import { useSession } from 'next-auth/react'
 import { useTranslation } from 'next-i18next'
 import { useState } from 'react'
 import ButtonHeader from './header/ButtonHeader'
+import ConnectWallet from './header/ConnectWallet'
 import MobileHeader from './header/MobileHeader'
 import MobileSearchTrigger from './header/MobileSearchTrigger'
-import NotificationsButton from './header/NotificationsButton'
 import ProfileDropdown from './header/ProfileDropdown'
 import SearchBox from './header/SearchBox'
-import ConnectWallet from './header/ConnectWallet'
 
 const Header = () => {
   const { t } = useTranslation('common')
   const [searchToggle, setSearchToggle] = useState(false)
   const { data: session } = useSession()
   const { me, isAuthorized } = useMe()
-  const [isDark, setIsDark] = useState(false)
+  const [isDark, setIsDark] = useState(true)
   return (
     <header className="site-header">
       <div className="topbar padding-top-bottom border-bottom">

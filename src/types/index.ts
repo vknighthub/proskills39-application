@@ -524,6 +524,7 @@ export interface Industry {
     name: string
 }
 export interface Service {
+    tstar: number
     id: number
     keyid: string
     cate_id: number

@@ -1,5 +1,4 @@
 import Image from '@/components/ui/image';
-import routes from '@/config/routes';
 import Link from "next/link";
 
 const CategoryExplore = ({ data }) => {
@@ -12,8 +11,8 @@ const CategoryExplore = ({ data }) => {
                         <svg style={{ width: 1280, height: 137, textAlign: 'center' }} xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <linearGradient id="gradient" y1="0" y2="1">
-                                    <stop stop-color="#0061D3" offset="0" />
-                                    <stop stop-color="#04CDF9" offset="1" />
+                                    <stop stopColor="#0061D3" offset="0" />
+                                    <stop stopColor="#04CDF9" offset="1" />
                                 </linearGradient>
                             </defs>
                             <g>
@@ -30,7 +29,7 @@ const CategoryExplore = ({ data }) => {
                     <div className="component-categories-explore" key={explore.id}>
                         <Image className="vector" alt="Vector" src={explore.image} width={337} height={310}/>
                         {explore.subject.map((subject,index) => (
-                            <Link className={`item-${index+1}`} href={subject.slug} rel="noopener noreferrer" target="_blank" key={subject.id}>
+                            <Link className={`item-${index+1}`} href={`/categories/services/${subject.slug}`} rel="noopener noreferrer" target="_blank" key={subject.id}>
                                 {subject.name}
                             </Link>
                         ))}

@@ -5,8 +5,8 @@ export const svgLoadder = () => {
   <svg aria-hidden="true" focusable="false" style="width:0;height:0;position:absolute;" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="cryptoki-svg-gradient">
-        <stop offset="20%" stop-color="var(--color-stop-1)"/>
-        <stop offset="100%" stop-color="var(--color-stop-2)"/>
+        <stop offset="20%" stopColor="var(--color-stop-1)"/>
+        <stop offset="100%" stopColor="var(--color-stop-2)"/>
       </linearGradient>
     </defs>
     <symbol id="arrow-right-icon" viewBox="0 0 16 13">
@@ -45,12 +45,12 @@ export const svgLoadder = () => {
     </symbol>
     <symbol id="costv-icon" viewBox="147 246 417 109" width="32" height="32">
       <linearGradient id="b" gradientTransform="rotate(-57.15 190.079 324.562)" gradientUnits="userSpaceOnUse" x1="135.98" x2="244.19" y1="324.57" y2="324.57">
-        <stop offset=".01" stop-color="#035bff"/>
-        <stop offset="1" stop-color="#00c3ff"/>
+        <stop offset=".01" stopColor="#035bff"/>
+        <stop offset="1" stopColor="#00c3ff"/>
       </linearGradient>
       <linearGradient id="a" gradientTransform="rotate(57.15 190.3 274.894)" gradientUnits="userSpaceOnUse" x1="136.19" x2="244.41" y1="274.91" y2="274.91">
-        <stop offset="0" stop-color="#00c3ff"/>
-        <stop offset=".99" stop-color="#035bff"/>
+        <stop offset="0" stopColor="#00c3ff"/>
+        <stop offset=".99" stopColor="#035bff"/>
       </linearGradient>
       <linearGradient id="c" x1="151.38" x2="151.81" xlink:href="#a" y1="351.13" y2="249.79"/>
       
@@ -146,16 +146,16 @@ export const svgLoadder = () => {
       <path fill-rule="evenodd" clip-rule="evenodd" d="M9.0002 16.3418C9.71049 16.3418 10.3917 17.0263 10.8939 16.6291C11.1928 16.3928 11.6773 16.3928 11.9761 16.6291C12.2749 16.8654 12.2749 17.2485 11.9761 17.4848C11.1868 18.1089 10.1164 18.4595 9.0002 18.4595C7.88402 18.4595 6.81357 18.1089 6.02431 17.4848C5.72549 17.2485 5.72549 16.8654 6.02431 16.6291C6.32314 16.3928 6.80763 16.3928 7.10645 16.6291C7.6087 17.0263 8.2899 16.3418 9.0002 16.3418Z" fill="url(#paint2_linear_0_1)"/>
       <defs>
         <linearGradient id="paint0_linear_0_1" x1="9.0002" y1="18.4595" x2="9.0002" y2="16.3418" gradientUnits="userSpaceOnUse">
-          <stop offset="0.0349758" stop-color="#FFD600"/>
-          <stop offset="0.966035" stop-color="#FFC200"/>
+          <stop offset="0.0349758" stopColor="#FFD600"/>
+          <stop offset="0.966035" stopColor="#FFC200"/>
         </linearGradient>
         <linearGradient id="paint1_linear_0_1" x1="5.90569" y1="20.2171" x2="16.2847" y2="15.8762" gradientUnits="userSpaceOnUse">
-          <stop offset="0.272193" stop-color="#FFA800"/>
-          <stop offset="0.9889" stop-color="#FF00D6"/>
+          <stop offset="0.272193" stopColor="#FFA800"/>
+          <stop offset="0.9889" stopColor="#FF00D6"/>
         </linearGradient>
         <linearGradient id="paint2_linear_0_1" x1="11.8451" y1="16.1335" x2="7.40649" y2="17.0359" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#0061D3"/>
-          <stop offset="1" stop-color="#04CDF9"/>
+          <stop stopColor="#0061D3"/>
+          <stop offset="1" stopColor="#04CDF9"/>
         </linearGradient>
       </defs>
     </symbol>
@@ -210,20 +210,20 @@ export const svgLoadder = () => {
       <path d="M2.5 8.75C2.5 6.86438 2.5 5.92157 3.08579 5.33579C3.67157 4.75 4.61438 4.75 6.5 4.75H13.5C15.3856 4.75 16.3284 4.75 16.9142 5.33579C17.5 5.92157 17.5 6.86438 17.5 8.75V11.0417C17.5 12.9273 17.5 13.8701 16.9142 14.4559C16.3284 15.0417 15.3856 15.0417 13.5 15.0417H6.5C4.61438 15.0417 3.67157 15.0417 3.08579 14.4559C2.5 13.8701 2.5 12.9273 2.5 11.0417V8.75Z" stroke="white" stroke-width="1.5"/>
       <defs>
         <linearGradient id="paint0_linear_510_3008" x1="5.83333" y1="11.0833" x2="5.83333" y2="12.6667" gradientUnits="userSpaceOnUse">
-          <stop offset="0.0349758" stop-color="#FFD600"/>
-          <stop offset="0.966035" stop-color="#FFC200"/>
+          <stop offset="0.0349758" stopColor="#FFD600"/>
+          <stop offset="0.966035" stopColor="#FFC200"/>
         </linearGradient>
         <linearGradient id="paint1_linear_510_3008" x1="4.68919" y1="13.3594" x2="6.36651" y2="13.2315" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#0061D3"/>
-          <stop offset="1" stop-color="#04CDF9"/>
+          <stop stopColor="#0061D3"/>
+          <stop offset="1" stopColor="#04CDF9"/>
         </linearGradient>
         <linearGradient id="paint2_linear_510_3008" x1="10.4163" y1="8.70834" x2="10.4163" y2="9.70834" gradientUnits="userSpaceOnUse">
-          <stop offset="0.0349758" stop-color="#FFD600"/>
-          <stop offset="0.966035" stop-color="#FFC200"/>
+          <stop offset="0.0349758" stopColor="#FFD600"/>
+          <stop offset="0.966035" stopColor="#FFC200"/>
         </linearGradient>
         <linearGradient id="paint3_linear_510_3008" x1="0.691116" y1="10.1458" x2="7.67535" y2="2.97819" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#0061D3"/>
-          <stop offset="1" stop-color="#04CDF9"/>
+          <stop stopColor="#0061D3"/>
+          <stop offset="1" stopColor="#04CDF9"/>
         </linearGradient>
       </defs>
     </symbol>
@@ -256,20 +256,20 @@ export const svgLoadder = () => {
       </g>
       <defs>
         <linearGradient id="paint0_linear_510_2998" x1="8.98505" y1="7.33856" x2="8.98505" y2="12.087" gradientUnits="userSpaceOnUse">
-          <stop offset="0.0349758" stop-color="#FFD600"/>
-          <stop offset="0.966035" stop-color="#FFC200"/>
+          <stop offset="0.0349758" stopColor="#FFD600"/>
+          <stop offset="0.966035" stopColor="#FFC200"/>
         </linearGradient>
         <linearGradient id="paint1_linear_510_2998" x1="6.07594" y1="14.1645" x2="10.3477" y2="13.8883" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#0061D3"/>
-          <stop offset="1" stop-color="#04CDF9"/>
+          <stop stopColor="#0061D3"/>
+          <stop offset="1" stopColor="#04CDF9"/>
         </linearGradient>
         <linearGradient id="paint2_linear_510_2998" x1="8.97357" y1="0" x2="8.97357" y2="6.90686" gradientUnits="userSpaceOnUse">
-          <stop offset="0.0349758" stop-color="#FFD600"/>
-          <stop offset="0.966035" stop-color="#FFC200"/>
+          <stop offset="0.0349758" stopColor="#FFD600"/>
+          <stop offset="0.966035" stopColor="#FFC200"/>
         </linearGradient>
         <linearGradient id="paint3_linear_510_2998" x1="3.57696" y1="9.92862" x2="11.4807" y2="9.27694" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#0061D3"/>
-          <stop offset="1" stop-color="#04CDF9"/>
+          <stop stopColor="#0061D3"/>
+          <stop offset="1" stopColor="#04CDF9"/>
         </linearGradient>
       </defs>
     </symbol>
@@ -293,8 +293,8 @@ export const svgLoadder = () => {
       </g>
       <defs>
         <linearGradient id="paint0_linear_510_3013" x1="-2.00348" y1="21.5371" x2="12.57" y2="20.4884" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#0061D3"/>
-          <stop offset="1" stop-color="#04CDF9"/>
+          <stop stopColor="#0061D3"/>
+          <stop offset="1" stopColor="#04CDF9"/>
         </linearGradient>
         <clipPath id="clip0_510_3013">
           <rect width="16" height="16" fill="white"/>
@@ -310,20 +310,20 @@ export const svgLoadder = () => {
       <path fill-rule="evenodd" clip-rule="evenodd" d="M8.59423 6.84986C8.59423 7.57661 7.94006 8.16536 7.13257 8.16536C6.32507 8.16536 5.6709 7.57661 5.6709 6.84986C5.6709 6.12311 6.32507 5.53436 7.13257 5.53436C7.94006 5.53511 8.59423 6.12311 8.59423 6.84986Z" fill="url(#paint3_linear_510_3003)"/>
       <defs>
         <linearGradient id="paint0_linear_510_3003" x1="9.98428" y1="9.22015" x2="9.98428" y2="12.3232" gradientUnits="userSpaceOnUse">
-          <stop offset="0.0349758" stop-color="#FFD600"/>
-          <stop offset="0.966035" stop-color="#FFC200"/>
+          <stop offset="0.0349758" stopColor="#FFD600"/>
+          <stop offset="0.966035" stopColor="#FFC200"/>
         </linearGradient>
         <linearGradient id="paint1_linear_510_3003" x1="2.31909" y1="13.6807" x2="12.9025" y2="10.9219" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#0061D3"/>
-          <stop offset="1" stop-color="#04CDF9"/>
+          <stop stopColor="#0061D3"/>
+          <stop offset="1" stopColor="#04CDF9"/>
         </linearGradient>
         <linearGradient id="paint2_linear_510_3003" x1="7.13257" y1="5.53436" x2="7.13257" y2="8.16536" gradientUnits="userSpaceOnUse">
-          <stop offset="0.0349758" stop-color="#FFD600"/>
-          <stop offset="0.966035" stop-color="#FFC200"/>
+          <stop offset="0.0349758" stopColor="#FFD600"/>
+          <stop offset="0.966035" stopColor="#FFC200"/>
         </linearGradient>
         <linearGradient id="paint3_linear_510_3003" x1="5.12574" y1="9.31642" x2="8.06581" y2="9.07977" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#0061D3"/>
-          <stop offset="1" stop-color="#04CDF9"/>
+          <stop stopColor="#0061D3"/>
+          <stop offset="1" stopColor="#04CDF9"/>
         </linearGradient>
       </defs>
     </symbol>

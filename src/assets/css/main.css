@@ -304,7 +304,8 @@
 body.dark-mode {
   --body-background: #121419;
   --main-font-color: #fff;
-  --border-color: #353946;
+  --border-color: linear-gradient(86.15deg, #0061d3 4.58%, #04cdf9 72.25%),
+  linear-gradient(0deg, #2a7df9, #2a7df9);
   --border-top-color: linear-gradient(86.15deg, #0061d3 4.58%, #04cdf9 72.25%),
     linear-gradient(0deg, #2a7df9, #2a7df9);
   --border-bottom-color: linear-gradient(
@@ -5486,11 +5487,11 @@ body.dark-mode #filter-form input[type="submit"] {
   display: inline-flex;
   font-size: 13px;
   font-weight: var(--heading-font-weight);
-  border: 1px solid var(--border-color);
+  border: 1px solid rgb(0 97 211 / 90%);
   border-radius: var(--btn-border-radius);
   margin-right: 14px;
-  white-space: nowrap;
   flex-basis: 160px;
+  text-align:center;
 }
 
 .category-item a {
@@ -11732,8 +11733,7 @@ body.dark-mode .component-popular-service .career-counselling {
   line-height: 25px;
   position: absolute;
   top: 128px;
-  white-space: nowrap;
-  width: 115px;
+  width: 100%;
 }
 
 .component-popular-service .career-counselling {
@@ -11745,8 +11745,7 @@ body.dark-mode .component-popular-service .career-counselling {
   line-height: 25px;
   position: absolute;
   top: 128px;
-  white-space: nowrap;
-  width: 115px;
+  width: 100%;
 }
 
 .component-popular-service .vector {
@@ -12437,4 +12436,16 @@ body.dark-mode .custom-select__control {
   top: 136px;
   /* white-space: nowrap; */
   width: 219px;
+}
+
+.w-30{
+  width: 30% important!;
+}
+.grid-container-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Chia tỷ lệ đồng đều cho 4 cột */
+  gap: 10px; /* Khoảng cách giữa các cột */
+}
+.grid-item-1 {
+  grid-column: span 1;
 }

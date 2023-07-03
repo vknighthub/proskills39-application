@@ -54,12 +54,12 @@ export const OtherService = () => {
                             <path fillRule="evenodd" clipRule="evenodd" d="M105.414 112.527C106.195 111.746 106.195 110.48 105.414 109.699L90.8284 95.1133L105.414 80.5275C106.195 79.7464 106.195 78.4801 105.414 77.6991C104.633 76.918 103.367 76.918 102.586 77.6991L86.5858 93.6991C85.8047 94.4801 85.8047 95.7464 86.5858 96.5275L102.586 112.527C103.367 113.309 104.633 113.309 105.414 112.527Z" fill="url(#paint1_linear_440_1278)" />
                             <defs>
                                 <linearGradient id="paint0_linear_440_1278" x1="159" y1="292.319" x2="23.7073" y2="279.939" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#0061D3" />
-                                    <stop offset="1" stop-color="#04CDF9" />
+                                    <stop stopColor="#0061D3" />
+                                    <stop offset="1" stopColor="#04CDF9" />
                                 </linearGradient>
                                 <linearGradient id="paint1_linear_440_1278" x1="116" y1="132.5" x2="90.4713" y2="130.174" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#0061D3" />
-                                    <stop offset="1" stop-color="#04CDF9" />
+                                    <stop stopColor="#0061D3" />
+                                    <stop offset="1" stopColor="#04CDF9" />
                                 </linearGradient>
                             </defs>
                         </svg>
@@ -103,12 +103,12 @@ export const OtherService = () => {
                             <path fillRule="evenodd" clipRule="evenodd" d="M0.585785 112.527C-0.195263 111.746 -0.195263 110.48 0.585785 109.699L15.1716 95.1133L0.585782 80.5275C-0.195266 79.7464 -0.195266 78.4801 0.585782 77.6991C1.36683 76.918 2.63316 76.918 3.41421 77.6991L19.4142 93.6991C20.1953 94.4801 20.1953 95.7464 19.4142 96.5275L3.41421 112.527C2.63316 113.309 1.36683 113.309 0.585785 112.527Z" fill="url(#paint1_linear_440_1282)" />
                             <defs>
                                 <linearGradient id="paint0_linear_440_1282" x1="-53" y1="292.319" x2="82.2927" y2="279.939" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#0061D3" />
-                                    <stop offset="1" stop-color="#04CDF9" />
+                                    <stop stopColor="#0061D3" />
+                                    <stop offset="1" stopColor="#04CDF9" />
                                 </linearGradient>
                                 <linearGradient id="paint1_linear_440_1282" x1="-9.99999" y1="132.5" x2="15.5287" y2="130.174" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#0061D3" />
-                                    <stop offset="1" stop-color="#04CDF9" />
+                                    <stop stopColor="#0061D3" />
+                                    <stop offset="1" stopColor="#04CDF9" />
                                 </linearGradient>
                             </defs>
                         </svg>

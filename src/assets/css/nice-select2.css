@@ -1,7 +1,5 @@
 .nice-select {
   -webkit-tap-highlight-color: var(--pure-black);
-  background-color: var(--body-background);
-  border: 1px solid var(--border-color);
   border-radius: var(--input-border-radius);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -19,11 +17,20 @@
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   white-space: nowrap;
   width: auto; 
+  background: linear-gradient(#12141994, #12141994)
+      padding-box,
+    linear-gradient(60deg, #00f, #00e8ff) border-box;
+  color: #fff;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  display: inline-block;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.7);
 }
   .nice-select:hover {
     border-color: var(--border-color); }
@@ -202,7 +209,7 @@
   }
 
   body.dark-mode .nice-select:after {
-    background: url(/images/svg/arrow-down-white.svg) no-repeat center;
+    background: url(../images/svg/arrow-down-white.svg) no-repeat center;
   }
   
 
