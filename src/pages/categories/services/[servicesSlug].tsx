@@ -207,11 +207,11 @@ const ServicesPage: NextPageWithLayout<
                             <form id="artworks-filter-form" onSubmit={(e) => onSubmit(e)}>
                                 {listindustry &&
                                     <div className="filter-item">
-                                        {/* <NiceSelect
-                                        arr={listindustry}
-                                        ChangeFilterData={onChangeFilterIndustry}
-                                        name={"industry"}
-                                    /> */}
+                                        <NiceSelect
+                                            arr={listindustry}
+                                            ChangeFilterData={onChangeFilterIndustry}
+                                            name={"industry"}
+                                        />
                                     </div>
                                 }
                                 <div className="filter-item">
@@ -239,16 +239,16 @@ const ServicesPage: NextPageWithLayout<
                                     />
                                 </div>
                                 <div className="filter-item">
-                                    {/* <NiceSelect
-                                    arr={[
-                                        { name: "Delivery time", value: "" },
-                                        { name: "Express 24h", value: "1" },
-                                        { name: "Up to 3 days", value: "3" },
-                                        { name: "Up to 7 days", value: "7" }
-                                    ]}
-                                    ChangeFilterData={onChangeFilterDeliveryTime}
-                                    name={"deliverytime"}
-                                /> */}
+                                    <NiceSelect
+                                        arr={[
+                                            { name: "Delivery time", value: "" },
+                                            { name: "Express 24h", value: "1" },
+                                            { name: "Up to 3 days", value: "3" },
+                                            { name: "Up to 7 days", value: "7" }
+                                        ]}
+                                        ChangeFilterData={onChangeFilterDeliveryTime}
+                                        name={"deliverytime"}
+                                    />
                                 </div>
 
 
