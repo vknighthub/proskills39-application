@@ -567,6 +567,7 @@ interface ServiceResultInfo<T> {
             listservice: T[]
             listservicepopular: T[]
             listsellerpopular: SellerInfor[]
+            listcatechild: T[]
         }
     }
 }

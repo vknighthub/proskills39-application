@@ -24,31 +24,32 @@ const CatalystVoterTool = ({ data
 
     return (
 
-        <div className="primary-content-area container content-padding">
-            <div className="page-title-section">
-                <h2>
-                    <span className="gradient-text">Catalyst</span> Voter Tool
-                </h2>
+        <div className="primary-content-area background-content">
+            <div className="container content-padding ">
+                <div className="page-title-section">
+                    <h2>
+                        <span className="gradient-text">Catalyst</span> Voter Tool
+                    </h2>
 
-            </div>
-
-            <div className="searchbox pb-5">
-                <div style={{ width: '100%', height: '100%' }}>
-                    <ReactSearchAutocomplete
-                        items={challengelist}
-                        onSearch={handleOnSearch}
-                        onSelect={handleOnSelect}
-                        styling={{ zIndex: 10 }} // To display it on top of the search box below
-                        autoFocus
-                        fuseOptions={{ keys: ["challengeName"] }}
-                        resultStringKeyName="challengeName"
-                        placeholder="Enter your search here..."
-                    />
                 </div>
+
+                <div className="searchbox pb-5">
+                    <div style={{ width: '100%', height: '100%' }}>
+                        <ReactSearchAutocomplete
+                            items={challengelist}
+                            onSearch={handleOnSearch}
+                            onSelect={handleOnSelect}
+                            styling={{ zIndex: 10 }} // To display it on top of the search box below
+                            autoFocus
+                            fuseOptions={{ keys: ["challengeName"] }}
+                            resultStringKeyName="challengeName"
+                            placeholder="Enter your search here..."
+                        />
+                    </div>
+                </div>
+
+                <Challenges data={searchTerm} />
             </div>
-
-            <Challenges data={searchTerm} />
-
         </div>
     )
 }
