@@ -190,6 +190,7 @@ export interface FreelancersLevel {
     description: string
     image: string
     level: number
+    icon: string
 }
 
 export interface HomePage {

@@ -8,11 +8,6 @@ import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import one from '@/assets/images/svg/one.svg';
-import two from '@/assets/images/svg/two.svg';
-import three from '@/assets/images/svg/three.svg';
-import four from '@/assets/images/svg/four.svg';
-import five from '@/assets/images/svg/five.svg';
 
 
 type PageProps = {
@@ -21,16 +16,6 @@ type PageProps = {
 
 export const HomeFreelancer = ({ data }: PageProps) => {
 
-    const renderLevels = (level: number) => {
-        switch (level) {
-            case 5: return five;
-            case 4: return four;
-            case 3: return three;
-            case 2: return two;
-            case 1: return one;
-            default: return one;
-        }
-    }
 
     const { t } = useTranslation('common')
     return (
@@ -78,7 +63,6 @@ export const HomeFreelancer = ({ data }: PageProps) => {
                                             <div className="component-wrapper">
                                                 <div className="component">
                                                     <div className="overlap">
-                                                        <div className="rectangle" />
                                                         <div className="group">
                                                             <div className="vector">
                                                                 <div className="overlap-group">
@@ -95,7 +79,7 @@ export const HomeFreelancer = ({ data }: PageProps) => {
                                                             </div>
                                                         </div>
                                                         <div className="text-wrapper">
-                                                            {value.level}
+                                                            <Image src={value.icon} alt={value.title} width={45} height={45}></Image>
                                                         </div>
                                                         <div className="div">
                                                             <div
