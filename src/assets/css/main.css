@@ -12693,15 +12693,38 @@ body.dark-mode .custom-select__control {
   border: none !important;
   background-color: transparent !important;
 }
+.jbNHPY .wrapper {
+  border: none !important;
+  background-color: transparent !important;
+}
+
 .PxeSY > input {
   background-color: var(--search-background-color) !important;
   padding: 17px 18px !important; 
   color: #fff !important; 
 }
+.bvQBuR > input {
+  background-color: var(--search-background-color) !important;
+  padding: 17px 18px !important; 
+  color: #fff !important; 
+}
+
 .PzNiY {
   margin: -3px -20px 0 0 !important;
 }
+.bvQBuR {
+  margin: -3px -20px 0 0 !important;
+}
+
 .dYzxAh {
+  color: #fff !important; 
+  background-color: var(--search-background-color) !important;
+  border: 1px solid #1714e591 !important;
+  border-bottom-right-radius: 25px  !important;
+  border-bottom-left-radius: 25px  !important;
+  width: 250px !important;
+}
+.bvkXbf {
   color: #fff !important; 
   background-color: var(--search-background-color) !important;
   border: 1px solid #1714e591 !important;
