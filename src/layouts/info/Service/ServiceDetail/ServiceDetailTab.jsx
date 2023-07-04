@@ -166,7 +166,7 @@ const ServiceDetailTab = ({ data }) => {
 
             <div className="related-section">
                 <div className="section-title-wrapper">
-                    <button className="btn btn-wide btn-fuchsia w-100" >Contact to Seller (Comming soon)</button>
+                    <button className="btn btn-wide btn-fuchsia " >Contact to Seller (Comming soon)</button>
                 </div>
             </div>
 

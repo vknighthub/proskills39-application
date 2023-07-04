@@ -26,7 +26,6 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 const ServicePage: NextPageWithLayout = (props: Props) => {
 
     const { data } = FetchAllServices()
-    console.log(data?.listservice)
     return (
         <>
             <Seo
@@ -67,7 +66,7 @@ const ServicePage: NextPageWithLayout = (props: Props) => {
                         <div className="featured-box-wrapper grid-5-columns">
                             {data?.listservice.map((item) => (
                                 <div className="featured-item" key={item.id} >
-                                    <Link href={`/categories/`}>
+                                    <Link href={`/categories/services/servicedetail/${item.slug}`}>
                                         <div className="featured-item-wrapper newest-service">
                                             <div className="featured-item-content">
                                                 <div className="featured-item-image">

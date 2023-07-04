@@ -71,7 +71,7 @@ const ServiceDetail: NextPageWithLayout<
                 url={routes.service.servicedetail(servicedetailinfo.services.slug)}
                 image_url={servicedetailinfo.services.image?.[0].url} />
 
-            <div className="product-page product-version-1">
+            <div className="product-page product-version-1 background-content">
                 <ServiceDetailMedia data={servicedetailinfo} compare={servicedetailinfo.comparepackage} />
                 <div className="product-info">
                     <div className="product-info-wrapper">
