@@ -50,7 +50,7 @@ class Client {
         applyletter: (input: ApplyLetterInput) => HttpClient.post<ApplyLetterResponse>(API_ENDPOINTS.APPLY_LETTER, input),
         getbyparent: ({ slug, language }: GetParams) => HttpClient.get<ServicePaginator>(`${API_ENDPOINTS.SERVICESBYPARENT}`, { slug, language }),
         submitdeal: (input: SubmitDealInput) => HttpClient.post<SubmitDealResponse>(API_ENDPOINTS.SUBMITDEAL, input),
-        getall: () => HttpClient.get<ServicePaginator>(API_ENDPOINTS.SERVICE_GETALL)
+        getall: (data: GetParams) => HttpClient.get<ServicePaginator>(API_ENDPOINTS.SERVICE_GETALL,data)
     }
     notification = {
         get: (params?: SettingsQueryOptions) => HttpClient.get<NotificationResponse>(API_ENDPOINTS.NOTIFICATION, { ...params })

@@ -11,7 +11,7 @@ export interface QueryToken {
     token: string | null | undefined
 }
 export interface GetParams {
-    slug: string
+    slug?: string
     language?: string
     page?: number
     limit?: number

@@ -8,9 +8,10 @@ import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import newest from '@/assets/images/svg/newest.svg';
 import { FetchAllServices } from '@/data/service';
+import { getPagination, pagination } from '@/utils/util';
 
 type Props = {}
 
@@ -23,9 +24,33 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     };
 };
 
-const ServicePage: NextPageWithLayout = (props: Props) => {
 
-    const { data } = FetchAllServices()
+const ServicePage: NextPageWithLayout = (props: Props) => {
+    const [active, setActive] = useState(1);
+
+    const { data, total, refetch } = FetchAllServices(
+        {
+            page: active,
+            limit: 20,
+        }
+    )
+
+    const [state, setstate] = useState<number[]>([]);
+
+
+    useEffect(() => {
+        if (total) {
+            pagination(".news-item", 20, active);
+            setstate(getPagination(total, 20));
+        }
+
+    }, [total, active]);
+
+
+    useEffect(() => {
+        refetch()
+    }, [active])
+
     return (
         <>
             <Seo
@@ -97,6 +122,49 @@ const ServicePage: NextPageWithLayout = (props: Props) => {
                                 </div>
                             ))}
                         </div>
+                    </div>
+
+                    <div className="pagination-section flex-center">
+                        <ul className="pagination-list">
+                            <li className="page-item page-nav-prev">
+                                <a
+                                    href="#"
+                                    className="muted3-color"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        setActive(active === 1 ? 1 : active - 1);
+                                    }}
+                                >
+                                    Prev
+                                </a>
+                            </li>
+                            {state &&
+                                state.map((s, i) => (
+                                    <li key={i} className={`page-item ${active === s ? "active" : ""}`}>
+                                        <a
+                                            href="#"
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                setActive(s);
+                                            }}
+                                        >
+                                            {s}
+                                        </a>
+                                    </li>
+                                ))}
+                            <li className="page-item page-nav-next">
+                                <a
+                                    href="#"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        setActive(active === state.length ? state.length : active + 1);
+                                    }}
+                                    className="page-item page-nav-next"
+                                >
+                                    Next
+                                </a>
+                            </li>
+                        </ul>
                     </div>
 
 

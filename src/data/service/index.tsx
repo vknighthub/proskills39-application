@@ -1,4 +1,4 @@
-import { SubmitDealResponse } from "@/types";
+import { GetParams, SubmitDealResponse } from "@/types";
 import { AxiosError } from "axios";
 import { useRouter } from "next/router";
 import { useMutation, useQuery } from "react-query";
@@ -39,14 +39,16 @@ export const useSubmitDeal = () => {
 
 
 
-export const FetchAllServices = () => {
+export const FetchAllServices = (dataFillter: GetParams) => {
     const { data, isLoading, error, refetch } = useQuery(
         'service-get-all',
-        () => client.services.getall(),
+        () => client.services.getall(dataFillter),
     );
 
     return {
         data: data?.result.data,
+        totalpage: data?.result.totalpage,
+        total: data?.result.total,
         refetch,
         isLoading,
         error
