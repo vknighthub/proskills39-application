@@ -58,7 +58,7 @@ export const NewestService = ({ data }: PageProps) => {
                                 {data.map((value) => (
                                     <SwiperSlide className="swiper-slide" key={value.id}>
                                         <div className="featured-item" >
-                                            <Link href={`/categories/`}>
+                                            <Link href={`/categories/services/servicedetail/${value.slug}`} >
                                                 <div className="featured-item-wrapper newest-service">
                                                     <div className="featured-item-content">
                                                         <div className="featured-item-image">
