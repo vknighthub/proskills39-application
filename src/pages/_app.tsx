@@ -13,6 +13,7 @@ import { SessionProvider } from 'next-auth/react'
 import { ToastProvider } from '@/components/utils/Toast'
 import { Toaster } from 'react-hot-toast'
 import { MeshProvider } from "@meshsdk/react";
+import { isMobileDevice } from '@/utils/isMobileDevice'
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
@@ -35,7 +36,6 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
     localStorage.setItem("mood", "dark-mood");
     document.documentElement.dir = dir;
   }, [dir]);
-
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
@@ -43,7 +43,9 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
           <ToastProvider>
             <SessionProvider>
               <>
+
                 <DefaultSeo />
+
                 {authenticationRequired ? (
                   <PrivateRoute>
                     {getLayout(<Component {...pageProps} />)}
@@ -51,6 +53,7 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
                 ) : (
                   getLayout(<Component {...pageProps} />)
                 )}
+
                 <Toaster
                   position="top-right"
                   reverseOrder={false} />
@@ -60,7 +63,7 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
         </MeshProvider>
       </Hydrate>
       <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
-    </QueryClientProvider>
+    </QueryClientProvider >
   )
 }
 export default appWithTranslation(CustomApp);

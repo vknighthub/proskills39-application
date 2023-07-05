@@ -1,4 +1,6 @@
-import { useEffect } from 'react'
+import Logo from '@/components/ui/logo'
+import { isMobileDevice } from '@/utils/isMobileDevice'
+import { useEffect, useState } from 'react'
 import { niceSelect, notificationList, svgLoadder } from './../utils/util'
 import Footer from './_footer'
 import Header from './_header'
@@ -21,13 +23,39 @@ export default function Layout({ children }: React.PropsWithChildren<{}>) {
     }, 1000)
   }, [])
 
+  const mobile = isMobileDevice();
+
+  const [render, setRender] = useState(false)
+
+  useEffect(() => {
+    setRender(true)
+  }, [render])
+
+
   return (
     <>
-      <div className="main">
-        <Header />
-        {children}
-        <Footer />
-      </div>
+      {render &&
+        <div className="main">
+          {!mobile ?
+            <>
+              <Header />
+              {children}
+              <Footer />
+            </>
+            :
+            <>
+              <header className="site-header">
+                <div className="topbar padding-top-bottom border-bottom">
+                  <div className="topbar-wrapper container">
+                    <Logo isDark={true} />
+                  </div>
+                </div>
+              </header >
+              <div className="primary-content-area background-phone"></div>
+            </>
+          }
+        </div>
+      }
     </>
   )
 }
