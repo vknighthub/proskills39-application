@@ -1,3 +1,4 @@
+import freelancer from '@/assets/images/content/support/frame6879.webp';
 const routes = {
     home: '',
     login: 'login',
@@ -22,7 +23,8 @@ const routes = {
     community: 'community-standard',
     blogDetailUrl: (slug?: string) => `blog-detail/${slug}`,
     userprofile: (slug?: string) => `user-profile/${slug}`,
-    services: 'services'
+    services: 'services',
+    freelancer: (slug?: string) => `freelancer/${slug}`,
 
 }
 export default routes;

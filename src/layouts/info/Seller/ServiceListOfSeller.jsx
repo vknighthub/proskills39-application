@@ -18,9 +18,9 @@ const ServiceListOfSeller = ({ data }) => {
                     <span className="gradient-text">Explore</span> Service
                 </h2>
             </div>
-            <div className="featured-box grid-4-columns">
+            <div className="featured-box grid-4-columns ">
                 {data.map((serviceData, index) => (
-                    <div key={index} className={`${dblock(active, index, sort)} `} >
+                    <div key={index} className={`${dblock(active, index, sort)} grid-item-1`} >
                         <ServiceList service={serviceData} />
                     </div>
                 ))}

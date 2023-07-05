@@ -110,8 +110,8 @@ const RefferalProgram: NextPageWithLayout = () => {
                 url={routes.referral_program}
                 image_url='https://api.proskills39.com/system/logo/logotest.png'
             />
-            <div>
-                <div className="become-creator-bc-box container-1300 section-padding-medium">
+            <div className="background-content">
+                <div className="become-creator-bc-box container-1300 section-padding-medium ">
                     <div className="bc-info">
                         <div className="bc-heading">
                             <div className="bc-heading-subtitle">INVITE FRIEND!</div>
@@ -135,7 +135,7 @@ const RefferalProgram: NextPageWithLayout = () => {
                                         onSubmit={handleSubmit(onSubmit)}
                                     >
                                         <div className="form-field">
-                                            <input type="text" id="name" placeholder='Fullname' {...register('receivername')} />
+                                            <input type="text" id="name" placeholder='Name of your friend' {...register('receivername')} />
                                         </div>
                                         <div className="form-field">
                                             <input type="text" id="email" placeholder='Email' {...register('receivermail')} />

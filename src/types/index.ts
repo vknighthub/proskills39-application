@@ -191,6 +191,7 @@ export interface FreelancersLevel {
     image: string
     level: number
     icon: string
+    slug: string
 }
 
 export interface HomePage {
@@ -1006,4 +1007,27 @@ export interface UserInfoInput {
     username: string
 }
 
+export interface Freelancer {
+    avatar: string
+    username: string
+    fullname: string
+    aboutme: string
+    totalordersuccess: number
+    level: number
+    level_title: string
+    level_icon: string
+    joindate: string
+}
+export interface FreelancerData {
+    status: number
+    currentpage: number
+    limit: number
+    totalpage: number
+    total: number
+    data: {
+        title: string
+        listdata: Freelancer[]
+    }
+}
 
+export interface FreelancerPaginator extends ResponseObject<FreelancerData> { }

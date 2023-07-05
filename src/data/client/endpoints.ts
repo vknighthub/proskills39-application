@@ -25,7 +25,8 @@ export const API_ENDPOINTS = {
     BLOGDETAIL: '/blog/getblogbyslug',
     SUBMITDEAL: '/services/user/orderengagament',
     USER_INFO: '/user/user/getprofileseller',
-    SERVICE_GETALL: '/services/getallservice'
+    SERVICE_GETALL: '/services/getallservice',
+    FREELANCER_BYLEVEL: '/user/getfreelancerbylevel'
 
 
 }

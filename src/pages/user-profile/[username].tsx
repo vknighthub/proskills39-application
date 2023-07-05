@@ -3,7 +3,7 @@ import certificate from '@/assets/images/content/certificate.png'
 import education from '@/assets/images/content/education.png'
 import iconcheck from '@/assets/images/content/icon-check.svg'
 import iconuncheck from '@/assets/images/content/uncheck.png'
-import profilecover from '@/assets/images/content/profile/profile-cover-1.png'
+import profilecover from '@/assets/images/content/profile/profile-cover-1.jpg'
 import skillsimage from '@/assets/images/content/skills.png'
 import routes from '@/config/routes'
 import { FetchUserProfile } from '@/data/blog'
@@ -59,7 +59,7 @@ const UserProfilePage: NextPageWithLayout<
                 url={routes.userprofile(username)}
                 image_url={userprofile.result.data.profile.avatar}
             />
-            <div className="primary-content-area profile-page">
+            <div className="primary-content-area profile-page background-content">
                 <div className="profile-header-section">
                     <div className="cover-image">
                         <Image src={data.profile.banner ? data.profile.banner : profilecover} alt={"Cover"} width={2115} height={320} />

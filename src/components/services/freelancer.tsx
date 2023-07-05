@@ -15,8 +15,6 @@ type PageProps = {
 }
 
 export const HomeFreelancer = ({ data }: PageProps) => {
-
-
     const { t } = useTranslation('common')
     return (
         <div className="container section-padding overflow-hidden">
@@ -59,46 +57,48 @@ export const HomeFreelancer = ({ data }: PageProps) => {
                             <div className="featured-box-wrapper grid-6-columns">
                                 {data.map((value: FreelancersLevel) => (
                                     <SwiperSlide className="swiper-slide" key={value.id}>
-                                        <div className="box-freelancer">
-                                            <div className="component-wrapper">
-                                                <div className="component">
-                                                    <div className="overlap">
-                                                        <div className="group">
-                                                            <div className="vector">
-                                                                <div className="overlap-group">
-                                                                    <Image className="img" alt="Vector" src={frame} />
-                                                                    <Image
-                                                                        className="avatar-freelancer"
-                                                                        alt="Chuot punk"
-                                                                        src={value.image ? value.image : punkfreelancer}
-                                                                        width={228}
-                                                                        height={158}
-                                                                        style={{ borderRadius: 10 }}
-                                                                    />
+                                        <Link href={`/freelancer/${value.slug}`}>
+                                            <div className="box-freelancer">
+                                                <div className="component-wrapper">
+                                                    <div className="component">
+                                                        <div className="overlap">
+                                                            <div className="group">
+                                                                <div className="vector">
+                                                                    <div className="overlap-group">
+                                                                        <Image className="img" alt="Vector" src={frame} />
+                                                                        <Image
+                                                                            className="avatar-freelancer"
+                                                                            alt="Chuot punk"
+                                                                            src={value.image ? value.image : punkfreelancer}
+                                                                            width={228}
+                                                                            height={158}
+                                                                            style={{ borderRadius: 10 }}
+                                                                        />
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div className="text-wrapper">
-                                                            <Image src={value.icon} alt={value.title} width={45} height={45}></Image>
-                                                        </div>
-                                                        <div className="div">
-                                                            <div
-                                                                className="group-wrapper"
-                                                                style={{
-                                                                    backgroundImage: `url(${maximize_2.src})`,
-                                                                }}
-                                                            >
-
+                                                            <div className="text-wrapper">
+                                                                <Image src={value.icon} alt={value.title} width={45} height={45}></Image>
                                                             </div>
-                                                            <div className="overlap-2">
-                                                                <div className="text-wrapper-2">{value.description}</div>
-                                                                <div className="rectangle-2" />
+                                                            <div className="div">
+                                                                <div
+                                                                    className="group-wrapper"
+                                                                    style={{
+                                                                        backgroundImage: `url(${maximize_2.src})`,
+                                                                    }}
+                                                                >
+
+                                                                </div>
+                                                                <div className="overlap-2">
+                                                                    <div className="text-wrapper-2">{value.description}</div>
+                                                                    <div className="rectangle-2" />
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </Link>
                                     </SwiperSlide>
                                 ))}
                             </div>

@@ -1,4 +1,4 @@
-import { ApplyLetterInput, ApplyLetterResponse, AuthResponse, BlogDetailResponse, BlogParams, BlogResponse, CategoriesPaginator, Category, CategoryPaginator, ChallegePaginator, Challenge, ChallengeResult, DealInput, ForgotPasswordInput, ForgotPasswordResponse, GetParams, HomePageResult, InvitateFriendInput, InviteFriendResponse, LoginUserInput, NotificationResponse, Proposal, ProposalQueryOptions, ProposalResult, RegisterUserInput, Service, ServiceDealResponse, ServiceDetailPaginator, ServicePaginator, SettingQuery, Settings, SettingsQueryOptions, SubmitDealInput, SubmitDealResponse, UpdateProfileInput, UserInfoInput, UserProfilePage, UserProfilePageResponse, UserProfileResult, UserUpdateResult } from "@/types";
+import { ApplyLetterInput, ApplyLetterResponse, AuthResponse, BlogDetailResponse, BlogParams, BlogResponse, CategoriesPaginator, CategoryPaginator, ChallegePaginator, Challenge, ChallengeResult, DealInput, ForgotPasswordInput, ForgotPasswordResponse, FreelancerPaginator, GetParams, HomePageResult, InvitateFriendInput, InviteFriendResponse, LoginUserInput, NotificationResponse, ProposalQueryOptions, ProposalResult, RegisterUserInput, ServiceDealResponse, ServiceDetailPaginator, ServicePaginator, SettingQuery, SettingsQueryOptions, SubmitDealInput, SubmitDealResponse, UpdateProfileInput, UserInfoInput, UserProfilePageResponse, UserProfileResult, UserUpdateResult } from "@/types";
 import { API_ENDPOINTS } from "./endpoints";
 import { HttpClient } from './http-client';
 
@@ -50,7 +50,7 @@ class Client {
         applyletter: (input: ApplyLetterInput) => HttpClient.post<ApplyLetterResponse>(API_ENDPOINTS.APPLY_LETTER, input),
         getbyparent: ({ slug, language }: GetParams) => HttpClient.get<ServicePaginator>(`${API_ENDPOINTS.SERVICESBYPARENT}`, { slug, language }),
         submitdeal: (input: SubmitDealInput) => HttpClient.post<SubmitDealResponse>(API_ENDPOINTS.SUBMITDEAL, input),
-        getall: (data: GetParams) => HttpClient.get<ServicePaginator>(API_ENDPOINTS.SERVICE_GETALL,data)
+        getall: (data: GetParams) => HttpClient.get<ServicePaginator>(API_ENDPOINTS.SERVICE_GETALL, data)
     }
     notification = {
         get: (params?: SettingsQueryOptions) => HttpClient.get<NotificationResponse>(API_ENDPOINTS.NOTIFICATION, { ...params })
@@ -58,6 +58,9 @@ class Client {
     blog = {
         get: (params?: SettingsQueryOptions) => HttpClient.get<BlogResponse>(API_ENDPOINTS.BLOG, { ...params }),
         getdetail: (param: BlogParams) => HttpClient.get<BlogDetailResponse>(API_ENDPOINTS.BLOGDETAIL, { ...param })
+    }
+    freelancer = {
+        getbylevel: ({ slug, language, page, limit }: GetParams) => HttpClient.get<FreelancerPaginator>(API_ENDPOINTS.FREELANCER_BYLEVEL, { slug, language, page, limit })
     }
 }
 // eslint-disable-next-line import/no-anonymous-default-export

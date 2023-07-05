@@ -302,7 +302,7 @@
        1.8. Dark Mode
        ============================*/
 body.dark-mode {
-  --body-background: #121419;
+  --body-background: rgba(0, 0, 0, 0.52);
   --main-font-color: #fff;
   --border-color: linear-gradient(86.15deg, #0061d3 4.58%, #04cdf9 72.25%),
   linear-gradient(0deg, #2a7df9, #2a7df9);
