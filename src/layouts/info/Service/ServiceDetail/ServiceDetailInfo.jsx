@@ -15,7 +15,7 @@ const ServiceDetailInfo = ({ data }) => {
                 <div className="product-meta-item">
                     <div className="label">{t('text-current-price')}</div>
                     <div className="value">{data.price.v2p} v2p</div>
-                    <div className="caption">{data.price.usd} U$D</div>
+                    <div className="caption">{data.price.vnd} VND</div>
                 </div>
             </div>
             <div className="product-description">

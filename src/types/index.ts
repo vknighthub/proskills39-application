@@ -625,8 +625,9 @@ export interface Category {
 }
 
 interface PriceService {
-    usd: number
+    usd?: number
     v2p: number
+    vnd: number
 }
 interface EditionService {
     total: number

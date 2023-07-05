@@ -1,15 +1,14 @@
+import routes from '@/config/routes';
+import client from '@/data/client';
 import Layout from '@/layouts/_layout';
+import Seo from '@/layouts/_seo';
 import { NextPageWithLayout, ServiceDetailPaginator } from '@/types';
+import invariant from 'invariant';
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import ServiceDetailInfo from './../../../../layouts/info/Service/ServiceDetail/ServiceDetailInfo';
 import ServiceDetailMedia from './../../../../layouts/info/Service/ServiceDetail/ServiceDetailMedia';
 import ServiceDetailTab from './../../../../layouts/info/Service/ServiceDetail/ServiceDetailTab';
-import product from '@/assets/images/content/product-img/product-1.png'
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
-import client from '@/data/client';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Seo from '@/layouts/_seo';
-import routes from '@/config/routes';
-import invariant from 'invariant';
 
 
 type ParsedQueryParams = {
