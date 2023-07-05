@@ -47,7 +47,7 @@ export default function Layout({ children }: React.PropsWithChildren<{}>) {
               <header className="site-header">
                 <div className="topbar padding-top-bottom border-bottom">
                   <div className="topbar-wrapper container">
-                    <Logo isDark={true} />
+                    <Logo />
                   </div>
                 </div>
               </header >

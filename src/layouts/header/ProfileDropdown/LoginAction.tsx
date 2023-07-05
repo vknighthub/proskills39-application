@@ -5,10 +5,9 @@ import { useTranslation } from 'next-i18next'
 
 type Props = {
     isAuthorized: boolean,
-    setIsDark: void
 }
 
-const LoginAction = ({ isAuthorized, setIsDark }: Props) => {
+const LoginAction = ({ isAuthorized }: Props) => {
     const { t } = useTranslation('common')
 
     const [render, setRender] = useState(false)
@@ -23,7 +22,7 @@ const LoginAction = ({ isAuthorized, setIsDark }: Props) => {
             {!isAuthorized && render &&
                 <>
                     <ButtonHeader name={t('text-login')} link="login" />
-                    <ActionHeader setIsDark={setIsDark}/>
+                    <ActionHeader/>
                 </>
             }
         </>

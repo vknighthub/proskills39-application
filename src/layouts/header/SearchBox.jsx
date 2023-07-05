@@ -46,9 +46,24 @@ const SearchBox = () => {
     router.push(`/categories/services/searching/${selectedValue}`)
   }
 
+  useEffect(() => {
+    function handleClickOutside(event) {
+      const parent = document.getElementById('seach-click-box');
+      if (parent && !parent.contains(event.target)) {
+        setActiveToggle(false);
+      }
+    }
+
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+
   return (
     <>
-      <div className="searchbox">
+      <div className="searchbox" id="seach-click-box">
         <form
           method="get"
           className="main-search"

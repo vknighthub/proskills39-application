@@ -3,7 +3,7 @@ import DropdownSetting from './ProfileDropdown/DropdownSetting';
 import { useEffect, useState } from 'react';
 import LoginAction from './ProfileDropdown/LoginAction';
 import avatar from '@/assets/images/avatar.png'
-const ProfileDropdown = ({ profile, isAuthorized, setIsDark }) => {
+const ProfileDropdown = ({ profile, isAuthorized }) => {
     const [toggle, setToggle] = useState(false);
     const [render, setRender] = useState(true);
 
@@ -73,7 +73,7 @@ const ProfileDropdown = ({ profile, isAuthorized, setIsDark }) => {
             }
 
             <>
-                <LoginAction isAuthorized={isAuthorized} userdata={userData} setIsDark={setIsDark} />
+                <LoginAction isAuthorized={isAuthorized} userdata={userData} />
             </>
 
 

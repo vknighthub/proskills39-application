@@ -16,13 +16,12 @@ const Header = () => {
   const [searchToggle, setSearchToggle] = useState(false)
   const { data: session } = useSession()
   const { me, isAuthorized } = useMe()
-  const [isDark, setIsDark] = useState(true)
   return (
     <header className="site-header">
       <div className="topbar padding-top-bottom border-bottom">
         <div className="topbar-wrapper container">
           <MobileHeader />
-          <Logo isDark={isDark} />
+          <Logo />
           <SearchBox />
 
           <ButtonHeader name={t('dRep')} link="dRep" />
@@ -31,7 +30,6 @@ const Header = () => {
           <ProfileDropdown
             profile={session ? session : me}
             isAuthorized={isAuthorized}
-            setIsDark={setIsDark}
           />
 
           <div className="user-activity-buttons">

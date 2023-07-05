@@ -2,29 +2,28 @@ import React, { useEffect, useRef } from 'react'
 
 
 const Footer = () => {
-    const dayMood = useRef(true)
     
-    useEffect(() => {
-        let mood = localStorage.getItem("mood");
-        moodChange(mood);
-        dayMood.current = mood ? true : false;
-    }, []);
+    let mood = localStorage.getItem("mood");
+    const isDark = mood === "dark-mood" ? true : false;
 
-
-    const moodChange = (dark) => {
-        if (dark === 'dark-mood') {
-            document.querySelector("body").classList.add("dark-mode");
+    const moodChange = (mode) => {
+        if (mode) {
             localStorage.setItem("mood", "dark-mood");
+            document.querySelector("body").classList.add("dark-mode");
         } else {
             document.querySelector("body").classList.remove("dark-mode");
-            localStorage.removeItem("mood");
+            localStorage.setItem("mood", "light-mood");
         }
     };
 
-    const onClick = () => {
-        dayMood.current = !dayMood.current;
-        moodChange(dayMood.current);
+    const onClick = (e) => {
+        moodChange(e.target.checked);
     };
+
+
+    useEffect(() => {
+        moodChange(isDark)
+    }, [isDark])
     
     return (
         <div className="profile-dropdown-footer">
@@ -41,8 +40,7 @@ const Footer = () => {
                 <label className="toggle-control">
                     <input
                         type="checkbox"
-                        ref={dayMood}
-                        defaultChecked={dayMood.current}
+                        defaultChecked={isDark}
                         onClick={(e) => onClick(e)}
                     />
                     <span className="control" />

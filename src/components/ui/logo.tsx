@@ -5,27 +5,13 @@ import { useSettings } from '@/data/settings'
 import { siteSettings } from '@/data/static/site-settings'
 import { useEffect, useState } from 'react'
 
-type Props = {
-  isDark: boolean
-}
-export default function Logo({
-  isDark
-}: Props) {
+
+export default function Logo() {
 
   const { lightLogo, darkLogo } = siteSettings
   const { settings, refetch }: any = useSettings()
 
-  const [load, setLoad] = useState(darkLogo)
-
-  useEffect(() => {
-    refetch()
-    if (isDark) {
-      setLoad(settings?.dark_logo?.original)
-    } else {
-      setLoad(settings?.logo?.original)
-    }
-
-  }, [isDark, refetch])
+  const [load, setLoad] = useState(lightLogo)
 
   return (
     <>
