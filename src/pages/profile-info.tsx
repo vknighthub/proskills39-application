@@ -25,20 +25,22 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
 const ProfileInformation: NextPageWithLayout = () => {
     const { me } = useMe();
-    
+
     const profile = me?.data
     return (
-        <div className="primary-content-area container content-padding grid-left-sidebar">
-            {/* / Profile Info Sidebar */}
-            <ProfileInfoSidebar />
-            {/* / Profile Info Sidebar */}
-            <div className="main-content-area">
-                <div className="page-title">
-                    <h2>
-                        <span className="gradient-text">Profile</span> Info
-                    </h2>
+        <div className="primary-content-area background-content">
+            <div className=" container content-padding grid-left-sidebar  ">
+                {/* / Profile Info Sidebar */}
+                <ProfileInfoSidebar />
+                {/* / Profile Info Sidebar */}
+                <div className="main-content-area">
+                    <div className="page-title">
+                        <h2>
+                            <span className="gradient-text">Profile</span> Info
+                        </h2>
+                    </div>
+                    <ProfileInfoForm profileinfo={profile} />
                 </div>
-                <ProfileInfoForm profileinfo={profile} />
             </div>
         </div>
     )

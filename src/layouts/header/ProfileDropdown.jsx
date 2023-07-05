@@ -18,8 +18,8 @@ const ProfileDropdown = ({ profile, isAuthorized, setIsDark }) => {
     return (
         <>
             {isAuthorized && userData && render &&
-                <div
-                    className={`header-user-profile cryptoki-notif-bttn ${toggle ? "active" : ""
+                <div id="parent-toggle"
+                    className={`header-user-profile cryptoki-notif-bttn ${toggle ? "active" : "" 
                         }`}
                 >
                     <div

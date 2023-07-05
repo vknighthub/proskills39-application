@@ -9,40 +9,42 @@ type Props = {}
 
 const WalletInfo: NextPageWithLayout = () => {
     return (
-        <div className="primary-content-area container content-padding grid-left-sidebar">
-            <ProfileInfoSidebar />
-            <div className="main-content-area">
-                <div className="page-title">
-                    <h2>
-                        <span className="gradient-text">Account</span> Settings
-                    </h2>
-                </div>
-                <form className="cryptoki-form" id="account-settings-form">
-                    <div className="form-section">
-                        <div className="user-db-title">My wallet address</div>
+        <div className="primary-content-area background-content">
+            <div className="container content-padding grid-left-sidebar ">
+                <ProfileInfoSidebar />
+                <div className="main-content-area">
+                    <div className="page-title">
+                        <h2>
+                            <span className="gradient-text">Account</span> Settings
+                        </h2>
+                    </div>
+                    <form className="cryptoki-form" id="account-settings-form">
+                        <div className="form-section">
+                            <div className="user-db-title">My wallet address</div>
 
-                        <div className="form-group">
+                            <div className="form-group">
 
-                            <div className="form-field">
-                                <label htmlFor="name">Nami</label>
-                                <div className="social-network-input-cont">
-                                    <span className="input-icon" id="input-facebook-icon">
-                                        <svg className="crumina-icon">
-                                            <use xlinkHref="#nami-icon" />
-                                        </svg>
-                                    </span>
-                                    <input
-                                        type="text"
-                                        name="social-network-login"
-                                        id="facebook-login"
-                                        defaultValue="addr1q86z9mjp97dyaknwfulc6653neye45lyrxz3ptj4j0cqul2vwrat3jmcl543muh83tlwrnhh8tnk7jywasm4ttda7zyqpeff4g"
-                                        readOnly
-                                    />
+                                <div className="form-field">
+                                    <label htmlFor="name">Nami</label>
+                                    <div className="social-network-input-cont">
+                                        <span className="input-icon" id="input-facebook-icon">
+                                            <svg className="crumina-icon">
+                                                <use xlinkHref="#nami-icon" />
+                                            </svg>
+                                        </span>
+                                        <input
+                                            type="text"
+                                            name="social-network-login"
+                                            id="facebook-login"
+                                            defaultValue="addr1q86z9mjp97dyaknwfulc6653neye45lyrxz3ptj4j0cqul2vwrat3jmcl543muh83tlwrnhh8tnk7jywasm4ttda7zyqpeff4g"
+                                            readOnly
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     )

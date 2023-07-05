@@ -5,6 +5,7 @@ import avatar from '@/assets/images/avatar.png';
 import { useLogout } from '@/data/user';
 import Footer from './Footer'
 import { useTranslation } from 'next-i18next'
+import React, { useEffect, useRef } from 'react';
 
 type PageProps = {
     userdata: UserProfile,
@@ -16,6 +17,27 @@ const DropdownSetting = ({ userdata, toggle, setToggle }: PageProps) => {
     const { t } = useTranslation('common');
 
     const { mutate: logout } = useLogout();
+
+
+    useEffect(() => {
+        function handleClickOutside(event: any) {
+            const container: HTMLElement | null = document.getElementById('profile-dropdown');
+            const parent: HTMLElement | null = document.getElementById('parent-toggle');
+            if (parent && parent.contains(event.target as Node)) {
+                setToggle(true);
+            }else{
+                if (container && !container.contains(event.target as Node)) {
+                    setToggle(false);
+                }
+            }
+        }
+
+        document.addEventListener('click', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, []);
 
     return (
         <>
@@ -31,7 +53,7 @@ const DropdownSetting = ({ userdata, toggle, setToggle }: PageProps) => {
                         <ul className="profile-menu">
                             <li className="profile">
                                 {" "}
-                                <Link href="/profile-info">
+                                <Link href="/profile-info" onClick={() => setToggle(!toggle)}>
                                     <svg className="crumina-icon">
                                         <use xlinkHref="#user-icon" />
                                     </svg>
