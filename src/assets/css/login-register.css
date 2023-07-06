@@ -361,3 +361,14 @@ body.dark-mode .background-login {
   display: grid;
   margin-top: 60px;
 }
+.tk-lp-label-tooltip {
+  font-size: 12px;
+  font-weight: var(--heading-font-weight);
+  text-transform: capitalize;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  color: var(--main-font-color);
+  font-style: italic;
+}

@@ -67,9 +67,7 @@ const UserProfilePage: NextPageWithLayout<
                     <div className="about-author-section container">
                         <div className="profile-header-user-profile">
                             <div className="avatar box-152">
-                                <Link href="/profile-info">
                                     <Image src={data.profile.avatar ? data.profile.avatar : avatar} alt={data.profile.fullname} width={80} height={80} />
-                                </Link>
                                 <span className="verified">
                                     <svg className="crumina-icon">
                                         <use xlinkHref="#check-icon" />

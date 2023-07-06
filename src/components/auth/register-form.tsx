@@ -20,10 +20,8 @@ type PageProps = {
 const registerValidationSchema = yup.object().shape({
     username: yup.string().required(),
     fullname: yup.string().required(),
-    gender: yup.string().required(),
     address: yup.string().required(),
     email: yup.string().required(),
-    birthday: yup.date().required(),
     phone: yup.string().required(),
     gdpr: yup.string().required()
 });
@@ -144,17 +142,6 @@ const RegisterUserForm = ({ username }: PageProps) => {
                     {...register('email')}
                 />
             </div>
-            <div className="tk-lp-form-item">
-                <label htmlFor="sign_up_birthday" className="tk-lp-label">
-                    Birthday
-                </label>
-                <input
-                    className="tk-lp-input"
-                    id="sign_up_birthday"
-                    type="date"
-                    {...register('birthday')}
-                />
-            </div>
             <div />
             <div className="tk-lp-form-item">
                 <label htmlFor="sign_up_phone" className="tk-lp-label">
@@ -169,31 +156,6 @@ const RegisterUserForm = ({ username }: PageProps) => {
             </div>
 
             <div className="tk-lp-form-item">
-                <label htmlFor="sign_up_gender" className="tk-lp-label">
-                    Gender
-                </label>
-                <div className="form-list-elem">
-                    <input
-                        type="radio"
-                        id="sl-show-yes"
-                        className="cryptoki-radio"
-                        value="1"
-                        {...register('gender')}
-                    />
-                    <label htmlFor="sl-show-yes">Male</label>
-                    <input
-                        type="radio"
-                        id="sl-show-no"
-                        className="cryptoki-radio ml-lg-1"
-                        value="0"
-                        {...register('gender')}
-                    />
-                    <label htmlFor="sl-show-no">Female</label>
-                </div>
-
-            </div>
-
-            <div className="tk-lp-form-item">
                 <label htmlFor="sign_up_referrer" className="tk-lp-label">
                     Referrer
                 </label>
@@ -205,6 +167,9 @@ const RegisterUserForm = ({ username }: PageProps) => {
                     defaultValue={username}
                     {...register('referrer')}
                 />
+                <label htmlFor="sign_up_referrer" className="tk-lp-label-tooltip">
+                    {t('text-reffer-tooltip')}
+                </label>
             </div>
             <div />
 

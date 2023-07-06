@@ -231,10 +231,8 @@ export interface LoginUserInput {
 export interface RegisterUserInput {
     username: string
     fullname: string
-    gender: number
     address: string
     email: string
-    birthday: Date
     phone: string
     referrer?: string
     gdpr?: boolean
@@ -523,6 +521,7 @@ export interface SellerService {
     },
     aboutme: string
     lastdelivery: Date
+    username: string
 }
 
 export interface Industry {

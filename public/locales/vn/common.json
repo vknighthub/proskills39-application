@@ -596,5 +596,6 @@
   "text-about-this-service": "Mô tả về dịch vụ",
   "text-newest": "mới nhất",
   "text-service": "Dịch vụ",
-  "text-more": "Thông tin khác"
+  "text-more": "Thông tin khác",
+  "text-reffer-tooltip": "Nhập email Referrer này cả bạn và Referrer sẽ nhận được 10% phí giao dịch cho đơn hàng đầu tiên."
 }

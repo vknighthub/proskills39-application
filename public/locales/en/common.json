@@ -597,5 +597,6 @@
   "text-about-this-service": "About This Service",
   "text-newest": "Newest",
   "text-service": "Service",
-  "text-more": "More"
+  "text-more": "More",
+  "text-reffer-tooltip": "Enter this Referrer email both you and the Referrer will receive 10% transaction fee for the first order."
 }
