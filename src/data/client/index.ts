@@ -1,4 +1,4 @@
-import { ApplyLetterInput, ApplyLetterResponse, AuthResponse, BlogDetailResponse, BlogParams, BlogResponse, CategoriesPaginator, CategoryPaginator, ChallegePaginator, Challenge, ChallengeResult, DealInput, ForgotPasswordInput, ForgotPasswordResponse, FreelancerPaginator, GetParams, HomePageResult, InvitateFriendInput, InviteFriendResponse, LoginUserInput, NotificationResponse, ProposalQueryOptions, ProposalResult, RegisterUserInput, ServiceDealResponse, ServiceDetailPaginator, ServicePaginator, SettingQuery, SettingsQueryOptions, SubmitDealInput, SubmitDealResponse, UpdateProfileInput, UserInfoInput, UserProfilePageResponse, UserProfileResult, UserUpdateResult } from "@/types";
+import { ApplyLetterInput, ApplyLetterResponse, AttendancedailyResponse, AuthResponse, BlogDetailResponse, BlogParams, BlogResponse, CategoriesPaginator, CategoryPaginator, ChallegePaginator, Challenge, ChallengeResult, DealInput, ForgotPasswordInput, ForgotPasswordResponse, FreelancerPaginator, GetParams, HomePageResult, InvitateFriendInput, InviteFriendResponse, LoginUserInput, NotificationResponse, ProposalQueryOptions, ProposalResult, RegisterUserInput, ServiceDealResponse, ServiceDetailPaginator, ServicePaginator, SettingQuery, SettingsQueryOptions, SubmitDealInput, SubmitDealResponse, UpdateProfileInput, UserInfoInput, UserProfilePageResponse, UserProfileResult, UserUpdateResult } from "@/types";
 import { API_ENDPOINTS } from "./endpoints";
 import { HttpClient } from './http-client';
 
@@ -19,7 +19,8 @@ class Client {
             HttpClient.put<UserUpdateResult>(`${API_ENDPOINTS.UPDATE_USER}`, user),
         invitefriend: (input: InvitateFriendInput) => HttpClient.post<InviteFriendResponse>(API_ENDPOINTS.INVITE_FRIEND, input),
         forgotpassword: (input: ForgotPasswordInput) => HttpClient.post<ForgotPasswordResponse>(API_ENDPOINTS.FORGOT_PASSWORD, input),
-        userinfo: ({ username }: UserInfoInput) => HttpClient.get<UserProfilePageResponse>(API_ENDPOINTS.USER_INFO, { username })
+        userinfo: ({ username }: UserInfoInput) => HttpClient.get<UserProfilePageResponse>(API_ENDPOINTS.USER_INFO, { username }),
+        attendancedaily: () => HttpClient.post<AttendancedailyResponse>(API_ENDPOINTS.ATTENDANCEDAILY, {})
     }
     fund = {
         all: () =>

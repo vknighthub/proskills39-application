@@ -1,6 +1,7 @@
 import useAuth from '@/components/auth/use-auth';
 import type { UserProfileResult } from '@/types';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
+import Swal from 'sweetalert2';
 import client from './client';
 import { API_ENDPOINTS } from './client/endpoints';
 
@@ -29,6 +30,21 @@ export function useLogout() {
     onSuccess: () => {
       unauthorize();
       queryClient.resetQueries(API_ENDPOINTS.USERS_ME);
+    },
+  });
+}
+
+
+export const useAttendance = () => {
+  return useMutation(client.users.attendancedaily, {
+    onSuccess: () => {
+      Swal.fire({
+        position: 'top',
+        icon: 'success',
+        color: 'green',
+        title: 'Succeed!',
+        text: `Congratulations on your attendance today. Please visit the page often for valuable gifts`,
+    })
     },
   });
 }

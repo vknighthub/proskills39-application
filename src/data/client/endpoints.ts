@@ -26,7 +26,6 @@ export const API_ENDPOINTS = {
     SUBMITDEAL: '/services/user/orderengagament',
     USER_INFO: '/user/user/getprofileseller',
     SERVICE_GETALL: '/services/getallservice',
-    FREELANCER_BYLEVEL: '/user/getfreelancerbylevel'
-
-
+    FREELANCER_BYLEVEL: '/user/getfreelancerbylevel',
+    ATTENDANCEDAILY:'/user/attendancedaily'
 }

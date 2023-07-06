@@ -1037,3 +1037,6 @@ export interface FreelancerData {
 }
 
 export interface FreelancerPaginator extends ResponseObject<FreelancerData> { }
+
+
+export interface AttendancedailyResponse extends ResponseObject<{}> { }

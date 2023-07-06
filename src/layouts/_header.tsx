@@ -33,7 +33,7 @@ const Header = () => {
           />
 
           <div className="user-activity-buttons">
-            <SwitchLanguage isAuthorized={isAuthorized} />
+            <SwitchLanguage isAuthorized={isAuthorized} me={me} />
           </div>
         </div>
       </div>

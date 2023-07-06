@@ -25,6 +25,7 @@ const routes = {
     userprofile: (slug?: string) => `user-profile/${slug}`,
     services: 'services',
     freelancer: (slug?: string) => `freelancer/${slug}`,
+    attendance: 'attendance'
 
 }
 export default routes;

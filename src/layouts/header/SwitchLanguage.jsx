@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import Select from 'react-select';
 import NotificationsButton from './NotificationsButton';
 
-const SwitchLanguage = ({ isAuthorized }) => {
+const SwitchLanguage = ({ isAuthorized, me }) => {
     const router = useRouter();
     const { asPath, locales, locale } = router;
     const currentSelectedItem = locales
@@ -99,7 +99,7 @@ const SwitchLanguage = ({ isAuthorized }) => {
         <>
             {render &&
                 <>
-                    <NotificationsButton isAuthorized={isAuthorized} />
+                    <NotificationsButton isAuthorized={isAuthorized} me ={me} />
                     <Select
                         id='custom-select'
                         options={languageOptions}
