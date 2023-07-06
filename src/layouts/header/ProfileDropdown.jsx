@@ -2,24 +2,31 @@ import Image from "next/image";
 import DropdownSetting from './ProfileDropdown/DropdownSetting';
 import { useEffect, useState } from 'react';
 import LoginAction from './ProfileDropdown/LoginAction';
-import avatar from '@/assets/images/avatar.png'
+import avatar from '@/assets/images/avatar.png';
+import { useAddress, useWallet } from '@meshsdk/react';
+import formatAddress from "@/utils/formatAddress";
+
 const ProfileDropdown = ({ profile, isAuthorized }) => {
     const [toggle, setToggle] = useState(false);
     const [render, setRender] = useState(true);
 
     const userData = profile ? profile.data : undefined
+    const { connected } = useWallet();
 
 
     useEffect(() => {
         setRender(true)
     }, [render])
 
+    const address = useAddress();
+
+    const formattedNumber = new Intl.NumberFormat('en-US', { style: 'decimal' }).format(userData?.balance);
 
     return (
         <>
             {isAuthorized && userData && render &&
                 <div id="parent-toggle"
-                    className={`header-user-profile cryptoki-notif-bttn ${toggle ? "active" : "" 
+                    className={`header-user-profile cryptoki-notif-bttn ${toggle ? "active" : ""
                         }`}
                 >
                     <div
@@ -46,7 +53,7 @@ const ProfileDropdown = ({ profile, isAuthorized }) => {
                                     <use xlinkHref="#circle-icon" />
                                 </svg>
                             </span>
-                            291.36 <span className="gradient-text bold">v2P</span>
+                            {formattedNumber} <span className="gradient-text bold">v2P</span>
                         </div>
                         <div className="user_score" style={{ marginTop: 5 }}>
                             <span>
@@ -54,7 +61,7 @@ const ProfileDropdown = ({ profile, isAuthorized }) => {
                                     <use xlinkHref="#wallet-icon" />
                                 </svg>
                             </span>
-                            <span className="gradient-text bold span-light">0x65885c0c4bxxxxxx74475be</span>
+                            <span className="gradient-text bold span-light">{connected? formatAddress(address, 20): 'N/A'}</span>
                         </div>
                     </div>
 

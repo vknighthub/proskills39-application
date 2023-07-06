@@ -22,13 +22,21 @@ const Blog = ({ list_blog }: Props) => {
                     <div className="news-item" key={blog.id}>
                         <div className="news-thumb" >
                             <Link href={`/blog-detail/${blog.slug}`}>
-                                <Image
-                                    src={blog.image}
-                                    alt=""
-                                    width={458}
-                                    height={300}
-                                    style={{ maxWidth: '100%', maxHeight: '300px', minHeight: '300px' }}
-                                />
+                                {blog.typefile === 'video' ?
+                                    <iframe
+                                        src={blog.image}
+                                    >
+
+                                    </iframe>
+                                    :
+                                    <Image
+                                        src={blog.image}
+                                        alt=""
+                                        width={458}
+                                        height={300}
+                                        style={{ maxWidth: '100%', maxHeight: '300px', minHeight: '300px' }}
+                                    />
+                                }
                             </Link>
                         </div>
                         <div className="news-content">
@@ -56,7 +64,6 @@ const Blog = ({ list_blog }: Props) => {
                             <div className="read-more-link">
                                 {" "}
                                 <Link href={`/blog-detail/${blog.slug}`}>
-
                                     Read More
                                     <svg className="crumina-icon">
                                         <use xlinkHref="#arrow-right2-icon" />

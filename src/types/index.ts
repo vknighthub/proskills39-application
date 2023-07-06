@@ -305,6 +305,10 @@ export interface UserProfile {
     wallet?: Wallet[]
     isSeller?: boolean
     isBuyer?: boolean
+    banner: string
+    balance: number
+    point: number
+    isAttendance: boolean
 }
 export interface UserInfor {
     username: string,
@@ -871,6 +875,7 @@ export interface BlogDetail {
         fullname: string
         avatar: string
     }
+    typefile: string
 }
 export interface Blogbyuser {
     status: number
