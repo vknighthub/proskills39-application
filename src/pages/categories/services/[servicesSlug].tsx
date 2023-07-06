@@ -1,9 +1,14 @@
+import avatar from "@/assets/images/avatar.png";
+import newest from '@/assets/images/svg/newest.svg';
+import NiceSelect from '@/components/styles/NiceSelect';
+import { categoriesBar } from '@/components/styles/sliderProps';
 import routes from '@/config/routes';
 import { FetchServiceByCatalogSlug } from '@/data/categories';
 import client from '@/data/client';
 import Layout from '@/layouts/_layout';
 import Seo from '@/layouts/_seo';
-import { Mostpopularseller, NextPageWithLayout, SellerInfor, Service, ServicePaginator } from '@/types';
+import { Mostpopularseller, NextPageWithLayout, Service, ServicePaginator } from '@/types';
+import RatingStars from '@/utils/ratingstar';
 import { getPagination, pagination } from '@/utils/util';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -11,13 +16,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import invariant from 'tiny-invariant';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { categoriesBar } from '@/components/styles/sliderProps';
-import NiceSelect from '@/components/styles/NiceSelect';
-import RatingStars from '@/utils/ratingstar';
-import newest from '@/assets/images/svg/newest.svg';
-import avatar from "@/assets/images/avatar.png";
+import invariant from 'tiny-invariant';
 
 
 type ParsedQueryParams = {
