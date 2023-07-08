@@ -307,6 +307,16 @@ export interface UserProfile {
     balance: number
     point: number
     isAttendance: boolean
+    sellertype: string
+    availability: string
+    language: string
+    languagelevel: string
+    inqueueservice: number
+    completeservice: number
+    completeproject: number
+    totalreviews: number
+    rateofrating: number
+    freelancerlevel: FreelancersLevel
 }
 export interface UserInfor {
     username: string,

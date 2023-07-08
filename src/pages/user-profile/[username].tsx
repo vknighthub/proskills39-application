@@ -23,6 +23,8 @@ import Link from 'next/link'
 import { useEffect } from 'react'
 import invariant from 'tiny-invariant'
 import ServiceTopAvargage from './../../layouts/info/Seller/ServiceTopAvargage'
+import RatingStars from '@/utils/ratingstar'
+import { Avatar, Stack } from '@mui/material'
 
 
 
@@ -67,7 +69,7 @@ const UserProfilePage: NextPageWithLayout<
                     <div className="about-author-section container">
                         <div className="profile-header-user-profile">
                             <div className="avatar box-152">
-                                    <Image src={data.profile.avatar ? data.profile.avatar : avatar} alt={data.profile.fullname} width={80} height={80} />
+                                <Image src={data.profile.avatar ? data.profile.avatar : avatar} alt={data.profile.fullname} width={80} height={80} />
                                 <span className="verified">
                                     <svg className="crumina-icon">
                                         <use xlinkHref="#check-icon" />
@@ -77,17 +79,22 @@ const UserProfilePage: NextPageWithLayout<
                         </div>
                         <div className="author-primary-info">
                             <div className="activity-meta">
-                                <div className="followers-number">
-                                    <div className="string">{data.profile.country}</div>
-                                    <div className="label">From</div>
-                                </div>
                                 <div className="following-number">
-                                    <div className="string">{data.profile.datecreated}</div>
-                                    <div className="label">Date join</div>
+                                    <div className="string">Date join</div>
+                                    <div className="label">{data.profile.datecreated}</div>
+                                </div>
+                                <div className="followers-number">
+                                    <div className="string">Seller type</div>
+                                    <div className="label">{data.profile.sellertype}</div>
+                                </div>
+
+                                <div className="likes-number">
+                                    <div className="string">From</div>
+                                    <div className="label">{data.profile.country}</div>
                                 </div>
                                 <div className="likes-number">
-                                    <div className="string">{data.profile.city}</div>
-                                    <div className="label">City</div>
+                                    <div className="string">Availability</div>
+                                    <div className="label">{data.profile.availability}</div>
                                 </div>
                             </div>
                             <div className="profile-author-info">
@@ -96,39 +103,49 @@ const UserProfilePage: NextPageWithLayout<
                                         {data.fullname}
                                     </Link>
                                 </h3>
-                                <div className="author-meta">@{data.profile.username}</div>
+                                <div className="author-meta">
+                                    @{data.profile.username}
+                                </div>
+                                <div className="author-meta">
+                                    <Stack direction="row" spacing={1} sx={{ justifyContent: 'center' }}>
+                                        {data.profile.freelancerlevel.title}
+                                        <Image
+                                            style={{ marginLeft: 5 }}
+                                            src={data.profile.freelancerlevel.icon}
+                                            alt={data.profile.freelancerlevel.title}
+                                            width={32}
+                                            height={32}
+                                        />
+                                    </Stack>
+                                </div>
+                                <div className="author-meta">
+                                    <Stack direction="row" spacing={1} sx={{ justifyContent: 'center' }}>
+                                        <RatingStars value={data.profile.rateofrating} /> ({data.profile.totalreviews} reviews)
+                                    </Stack>
+                                </div>
+                                <div className="author-meta">
+                                    <Stack direction="row" spacing={1}>
+                                        <Chip avatar={<Avatar>{data.profile.inqueueservice}</Avatar>} label="In Queue Service" color="primary" />
+                                        <Chip avatar={<Avatar>{data.profile.completeproject}</Avatar>} label="Complete Project" color="success" />
+                                        <Chip avatar={<Avatar>{data.profile.completeservice}</Avatar>} label="Complete Service" color="warning" />
+                                    </Stack>
+                                </div>
+
                             </div>
                             <div className="projects-meta">
                                 <div className="projects-number">
-                                    <div className="string">
-                                        {
-                                            data.profile.gender === 1
-                                                ? <Icon color="success" fontSize="large" icon='fontisto:male' />
-                                                : <Icon color="success" fontSize="large" icon='fa:female' />
-                                        }
-
-                                    </div>
-                                    <div className="label">Gender</div>
+                                    <div className="string">Language</div>
+                                    <div className="label">{data.profile.language}</div>
                                 </div>
                                 <div className="onsale-number">
-                                    <div className="string">
-                                        {data.profile.isSeller ?
-                                            <Icon color="success" fontSize="large" icon='mdi:account-tick-outline' />
-                                            :
-                                            <Icon color="error" fontSize="large" icon='uiw:user-delete'></Icon>
-                                        }
-                                    </div>
-                                    <div className="label">Seller</div>
+                                    <div className="string">English level</div>
+                                    <div className="label">{data.profile.languagelevel}</div>
                                 </div>
                                 <div className="country">
-                                    <div className="string">
-                                        {data.profile.isBuyer ?
-                                            <Icon color="success" fontSize="large" icon='mdi:account-tick-outline' />
-                                            :
-                                            <Icon color="error" fontSize="large" icon='uiw:user-delete'></Icon>
-                                        }
+                                    <div className="string">Blog</div>
+                                    <div className="label">
+                                        <Link href="/blog">My blog</Link>
                                     </div>
-                                    <div className="label">Buyer</div>
                                 </div>
                             </div>
                         </div>

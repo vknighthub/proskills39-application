@@ -51,16 +51,7 @@ export default function LoginUserForm() {
   });
 
   if (isSuccess) {
-    Swal.fire({
-      position: 'top',
-      icon: 'success',
-      color: 'green',
-      text: `Success`,
-    }).then(response => {
-      if (response.value) {
-        router.push(callbackUrl)
-      }
-    })
+    router.push(callbackUrl)
   }
 
   const {
