@@ -20,11 +20,11 @@ import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import invariant from 'tiny-invariant'
 import ServiceTopAvargage from './../../layouts/info/Seller/ServiceTopAvargage'
 import RatingStars from '@/utils/ratingstar'
-import { Avatar, Stack } from '@mui/material'
+import { Avatar, Stack, Button } from '@mui/material'
 
 
 
@@ -53,6 +53,14 @@ const UserProfilePage: NextPageWithLayout<
     const educations = data.profile.educations
     const skills = data.profile.skills
 
+
+    const [isFollow, setIsFollow] = useState(false)
+
+    const handleFollow = (event: any) => {
+        event.preventDefault()
+        setIsFollow(true)
+    }
+
     return (
         <>
             <Seo
@@ -64,7 +72,7 @@ const UserProfilePage: NextPageWithLayout<
             <div className="primary-content-area profile-page background-content">
                 <div className="profile-header-section">
                     <div className="cover-image">
-                        <Image src={data.profile.banner ? data.profile.banner : profilecover} alt={"Cover"} width={2115} height={320} />
+                        <Image src={data.profile.banner ? data.profile.banner : profilecover} alt={"Cover"} width={1920} height={320} />
                     </div>
                     <div className="about-author-section container">
                         <div className="profile-header-user-profile">
@@ -128,6 +136,25 @@ const UserProfilePage: NextPageWithLayout<
                                         <Chip avatar={<Avatar>{data.profile.inqueueservice}</Avatar>} label="In Queue Service" color="primary" />
                                         <Chip avatar={<Avatar>{data.profile.completeproject}</Avatar>} label="Complete Project" color="success" />
                                         <Chip avatar={<Avatar>{data.profile.completeservice}</Avatar>} label="Complete Service" color="warning" />
+                                    </Stack>
+                                </div>
+                                <div className="author-meta">
+                                    <Stack direction="row" spacing={1} sx={{ justifyContent: 'center', marginTop: 5 }}>
+                                        <Button
+                                            onClick={(e) => handleFollow(e)}
+                                            variant='contained'
+                                            color='primary'
+                                            startIcon={<Icon icon={isFollow ? 'fluent-mdl2:people-repeat' : 'fluent-mdl2:add-friend'} />}
+                                        >
+                                            {isFollow ? 'followed' : 'follow'}
+                                        </Button>
+                                        <Button
+                                            variant='contained'
+                                            color='primary'
+                                            startIcon={<Icon icon='jam:messages-f' />}
+                                        >
+                                            Message
+                                        </Button>
                                     </Stack>
                                 </div>
 
