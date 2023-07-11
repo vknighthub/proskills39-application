@@ -5,7 +5,8 @@ import Layout from '@/layouts/_layout'
 import { NextPageWithLayout } from '@/types'
 import { GetStaticProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-
+import Image from 'next/image'
+import banner from '@/assets/images/user/banner.png'
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
     try {
         return {
@@ -29,18 +30,16 @@ const ProfileInformation: NextPageWithLayout = () => {
     const profile = me?.data
     return (
         <div className="primary-content-area background-content">
-            <div className=" container content-padding grid-left-sidebar  ">
-                {/* / Profile Info Sidebar */}
-                <ProfileInfoSidebar />
-                {/* / Profile Info Sidebar */}
-                <div className="main-content-area">
-                    <div className="page-title">
-                        <h2>
-                            <span className="gradient-text">Profile</span> Info
-                        </h2>
-                    </div>
-                    <ProfileInfoForm profileinfo={profile} />
+            <div className="image">
+                <div className="screen-shot-wrapper">
+                    <Image className="screen-shot"
+                        alt="Screen shot"
+                        src={banner}
+                    />
                 </div>
+            </div>
+            <div className=" container grid-left-sidebar  ">
+                <ProfileInfoSidebar />
             </div>
         </div>
     )
