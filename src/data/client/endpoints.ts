@@ -27,5 +27,7 @@ export const API_ENDPOINTS = {
     USER_INFO: '/user/user/getprofileseller',
     SERVICE_GETALL: '/services/getallservice',
     FREELANCER_BYLEVEL: '/user/getfreelancerbylevel',
-    ATTENDANCEDAILY:'/user/attendancedaily'
+    ATTENDANCEDAILY: '/user/attendancedaily',
+    CONNECT_WALLET: '/user/connectwallet',
+    FOLLOW: '/user/follow'
 }

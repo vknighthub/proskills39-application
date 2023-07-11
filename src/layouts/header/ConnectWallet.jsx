@@ -1,24 +1,32 @@
+import { useMe, useWalletConnect } from "@/data/user";
 import { CardanoWallet, useWallet } from "@meshsdk/react";
 import { useEffect, useState } from "react";
 
 const ConnectWallet = ({ isAuthorized }) => {
     const [render, setRender] = useState(false);
-    const { connect, name, connected} = useWallet();
-    
+    const { connect, name, connected, disconnect } = useWallet();
+    const { me } = useMe()
+
+    const userData = me ? me.data : undefined
+
     useEffect(() => {
-        var connectWallet = localStorage.getItem('walletname')
-        if (connectWallet) {
-            connect(connectWallet)
+        if (userData && userData.isConnectWallet) {
+            connect(userData.walletName)
+        } else {
+            disconnect()
         }
-    }, [])
+
+    }, [userData?.isConnectWallet])
 
     useEffect(() => {
         setRender(true)
     }, [render])
 
 
+    const { mutate: handleProcessConnectWallet } = useWalletConnect()
+
     const handleConnectWallet = (walletname) => {
-        localStorage.setItem('walletname', walletname)
+        handleProcessConnectWallet({ walletname: walletname })
     }
 
     return (

@@ -25,6 +25,7 @@ import invariant from 'tiny-invariant'
 import ServiceTopAvargage from './../../layouts/info/Seller/ServiceTopAvargage'
 import RatingStars from '@/utils/ratingstar'
 import { Avatar, Stack, Button } from '@mui/material'
+import { useFollow, useMe } from '@/data/user'
 
 
 
@@ -47,19 +48,28 @@ const UserProfilePage: NextPageWithLayout<
 
     useEffect(() => {
         refetch()
-    }, [username])
+    }, [username,userprofile])
 
     const certifications = data.profile.certifications
     const educations = data.profile.educations
     const skills = data.profile.skills
 
-
-    const [isFollow, setIsFollow] = useState(false)
-
+    const [isFollow, setIsFollow] = useState(data.profile.isFollow)
+    const { mutate: handleProcessFollow } = useFollow()
     const handleFollow = (event: any) => {
         event.preventDefault()
-        setIsFollow(true)
+        if (data.profile.isFollow) {
+            setIsFollow(true)
+        } else {
+            handleProcessFollow({ username: username })
+        }
     }
+
+    useEffect(() => {
+        if (data.profile.isFollow){
+            setIsFollow(true)
+        }
+    }, [data.profile.isFollow])
 
     return (
         <>

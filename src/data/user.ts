@@ -44,7 +44,22 @@ export const useAttendance = () => {
         color: 'green',
         title: 'Succeed!',
         text: `Congratulations on your attendance today. Please visit the page often for valuable gifts`,
-    })
+      })
+    },
+  });
+}
+
+export const useWalletConnect = () => {
+  return useMutation(client.users.connectwallet, {
+    onSuccess: () => {
+
+    },
+  });
+}
+export const useFollow = () => {
+  return useMutation(client.users.follow, {
+    onSuccess: () => {
+
     },
   });
 }

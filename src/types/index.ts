@@ -317,6 +317,9 @@ export interface UserProfile {
     totalreviews: number
     rateofrating: number
     freelancerlevel: FreelancersLevel
+    isConnectWallet: boolean
+    walletName: string
+    isFollow: boolean
 }
 export interface UserInfor {
     username: string,
@@ -1049,3 +1052,7 @@ export interface FreelancerPaginator extends ResponseObject<FreelancerData> { }
 
 
 export interface AttendancedailyResponse extends ResponseObject<{}> { }
+export interface ConnectWalletResponse extends ResponseObject<{}> { }
+export interface FollowResponse extends ResponseObject<{}> { }
+
+
