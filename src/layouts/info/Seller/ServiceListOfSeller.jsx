@@ -1,40 +1,29 @@
-import Paggination from '@/components/styles/Paggination';
-import ServiceList from '../Service/ServiceList';
-import { useEffect, useState } from 'react';
-import { dblock } from '@/utils/util';
 
+import Link from 'next/link';
+import Image from 'next/image';
+import triangle from '@/assets/svg/triangle-popular-service.svg'
 
 const ServiceListOfSeller = ({ data }) => {
-    const [filterData, setFilterData] = useState(data && data);
-    let sort = 8;
-    const [active, setActive] = useState(0);
-
-
-
     return (
-        <div className="primary-content-area container content-padding">
-            <div className="page-title-section">
-                <h2>
-                    <span className="gradient-text">Explore</span> Service
-                </h2>
-            </div>
-            <div className="featured-box grid-4-columns ">
-                {data.map((serviceData, index) => (
-                    <div key={index} className={`${dblock(active, index, sort)} grid-item-1`} >
-                        <ServiceList service={serviceData} />
-                    </div>
+        <>
+            <div className="latest-news-box grid-5-columns">
+                {data.map((popular, index) => (
+                    <Link href={`/categories/services/servicedetail/${popular.slug}`} key={index}>
+                        <div className="component-popular-service" >
+                            <div className="overlap-group">
+                                <Image className="popular-service" alt="" src={popular.overviews.files[0].url} width={230} height={122} />
+                                <div className="career-counselling">{popular.introduce}</div>
+                            </div>
+                            <Image className="vector" alt="Vector" src={triangle} />
+                        </div>
+                    </Link>
                 ))}
+
+
             </div>
+        </>
 
-            <Paggination
-                active={active}
-                setActive={setActive}
-                sort={sort}
-                length={filterData && filterData.length}
-                className="flex-center"
-            />
 
-        </div>
     )
 }
 

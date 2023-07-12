@@ -10,13 +10,10 @@ import { Card } from "react-bootstrap";
 import IconifyIcon from "@/components/icon";
 
 
-const ProfileInfoSidebar = () => {
+const ProfileInfoSidebarSeller = ({data}) => {
 
   const { t } = useTranslation('common');
-  const { me } = useMe();
-  const profile = me?.data
-
-  console.log(profile)
+  const profile = data.profile
 
   return (
     <aside>
@@ -39,11 +36,11 @@ const ProfileInfoSidebar = () => {
             </div>
             <div className="item-meta">
               <Stack direction="row" spacing={1} sx={{ justifyContent: 'center' }}>
-                {profile?.freelancerlevel.title}
+                {profile?.freelancerlevel?.title}
                 <Image
                   style={{ marginLeft: 5 }}
-                  src={profile?.freelancerlevel.icon}
-                  alt={profile?.freelancerlevel.title}
+                  src={profile?.freelancerlevel?.icon}
+                  alt={profile?.freelancerlevel?.title}
                   width={32}
                   height={32}
                 />
@@ -66,7 +63,7 @@ const ProfileInfoSidebar = () => {
                 <Grid item xs={12}>
                   <Card>
                     <CardContent>
-                    <div>
+                      <div>
                         <Box
                           sx={{
                             display: 'flex',
@@ -90,7 +87,7 @@ const ProfileInfoSidebar = () => {
                             </Typography>
                           </Box>
                           <Box sx={{ display: 'flex', ml: 5 }}>
-                            <Typography sx={{ color: 'white',fontFamily: 'Quicksand'  }}>
+                            <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
                               {profile?.country}
                             </Typography>
                           </Box>
@@ -113,12 +110,12 @@ const ProfileInfoSidebar = () => {
                             <Typography sx={{ color: 'white', }}>
                               <IconifyIcon icon="bi:people-circle" color="white" />
                             </Typography>
-                            <Typography sx={{ color: 'white',fontFamily: 'Quicksand'  }}>
+                            <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
                               Member since
                             </Typography>
                           </Box>
                           <Box sx={{ display: 'flex', ml: 5 }}>
-                            <Typography sx={{ color: 'white',fontFamily: 'Quicksand'  }}>
+                            <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
                               {profile?.datecreated}
                             </Typography>
                           </Box>
@@ -141,12 +138,12 @@ const ProfileInfoSidebar = () => {
                             <Typography sx={{ color: 'white' }}>
                               <IconifyIcon icon="fluent:people-team-24-regular" color="white" />
                             </Typography>
-                            <Typography sx={{ color: 'white',fontFamily: 'Quicksand'  }}>
+                            <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
                               Seller type
                             </Typography>
                           </Box>
                           <Box sx={{ display: 'flex', ml: 5 }}>
-                            <Typography sx={{ color: 'white',fontFamily: 'Quicksand'  }}>
+                            <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
                               {profile?.sellertype}
                             </Typography>
                           </Box>
@@ -169,12 +166,12 @@ const ProfileInfoSidebar = () => {
                             <Typography sx={{ color: 'white' }}>
                               <IconifyIcon icon="ph:clock-thin" color="white" />
                             </Typography>
-                            <Typography sx={{ color: 'white',fontFamily: 'Quicksand'  }}>
+                            <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
                               Availability
                             </Typography>
                           </Box>
                           <Box sx={{ display: 'flex', ml: 5 }}>
-                            <Typography sx={{ color: 'white' ,fontFamily: 'Quicksand' }}>
+                            <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
                               {profile?.availability}
                             </Typography>
                           </Box>
@@ -197,12 +194,12 @@ const ProfileInfoSidebar = () => {
                             <Typography sx={{ color: 'white' }}>
                               <IconifyIcon icon="clarity:language-line" color="white" />
                             </Typography>
-                            <Typography sx={{ color: 'white' ,fontFamily: 'Quicksand' }}>
+                            <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
                               Language
                             </Typography>
                           </Box>
                           <Box sx={{ display: 'flex', ml: 5 }}>
-                            <Typography sx={{ color: 'white',fontFamily: 'Quicksand'  }}>
+                            <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
                               {profile?.language}
                             </Typography>
                           </Box>
@@ -213,7 +210,6 @@ const ProfileInfoSidebar = () => {
                 </Grid>
               </Grid>
             </div>
-
             <div className="author-meta">
               <Grid container spacing={6}>
                 <Grid item xs={12}>
@@ -239,7 +235,7 @@ const ProfileInfoSidebar = () => {
                               Education: 
                             </Typography>
                             <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
-                                {profile?.educations.map((education)=>(
+                                {profile.educations.map((education)=>(
                                   <span key={education.id}>
                                     {education.contryofuniversity} /
                                   </span>
@@ -267,7 +263,7 @@ const ProfileInfoSidebar = () => {
                               Certificate: 
                             </Typography>
                             <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
-                            {profile?.certifications.map((certification)=>(
+                            {profile.certifications.map((certification)=>(
                                   <span key={certification.id}>
                                     {certification.name} {certification.length > 1 ? '/' : ''}
                                   </span>
@@ -296,7 +292,7 @@ const ProfileInfoSidebar = () => {
                               Skills: 
                             </Typography>
                             <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
-                            {profile?.skills.map((skill)=>(
+                            {profile.skills.map((skill)=>(
                                   <span key={skill.id}>
                                     {skill.name} {skill.length > 1 ? '/' : ''}
                                   </span>
@@ -324,7 +320,7 @@ const ProfileInfoSidebar = () => {
                               Vertification ID:
                             </Typography>
                             <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
-                              {profile?.licenseid}
+                              {profile.licenseid}
                             </Typography>
                           </Box>
                           
@@ -335,7 +331,6 @@ const ProfileInfoSidebar = () => {
                 </Grid>
               </Grid>
             </div>
-
           </div>
         </div>
 
@@ -344,4 +339,4 @@ const ProfileInfoSidebar = () => {
   );
 };
 
-export default ProfileInfoSidebar;
+export default ProfileInfoSidebarSeller;

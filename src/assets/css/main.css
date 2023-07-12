@@ -9733,6 +9733,7 @@ table.content-table {
   padding: 0 25px 30px;
   border-bottom: 1px solid var(--border-color);
   border-radius: 25px;
+  position: relative;
 }
 
 .user-header-user-profile .avatar {
@@ -9740,8 +9741,11 @@ table.content-table {
   background-color: var(--body-background);
   margin-bottom: 10px;
   text-align: center;
-  top: 370px;
-  left: 220px;
+  top: -650px;
+  left: 0;
+  bottom: 0;
+  right:0;
+  margin: auto;
   position: absolute;
 }
 
@@ -11101,9 +11105,17 @@ td[data-label="Date"] {
   margin-left: 2rem !important;
 }
 
-.ml-lg-2 {
+.mr-lg-2 {
   margin-right: 2rem !important;
 }
+
+.ml-lg-3 {
+  margin-left: 3rem !important;
+}
+.ml-lg-4 {
+  margin-left: 4rem !important;
+}
+
 
 .mt-3 {
   margin-top: 1rem !important;

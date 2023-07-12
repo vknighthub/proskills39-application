@@ -28,6 +28,7 @@ const ProfileInformation: NextPageWithLayout = () => {
     const { me } = useMe();
 
     const profile = me?.data
+
     return (
         <div className="primary-content-area background-content">
             <div className="image">
@@ -40,6 +41,13 @@ const ProfileInformation: NextPageWithLayout = () => {
             </div>
             <div className=" container grid-left-sidebar  ">
                 <ProfileInfoSidebar />
+            </div>
+            <div className="main-content-area">
+                <div className="page-title">
+                        <h2>
+                            <span className="gradient-text">Profile</span> Info
+                        </h2>
+                    </div>
             </div>
         </div>
     )
