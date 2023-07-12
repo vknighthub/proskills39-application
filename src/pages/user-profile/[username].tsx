@@ -110,8 +110,6 @@ const UserProfilePage: NextPageWithLayout<
                     <ServiceListOfSeller data={data.services.allservice.data} />
                 </div>
 
-
-
             </div>
         </>
     )
