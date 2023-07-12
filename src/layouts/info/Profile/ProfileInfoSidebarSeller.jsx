@@ -8,9 +8,9 @@ import { Avatar, Box, CardContent, Chip, Grid, Stack, Typography } from "@mui/ma
 import RatingStars from "@/utils/ratingstar";
 import { Card } from "react-bootstrap";
 import IconifyIcon from "@/components/icon";
+import portfolio from "@/assets/images/portfolio.png";
 
-
-const ProfileInfoSidebarSeller = ({data}) => {
+const ProfileInfoSidebarSeller = ({ data }) => {
 
   const { t } = useTranslation('common');
   const profile = data.profile
@@ -232,17 +232,17 @@ const ProfileInfoSidebarSeller = ({data}) => {
                               <IconifyIcon icon="teenyicons:tick-circle-solid" color="#4C8DF7" />
                             </Typography>
                             <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
-                              Education: 
+                              Education:
                             </Typography>
                             <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
-                                {profile.educations.map((education)=>(
-                                  <span key={education.id}>
-                                    {education.contryofuniversity} /
-                                  </span>
-                                ))}
+                              {profile.educations.map((education) => (
+                                <span key={education.id}>
+                                  {education.contryofuniversity} /
+                                </span>
+                              ))}
                             </Typography>
                           </Box>
-                          
+
                         </Box>
                         <Box
                           sx={{
@@ -260,17 +260,17 @@ const ProfileInfoSidebarSeller = ({data}) => {
                               <IconifyIcon icon="teenyicons:tick-circle-solid" color="#4C8DF7" />
                             </Typography>
                             <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
-                              Certificate: 
+                              Certificate:
                             </Typography>
                             <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
-                            {profile.certifications.map((certification)=>(
-                                  <span key={certification.id}>
-                                    {certification.name} {certification.length > 1 ? '/' : ''}
-                                  </span>
-                                ))}
+                              {profile.certifications.map((certification) => (
+                                <span key={certification.id}>
+                                  {certification.name} {certification.length > 1 ? '/' : ''}
+                                </span>
+                              ))}
                             </Typography>
                           </Box>
-                          
+
                         </Box>
 
                         <Box
@@ -289,17 +289,17 @@ const ProfileInfoSidebarSeller = ({data}) => {
                               <IconifyIcon icon="teenyicons:tick-circle-solid" color="#4C8DF7" />
                             </Typography>
                             <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
-                              Skills: 
+                              Skills:
                             </Typography>
                             <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
-                            {profile.skills.map((skill)=>(
-                                  <span key={skill.id}>
-                                    {skill.name} {skill.length > 1 ? '/' : ''}
-                                  </span>
-                                ))}
+                              {profile.skills.map((skill) => (
+                                <span key={skill.id}>
+                                  {skill.name} {skill.length > 1 ? '/' : ''}
+                                </span>
+                              ))}
                             </Typography>
                           </Box>
-                          
+
                         </Box>
                         <Box
                           sx={{
@@ -323,7 +323,39 @@ const ProfileInfoSidebarSeller = ({data}) => {
                               {profile.licenseid}
                             </Typography>
                           </Box>
-                          
+
+                        </Box>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              </Grid>
+            </div>
+            <div className="title">
+              {profile?.fullname} Portfolio
+            </div>
+            <div className="author-meta">
+              <Grid container spacing={6}>
+                <Grid item xs={12}>
+                  <Card>
+                    <CardContent>
+                      <div>
+                        <Box
+                          sx={{
+                            display: 'flex',
+                          }}
+                        >
+                          <Box sx={{
+                            columnGap: 2,
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            alignItems: 'center',
+                            marginLeft: 5
+                          }}
+                          >
+                            <Image src={portfolio} alt={'portfolio'}></Image>
+                            <Image src={portfolio} alt={'portfolio'}></Image>
+                          </Box>
                         </Box>
                       </div>
                     </CardContent>

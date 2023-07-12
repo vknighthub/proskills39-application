@@ -9734,6 +9734,7 @@ table.content-table {
   border-bottom: 1px solid var(--border-color);
   border-radius: 25px;
   position: relative;
+  justify-content: space-around;
 }
 
 .user-header-user-profile .avatar {
@@ -9741,10 +9742,9 @@ table.content-table {
   background-color: var(--body-background);
   margin-bottom: 10px;
   text-align: center;
-  top: -650px;
   left: 0;
-  bottom: 0;
   right:0;
+  top: -160px;
   margin: auto;
   position: absolute;
 }
