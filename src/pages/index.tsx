@@ -34,7 +34,7 @@ const Home: NextPageWithLayout<
               Proskills39
             </h1>
             <div className="news-meta">
-              <svg style={{ width: 850, height: 137, textAlign: 'center' }} xmlns="http://www.w3.org/2000/svg">
+              <svg style={{ width: 970, height: 137, textAlign: 'center', backdropFilter: '-moz-initial' }} xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="gradient" y1="0" y2="1">
                     <stop stopColor="#0061D3" offset="0" />
@@ -46,8 +46,13 @@ const Home: NextPageWithLayout<
                     fontSize="60"
                     fontStyle="normal"
                     letterSpacing="0.15rem"
-                    fontWeight="700"
-                    strokeWidth="2" stroke="url(#gradient)" fill="none">
+                    fontWeight="800"
+                    strokeWidth="1.5"
+                    stroke="url(#gradient)"
+                    fill="none"
+                    fontFamily='Quicksand'
+                    style={{ fontFamily: 'sans-serif'}}
+                  >
                     A Web Service MarketPlace
                   </text>
                 </g>

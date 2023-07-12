@@ -6670,7 +6670,7 @@ body.dark-mode .footer {
        ================================ */
 
 .single-post.medium-section {
-  width: 940px;
+  width: 1024px;
   max-width: 100%;
   margin: 0 auto;
 }
@@ -9743,7 +9743,7 @@ table.content-table {
   margin-bottom: 10px;
   text-align: center;
   left: 0;
-  right:0;
+  right: 0;
   top: -160px;
   margin: auto;
   position: absolute;
@@ -11112,6 +11112,7 @@ td[data-label="Date"] {
 .ml-lg-3 {
   margin-left: 3rem !important;
 }
+
 .ml-lg-4 {
   margin-left: 4rem !important;
 }
@@ -11473,7 +11474,7 @@ td[data-label="Date"] {
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: max(2vw, 1rem);
-  margin-left: 12vw;
+  margin-left: 3vw;
 }
 
 .container-academy .featured-box-wrapper {
@@ -11630,8 +11631,8 @@ body.dark-mode .section-title {
 }
 
 .categories-nav-newest-service svg {
-  width: 106px;
-  height: 190px;
+  width: 56px;
+  height: 140px;
 }
 
 .featured-item-info .item-money {
@@ -11673,18 +11674,38 @@ body.dark-mode .component-popular-service {
   height: 216px;
   position: relative;
   width: 246px;
+  backdrop-filter: blur(9.5px);
+  border-radius: 13px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25) in;
+  transition: .4s all;
+  border-bottom: 1px solid #0071BC;
+  padding: 8px;
+}
+
+body.dark-mode .component-popular-service:hover {
+  transform: translatey(-10px);
+  background: rgba(0, 0, 0, 0.9);
 }
 
 .component-popular-service {
   backdrop-filter: blur(4px) brightness(100%);
-  background-color: #ffffff80;
+  background-color: #00000080;
   border: 1px solid;
-  border-image: linear-gradient(to bottom,
-      rgb(0, 97.26, 211.44),
-      rgb(4.14, 204.62, 248.63)) 2;
+  border-color: #000000;
   height: 216px;
   position: relative;
   width: 246px;
+  backdrop-filter: blur(9.5px);
+  border-radius: 13px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25) in;
+  transition: .4s all;
+  border-bottom: 1px solid #0071BC;
+  padding: 8px;
+}
+
+.component-popular-service:hover {
+  transform: translatey(-10px);
+  background: rgba(0, 0, 0, 0.9);
 }
 
 .component-popular-service .overlap-group {
@@ -11746,15 +11767,16 @@ body.dark-mode .component-popular-service .career-counselling {
 .component-other-service .overlap {
   height: 284px;
   position: relative;
-  width: 650px;
+  width: 648px;
 }
 
 .component-other-service .vector {
   height: 54px;
   left: 480px;
   position: absolute;
-  top: 1px;
-  width: 50px;
+  top: 0px;
+  width: 60px;
+  transform: rotate(3deg);
 }
 
 .component-other-service .img {
@@ -11762,7 +11784,7 @@ body.dark-mode .component-popular-service .career-counselling {
   left: 0;
   position: absolute;
   top: 0;
-  width: 525px;
+  width: 535px;
 }
 
 .component-other-service .image-1 {
@@ -12123,6 +12145,15 @@ body.dark-mode .custom-select__control {
     linear-gradient(60deg, #00f, #00e8ff) border-box !important;
   border: 1px solid transparent !important;
   background-color: transparent !important;
+}
+
+.custom-select__menu {
+  background: linear-gradient(#0061d3, #04cdf9) padding-box,
+    linear-gradient(60deg, #fff, #fff) border-box !important;
+}
+
+body.dark-mode .custom-select__menu {
+  background: rgba(0, 0, 0, 0.25) !important;
 }
 
 .fpvlNK {
@@ -12744,4 +12775,20 @@ body.dark-mode .custom-select__control {
   object-fit: cover;
   position: fixed;
   width: 1925px;
+}
+
+.swiper-button-prev-newest-service {
+  margin-top: 80px;
+}
+
+.swiper-button-next-newest-service {
+  margin-top: 80px;
+}
+
+.swiper-button-prev-other-service{
+  margin-top: 70px;
+}
+
+.swiper-button-next-other-service{
+  margin-top: 70px;
 }

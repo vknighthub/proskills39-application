@@ -50,7 +50,7 @@ export const NewestService = ({ data }: PageProps) => {
                         </svg>
                     </button>
                 </div>
-                <Swiper {...featuredNewestService} className="featured-carousel ml-lg-2 mr-lg-2">
+                <Swiper {...featuredNewestService} className="featured-carousel mr-lg-2">
                     <div className="swiper-wrapper">
                         <div className="featured-box">
                             <div className="featured-box-wrapper grid-6-columns">

@@ -40,7 +40,7 @@ const SwitchLanguage = ({ isAuthorized, me }) => {
             borderLeft: 0,
             borderRight: 0,
             boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-            className: 'body.dark-mode custom-control'
+            className: 'body.dark-mode custom-control',
         }),
         option: (provided, state) => ({
             ...provided,
@@ -57,12 +57,14 @@ const SwitchLanguage = ({ isAuthorized, me }) => {
         menu: (provided, state) => ({
             ...provided,
             backgroundColor: 'rgba(0, 0, 0, 0.5)',
-            borderRadius: '16px'
+            borderRadius: '16px',
+            color: '#fff'
 
         }),
         valueContainer: (provided, state) => ({
             ...provided,
-            display: 'flex'
+            display: 'flex',
+            color: '#fff'
         }),
         indicatorSeparator: () => null
     };

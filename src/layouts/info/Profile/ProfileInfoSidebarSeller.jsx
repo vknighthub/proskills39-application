@@ -350,11 +350,24 @@ const ProfileInfoSidebarSeller = ({ data }) => {
                             display: 'flex',
                             flexWrap: 'wrap',
                             alignItems: 'center',
-                            marginLeft: 5
                           }}
-                          >
-                            <Image src={portfolio} alt={'portfolio'}></Image>
-                            <Image src={portfolio} alt={'portfolio'}></Image>
+                          > {profile?.educations.map((education) => (
+                            <Box
+                              sx={{ padding: 2 }}
+                              key={education.id} >
+                              {education.images.map((image) => (
+                                image.thumbnail &&
+                                  <Image
+                                    src={image.thumbnail}
+                                    alt={'portfolio'} key={image.id}
+                                    width={150}
+                                    height={100}
+
+                                  />
+                              ))}
+
+                            </Box>
+                          ))}
                           </Box>
                         </Box>
                       </div>
