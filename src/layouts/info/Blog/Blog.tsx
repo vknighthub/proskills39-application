@@ -2,6 +2,13 @@ import { BlogDetail } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import parse from 'html-react-parser';
+import rectangle from "@/assets/images/content/blog/rectangle.svg"
+import seemore from "@/assets/images/content/blog/seemore.svg"
+import vector from "@/assets/images/content/blog/vector-187-1.svg"
+import lifecoaching from "@/assets/images/content/blog/life-coaching-1.png"
+import longai from "@/assets/images/content/blog/longai.png"
+
+
 
 type Props = {
     list_blog: BlogDetail[] | undefined
@@ -13,63 +20,36 @@ const Blog = ({ list_blog }: Props) => {
         <div className="primary-content-area container content-padding">
             <div className="page-title-section">
                 <h2>
-                    Our<span className="gradient-text"> Blog</span>
+                    <span className="gradient-text">Our Blog</span>
                 </h2>
             </div>
             {/*  POSTS GRID */}
             <div className="news-feed grid-3-columns">
                 {list_blog?.map((blog) => (
-                    <div className="news-item" key={blog.id}>
-                        <div className="news-thumb" >
-                            <Link href={`/blog-detail/${blog.slug}`}>
-                                {blog.typefile === 'video' ?
-                                    <iframe
-                                        src={blog.image}
-                                    >
-
-                                    </iframe>
-                                    :
-                                    <Image
-                                        src={blog.image}
-                                        alt=""
-                                        width={458}
-                                        height={300}
-                                        style={{ maxWidth: '100%', maxHeight: '300px', minHeight: '300px' }}
-                                    />
-                                }
-                            </Link>
+                    <div className={`component-blog`} key={blog.id}>
+                        <div className="overlap">
+                            <Image className="rectangle" alt="Rectangle" src={rectangle} />
+                            <div className="group">
+                                <div className="see-more">See more</div>
+                                <Image className="img" alt="Img" src={seemore} />
+                            </div>
                         </div>
-                        <div className="news-content">
-                            <div className="news-meta">
-                                <div className="news-tags">
-                                    <span className="tag-item">
-                                        {blog.catalog.name}
-                                    </span>
-                                </div>
-                                by{" "}
-                                <Link href={`/user-profile/${blog.author.username}`}>
-                                    {blog.author.fullname}
-                                </Link>
-                                , {blog.publdt}
-                            </div>
-                            <div className="news-title h5">
-                                {" "}
-                                <Link href={`/blog-detail/${blog.slug}`}>
-                                    {blog.title}
-                                </Link>{" "}
-                            </div>
-                            <div className="news-excerpt">
-                                {parse(blog.introduce)}
-                            </div>
-                            <div className="read-more-link">
-                                {" "}
-                                <Link href={`/blog-detail/${blog.slug}`}>
-                                    Read More
-                                    <svg className="crumina-icon">
-                                        <use xlinkHref="#arrow-right2-icon" />
-                                    </svg>
-                                </Link>{" "}
-                            </div>
+                        <Image className="vector" alt="Vector" src={vector} />
+                        <div className="overlap-group">
+                            <div className="div" />
+                            <Image className="life-coaching" alt="Life coaching" src={lifecoaching} />
+                        </div>
+                        <Image className="nh-ng-v-n-freelancer" alt="Nh ng v n freelancer" src={longai} />
+                        <p className="ch-o-c-nh-b-n-ang">
+                            Chào cả nhà! Bạn đang nghĩ đến việc trở thành freelancer? Tuyệt vời! Đó là cách tuyệt nhất để làm chủ công việc
+                            và làm việc theo ý muốn.
+                        </p>
+                        <div className="overlap-group-2">
+                            <div className="by">By</div>
+                            <div className="element">31/05/2023</div>
+                            <a className="alyssa-sweeten" href="" rel="noopener noreferrer" target="_blank">
+                                Alyssa Sweeten
+                            </a>
                         </div>
                     </div>
                 ))}

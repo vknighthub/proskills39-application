@@ -12829,3 +12829,179 @@ body.dark-mode .custom-select__menu {
 .swiper-button-next-other-service{
   margin-top: 70px;
 }
+
+/****************************************/
+
+
+.component-blog {
+  -webkit-backdrop-filter: blur(10px) brightness(100%);
+  backdrop-filter: blur(10px) brightness(100%);
+  background-color: #00000080;
+  border: 0.2px solid;
+  border-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px #00000040;
+  height: 382px;
+  position: relative;
+  width: 459px;
+}
+
+.component-blog .overlap {
+  height: 24px;
+  left: 394px;
+  position: absolute;
+  top: 351px;
+  width: 57px;
+}
+
+.component-blog .rectangle {
+  height: 21px;
+  left: 0;
+  position: absolute;
+  top: 3px;
+  width: 57px;
+}
+
+.component-blog .group {
+  height: 18px;
+  left: 8px;
+  position: absolute;
+  top: 0;
+  width: 44px;
+}
+
+.component-blog .see-more {
+  color: #ffffff;
+  font-family: "Quicksand-SemiBold", Helvetica;
+  font-size: 8px;
+  font-weight: 600;
+  left: 0;
+  letter-spacing: -0.16px;
+  line-height: 25px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  width: 37px;
+}
+
+.component-blog .img {
+  height: 4px;
+  left: 39px;
+  position: absolute;
+  top: 12px;
+  width: 3px;
+}
+
+.component-blog .vector {
+  height: 1px;
+  left: 0;
+  position: absolute;
+  top: 346px;
+  width: 458px;
+}
+
+.component-blog .overlap-group {
+  background-image: url('../images/content/blog/overlapgroup.png');
+  background-size: 100% 100%;
+  height: 246px;
+  left: 4px;
+  position: absolute;
+  top: 3px;
+  width: 452px;
+}
+
+.component-blog .div {
+  -webkit-backdrop-filter: blur(17px) brightness(100%);
+  backdrop-filter: blur(17px) brightness(100%);
+  background-color: #060606;
+  border: 0.2px solid;
+  border-color: #000000;
+  border-image: linear-gradient(to bottom, rgb(0, 97.26, 211.44), rgb(4.14, 204.62, 248.63)) 1;
+  border-radius: 10px 0px 10px 0px;
+  height: 38px;
+  left: 0;
+  opacity: 0.9;
+  position: absolute;
+  top: 0;
+  width: 133px;
+}
+
+.component-blog .life-coaching {
+  height: 17px;
+  left: 10px;
+  position: absolute;
+  top: 11px;
+  width: 113px;
+}
+
+.component-blog .nh-ng-v-n-freelancer {
+  height: 16px;
+  left: 18px;
+  position: absolute;
+  top: 264px;
+  width: 236px;
+}
+
+.component-blog .ch-o-c-nh-b-n-ang {
+  color: #ffffff;
+  font-family: "Quicksand-Medium", Helvetica;
+  font-size: 8px;
+  font-weight: 500;
+  left: 17px;
+  letter-spacing: 0;
+  line-height: 16.3px;
+  position: absolute;
+  top: 289px;
+  width: 426px;
+}
+
+.component-blog .overlap-group-2 {
+  height: 29px;
+  left: 17px;
+  position: absolute;
+  top: 347px;
+  width: 78px;
+}
+
+.component-blog .by {
+  color: #ffffff;
+  font-family: "Quicksand-Light", Helvetica;
+  font-size: 8px;
+  font-weight: 300;
+  left: 0;
+  letter-spacing: 0;
+  line-height: 16.3px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  width: 17px;
+}
+
+.component-blog .element {
+  color: #ffffff;
+  font-family: "Quicksand-Light", Helvetica;
+  font-size: 8px;
+  font-weight: 300;
+  left: 0;
+  letter-spacing: 0;
+  line-height: 16.3px;
+  position: absolute;
+  top: 14px;
+  white-space: nowrap;
+  width: 51px;
+}
+
+.component-blog .alyssa-sweeten {
+  color: #ffffff;
+  font-family: "Quicksand-Medium", Helvetica;
+  font-size: 8px;
+  font-weight: 500;
+  left: 14px;
+  letter-spacing: 0;
+  line-height: 16.3px;
+  position: absolute;
+  text-decoration: underline;
+  top: 0;
+  white-space: nowrap;
+  width: 64px;
+}
