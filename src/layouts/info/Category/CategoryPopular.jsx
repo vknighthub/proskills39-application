@@ -1,5 +1,4 @@
 import background_most_popular_service from '@/assets/images/service/background-most-popular-service.png';
-import most_popular_service from '@/assets/images/service/most-popular-service.png';
 import vector_most_popular_service from '@/assets/images/service/vector-most-popular-service.png';
 import { featuredCarouselPopuplarCategories } from '@/components/styles/sliderProps';
 import Image from '@/components/ui/image';
@@ -21,7 +20,17 @@ const CategoryPopular = ({ data }) => {
                                 </linearGradient>
                             </defs>
                             <g>
-                                <text id="text" y="100" font-size="60" fontStyle="normal" letterSpacing="0.15rem" fontWeight="700" strokeWidth="2" stroke="url(#gradient)" fill="none">
+                                <text id="text" y="100"
+                                    fontSize="50"
+                                    fontStyle="normal"
+                                    letterSpacing="0.15rem"
+                                    fontWeight="800"
+                                    strokeWidth="1.5"
+                                    stroke="url(#gradient)"
+                                    fill="none"
+                                    fontFamily='Quicksand'
+                                    style={{ fontFamily: 'sans-serif' }}
+                                >
                                     Most popular in {data.name}
                                 </text>
                             </g>

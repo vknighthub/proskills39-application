@@ -11714,6 +11714,7 @@ body.dark-mode .component-popular-service:hover {
   position: absolute;
   top: 6px;
   width: 238px;
+  border-radius: 13px;
 }
 
 .component-popular-service .popular-service {
@@ -11723,6 +11724,7 @@ body.dark-mode .component-popular-service:hover {
   position: absolute;
   top: 0;
   width: 238px;
+  border-radius: 13px;
 }
 
 body.dark-mode .component-popular-service .career-counselling {
@@ -11751,7 +11753,7 @@ body.dark-mode .component-popular-service .career-counselling {
 
 .component-popular-service .vector {
   height: 37px;
-  left: 189px;
+  left: 185px;
   position: absolute;
   top: 175px;
   width: 54px;
@@ -12245,7 +12247,7 @@ body.dark-mode .custom-select__menu {
   background-color: #ffffff;
   border-radius: 17px;
   box-shadow: 0px 4px 4px #00000040;
-  height: 504px;
+  height: 570px;
   position: relative;
   width: 352px;
   background-color: #ffffff;
@@ -12253,6 +12255,13 @@ body.dark-mode .custom-select__menu {
   border-bottom-width: 4px;
   border-color: transparent;
   box-shadow: 0px 4px 4px #00000040;
+  border-bottom: 2px solid #0071BC;
+  backdrop-filter: blur(9.5px);
+  transition: .4s all;
+}
+
+.component-categories-explore:hover {
+  transform: translatey(-10px);
 }
 
 .component-categories-explore .vector {
@@ -12316,6 +12325,34 @@ body.dark-mode .custom-select__menu {
   position: absolute;
   text-decoration: underline;
   top: 454px;
+  white-space: nowrap;
+  width: 241px;
+}
+
+.component-categories-explore .item-5 {
+  color: #494949;
+  font-size: 16px;
+  font-weight: 600;
+  left: 13px;
+  letter-spacing: -0.32px;
+  line-height: 25px;
+  position: absolute;
+  text-decoration: underline;
+  top: 493px;
+  white-space: nowrap;
+  width: 241px;
+}
+
+.component-categories-explore .item-6 {
+  color: #494949;
+  font-size: 16px;
+  font-weight: 600;
+  left: 13px;
+  letter-spacing: -0.32px;
+  line-height: 25px;
+  position: absolute;
+  text-decoration: underline;
+  top: 532px;
   white-space: nowrap;
   width: 241px;
 }
