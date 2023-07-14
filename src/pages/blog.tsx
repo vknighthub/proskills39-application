@@ -50,7 +50,7 @@ const BlogPage: NextPageWithLayout = (props: Props) => {
                 title="ProSkills39 - Blog page"
                 description="Introduce your friends to the easiest way to get things done"
                 url={routes.blog}
-                image_url='https://api.proskills39.com/system/logo/logotest.png'
+                image_url='https://api.proskills39.com/system/logo/logo-seo.png'
             />
             <div className="background-content">
                 <Blog list_blog={data?.blog} />
