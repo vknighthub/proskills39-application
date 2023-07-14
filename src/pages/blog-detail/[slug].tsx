@@ -11,7 +11,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect } from 'react';
 import invariant from 'tiny-invariant';
-
+import rectangle from "@/assets/images/content/blog/rectangle.svg";
+import seemore from "@/assets/images/content/blog/seemore.svg";
+import vector from "@/assets/images/content/blog/vector-187-1.svg";
 
 const BlogDetailPage: NextPageWithLayout<
     InferGetStaticPropsType<typeof getStaticProps>
@@ -67,7 +69,7 @@ const BlogDetailPage: NextPageWithLayout<
     useEffect(() => {
         const paragraph = document.getElementById("content");
         const paragraphs = paragraph?.querySelectorAll('p');
-        
+
         if (paragraphs) {
             paragraphs.forEach((paragraph) => {
                 console.log(paragraph.innerHTML.trim())
@@ -86,252 +88,220 @@ const BlogDetailPage: NextPageWithLayout<
                 url={routes.blogDetailUrl(slug)}
                 image_url={blogdetail.result.data.blogdetail.image}
             />
-            <div className="primary-content-area container content-padding">
-                <div className="single-post medium-section">
-                    <div className="post-heading">
+            <div className="primary-content-area background-content">
+                <div className="container content-padding">
+                    <div className="single-post medium-section">
+                        <div className="post-heading">
+                            <h1 className="blog-title">
+                                {blog.title}
+                            </h1>
+                        </div>
+                        <div className="post-featured-image">
+                            <Image
+                                src={blog.image}
+                                alt={blog.title}
+                                width={940}
+                                height={530}
+                            />
+                        </div>
 
-                        <h1>
-                            {blog.title}
-                        </h1>
-                        <div className="news-meta">
-                            <div className="post-author">
-                                by{" "}
-                                <Link href={`/user-profile/${blog.author.username}`}>
-                                    {blog.author.fullname}
-                                </Link>
-                                , {blog.publdt}
-                            </div>
-
+                        <div id="content" className="post-content">
+                            {parse(blog.content)}
+                        </div>
+                        <div className="comments-section">
                         </div>
                     </div>
-                    <div className="post-featured-image">
-                        <Image
-                            src={blog.image}
-                            alt={blog.title}
-                            width={940}
-                            height={530}
-                        />
-                    </div>
-
-                    <div id="content" className="post-content">
-                        {parse(blog.content)}
-                    </div>
-                    <div className="comments-section">
-                    </div>
                 </div>
-            </div>
 
-            <div className="primary-content-area container content-padding">
-                <div className="page-title-section">
-                    <h2>
-                        <span className="gradient-text">Blog by {blog.author.fullname} </span>
-                    </h2>
-                </div>
-                {/*  POSTS GRID */}
-                {blogbyuser.total !== 0 ?
-                    <div className="grid-container-user grid-3-columns" >
-                        {blogbyuser.data.map((blog: BlogDetail) => (
-                            <div className="grid-item-user" key={blog.id} >
-                                <div className="news-thumb" >
-                                    <Link href={`/blog-detail/${blog.slug}`}>
-                                        <Image
-                                            src={blog.image}
-                                            alt=""
-                                            width={458}
-                                            height={300}
-                                            style={{ maxWidth: '100%', maxHeight: '300px', minHeight: '300px' }}
-                                        />
-                                    </Link>
-                                </div>
-                                <div className="news-content">
-                                    <div className="news-meta">
-                                        <div className="news-tags">
-                                            <span className="tag-item">
-                                                {blog.catalog.name}
-                                            </span>
+                <div className="primary-content-area container">
+                    <div className="page-title-section">
+                        <h2>
+                            <span className="gradient-text">Blog by {blog.author.fullname} </span>
+                        </h2>
+                    </div>
+                    {/*  POSTS GRID */}
+                    {blogbyuser.total !== 0 ?
+                        <div className="grid-container-user grid-3-columns" >
+                            {blogbyuser.data.map((blog: BlogDetail) => (
+                                <div className="grid-item-user" key={blog.id} >
+                                    <div className="news-thumb" >
+                                        <Link href={`/blog-detail/${blog.slug}`}>
+                                            <Image
+                                                src={blog.image}
+                                                alt=""
+                                                width={458}
+                                                height={300}
+                                                style={{ maxWidth: '100%', maxHeight: '300px', minHeight: '300px' }}
+                                            />
+                                        </Link>
+                                    </div>
+                                    <div className="news-content">
+                                        <div className="news-meta">
+                                            <div className="news-tags">
+                                                <span className="tag-item">
+                                                    {blog.catalog.name}
+                                                </span>
+                                            </div>
+                                            by{" "}
+                                            <Link href={blog.author.username}>
+                                                {blog.author.fullname}
+                                            </Link>
+                                            , {blog.publdt}
                                         </div>
-                                        by{" "}
-                                        <Link href={blog.author.username}>
+                                        <div className="news-title h5">
+                                            {" "}
+                                            <Link href={`/blog-detail/${blog.slug}`}>
+                                                {blog.title}
+                                            </Link>{" "}
+                                        </div>
+                                        <div className="news-excerpt">
+                                            {parse(blog.introduce)}
+                                        </div>
+                                        <div className="read-more-link">
+                                            {" "}
+                                            <Link href={`/blog-detail/${blog.slug}`}>
+
+                                                Read More
+                                                <svg className="crumina-icon">
+                                                    <use xlinkHref="#arrow-right2-icon" />
+                                                </svg>
+                                            </Link>{" "}
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                        :
+                        <>
+                            <div className="page-title-section">
+                                <h4>
+                                    <span className="gradient-text">There are no related posts</span>
+                                </h4>
+                            </div>
+                        </>
+                    }
+
+                    {/*  PAGINATION */}
+                </div>
+
+                <div className="primary-content-area container">
+                    <div className="page-title-section">
+                        <h2>
+                            <span className="gradient-text">Blog related to {blog.catalog.name} </span>
+                        </h2>
+                    </div>
+                    {/*  POSTS GRID */}
+                    {blogcategory.total !== 0 ?
+                        <div className="grid-container-category grid-3-columns" >
+                            {blogcategory.data.map((blog: BlogDetail) => (
+                                <div className={`component-blog`} key={blog.id}>
+                                    <div className="overlap">
+                                        <Image className="rectangle" alt="Rectangle" src={rectangle} />
+                                        <div className="group">
+                                            <div className="see-more">
+                                                <Link href={`/blog-detail/${blog.slug}`}>
+                                                    See more
+                                                </Link>
+                                            </div>
+                                            <Image className="img" alt="Img" src={seemore} />
+                                        </div>
+                                    </div>
+                                    <Image className="vector" alt="Vector" src={vector} />
+                                    <div className="overlap-group">
+                                        {blog.typefile === 'image' ?
+                                            <Image src={blog.image} width={452} height={264} alt={blog.title} />
+                                            :
+                                            <iframe src={blog.image} width={452} height={250} />
+                                        }
+                                    </div>
+                                    <h6 className="nh-ng-v-n-freelancer" >
+                                        {blog.title}
+                                    </h6>
+
+                                    <p className="ch-o-c-nh-b-n-ang">
+                                        {blog.introduce}
+                                    </p>
+                                    <div className="overlap-group-2">
+                                        <div className="by">By</div>
+                                        <div className="element">{blog.publdt}</div>
+                                        <Link className="alyssa-sweeten" href={`/user-profile/${blog.author.username}`} rel="noopener noreferrer" target="_blank">
                                             {blog.author.fullname}
                                         </Link>
-                                        , {blog.publdt}
-                                    </div>
-                                    <div className="news-title h5">
-                                        {" "}
-                                        <Link href={`/blog-detail/${blog.slug}`}>
-                                            {blog.title}
-                                        </Link>{" "}
-                                    </div>
-                                    <div className="news-excerpt">
-                                        {parse(blog.introduce)}
-                                    </div>
-                                    <div className="read-more-link">
-                                        {" "}
-                                        <Link href={`/blog-detail/${blog.slug}`}>
-
-                                            Read More
-                                            <svg className="crumina-icon">
-                                                <use xlinkHref="#arrow-right2-icon" />
-                                            </svg>
-                                        </Link>{" "}
                                     </div>
                                 </div>
-                            </div>
-                        ))}
-                    </div>
-                    :
-                    <>
-                        <div className="page-title-section">
-                            <h4>
-                                <span className="gradient-text">There are no related posts</span>
-                            </h4>
+                            ))}
                         </div>
-                    </>
-                }
-
-                {/*  PAGINATION */}
-            </div>
-
-            <div className="primary-content-area container content-padding">
-                <div className="page-title-section">
-                    <h2>
-                        <span className="gradient-text">Blog related to {blog.catalog.name} </span>
-                    </h2>
+                        :
+                        <>
+                            <div className="page-title-section">
+                                <h4>
+                                    <span className="gradient-text">There are no related posts</span>
+                                </h4>
+                            </div>
+                        </>
+                    }
+                    {/*  PAGINATION */}
                 </div>
-                {/*  POSTS GRID */}
-                {blogcategory.total !== 0 ?
-                    <div className="grid-container-category grid-3-columns" >
-                        {blogcategory.data.map((blog: BlogDetail) => (
-                            <div className="grid-item-category" key={blog.id} >
-                                <div className="news-thumb" >
-                                    <Link href={`/blog-detail/${blog.slug}`}>
-                                        <Image
-                                            src={blog.image}
-                                            alt=""
-                                            width={458}
-                                            height={300}
-                                            style={{ maxWidth: '100%', maxHeight: '300px', minHeight: '300px' }}
-                                        />
-                                    </Link>
-                                </div>
-                                <div className="news-content">
-                                    <div className="news-meta">
-                                        <div className="news-tags">
-                                            <span className="tag-item">
-                                                {blog.catalog.name}
-                                            </span>
+
+                <div className="primary-content-area container content-padding">
+                    <div className="page-title-section">
+                        <h2>
+                            <span className="gradient-text">Blog Top View</span>
+                        </h2>
+                    </div>
+                    {/*  POSTS GRID */}
+                    {blogtopview.total !== 0 ?
+                        <div className="grid-container-topview grid-3-columns">
+                            {blogtopview.data.map((blog: BlogDetail) => (
+                                <div className={`component-blog`} key={blog.id}>
+                                    <div className="overlap">
+                                        <Image className="rectangle" alt="Rectangle" src={rectangle} />
+                                        <div className="group">
+                                            <div className="see-more">
+                                                <Link href={`/blog-detail/${blog.slug}`}>
+                                                    See more
+                                                </Link>
+                                            </div>
+                                            <Image className="img" alt="Img" src={seemore} />
                                         </div>
-                                        by{" "}
-                                        <Link href={blog.author.username}>
+                                    </div>
+                                    <Image className="vector" alt="Vector" src={vector} />
+                                    <div className="overlap-group">
+                                        {blog.typefile === 'image' ?
+                                            <Image src={blog.image} width={452} height={264} alt={blog.title} />
+                                            :
+                                            <iframe src={blog.image} width={452} height={250} />
+                                        }
+                                    </div>
+                                    <h6 className="nh-ng-v-n-freelancer" >
+                                        {blog.title}
+                                    </h6>
+
+                                    <p className="ch-o-c-nh-b-n-ang">
+                                        {blog.introduce}
+                                    </p>
+                                    <div className="overlap-group-2">
+                                        <div className="by">By</div>
+                                        <div className="element">{blog.publdt}</div>
+                                        <Link className="alyssa-sweeten" href={`/user-profile/${blog.author.username}`} rel="noopener noreferrer" target="_blank">
                                             {blog.author.fullname}
                                         </Link>
-                                        , {blog.publdt}
-                                    </div>
-                                    <div className="news-title h5">
-                                        {" "}
-                                        <Link href={`/blog-detail/${blog.slug}`}>
-                                            {blog.title}
-                                        </Link>{" "}
-                                    </div>
-                                    <div className="news-excerpt">
-                                        {parse(blog.introduce)}
-                                    </div>
-                                    <div className="read-more-link">
-                                        {" "}
-                                        <Link href={`/blog-detail/${blog.slug}`}>
-
-                                            Read More
-                                            <svg className="crumina-icon">
-                                                <use xlinkHref="#arrow-right2-icon" />
-                                            </svg>
-                                        </Link>{" "}
                                     </div>
                                 </div>
-                            </div>
-                        ))}
-                    </div>
-                    :
-                    <>
-                        <div className="page-title-section">
-                            <h4>
-                                <span className="gradient-text">There are no related posts</span>
-                            </h4>
+                            ))}
                         </div>
-                    </>
-                }
-                {/*  PAGINATION */}
-            </div>
-
-            <div className="primary-content-area container content-padding">
-                <div className="page-title-section">
-                    <h2>
-                        <span className="gradient-text">Blog Top View</span>
-                    </h2>
+                        :
+                        <>
+                            <div className="page-title-section">
+                                <h4>
+                                    <span className="gradient-text">There are no related posts</span>
+                                </h4>
+                            </div>
+                        </>
+                    }
+                    {/*  PAGINATION */}
                 </div>
-                {/*  POSTS GRID */}
-                {blogtopview.total !== 0 ?
-                    <div className="grid-container-topview grid-3-columns">
-                        {blogtopview.data.map((blog: BlogDetail) => (
-                            <div className="news-item-topview" key={blog.id}>
-                                <div className="news-thumb" >
-                                    <Link href={`/blog-detail/${blog.slug}`} >
-                                        <Image
-                                            src={blog.image}
-                                            alt=""
-                                            width={458}
-                                            height={300}
-                                            style={{ maxWidth: '100%', maxHeight: '300px', minHeight: '300px' }}
-                                        />
-                                    </Link>
-                                </div>
-                                <div className="news-content">
-                                    <div className="news-meta">
-                                        <div className="news-tags">
-                                            <span className="tag-item">
-                                                {blog.catalog.name}
-                                            </span>
-                                        </div>
-                                        by{" "}
-                                        <Link href={blog.author.username}>
-                                            {blog.author.fullname}
-                                        </Link>
-                                        , {blog.publdt}
-                                    </div>
-                                    <div className="news-title h5">
-                                        {" "}
-                                        <Link href={`/blog-detail/${blog.slug}`}>
-                                            {blog.title}
-                                        </Link>{" "}
-                                    </div>
-                                    <div className="news-excerpt">
-                                        {parse(blog.introduce)}
-                                    </div>
-                                    <div className="read-more-link">
-                                        {" "}
-                                        <Link href={`/blog-detail/${blog.slug}`}>
-
-                                            Read More
-                                            <svg className="crumina-icon">
-                                                <use xlinkHref="#arrow-right2-icon" />
-                                            </svg>
-                                        </Link>{" "}
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    :
-                    <>
-                        <div className="page-title-section">
-                            <h4>
-                                <span className="gradient-text">There are no related posts</span>
-                            </h4>
-                        </div>
-                    </>
-                }
-                {/*  PAGINATION */}
             </div>
-
 
         </>
     )

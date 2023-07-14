@@ -6678,6 +6678,11 @@ body.dark-mode .footer {
 .post-featured-image {
   margin-bottom: clamp(2rem, 4.5vmax, 70px);
 }
+.post-featured-image img {
+  border-radius: 13px;
+  background-color: transparent;
+  box-shadow: #ffffff61 2px 0px 10px 5px
+}
 
 .single-post .post-content {
   font-size: var(--article-font-size);
@@ -6685,7 +6690,6 @@ body.dark-mode .footer {
 
 .single-post .post-content,
 .single-post .comments-section {
-  width: 700px;
   max-width: 100%;
   margin: 0 auto clamp(1rem, 6vmax, 100px);
 }
@@ -13009,4 +13013,14 @@ body.dark-mode .custom-select__menu {
   top: 0;
   white-space: nowrap;
   width: 64px;
+}
+.blog-title {
+  background-color: var(--main-font-color);
+    background-image: var(--cryptoki-gradient);
+    background-size: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
 }

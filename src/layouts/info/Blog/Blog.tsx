@@ -1,13 +1,9 @@
+import rectangle from "@/assets/images/content/blog/rectangle.svg";
+import seemore from "@/assets/images/content/blog/seemore.svg";
+import vector from "@/assets/images/content/blog/vector-187-1.svg";
 import { BlogDetail } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
-import parse from 'html-react-parser';
-import rectangle from "@/assets/images/content/blog/rectangle.svg"
-import seemore from "@/assets/images/content/blog/seemore.svg"
-import vector from "@/assets/images/content/blog/vector-187-1.svg"
-import lifecoaching from "@/assets/images/content/blog/life-coaching-1.png"
-import longai from "@/assets/images/content/blog/longai.png"
-import CutText from '@/utils/CutText';
 
 
 
@@ -56,7 +52,7 @@ const Blog = ({ list_blog }: Props) => {
                         </p>
                         <div className="overlap-group-2">
                             <div className="by">By</div>
-                            <div className="element">31/05/2023</div>
+                            <div className="element">{blog.publdt}</div>
                             <Link className="alyssa-sweeten" href={`/user-profile/${blog.author.username}`} rel="noopener noreferrer" target="_blank">
                                 {blog.author.fullname}
                             </Link>
