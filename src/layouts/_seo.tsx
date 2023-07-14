@@ -11,12 +11,12 @@ const Seo = ({ title, description, url, image_url, ...props }: SeoProps) => {
       openGraph={{
         title: title,
         site_name: title,
-        type: 'website',
+        type: "website",
         url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${url}`,
         description: description,
         images: [
           {
-            url: image_url,
+            url: image_url ? image_url : "https://api.proskills39.com/system/logo/logo-seo.png",
             width: 1200,
             height: 630,
             alt: title,
@@ -24,14 +24,14 @@ const Seo = ({ title, description, url, image_url, ...props }: SeoProps) => {
         ],
         book: {
           authors: [
-            'https://anhben.com',
+            "https://anhben.com",
           ]
         }
       }}
       twitter={{
-        handle: '@vknighthub',
-        site: '@vknighthub',
-        cardType: 'summary_large_image',
+        handle: "@vknighthub",
+        site: "@vknighthub",
+        cardType: "summary_large_image",
       }}
       canonical={process.env.NEXT_PUBLIC_WEBSITE_URL_CANONICAL}
       {...props}
