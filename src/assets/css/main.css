@@ -5496,6 +5496,7 @@ body.dark-mode #filter-form input[type="submit"] {
   display: flex;
   align-items: center;
   padding: 9px 16px;
+  width: 195px;
 }
 
 .category-item svg {
@@ -7050,7 +7051,7 @@ blockquote p {
 }
 
 .featured-item-image {
-  max-height: 340px;
+  max-height: 165px;
   overflow: hidden;
   border-radius: 20px;
   text-align: center;
@@ -11642,6 +11643,7 @@ body.dark-mode .section-title {
 .featured-item-info .item-money {
   padding: auto;
   color: #0062fe;
+  margin-top: 30px;
 }
 
 .featured-item-info .item-money span {

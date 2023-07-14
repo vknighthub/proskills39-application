@@ -69,7 +69,7 @@ export const featuredCarousel = {
 };
 
 export const categoriesBar = {
-  slidesPerView: 1,
+  slidesPerView: 7,
   speed: 400,
   spaceBetween: 10,
   slideToClickedSlide: false,
@@ -79,6 +79,10 @@ export const categoriesBar = {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  }
 };
 export const artworksSlider = {
   slidesPerView: 1,

@@ -143,7 +143,7 @@ const ServicesSearchPage: NextPageWithLayout<
 
     useEffect(() => {
         refetch()
-    }, [filter])
+    }, [filter,servicesSlug])
 
     const listindustry = data.listindustry
 
@@ -266,7 +266,12 @@ const ServicesSearchPage: NextPageWithLayout<
                                             <div className="featured-item-content">
                                                 <div className="featured-item-image">
                                                     <Link href={`/categories/services/servicedetail/${service.slug}`}>
-                                                        <Image src={service.overviews.files[0]?.url ? service.overviews.files[0].url : newest} alt="" width={238.4} height={162} />
+                                                        <Image
+                                                            src={service.overviews.files[0]?.url ? service.overviews.files[0].url : newest}
+                                                            alt=""
+                                                            width={238.4}
+                                                            height={162}
+                                                        />
                                                     </Link>
                                                 </div>
                                                 <div className="featured-item-info">
