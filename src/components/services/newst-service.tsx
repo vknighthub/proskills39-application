@@ -6,8 +6,8 @@ import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import CutText from './../../utils/CutText';
 import { Box } from '@/components/styles/Box'
+import CutText from '@/utils/CutText';
 
 type PageProps = {
     data: Newestservice[]
@@ -65,9 +65,13 @@ export const NewestService = ({ data }: PageProps) => {
                                                             <Image src={value.files[0]?.url ? value.files[0].url : newest} alt="" width={238.4} height={162} />
                                                         </div>
                                                         <div className="featured-item-info">
-                                                            <RatingStars value={2.3} />
+                                                            <RatingStars value={value.averagerating} />
                                                             <div className="title">
-                                                                <CutText content={value.title} start={0} end={20} />
+                                                                <CutText
+                                                                    content={value.introduce}
+                                                                    start={0}
+                                                                    end={70}
+                                                                />
                                                             </div>
                                                             <div className="item-money">
                                                                 <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">

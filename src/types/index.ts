@@ -141,6 +141,7 @@ export interface Newestservice {
     create_at: string
     update_at: string
     delete_at: any
+    averagerating: number
     files: File[]
     sellerInfor: SellerInfor
 }
