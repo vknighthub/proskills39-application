@@ -34,18 +34,15 @@ const Seo = ({ title, description, url, image_url, ...props }: SeoProps) => {
         cardType: 'summary_large_image',
       }}
       robotsProps={{
-        nosnippet: true,
-        notranslate: true,
-        noimageindex: true,
-        noarchive: true,
+        nosnippet: false,
+        notranslate: false,
+        noimageindex: false,
+        noarchive: false,
         maxSnippet: -1,
         maxImagePreview: 'none',
         maxVideoPreview: -1,
       }}
       canonical={process.env.NEXT_PUBLIC_WEBSITE_URL_CANONICAL}
-      facebook={{
-        appId: '563576815726679',
-      }}
       {...props}
     />
   )

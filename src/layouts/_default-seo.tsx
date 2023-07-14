@@ -29,28 +29,24 @@ const DefaultSeo = () => {
           href: 'icons/apple-icon-180.png',
         }
       ]}
-      title={settings?.seo?.metaTitle}
-      titleTemplate={`${settings?.seo?.metaTitle || settings?.siteTitle || 'Proskills39'
-        } | %s`}
+      title="Proskills39"
+      titleTemplate={`Proskills39`}
       defaultTitle="ProSkills39"
-      description={settings?.seo?.metaDescription || settings?.siteSubtitle}
-      canonical={settings?.seo?.canonicalUrl}
+      description="ProSkills39 is a Service Marketplace that connects pro-skills freelancers and provides support services for project owners to start up and expand their businesses at a reasonable cost."
+      canonical="https://www.proskills39.com/"
       twitter={{
-        handle: settings?.seo?.twitterHandle,
-        site: settings?.siteTitle,
-        cardType: settings?.seo?.twitterCardType,
+        handle: '@vknighthub',
+        site: '@vknighthub',
+        cardType: 'summary_large_image',
       }}
       robotsProps={{
-        nosnippet: true,
-        notranslate: true,
-        noimageindex: true,
-        noarchive: true,
+        nosnippet: false,
+        notranslate: false,
+        noimageindex: false,
+        noarchive: false,
         maxSnippet: -1,
         maxImagePreview: 'none',
         maxVideoPreview: -1,
-      }}
-      facebook={{
-        appId: '563576815726679',
       }}
     />
   )

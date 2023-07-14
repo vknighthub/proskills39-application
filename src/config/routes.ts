@@ -1,4 +1,3 @@
-import freelancer from '@/assets/images/content/support/frame6879.webp';
 const routes = {
     home: '',
     login: 'login',
