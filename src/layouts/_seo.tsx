@@ -33,15 +33,6 @@ const Seo = ({ title, description, url, image_url, ...props }: SeoProps) => {
         site: '@vknighthub',
         cardType: 'summary_large_image',
       }}
-      robotsProps={{
-        nosnippet: false,
-        notranslate: false,
-        noimageindex: false,
-        noarchive: false,
-        maxSnippet: -1,
-        maxImagePreview: 'none',
-        maxVideoPreview: -1,
-      }}
       canonical={process.env.NEXT_PUBLIC_WEBSITE_URL_CANONICAL}
       {...props}
     />
