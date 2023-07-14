@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import triangle from '@/assets/svg/triangle-popular-service.svg'
+import CutText from '@/utils/CutText';
 
 const ServiceListOfSeller = ({ data }) => {
     return (
@@ -12,7 +13,9 @@ const ServiceListOfSeller = ({ data }) => {
                         <div className="component-popular-service" >
                             <div className="overlap-group">
                                 <Image className="popular-service" alt="" src={popular.overviews.files[0].url} width={230} height={122} />
-                                <div className="career-counselling">{popular.introduce}</div>
+                                <div className="career-counselling">
+                                    <CutText content={popular.introduce} start={0} end={75} />
+                                </div>
                             </div>
                             <Image className="vector" alt="Vector" src={triangle} />
                         </div>

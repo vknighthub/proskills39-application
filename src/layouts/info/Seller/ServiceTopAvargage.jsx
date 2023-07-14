@@ -50,7 +50,7 @@ const ServiceTopAvargage = ({ data }) => {
                                                         <div className="featured-item-info">
                                                             <RatingStars value={value.averagerating} />
                                                             <div className="title">
-                                                                <CutText content={value.title} start={0} end={20} />
+                                                                <CutText content={value.introduce} start={0} end={70} />
                                                             </div>
                                                             <div className="item-money">
                                                                 <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
