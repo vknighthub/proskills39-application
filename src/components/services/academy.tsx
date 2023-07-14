@@ -50,7 +50,13 @@ export const HomeAcademy = () => {
                                             <div className="overlap-group">
                                                 <Image className="vector" alt="Vector" src={vector_academy} />
                                                 <Image className="img" alt="Vector" src={background_academy} />
-                                                <Image className="academy-image" alt="image1" src={academy} />
+                                                <Image
+                                                    className="academy-image"
+                                                    alt="image1"
+                                                    src="https://api.proskills39.com/files/uploads%2Fimages%2Facademy%2Facademy1.png"
+                                                    width={164}
+                                                    height={152}
+                                                />
                                                 <p className="mother-care-service">Equipped with Blockchain knowledge, ready to catch the new trend.</p>
                                             </div>
                                         </div>
@@ -60,7 +66,12 @@ export const HomeAcademy = () => {
                                             <div className="overlap-group">
                                                 <Image className="vector" alt="Vector" src={vector_academy} />
                                                 <Image className="img" alt="Vector" src={background_academy} />
-                                                <Image className="academy-image" alt="image2" src={academy1} />
+                                                <Image
+                                                    className="academy-image"
+                                                    alt="image2" src="https://api.proskills39.com/files/uploads%2Fimages%2Facademy%2Facademy2.png"
+                                                    width={164}
+                                                    height={152}
+                                                />
                                                 <p className="mother-care-service">Improve skills, get attractive jobs</p>
                                             </div>
                                         </div>
@@ -70,7 +81,13 @@ export const HomeAcademy = () => {
                                             <div className="overlap-group">
                                                 <Image className="vector" alt="Vector" src={vector_academy} />
                                                 <Image className="img" alt="Vector" src={background_academy} />
-                                                <Image className="academy-image" alt="image3" src={academy2} />
+                                                <Image
+                                                    className="academy-image"
+                                                    alt="image3"
+                                                    src="https://api.proskills39.com/files/uploads%2Fimages%2Facademy%2Facademy3.png" 
+                                                    width={164}
+                                                    height={152}
+                                                />
                                                 <p className="mother-care-service">Training knowledge and skills for Catalyst Proposer, Community Reviewer...</p>
                                             </div>
                                         </div>

@@ -18,15 +18,15 @@ export const OtherService = () => {
         {
             id: 1,
             alt: 'foo',
-            image1: otherimage,
-            image2: otherimage2,
+            image1: 'https://api.proskills39.com/files/uploads%2Fimages%2Fotherservice%2Fotherservice1.png',
+            image2: 'https://api.proskills39.com/files/uploads%2Fimages%2Fotherservice%2Fotherservice2.png',
             description: 'Blockchain-as-a-Service'
         },
         {
             id: 2,
             alt: 'foo1',
-            image1: otherimage3,
-            image2: otherimage4,
+            image1: 'https://api.proskills39.com/files/uploads%2Fimages%2Fotherservice%2Fotherservice3.png',
+            image2: 'https://api.proskills39.com/files/uploads%2Fimages%2Fotherservice%2Fotherservice4.png',
             description: 'Business Analysis Data Analysis'
         }
     ]

@@ -12128,6 +12128,7 @@ body.dark-mode .box-next-more .text-wrapper {
   padding: 5px;
   top: 5px;
   width: 174px;
+  border-radius: 13px;
 }
 
 .component-acedemy .mother-care-service {
@@ -12376,12 +12377,16 @@ body.dark-mode .custom-select__menu {
   flex-direction: row;
   justify-content: center;
   width: 100%;
+  border-radius: 13px;
+
 }
 
 .component-popular-categories .overlap-group-wrapper {
   border: 1px none;
   height: 190px;
   width: 233px;
+  border-radius: 13px;
+
 }
 
 .component-popular-categories .overlap-group {

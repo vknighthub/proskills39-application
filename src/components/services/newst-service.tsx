@@ -70,8 +70,9 @@ export const NewestService = ({ data }: PageProps) => {
                                                                 <CutText
                                                                     content={value.introduce}
                                                                     start={0}
-                                                                    end={70}
+                                                                    end={120}
                                                                 />
+                                                                ...
                                                             </div>
                                                             <div className="item-money">
                                                                 <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
