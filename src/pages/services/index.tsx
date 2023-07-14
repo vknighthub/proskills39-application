@@ -13,6 +13,7 @@ import newest from '@/assets/images/svg/newest.svg';
 import { FetchAllServices } from '@/data/service';
 import { getPagination, pagination } from '@/utils/util';
 
+
 type Props = {}
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {

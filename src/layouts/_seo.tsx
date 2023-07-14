@@ -17,8 +17,8 @@ const Seo = ({ title, description, url, image_url, ...props }: SeoProps) => {
         images: [
           {
             url: image_url,
-            width: 800,
-            height: 600,
+            width: 1200,
+            height: 630,
             alt: title,
           }
         ],
