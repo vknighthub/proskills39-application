@@ -43,7 +43,7 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
             <SessionProvider>
               <>
 
-                <DefaultSeo />
+                {/* <DefaultSeo /> */}
 
                 {authenticationRequired ? (
                   <PrivateRoute>
