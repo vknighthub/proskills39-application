@@ -75,7 +75,7 @@ const ServiceDetail: NextPageWithLayout<
                 <div className="product-info">
                     <div className="product-info-wrapper">
                         <ServiceDetailInfo data={servicedetailinfo.services} />
-                        <ServiceDetailTab data={servicedetailinfo.package} />
+                        <ServiceDetailTab data={servicedetailinfo.package} seller={servicedetailinfo.seller} />
                     </div>
                 </div>
             </div>

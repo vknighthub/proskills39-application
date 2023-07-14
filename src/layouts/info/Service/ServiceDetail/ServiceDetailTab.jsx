@@ -20,7 +20,7 @@ const style = {
     p: 4,
 };
 
-const ServiceDetailTab = ({ data }) => {
+const ServiceDetailTab = ({ data, seller }) => {
     const [activeTab, setActiveTab] = useState("tab1");
     const activeTabNav = (value) => (value === activeTab ? "active" : ""),
         activeContent = (value) => (value === activeTab ? "active" : "");
@@ -61,8 +61,6 @@ const ServiceDetailTab = ({ data }) => {
     useEffect(() => {
         setRender(true)
     }, [render])
-
-
 
     return (
         <>
@@ -125,9 +123,23 @@ const ServiceDetailTab = ({ data }) => {
                                     </div>
                                 </div>
                                 <div className="mt-5">
-                                    <div className="place-bid">
+                                    <div className="place-bid row">
                                         {isAuthorized && render &&
-                                            <button onClick={() => handleOpen()} className="btn btn-wide btn-dark w-100">{`Continue with (v2p ${tabservice.price})`}</button>
+                                            <>
+                                                <div className="related-section">
+                                                    <div className="section-title-wrapper">
+                                                        <button
+                                                            onClick={() => handleOpen()}
+                                                            className="btn btn-wide btn-dark">{`Continue with (v2p ${tabservice.price})`}
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div className="related-section" style={{ marginLeft: 30 }}>
+                                                    <div className="section-title-wrapper">
+                                                        <Link href={`/inbox/${seller?.username}`} className="btn btn-wide btn-dark">Contact to Seller </Link>
+                                                    </div>
+                                                </div>
+                                            </>
                                         }
                                     </div>
                                 </div>
@@ -164,11 +176,7 @@ const ServiceDetailTab = ({ data }) => {
 
             </div>
 
-            <div className="related-section">
-                <div className="section-title-wrapper">
-                    <button className="btn btn-wide btn-fuchsia " >Contact to Seller (Comming soon)</button>
-                </div>
-            </div>
+
 
 
 
