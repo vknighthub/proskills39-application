@@ -42,7 +42,7 @@ const Seo = ({ title, description, url, image_url, ...props }: SeoProps) => {
         maxImagePreview: 'none',
         maxVideoPreview: -1,
       }}
-      canonical={process.env.NEXT_PUBLIC_WEBSITE_URL}
+      canonical={process.env.NEXT_PUBLIC_WEBSITE_URL_CANONICAL}
       facebook={{
         appId: '563576815726679',
       }}

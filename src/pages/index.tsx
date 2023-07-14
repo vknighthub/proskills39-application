@@ -24,7 +24,7 @@ const Home: NextPageWithLayout<
     <>
       <Seo
         title="ProSkills39 - Pro Skills For Your Success"
-        description="Nền tảng kết nối nhà cung cấp dịch vụ, chuyên gia với những người có nhu cầu sử dụng dịch vụ, kỹ năng đó."
+        description="ProSkills39 is a Service Marketplace that connects pro-skills freelancers and provides support services for project owners to start up and expand their businesses at a reasonable cost."
         url={routes.home}
         image_url='https://api.proskills39.com/system/logo/logo-seo.png'
       />
