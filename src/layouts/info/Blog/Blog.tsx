@@ -7,6 +7,7 @@ import seemore from "@/assets/images/content/blog/seemore.svg"
 import vector from "@/assets/images/content/blog/vector-187-1.svg"
 import lifecoaching from "@/assets/images/content/blog/life-coaching-1.png"
 import longai from "@/assets/images/content/blog/longai.png"
+import CutText from '@/utils/CutText';
 
 
 
@@ -30,26 +31,35 @@ const Blog = ({ list_blog }: Props) => {
                         <div className="overlap">
                             <Image className="rectangle" alt="Rectangle" src={rectangle} />
                             <div className="group">
-                                <div className="see-more">See more</div>
+                                <div className="see-more">
+                                    <Link href ={`/blog-detail/${blog.slug}`}>
+                                        See more
+                                    </Link>
+                                </div>
                                 <Image className="img" alt="Img" src={seemore} />
                             </div>
                         </div>
                         <Image className="vector" alt="Vector" src={vector} />
                         <div className="overlap-group">
-                            <div className="div" />
-                            <Image className="life-coaching" alt="Life coaching" src={lifecoaching} />
+                            {blog.typefile === 'image' ?
+                                <Image src={blog.image} width={452} height={264} alt={blog.title} />
+                                :
+                                <iframe src={blog.image} width={452} height={250} />
+                            }
                         </div>
-                        <Image className="nh-ng-v-n-freelancer" alt="Nh ng v n freelancer" src={longai} />
+                        <h6 className="nh-ng-v-n-freelancer" >
+                            {blog.title}
+                        </h6>
+
                         <p className="ch-o-c-nh-b-n-ang">
-                            Chào cả nhà! Bạn đang nghĩ đến việc trở thành freelancer? Tuyệt vời! Đó là cách tuyệt nhất để làm chủ công việc
-                            và làm việc theo ý muốn.
+                            {blog.introduce}
                         </p>
                         <div className="overlap-group-2">
                             <div className="by">By</div>
                             <div className="element">31/05/2023</div>
-                            <a className="alyssa-sweeten" href="" rel="noopener noreferrer" target="_blank">
-                                Alyssa Sweeten
-                            </a>
+                            <Link className="alyssa-sweeten" href={`/user-profile/${blog.author.username}`} rel="noopener noreferrer" target="_blank">
+                                {blog.author.fullname}
+                            </Link>
                         </div>
                     </div>
                 ))}

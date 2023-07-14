@@ -54,7 +54,6 @@ const BlogPage: NextPageWithLayout = (props: Props) => {
             />
             <div className="background-content">
                 <Blog list_blog={data?.blog} />
-
             </div>
         </>
     )
