@@ -13,7 +13,6 @@ import { SessionProvider } from 'next-auth/react'
 import { ToastProvider } from '@/components/utils/Toast'
 import { Toaster } from 'react-hot-toast'
 import { MeshProvider } from "@meshsdk/react";
-import { isMobileDevice } from '@/utils/isMobileDevice'
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
