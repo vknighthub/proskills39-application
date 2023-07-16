@@ -13049,6 +13049,18 @@ iframe {
   border-bottom-right-radius: 24px;
 }
 
+.bIHnHw .wrapper {
+  border: 1px solid #3f76e4 !important;
+  background-color: transparent !important;
+  font-family: 'Quicksand' !important;
+  border-right: none !important;
+}
+
+.bIHnH .wrapper .PxeSY>input {
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
 .item-proposal {
   transition: .4s all;
 }
