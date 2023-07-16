@@ -16,7 +16,12 @@ const Challenges = ({ data }) => {
         {data && data.map((challenge) => (
           <div className="news-item" key={challenge.challengeId}>
             <div className="news-content">
-
+              <Image src={challenge.imageUrl}
+                alt={challenge.challengeId}
+                width={375}
+                height={200}
+                style={{borderRadius: 12}}
+              />
               <div className="news-title h5">
                 {" "}
                 <Link href={{

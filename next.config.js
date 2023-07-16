@@ -37,7 +37,9 @@ module.exports = withPWA({
       'api.proskills39.com',
       'static.ideascale.com',
       'encrypted-tbn0.gstatic.com',
-      'generation-sessions.s3.amazonaws.com'
+      'generation-sessions.s3.amazonaws.com',
+      'app.ideascaleapp.eu',
+      'static.ideascaleapp.eu'
     ],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],

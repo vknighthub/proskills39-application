@@ -8122,7 +8122,7 @@ blockquote p {
 }
 
 .product-version-1 .product-media {
-  background-color: var(--lighter-gray);
+  background-color: rgba(0, 0, 0, 0.22);
   padding-top: max(5vw, 85px);
   border-right: 1px solid var(--border-color);
   position: relative;

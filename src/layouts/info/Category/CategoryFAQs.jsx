@@ -8,7 +8,7 @@ const CategoryFAQs = ({ data }) => {
         activeFaq === value ? setActiveFaq("") : setActiveFaq(value),
         classNameChange = (value) => (value === activeFaq ? "" : "show");
 
-
+    
     return (
         <div className="primary-content-area section-medium content-padding">
             <div className="page-title text-center">

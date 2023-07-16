@@ -10,24 +10,24 @@ const ProposalDetail = ({ data }) => {
 
   return (
     <>
-      
-      <div className="product-page product-version-1">
-        <div className="product-media">
-          <div className="ml-3">
-            <ProposalSection proposalSection={proposalSection} />
+      <div className="background-content">
+        <div className="product-page product-version-1">
+          <div className="product-media">
+            <div className="ml-3">
+              <ProposalSection proposalSection={proposalSection} />
+            </div>
+          </div>
+          <div className="product-info">
+            <div className="product-info-wrapper">
+              <ProposalDetailnfo proposal={proposal_general} assessment={assessment} />
+            </div>
           </div>
         </div>
-        <div className="product-info">
-          <div className="product-info-wrapper">
-            <ProposalDetailnfo proposal={proposal_general} assessment={assessment} />
-          </div>
-        </div>
-      </div>
 
-      <div className="product-page">
+        <div className="product-page">
           <ProposalRelated />
+        </div>
       </div>
-
     </>
   );
 };
