@@ -44,6 +44,7 @@ const CatalystVoterTool = ({ data
                             fuseOptions={{ keys: ["challengeName"] }}
                             resultStringKeyName="challengeName"
                             placeholder="Enter your search here..."
+                            
                         />
                     </div>
                 </div>

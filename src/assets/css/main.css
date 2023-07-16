@@ -6679,6 +6679,7 @@ body.dark-mode .footer {
 .post-featured-image {
   margin-bottom: clamp(2rem, 4.5vmax, 70px);
 }
+
 .post-featured-image img {
   border-radius: 13px;
   background-color: transparent;
@@ -7076,11 +7077,11 @@ blockquote p {
 .featured-item .featured-item-info .title,
 .featured-item.v3 .featured-item-wrapper .title,
 .featured-item.v4 .featured-item-author .title {
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 700;
   margin-bottom: 10px;
   letter-spacing: var(--letter-spacing);
-  color: #000;
+  color: #0d81ed;
   height: 70px;
 }
 
@@ -12834,11 +12835,11 @@ body.dark-mode .custom-select__menu {
   margin-top: 80px;
 }
 
-.swiper-button-prev-other-service{
+.swiper-button-prev-other-service {
   margin-top: 70px;
 }
 
-.swiper-button-next-other-service{
+.swiper-button-next-other-service {
   margin-top: 70px;
 }
 
@@ -12922,7 +12923,9 @@ body.dark-mode .custom-select__menu {
   width: 452px;
   border-radius: 10px;
 }
-.component-blog .overlap-group img , iframe{
+
+.component-blog .overlap-group img,
+iframe {
   border-radius: 10px;
 }
 
@@ -13022,13 +13025,42 @@ body.dark-mode .custom-select__menu {
   white-space: nowrap;
   width: 64px;
 }
+
 .blog-title {
   background-color: var(--main-font-color);
-    background-image: var(--cryptoki-gradient);
-    background-size: 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
+  background-image: var(--cryptoki-gradient);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.bDXSmh .wrapper {
+  border: 1px solid #3f76e4 !important;
+  background-color: transparent !important;
+  font-family: 'Quicksand' !important;
+  border-right: none !important;
+}
+
+.bDXSmh .wrapper .PxeSY>input {
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+.item-proposal {
+  transition: .4s all;
+}
+
+.item-proposal:hover {
+  transform: translatey(-10px);
+}
+
+.item-proposal .featured-item-wrapper {
+  background-color: rgb(0, 0, 0, 0.52) !important;
+}
+
+.item-proposal .featured-item-content {
+  background-color: transparent !important;
 }

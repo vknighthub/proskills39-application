@@ -62,7 +62,7 @@ const ProposalList = ({ data }) => {
         </div>
         <div className="featured-box grid-3-columns">
           {data && data.listProposal && data.listProposal.map((proposal) => (
-            <div className="featured-item" key={proposal.proposalId}>
+            <div className="featured-item item-proposal" key={proposal.proposalId}>
               <Link href={{
                 pathname: '/proposals/[proposalId]',
                 query: { proposalId: proposal.proposalId },
