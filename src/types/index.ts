@@ -450,7 +450,11 @@ export interface AssessmentDetail {
 }
 
 export interface ProposalQueryOptions {
-    challengeId?: number
+    top?: string
+    language?: string
+    page?: number
+    limit?: number
+    search?: string
 }
 
 
@@ -1057,3 +1061,10 @@ export interface ConnectWalletResponse extends ResponseObject<{}> { }
 export interface FollowResponse extends ResponseObject<{}> { }
 
 
+export interface GetParamsProposal {
+    top?: string
+    language?: string
+    page?: number
+    limit?: number
+    search?: string
+}

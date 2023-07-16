@@ -22,7 +22,7 @@ class Client {
         userinfo: ({ username }: UserInfoInput) => HttpClient.get<UserProfilePageResponse>(API_ENDPOINTS.USER_INFO, { username }),
         attendancedaily: () => HttpClient.post<AttendancedailyResponse>(API_ENDPOINTS.ATTENDANCEDAILY, {}),
         connectwallet: ({ walletname }: { walletname: string }) => HttpClient.post<ConnectWalletResponse>(API_ENDPOINTS.CONNECT_WALLET, { walletname }),
-        follow:({username }: { username: string }) => HttpClient.post<FollowResponse>(API_ENDPOINTS.FOLLOW, { username })
+        follow: ({ username }: { username: string }) => HttpClient.post<FollowResponse>(API_ENDPOINTS.FOLLOW, { username })
     }
     fund = {
         all: () =>
@@ -33,8 +33,8 @@ class Client {
         get: (fundid: string | undefined) => HttpClient.get<Challenge>(`${API_ENDPOINTS.DREP_CHALLENGE}/${fundid}`)
     }
     proposal = {
-        all: (query?: ProposalQueryOptions) =>
-            HttpClient.get(`${API_ENDPOINTS.DREP_PROPOSAL}/${query?.challengeId}`),
+        all: (proposal: number, query?: ProposalQueryOptions) =>
+            HttpClient.get(`${API_ENDPOINTS.DREP_PROPOSAL}/${proposal}`, query),
         get: (challengeid: string | undefined) => HttpClient.get<ChallengeResult>(`${API_ENDPOINTS.DREP_PROPOSAL}/${challengeid}`),
         getbyid: (proposalid: string | undefined, language: string | undefined) => HttpClient.get<ProposalResult>(`${API_ENDPOINTS.DREP_PROPOSALBYID}/${proposalid}`, {
             language

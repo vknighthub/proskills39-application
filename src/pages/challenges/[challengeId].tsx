@@ -10,6 +10,7 @@ import routes from '@/config/routes'
 
 type PageProps = {
     challenge: ChallengeResult
+    challengeId: string
 }
 
 type ParsedQueryParams = {
@@ -41,8 +42,9 @@ export const getStaticProps: GetStaticProps<
         const challenge = await client.proposal.get(challengeId)
         return {
             props: {
+                challengeId,
                 challenge,
-                ...(await serverSideTranslations(locale!, ['common','footer'])),
+                ...(await serverSideTranslations(locale!, ['common', 'footer'])),
             },
             revalidate: 60, // In seconds
         }
@@ -56,7 +58,7 @@ export const getStaticProps: GetStaticProps<
 
 const ChallengePage: NextPageWithLayout<InferGetStaticPropsType<
     typeof getStaticProps
->> = ({ challenge }) => {
+>> = ({ challenge, challengeId }) => {
     const challengeDetail = challenge.result.data
 
     return (
@@ -67,8 +69,8 @@ const ChallengePage: NextPageWithLayout<InferGetStaticPropsType<
                 url={routes.chanllengesUrl(challengeDetail.challengeId)}
                 image_url={challengeDetail.challengeImage}
             />
-            
-            <ChanllengePage data={challenge} />
+
+            <ChanllengePage data={challenge} challengeId={challengeId} />
         </>
     )
 }
