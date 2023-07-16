@@ -7077,8 +7077,8 @@ blockquote p {
 .featured-item .featured-item-info .title,
 .featured-item.v3 .featured-item-wrapper .title,
 .featured-item.v4 .featured-item-author .title {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: 600;
   margin-bottom: 10px;
   letter-spacing: var(--letter-spacing);
   color: #0d81ed;
@@ -13063,4 +13063,9 @@ iframe {
 
 .item-proposal .featured-item-content {
   background-color: transparent !important;
+}
+
+.item-proposal .featured-item-wrapper .featured-item-info .title {
+  font-size: 18px;
+  font-weight: 600;
 }
