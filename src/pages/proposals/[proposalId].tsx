@@ -43,6 +43,7 @@ const ProposalPage: NextPageWithLayout<
     InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ proposal }) => {
     const proposalDetail = proposal.result.data.proposal_infor
+    console.log(proposalDetail.proposalName)
     return (
         <>
             <NextSeo
@@ -61,12 +62,7 @@ const ProposalPage: NextPageWithLayout<
                             height: 630,
                             alt: "ProSkills39 - Voter Tool",
                         }
-                    ],
-                    book: {
-                        authors: [
-                            "https://anhben.com",
-                        ]
-                    }
+                    ]
                 }}
                 twitter={{
                     handle: "@ProSkills39",
