@@ -67,12 +67,12 @@ const CategoriesPage: NextPageWithLayout<
     = ({ category }) => {
         
         const categoryDetail = category.result.data
-
+        
         return (
             <>
                 <Seo title="ProSkills39 - Categories"
                     description={categoryDetail.description}
-                    url={routes.categoriesUrl(categoryDetail?.url)}
+                    url={routes.categoriesUrl(categoryDetail.url)}
                     image_url={categoryDetail.image} />
                 <CategoryPage category={categoryDetail} />
             </>

@@ -1,11 +1,10 @@
 import client from '@/data/client';
-import ProposalDetail from '@/layouts/info/ProposalDetail';
 import Layout from '@/layouts/_layout';
+import ProposalDetail from '@/layouts/info/ProposalDetail';
 import { NextPageWithLayout, ProposalResult } from '@/types';
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { NextSeo } from 'next-seo';
-import invariant from 'tiny-invariant';
 
 
 
@@ -17,17 +16,8 @@ type ParsedQueryParams = {
     proposalId: string;
 };
 
-export const getStaticPaths: GetStaticPaths = async (
-    {
-        locales,
-    }
-) => {
-    invariant(locales, 'locales is not defined');
-    return { paths: [], fallback: 'blocking' };
-};
 
-
-export const getStaticProps: GetStaticProps<
+export const getServerSideProps: GetServerSideProps<
     PageProps,
     ParsedQueryParams
 > = async ({ params, locale }) => {
@@ -51,7 +41,7 @@ export const getStaticProps: GetStaticProps<
 };
 
 const ProposalPage: NextPageWithLayout<
-    InferGetStaticPropsType<typeof getStaticProps>
+    InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ proposal }) => {
     const proposalDetail = proposal.result.data.proposal_infor
     return (
