@@ -29,8 +29,7 @@ export const getServerSideProps: GetServerSideProps<
             props: {
                 proposal,
                 ...(await serverSideTranslations(locale!, ['common', 'footer'])),
-            },
-            revalidate: 60, // In seconds
+            }
         };
     } catch (error) {
         //* if we get here, the product doesn't exist or something else went wrong
