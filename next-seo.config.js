@@ -70,45 +70,5 @@ export default {
         },
     ],
 
-    additionalLinkTags: [
-        {
-        rel: "apple-touch-icon",
-        href: "/icon/apple-touch-icon.png",
-        },
-        {
-        rel: "apple-touch-icon",
-        sizes: "152x152",
-        href: "/icon/apple-touch-icon-152x152.png",
-        },
-        {
-        rel: "apple-touch-icon",
-        sizes: "180x180",
-        href: "/icon/apple-touch-icon-180x180.png",
-        },
-        {
-        rel: "icon",
-        type: "image/png",
-        sizes: "32x32",
-        href: "/icon/favicon-32x32.png",
-        },
-        {
-        rel: "icon",
-        type: "image/png",
-        sizes: "16x16",
-        href: "/icon/favicon-16x16.png",
-        },
-        {
-        rel: "manifest",
-        href: "/manifest.webmanifest",
-        },
-        {
-        rel: "mask-icon",
-        href: "/icon/safari-pinned-tab.svg",
-        color: "#000000",
-        },
-        {
-        rel: "shortcut icon",
-        href: "/icon/favicon.ico",
-        },
-    ],
+    additionalLinkTags: [],
 };
