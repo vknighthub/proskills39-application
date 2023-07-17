@@ -1,11 +1,10 @@
-import routes from '@/config/routes';
 import client from '@/data/client';
 import ProposalDetail from '@/layouts/info/ProposalDetail';
 import Layout from '@/layouts/_layout';
-import Seo from '@/layouts/_seo';
-import { NextPageWithLayout, ProposalDetailType, ProposalResult } from '@/types';
+import { NextPageWithLayout, ProposalResult } from '@/types';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { NextSeo } from 'next-seo';
 import invariant from 'tiny-invariant';
 
 
@@ -39,7 +38,7 @@ export const getStaticProps: GetStaticProps<
         return {
             props: {
                 proposal,
-                ...(await serverSideTranslations(locale!, ['common','footer'])),
+                ...(await serverSideTranslations(locale!, ['common', 'footer'])),
             },
             revalidate: 60, // In seconds
         };
@@ -57,11 +56,35 @@ const ProposalPage: NextPageWithLayout<
     const proposalDetail = proposal.result.data.proposal_infor
     return (
         <>
-            <Seo
+            <NextSeo
                 title="ProSkills39 - Voter Tool"
                 description={proposalDetail.proposalName}
-                url={routes.proposalsUrl(proposalDetail.proposalId)}
-                image_url='https://api.proskills39.com/system/logo/logo-seo.png'
+                openGraph={{
+                    title: "ProSkills39 - Voter Tool",
+                    site_name: "ProSkills39 - Voter Tool",
+                    type: "website",
+                    url: `https://proskills39.com/proposals/${proposalDetail.proposalId}`,
+                    description: `${proposalDetail.proposalName}`,
+                    images: [
+                        {
+                            url: "https://api.proskills39.com/system/logo/logo-seo.png",
+                            width: 1200,
+                            height: 630,
+                            alt: "ProSkills39 - Voter Tool",
+                        }
+                    ],
+                    book: {
+                        authors: [
+                            "https://anhben.com",
+                        ]
+                    }
+                }}
+                twitter={{
+                    handle: "@vknighthub",
+                    site: "@vknighthub",
+                    cardType: "summary_large_image",
+                }}
+                canonical={process.env.NEXT_PUBLIC_WEBSITE_URL_CANONICAL}
             />
             <ProposalDetail data={proposal} />
         </>
