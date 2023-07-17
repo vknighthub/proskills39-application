@@ -57,7 +57,7 @@ const ProposalPage: NextPageWithLayout<
     return (
         <>
             <NextSeo
-                title="ProSkills39 - Voter Tool"
+                title="ProSkills39-Voter Tool"
                 description={proposalDetail.proposalName}
                 openGraph={{
                     title: "ProSkills39 - Voter Tool",
@@ -80,11 +80,11 @@ const ProposalPage: NextPageWithLayout<
                     }
                 }}
                 twitter={{
-                    handle: "@vknighthub",
-                    site: "@vknighthub",
+                    handle: "@ProSkills39",
+                    site: "@ProSkills39",
                     cardType: "summary_large_image",
                 }}
-                canonical={process.env.NEXT_PUBLIC_WEBSITE_URL_CANONICAL}
+                canonical={`https://www.proskills39.com/proposals/${proposalDetail.proposalId}`}
             />
             <ProposalDetail data={proposal} />
         </>

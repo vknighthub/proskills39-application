@@ -45,7 +45,7 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
               <SessionProvider>
                 <>
 
-                  <DefaultSeo />
+                  {/* <DefaultSeo /> */}
                   <GoogleAnalytics trackPageViews gaMeasurementId='G-PEV1Z2KBFH' />
 
                   {authenticationRequired ? (

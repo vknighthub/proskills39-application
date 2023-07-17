@@ -29,8 +29,8 @@ const Seo = ({ title, description, url, image_url, ...props }: SeoProps) => {
         }
       }}
       twitter={{
-        handle: "@vknighthub",
-        site: "@vknighthub",
+        handle: "@ProSkills39",
+        site: "@ProSkills39",
         cardType: "summary_large_image",
       }}
       canonical={process.env.NEXT_PUBLIC_WEBSITE_URL_CANONICAL}
