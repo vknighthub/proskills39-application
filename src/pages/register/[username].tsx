@@ -1,7 +1,7 @@
 import RegisterUserForm from '@/components/auth/register-form'
 import routes from '@/config/routes'
 import Layout from '@/layouts/_layout'
-import Seo from '@/layouts/_seo'
+import Seo from '@/pages/_seo'
 import { NextPageWithLayout } from '@/types'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'

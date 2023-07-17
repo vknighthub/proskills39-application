@@ -1,6 +1,6 @@
 import routes from '@/config/routes';
 import Layout from '@/layouts/_layout'
-import Seo from '@/layouts/_seo';
+import Seo from '@/pages/_seo';
 import { NextPageWithLayout } from '@/types'
 import CutText from '@/utils/CutText';
 import RatingStars from '@/utils/ratingstar';

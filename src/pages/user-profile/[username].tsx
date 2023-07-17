@@ -7,7 +7,7 @@ import ProfileInfoSidebarSeller from '@/layouts/info/Profile/ProfileInfoSidebarS
 import ServiceListOfSeller from '@/layouts/info/Seller/ServiceListOfSeller'
 import ServiceTopAvargage from '@/layouts/info/Seller/ServiceTopAvargage'
 import Layout from '@/layouts/_layout'
-import Seo from '@/layouts/_seo'
+import Seo from '@/pages/_seo'
 import { NextPageWithLayout, UserProfilePageResponse } from '@/types'
 import parse from 'html-react-parser'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'

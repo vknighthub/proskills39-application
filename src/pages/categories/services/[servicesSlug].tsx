@@ -6,7 +6,7 @@ import routes from '@/config/routes';
 import { FetchServiceByCatalogSlug } from '@/data/categories';
 import client from '@/data/client';
 import Layout from '@/layouts/_layout';
-import Seo from '@/layouts/_seo';
+import Seo from '@/pages/_seo';
 import { Mostpopularseller, NextPageWithLayout, Service, ServicePaginator } from '@/types';
 import RatingStars from '@/utils/ratingstar';
 import { getPagination, pagination } from '@/utils/util';

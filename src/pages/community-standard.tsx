@@ -5,7 +5,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Image from 'next/image';
 import React from 'react'
 import masterpage from '@/assets/images/content/community/masterpage.png'
-import Seo from '@/layouts/_seo';
+import Seo from '@/pages/_seo';
 import routes from '@/config/routes';
 import Link from 'next/link';
 

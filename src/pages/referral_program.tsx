@@ -4,7 +4,7 @@ import routes from '@/config/routes';
 import client from '@/data/client';
 import { useMe } from '@/data/user';
 import Layout from '@/layouts/_layout';
-import Seo from '@/layouts/_seo';
+import Seo from '@/pages/_seo';
 import { InvitateFriendInput, NextPageWithLayout } from '@/types';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { GetStaticProps } from 'next';

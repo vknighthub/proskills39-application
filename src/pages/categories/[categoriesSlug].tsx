@@ -5,7 +5,7 @@ import { Category, NextPageWithLayout, CategoryPaginator } from '@/types';
 import invariant from "invariant";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Seo from "@/layouts/_seo";
+import Seo from "@/pages/_seo";
 import routes from "@/config/routes";
 
 type ParsedQueryParams = {

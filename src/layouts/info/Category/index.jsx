@@ -1,5 +1,5 @@
 
-import Seo from '@/layouts/_seo';
+import Seo from '@/pages/_seo';
 import CategoryPopular from "./CategoryPopular";
 import CategoryExplore from "./CategoryExplore";
 import CategoryFAQs from "./CategoryFAQs";

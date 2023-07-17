@@ -21,7 +21,6 @@ export default {
         site: "@ProSkills39",
         cardType: "summary_large_image",
     },
-    description:"ProSkills39 is a Service Marketplace that connects pro-skills freelancers and provides support services for project owners to start up and expand their businesses at a reasonable cost.",
     additionalMetaTags: [
         {
         name: "viewport",
