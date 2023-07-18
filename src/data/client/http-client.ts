@@ -1,7 +1,7 @@
+import { AES256Decrypt, AES256Encrypt } from '@/utils/Encrypt';
 import axios, { AxiosRequestHeaders } from 'axios';
-import { AUTH_TOKEN_KEY, getAuthToken, removeAuthToken } from './token.utils';
-import Router from 'next/router';
 import Cookies from 'js-cookie';
+import { AUTH_TOKEN_KEY } from './token.utils';
 
 const Axios = axios.create({
     baseURL: process.env.NEXT_PUBLIC_REST_API_ENDPOINT,
@@ -47,14 +47,37 @@ Axios.interceptors.response.use(
 export class HttpClient {
     static async get<T>(url: string, params?: unknown) {
         const response = await Axios.get<T>(url, { params });
-        return response.data;
+        const ivkey = response.headers["proskills39"];
+        return AES256Decrypt(response.data, ivkey);
     }
     static async post<T>(url: string, data: unknown, options?: any) {
-        const response = await Axios.post<T>(url, data, options);
-        return response.data;
+        const requestData = AES256Encrypt(data);
+        const customOption = {
+            ...options,
+            headers: {
+                'proskills39': requestData.iv
+            }
+        }
+        const response = await Axios.post<T>(url, data, customOption);
+        const ivkey = response.headers["proskills39"];
+        return AES256Decrypt(response.data, ivkey);
     }
-    static async put<T>(url: string, data: unknown) {
-        const response = await Axios.put<T>(url, data);
-        return response.data;
+    static async put<T>(url: string, data: unknown, options?: any) {
+        const requestData = AES256Encrypt(data);
+        const customOption = {
+            ...options,
+            headers: {
+                'proskills39': requestData.iv
+            }
+        }
+        const response = await Axios.put<T>(url, data, customOption);
+        const ivkey = response.headers["proskills39"];
+        return AES256Decrypt(response.data, ivkey);
+    }
+    static async delete<T>(url: string) {
+        const response = await Axios.delete<T>(url);
+
+        const ivkey = response.headers["proskills39"];
+        return AES256Decrypt(response.data, ivkey);
     }
 }
