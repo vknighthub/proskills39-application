@@ -23,7 +23,7 @@ const TermOfService: NextPageWithLayout = () => {
                 url={routes.terms_of_service}
                 image_url='https://api.proskills39.com/system/logo/logotest.png'
             />
-            <div className="primary-content-area container content-padding">
+            <div className="primary-content-area container content-padding background-content">
                 <div className="single-post medium-section">
                     <div className="post-heading">
                         <h2>PROSKILLS39’S TERMS OF SERVICE</h2>

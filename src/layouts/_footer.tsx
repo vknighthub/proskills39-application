@@ -17,7 +17,7 @@ export default function Footer() {
                     <div className="footer-column footer-column-large">
                         <div className="footer-widget">
                             <div className="logo">
-                                <Logo isDark={true} />
+                                <Logo />
                             </div>
                             <div className="footer-text">
                                 <p>

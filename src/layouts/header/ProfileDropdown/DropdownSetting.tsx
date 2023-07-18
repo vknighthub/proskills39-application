@@ -62,7 +62,7 @@ const DropdownSetting = ({ userdata, toggle, setToggle }: PageProps) => {
                             </li>
                             <li className="artwork">
                                 {" "}
-                                <Link href="http://admin.proskills39.com/" target='_blank'>
+                                <Link href="https://admin.proskills39.com/seller/engagement" target='_blank'>
                                     <svg className="crumina-icon">
                                         <use xlinkHref="#picture-icon" />
                                     </svg>

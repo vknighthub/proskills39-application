@@ -25,6 +25,7 @@ export const getServerSideProps: GetServerSideProps<
     const { proposalId } = params!; //* we know it's required because of getStaticPaths
     try {
         const proposal = await client.proposal.getbyid(proposalId, locale);
+        console.log(proposal.result.data.proposal_infor)
         return {
             props: {
                 proposal,
@@ -43,7 +44,7 @@ const ProposalPage: NextPageWithLayout<
     InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ proposal }) => {
     const proposalDetail = proposal.result.data.proposal_infor
-    console.log(proposalDetail.proposalName)
+
     return (
         <>
             <NextSeo

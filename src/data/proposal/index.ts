@@ -7,7 +7,6 @@ import { GetParamsProposal } from "@/types";
 
 
 export const FetchProposal = (proposal: number, dataFillter: GetParamsProposal, initData: any) => {
-    console.log(dataFillter)
     const { data, isLoading, error, refetch } = useQuery(
         'proposal-get-all',
         () => client.proposal.all(proposal, dataFillter),

@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
 const SupportPage: NextPageWithLayout = (props: Props) => {
     return (
-        <div className="primary-content-area profile-page">
+        <div className="primary-content-area profile-page background-content">
             <div className="profile-page-container container">
                 <div className="tabs-block swiper-container">
                     <div className="swiper-nav">

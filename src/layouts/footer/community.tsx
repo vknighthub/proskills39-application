@@ -13,47 +13,47 @@ const CommunityFooter = (props: Props) => {
     const community = [
         {
             "id": 1,
-            "slug": "events",
+            "slug": "/events",
             "name": "text-events"
         },
         {
             "id": 2,
-            "slug": "blog",
+            "slug": "/blog",
             "name": "text-blog"
         },
         {
             "id": 3,
-            "slug": "forums",
+            "slug": "/forums",
             "name": "text-forum"
         },
         {
             "id": 4,
-            "slug": "community-standard",
+            "slug": "/community-standard",
             "name": "text-community-standards"
         },
         {
             "id": 5,
-            "slug": "podcast",
+            "slug": "/podcast",
             "name": "text-podcast"
         },
         {
             "id": 6,
-            "slug": "influencers",
+            "slug": "/influencers",
             "name": "text-influencer"
         },
         {
             "id": 7,
-            "slug": "affiliates",
+            "slug": "/affiliates",
             "name": "text-affiliates"
         },
         {
             "id": 8,
-            "slug": "referral_program",
+            "slug": "/referral_program",
             "name": "text-invite-friend"
         },
         {
             "id": 9,
-            "slug": "seller",
+            "slug": "https://admin.proskills39.com/seller/engagement",
             "name": "text-become-to-seller"
         }
     ]
@@ -63,7 +63,7 @@ const CommunityFooter = (props: Props) => {
             {community.map((community, index) => (
                 <li key={index} className="menu-item">
                     {" "}
-                    <Link href={`/${community.slug}`} className="menu-link">
+                    <Link href={`${community.slug}`} className="menu-link">
                         {t(community.name)}
                     </Link>{" "}
                 </li>

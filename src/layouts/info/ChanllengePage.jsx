@@ -7,7 +7,7 @@ import ProposalList from './Proposal/ProposalList';
 const ChanllengePage = ({ data, challengeId }) => {
 
   const chanllenge = data.result.data.data
-
+  
 
   return (
     <div className="primary-content-area background-content container content-padding ">
