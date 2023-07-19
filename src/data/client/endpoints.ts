@@ -29,5 +29,6 @@ export const API_ENDPOINTS = {
     FREELANCER_BYLEVEL: '/user/getfreelancerbylevel',
     ATTENDANCEDAILY: '/user/attendancedaily',
     CONNECT_WALLET: '/user/connectwallet',
-    FOLLOW: '/user/follow'
+    FOLLOW: '/user/follow',
+    GET_PROPOSAL: '/drep/getallproposal'
 }

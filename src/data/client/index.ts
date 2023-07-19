@@ -1,4 +1,4 @@
-import { ApplyLetterInput, ApplyLetterResponse, AttendancedailyResponse, AuthResponse, BlogDetailResponse, BlogParams, BlogResponse, CategoriesPaginator, CategoryPaginator, ChallegePaginator, Challenge, ChallengeResult, ConnectWalletResponse, DealInput, FollowResponse, ForgotPasswordInput, ForgotPasswordResponse, FreelancerPaginator, GetParams, HomePageResult, InvitateFriendInput, InviteFriendResponse, LoginUserInput, NotificationResponse, ProposalQueryOptions, ProposalResult, RegisterUserInput, ServiceDealResponse, ServiceDetailPaginator, ServicePaginator, SettingQuery, SettingsQueryOptions, SubmitDealInput, SubmitDealResponse, UpdateProfileInput, UserInfoInput, UserProfilePageResponse, UserProfileResult, UserUpdateResult } from "@/types";
+import { ApplyLetterInput, ApplyLetterResponse, AttendancedailyResponse, AuthResponse, BlogDetailResponse, BlogParams, BlogResponse, CategoriesPaginator, CategoryPaginator, ChallegePaginator, Challenge, ChallengeResult, ConnectWalletResponse, DealInput, FollowResponse, ForgotPasswordInput, ForgotPasswordResponse, FreelancerPaginator, GetParams, HomePageResult, InvitateFriendInput, InviteFriendResponse, ListProposalIDResult, LoginUserInput, NotificationResponse, ProposalQueryOptions, ProposalResult, RegisterUserInput, ServiceDealResponse, ServiceDetailPaginator, ServicePaginator, SettingQuery, SettingsQueryOptions, SubmitDealInput, SubmitDealResponse, UpdateProfileInput, UserInfoInput, UserProfilePageResponse, UserProfileResult, UserUpdateResult } from "@/types";
 import { API_ENDPOINTS } from "./endpoints";
 import { HttpClient } from './http-client';
 
@@ -38,7 +38,8 @@ class Client {
         get: (challengeid: string | undefined) => HttpClient.get<ChallengeResult>(`${API_ENDPOINTS.DREP_PROPOSAL}/${challengeid}`),
         getbyid: (proposalid: string | undefined, language: string | undefined) => HttpClient.get<ProposalResult>(`${API_ENDPOINTS.DREP_PROPOSALBYID}/${proposalid}`, {
             language
-        })
+        }),
+        getall: () => HttpClient.get<ListProposalIDResult>(API_ENDPOINTS.GET_PROPOSAL)
     }
     categories = {
         all: (params?: SettingsQueryOptions) =>

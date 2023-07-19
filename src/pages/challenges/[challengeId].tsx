@@ -21,7 +21,7 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
     invariant(locales, 'locales is not defined')
     const data = await client.challenge.all(process.env.NEXT_PUBLIC_FUND9)
     const result = data.result.data
-    const paths = result?.flatMap((challenge) =>
+    const paths = result?.flatMap((challenge: { challengeId: { toString: () => any } }) =>
         locales?.map((locale) => ({
             params: { challengeId: challenge.challengeId.toString() },
             locale,

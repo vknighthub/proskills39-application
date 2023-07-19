@@ -1068,3 +1068,13 @@ export interface GetParamsProposal {
     limit?: number
     search?: string
 }
+export type ThemeColor = 'primary' | 'secondary' | 'error' | 'warning' | 'info' | 'success'
+
+export type StatusObjType = {
+    busy: ThemeColor
+    away: ThemeColor
+    online: ThemeColor
+    offline: ThemeColor
+}
+
+export interface ListProposalIDResult extends ResponseArray<number> { }

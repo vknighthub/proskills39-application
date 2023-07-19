@@ -2,9 +2,10 @@ import client from '@/data/client';
 import Layout from '@/layouts/_layout';
 import ProposalDetail from '@/layouts/info/ProposalDetail';
 import { NextPageWithLayout, ProposalResult } from '@/types';
-import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
+import { GetServerSideProps, GetStaticPaths, GetStaticProps, InferGetServerSidePropsType, InferGetStaticPropsType } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { NextSeo } from 'next-seo';
+import invariant from 'tiny-invariant';
 
 
 
@@ -17,7 +18,19 @@ type ParsedQueryParams = {
 };
 
 
-export const getServerSideProps: GetServerSideProps<
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+    invariant(locales, 'locales is not defined')
+    const proposal = await client.proposal.getall()
+    const paths = proposal.result.data.map((item: number) => ({
+        params: { proposalId: `${item}` }
+    }))
+    return {
+        paths: paths,
+        fallback: false,
+    }
+}
+
+export const getStaticProps: GetStaticProps<
     PageProps,
     ParsedQueryParams
 > = async ({ params, locale }) => {
@@ -25,12 +38,13 @@ export const getServerSideProps: GetServerSideProps<
     const { proposalId } = params!; //* we know it's required because of getStaticPaths
     try {
         const proposal = await client.proposal.getbyid(proposalId, locale);
-        console.log(proposal.result.data.proposal_infor)
+
         return {
             props: {
                 proposal,
                 ...(await serverSideTranslations(locale!, ['common', 'footer'])),
-            }
+            },
+            revalidate: 60, // In seconds
         };
     } catch (error) {
         //* if we get here, the product doesn't exist or something else went wrong
@@ -41,7 +55,7 @@ export const getServerSideProps: GetServerSideProps<
 };
 
 const ProposalPage: NextPageWithLayout<
-    InferGetServerSidePropsType<typeof getServerSideProps>
+    InferGetStaticPropsType<typeof getStaticProps>
 > = ({ proposal }) => {
     const proposalDetail = proposal.result.data.proposal_infor
 
