@@ -1,8 +1,8 @@
 import client from '@/data/client';
-import Layout from '@/layouts/_layout';
 import ProposalDetail from '@/layouts/info/ProposalDetail';
+import Layout from '@/layouts/_layout';
 import { NextPageWithLayout, ProposalResult } from '@/types';
-import { GetServerSideProps, GetStaticPaths, GetStaticProps, InferGetServerSidePropsType, InferGetStaticPropsType } from 'next';
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { NextSeo } from 'next-seo';
 import invariant from 'tiny-invariant';
@@ -21,9 +21,14 @@ type ParsedQueryParams = {
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
     invariant(locales, 'locales is not defined')
     const proposal = await client.proposal.getall()
-    const paths = proposal.result.data.map((item: number) => ({
-        params: { proposalId: `${item}` }
-    }))
+    const result = proposal.result.data
+    
+    const paths = result.flatMap((proposal: number) =>
+        locales?.map((locale) => ({
+            params: { proposalId: proposal.toString() },
+            locale,
+        })),
+    )
     return {
         paths: paths,
         fallback: false,
