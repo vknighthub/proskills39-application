@@ -4960,7 +4960,6 @@ body.dark-mode #filter-form input[type="submit"] {
 
 #artworks-filter-form {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -7083,11 +7082,13 @@ blockquote p {
   letter-spacing: var(--letter-spacing);
   color: #0d81ed;
   height: 70px;
+  line-height: 16px !important; 
 }
 
 .featured-item .featured-item-info .title a:hover {
   color: inherit;
 }
+
 
 .item-meta {
   display: flex;
@@ -11393,6 +11394,19 @@ td[data-label="Date"] {
 .fs-6 {
   font-size: 1rem !important;
 }
+.fs-7 {
+  font-size: 0.5rem !important;
+}
+.fs-18:{
+  font-size:18px !important;
+}
+.fs-14: {
+  font-size:14px !important;
+}
+.fs-12: {
+  font-size:12px !important;
+}
+
 
 .mt-0 {
   margin-top: 0 !important;
@@ -11739,10 +11753,10 @@ body.dark-mode .component-popular-service .career-counselling {
   font-size: 12px;
   font-weight: 600;
   left: 4px;
-  letter-spacing: -0.24px;
-  line-height: 25px;
+  letter-spacing: 0.24px;
+  line-height: 20px;
   position: absolute;
-  top: 128px;
+  top: 130px;
   width: 100%;
   margin-top: 2px;
 }
@@ -12481,11 +12495,11 @@ body.dark-mode .custom-select__menu {
 
 .component-popular-categories .text-wrapper {
   color: #494949;
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 500;
   left: 8px;
   letter-spacing: -0.12px;
-  line-height: 8px;
+  line-height: 14px;
   position: absolute;
   top: 136px;
   /* white-space: nowrap; */

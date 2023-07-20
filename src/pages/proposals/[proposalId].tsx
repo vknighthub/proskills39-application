@@ -73,11 +73,11 @@ const ProposalPage: NextPageWithLayout<
                     title: "ProSkills39 - Voter Tool",
                     site_name: "ProSkills39 - Voter Tool",
                     type: "website",
-                    url: `https://proskills39.com/proposals/${proposalDetail.proposalId}`,
+                    url: `https://ProSkills39.com/proposals/${proposalDetail.proposalId}`,
                     description: `${proposalDetail.proposalName}`,
                     images: [
                         {
-                            url: "https://api.proskills39.com/system/logo/logo-seo.png",
+                            url: "https://api.ProSkills39.com/system/logo/logo-seo.png",
                             width: 1200,
                             height: 630,
                             alt: "ProSkills39 - Voter Tool",
@@ -89,7 +89,7 @@ const ProposalPage: NextPageWithLayout<
                     site: "@ProSkills39",
                     cardType: "summary_large_image",
                 }}
-                canonical={`https://www.proskills39.com/proposals/${proposalDetail.proposalId}`}
+                canonical={`https://www.ProSkills39.com/proposals/${proposalDetail.proposalId}`}
             />
             <ProposalDetail data={proposal} />
         </>

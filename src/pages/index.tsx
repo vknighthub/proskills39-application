@@ -26,13 +26,13 @@ const Home: NextPageWithLayout<
         title="ProSkills39 - Pro Skills For Your Success"
         description="ProSkills39 is a Service Marketplace that connects pro-skills freelancers and provides support services for project owners to start up and expand their businesses at a reasonable cost."
         url={routes.home}
-        image_url='https://api.proskills39.com/system/logo/logo-seo.png'
+        image_url='https://api.ProSkills39.com/system/logo/logo-seo.png'
       />
       <div className="primary-content-area background-content">
         <div className="single-post medium-section mt-6">
           <div className="post-heading">
             <h1 className="home-page-title">
-              Proskills39
+              ProSkills39
             </h1>
             <div className="news-meta">
               <svg style={{ width: 970, height: 137, textAlign: 'center', backdropFilter: '-moz-initial' }} xmlns="http://www.w3.org/2000/svg">
@@ -85,7 +85,7 @@ const Home: NextPageWithLayout<
 
         <div className="container-all-service">
           <div className="section-title">
-            All service on Proskills39
+            All service on ProSkills39
           </div>
         </div>
 
