@@ -19,7 +19,7 @@ export const getStaticPaths: GetStaticPaths<ParsedQueryParams> = async ({
     invariant(locales, 'locales is not defined');
     const data = await client.categories.all();
     const result = data.result.data
-    const paths = result?.flatMap((category) =>
+    const paths = result?.flatMap((category: any) =>
         locales?.map((locale) => ({
             params: { categoriesSlug: category.slug },
             locale,
@@ -27,7 +27,7 @@ export const getStaticPaths: GetStaticPaths<ParsedQueryParams> = async ({
     );
     return {
         paths,
-        fallback: 'blocking',
+        fallback: true,
     };
 };
 
@@ -49,7 +49,7 @@ export const getStaticProps: GetStaticProps<
         return {
             props: {
                 category,
-                ...(await serverSideTranslations(locale!, ['common','footer'])),
+                ...(await serverSideTranslations(locale!, ['common', 'footer'])),
             },
             revalidate: 60, // In seconds
         };
@@ -65,9 +65,9 @@ const CategoriesPage: NextPageWithLayout<
     InferGetStaticPropsType<typeof getStaticProps>
 >
     = ({ category }) => {
-        
+
         const categoryDetail = category.result.data
-        
+
         return (
             <>
                 <Seo title="ProSkills39 - Categories"
