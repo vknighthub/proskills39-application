@@ -85,7 +85,7 @@ export const NewestService = ({ data }: PageProps) => {
                                                             </div>
                                                             <RatingStars value={value.averagerating} />
 
-                                                            <div className="avatar-block">
+                                                            <div className="avatar-block mt-2">
                                                                 <div className="avatar box-26">
                                                                     <Link href="/profile-info">
                                                                         <Image src={value.sellerInfor.avatar}
@@ -114,8 +114,8 @@ export const NewestService = ({ data }: PageProps) => {
                                                                 <Image
                                                                     src={iconv2p}
                                                                     alt="v2p icon"
-                                                                    width={56}
-                                                                    height={56}
+                                                                    width={40}
+                                                                    height={40}
                                                                 />
                                                                 <span className="fs-5">{value.price}</span>
                                                             </div>

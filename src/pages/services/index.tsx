@@ -105,7 +105,7 @@ const ServicePage: NextPageWithLayout = (props: Props) => {
                                                         {item.title}
                                                     </div>
                                                     <RatingStars value={item.averagerating} />
-                                                    <div className="avatar-block">
+                                                    <div className="avatar-block mt-2">
                                                         <div className="avatar box-26">
                                                             <Link href="/profile-info">
                                                                 <Image src={item.sellerInfor.avatar}
@@ -135,8 +135,8 @@ const ServicePage: NextPageWithLayout = (props: Props) => {
                                                         <Image
                                                             src={iconv2p}
                                                             alt="v2p icon"
-                                                            width={56}
-                                                            height={56}
+                                                            width={40}
+                                                            height={40}
                                                         />
                                                         <span className="fs-5">{item.price}</span>
                                                     </div>
