@@ -14,6 +14,7 @@ import { ToastProvider } from '@/components/utils/Toast'
 import { Toaster } from 'react-hot-toast'
 import { MeshProvider } from "@meshsdk/react";
 import { GoogleAnalytics } from "nextjs-google-analytics";
+import FacebookMsg from '@/components/plugin/facebookmsg'
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
@@ -62,6 +63,7 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
                 </>
               </SessionProvider>
             </ToastProvider>
+            <FacebookMsg />
           </MeshProvider>
         </Hydrate>
         <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
