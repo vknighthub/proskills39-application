@@ -18,7 +18,6 @@ type PageProps = {
 export const NewestService = ({ data }: PageProps) => {
     const { t } = useTranslation('common')
     const { locale } = useRouter()
-    console.log(data)
     return (
         <div className="container section-padding overflow-hidden">
             <div className="section-title-wrapper">

@@ -56,6 +56,7 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
                   ) : (
                     getLayout(<Component {...pageProps} />)
                   )}
+                  <FacebookMsg />
 
                   <Toaster
                     position="top-right"
@@ -63,7 +64,6 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
                 </>
               </SessionProvider>
             </ToastProvider>
-            <FacebookMsg />
           </MeshProvider>
         </Hydrate>
         <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />

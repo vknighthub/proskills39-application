@@ -1,3 +1,4 @@
+import FacebookMsg from '@/components/plugin/facebookmsg'
 import { HomeAcademy } from '@/components/services/academy'
 import { HomeFreelancer } from '@/components/services/freelancer'
 import { NewestService } from '@/components/services/newst-service'
@@ -52,7 +53,7 @@ const Home: NextPageWithLayout<
                     stroke="url(#gradient)"
                     fill="none"
                     fontFamily='Quicksand'
-                    style={{ fontFamily: 'sans-serif'}}
+                    style={{ fontFamily: 'sans-serif' }}
                   >
                     A Web Service MarketPlace
                   </text>
@@ -94,6 +95,7 @@ const Home: NextPageWithLayout<
         <NewestService data={homepageinfo.newestservice} />
 
         <OtherService />
+
 
       </div>
     </>
