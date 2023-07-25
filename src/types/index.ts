@@ -123,6 +123,7 @@ export interface Newestservice {
     id: number
     keyid: number
     cate_id: number
+    catname: string
     username: string
     title: string
     slug: string
@@ -154,6 +155,7 @@ export interface File {
 }
 
 export interface SellerInfor {
+    username: string
     fullname: string
     joindate: string
     avatar: string

@@ -7009,7 +7009,7 @@ blockquote p {
   background-color: #fff;
   border: 1px solid var(--cryptoki-gradient);
   border-radius: 10px;
-  padding: 16px;
+  padding: 8px;
   position: relative;
   z-index: 1;
 }
@@ -7053,12 +7053,12 @@ blockquote p {
 .featured-item-image {
   max-height: 165px;
   overflow: hidden;
-  border-radius: 20px;
   text-align: center;
 }
 
 .featured-item-image img {
   object-fit: cover;
+  border-radius: 20px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -7069,7 +7069,7 @@ blockquote p {
 }
 
 .featured-item-info {
-  padding: 26px 10px 10px;
+  padding: 26px 10px 0px;
   position: relative;
 }
 
@@ -7077,12 +7077,31 @@ blockquote p {
 .featured-item.v3 .featured-item-wrapper .title,
 .featured-item.v4 .featured-item-author .title {
   font-size: 12px;
-  font-weight: 600;
-  margin-bottom: 10px;
+  font-weight: 700;
   letter-spacing: var(--letter-spacing);
   color: #0d81ed;
-  height: 70px;
+  height: 50px;
   line-height: 16px !important; 
+}
+
+.featured-item .featured-item-info .categories {
+  color: #000 !important;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: var(--letter-spacing);
+  color: #0d81ed;
+  height: 20px;
+  line-height: 18px !important; 
+}
+
+.featured-item .featured-item-info .description {
+  color: #000 !important;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing);
+  color: #0d81ed;
+  height: 100px;
+  line-height: 18px !important; 
 }
 
 .featured-item .featured-item-info .title a:hover {
@@ -11646,9 +11665,8 @@ body.dark-mode .section-title {
 }
 
 .featured-item-info .item-money {
-  padding: auto;
   color: #0062fe;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .featured-item-info .item-money span {

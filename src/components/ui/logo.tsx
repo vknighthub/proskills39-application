@@ -1,9 +1,8 @@
 import Image from '@/components/ui/image'
-import AnchorLink from '@/components/ui/links/anchor-link'
-import routes from '@/config/routes'
 import { useSettings } from '@/data/settings'
 import { siteSettings } from '@/data/static/site-settings'
-import { useEffect, useState } from 'react'
+import Link from 'next/link'
+import { useState } from 'react'
 
 
 export default function Logo() {
@@ -16,7 +15,7 @@ export default function Logo() {
   return (
     <>
 
-      <AnchorLink href={`/${routes.home}`} className="logo-link" >
+      <Link href={`/`} className="logo-link" >
         <div
           className="logo-img"
           style={{
@@ -34,9 +33,8 @@ export default function Logo() {
               alt={settings?.siteTitle ?? 'Dark Logo'}
             />
           )}
-
         </div>
-      </AnchorLink>
+      </Link>
 
     </>
   )
