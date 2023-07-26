@@ -10,6 +10,7 @@ import { Box } from '@/components/styles/Box'
 import CutText from '@/utils/CutText';
 import { useRouter } from 'next/router';
 import iconv2p from '@/assets/images/svg/iconv2p.svg'
+import avatar from '@/assets/images/avatar.png';
 
 type PageProps = {
     data: Newestservice[]
@@ -87,7 +88,7 @@ export const NewestService = ({ data }: PageProps) => {
                                                             <div className="avatar-block mt-2">
                                                                 <div className="avatar box-26">
                                                                     <Link href="/profile-info">
-                                                                        <Image src={value.sellerInfor.avatar}
+                                                                        <Image src={value.sellerInfor.avatar ? value.sellerInfor.avatar : avatar}
                                                                             alt="Avatar"
                                                                             width={32}
                                                                             height={32}

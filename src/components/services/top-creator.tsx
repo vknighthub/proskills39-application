@@ -1,5 +1,4 @@
 import avatar from '@/assets/images/avatar.png';
-import project_thumb_1 from '@/assets/images/content/previews/project-thumb-1.png';
 import { Mostpopularseller } from '@/types';
 
 
