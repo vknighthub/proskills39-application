@@ -1,7 +1,7 @@
 import { AES256Decrypt, AES256Encrypt } from '@/utils/Encrypt';
 import axios, { AxiosRequestHeaders } from 'axios';
 import Cookies from 'js-cookie';
-import { AUTH_TOKEN_KEY } from './token.utils';
+import { AUTH_TOKEN_KEY, removeAuthToken } from './token.utils';
 
 const Axios = axios.create({
     baseURL: process.env.NEXT_PUBLIC_REST_API_ENDPOINT,
@@ -35,10 +35,13 @@ Axios.interceptors.request.use(
 Axios.interceptors.response.use(
     (response) => response,
     (error) => {
+        
         if (
             (error.response && error.response.status === 401) ||
             (error.response && error.response.status === 403)
         ) {
+            removeAuthToken()
+            window.location.href="/login"
         }
         return Promise.reject(error);
     }
