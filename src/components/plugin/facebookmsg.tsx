@@ -8,13 +8,13 @@ const FacebookMsg = () => {
     const { locale } = useRouter()
     return (
         <FacebookProvider
-            appId='670951515077559'
+            appId='840461017733225'
             chatSupport
             language={locale}
             lazy={true}
         >
             <CustomChat
-                pageId='100345429819665'
+                pageId='105654225560640'
                 minimized={true}
             />
         </FacebookProvider>
