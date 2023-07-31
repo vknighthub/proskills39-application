@@ -50,7 +50,8 @@ const CategoryExplore = ({ data }) => {
                     </div>
                 ))}
 
-            </div>  </div>
+            </div>
+        </div>
     );
 };
 export default CategoryExplore;

@@ -1,12 +1,16 @@
 import routes from '@/config/routes';
 import Layout from '@/layouts/_layout';
 import Seo from '@/pages/_seo';
-import { NextPageWithLayout } from '@/types';
+import { NextPageWithLayout, PopolarCategory } from '@/types';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import buying from '@/assets/images/buybing.png'
 import Image from 'next/image';
 import SupportBuyingFAQs from '@/layouts/info/support/SupportBuyingFAQs'
+import { FetchTopCategories } from '@/data/categories';
+import Link from 'next/link';
+
+
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
     return {
@@ -18,6 +22,13 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 };
 
 const StartBuying: NextPageWithLayout = () => {
+
+    const { data } = FetchTopCategories({
+        language: 'en'
+    })
+
+    console.log(data)
+
     return (
         <>
             <Seo
@@ -103,9 +114,9 @@ const StartBuying: NextPageWithLayout = () => {
                                 </div>
 
                             </p>
-                            <i>
+                            <h4>
                                 Mẹo đặt hàng trên ProSkills39
-                            </i>
+                            </h4>
                             <br />
                             <span className='fs-6'> Cùng tham khảo 3 mẹo sau để đặt dịch vụ một cách dễ dàng và trở thành nhà tuyển dụng thông thái nhé </span>
                             <Image src={buying} alt="buying" />
@@ -119,9 +130,21 @@ const StartBuying: NextPageWithLayout = () => {
                                 Lấy cảm hứng từ các danh mục được yêu cầu nhiều nhất của chúng tôi
                             </span>
                             <br />
-                            <p className='text-center'>
+                            <div className="latest-news-box grid-3-columns">
+                                {data && data.map((explore: PopolarCategory, index: number) => (
+                                    <div className="component-categories-explore" key={explore.id}>
+                                        <Image className="vector" alt="Vector" src={explore.image} width={337} height={310} />
+                                        <Link
+                                className={`item-1`}
+                                href={`/categories/services/${explore.slug}`}
+                                rel="noopener noreferrer" target="_blank"
+                                key={explore.id}>
+                                {explore.name}
+                            </Link>
+                                    </div>
+                                ))}
 
-                            </p>
+                            </div>
                         </div>
 
                         <SupportBuyingFAQs />

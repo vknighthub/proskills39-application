@@ -30,5 +30,6 @@ export const API_ENDPOINTS = {
     ATTENDANCEDAILY: '/user/attendancedaily',
     CONNECT_WALLET: '/user/connectwallet',
     FOLLOW: '/user/follow',
-    GET_PROPOSAL: '/drep/getallproposal'
+    GET_PROPOSAL: '/drep/getallproposal',
+    TOP_CATEGORIES: '/services/gettopcategories'
 }

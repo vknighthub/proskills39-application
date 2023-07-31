@@ -630,12 +630,13 @@ interface FAQCategory {
     anwser: string
     order: string
 }
-interface PopolarCategory {
+export interface PopolarCategory {
     id: number
     name: string
     slug: string
     image: string
     link: string
+    totalorder: number
 }
 export interface Category {
     name: string
@@ -734,6 +735,7 @@ export interface ServicePaginator extends ServiceResultInfo<Service> { }
 
 export interface CategoryPaginator extends CategoriesResultInfo<Category> { }
 
+export interface TopCategoryPaginator extends ResponseArray<PopolarCategory> { }
 
 export interface ServiceDetailPaginator extends ServiceDetailResultInfo<ServiceDetail> { }
 

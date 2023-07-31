@@ -1,4 +1,4 @@
-import { ApplyLetterInput, ApplyLetterResponse, AttendancedailyResponse, AuthResponse, BlogDetailResponse, BlogParams, BlogResponse, CategoriesPaginator, CategoryPaginator, ChallegePaginator, Challenge, ChallengeResult, ConnectWalletResponse, DealInput, FollowResponse, ForgotPasswordInput, ForgotPasswordResponse, FreelancerPaginator, GetParams, HomePageResult, InvitateFriendInput, InviteFriendResponse, ListProposalIDResult, LoginUserInput, NotificationResponse, ProposalQueryOptions, ProposalResult, RegisterUserInput, ServiceDealResponse, ServiceDetailPaginator, ServicePaginator, SettingQuery, SettingsQueryOptions, SubmitDealInput, SubmitDealResponse, UpdateProfileInput, UserInfoInput, UserProfilePageResponse, UserProfileResult, UserUpdateResult } from "@/types";
+import { ApplyLetterInput, ApplyLetterResponse, AttendancedailyResponse, AuthResponse, BlogDetailResponse, BlogParams, BlogResponse, CategoriesPaginator, CategoryPaginator, ChallegePaginator, Challenge, ChallengeResult, ConnectWalletResponse, DealInput, FollowResponse, ForgotPasswordInput, ForgotPasswordResponse, FreelancerPaginator, GetParams, HomePageResult, InvitateFriendInput, InviteFriendResponse, ListProposalIDResult, LoginUserInput, NotificationResponse, ProposalQueryOptions, ProposalResult, RegisterUserInput, ServiceDealResponse, ServiceDetailPaginator, ServicePaginator, SettingQuery, SettingsQueryOptions, SubmitDealInput, SubmitDealResponse, TopCategoryPaginator, UpdateProfileInput, UserInfoInput, UserProfilePageResponse, UserProfileResult, UserUpdateResult } from "@/types";
 import { API_ENDPOINTS } from "./endpoints";
 import { HttpClient } from './http-client';
 
@@ -45,6 +45,7 @@ class Client {
         all: (params?: SettingsQueryOptions) =>
             HttpClient.get<CategoriesPaginator>(API_ENDPOINTS.CATEGORIES, { ...params }),
         get: ({ slug, language }: GetParams) => HttpClient.get<CategoryPaginator>(`${API_ENDPOINTS.CATEGORIESPAGE}/${slug}`, { language }),
+        gettop: (params?: SettingsQueryOptions) => HttpClient.get<TopCategoryPaginator>(API_ENDPOINTS.TOP_CATEGORIES, { ...params })
 
     }
     services = {
