@@ -83,14 +83,17 @@ const ProfileInfoSidebar = () => {
                           }}
                           >
                             <Typography sx={{ color: 'white' }}>
-                              <IconifyIcon icon="bx:map" color="white" />
+                              <IconifyIcon 
+                                icon="bx:map" 
+                                className="box-icon"
+                              />
                             </Typography>
-                            <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
+                            <Typography sx={{ fontFamily: 'Quicksand' }} className="box-icon">
                               From
                             </Typography>
                           </Box>
                           <Box sx={{ display: 'flex', ml: 5 }}>
-                            <Typography sx={{ color: 'white',fontFamily: 'Quicksand'  }}>
+                            <Typography sx={{ fontFamily: 'Quicksand'  }} className="box-icon">
                               {profile?.country}
                             </Typography>
                           </Box>
@@ -111,14 +114,14 @@ const ProfileInfoSidebar = () => {
                           }}
                           >
                             <Typography sx={{ color: 'white', }}>
-                              <IconifyIcon icon="bi:people-circle" color="white" />
+                              <IconifyIcon icon="bi:people-circle" className="box-icon" />
                             </Typography>
-                            <Typography sx={{ color: 'white',fontFamily: 'Quicksand'  }}>
+                            <Typography sx={{ fontFamily: 'Quicksand'  }} className="box-icon">
                               Member since
                             </Typography>
                           </Box>
                           <Box sx={{ display: 'flex', ml: 5 }}>
-                            <Typography sx={{ color: 'white',fontFamily: 'Quicksand'  }}>
+                            <Typography sx={{ fontFamily: 'Quicksand'  }} className="box-icon">
                               {profile?.datecreated}
                             </Typography>
                           </Box>
@@ -139,14 +142,14 @@ const ProfileInfoSidebar = () => {
                           }}
                           >
                             <Typography sx={{ color: 'white' }}>
-                              <IconifyIcon icon="fluent:people-team-24-regular" color="white" />
+                              <IconifyIcon icon="fluent:people-team-24-regular" className="box-icon" />
                             </Typography>
-                            <Typography sx={{ color: 'white',fontFamily: 'Quicksand'  }}>
+                            <Typography sx={{fontFamily: 'Quicksand'  }} className="box-icon">
                               Seller type
                             </Typography>
                           </Box>
                           <Box sx={{ display: 'flex', ml: 5 }}>
-                            <Typography sx={{ color: 'white',fontFamily: 'Quicksand'  }}>
+                            <Typography sx={{ fontFamily: 'Quicksand'  }} className="box-icon">
                               {profile?.sellertype}
                             </Typography>
                           </Box>
@@ -167,14 +170,14 @@ const ProfileInfoSidebar = () => {
                           }}
                           >
                             <Typography sx={{ color: 'white' }}>
-                              <IconifyIcon icon="ph:clock-thin" color="white" />
+                              <IconifyIcon icon="ph:clock-thin" className="box-icon" />
                             </Typography>
-                            <Typography sx={{ color: 'white',fontFamily: 'Quicksand'  }}>
+                            <Typography sx={{ fontFamily: 'Quicksand'  }} className="box-icon">
                               Availability
                             </Typography>
                           </Box>
                           <Box sx={{ display: 'flex', ml: 5 }}>
-                            <Typography sx={{ color: 'white' ,fontFamily: 'Quicksand' }}>
+                            <Typography sx={{ fontFamily: 'Quicksand' }} className="box-icon">
                               {profile?.availability}
                             </Typography>
                           </Box>
@@ -195,14 +198,14 @@ const ProfileInfoSidebar = () => {
                           }}
                           >
                             <Typography sx={{ color: 'white' }}>
-                              <IconifyIcon icon="clarity:language-line" color="white" />
+                              <IconifyIcon icon="clarity:language-line" className="box-icon"/>
                             </Typography>
-                            <Typography sx={{ color: 'white' ,fontFamily: 'Quicksand' }}>
+                            <Typography sx={{ fontFamily: 'Quicksand' }} className="box-icon">
                               Language
                             </Typography>
                           </Box>
                           <Box sx={{ display: 'flex', ml: 5 }}>
-                            <Typography sx={{ color: 'white',fontFamily: 'Quicksand'  }}>
+                            <Typography sx={{ fontFamily: 'Quicksand'  }} className="box-icon">
                               {profile?.language}
                             </Typography>
                           </Box>
@@ -235,10 +238,10 @@ const ProfileInfoSidebar = () => {
                             <Typography sx={{ color: 'white' }}>
                               <IconifyIcon icon="teenyicons:tick-circle-solid" color="#4C8DF7" />
                             </Typography>
-                            <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
+                            <Typography sx={{ fontFamily: 'Quicksand' }} className="box-icon">
                               Education: 
                             </Typography>
-                            <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
+                            <Typography sx={{ fontFamily: 'Quicksand' }} className="box-icon">
                                 {profile?.educations.map((education)=>(
                                   <span key={education.id}>
                                     {education.contryofuniversity} /
@@ -263,10 +266,10 @@ const ProfileInfoSidebar = () => {
                             <Typography sx={{ color: 'white' }}>
                               <IconifyIcon icon="teenyicons:tick-circle-solid" color="#4C8DF7" />
                             </Typography>
-                            <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
+                            <Typography sx={{ fontFamily: 'Quicksand' }} className="box-icon">
                               Certificate: 
                             </Typography>
-                            <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
+                            <Typography sx={{ fontFamily: 'Quicksand' }} className="box-icon">
                             {profile?.certifications.map((certification)=>(
                                   <span key={certification.id}>
                                     {certification.name} {certification.length > 1 ? '/' : ''}
@@ -292,10 +295,10 @@ const ProfileInfoSidebar = () => {
                             <Typography sx={{ color: 'white' }}>
                               <IconifyIcon icon="teenyicons:tick-circle-solid" color="#4C8DF7" />
                             </Typography>
-                            <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
+                            <Typography sx={{  fontFamily: 'Quicksand' }} className="box-icon">
                               Skills: 
                             </Typography>
-                            <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
+                            <Typography sx={{ fontFamily: 'Quicksand' }} className="box-icon">
                             {profile?.skills.map((skill)=>(
                                   <span key={skill.id}>
                                     {skill.name} {skill.length > 1 ? '/' : ''}
@@ -320,10 +323,10 @@ const ProfileInfoSidebar = () => {
                             <Typography sx={{ color: 'white' }}>
                               <IconifyIcon icon="teenyicons:tick-circle-solid" color="#4C8DF7" />
                             </Typography>
-                            <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
+                            <Typography sx={{ fontFamily: 'Quicksand' }} className="box-icon">
                               Vertification ID:
                             </Typography>
-                            <Typography sx={{ color: 'white', fontFamily: 'Quicksand' }}>
+                            <Typography sx={{ fontFamily: 'Quicksand' }} className="box-icon">
                               {profile?.licenseid}
                             </Typography>
                           </Box>

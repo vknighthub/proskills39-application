@@ -23,7 +23,6 @@ const registerValidationSchema = yup.object().shape({
     address: yup.string().required(),
     email: yup.string().required(),
     phone: yup.string().required(),
-    gdpr: yup.string().required()
 });
 
 const RegisterUserForm = ({ username }: PageProps) => {

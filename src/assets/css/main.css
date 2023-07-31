@@ -2956,7 +2956,7 @@ body.dark-mode .profile-menu li a {
   font-size: 13px;
   font-weight: var(--heading-font-weight);
   transition: all 0.2s ease-in;
-  color: var(--heading-color);
+  color: var(--main-font-color);
 }
 
 .profile-menu li a {
@@ -2964,11 +2964,11 @@ body.dark-mode .profile-menu li a {
   font-size: 13px;
   font-weight: var(--heading-font-weight);
   transition: all 0.2s ease-in;
-  color: #494949;
+  color: #fff;
 }
 
 .profile-menu li svg {
-  fill: var(--main-font-color);
+  fill: #fff;
 }
 
 .profile-menu li:hover {
@@ -2978,6 +2978,7 @@ body.dark-mode .profile-menu li a {
   border-radius: 12px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+  color: #fff;
 }
 
 .profile-menu li:hover svg {
@@ -3008,14 +3009,14 @@ body.dark-mode .mode-toggle .mode-title {
 .mode-toggle .mode-title {
   font-size: 13px;
   font-weight: var(--heading-font-weight);
-  color: #494949;
+  color: #fff;
 }
 
 .mode-toggle .mode-title svg {
   width: 12px;
   height: 12px;
   margin-right: 10px;
-  fill: var(--main-font-color);
+  fill: #fff;
 }
 
 .toggle-control {
@@ -12219,6 +12220,7 @@ body.dark-mode .custom-select__menu {
   border: 1px solid rgb(4.14, 204.62, 248.63) !important;
   border-radius: 20px !important;
   margin-top: 2px;
+  color: #fff;
 }
 
 /****************************************************************/
@@ -13102,4 +13104,7 @@ iframe {
 .item-proposal .featured-item-wrapper .featured-item-info .title {
   font-size: 18px;
   font-weight: 600;
+}
+.box-icon {
+  color: var(--main-font-color);
 }
