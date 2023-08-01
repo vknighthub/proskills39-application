@@ -948,6 +948,7 @@ export interface BlogDetailResponse extends ResponseObject<{
 
 export interface SubmitDealInput {
     serviceid: number
+    description: string
 }
 
 export interface SubmitDealResponse extends ResponseObject<{}> { }

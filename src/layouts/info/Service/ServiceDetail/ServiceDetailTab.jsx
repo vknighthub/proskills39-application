@@ -20,8 +20,8 @@ const style = {
     p: 4,
 };
 
-const ServiceDetailTab = ({ data, seller }) => {
-    const [activeTab, setActiveTab] = useState("tab1");
+const ServiceDetailTab = ({ data, seller, packages }) => {
+    const [activeTab, setActiveTab] = useState(packages);
     const activeTabNav = (value) => (value === activeTab ? "active" : ""),
         activeContent = (value) => (value === activeTab ? "active" : "");
 
@@ -60,50 +60,27 @@ const ServiceDetailTab = ({ data, seller }) => {
 
     useEffect(() => {
         setRender(true)
-    }, [render])
+        setActiveTab(packages)
+    }, [render,packages])
+
+    const filteredData = data.filter((item) => item.name === packages);
 
     return (
         <>
             <div className="tabs-block ">
                 <ul className="tabs-list ">
                     <li
-                        className={activeTabNav("tab1")}
-                        onClick={() => setActiveTab("tab1")}
+                        className={activeTabNav(activeTab)}
+                        onClick={() => setActiveTab(activeTab)}
                     >
-                        <a>Basic</a>
-                    </li>
-                    <li
-                        className={activeTabNav("tab2")}
-                        onClick={() => setActiveTab("tab2")}
-                    >
-                        <a>Standard</a>
-                    </li>
-                    <li
-                        className={activeTabNav("tab3")}
-                        onClick={() => setActiveTab("tab3")}
-                    >
-                        <a>Premium</a>
+                        <a>{activeTab}</a>
                     </li>
                 </ul>
 
-                {data.map((tabservice, index) => (
+                {filteredData.map((tabservice) => (
                     <>
-                        <div id={`tab${index + 1}`} className={`tab ${activeContent(`tab${index + 1}`)}`} key={tabservice.id}>
+                        <div id={`${tabservice.name}`} className={`tab ${activeContent(`${tabservice.name}`)}`} key={tabservice.id}>
                             <div className="tab-content">
-                                <div className="placed-bid">
-                                    <div className="bid-placer">
-                                        <div className="bid-info">
-                                            <div className="bid-title">
-                                                <span className="gradient-text">
-                                                    {tabservice.name.toUpperCase()} DOFOLLOW
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="bid-box">
-                                        <div className="crypto-value">v2p {tabservice.price}</div>
-                                    </div>
-                                </div>
                                 <div className="bid-title">{tabservice.promise}</div>
 
                                 <div className="mt-5">

@@ -1,4 +1,5 @@
 import { GetParams, SubmitDealResponse } from "@/types";
+import { GenerateMessage } from "@/utils/Encrypt";
 import { AxiosError } from "axios";
 import { useRouter } from "next/router";
 import { useMutation, useQuery } from "react-query";
@@ -25,14 +26,17 @@ export const useSubmitDeal = () => {
         },
         onError: (errorAsUnknown) => {
             const error = errorAsUnknown as AxiosError<SubmitDealResponse>;
+            const msgerror = GenerateMessage(error?.response)
+            const texterror = error?.response?.status === 400 ? msgerror.messagedetail : 'Error'
             Swal.fire({
-                position: 'center',
+                position: 'top',
                 icon: 'error',
                 color: 'red',
                 title: 'Oops...',
-                text: `${error?.response?.status === 400 ? error?.response?.data.messagedetail : 'Error'}`,
+                text: texterror,
+                didClose: () => window.scrollTo(0,0)
             })
-
+            window.scrollTo(0,0)
         }
     });
 };

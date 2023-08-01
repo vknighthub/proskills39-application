@@ -1,7 +1,7 @@
 import parse from 'html-react-parser';
 import { useTranslation } from 'next-i18next';
 
-const ServiceDetailInfo = ({ data }) => {
+const ServiceDetailInfo = ({ data, price }) => {
 
     const { t } = useTranslation('common')
 
@@ -14,8 +14,8 @@ const ServiceDetailInfo = ({ data }) => {
             <div className="product-meta-section">
                 <div className="product-meta-item">
                     <div className="label">{t('text-current-price')}</div>
-                    <div className="value">{data.price.v2p} v2p</div>
-                    <div className="caption">{data.price.vnd} VND</div>
+                    <div className="value">{price.v2p} v2p</div>
+                    <div className="caption">{price.vnd} VND</div>
                 </div>
             </div>
             <div className="product-description">

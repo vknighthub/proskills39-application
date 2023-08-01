@@ -35,14 +35,19 @@ export function AES256Encrypt(encryptedData: any) {
 export function AES256Decrypt(encryptedData: any, ivkey: string) {
   var rawData = CryptoJS.enc.Base64.parse(encryptedData);
   var key = CryptoJS.enc.Utf8.parse(AES_KEY);
-
   var iv = CryptoJS.enc.Utf8.parse(ivkey);
   
   var plaintextData = CryptoJS.AES.decrypt(
       {ciphertext: rawData},
       key,
       {iv:iv});
-  var plaintext = plaintextData.toString(CryptoJS.enc.Utf8);
-  
+      var plaintext = plaintextData.toString(CryptoJS.enc.Utf8);
+
   return JSON.parse(plaintext);
+}
+
+export function GenerateMessage(data:any) {
+  const encryptedData = data.data
+  const ivkey = data.headers.proskills39
+  return AES256Decrypt(encryptedData,ivkey)
 }

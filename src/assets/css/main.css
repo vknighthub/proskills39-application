@@ -9302,11 +9302,13 @@ table.content-table {
   text-align: left;
   border-collapse: separate;
   border-spacing: 0 20px;
+  border-radius: 12px;
 }
 
 .content-table thead .heading-label {
   font-size: 10px;
   text-transform: uppercase;
+  color: #fff;
 }
 
 .content-table thead .heading-label:first-child {
@@ -9314,7 +9316,6 @@ table.content-table {
 }
 
 .content-table th {
-  padding: 15px 0;
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -9377,7 +9378,7 @@ table.content-table {
   table.content-table {
     border: 0;
     border-spacing: 0;
-  }
+}
 
   table.content-table caption {
     font-size: 1.3em;
@@ -11229,11 +11230,12 @@ td[data-label="Date"] {
 }
 
 .package-row-label {
-  color: #74767e;
+  color: #ffff;
   font-weight: 400;
   padding: 12px 16px;
   text-align: left;
   vertical-align: text-top;
+  margin-left: 10px;
 }
 
 .package-type-price {
@@ -11299,7 +11301,7 @@ td[data-label="Date"] {
 }
 
 .fake-radio {
-  color: #62646a;
+  color: #fff;
   cursor: pointer;
   display: block;
   font-size: 14px;

@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import ComparePackage from './ComparePackage';
 import parse from 'html-react-parser';
 
-const ServiceDetailMedia = ({ data, compare }) => {
+const ServiceDetailMedia = ({ data, compare, setPrice, setPackages }) => {
 
     return (
         <>
@@ -122,7 +122,7 @@ const ServiceDetailMedia = ({ data, compare }) => {
                     </div>
                 </div>
 
-                <ComparePackage data={compare} />
+                <ComparePackage data={compare} setPrice = {setPrice} setPackages = {setPackages}/>
 
             </div>
         </>

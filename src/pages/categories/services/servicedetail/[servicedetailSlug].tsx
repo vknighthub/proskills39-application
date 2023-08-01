@@ -9,6 +9,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import ServiceDetailInfo from './../../../../layouts/info/Service/ServiceDetail/ServiceDetailInfo';
 import ServiceDetailMedia from './../../../../layouts/info/Service/ServiceDetail/ServiceDetailMedia';
 import ServiceDetailTab from './../../../../layouts/info/Service/ServiceDetail/ServiceDetailTab';
+import { useEffect, useState } from 'react';
 
 
 type ParsedQueryParams = {
@@ -63,6 +64,9 @@ const ServiceDetail: NextPageWithLayout<
     InferGetStaticPropsType<typeof getStaticProps>
 > = ({ servicedetail }) => {
     const servicedetailinfo = servicedetail.result.data
+    const [price, setPrice] = useState(servicedetailinfo.services.price)
+    const [packages, setPackages] = useState('Basic')
+
     return (
         <>
             <Seo title="ProSkills39 - Service"
@@ -71,11 +75,11 @@ const ServiceDetail: NextPageWithLayout<
                 image_url={servicedetailinfo.services.image?.[0].url} />
 
             <div className="product-page product-version-1 background-content">
-                <ServiceDetailMedia data={servicedetailinfo} compare={servicedetailinfo.comparepackage} />
+                <ServiceDetailMedia data={servicedetailinfo} compare={servicedetailinfo.comparepackage} setPrice= {setPrice} setPackages ={setPackages} />
                 <div className="product-info">
-                    <div className="product-info-wrapper">
-                        <ServiceDetailInfo data={servicedetailinfo.services} />
-                        <ServiceDetailTab data={servicedetailinfo.package} seller={servicedetailinfo.seller} />
+                    <div className="product-info-wrapper" id ="product-info">
+                        <ServiceDetailInfo data={servicedetailinfo.services} price = {price} />
+                        <ServiceDetailTab data={servicedetailinfo.package} seller={servicedetailinfo.seller} packages={packages} />
                     </div>
                 </div>
             </div>
