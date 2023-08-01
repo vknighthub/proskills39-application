@@ -65,7 +65,6 @@ const StartSelling: NextPageWithLayout = () => {
                                 Hãy xem hồ sơ của bạn như là một phần mô tả năng lực và kinh nghiệm bản thân trên ProSkills39. Tận dụng cơ hội tuyệt vời này để tạo hồ sơ của mình trên ProSkills39! Với nền tảng uy tín và đa dạng các công việc, ProSkills39 giúp bạn thể hiện khả năng làm việc chuyên nghiệp và thu hút nhiều nhà tuyển dụng.
                             </span>
                             <br />
-                            <span className='fs-6'>When you create your Gig, you&apos;ll have the opportunity to show off your talents, and provide buyers with all the information they could need to help them decide to do business with you.</span>
                             <p className='text-center'>
                                 <>
                                     <div
