@@ -26,8 +26,7 @@ export const useSubmitDeal = () => {
         },
         onError: (errorAsUnknown) => {
             const error = errorAsUnknown as AxiosError<SubmitDealResponse>;
-            const msgerror = GenerateMessage(error?.response)
-            const texterror = error?.response?.status === 400 ? msgerror.messagedetail : 'Error'
+            const texterror = error?.response?.status === 400 ? error.response.data.messagedetail : 'Error'
             Swal.fire({
                 position: 'top',
                 icon: 'error',

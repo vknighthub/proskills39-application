@@ -1,4 +1,4 @@
-import { AES256Decrypt, AES256Encrypt } from '@/utils/Encrypt';
+import { AES256Decrypt, AES256Encrypt, GenerateMessage } from '@/utils/Encrypt';
 import axios, { AxiosRequestHeaders } from 'axios';
 import Cookies from 'js-cookie';
 import { AUTH_TOKEN_KEY, removeAuthToken } from './token.utils';
@@ -42,6 +42,8 @@ Axios.interceptors.response.use(
             removeAuthToken()
             window.location.href="/login"
         }
+        const errormsg = GenerateMessage(error.response)
+        error.response.data = errormsg;
         return Promise.reject(error);
     }
 );
