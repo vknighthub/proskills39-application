@@ -36,24 +36,9 @@ export default function Layout({ children }: React.PropsWithChildren<{}>) {
     <>
       {render &&
         <div className="main">
-          {!mobile ?
-            <>
-              <Header />
-              {children}
-              <Footer />
-            </>
-            :
-            <>
-              <header className="site-header">
-                <div className="topbar padding-top-bottom border-bottom">
-                  <div className="topbar-wrapper container">
-                    <Logo />
-                  </div>
-                </div>
-              </header >
-              <div className="primary-content-area background-phone"></div>
-            </>
-          }
+          <Header />
+          {children}
+          <Footer />
         </div>
       }
     </>

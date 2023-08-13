@@ -1032,6 +1032,7 @@ body.dark-mode .gradient-text {
     /* Black prints faster */
     box-shadow: none !important;
     text-shadow: none !important;
+    font-family: "Quicksand", sans-serif;
   }
 
   a,
@@ -1957,11 +1958,11 @@ body.dark-mode .site-header {
 }
 
 .topbar-wrapper>* {
-  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .topbar-wrapper>div:last-child {
-  margin-right: 0;
+  margin-left: 0;
 }
 
 .topbar-47 {
@@ -2067,7 +2068,7 @@ body.dark-mode .site-header {
   margin-left: 5px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
   .collection-box {
     display: none;
   }
@@ -2076,6 +2077,11 @@ body.dark-mode .site-header {
 /* ================================
         9.5. User activity buttons
         ================================ */
+@media (max-width: 1024px) {
+  .user-activity-buttons>* {
+    display: none;
+  }
+}
 
 .user-activity-buttons {
   display: grid;
@@ -2086,11 +2092,6 @@ body.dark-mode .site-header {
   position: relative;
 }
 
-@media (max-width: 568px) {
-  .user-activity-buttons>* {
-    position: static;
-  }
-}
 
 .user-activity-buttons button .counter {
   position: absolute;
@@ -2675,7 +2676,7 @@ body.dark-mode .main-search .search-input {
   display: block;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 800px) {
   .searchbox {
     display: none;
   }
@@ -3521,8 +3522,8 @@ body.dark-mode .mode-toggle .mode-title {
 .mobile-nav-panel {
   position: fixed;
   top: 0;
-  left: 0;
-  transform: translateX(-100%);
+  right: 0;
+  transform: translateX(100%);
   background: var(--body-background);
   min-width: 240px;
   height: 100vh;
@@ -3559,11 +3560,12 @@ body.dark-mode .mode-toggle .mode-title {
   background: var(--body-background);
   position: relative;
   z-index: 10;
+  margin-left: 10px;
 }
 
 .mobile-menu-logo img {
-  width: 40px;
-  height: 40px;
+  width: 180px;
+  height: 180px;
 }
 
 .mobile-nav-panel.open .mobile-nav-header .close-icon {
@@ -3598,10 +3600,20 @@ body.dark-mode .mode-toggle .mode-title {
   pointer-events: all;
   transition: opacity 0.3s linear, max-height 0.3s linear;
 }
+.mobile-menu .menu-item {
+  margin-left: 10px;
+  padding: 10px;
+  font-size: 16px;
+  font-family: "Quicksand";
+}
 
 .mobile-menu .menu-item .menu-link {
   line-height: 1.4;
-  padding: 8px 20px;
+  padding: 12px 20px;
+}
+
+.mobile-menu .menu-item span {
+  margin-left: 10px;
 }
 
 .mobile-menu .menu-item .menu-link .count {
@@ -3632,7 +3644,7 @@ body.dark-mode .mode-toggle .mode-title {
   margin-bottom: 25px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
   nav {
     display: none;
   }
@@ -7082,7 +7094,7 @@ blockquote p {
   letter-spacing: var(--letter-spacing);
   color: #0d81ed;
   height: 50px;
-  line-height: 16px !important; 
+  line-height: 16px !important;
 }
 
 .featured-item .featured-item-info .categories {
@@ -7092,7 +7104,7 @@ blockquote p {
   letter-spacing: var(--letter-spacing);
   color: #0d81ed;
   height: 20px;
-  line-height: 18px !important; 
+  line-height: 18px !important;
 }
 
 .featured-item .featured-item-info .description {
@@ -7102,7 +7114,7 @@ blockquote p {
   letter-spacing: var(--letter-spacing);
   color: #0d81ed;
   height: 100px;
-  line-height: 18px !important; 
+  line-height: 18px !important;
 }
 
 .featured-item .featured-item-info .title a:hover {
@@ -9378,7 +9390,7 @@ table.content-table {
   table.content-table {
     border: 0;
     border-spacing: 0;
-}
+  }
 
   table.content-table caption {
     font-size: 1.3em;
@@ -11416,6 +11428,7 @@ td[data-label="Date"] {
 .fs-6 {
   font-size: 1rem !important;
 }
+
 .fs-7 {
   font-size: 0.5rem !important;
 }
@@ -12911,7 +12924,7 @@ body.dark-mode .custom-select__menu {
 
 .component-blog .see-more {
   color: #ffffff;
-  font-family: "Quicksand";
+  font-family: "Quicksand", Helvetica;
   font-size: 8px;
   font-weight: 500;
   left: 0;
@@ -13107,6 +13120,7 @@ iframe {
   font-size: 18px;
   font-weight: 600;
 }
+
 .box-icon {
   color: var(--main-font-color);
 }

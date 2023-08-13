@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import useClickOutside from "@/lib/hooks/useClickOutside";
 import Logo from "@/components/ui/logo";
+import { useTranslation } from "next-i18next";
 
 const MobileHeader = () => {
+  const { t } = useTranslation('common')
   const [toggle, setToggle] = useState(false);
   useEffect(() => {
     let body = document.querySelector("body");
@@ -46,8 +48,13 @@ const MobileHeader = () => {
         <div className="mobile-menu-wrapper">
           <ul className="mobile-menu">
             <li className="menu-item">
-              <Link legacyBehavior href="/" className="menu-link">
-                Home
+              <Link href="/" onClick={() => logout()}>
+                <svg className="crumina-icon">
+                  <use xlinkHref="#logout-icon" />
+                </svg>
+                <span>
+                {t('text-logout')}
+                </span>
               </Link>
             </li>
           </ul>

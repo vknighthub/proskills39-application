@@ -20,7 +20,6 @@ const Header = () => {
     <header className="site-header">
       <div className="topbar padding-top-bottom border-bottom">
         <div className="topbar-wrapper container">
-          <MobileHeader />
           <Logo />
           <SearchBox />
 
@@ -35,7 +34,9 @@ const Header = () => {
           <div className="user-activity-buttons">
             <SwitchLanguage isAuthorized={isAuthorized} me={me} />
           </div>
-        </div>
+          <MobileHeader />
+
+        </div> 
       </div>
       <MobileSearchTrigger
         active={searchToggle}

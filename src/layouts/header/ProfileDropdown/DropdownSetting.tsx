@@ -88,7 +88,6 @@ const DropdownSetting = ({ userdata, toggle, setToggle }: PageProps) => {
                                 </Link>{" "}
                             </li>
                             <li className="logout">
-                                {" "}
                                 <Link href="/" onClick={() => logout()}>
                                     <svg className="crumina-icon">
                                         <use xlinkHref="#logout-icon" />
