@@ -47,6 +47,16 @@ const MobileHeader = () => {
         {/*MOBILE MENU*/}
         <div className="mobile-menu-wrapper">
           <ul className="mobile-menu">
+          <li className="menu-item">
+              <Link href="/" onClick={() => logout()}>
+                <svg className="crumina-icon">
+                  <use xlinkHref="#logout-icon" />
+                </svg>
+                <span>
+                {t('text-dRep')}
+                </span>
+              </Link>
+            </li>
             <li className="menu-item">
               <Link href="/" onClick={() => logout()}>
                 <svg className="crumina-icon">
