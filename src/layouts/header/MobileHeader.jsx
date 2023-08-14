@@ -4,6 +4,7 @@ import Image from "next/image";
 import useClickOutside from "@/lib/hooks/useClickOutside";
 import Logo from "@/components/ui/logo";
 import { useTranslation } from "next-i18next";
+import { useMe } from "@/data/user";
 
 const MobileHeader = () => {
   const { t } = useTranslation('common')
@@ -25,7 +26,7 @@ const MobileHeader = () => {
   const activeMenuSet = (value) =>
     setActiveMenu(activeMenu === value ? "" : value),
     activeLi = (value) => (value === activeMenu ? "show" : "");
-
+  const { me, isAuthorized } = useMe()
   return (
     <>
       <div className={`mobile-nav-panel ${toggle ? "open" : ""}`} ref={domNode}>
@@ -47,26 +48,40 @@ const MobileHeader = () => {
         {/*MOBILE MENU*/}
         <div className="mobile-menu-wrapper">
           <ul className="mobile-menu">
-          <li className="menu-item">
-              <Link href="/" onClick={() => logout()}>
-                <svg className="crumina-icon">
-                  <use xlinkHref="#logout-icon" />
-                </svg>
-                <span>
-                {t('text-dRep')}
-                </span>
-              </Link>
-            </li>
             <li className="menu-item">
-              <Link href="/" onClick={() => logout()}>
+              <Link href="/drep">
                 <svg className="crumina-icon">
-                  <use xlinkHref="#logout-icon" />
+                  <use xlinkHref="#double-picture-icon" />
                 </svg>
                 <span>
-                {t('text-logout')}
+                  {t('dRep')}
                 </span>
               </Link>
             </li>
+            {isAuthorized &&
+              <li className="menu-item">
+                <Link href="/" onClick={() => logout()}>
+                  <svg className="crumina-icon">
+                    <use xlinkHref="#logout-icon" />
+                  </svg>
+                  <span>
+                    {t('text-logout')}
+                  </span>
+                </Link>
+              </li>
+            }
+            {!isAuthorized &&
+              <li className="menu-item">
+                <Link href="/login">
+                  <svg className="crumina-icon">
+                    <use xlinkHref="#logout-icon" />
+                  </svg>
+                  <span>
+                    {t('text-login')}
+                  </span>
+                </Link>
+              </li>
+            }
           </ul>
         </div>
         {/*/mobbile menu bottom panel*/}

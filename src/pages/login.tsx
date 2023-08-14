@@ -25,7 +25,9 @@ const Login = () => {
                 <div className="extra-small-section">
                     <div className="page-title text-center account-login-layout">
                         <h2>
-                            <svg style={{ width: 850, height: 137, textAlign: 'center' }} xmlns="http://www.w3.org/2000/svg">
+                            <svg
+                               className="svg-login"
+                               xmlns="http://www.w3.org/2000/svg">
                                 <defs>
                                     <linearGradient id="gradient" y1="0" y2="1">
                                         <stop stopColor="#0061D3" offset="0" />
@@ -33,7 +35,7 @@ const Login = () => {
                                     </linearGradient>
                                 </defs>
                                 <g>
-                                    <text id="text" y="100" font-size="60" font-style="normal" letterSpacing="0.15rem" font-weight="700" stroke-width="2" stroke="url(#gradient)" fill="none">
+                                    <text id="text" y="100" font-style="normal" letterSpacing="0.15rem" font-weight="700" stroke-width="2" stroke="url(#gradient)" fill="none">
                                         {t("text-account")} {t("text-login")}
                                     </text>
                                 </g>

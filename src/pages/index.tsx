@@ -36,7 +36,7 @@ const Home: NextPageWithLayout<
               ProSkills39
             </h1>
             <div className="news-meta">
-              <svg style={{ width: 970, height: 137, textAlign: 'center', backdropFilter: '-moz-initial' }} xmlns="http://www.w3.org/2000/svg">
+              <svg className="svg-home" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="gradient" y1="0" y2="1">
                     <stop stopColor="#0061D3" offset="0" />
@@ -45,10 +45,8 @@ const Home: NextPageWithLayout<
                 </defs>
                 <g>
                   <text id="text" y="100"
-                    fontSize="60"
                     fontStyle="normal"
                     letterSpacing="0.15rem"
-                    fontWeight="800"
                     strokeWidth="1.5"
                     stroke="url(#gradient)"
                     fill="none"

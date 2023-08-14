@@ -1361,6 +1361,11 @@ body.dark-mode .home-page-title {
   backdrop-filter: blur(13px);
   letter-spacing: 0.07em;
 }
+@media screen and (max-width: 480px) {
+  .home-page-title {
+    font-size: 60px;
+  }
+}
 
 body.dark-mode .home-page-sub-title {
   font-size: 60px;
@@ -3545,6 +3550,7 @@ body.dark-mode .mode-toggle .mode-title {
   justify-content: space-between;
   align-items: center;
   padding: 16px 20px;
+  background-color: #046ef98a;
 }
 
 .mobile-nav-header .close-icon {
@@ -12800,8 +12806,7 @@ body.dark-mode .custom-select__menu {
 
 .lmCTmJ>input {
   background-color: var(--search-background-color) !important;
-  padding: 17px 18px !important;
-  color: #fff !important;
+  padding: 17px 18px !important;color: #fff !important;
 }
 
 .PzNiY {
@@ -13123,4 +13128,20 @@ iframe {
 
 .box-icon {
   color: var(--main-font-color);
+}
+
+.svg-home {
+  width: 970px;
+  height: 137px; 
+  text-align: center;
+  backdrop-filter: -moz-initial;
+  font-size: 60px;
+  font-weight: 800;
+}
+@media screen and (max-width: 480px) {
+  .svg-home {
+    width: 400px !important;
+    font-size: 26px !important;
+    font-weight: 600;
+  }
 }
