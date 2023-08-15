@@ -1,14 +1,17 @@
-import triangle from '@/assets/svg/triangle-popular-service.svg'
 import { Box } from '@/components/styles/Box'
 import { Mostpopularservice } from "@/types"
-import Image from "next/image"
 import Link from "next/link"
+import MainPopularSerivce from './popular/main'
+import { useMediaQuery } from 'react-responsive'
+import MobilePopularSerivce from './popular/mobile'
 
 type Props = {
     data: Mostpopularservice[]
 }
 
 const HomePopularService = ({ data }: Props) => {
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+
     return (
         <div className="container section-padding">
             <div className="section-title-wrapper">
@@ -21,21 +24,12 @@ const HomePopularService = ({ data }: Props) => {
                     </Link>
                 </div>
             </div>
-            <div className="latest-news-box grid-5-columns">
-                {data.map((popular, index) => (
-                    <Link href={`/categories/services/servicedetail/${popular.slug}`} key={index}>
-                        <div className="component-popular-service" >
-                            <div className="overlap-group">
-                                <Image className="popular-service" alt="" src={popular.image} width={230} height={122} />
-                                <div className="career-counselling">{popular.name}</div>
-                            </div>
-                            <Image className="vector" alt="Vector" src={triangle} />
-                        </div>
-                    </Link>
-                ))}
-
-
-            </div>
+            {isTabletOrMobile
+                ?
+                <MobilePopularSerivce data={data} />
+                :
+                <MainPopularSerivce data={data} />
+            }
         </div>
     )
 }

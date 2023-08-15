@@ -1365,6 +1365,9 @@ body.dark-mode .home-page-title {
   .home-page-title {
     font-size: 60px;
   }
+  body.dark-mode .home-page-title {
+    font-size: 60px;
+  }
 }
 
 body.dark-mode .home-page-sub-title {
@@ -11489,6 +11492,11 @@ td[data-label="Date"] {
   margin: 0;
   padding: 0;
 }
+@media screen and (max-width: 768px) {
+  .background-academy {
+    height: 250px;
+  }
+}
 
 .background-freelancer {
   height: 337px;
@@ -11615,6 +11623,12 @@ td[data-label="Date"] {
   backdrop-filter: blur(13px);
 }
 
+@media screen and (max-width: 768px) {
+  .container-all-service .section-title {
+    font-size: 30px;
+  }
+}
+
 body.dark-mode .section-title {
   color: #fff;
 }
@@ -11623,6 +11637,7 @@ body.dark-mode .section-title {
   color: #494949;
 }
 
+
 .newest-service {
   background: linear-gradient(60deg, #00f, #00e8ff) border-box;
   border-bottom: 4px solid transparent !important;
@@ -11630,6 +11645,14 @@ body.dark-mode .section-title {
   border-radius: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .newest-service {
+    width: 365px;
+    margin-left: 20px;
+  }
+  
 }
 
 .w-100 {
@@ -11732,6 +11755,36 @@ body.dark-mode .component-popular-service {
   border-bottom: 1px solid #0071BC;
   padding: 8px;
 }
+
+@media screen and (max-width: 768px) {
+  body.dark-mode .component-popular-service {
+    width: 380px !important;
+    margin-left: 10px !important;
+  }
+  body.dark-mode .component-popular-service .popular-service {
+    width: 380px !important;
+    height: 225px !important;
+  }
+  body.dark-mode .component-popular-service {
+    width:380px !important;
+  }
+  .component-popular-service {
+    width:380px !important;
+    margin-left: 10px !important;
+  }
+  .component-popular-service .popular-service {
+    width: 380px !important;
+    max-width: 370px;
+    height: 225px !important;
+  }
+  .component-popular-service .career-counselling {
+    top: 160px !important;
+  }
+  .component-popular-service .vector {
+    left: 320px !important;
+  }
+}
+
 
 body.dark-mode .component-popular-service:hover {
   transform: translatey(-10px);
@@ -12414,7 +12467,9 @@ body.dark-mode .custom-select__menu {
 .pd-80 {
   padding: 80px !important;
 }
-
+.pd-35 {
+  padding: 35px !important;
+}
 /****************************************************************/
 
 .component-popular-categories {

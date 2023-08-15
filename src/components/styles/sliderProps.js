@@ -287,3 +287,42 @@ export const sliderAcademy = {
     prevEl: ".swiper-button-academy-prev",
   }
 };
+
+export const sliderPhoneAcademy = {
+  slidesPerView: 1,
+  speed: 400,
+  spaceBetween: 20,
+  slideToClickedSlide: true,
+  createElements: true,
+  loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+};
+
+
+export const sliderPopularCategories = {
+  slidesPerView: 1,
+  speed: 400,
+  slideToClickedSlide: true,
+  createElements: true,
+  loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+};
+
+export const featuredMoileNewestService = {
+  slidesPerView: 1,
+  speed: 600,
+  spaceBetween: 20,
+  slideToClickedSlide: true,
+  createElements: true,
+  loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  }
+};

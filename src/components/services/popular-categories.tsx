@@ -1,11 +1,15 @@
 import { Popuparcategory } from '@/types'
-import Categories from './../../layouts/main/Categories'
+import GridCategories from './popularcategories/GridCategories'
+import { useMediaQuery } from 'react-responsive'
+import SwipperCategories from './popularcategories/SwipperCategories'
 
 type PageProps = {
     data: Popuparcategory[]
 }
 
 export const HomePopularCategory = ({ data }: PageProps) => {
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+
     return (
         <div className="container section-padding">
             <div className="section-title-wrapper">
@@ -13,11 +17,12 @@ export const HomePopularCategory = ({ data }: PageProps) => {
                     Popular<span className="gradient-text"> Categories</span>
                 </div>
             </div>
-            <div className="featured-box">
-                <div className="featured-box-wrapper grid-5-columns">
-                    <Categories data={data} />
-                </div>
-            </div>
+            {isTabletOrMobile
+                ?
+                <SwipperCategories data={data} />
+                :
+                <GridCategories data={data} />
+            }
         </div>
     )
 }
