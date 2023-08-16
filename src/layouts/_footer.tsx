@@ -6,10 +6,26 @@ import categories from "./../data/categories/index.json";
 import support from "./../data/categories/support.json";
 import { useTranslation } from 'next-i18next'
 import CommunityFooter from "./footer/community";
+import { useMediaQuery } from "react-responsive";
 
 
 export default function Footer() {
     const { t } = useTranslation('common');
+    const halfIndex = Math.ceil(categories.length / 2);
+    const categoriesOne = categories.slice(0, halfIndex);
+    const categoriesTwo = categories.slice(halfIndex);
+
+    const halfIndexaboutus = Math.ceil(aboutus.length / 2);
+    const aboutusOne = aboutus.slice(0, halfIndexaboutus);
+    const aboutusTwo = aboutus.slice(halfIndexaboutus);
+
+    const halfIndexsupport = Math.ceil(support.length / 2);
+    const supportOne = support.slice(0, halfIndexsupport);
+    const supportTwo = support.slice(halfIndexsupport);
+
+
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+
     return (
         <footer className="footer">
             <div className="footer-wrapper container">
@@ -105,18 +121,44 @@ export default function Footer() {
                     <div className="footer-column">
                         <div className="footer-widget">
                             <div className="widget-title">{t('text-category')}</div>
-                            <div className="is-two-col-element">
-                                <ul className="footer-menu">
-                                    {categories.map((category, index) => (
-                                        <li key={index} className="menu-item">
-                                            {" "}
-                                            <Link legacyBehavior href={category.url}>
-                                                <a className="menu-link">{t(category.name)}</a>
-                                            </Link>{" "}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
+
+                            {isTabletOrMobile ?
+                                <div className="two-column-list">
+                                    <ul className="column">
+                                        {categoriesOne.map((category, index) => (
+                                            <li key={index} className="menu-item ">
+                                                {" "}
+                                                <Link legacyBehavior href={category.url}>
+                                                    <a className="menu-link">{t(category.name)}</a>
+                                                </Link>{" "}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <ul className="column">
+                                        {categoriesTwo.map((category, index) => (
+                                            <li key={index} className="menu-item ">
+                                                {" "}
+                                                <Link legacyBehavior href={category.url}>
+                                                    <a className="menu-link">{t(category.name)}</a>
+                                                </Link>{" "}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                :
+                                <div className="is-two-col-element">
+                                    <ul className="footer-menu">
+                                        {categories.map((category, index) => (
+                                            <li key={index} className="menu-item ">
+                                                {" "}
+                                                <Link legacyBehavior href={category.url}>
+                                                    <a className="menu-link">{t(category.name)}</a>
+                                                </Link>{" "}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            }
                         </div>
                     </div>
                     <div className="footer-column">
@@ -128,35 +170,85 @@ export default function Footer() {
 
                     <div className="footer-column">
                         <div className="footer-widget">
-                            <div className="widget-title">{t('text-support')}</div>
-                            <ul className="footer-menu">
-                                {aboutus.map((aboutus, index) => (
-                                    <li key={index} className="menu-item">
-                                        {" "}
-                                        <Link legacyBehavior href={`/${aboutus.slug}`}>
-                                            <a className="menu-link">{aboutus.name}</a>
-                                        </Link>{" "}
-                                    </li>
-                                ))}
-
-                            </ul>
+                            <div className="widget-title">{t('text-about')}</div>
+                            {isTabletOrMobile ?
+                                <div className="two-column-list">
+                                    <ul className="column">
+                                        {aboutusOne.map((aboutus, index) => (
+                                            <li key={index} className="menu-item">
+                                                {" "}
+                                                <Link legacyBehavior href={`/${aboutus.slug}`}>
+                                                    <a className="menu-link">{aboutus.name}</a>
+                                                </Link>{" "}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <ul className="column">
+                                        {aboutusTwo.map((aboutus, index) => (
+                                            <li key={index} className="menu-item">
+                                                {" "}
+                                                <Link legacyBehavior href={`/${aboutus.slug}`}>
+                                                    <a className="menu-link">{aboutus.name}</a>
+                                                </Link>{" "}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                :
+                                <ul className="footer-menu">
+                                    {aboutus.map((aboutus, index) => (
+                                        <li key={index} className="menu-item">
+                                            {" "}
+                                            <Link legacyBehavior href={`/${aboutus.slug}`}>
+                                                <a className="menu-link">{aboutus.name}</a>
+                                            </Link>{" "}
+                                        </li>
+                                    ))}
+                                </ul>
+                            }
                         </div>
                     </div>
 
                     <div className="footer-column">
                         <div className="footer-widget">
-                            <div className="widget-title">{t('text-about')}</div>
-                            <ul className="footer-menu">
-                                {support.map((support, index) => (
-                                    <li key={index} className="menu-item">
-                                        {" "}
-                                        <Link legacyBehavior href={`/${support.slug}`}>
-                                            <a className="menu-link">{support.name}</a>
-                                        </Link>{" "}
-                                    </li>
-                                ))}
+                            <div className="widget-title">{t('text-support')}</div>
+                            {isTabletOrMobile ?
+                                <div className="two-column-list">
+                                    <ul className="column">
+                                        {supportOne.map((support, index) => (
+                                            <li key={index} className="menu-item">
+                                                {" "}
+                                                <Link legacyBehavior href={`/${support.slug}`}>
+                                                    <a className="menu-link">{support.name}</a>
+                                                </Link>{" "}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <ul className="column">
+                                        {supportTwo.map((support, index) => (
+                                            <li key={index} className="menu-item">
+                                                {" "}
+                                                <Link legacyBehavior href={`/${support.slug}`}>
+                                                    <a className="menu-link">{support.name}</a>
+                                                </Link>{" "}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                :
 
-                            </ul>
+                                <ul className="footer-menu">
+                                    {support.map((support, index) => (
+                                        <li key={index} className="menu-item">
+                                            {" "}
+                                            <Link legacyBehavior href={`/${support.slug}`}>
+                                                <a className="menu-link">{support.name}</a>
+                                            </Link>{" "}
+                                        </li>
+                                    ))}
+
+                                </ul>
+                            }
                         </div>
                     </div>
                     <div className="footer-column">
@@ -193,6 +285,6 @@ export default function Footer() {
                     </ul>
                 </div>
             </div>
-        </footer>
+        </footer >
     )
 }

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { useTranslation } from 'next-i18next'
+import { useMediaQuery } from 'react-responsive'
 
 type Props = {}
 
@@ -57,18 +58,46 @@ const CommunityFooter = (props: Props) => {
             "name": "text-become-to-seller"
         }
     ]
+    const columnSize = Math.ceil(community.length / 3);
+    const columns = Array.from({ length: 3 }, (_, index) =>
+        community.slice(index * columnSize, (index + 1) * columnSize)
+    );
+
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+
 
     return (
-        <ul className="footer-menu">
-            {community.map((community, index) => (
-                <li key={index} className="menu-item">
-                    {" "}
-                    <Link href={`${community.slug}`} className="menu-link">
-                        {t(community.name)}
-                    </Link>{" "}
-                </li>
-            ))}
-        </ul>
+        <>
+
+            {isTabletOrMobile ?
+
+                <div className="two-column-list">
+                    {columns.map((column, columnIndex) => (
+                        <ul key={columnIndex} className="column ">
+                            {column.map((community, index) => (
+                                <li key={index} className="menu-item" style={{ width: 100 }}>
+                                    {" "}
+                                    <Link href={`${community.slug}`} className="menu-link">
+                                        {t(community.name)}
+                                    </Link>{" "}
+                                </li>
+                            ))}
+                        </ul>
+                    ))}
+                </div>
+                :
+                <ul className="footer-menu">
+                    {community.map((community, index) => (
+                        <li key={index} className="menu-item">
+                            {" "}
+                            <Link href={`${community.slug}`} className="menu-link">
+                                {t(community.name)}
+                            </Link>{" "}
+                        </li>
+                    ))}
+                </ul>
+            }
+        </>
     )
 }
 
