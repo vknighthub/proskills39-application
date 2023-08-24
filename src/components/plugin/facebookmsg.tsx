@@ -15,7 +15,6 @@ const FacebookMsg = () => {
         >
             <CustomChat
                 pageId='105654225560640'
-                minimized={true}
             />
         </FacebookProvider>
     )       

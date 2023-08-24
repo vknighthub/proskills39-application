@@ -1,4 +1,3 @@
-import Logo from '@/components/ui/logo'
 import { isMobileDevice } from '@/utils/isMobileDevice'
 import { useEffect, useState } from 'react'
 import { niceSelect, notificationList, svgLoadder } from './../utils/util'
@@ -7,6 +6,7 @@ import Header from './_header'
 
 export default function Layout({ children }: React.PropsWithChildren<{}>) {
   useEffect(() => {
+    localStorage.setItem("mood","dark-mood");
     const Waves = require('node-waves')
     notificationList()
     setTimeout(() => {
