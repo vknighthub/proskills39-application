@@ -8,6 +8,7 @@ import React, { useState } from 'react'
 import image from '@/assets/images/profile-cover-1.jpg'
 import { Box, Modal, Typography } from '@mui/material'
 import Link from 'next/link'
+import { useMediaQuery } from 'react-responsive'
 
 
 const style = {
@@ -19,10 +20,20 @@ const style = {
     border: '2px solid #000',
     boxShadow: 24,
 };
+const styleMB = {
+    position: 'absolute',
+    top: '25%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    bgcolor: 'background.paper',
+    border: '1px solid #000',
+    boxShadow: 24
+};
 const Register: NextPageWithLayout = () => {
     const [open, setOpen] = useState(true);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
     return (
         <div className="primary-content-area  background-login">
 
@@ -59,12 +70,16 @@ const Register: NextPageWithLayout = () => {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <Box sx={style}>
-                    <Image src={image} alt='popup' />
-                    <Typography id="modal-modal-title" variant="h6" component="h2" sx={{ margin: 5, color: "#000" }}>
+                <Box sx={isTabletOrMobile ? styleMB : style}>
+                    {isTabletOrMobile ?
+                        <Image src={image} alt='popup' width={250} style={{maxWidth: 250}} />
+                        :
+                        <Image src={image} alt='popup' />
+                    }
+                    <Typography id="modal-modal-title" variant="h6" component="h2" sx={{ margin: 5, color: "#000", fontSize: `${isTabletOrMobile && "13px"}` }}>
                         THƯỞNG 50,000,000 cho 1,000 FREELANCER ĐẦU TIÊN chỉ cần đăng 1 dịch vụ freelancer kiếm việc, nhận ngay 50,000 VNĐ.
                     </Typography>
-                    <Typography id="modal-modal-title" variant="h6" component="h2" sx={{ margin: 5, color: "#000" }}>
+                    <Typography id="modal-modal-title" variant="h6" component="h2" sx={{ margin: 5, color: "#000" ,fontSize: `${isTabletOrMobile && "13px"}`}} >
                         Hướng dẫn chi tiết 3 bước:
                     </Typography>
                     <Box sx={{ margin: 5, color: "#000" }}>
