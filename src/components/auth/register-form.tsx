@@ -59,7 +59,7 @@ const RegisterUserForm = ({ username }: PageProps) => {
             position: 'center',
             icon: 'success',
             color: 'green',
-            text: `You have successfully registered an account. Your account will be emailed and approved within 3 working days`,
+            text: `You have successfully registered an account. Your account will be send to your mail`,
         }).then(response => {
             if (response.value) {
                 router.push('/login')
