@@ -97,9 +97,9 @@ const Register: NextPageWithLayout = () => {
                             </li>
                         </ul>
                     </Box>
-                    <Typography id="modal-modal-title" variant="h5" component="h2" sx={{ margin: 5, color: "#FFC0CB" }}>
+                    <Link id="modal-modal-title" href="#" onClick={handleClose} style={{color: "blue",margin: 20, fontSize: `${isTabletOrMobile ? "13px": "20px"}` }}>
                         ĐĂNG KÝ NGAY
-                    </Typography>
+                    </Link>
                 </Box>
             </Modal>
         </div>

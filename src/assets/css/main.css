@@ -1970,6 +1970,11 @@ body.dark-mode .site-header {
 .topbar-wrapper>* {
   margin-left: 10px;
 }
+@media screen and (max-width: 768px) {
+  .topbar-wrapper>* {
+    margin-left: -4px;
+  }
+}
 
 .topbar-wrapper>div:last-child {
   margin-left: 0;
@@ -2094,11 +2099,7 @@ body.dark-mode .site-header {
 /* ================================
         9.5. User activity buttons
         ================================ */
-@media (max-width: 1024px) {
-  .user-activity-buttons>* {
-    display: none;
-  }
-}
+
 
 .user-activity-buttons {
   display: grid;
@@ -2962,9 +2963,6 @@ body.dark-mode .profile-dropdown-body {
   .profile-menu {
     background-color: #0294E5;
   }
-  .profile-dropdown-footer{
-    background-color: #0296e5aa;
-  }  
 }
 
 .profile-menu li svg {

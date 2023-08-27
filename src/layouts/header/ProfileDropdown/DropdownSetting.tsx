@@ -1,11 +1,9 @@
-import { UserProfile } from '@/types'
-import Image from 'next/image'
-import Link from 'next/link'
-import avatar from '@/assets/images/avatar.png';
 import { useLogout } from '@/data/user';
-import Footer from './Footer'
-import { useTranslation } from 'next-i18next'
-import React, { useEffect, useRef } from 'react';
+import { UserProfile } from '@/types';
+import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
+import { useEffect } from 'react';
+import Footer from './Footer';
 
 type PageProps = {
     userdata: UserProfile,

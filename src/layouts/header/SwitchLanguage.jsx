@@ -5,12 +5,15 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import Select from 'react-select';
 import NotificationsButton from './NotificationsButton';
+import { useMediaQuery } from 'react-responsive'
 
 const SwitchLanguage = ({ isAuthorized, me }) => {
     const router = useRouter();
     const { asPath, locales, locale } = router;
     const currentSelectedItem = locales
     const [, setSelectedItem] = useState(currentSelectedItem);
+
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
     function handleChange(selectedOption) {
         const value = selectedOption.value
@@ -85,7 +88,7 @@ const SwitchLanguage = ({ isAuthorized, me }) => {
 
     const SingleValue = ({ children, ...props }) => (
         <>
-            <Icon icon="material-symbols:language" style={{ marginRight: '6px' }} />
+            {!isTabletOrMobile && <Icon icon="material-symbols:language" style={{ marginRight: '6px' }} />}
             {children}
         </>
     );
@@ -101,7 +104,8 @@ const SwitchLanguage = ({ isAuthorized, me }) => {
         <>
             {render &&
                 <>
-                    <NotificationsButton isAuthorized={isAuthorized} me ={me} />
+                    <NotificationsButton isAuthorized={isAuthorized} me={me} />
+
                     <Select
                         id='custom-select'
                         options={languageOptions}
@@ -116,7 +120,6 @@ const SwitchLanguage = ({ isAuthorized, me }) => {
                         classNamePrefix={'custom-select'}
                         onChange={handleChange}
                     >
-
 
                     </Select>
                 </>
