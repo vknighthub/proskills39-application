@@ -5,24 +5,25 @@ import { GetStaticProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Image from 'next/image'
 import React, { useState } from 'react'
-import image from '@/assets/images/profile-cover-1.jpg'
+import image from '@/assets/images/profile-cover-1.png'
 import { Box, Modal, Typography } from '@mui/material'
 import Link from 'next/link'
 import { useMediaQuery } from 'react-responsive'
+import { Icon } from '@iconify/react'
 
 
 const style = {
     position: 'absolute',
-    top: '35%',
+    top: '25%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
+    height: 700
 };
 const styleMB = {
     position: 'absolute',
-    top: '25%',
+    top: '10%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     bgcolor: 'background.paper',
@@ -72,34 +73,21 @@ const Register: NextPageWithLayout = () => {
             >
                 <Box sx={isTabletOrMobile ? styleMB : style}>
                     {isTabletOrMobile ?
-                        <Image src={image} alt='popup' width={250} style={{maxWidth: 250}} />
+                        <Image src={image} alt='popup' width={350} style={{ maxWidth: 350 }} />
                         :
-                        <Image src={image} alt='popup' />
+                        <Image src={image} alt='popup' width={1345} height={1345} />
                     }
-                    <Typography id="modal-modal-title" variant="h6" component="h2" sx={{ margin: 5, color: "#000", fontSize: `${isTabletOrMobile && "13px"}` }}>
-                        THƯỞNG 50,000,000 cho 1,000 FREELANCER ĐẦU TIÊN chỉ cần đăng 1 dịch vụ freelancer kiếm việc, nhận ngay 50,000 VNĐ.
-                    </Typography>
-                    <Typography id="modal-modal-title" variant="h6" component="h2" sx={{ margin: 5, color: "#000" ,fontSize: `${isTabletOrMobile && "13px"}`}} >
-                        Hướng dẫn chi tiết 3 bước:
-                    </Typography>
-                    <Box sx={{ margin: 5, color: "#000" }}>
-                        <ul>
-                            <li>Bước 1 - Đăng ký tài khoản ở đây</li>
-                            <li style={{ color: "blue" }}>
-                                <Link href="https://www.canva.com/design/DAFsgDYFNqM/qmqEW7s2Jp56aIrqEv0GQA/edit" color='blue' >
-                                    Bước 2 - Đăng 1 dịch vụ kiếm việc freelancer
-                                </Link>
-                            </li>
-                            <li style={{ color: "blue" }}>
-                                <Link href=" https://docs.google.com/forms/d/e/1FAIpQLScZ-DbZybbDktsWK49NAx4yWQH9zaNOX55ocb1ljZJlIyB-4Q/viewform?pli=1" color='blue' >
-                                    Bước 3 - Điền thông tin và nhận thưởng:
-                                </Link>
-                            </li>
-                        </ul>
+
+                    <Box sx={{ textAlign: "center", color: "#000", background: "#fff" }}>
+                        <Icon icon="icon-park:hand-right" style={{ width: 60, height: 60 }} />
+                        <Link id="modal-modal-title" href="#"
+                            onClick={handleClose}
+                            style={{textDecorationLine:'underline' , color: "blue", margin: 20, fontSize: `${isTabletOrMobile ? "25px" : "40px"}` }}>
+                            ĐĂNG KÝ NGAY
+                        </Link>
+                        <Icon icon="icon-park:hand-left" style={{ width: 60, height: 60 }} />
                     </Box>
-                    <Link id="modal-modal-title" href="#" onClick={handleClose} style={{color: "blue",margin: 20, fontSize: `${isTabletOrMobile ? "13px": "20px"}` }}>
-                        ĐĂNG KÝ NGAY
-                    </Link>
+
                 </Box>
             </Modal>
         </div>
