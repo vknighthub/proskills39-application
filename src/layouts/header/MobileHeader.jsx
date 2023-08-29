@@ -1,10 +1,9 @@
+import Logo from "@/components/ui/logo";
+import { useLogout, useMe } from "@/data/user";
+import useClickOutside from "@/lib/hooks/useClickOutside";
+import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Image from "next/image";
-import useClickOutside from "@/lib/hooks/useClickOutside";
-import Logo from "@/components/ui/logo";
-import { useTranslation } from "next-i18next";
-import { useMe } from "@/data/user";
 
 const MobileHeader = () => {
   const { t } = useTranslation('common')
@@ -21,6 +20,9 @@ const MobileHeader = () => {
   let domNode = useClickOutside(() => {
     setToggle(false);
   });
+
+  const { mutate: logout } = useLogout();
+
 
   const [activeMenu, setActiveMenu] = useState("");
   const activeMenuSet = (value) =>

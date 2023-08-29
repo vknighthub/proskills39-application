@@ -53,7 +53,7 @@ const ProfileDropdown = ({ profile, isAuthorized }) => {
                                     <use xlinkHref="#circle-icon" />
                                 </svg>
                             </span>
-                            {formattedNumber} <span className="gradient-text bold">v2P</span>
+                            {formattedNumber} <span className="gradient-text bold">v2p</span>
                         </div>
                         <div className="user_score" style={{ marginTop: 5 }}>
                             <span>
