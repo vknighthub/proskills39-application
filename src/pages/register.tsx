@@ -23,7 +23,7 @@ const style = {
 };
 const styleMB = {
     position: 'absolute',
-    top: '10%',
+    top: '35%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     bgcolor: 'background.paper',
