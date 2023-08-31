@@ -2161,6 +2161,12 @@ body.dark-mode .site-header {
   width: 360px;
 }
 
+@media screen and (max-width:768px) {
+  #notifications-dropdown {
+    left: -50%;
+  }
+}
+
 #notifications-dropdown .title {
   font-size: var(--body-font-size);
   letter-spacing: var(--letter-spacing);

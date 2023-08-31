@@ -38,7 +38,7 @@ export const OtherService = () => {
                     </Link>
                 </div>
             </div>
-            <div className="row">
+            <div className="row"> 
                 {isTabletOrMobile ?
                     <MobileOtherSerivce data={data} /> :
                     <MainOtherSerivce data={data} />

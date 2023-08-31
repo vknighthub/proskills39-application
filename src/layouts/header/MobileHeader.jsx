@@ -23,6 +23,9 @@ const MobileHeader = () => {
     setToggle(false);
   });
 
+  const { mutate: logout } = useLogout();
+
+
   const [activeMenu, setActiveMenu] = useState("");
   const activeMenuSet = (value) =>
     setActiveMenu(activeMenu === value ? "" : value),
