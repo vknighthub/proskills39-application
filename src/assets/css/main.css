@@ -12674,6 +12674,7 @@ body.dark-mode .custom-select__menu {
   position: absolute;
   top: 166px;
   width: 66px;
+  border-radius: 10px;
 }
 
 .component-deal-service .group {
@@ -12686,7 +12687,6 @@ body.dark-mode .custom-select__menu {
 
 .component-deal-service .ID-nguy-n-m-u-anh {
   color: #ffffff;
-  font-family: "Quicksand", Helvetica;
   font-size: 12px;
   font-weight: 700;
   left: 668px;
@@ -12694,12 +12694,10 @@ body.dark-mode .custom-select__menu {
   line-height: 24.5px;
   position: absolute;
   top: 170px;
-  white-space: nowrap;
 }
 
 .component-deal-service .CURRENT-OFFER {
   color: #ffffff;
-  font-family: "Quicksand", Helvetica;
   font-size: 12px;
   font-weight: 700;
   left: 610px;
@@ -12707,7 +12705,6 @@ body.dark-mode .custom-select__menu {
   line-height: 24.5px;
   position: absolute;
   top: 274px;
-  white-space: nowrap;
 }
 
 .component-deal-service .element {
@@ -12738,15 +12735,13 @@ body.dark-mode .custom-select__menu {
 
 .component-deal-service .tidev {
   color: #ffffff;
-  font-family: "Quicksand", Helvetica;
   font-size: 12px;
   font-weight: 400;
   left: 668px;
   letter-spacing: 0;
   line-height: 24.5px;
   position: absolute;
-  top: 192px;
-  white-space: nowrap;
+  top: 200px;
 }
 
 .component-deal-service .rectangle {
@@ -12782,6 +12777,7 @@ body.dark-mode .custom-select__menu {
   position: absolute;
   top: 26px;
   width: 557px;
+  border-radius: 12px;
 }
 
 .component-deal-service .vknight-test {

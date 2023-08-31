@@ -14,6 +14,7 @@ import { useTranslation } from 'react-i18next';
 import parse from 'html-react-parser';
 import vector_deal_service from '@/assets/images/service/vector-deal-service.png';
 import rect_deal_service from '@/assets/images/service/rect-deal-service.svg';
+import service_image from '@/assets/images/service/service.webp';
 
 
 const OfferService: NextPageWithLayout<
@@ -90,7 +91,7 @@ const OfferService: NextPageWithLayout<
                                 <Image
                                     className="chuot-punk"
                                     alt="Chuot punk"
-                                    src="https://generation-sessions.s3.amazonaws.com/769e6cc2afb4cf7246fa01e170a502a7/img/chuot-punk-2-4-1@2x.png"
+                                    src={service_deal?.avatar ? service_deal?.avatar  : avatar}
                                     width={58}
                                     height={58}
                                 />
@@ -101,22 +102,22 @@ const OfferService: NextPageWithLayout<
                                     width={14}
                                     height={17}
                                 />
-                                <p className="ID-nguy-n-m-u-anh">ID: Nguyễn Mậu Anh Duy</p>
+                                <p className="ID-nguy-n-m-u-anh">ID: {service_deal?.fullname}</p>
                                 <div className="CURRENT-OFFER">CURRENT OFFER</div>
-                                <div className="element">100 v2p</div>
+                                <div className="element">{service_deal?.price} v2p</div>
                                 <div className="DEAL">DEAL?</div>
-                                <div className="tidev">@tidev</div>
+                                <div className="tidev">@{service_deal?.username}</div>
                                 <div className="rectangle" />
                                 <div className="div" />
                                 <Image
                                     className="chuot-punk-2"
                                     alt="Chuot punk"
-                                    src="https://generation-sessions.s3.amazonaws.com/769e6cc2afb4cf7246fa01e170a502a7/img/chuot-punk-2-1-1.png"
+                                    src={service_image}
                                     width={549}
                                     height={574}
 
                                 />
-                                <p className="vknight-test">vknight test notification post request</p>
+                                <p className="vknight-test">{service_deal?.title}</p>
                                 <div className="overlap-group-wrapper">
                                     <div className="overlap-group">
                                         <Link href={`/services/applicationletter/${service}`} className="deal">Deal</Link>
