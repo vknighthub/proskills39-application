@@ -277,7 +277,7 @@ const ServicesSearchPage: NextPageWithLayout<
                                                 <div className="featured-item-info">
                                                     <div className="avatar-block">
                                                         <div className="avatar box-42">
-                                                            <Link href={`/user-profile/${data.seller.username}`}>
+                                                            <Link href={`/user-profile/${service.sellerInfor.username}`}>
                                                                 {service.sellerInfor.avatar ?
                                                                     <Image
                                                                         src={service.sellerInfor.avatar}
