@@ -5,7 +5,7 @@ export default function Document() {
         <Html lang="en">
             <Head>
                 <meta name="zalo-platform-site-verification" content="VSwL9V__67qkoifGq_b4RpdfnMxLbnSoDZO" />
-                <meta name="google-site-verification" content="5j9vLR3tb7r1Vvxx_v9KPu7beYeT7PnYCB0-HlBzg1I" />
+                <meta name="google-site-verification" content="rxpEgRNKWEX3LEHdmS712_PxAwygWDoCK69N0AOouNA" />
             </Head>
             <body>
                 <Main />
