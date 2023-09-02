@@ -303,7 +303,7 @@ const ServicesSearchPage: NextPageWithLayout<
                                                             <div className="avatar-title">
                                                                 <span className="gradient-text">
                                                                     {" "}
-                                                                    <Link href={`/user-profile/${'service.sellerInfor.username'}`}>
+                                                                    <Link href={`/user-profile/${service.sellerInfor.username}`}>
                                                                         {service.sellerInfor.fullname}
                                                                     </Link>{" "}
 
