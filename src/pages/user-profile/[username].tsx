@@ -15,6 +15,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import invariant from 'tiny-invariant'
+import { useMediaQuery } from 'react-responsive';
+import MobileServiceTopAvargage from '@/components/user/mobile'
 
 
 type PageProps = {
@@ -54,6 +56,8 @@ const UserProfilePage: NextPageWithLayout<
             setIsFollow(true)
         }
     }, [data.profile.isFollow])
+
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
     return (
         <>
@@ -97,8 +101,11 @@ const UserProfilePage: NextPageWithLayout<
                             <span className="gradient-text">{userprofile.result.data.profile.fullname}</span> Best service
                         </h2>
                     </div>
-                    <ServiceTopAvargage data={data.services.servicetopaverage.data} />
-
+                    {isTabletOrMobile ?
+                        <MobileServiceTopAvargage data={data.services.servicetopaverage.data} />
+                        :
+                        <ServiceTopAvargage data={data.services.servicetopaverage.data} />
+                    }
                 </div>
 
                 <div className="primary-content-area container content-padding">

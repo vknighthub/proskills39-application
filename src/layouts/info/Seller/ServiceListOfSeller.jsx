@@ -12,7 +12,9 @@ const ServiceListOfSeller = ({ data }) => {
                     <Link href={`/categories/services/servicedetail/${popular.slug}`} key={index}>
                         <div className="component-popular-service" >
                             <div className="overlap-group">
-                                <Image className="popular-service" alt="" src={popular.overviews.files[0].url} width={230} height={122} />
+                                <Image className="popular-service" alt=""
+                                    src={popular.overviews.files[0].url}
+                                    width={230} height={122} />
                                 <div className="career-counselling">
                                     <CutText content={popular.introduce} start={0} end={75} />
                                 </div>

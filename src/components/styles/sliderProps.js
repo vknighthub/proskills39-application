@@ -326,3 +326,16 @@ export const featuredMoileNewestService = {
     disableOnInteraction: false,
   }
 };
+
+export const featuredMoileUserProfile = {
+  slidesPerView: 1,
+  speed: 600,
+  spaceBetween: 20,
+  slideToClickedSlide: true,
+  createElements: true,
+  loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  }
+};
