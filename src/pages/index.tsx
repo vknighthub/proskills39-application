@@ -13,6 +13,7 @@ import { NextPageWithLayout } from '@/types'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Link from 'next/link'
+import { useTranslation } from 'next-i18next'
 
 
 const Home: NextPageWithLayout<
@@ -20,6 +21,8 @@ const Home: NextPageWithLayout<
 > = ({ homeinfo }) => {
 
   const homepageinfo = homeinfo?.result.data
+
+  const { t } = useTranslation('common')
 
   return (
     <>
@@ -62,9 +65,7 @@ const Home: NextPageWithLayout<
               fontWeight: 400,
               fontSize: 24
             }}>
-              ProSkills39 is a Service Marketplace that connects pro-skills freelancers
-              and provides support services for project owners to start up
-              and expand their businesses at a reasonable cost.
+              {t('text-introduce')}
             </p>
             <div className="collection-box" style={{ justifyContent: 'center' }}>
               <Link
