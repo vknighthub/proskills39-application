@@ -19,7 +19,7 @@ export const HomeFreelancer = ({ data }: PageProps) => {
         <div className="container section-padding overflow-hidden">
             <div className="section-title-wrapper">
                 <div className="section-title">
-                    {t('text-freelancer-on')}<span className="gradient-text"> Proskills39</span>
+                    Freelancer on<span className="gradient-text"> Proskills39</span>
                 </div>
                 <div className="all-items-link">
                     <Link href="/">
