@@ -56,7 +56,7 @@ const Home: NextPageWithLayout<
                     fontFamily='Quicksand'
                     style={{ fontFamily: 'sans-serif' }}
                   >
-                    A Web Service MarketPlace
+                    {t('text-first-introduce')}
                   </text>
                 </g>
               </svg>
@@ -72,7 +72,7 @@ const Home: NextPageWithLayout<
                 href="#"
                 className="btn btn-normal btn-dark create-collection"
               >
-                Get Started
+                {t('text-start-introduce')}
               </Link>
             </div>
           </div>
@@ -87,7 +87,7 @@ const Home: NextPageWithLayout<
 
         <div className="container-all-service">
           <div className="section-title">
-            All service on ProSkills39
+            {t('text-title-service')}
           </div>
         </div>
 

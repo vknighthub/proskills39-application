@@ -596,5 +596,22 @@
   "text-about-this-service": "このサービスについて" ,
   "text-newest": "最新",
   "text-service": "サービス",
-  "text-introduce":"ProSkills39 は、プロ スキル フリーランサーを繋いで、プロジェクト オーナーが合理的なコストでビジネスを開始および拡大するためのサポート サービスを提供するサービスマーケットプレイスです。"
+  "text-introduce":"ProSkills39 は、プロ スキル フリーランサーを繋いで、プロジェクト オーナーが合理的なコストでビジネスを開始および拡大するためのサポート サービスを提供するサービスマーケットプレイスです。",
+  "text-first-introduce":"サービスマーケットプレイス",
+  "text-add": "続きを見る",
+  "text-start-introduce":"始めましょう",
+  "text-title-service":"ProSkills39のすべてのサービス",
+  "text-academy":"アカデミー",
+  "text-academy-on":"のアカデミー",
+  "text-freelancer-on":"のフリーランサー",
+  "text-popular-categories":"人気のあるカテゴリー",
+  "text-most-popular":"最も人気のある",
+  "text-other-service":"その他の",
+  "text-see-more":"続きを見る"
+
+
+
+
+
+
 }

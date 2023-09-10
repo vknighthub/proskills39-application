@@ -7,6 +7,7 @@ type Props = {
 }
 
 const Freelancer = ({ list_freelancer }: Props) => {
+    
     return (
         <div className="primary-content-area container content-padding">
             <div className="page-title-section">

@@ -599,5 +599,20 @@
   "text-service": "Service",
   "text-more": "More",
   "text-reffer-tooltip": "Enter this Referrer email both you and the Referrer will receive 10% transaction fee for the first order.",
-  "text-introduce":"ProSkills39 is a Service Marketplace that connects pro-skills freelancers and provides support services for project owners to start up and expand their businesses at a reasonable cost."
+  "text-introduce":"ProSkills39 is a Service Marketplace that connects pro-skills freelancers and provides support services for project owners to start up and expand their businesses at a reasonable cost.",
+  "text-first-introduce":"A Web Service MarketPlace",
+  "text-add": "See more",
+  "text-start-introduce":"Get Started",
+  "text-title-service":"All service on ProSkills39",
+  "text-academy":"text-community",
+  "text-academy-on":"Academy on",
+  "text-freelancer-on":"Freelancer on",
+  "text-popular":"Popular",
+  "text-categories":"Categories",
+  "text-most-popular":"Most popular ",
+  "text-other-service":"Other",
+  "text-see-more":"See more"
+  
+
+
 }

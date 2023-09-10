@@ -5,9 +5,13 @@ import Link from 'next/link';
 import { useMediaQuery } from 'react-responsive';
 import MainOtherSerivce from './other/main';
 import MobileOtherSerivce from './other/mobile';
+import { useRouter } from 'next/router';
+;
 
 export const OtherService = () => {
     const { t } = useTranslation('common')
+    const { locale } = useRouter()
+
     const data = [
         {
             id: 1,
@@ -30,12 +34,27 @@ export const OtherService = () => {
         <div className="container section-padding overflow-hidden">
             <div className="section-title-wrapper">
                 <div className="section-title">
-                    Other<span className="gradient-text"> Service</span>
+                {locale === 'vn' ?
+                        (
+                            <>
+                                <span className="gradient-text"> {t('text-service')}</span>
+                                <span> {t('text-other-service')}</span>
+                            </>
+                        )
+                        :
+                        (
+                            <>
+                                <span>{t('text-other-service')}</span>
+                                <span className="gradient-text"> {t('text-service')}</span>
+                            </>
+                        )
+                    }
+                    {/* Other<span className="gradient-text"> Service</span>
                 </div>
                 <div className="all-items-link">
                     <Link href="/">
                         <Box />
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
             <div className="row"> 
